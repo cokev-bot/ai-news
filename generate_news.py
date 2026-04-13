@@ -36,6 +36,10 @@ FEEDS = {
     "ollama":         "https://nitter.net/ollama/rss",
     # ChatGPT
     "ChatGPTapp":     "https://nitter.net/ChatGPTapp/rss",
+    # Financial Times
+    "FT AI":             "https://www.ft.com/artificial-intelligence?format=rss",
+    "FT The AI Shift":   "https://www.ft.com/the-ai-shift?format=rss",
+
     # Misc / influencers
     "bcherny":        "https://nitter.net/bcherny/rss",
     "DarioAmodei":    "https://nitter.net/DarioAmodei/rss",
