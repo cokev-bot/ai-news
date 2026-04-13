@@ -1,0 +1,12 @@
+title: AI News Digest
+description: Daily AI news from OpenAI and Google Gemini
+url: ""
+github_username: ""
+twitter_username: ""
+theme: minima
+plugins:
+  - jekyll-feed
+
+collections:
+  posts:
+    permalink: /news/:year/:month/:day/:title/

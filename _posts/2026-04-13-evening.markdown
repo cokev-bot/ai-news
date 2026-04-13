@@ -1,0 +1,119 @@
+---
+layout: post
+title: "AI News Digest — Evening Edition"
+date: 2026-04-13 20:43:21 +0000
+categories: news digest
+---
+
+## 🤖 AI News — Evening Edition · 2026-04-13 20:43 UTC
+
+This digest aggregates the latest AI news from OpenAI and Google Gemini.
+
+### Gemini News
+
+**[6 easy ways to study for finals with Gemini](https://blog.google/products-and-platforms/products/education/gemini-finals-study-tips/)**
+<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Tips_for_Final_Prep_hero.max-600x600.format-webp.webp">Learn how to use Gemini as your personal study partner — from turning messy lecture notes into podcasts to testing your knowledge with custom quizzes.
+
+**[An update on our mental health work](https://blog.google/innovation-and-ai/technology/health/mental-health-updates/)**
+<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/MentalHealth_042026_hero.max-600x600.format-webp.webp">We’re sharing an update on our mental health work, including some new changes to better connect people with the right information.
+
+**[Here’s how we built Gmail to keep your data secure and private in the Gemini era.](https://blog.google/products-and-platforms/products/gmail/privacy-in-gmail-with-gemini/)**
+<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blake_SS_2.max-600x600.format-webp.webp">Google doesn’t train Gemini using personal emails. Here’s how Google keeps private data secure in Gmail amid new AI model upgrades.
+
+**[The Gemini app can now generate interactive simulations and models.](https://blog.google/innovation-and-ai/products/gemini-app/3d-models-charts/)**
+<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/1_Visualize_how_fractals_work.max-600x600.format-webp.webp">Gemini can now transform your questions and complex topics into custom and interactive visualizations.
+
+**[Try notebooks in Gemini to easily keep track of projects](https://blog.google/innovation-and-ai/products/gemini-app/notebooks-gemini-notebooklm/)**
+<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Notebooks_header_2026_2096x1182.max-600x600.format-webp.webp">Notebooks in Gemini give you a project base that connects the Gemini app with our AI-powered research partner, NotebookLM, for an easy workflow.
+
+### OpenAI News
+
+**[AI fundamentals](https://openai.com/academy/what-is-ai)**
+Learn what AI is, how it works, and how tools like ChatGPT use large language models. A clear, beginner-friendly guide to understanding artificial intelligence.
+
+**[Analyzing data with ChatGPT](https://openai.com/academy/data-analysis)**
+Learn how to analyze data with ChatGPT by exploring datasets, generating insights, creating visualizations, and turning findings into actionable decisions.
+
+**[Applications of AI at OpenAI](https://openai.com/academy/applications-of-ai)**
+Explore how OpenAI products like ChatGPT, Codex, and APIs bring AI into real-world use for work, development, and everyday tasks.
+
+**[Brainstorming with ChatGPT](https://openai.com/academy/brainstorming)**
+Learn how to use ChatGPT to brainstorm ideas, organize thinking, and turn rough concepts into structured, actionable plans.
+
+**[ChatGPT for customer success teams](https://openai.com/academy/customer-success)**
+Learn how customer success teams use ChatGPT to manage accounts, improve communication, reduce churn, and drive adoption and renewals.
+
+**[ChatGPT for finance teams](https://openai.com/academy/finance)**
+Learn how finance teams use ChatGPT to streamline reporting, analyze data, improve forecasts, and communicate insights more clearly.
+
+**[ChatGPT for managers](https://openai.com/academy/managers)**
+Learn how managers use ChatGPT to prepare for conversations, write clear feedback, stay organized, and improve team effectiveness.
+
+**[ChatGPT for marketing teams](https://openai.com/academy/marketing)**
+Learn how marketing teams use ChatGPT to plan campaigns, generate content, analyze performance, and move from ideas to execution faster.
+
+**[ChatGPT for operations teams](https://openai.com/academy/operations)**
+Learn how operations teams use ChatGPT to streamline workflows, improve coordination, standardize processes, and drive faster execution.
+
+**[ChatGPT for research](https://openai.com/academy/research)**
+Learn how to use ChatGPT for research to gather sources, analyze information, and create structured, citation-backed insights.
+
+**[ChatGPT for sales teams](https://openai.com/academy/sales)**
+Learn how sales teams use ChatGPT to research accounts, personalize outreach, manage deals, and improve pipeline and conversion.
+
+**[Creating images with ChatGPT](https://openai.com/academy/image-generation)**
+Learn how to create and refine images with ChatGPT using clear prompts, iterate on designs, and generate high-quality visuals in minutes.
+
+**[CyberAgent moves faster with ChatGPT Enterprise and Codex](https://openai.com/index/cyberagent)**
+CyberAgent uses ChatGPT Enterprise and Codex to securely scale AI adoption, improve quality, and accelerate decisions across advertising, media, and gaming.
+
+**[Enterprises power agentic workflows in Cloudflare Agent Cloud with OpenAI](https://openai.com/index/cloudflare-openai-agent-cloud)**
+Cloudflare brings OpenAI’s GPT-5.4 and Codex to Agent Cloud, enabling enterprises to build, deploy, and scale AI agents for real-world tasks with speed and security.
+
+**[Financial services](https://openai.com/academy/financial-services)**
+Explore AI resources for financial services, including prompt packs, GPTs, guides, and tools to help institutions deploy and scale AI securely.
+
+**[Getting started with ChatGPT](https://openai.com/academy/getting-started)**
+Learn how to use ChatGPT, start your first conversation, and discover simple ways to write, brainstorm, and solve problems with AI.
+
+**[Healthcare](https://openai.com/academy/healthcare)**
+Explore how clinicians use ChatGPT to support diagnosis, documentation, and patient care with secure, HIPAA-compliant AI tools.
+
+**[Introducing the Child Safety Blueprint](https://openai.com/index/introducing-child-safety-blueprint)**
+Discover OpenAI’s Child Safety Blueprint—a roadmap for building AI responsibly with safeguards, age-appropriate design, and collaboration to protect and empower young people online.
+
+**[OpenAI Full Fan Mode Contest: Terms & Conditions](https://openai.com/index/full-fan-mode-contest-terms-conditions)**
+Explore the official terms and conditions for the OpenAI Full Fan Mode Contest, including eligibility, entry steps, judging criteria, and prize details. Learn how to participate, submit your entry on Instagram, and win IPL match tickets.
+
+**[Our response to the Axios developer tool compromise](https://openai.com/index/axios-developer-tool-compromise)**
+OpenAI responds to the Axios supply chain attack by rotating macOS code signing certificates, updating apps, and confirming no user data was compromised.
+
+**[Personalizing ChatGPT](https://openai.com/academy/personalization)**
+Learn how to personalize ChatGPT using custom instructions and memory to get more relevant, consistent, and tailored responses.
+
+**[Prompting fundamentals](https://openai.com/academy/prompting)**
+Learn prompting fundamentals and how to write clear, effective prompts to get better, more useful responses from ChatGPT.
+
+**[Research with ChatGPT](https://openai.com/academy/search-and-deep-research)**
+Learn how to research with ChatGPT using search and deep research to find up-to-date information, analyze sources, and generate structured insights.
+
+**[Responsible and safe use of AI](https://openai.com/academy/responsible-and-safe-use)**
+Learn how to use AI responsibly with best practices for safety, accuracy, and transparency when using tools like ChatGPT.
+
+**[The next phase of enterprise AI](https://openai.com/index/next-phase-of-enterprise-ai)**
+OpenAI outlines the next phase of enterprise AI, as adoption accelerates across industries with Frontier, ChatGPT Enterprise, Codex, and company-wide AI agents.
+
+**[Using custom GPTs](https://openai.com/academy/custom-gpts)**
+Learn how to build and use custom GPTs to automate workflows, maintain consistent outputs, and create purpose-built AI assistants.
+
+**[Using projects in ChatGPT](https://openai.com/academy/projects)**
+Learn how to use orojects in ChatGPT to organize chats, files, and instructions, manage ongoing work, and collaborate more effectively.
+
+**[Using skills](https://openai.com/academy/skills)**
+Learn how to create and use ChatGPT skills to build reusable workflows, automate recurring tasks, and ensure consistent, high-quality outputs.
+
+**[Working with files in ChatGPT](https://openai.com/academy/working-with-files)**
+Learn how to upload and work with files in ChatGPT to analyze data, summarize documents, and generate content from PDFs, spreadsheets, and more.
+
+**[Writing with ChatGPT](https://openai.com/academy/writing)**
+Learn how to use ChatGPT for writing to draft, revise, and refine content with clear structure, tone, and intent.
