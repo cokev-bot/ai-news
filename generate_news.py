@@ -1,22 +1,58 @@
 #!/usr/bin/env python3
-"""Generate AI news digest posts from RSS feeds. Tracks state to only show new articles."""
+"""Generate AI news digest posts from RSS feeds.
+Tracks state to avoid duplicates across runs.
+Deduplicates by normalized title within a single edition.
+"""
 
 import xml.etree.ElementTree as ET
 import urllib.request
 import urllib.error
 import json
+import re
 import os
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Nitter RSS feeds for AI news accounts
 FEEDS = {
-    "OpenAI News": "https://openai.com/news/rss.xml",
-    "Gemini News": "https://blog.google/products-and-platforms/products/gemini/rss/",
-    "Anthropic News": "https://nitter.net/AnthropicAI/rss",
+    # OpenAI
+    "OpenAI":        "https://nitter.net/OpenAI/rss",
+    "OpenAIDevs":    "https://nitter.net/OpenAIDevs/rss",
+    "OpenAINewsroom":"https://nitter.net/OpenAINewsroom/rss",
+    # Google
+    "GoogleAI":      "https://nitter.net/GoogleAI/rss",
+    "GoogleAIStudio":"https://nitter.net/GoogleAIStudio/rss",
+    "googleaidevs":  "https://nitter.net/googleaidevs/rss",
+    "GeminiApp":     "https://nitter.net/GeminiApp/rss",
+    "NotebookLM":    "https://nitter.net/NotebookLM/rss",
+    # Anthropic
+    "AnthropicAI":   "https://nitter.net/AnthropicAI/rss",
+    "claudeai":      "https://nitter.net/claudeai/rss",
+    "antigravity":   "https://nitter.net/antigravity/rss",
+    # Mistral
+    "MistralAI":     "https://nitter.net/MistralAI/rss",
+    "MistralDevs":   "https://nitter.net/MistralDevs/rss",
+    "mistralvibe":   "https://nitter.net/mistralvibe/rss",
+    # Ollama
+    "ollama":        "https://nitter.net/ollama/rss",
+    # ChatGPT
+    "ChatGPTapp":    "https://nitter.net/ChatGPTapp/rss",
+    # Misc / influencers
+    "bcherny":       "https://nitter.net/bcherny/rss",
+    "DarioAmodei":   "https://nitter.net/DarioAmodei/rss",
 }
 
 STATE_FILE = Path(__file__).parent / ".news_state.json"
 MAX_AGE_DAYS = 7
+MAX_ITEMS_PER_SOURCE = 20  # cap per account to keep edition manageable
+
+
+def normalize_title(title: str) -> str:
+    """Normalize title for dedup comparison: lowercase, strippunctuation/spaces."""
+    t = title.lower().strip()
+    t = re.sub(r"[^\w\s]", "", t)
+    t = re.sub(r"\s+", " ", t)
+    return t
 
 
 def parse_date(date_str: str) -> datetime | None:
@@ -55,32 +91,33 @@ def fetch_feed(name: str, url: str) -> list[dict]:
     now = datetime.now(timezone.utc)
     cutoff = now.timestamp() - (MAX_AGE_DAYS * 86400)
 
-    for item in root.findall(".//item"):
+    for item in root.findall(".//item")[:MAX_ITEMS_PER_SOURCE]:
         title_el = item.find("title")
-        link_el = item.find("link")
-        desc_el = item.find("description")
-        pub_el = item.find("pubDate")
+        link_el  = item.find("link")
+        desc_el  = item.find("description")
+        pub_el   = item.find("pubDate")
 
-        title = title_el.text.strip() if title_el is not None and title_el.text else ""
-        link = link_el.text.strip() if link_el is not None and link_el.text else ""
-        desc = desc_el.text.strip() if desc_el is not None and desc_el.text else ""
-        pub_str = pub_el.text.strip() if pub_el is not None and pub_el.text else ""
+        title   = title_el.text.strip() if title_el is not None and title_el.text else ""
+        link    = link_el.text.strip()  if link_el  is not None and link_el.text  else ""
+        desc    = desc_el.text.strip()  if desc_el  is not None and desc_el.text  else ""
+        pub_str = pub_el.text.strip()   if pub_el   is not None and pub_el.text   else ""
 
+        # Strip HTML tags from description
+        desc = re.sub(r"<[^>]+>", "", desc)
         if len(desc) > 300:
             desc = desc[:297].rsplit(" ", 1)[0] + "…"
 
         pub_dt = parse_date(pub_str)
-        article = {
-            "title": title, "link": link, "description": desc,
-            "pub": pub_str, "pub_dt": pub_dt, "source": name,
-        }
 
         # Skip articles older than MAX_AGE_DAYS
         if pub_dt is not None and pub_dt.timestamp() < cutoff:
             continue
 
         if title and link:
-            articles.append(article)
+            articles.append({
+                "title": title, "link": link, "description": desc,
+                "pub": pub_str, "pub_dt": pub_dt, "source": name,
+            })
 
     return articles
 
@@ -88,7 +125,7 @@ def fetch_feed(name: str, url: str) -> list[dict]:
 def load_state() -> dict:
     if STATE_FILE.exists():
         return json.loads(STATE_FILE.read_text())
-    return {"seen_links": set(), "last_run": None}
+    return {"seen_links": [], "last_run": None}
 
 
 def save_state(state: dict):
@@ -99,31 +136,42 @@ def save_state(state: dict):
 
 
 def generate_post(edition: str, site_root: Path):
-    """Fetch feeds, filter new articles, build a Jekyll post."""
+    """Fetch feeds, filter + dedupe articles, build Jekyll post."""
     print(f"\n📰 Generating {edition} edition...")
     state = load_state()
-    seen = state["seen_links"]
-    all_new = []
+    seen_links = set(state["seen_links"])
+    seen_titles: set[str] = set()  # dedupe within this run
+    all_new: list[dict] = []
 
     for name, url in FEEDS.items():
-        print(f"  → Fetching {name}…")
+        print(f"  → {name}…")
         articles = fetch_feed(name, url)
-        new_articles = [a for a in articles if a["link"] not in seen]
-        print(f"    Found {len(articles)} recent, {len(new_articles)} new")
+
+        new_articles = []
+        for a in articles:
+            norm = normalize_title(a["title"])
+            # Skip if already seen by link (cross-edition dedup)
+            # or by normalized title (within-run dedup)
+            if a["link"] in seen_links:
+                continue
+            if norm in seen_titles:
+                continue
+            seen_titles.add(norm)
+            seen_links.add(a["link"])
+            new_articles.append(a)
+
+        print(f"    {len(articles)} fetched, {len(new_articles)} new")
         all_new.extend(new_articles)
 
     if not all_new:
         print("  ✗ No new articles, skipping edition.")
         return False
 
-    # Record these articles so we don't repeat them
-    for a in all_new:
-        seen.add(a["link"])
-    state["seen_links"] = seen
+    state["seen_links"] = list(seen_links)
     state["last_run"] = datetime.now(timezone.utc).isoformat()
     save_state(state)
 
-    # Sort: Gemini first, then OpenAI, alphabetically within
+    # Sort by source then title
     all_new.sort(key=lambda a: (a["source"], a["title"]))
 
     date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -131,6 +179,8 @@ def generate_post(edition: str, site_root: Path):
     filepath = site_root / "_posts" / filename
 
     header_date = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    num_sources = len(set(a["source"] for a in all_new))
+
     lines = [
         "---",
         "layout: post",
@@ -141,7 +191,7 @@ def generate_post(edition: str, site_root: Path):
         "",
         f"## 🤖 AI News — {edition} Edition · {header_date}",
         "",
-        "This digest aggregates the latest AI news from OpenAI, Google Gemini, and Anthropic.",
+        f"Scanning {len(FEEDS)} sources · {num_sources} accounts posted · {len(all_new)} items",
         "",
     ]
 
@@ -157,7 +207,7 @@ def generate_post(edition: str, site_root: Path):
         lines.append("")
 
     filepath.write_text("\n".join(lines), encoding="utf-8")
-    print(f"  ✓ Saved: {filepath}")
+    print(f"  ✓ Saved {len(all_new)} items → {filepath}")
     return True
 
 
@@ -166,7 +216,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 3:
         print("Usage: generate_news.py <edition> <site-root>")
         sys.exit(1)
-    edition = sys.argv[1]
+    edition  = sys.argv[1]
     site_root = Path(sys.argv[2]).resolve()
     success = generate_post(edition, site_root)
     sys.exit(0 if success else 1)
