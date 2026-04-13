@@ -12,6 +12,7 @@ from pathlib import Path
 FEEDS = {
     "OpenAI News": "https://openai.com/news/rss.xml",
     "Gemini News": "https://blog.google/products-and-platforms/products/gemini/rss/",
+    "Anthropic News": "https://nitter.net/AnthropicAI/rss",
 }
 
 STATE_FILE = Path(__file__).parent / ".news_state.json"
@@ -140,7 +141,7 @@ def generate_post(edition: str, site_root: Path):
         "",
         f"## 🤖 AI News — {edition} Edition · {header_date}",
         "",
-        "This digest aggregates the latest AI news from OpenAI and Google Gemini.",
+        "This digest aggregates the latest AI news from OpenAI, Google Gemini, and Anthropic.",
         "",
     ]
 
