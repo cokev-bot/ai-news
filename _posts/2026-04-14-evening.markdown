@@ -1,31 +1,24 @@
 ---
 layout: post
 title: "AI News Digest — Evening Edition"
-date: 2026-04-14 00:00:58 +0000
+date: 2026-04-14 02:46:02 +0000
 categories: news digest
 ---
 
-## 🤖 AI News — Evening Edition · 2026-04-14 00:00 UTC
+## 🤖 AI News — Evening Edition · 2026-04-14 02:46 UTC
 
-Scanning 20 sources · 19 accounts posted · 164 items
+Scanning 20 sources · 18 accounts posted · 159 items
 
 ### AnthropicAI
 
-**[Introducing Project Glasswing: an urgent initiative to help secure the world’s most critical software.
-
-It’s powered by our newest frontier model, Claude Mythos Preview, which can find software vulnerabilities better than all but the most skilled humans.
-https://anthropic.com/glasswing](https://nitter.net/AnthropicAI/status/2041578392852517128#m)**
+**[Introducing Project Glasswing: an urgent initiative to help secure the world’s most critical software\. It’s powered by our newest frontier model, Claude Mythos Preview, which can find software vulnerabilities better than all but the most skilled humans\. https://anthropic\.com/glasswing](https://nitter.net/AnthropicAI/status/2041578392852517128#m)**
 Introducing Project Glasswing: an urgent initiative to help secure the world’s most critical software.
 
 It’s powered by our newest frontier model, Claude Mythos Preview, which can find software vulnerabilities better than all but the most skilled humans.
 anthropic.com/glasswing
 
 
-**[New on the Engineering Blog: 
-
-Building Managed Agents—our hosted service for long-running agents—meant solving an old problem in computing: how to design a system for “programs as yet unthought of.”
-
-Read more: https://www.anthropic.com/engineering/managed-agents](https://nitter.net/AnthropicAI/status/2041929199976640948#m)**
+**[New on the Engineering Blog: Building Managed Agents—our hosted service for long\-running agents—meant solving an old problem in computing: how to design a system for “programs as yet unthought of\.” Read more: https://www\.anthropic\.com/engineering/managed\-agents](https://nitter.net/AnthropicAI/status/2041929199976640948#m)**
 New on the Engineering Blog: 
 
 Building Managed Agents—our hosted service for long-running agents—meant solving an old problem in computing: how to design a system for “programs as yet unthought of.”
@@ -33,66 +26,48 @@ Building Managed Agents—our hosted service for long-running agents—meant sol
 Read more: anthropic.com/engineering/ma…
 
 
-**[R to @AnthropicAI: Given the pace of AI progress, it won't be long before models this capable are widespread.
-
-But there are strong reasons for optimism: AI will also be invaluable for defensive work.](https://nitter.net/AnthropicAI/status/2041578407238996109#m)**
+**[R to @AnthropicAI: Given the pace of AI progress, it won't be long before models this capable are widespread\. But there are strong reasons for optimism: AI will also be invaluable for defensive work\.](https://nitter.net/AnthropicAI/status/2041578407238996109#m)**
 Given the pace of AI progress, it won't be long before models this capable are widespread.
 
 But there are strong reasons for optimism: AI will also be invaluable for defensive work.
 
-**[R to @AnthropicAI: Mythos Preview has already found thousands of high-severity vulnerabilities—including some in every major operating system and web browser.](https://nitter.net/AnthropicAI/status/2041578403686498506#m)**
+**[R to @AnthropicAI: Mythos Preview has already found thousands of high\-severity vulnerabilities—including some in every major operating system and web browser\.](https://nitter.net/AnthropicAI/status/2041578403686498506#m)**
 Mythos Preview has already found thousands of high-severity vulnerabilities—including some in every major operating system and web browser.
 
 Video
   
 
 
-**[R to @AnthropicAI: Project Glasswing is just a starting point.
-
-No organization can solve these cybersecurity problems alone: industry, open source, researchers, and governments all have essential roles to play.](https://nitter.net/AnthropicAI/status/2041578414482579912#m)**
+**[R to @AnthropicAI: Project Glasswing is just a starting point\. No organization can solve these cybersecurity problems alone: industry, open source, researchers, and governments all have essential roles to play\.](https://nitter.net/AnthropicAI/status/2041578414482579912#m)**
 Project Glasswing is just a starting point.
 
 No organization can solve these cybersecurity problems alone: industry, open source, researchers, and governments all have essential roles to play.
 
-**[R to @AnthropicAI: The Claude Mythos Preview system card is available here: https://anthropic.com/claude-mythos-preview-system-card](https://nitter.net/AnthropicAI/status/2041580670774923517#m)**
+**[R to @AnthropicAI: The Claude Mythos Preview system card is available here: https://anthropic\.com/claude\-mythos\-preview\-system\-card](https://nitter.net/AnthropicAI/status/2041580670774923517#m)**
 The Claude Mythos Preview system card is available here: anthropic.com/claude-mythos-…
 
-**[R to @AnthropicAI: We do not plan to make Mythos Preview generally available. Our goal is to deploy Mythos-class models safely at scale, but first we need safeguards that reliably block their most dangerous outputs.
-
-We’ll begin testing those safeguards with an upcoming Claude Opus model.](https://nitter.net/AnthropicAI/status/2041578409315189125#m)**
+**[R to @AnthropicAI: We do not plan to make Mythos Preview generally available\. Our goal is to deploy Mythos\-class models safely at scale, but first we need safeguards that reliably block their most dangerous outputs\. We’ll begin testing those safeguards with an upcoming Claude Opus model\.](https://nitter.net/AnthropicAI/status/2041578409315189125#m)**
 We do not plan to make Mythos Preview generally available. Our goal is to deploy Mythos-class models safely at scale, but first we need safeguards that reliably block their most dangerous outputs.
 
 We’ll begin testing those safeguards with an upcoming Claude Opus model.
 
-**[R to @AnthropicAI: We’re committing up to $100M in Mythos Preview usage credits for our partners and over 40 other organizations that maintain critical software, including open-source projects.
-
-Anthropic will report back what we learn.](https://nitter.net/AnthropicAI/status/2041578412653900255#m)**
+**[R to @AnthropicAI: We’re committing up to $100M in Mythos Preview usage credits for our partners and over 40 other organizations that maintain critical software, including open\-source projects\. Anthropic will report back what we learn\.](https://nitter.net/AnthropicAI/status/2041578412653900255#m)**
 We’re committing up to $100M in Mythos Preview usage credits for our partners and over 40 other organizations that maintain critical software, including open-source projects.
 
 Anthropic will report back what we learn.
 
-**[R to @AnthropicAI: We’ve partnered with Amazon Web Services, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, the Linux Foundation, Microsoft, NVIDIA, and Palo Alto Networks.
-
-Together we’ll use Mythos Preview to help find and fix flaws in the systems on which the world depends.](https://nitter.net/AnthropicAI/status/2041578395515953487#m)**
+**[R to @AnthropicAI: We’ve partnered with Amazon Web Services, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, the Linux Foundation, Microsoft, NVIDIA, and Palo Alto Networks\. Together we’ll use Mythos Preview to help find and fix flaws in the systems on which the world depends\.](https://nitter.net/AnthropicAI/status/2041578395515953487#m)**
 We’ve partnered with Amazon Web Services, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, the Linux Foundation, Microsoft, NVIDIA, and Palo Alto Networks.
 
 Together we’ll use Mythos Preview to help find and fix flaws in the systems on which the world depends.
 
 
-**[R to @AnthropicAI: You can read a detailed technical report on the software vulnerabilities and exploits discovered by Claude Mythos Preview here: https://red.anthropic.com/2026/mythos-preview](https://nitter.net/AnthropicAI/status/2041578416487489601#m)**
+**[R to @AnthropicAI: You can read a detailed technical report on the software vulnerabilities and exploits discovered by Claude Mythos Preview here: https://red\.anthropic\.com/2026/mythos\-preview](https://nitter.net/AnthropicAI/status/2041578416487489601#m)**
 You can read a detailed technical report on the software vulnerabilities and exploits discovered by Claude Mythos Preview here: red.anthropic.com/2026/mytho…
-
-### ChatGPTapp
-
-**[Millions of chats 🏀](https://nitter.net/ChatGPTapp/status/2041330936592454018#m)**
-Millions of chats 🏀
-
 
 ### DarioAmodei
 
-**[I’m proud that so many of the world’s leading companies have joined us for Project Glasswing to confront the cyber threat posed by increasingly capable AI systems head-on.
-
-https://x.com/AnthropicAI/status/2041578392852517128](https://nitter.net/DarioAmodei/status/2041580334693720511#m)**
+**[I’m proud that so many of the world’s leading companies have joined us for Project Glasswing to confront the cyber threat posed by increasingly capable AI systems head\-on\. https://x\.com/AnthropicAI/status/2041578392852517128](https://nitter.net/DarioAmodei/status/2041580334693720511#m)**
 I’m proud that so many of the world’s leading companies have joined us for Project Glasswing to confront the cyber threat posed by increasingly capable AI systems head-on.
 
 nitter.net/AnthropicAI/status/204…
@@ -102,19 +77,19 @@ Anthropic (@AnthropicAI)
 
 Introducing Project Glasswing: an urgent initiative to help…
 
-**[R to @DarioAmodei: Cyber is the first clear and present danger from frontier AI models, but it won’t be the last. If we are able to collectively rise to the challenge and confront this risk, it could serve as a blueprint for addressing the even more difficult challenges that lie ahead of us.](https://nitter.net/DarioAmodei/status/2041580343472337145#m)**
+**[R to @DarioAmodei: Cyber is the first clear and present danger from frontier AI models, but it won’t be the last\. If we are able to collectively rise to the challenge and confront this risk, it could serve as a blueprint for addressing the even more difficult challenges that lie ahead of us\.](https://nitter.net/DarioAmodei/status/2041580343472337145#m)**
 Cyber is the first clear and present danger from frontier AI models, but it won’t be the last. If we are able to collectively rise to the challenge and confront this risk, it could serve as a blueprint for addressing the even more difficult challenges that lie ahead of us.
 
-**[R to @DarioAmodei: Glasswing is just the first step: patching and securing the world’s software infrastructure will be the work of months and years, and will require even broader cooperation across AI companies, cyberdefenders, software providers, governments, and more.](https://nitter.net/DarioAmodei/status/2041580340032995821#m)**
+**[R to @DarioAmodei: Glasswing is just the first step: patching and securing the world’s software infrastructure will be the work of months and years, and will require even broader cooperation across AI companies, cyberdefenders, software providers, governments, and more\.](https://nitter.net/DarioAmodei/status/2041580340032995821#m)**
 Glasswing is just the first step: patching and securing the world’s software infrastructure will be the work of months and years, and will require even broader cooperation across AI companies, cyberdefenders, software providers, governments, and more.
 
-**[R to @DarioAmodei: Rather than release Mythos Preview to general availability, we’re giving defenders early controlled access in order to find and patch vulnerabilities before Mythos-class models proliferate across the ecosystem.](https://nitter.net/DarioAmodei/status/2041580338426585171#m)**
+**[R to @DarioAmodei: Rather than release Mythos Preview to general availability, we’re giving defenders early controlled access in order to find and patch vulnerabilities before Mythos\-class models proliferate across the ecosystem\.](https://nitter.net/DarioAmodei/status/2041580338426585171#m)**
 Rather than release Mythos Preview to general availability, we’re giving defenders early controlled access in order to find and patch vulnerabilities before Mythos-class models proliferate across the ecosystem.
 
-**[R to @DarioAmodei: The dangers of getting this wrong are obvious, but if we get it right, there is a real opportunity to create a fundamentally more secure internet and world than we had before the advent of AI-powered cyber capabilities.](https://nitter.net/DarioAmodei/status/2041580341794615631#m)**
+**[R to @DarioAmodei: The dangers of getting this wrong are obvious, but if we get it right, there is a real opportunity to create a fundamentally more secure internet and world than we had before the advent of AI\-powered cyber capabilities\.](https://nitter.net/DarioAmodei/status/2041580341794615631#m)**
 The dangers of getting this wrong are obvious, but if we get it right, there is a real opportunity to create a fundamentally more secure internet and world than we had before the advent of AI-powered cyber capabilities.
 
-**[R to @DarioAmodei: We’ve been tracking the increasing cyber capabilities of AI models for years, which arise as part of their general proficiency at coding. But our new model, Mythos Preview, represents a particularly large step up.](https://nitter.net/DarioAmodei/status/2041580336828568000#m)**
+**[R to @DarioAmodei: We’ve been tracking the increasing cyber capabilities of AI models for years, which arise as part of their general proficiency at coding\. But our new model, Mythos Preview, represents a particularly large step up\.](https://nitter.net/DarioAmodei/status/2041580336828568000#m)**
 We’ve been tracking the increasing cyber capabilities of AI models for years, which arise as part of their general proficiency at coding. But our new model, Mythos Preview, represents a particularly large step up.
 
 ### FT AI
@@ -128,7 +103,7 @@ Systems from Google, OpenAI, Anthropic and xAI struggle when asked to predict sc
 **[Anthropic closes in on OpenAI as US business use surges](https://www.ft.com/content/abb93a6f-9060-4095-8045-84b97d394a4c)**
 Divergence reflects company’s recent rapid growth owing to strong interest in its Claude Code products
 
-**[Asian start-ups evolve to reshape industries with AI](https://www.ft.com/content/2c8f4699-55e5-4cf6-a805-2e074ef7495e)**
+**[Asian start\-ups evolve to reshape industries with AI](https://www.ft.com/content/2c8f4699-55e5-4cf6-a805-2e074ef7495e)**
 Entrepreneurs focus on improving established sectors including logistics, manufacturing and healthcare
 
 **[Bain & Co vulnerability exposed by hacker a month after McKinsey](https://www.ft.com/content/e73ddecf-8c41-4ecb-ada3-77a163c8d69f)**
@@ -143,10 +118,10 @@ Muddy Waters founder says bets against US stocks will have ‘wind at their back
 **[China lures home its top AI talent from Silicon Valley](https://www.ft.com/content/b167c6d3-b982-482a-98c3-5303a7b80c6a)**
 Engineers and scientists return for better pay and quality of life as US grows more hostile
 
-**[China’s Alibaba shifts towards revenue over open-source AI](https://www.ft.com/content/b39da303-3188-447b-8b65-3dd8dad8b59a)**
+**[China’s Alibaba shifts towards revenue over open\-source AI](https://www.ft.com/content/b39da303-3188-447b-8b65-3dd8dad8b59a)**
 Move may affect a global developer community that relies on Qwen models from the Chinese company
 
-**[Clients’ barrage of AI-generated queries risks pushing up lawyers’ fees](https://www.ft.com/content/744d2c77-a34e-4ca0-9f0e-ce8cdcdee483)**
+**[Clients’ barrage of AI\-generated queries risks pushing up lawyers’ fees](https://www.ft.com/content/744d2c77-a34e-4ca0-9f0e-ce8cdcdee483)**
 Firms may raise prices for fixed-fee contracts if clients keep sending flurries of emails and letters
 
 **[Cyber security stocks fall on worries over Anthropic’s advanced AI tool](https://www.ft.com/content/f1205b22-ad87-43bb-bc63-da5b69a942ef)**
@@ -161,10 +136,10 @@ CEO is training and testing his own character as part of wider push to develop �
 **[Molotov cocktail thrown at home of OpenAI chief Sam Altman](https://www.ft.com/content/46ec2fa5-834d-4e49-81ef-6fb736b7e81d)**
 Suspect arrested outside AI start-up’s San Francisco headquarters after threatening to burn it down
 
-**[Robot-Proof — can the next generation keep a step ahead of the machines?](https://www.ft.com/content/2f1c72f1-e1bc-42b2-9b71-1cd6ad3a39d6)**
+**[Robot\-Proof — can the next generation keep a step ahead of the machines?](https://www.ft.com/content/2f1c72f1-e1bc-42b2-9b71-1cd6ad3a39d6)**
 Vivienne Ming argues for a change in how we prepare the young for a near-future dominated and ‘deprofessionalised’ by AI
 
-**[The AI build-out is powering global goods trade](https://www.ft.com/content/ad169119-4a62-437b-b6ec-70819b1e8b4f)**
+**[The AI build\-out is powering global goods trade](https://www.ft.com/content/ad169119-4a62-437b-b6ec-70819b1e8b4f)**
 Data centre boom is helping to mask the impact of Trump tariffs on US and world economy
 
 **[The less technically literate might be a touch concerned that your AI escaped](https://www.ft.com/content/75efd2ab-9576-42e7-a3f8-2fea6ba5958b)**
@@ -186,16 +161,7 @@ Evidence on white-collar work displacement is beginning to match the theory
 
 ### GeminiApp
 
-**[Get the most out of your Nano Banana generations by establishing the story, subject, and style.
-
-Try including...
-
-Subject: Who or what is in the image? (Ex: A fluffy calico cat)
-Composition: How is the shot framed? (Ex: Extreme close-up)
-Action: What is happening? (Ex: Brewing a cup of coffee)
-Location: Where does the scene take place? (Ex: A sunny meadow)
-Style: What is the overall aesthetic? (Ex: Watercolor painting)
-Editing Instructions: For modifying an existing image, be direct and specific. (Ex: Remove the car in the background)](https://nitter.net/GeminiApp/status/2043779910708408577#m)**
+**[Get the most out of your Nano Banana generations by establishing the story, subject, and style\. Try including\.\.\. Subject: Who or what is in the image? \(Ex: A fluffy calico cat\) Composition: How is the shot framed? \(Ex: Extreme close\-up\) Action: What is happening? \(Ex: Brewing a cup of coffee\) Location: Where does the scene take place? \(Ex: A sunny meadow\) Style: What is the overall aesthetic? \(Ex: Watercolor painting\) Editing Instructions: For modifying an existing image, be direct and specific\. \(Ex: Remove the car in the background\)](https://nitter.net/GeminiApp/status/2043779910708408577#m)**
 Get the most out of your Nano Banana generations by establishing the story, subject, and style.
 
 Try including...
@@ -204,21 +170,14 @@ Subject: Who or what is in the image? (Ex: A fluffy calico cat)
 Composition: How is the shot framed? (Ex: Extreme close-up)
 Action: What is happening? (Ex: Brewing a cup of…
 
-**[Pinned: Project organization is here: Introducing notebooks in Gemini.
-
-You can now keep multiple projects organized and even add past chats and relevant files as sources, so you have a dedicated space to focus on the task at hand.
-
-Select “New notebook” in the side panel to get started.](https://nitter.net/GeminiApp/status/2041983079787721013#m)**
+**[Pinned: Project organization is here: Introducing notebooks in Gemini\. You can now keep multiple projects organized and even add past chats and relevant files as sources, so you have a dedicated space to focus on the task at hand\. Select “New notebook” in the side panel to get started\.](https://nitter.net/GeminiApp/status/2041983079787721013#m)**
 Project organization is here: Introducing notebooks in Gemini.
 
 You can now keep multiple projects organized and even add past chats and relevant files as sources, so you have a dedicated space to focus on the task at hand.
 
 Select “New notebook” in the side panel to get started.
 
-**[R to @GeminiApp: Gemini 🤝 @NotebookLM
-
-Good news for NotebookLM users: Now you can access all your existing personal notebooks within Gemini too.
-https://x.com/NotebookLM/status/2041982449387810962](https://nitter.net/GeminiApp/status/2041983289062547772#m)**
+**[R to @GeminiApp: Gemini 🤝 @NotebookLM Good news for NotebookLM users: Now you can access all your existing personal notebooks within Gemini too\. https://x\.com/NotebookLM/status/2041982449387810962](https://nitter.net/GeminiApp/status/2041983289062547772#m)**
 Gemini 🤝 @NotebookLM
 
 Good news for NotebookLM users: Now you can access all your existing personal notebooks within Gemini too.
@@ -229,54 +188,32 @@ NotebookLM (@NotebookLM)
 
 Last year, we integrated into the @GeminiApp by allowing you to upload your notebooks as sources. Now,…
 
-**[R to @GeminiApp: Notebooks in Gemini are rolling out this week, starting with Google AI Ultra, Pro, and Plus subscribers on the web. In the coming weeks we'll expand access to mobile, more countries across Europe and to free users.
-
-For more information about notebooks in Gemini, check out our blog: http://goo.gle/4cyHt9m](https://nitter.net/GeminiApp/status/2041983287577735396#m)**
+**[R to @GeminiApp: Notebooks in Gemini are rolling out this week, starting with Google AI Ultra, Pro, and Plus subscribers on the web\. In the coming weeks we'll expand access to mobile, more countries across Europe and to free users\. For more information about notebooks in Gemini, check out our blog: http://goo\.gle/4cyHt9m](https://nitter.net/GeminiApp/status/2041983287577735396#m)**
 Notebooks in Gemini are rolling out this week, starting with Google AI Ultra, Pro, and Plus subscribers on the web. In the coming weeks we'll expand access to mobile, more countries across Europe and to free users.
 
 For more information about notebooks in Gemini, check out our blog: goo.gle/4cyHt9m
 
 
-**[R to @GeminiApp: Prompt guide courtesy of @GoogleDeepMind Product Manager @heyitsbeaaaaaaa
-
-Give these prompting elements a try in Nano Banana and share your results in the replies 👇](https://nitter.net/GeminiApp/status/2043779913724178839#m)**
+**[R to @GeminiApp: Prompt guide courtesy of @GoogleDeepMind Product Manager @heyitsbeaaaaaaa Give these prompting elements a try in Nano Banana and share your results in the replies 👇](https://nitter.net/GeminiApp/status/2043779913724178839#m)**
 Prompt guide courtesy of @GoogleDeepMind Product Manager @heyitsbeaaaaaaa
 
 Give these prompting elements a try in Nano Banana and share your results in the replies 👇
 
-**[R to @GeminiApp: Prompt: Charming 3D paper-cut illustration, smooth rounded shapes, minimal character features (dot eyes, blush cheeks), thick white sticker border around subjects, gentle pastel colors, soft even lighting, matte tactile art paper texture.](https://nitter.net/GeminiApp/status/2042635970353467690#m)**
+**[R to @GeminiApp: Prompt: Charming 3D paper\-cut illustration, smooth rounded shapes, minimal character features \(dot eyes, blush cheeks\), thick white sticker border around subjects, gentle pastel colors, soft even lighting, matte tactile art paper texture\.](https://nitter.net/GeminiApp/status/2042635970353467690#m)**
 Prompt: Charming 3D paper-cut illustration, smooth rounded shapes, minimal character features (dot eyes, blush cheeks), thick white sticker border around subjects, gentle pastel colors, soft even lighting, matte tactile art paper texture.
 
-**[R to @GeminiApp: To try it, head to http://gemini.google on web, and select “Pro” from the model picker, and ask Gemini to “show me” or “help me visualize” a complex concept so you can see for yourself.
-
-What’s the first prompt you’re going to visualize?](https://nitter.net/GeminiApp/status/2042278665397187011#m)**
+**[R to @GeminiApp: To try it, head to http://gemini\.google on web, and select “Pro” from the model picker, and ask Gemini to “show me” or “help me visualize” a complex concept so you can see for yourself\. What’s the first prompt you’re going to visualize?](https://nitter.net/GeminiApp/status/2042278665397187011#m)**
 To try it, head to gemini.google on web, and select “Pro” from the model picker, and ask Gemini to “show me” or “help me visualize” a complex concept so you can see for yourself.
 
 What’s the first prompt you’re going to visualize?
 
-**[R to @GeminiApp: While simple prompts still work, you can take it one step further with the following advanced elements:
-
-Composition and aspect ratio: Define the canvas. (Ex: 9:16 vertical poster)
-Camera and lighting details: Direct the shot like a cinematographer. (Ex: Golden hour backlighting creating long shadows)
-Specific text integration: Clearly state what text should appear and how it should look. (Ex: The headline 'URBAN EXPLORER' rendered in bold, white, sans-serif font at the top.)
-Factual constraints (for diagrams): Specify the need for accuracy and ensure your inputs themselves are factual. (Ex: “Ensure historical accuracy for the Victorian era.”
-Reference inputs: When using uploaded images, clearly define the role of each. (Ex: "Use Image A for the character's pose, Image B for the art style, and Image C for the background environment.")](https://nitter.net/GeminiApp/status/2043779912453239251#m)**
+**[R to @GeminiApp: While simple prompts still work, you can take it one step further with the following advanced elements: Composition and aspect ratio: Define the canvas\. \(Ex: 9:16 vertical poster\) Camera and lighting details: Direct the shot like a cinematographer\. \(Ex: Golden hour backlighting creating long shadows\) Specific text integration: Clearly state what text should appear and how it should look\. \(Ex: The headline 'URBAN EXPLORER' rendered in bold, white, sans\-serif font at the top\.\) Factual constraints \(for diagrams\): Specify the need for accuracy and ensure your inputs themselves are factual\. \(Ex: “Ensure historical accuracy for the Victorian era\.” Reference inputs: When using uploaded images, clearly define the role of each\. \(Ex: "Use Image A for the character's pose, Image B for the art style, and Image C for the background environment\."\)](https://nitter.net/GeminiApp/status/2043779912453239251#m)**
 While simple prompts still work, you can take it one step further with the following advanced elements:
 
 Composition and aspect ratio: Define the canvas. (Ex: 9:16 vertical poster)
 Camera and lighting details: Direct the shot like a cinematographer. (Ex: Golden hour backlighting creating long…
 
-**[RT by @GeminiApp: Create your first full song today. For free.
-
-In under 50 days, over 100 million songs have been generated on @GeminiApp. To celebrate, we’re unlocking the full power of our music model, Lyria 3.
-
-Here’s what you get starting today:
-🎵 Generate up to 5 full-length tracks every day (~3 mins each)
-🎵 Hit your limit? Keep creating 30-second clips, or upgrade for more
-
-Images, video, and now music.
-
-You have the ideas. Gemini has the tools. Start creating!](https://nitter.net/joshwoodward/status/2042318148851188151#m)**
+**[RT by @GeminiApp: Create your first full song today\. For free\. In under 50 days, over 100 million songs have been generated on @GeminiApp\. To celebrate, we’re unlocking the full power of our music model, Lyria 3\. Here’s what you get starting today: 🎵 Generate up to 5 full\-length tracks every day \(~3 mins each\) 🎵 Hit your limit? Keep creating 30\-second clips, or upgrade for more Images, video, and now music\. You have the ideas\. Gemini has the tools\. Start creating\!](https://nitter.net/joshwoodward/status/2042318148851188151#m)**
 Create your first full song today. For free.
 
 In under 50 days, over 100 million songs have been generated on @GeminiApp. To celebrate, we’re unlocking the full power of our music model, Lyria 3.
@@ -284,7 +221,7 @@ In under 50 days, over 100 million songs have been generated on @GeminiApp. To c
 Here’s what you get starting today:
 🎵 Generate up to 5 full-length tracks every day (~3 mins…
 
-**[RT by @GeminiApp: Expect even more creative model replies (like this) coming soon!](https://nitter.net/joshwoodward/status/2042291365107941669#m)**
+**[RT by @GeminiApp: Expect even more creative model replies \(like this\) coming soon\!](https://nitter.net/joshwoodward/status/2042291365107941669#m)**
 Expect even more creative model replies (like this) coming soon!
 
 
@@ -294,32 +231,13 @@ Gemini can now transform your questions and complex concepts into customizable i
 
 Adjust variables, rotate 3D models, and explore data for a more…
 
-**[RT by @GeminiApp: Google Gemini is my new personal trainer. The sessions it helps me with are next level! 
-
-It’s UNREAL!!!! 💥
-cc @GeminiApp](https://nitter.net/KP24/status/2041449558715302294#m)**
+**[RT by @GeminiApp: Google Gemini is my new personal trainer\. The sessions it helps me with are next level\! It’s UNREAL\!\!\!\! 💥 cc @GeminiApp](https://nitter.net/KP24/status/2041449558715302294#m)**
 Google Gemini is my new personal trainer. The sessions it helps me with are next level! 
 
 It’s UNREAL!!!! 💥
 cc @GeminiApp
 
-**[RT by @GeminiApp: Most Al chatbots give you basic "projects." Gemini just built you a second brain. 🧠
-
-Introducing Notebooks: some of the magic from @NotebookLM, integrated directly into @GeminiApp.
-
-Here's what changes for you today:
-
-📚 Upload 100 sources for free
-
-📂 Organize your chats - the wait is officially over :)
-
-🔄 Sources, chats, and emojis sync
-
-People are using Gemini and NotebookLM in tandem, and we'll keep building both.
-
-To manage capacity, we're rolling this out NOW on the web and going from Ultra ➡️ Pro ➡️ Plus ➡️ Free. (Mobile, EU, and Workspace are up next!)
-
-With Google I/O right around the corner, we are just getting started. Enjoy!](https://nitter.net/joshwoodward/status/2041982173402821018#m)**
+**[RT by @GeminiApp: Most Al chatbots give you basic "projects\." Gemini just built you a second brain\. 🧠 Introducing Notebooks: some of the magic from @NotebookLM, integrated directly into @GeminiApp\. Here's what changes for you today: 📚 Upload 100 sources for free 📂 Organize your chats \- the wait is officially over :\) 🔄 Sources, chats, and emojis sync People are using Gemini and NotebookLM in tandem, and we'll keep building both\. To manage capacity, we're rolling this out NOW on the web and going from Ultra ➡️ Pro ➡️ Plus ➡️ Free\. \(Mobile, EU, and Workspace are up next\!\) With Google I/O right around the corner, we are just getting started\. Enjoy\!](https://nitter.net/joshwoodward/status/2041982173402821018#m)**
 Most Al chatbots give you basic "projects." Gemini just built you a second brain. 🧠
 
 Introducing Notebooks: some of the magic from @NotebookLM, integrated directly into @GeminiApp.
@@ -330,16 +248,12 @@ Here's what changes for you today:
 
 📂 Organize your chats - the wait is officially…
 
-**[RT by @GeminiApp: Nothing quite like the blank pages of a fresh notebook!
-
-Notebooks are now rolling out in the @Geminiapp. Organize conversations, notes, and other sources related to a single project (and easily go back and forth between @NotebookLM to go deeper). Rolling out today, starting with Google AI Ultra, Pro + Plus subscribers on the web.](https://nitter.net/sundarpichai/status/2041993181345280218#m)**
+**[RT by @GeminiApp: Nothing quite like the blank pages of a fresh notebook\! Notebooks are now rolling out in the @Geminiapp\. Organize conversations, notes, and other sources related to a single project \(and easily go back and forth between @NotebookLM to go deeper\)\. Rolling out today, starting with Google AI Ultra, Pro \+ Plus subscribers on the web\.](https://nitter.net/sundarpichai/status/2041993181345280218#m)**
 Nothing quite like the blank pages of a fresh notebook!
 
 Notebooks are now rolling out in the @Geminiapp. Organize conversations, notes, and other sources related to a single project (and easily go back and forth between @NotebookLM to go deeper). Rolling out today, starting with Google AI…
 
-**[Rolling out today, you can create longer tracks in Gemini for FREE!
-
-Select “Create music” in the tools menu  and “Thinking” or “Pro” from the model picker. Give it a try, and share your creations in the replies. 👇](https://nitter.net/GeminiApp/status/2042316630253076945#m)**
+**[Rolling out today, you can create longer tracks in Gemini for FREE\! Select “Create music” in the tools menu and “Thinking” or “Pro” from the model picker\. Give it a try, and share your creations in the replies\. 👇](https://nitter.net/GeminiApp/status/2042316630253076945#m)**
 Rolling out today, you can create longer tracks in Gemini for FREE!
 
 Select “Create music” in the tools menu  and “Thinking” or “Pro” from the model picker. Give it a try, and share your creations in the replies. 👇
@@ -349,14 +263,7 @@ Google Gemini (@GeminiApp)
 
 Longer tracks are here with Lyria 3 Pro in…
 
-**[Your favorite pic, but make it paper ✂️
-
-Try it out in Gemini:
-1) Open Gemini on desktop or in the mobile app
-2) Select “Create image” in the tools menu
-3) Upload the picture you want to transform
-4) Insert the prompt from the next post
-5) Share your creations in the replies ↓](https://nitter.net/GeminiApp/status/2042635933367882196#m)**
+**[Your favorite pic, but make it paper ✂️ Try it out in Gemini: 1\) Open Gemini on desktop or in the mobile app 2\) Select “Create image” in the tools menu 3\) Upload the picture you want to transform 4\) Insert the prompt from the next post 5\) Share your creations in the replies ↓](https://nitter.net/GeminiApp/status/2042635933367882196#m)**
 Your favorite pic, but make it paper ✂️
 
 Try it out in Gemini:
@@ -369,9 +276,7 @@ Try it out in Gemini:
 
 ### GoogleAI
 
-**[Curious about vibe coding? Or are you already shipping apps and just want an easier way to explain your new favorite hobby to your friends, parents, grandparents, etc.? 
-
-Either way, this video is for you ⏯️⤵️](https://nitter.net/GoogleAI/status/2041637733634912321#m)**
+**[Curious about vibe coding? Or are you already shipping apps and just want an easier way to explain your new favorite hobby to your friends, parents, grandparents, etc\.? Either way, this video is for you ⏯️⤵️](https://nitter.net/GoogleAI/status/2041637733634912321#m)**
 Curious about vibe coding? Or are you already shipping apps and just want an easier way to explain your new favorite hobby to your friends, parents, grandparents, etc.? 
 
 Either way, this video is for you ⏯️⤵️
@@ -380,9 +285,7 @@ Video
   
 
 
-**[Got a doodle for your next project laying around? Turn it into working software using @GoogleAIStudio and Nano Banana.
-
-Watch us vibe code a weather-responsive outfit selector app from a single, hand-drawn sketch:](https://nitter.net/GoogleAI/status/2043765855314706899#m)**
+**[Got a doodle for your next project laying around? Turn it into working software using @GoogleAIStudio and Nano Banana\. Watch us vibe code a weather\-responsive outfit selector app from a single, hand\-drawn sketch:](https://nitter.net/GoogleAI/status/2043765855314706899#m)**
 Got a doodle for your next project laying around? Turn it into working software using @GoogleAIStudio and Nano Banana.
 
 Watch us vibe code a weather-responsive outfit selector app from a single, hand-drawn sketch:
@@ -391,9 +294,7 @@ Video
   
 
 
-**[R to @GoogleAI: A playable, digital piano built with Gemma 4 E2B (2B).
-
-https://x.com/0xCVYH/status/2039929097141318129?s=20](https://nitter.net/GoogleAI/status/2042627140101742686#m)**
+**[R to @GoogleAI: A playable, digital piano built with Gemma 4 E2B \(2B\)\. https://x\.com/0xCVYH/status/2039929097141318129?s=20](https://nitter.net/GoogleAI/status/2042627140101742686#m)**
 A playable, digital piano built with Gemma 4 E2B (2B).
 
 nitter.net/0xCVYH/status/20399290…
@@ -407,9 +308,7 @@ Um app Android onde voce importa skills e o Gemma 4 E2B (2B) roda localmente no 
 
 962 likes em…
 
-**[R to @GoogleAI: A prototype that turns everyday life into something like an adventure game. It’s built on a Pixel 10 Pro with Gemma 4 via AI Core.
-
-https://x.com/GOROman/status/2041109577790631975?s=20](https://nitter.net/GoogleAI/status/2042627135408378257#m)**
+**[R to @GoogleAI: A prototype that turns everyday life into something like an adventure game\. It’s built on a Pixel 10 Pro with Gemma 4 via AI Core\. https://x\.com/GOROman/status/2041109577790631975?s=20](https://nitter.net/GoogleAI/status/2042627135408378257#m)**
 A prototype that turns everyday life into something like an adventure game. It’s built on a Pixel 10 Pro with Gemma 4 via AI Core.
 
 nitter.net/GOROman/status/2041109…
@@ -430,9 +329,7 @@ Video
 
 —…
 
-**[R to @GoogleAI: An app built with Gemma-4-E4B that classifies images using the model’s vision capabilities.
-
-https://x.com/victormustar/status/2040711407902040128?s=20](https://nitter.net/GoogleAI/status/2042627137895559679#m)**
+**[R to @GoogleAI: An app built with Gemma\-4\-E4B that classifies images using the model’s vision capabilities\. https://x\.com/victormustar/status/2040711407902040128?s=20](https://nitter.net/GoogleAI/status/2042627137895559679#m)**
 An app built with Gemma-4-E4B that classifies images using the model’s vision capabilities.
 
 nitter.net/victormustar/status/20…
@@ -442,31 +339,25 @@ Victor M (@victormustar)
 
 Watch Gemma-4-E4B casually identify sea animals by classifying images in a single agentic session using its vision capabilities. (impressive…
 
-**[R to @GoogleAI: And if you'd rather watch on YouTube, here’s the link: https://www.youtube.com/watch?v=tYhgWRJeYzs](https://nitter.net/GoogleAI/status/2041637736382160925#m)**
+**[R to @GoogleAI: And if you'd rather watch on YouTube, here’s the link: https://www\.youtube\.com/watch?v=tYhgWRJeYzs](https://nitter.net/GoogleAI/status/2041637736382160925#m)**
 And if you'd rather watch on YouTube, here’s the link: piped.video/watch?v=tYhgWRJe…
 
 
-**[R to @GoogleAI: Prefer watching on @YouTube while scrolling through the comment section? We get it: http://youtu.be/b1Pvt072wKQ?si=NGPgm30ur1WFtKQS](https://nitter.net/GoogleAI/status/2043765857038577818#m)**
+**[R to @GoogleAI: Prefer watching on @YouTube while scrolling through the comment section? We get it: http://youtu\.be/b1Pvt072wKQ?si=NGPgm30ur1WFtKQS](https://nitter.net/GoogleAI/status/2043765857038577818#m)**
 Prefer watching on @YouTube while scrolling through the comment section? We get it: piped.video/b1Pvt072wKQ?si=NGPg…
 
 
-**[R to @GoogleAI: Share your Gemma 4 builds or the model variants you’re training in the replies below!](https://nitter.net/GoogleAI/status/2042627142018650162#m)**
+**[R to @GoogleAI: Share your Gemma 4 builds or the model variants you’re training in the replies below\!](https://nitter.net/GoogleAI/status/2042627142018650162#m)**
 Share your Gemma 4 builds or the model variants you’re training in the replies below!
 
-**[TGIF! Here are some of our favorite updates from the past week:
-
-— Notebooks in @GeminiApp, an integration with @NotebookLM that enables you to retrieve context from your private notebooks or convert your active chats into grounded sources for new research
-
-— The @GeminiApp on web now generates customizable interactive visualizations, including 2D and 3D models, directly in your chat to help you deconstruct complex concepts
-
-— The new AI-powered @GoogleFinance tool is shipping to 100+ countries, delivering market research, advanced charting, expanded real-time data, and more](https://nitter.net/GoogleAI/status/2042671003570983299#m)**
+**[TGIF\! Here are some of our favorite updates from the past week: — Notebooks in @GeminiApp, an integration with @NotebookLM that enables you to retrieve context from your private notebooks or convert your active chats into grounded sources for new research — The @GeminiApp on web now generates customizable interactive visualizations, including 2D and 3D models, directly in your chat to help you deconstruct complex concepts — The new AI\-powered @GoogleFinance tool is shipping to 100\+ countries, delivering market research, advanced charting, expanded real\-time data, and more](https://nitter.net/GoogleAI/status/2042671003570983299#m)**
 TGIF! Here are some of our favorite updates from the past week:
 
 — Notebooks in @GeminiApp, an integration with @NotebookLM that enables you to retrieve context from your private notebooks or convert your active chats into grounded sources for new research
 
 — The @GeminiApp on web now generates…
 
-**[We love seeing what you’ve built with Gemma 4, the open model family that we released last week. Here are a few fun examples, described by the builders in their own words (🧵):](https://nitter.net/GoogleAI/status/2042627133864915182#m)**
+**[We love seeing what you’ve built with Gemma 4, the open model family that we released last week\. Here are a few fun examples, described by the builders in their own words \(🧵\):](https://nitter.net/GoogleAI/status/2042627133864915182#m)**
 We love seeing what you’ve built with Gemma 4, the open model family that we released last week. Here are a few fun examples, described by the builders in their own words (🧵):
 
 ### GoogleAIStudio
@@ -474,11 +365,7 @@ We love seeing what you’ve built with Gemma 4, the open model family that we r
 **[What are you vibe coding this weekend?](https://nitter.net/GoogleAIStudio/status/2043081406482632969#m)**
 What are you vibe coding this weekend?
 
-**[the fastest path from prompt to production just got a whole lot smarter
-
-now supercharged with agentic reasoning over your entire stack by the @antigravity coding agent
-
-@DynamicWebPaige breaks down what's new ⬇️](https://nitter.net/GoogleAIStudio/status/2042311771185430958#m)**
+**[the fastest path from prompt to production just got a whole lot smarter now supercharged with agentic reasoning over your entire stack by the @antigravity coding agent @DynamicWebPaige breaks down what's new ⬇️](https://nitter.net/GoogleAIStudio/status/2042311771185430958#m)**
 the fastest path from prompt to production just got a whole lot smarter
 
 now supercharged with agentic reasoning over your entire stack by the @antigravity coding agent
@@ -489,9 +376,7 @@ Video
   
 
 
-**[writer's block happens to everyone, so we made the prompt box smarter.
-
-try tab tab tab to expand your ideas with ai studio.](https://nitter.net/GoogleAIStudio/status/2043749216040951970#m)**
+**[writer's block happens to everyone, so we made the prompt box smarter\. try tab tab tab to expand your ideas with ai studio\.](https://nitter.net/GoogleAIStudio/status/2043749216040951970#m)**
 writer's block happens to everyone, so we made the prompt box smarter.
 
 try tab tab tab to expand your ideas with ai studio.
@@ -502,18 +387,7 @@ Video
 
 ### MistralAI
 
-**[Pinned: Mistral’s AI Now Summit is coming to Paris on May 28 and tickets are live!
-
-What you’ll hear:
-📷 Technical deep dives to help you build and deploy AI.
-📷 Mistral’s founders on AI-driven transformation in large organizations, company trajectory, and upcoming releases.
-
-One day to leave with:
-✅ Hands-on techniques to deploy and scale AI
-✅ Practical insights on AI use cases
-✅ Connections with peers to help you build your own AI
-
-Get your pass now → https://ainowsummit.com](https://nitter.net/MistralAI/status/2042256228668276987#m)**
+**[Pinned: Mistral’s AI Now Summit is coming to Paris on May 28 and tickets are live\! What you’ll hear: 📷 Technical deep dives to help you build and deploy AI\. 📷 Mistral’s founders on AI\-driven transformation in large organizations, company trajectory, and upcoming releases\. One day to leave with: ✅ Hands\-on techniques to deploy and scale AI ✅ Practical insights on AI use cases ✅ Connections with peers to help you build your own AI Get your pass now → https://ainowsummit\.com](https://nitter.net/MistralAI/status/2042256228668276987#m)**
 Mistral’s AI Now Summit is coming to Paris on May 28 and tickets are live!
 
 What you’ll hear:
@@ -525,9 +399,7 @@ One day to leave with:
 
 ### MistralDevs
 
-**[Mistral OCR 3 now returns confidence scores, at page level or word level. Know exactly how sure the model is about what it extracted.
-
-Available now via API and to test in Mistral Studio.](https://nitter.net/MistralDevs/status/2042252886315266249#m)**
+**[Mistral OCR 3 now returns confidence scores, at page level or word level\. Know exactly how sure the model is about what it extracted\. Available now via API and to test in Mistral Studio\.](https://nitter.net/MistralDevs/status/2042252886315266249#m)**
 Mistral OCR 3 now returns confidence scores, at page level or word level. Know exactly how sure the model is about what it extracted.
 
 Available now via API and to test in Mistral Studio.
@@ -536,31 +408,31 @@ Video
   
 
 
-**[R to @MistralDevs: 🎮Try it here: https://console.mistral.ai/build/audio/speech-to-text](https://nitter.net/MistralDevs/status/2043760838729699411#m)**
+**[R to @MistralDevs: 🎮Try it here: https://console\.mistral\.ai/build/audio/speech\-to\-text](https://nitter.net/MistralDevs/status/2043760838729699411#m)**
 🎮Try it here: console.mistral.ai/build/aud…
 
-**[🎙️Choose your ideal voice and bring your text to life.](https://nitter.net/MistralDevs/status/2041541885731225808#m)**
+**[🎙️Choose your ideal voice and bring your text to life\.](https://nitter.net/MistralDevs/status/2041541885731225808#m)**
 🎙️Choose your ideal voice and bring your text to life.
 
 Video
   
 
 
-**[🎙️Record or upload your voice and generate realistic speech from audio references - controlling tone, rhythm, intonation, and emotional expression.](https://nitter.net/MistralDevs/status/2041978551306527111#m)**
+**[🎙️Record or upload your voice and generate realistic speech from audio references \- controlling tone, rhythm, intonation, and emotional expression\.](https://nitter.net/MistralDevs/status/2041978551306527111#m)**
 🎙️Record or upload your voice and generate realistic speech from audio references - controlling tone, rhythm, intonation, and emotional expression.
 
 Video
   
 
 
-**[🎙️Transcribe meetings, interviews, and more - with built-in speaker diarization and segmentation.](https://nitter.net/MistralDevs/status/2043760836116644134#m)**
+**[🎙️Transcribe meetings, interviews, and more \- with built\-in speaker diarization and segmentation\.](https://nitter.net/MistralDevs/status/2043760836116644134#m)**
 🎙️Transcribe meetings, interviews, and more - with built-in speaker diarization and segmentation.
 
 Video
   
 
 
-**[📄 Upload PDF files and extract clean, structured text data.](https://nitter.net/MistralDevs/status/2042637134469734535#m)**
+**[📄 Upload PDF files and extract clean, structured text data\.](https://nitter.net/MistralDevs/status/2042637134469734535#m)**
 📄 Upload PDF files and extract clean, structured text data.
 
 Video
@@ -569,13 +441,7 @@ Video
 
 ### NotebookLM
 
-**[Great news for students and educators! 
-
-If you’re on @GoogleforEdu Education Plus or the Teaching and Learning add-on, we’re bumping up your NotebookLM limits at no extra cost. Look for the new Plus badge next to your profile to unlock MORE:
-
-📓Notebooks & sources
-📰Quizzes & Flashcards
-📽️Video Overviews & Infographics](https://nitter.net/NotebookLM/status/2043732645428056304#m)**
+**[Great news for students and educators\! If you’re on @GoogleforEdu Education Plus or the Teaching and Learning add\-on, we’re bumping up your NotebookLM limits at no extra cost\. Look for the new Plus badge next to your profile to unlock MORE: 📓Notebooks & sources 📰Quizzes & Flashcards 📽️Video Overviews & Infographics](https://nitter.net/NotebookLM/status/2043732645428056304#m)**
 Great news for students and educators! 
 
 If you’re on @GoogleforEdu Education Plus or the Teaching and Learning add-on, we’re bumping up your NotebookLM limits at no extra cost. Look for the new Plus badge next to your profile to unlock MORE:
@@ -584,11 +450,7 @@ If you’re on @GoogleforEdu Education Plus or the Teaching and Learning add-on,
 📰Quizzes & Flashcards
 📽️Video…
 
-**[If you have a feature request or paper cut you want fixed, you just have to keep pushing our buttons.
-
-No... really: Introducing new buttons on the audio overview web player for skip and speed controls!
-
-We’re working through your wishlists, so keep those suggestions coming✨🫡](https://nitter.net/NotebookLM/status/2042300158290055189#m)**
+**[If you have a feature request or paper cut you want fixed, you just have to keep pushing our buttons\. No\.\.\. really: Introducing new buttons on the audio overview web player for skip and speed controls\! We’re working through your wishlists, so keep those suggestions coming✨🫡](https://nitter.net/NotebookLM/status/2042300158290055189#m)**
 If you have a feature request or paper cut you want fixed, you just have to keep pushing our buttons.
 
 No... really: Introducing new buttons on the audio overview web player for skip and speed controls!
@@ -596,9 +458,7 @@ No... really: Introducing new buttons on the audio overview web player for skip 
 We’re working through your wishlists, so keep those suggestions coming✨🫡
 
 
-**[Notebooks in Gemini is officially rolled out to all Ultra, Pro, and Plus users on web! 
-
-Have you uploaded a chat from Gemini as a source yet? What do you think?](https://nitter.net/NotebookLM/status/2042307147023990805#m)**
+**[Notebooks in Gemini is officially rolled out to all Ultra, Pro, and Plus users on web\! Have you uploaded a chat from Gemini as a source yet? What do you think?](https://nitter.net/NotebookLM/status/2042307147023990805#m)**
 Notebooks in Gemini is officially rolled out to all Ultra, Pro, and Plus users on web! 
 
 Have you uploaded a chat from Gemini as a source yet? What do you think?
@@ -608,14 +468,7 @@ NotebookLM (@NotebookLM)
 
 Last year, we integrated into the @GeminiApp by allowing you to upload your notebooks as sources. Now,…
 
-**[Pinned: Last year, we integrated into the @GeminiApp by allowing you to upload your notebooks as sources. Now, we’re taking our relationship to the next level 🏠 ♥️
-
-Starting today, you can now:
-
-— Access all of your personal, unshared notebooks directly inside the Gemini App
-— Use your chats with Gemini as sources in new or existing unshared notebooks
-
-We're rolling out notebooks in Gemini today, starting with Google AI Ultra, Pro, and Plus subscribers on the web. In the coming weeks, we'll expand access to mobile, more countries across Europe, and to free users.](https://nitter.net/NotebookLM/status/2041982449387810962#m)**
+**[Pinned: Last year, we integrated into the @GeminiApp by allowing you to upload your notebooks as sources\. Now, we’re taking our relationship to the next level 🏠 ♥️ Starting today, you can now: — Access all of your personal, unshared notebooks directly inside the Gemini App — Use your chats with Gemini as sources in new or existing unshared notebooks We're rolling out notebooks in Gemini today, starting with Google AI Ultra, Pro, and Plus subscribers on the web\. In the coming weeks, we'll expand access to mobile, more countries across Europe, and to free users\.](https://nitter.net/NotebookLM/status/2041982449387810962#m)**
 Last year, we integrated into the @GeminiApp by allowing you to upload your notebooks as sources. Now, we’re taking our relationship to the next level 🏠 ♥️
 
 Starting today, you can now:
@@ -623,15 +476,14 @@ Starting today, you can now:
 — Access all of your personal, unshared notebooks directly inside the Gemini App
 — Use your chats with Gemini…
 
-**[R to @NotebookLM: Read all about it here:
-https://workspaceupdates.googleblog.com/2026/04/expanded-notebooklm-capabilities-for-Education-Plus-and-Teaching-and-Learning-add-on-customers.html](https://nitter.net/NotebookLM/status/2043732797618303089#m)**
+**[R to @NotebookLM: Read all about it here: https://workspaceupdates\.googleblog\.com/2026/04/expanded\-notebooklm\-capabilities\-for\-Education\-Plus\-and\-Teaching\-and\-Learning\-add\-on\-customers\.html](https://nitter.net/NotebookLM/status/2043732797618303089#m)**
 Read all about it here:
 workspaceupdates.googleblog.…
 
 
 ### OpenAI
 
-**[Our existing $200 Pro tier still remains our highest usage option. And as a thank you to our existing Pro users on the $200 tier, we’re extending our 2x Codex usage promo (until May 31st) and we’ve reset your Codex rate limits (yes, again).](https://nitter.net/OpenAI/status/2042296046009626989#m)**
+**[Our existing $200 Pro tier still remains our highest usage option\. And as a thank you to our existing Pro users on the $200 tier, we’re extending our 2x Codex usage promo \(until May 31st\) and we’ve reset your Codex rate limits \(yes, again\)\.](https://nitter.net/OpenAI/status/2042296046009626989#m)**
 Our existing $200 Pro tier still remains our highest usage option. And as a thank you to our existing Pro users on the $200 tier, we’re extending our 2x Codex usage promo (until May 31st) and we’ve reset your Codex rate limits (yes, again).
 
 
@@ -639,63 +491,40 @@ OpenAI (@OpenAI)
 
 We’re updating our ChatGPT Pro and…
 
-**[R to @OpenAI: The Codex promotion for existing Plus subscribers ends today and as a part of this, we’re rebalancing Codex usage in Plus to support more sessions throughout the week, rather than longer sessions in a single day.
-
-The Plus plan will continue to be the best offer at $20 for steady, day-to-day usage of Codex, and the new $100 Pro tier offers a more accessible upgrade path for heavier daily use.](https://nitter.net/OpenAI/status/2042295690382995789#m)**
+**[R to @OpenAI: The Codex promotion for existing Plus subscribers ends today and as a part of this, we’re rebalancing Codex usage in Plus to support more sessions throughout the week, rather than longer sessions in a single day\. The Plus plan will continue to be the best offer at $20 for steady, day\-to\-day usage of Codex, and the new $100 Pro tier offers a more accessible upgrade path for heavier daily use\.](https://nitter.net/OpenAI/status/2042295690382995789#m)**
 The Codex promotion for existing Plus subscribers ends today and as a part of this, we’re rebalancing Codex usage in Plus to support more sessions throughout the week, rather than longer sessions in a single day.
 
 The Plus plan will continue to be the best offer at $20 for steady, day-to-day…
 
-**[R to @OpenAI: The security and privacy of your information are a top priority. We’re committed to being transparent and taking quick action when issues arise. We're sharing more technical details and FAQs here: https://openai.com/index/axios-developer-tool-compromise/](https://nitter.net/OpenAI/status/2042780059363336237#m)**
+**[R to @OpenAI: The security and privacy of your information are a top priority\. We’re committed to being transparent and taking quick action when issues arise\. We're sharing more technical details and FAQs here: https://openai\.com/index/axios\-developer\-tool\-compromise/](https://nitter.net/OpenAI/status/2042780059363336237#m)**
 The security and privacy of your information are a top priority. We’re committed to being transparent and taking quick action when issues arise. We're sharing more technical details and FAQs here: openai.com/index/axios-devel…
 
 
-**[R to @OpenAI: 🔗 Atlas: https://chatgpt.com/atlas](https://nitter.net/OpenAI/status/2042780058075672703#m)**
+**[R to @OpenAI: 🔗 Atlas: https://chatgpt\.com/atlas](https://nitter.net/OpenAI/status/2042780058075672703#m)**
 🔗 Atlas: chatgpt.com/atlas
 
-**[RT by @OpenAI: Hi! Getting a lot of questions on Pro plan rate limits, so I wanted to clarify a few things:
-
-- Your Pro $100 plan includes at least 10x Plus usage, till May 31 with the 2X usage boost.
-- Your Pro $200 plan includes at least 20x Plus usage, till May 31 with the 2X usage boost. This is also the SAME usage this plan had since the 2x promo in February; we previously didn't document this explicitly.
-
-Now to address the confusion. Our pricing page says "5x or 20x usage", and many of you very understandably took it to mean "10x and 40x" given then 2X usage boost.  That's our fault. We mixed up two things in a confusing way on that page - (1) sharing that the Pro $100 launched with a 2x boost, making it 10x Plus till May 31 and (2) sharing that Pro $200 retained its 2x boost and sharing for the first time that this equates to 20x Plus.
-
-We're going to update our pricing pages to make this clearer. Sorry it wasn't as clear as it should have in the first place.🫥](https://nitter.net/thsottiaux/status/2043075353242218768#m)**
+**[RT by @OpenAI: Hi\! Getting a lot of questions on Pro plan rate limits, so I wanted to clarify a few things: \- Your Pro $100 plan includes at least 10x Plus usage, till May 31 with the 2X usage boost\. \- Your Pro $200 plan includes at least 20x Plus usage, till May 31 with the 2X usage boost\. This is also the SAME usage this plan had since the 2x promo in February; we previously didn't document this explicitly\. Now to address the confusion\. Our pricing page says "5x or 20x usage", and many of you very understandably took it to mean "10x and 40x" given then 2X usage boost\. That's our fault\. We mixed up two things in a confusing way on that page \- \(1\) sharing that the Pro $100 launched with a 2x boost, making it 10x Plus till May 31 and \(2\) sharing that Pro $200 retained its 2x boost and sharing for the first time that this equates to 20x Plus\. We're going to update our pricing pages to make this clearer\. Sorry it wasn't as clear as it should have in the first place\.🫥](https://nitter.net/thsottiaux/status/2043075353242218768#m)**
 Hi! Getting a lot of questions on Pro plan rate limits, so I wanted to clarify a few things:
 
 - Your Pro $100 plan includes at least 10x Plus usage, till May 31 with the 2X usage boost.
 - Your Pro $200 plan includes at least 20x Plus usage, till May 31 with the 2X usage boost. This is also the…
 
-**[RT by @OpenAI: Three million people are now using Codex weekly - up from two million a little under a month ago. Incredible to see the growth. Thank you to all of you and to the ecosystem we’re part of. To celebrate, we’re resetting rate limits so you can keep building, and we’ll reset them every additional 1M users until we reach 10M, so we can keep celebrating along the way.
-
-Enjoy and thank you!](https://nitter.net/thsottiaux/status/2041655710346572085#m)**
+**[RT by @OpenAI: Three million people are now using Codex weekly \- up from two million a little under a month ago\. Incredible to see the growth\. Thank you to all of you and to the ecosystem we’re part of\. To celebrate, we’re resetting rate limits so you can keep building, and we’ll reset them every additional 1M users until we reach 10M, so we can keep celebrating along the way\. Enjoy and thank you\!](https://nitter.net/thsottiaux/status/2041655710346572085#m)**
 Three million people are now using Codex weekly - up from two million a little under a month ago. Incredible to see the growth. Thank you to all of you and to the ecosystem we’re part of. To celebrate, we’re resetting rate limits so you can keep building, and we’ll reset them every additional 1M…
 
-**[RT by @OpenAI: 💥 New in Prism today: Paper Review, an AI workflow for reviewing technical and scientific papers. 
-
-This is the opposite of AI slop: we're using AI to improve scientific rigor, correctness, and reproducibility.](https://nitter.net/kevinweil/status/2041573799775367525#m)**
+**[RT by @OpenAI: 💥 New in Prism today: Paper Review, an AI workflow for reviewing technical and scientific papers\. This is the opposite of AI slop: we're using AI to improve scientific rigor, correctness, and reproducibility\.](https://nitter.net/kevinweil/status/2041573799775367525#m)**
 💥 New in Prism today: Paper Review, an AI workflow for reviewing technical and scientific papers. 
 
 This is the opposite of AI slop: we're using AI to improve scientific rigor, correctness, and reproducibility.
 
   
 
-**[We recently identified a security issue involving the third-party developer library Axios that was part of a broader industry incident. We found no evidence that OpenAI user data was accessed, that our systems were compromised, or that our software was altered.
-
-Out of an abundance of caution we are taking steps to protect the process that certifies our macOS applications are legitimate OpenAI apps.
-
-We are updating our security certifications, which will require all macOS users to update their OpenAI apps to the latest versions. This helps prevent any risk—however unlikely—of someone attempting to distribute a fake app that appears to be from OpenAI. You can update safely through an in-app update or at the official links below. 🧵](https://nitter.net/OpenAI/status/2042780052669239782#m)**
+**[We recently identified a security issue involving the third\-party developer library Axios that was part of a broader industry incident\. We found no evidence that OpenAI user data was accessed, that our systems were compromised, or that our software was altered\. Out of an abundance of caution we are taking steps to protect the process that certifies our macOS applications are legitimate OpenAI apps\. We are updating our security certifications, which will require all macOS users to update their OpenAI apps to the latest versions\. This helps prevent any risk—however unlikely—of someone attempting to distribute a fake app that appears to be from OpenAI\. You can update safely through an in\-app update or at the official links below\. 🧵](https://nitter.net/OpenAI/status/2042780052669239782#m)**
 We recently identified a security issue involving the third-party developer library Axios that was part of a broader industry incident. We found no evidence that OpenAI user data was accessed, that our systems were compromised, or that our software was altered.
 
 Out of an abundance of caution we…
 
-**[We’re updating our ChatGPT Pro and Plus subscriptions to better support the growing use of Codex.
-
-We’re introducing a new $100/month Pro tier. This new tier offers 5x more Codex usage than Plus and is best for longer, high-effort Codex sessions. 
-
-In ChatGPT, this new Pro tier still offers access to all Pro features, including the exclusive Pro model and unlimited access to Instant and Thinking models.
-
-To celebrate the launch, we’re increasing Codex usage for a limited time through May 31st so that Pro $100 subscribers get up to 10x usage of ChatGPT Plus on Codex to build your most ambitious ideas.](https://nitter.net/OpenAI/status/2042295688323875316#m)**
+**[We’re updating our ChatGPT Pro and Plus subscriptions to better support the growing use of Codex\. We’re introducing a new $100/month Pro tier\. This new tier offers 5x more Codex usage than Plus and is best for longer, high\-effort Codex sessions\. In ChatGPT, this new Pro tier still offers access to all Pro features, including the exclusive Pro model and unlimited access to Instant and Thinking models\. To celebrate the launch, we’re increasing Codex usage for a limited time through May 31st so that Pro $100 subscribers get up to 10x usage of ChatGPT Plus on Codex to build your most ambitious ideas\.](https://nitter.net/OpenAI/status/2042295688323875316#m)**
 We’re updating our ChatGPT Pro and Plus subscriptions to better support the growing use of Codex.
 
 We’re introducing a new $100/month Pro tier. This new tier offers 5x more Codex usage than Plus and is best for longer, high-effort Codex sessions. 
@@ -718,16 +547,7 @@ x.com/i/article/204150862780…
 
 
 
-**[Builders Unscripted with @ashebytes
-
-Ashe talked to @romainhuet about moving fast with Codex and why AI should make us more present and connected.
-
-Timestamps:
-
-00:10 Early agents and Hearth AI
-05:43 AI and human connection
-08:44 Build in public
-12:17 Ashe’s agentic workflow](https://nitter.net/OpenAIDevs/status/2042657797419262175#m)**
+**[Builders Unscripted with @ashebytes Ashe talked to @romainhuet about moving fast with Codex and why AI should make us more present and connected\. Timestamps: 00:10 Early agents and Hearth AI 05:43 AI and human connection 08:44 Build in public 12:17 Ashe’s agentic workflow](https://nitter.net/OpenAIDevs/status/2042657797419262175#m)**
 Builders Unscripted with @ashebytes
 
 Ashe talked to @romainhuet about moving fast with Codex and why AI should make us more present and connected.
@@ -743,16 +563,14 @@ Video
   
 
 
-**[Codex brings your work context together so you can make better decisions with clearer priorities.](https://nitter.net/OpenAIDevs/status/2041983360780939416#m)**
+**[Codex brings your work context together so you can make better decisions with clearer priorities\.](https://nitter.net/OpenAIDevs/status/2041983360780939416#m)**
 Codex brings your work context together so you can make better decisions with clearer priorities.
 
 Video
   
 
 
-**[Pinned: Codex helps you turn requirements into working prototypes faster.
-
-@eh_dubb shared how that makes quarterly planning more concrete and collaborative.](https://nitter.net/OpenAIDevs/status/2043452326166528239#m)**
+**[Pinned: Codex helps you turn requirements into working prototypes faster\. @eh\\_dubb shared how that makes quarterly planning more concrete and collaborative\.](https://nitter.net/OpenAIDevs/status/2043452326166528239#m)**
 Codex helps you turn requirements into working prototypes faster.
 
 @eh_dubb shared how that makes quarterly planning more concrete and collaborative.
@@ -761,16 +579,7 @@ Video
   
 
 
-**[R to @OpenAIDevs: Need one of the older models after the deprecation? Use Codex with your own API key.
-
-After April 14, Codex with ChatGPT sign-in will support these models:
-• gpt-5.4
-• gpt-5.4-mini
-• gpt-5.3-codex
-• gpt-5.3-codex-spark (Pro only)
-• gpt-5.2
-
-https://github.com/openai/codex/discussions/17038](https://nitter.net/OpenAIDevs/status/2041611001410593163#m)**
+**[R to @OpenAIDevs: Need one of the older models after the deprecation? Use Codex with your own API key\. After April 14, Codex with ChatGPT sign\-in will support these models: • gpt\-5\.4 • gpt\-5\.4\-mini • gpt\-5\.3\-codex • gpt\-5\.3\-codex\-spark \(Pro only\) • gpt\-5\.2 https://github\.com/openai/codex/discussions/17038](https://nitter.net/OpenAIDevs/status/2041611001410593163#m)**
 Need one of the older models after the deprecation? Use Codex with your own API key.
 
 After April 14, Codex with ChatGPT sign-in will support these models:
@@ -783,9 +592,7 @@ After April 14, Codex with ChatGPT sign-in will support these models:
 github.com/openai/codex/disc…
 
 
-**[RT by @OpenAIDevs: Get started with Plugins. 
-
-The right plugins can be a big unlock outside of code.](https://nitter.net/PaulSolt/status/2041352499987149045#m)**
+**[RT by @OpenAIDevs: Get started with Plugins\. The right plugins can be a big unlock outside of code\.](https://nitter.net/PaulSolt/status/2041352499987149045#m)**
 Get started with Plugins. 
 
 The right plugins can be a big unlock outside of code.
@@ -794,26 +601,7 @@ Video
   
 
 
-**[RT by @OpenAIDevs: Here’s how we use Codex to:
-
-> understand large codebases
-> review PRs faster
-> build macOS apps
-> turn Figma into code
-> automate bug triage
-> create a CLI as agent tools
-> analyze datasets
-> generate slide decks
-> coordinate new-hire onboarding
-> learn a new concept
-
-…and more.
-
-https://developers.openai.com/codex/use-cases
-
-@kagigz , @Dimillian , @nickbaumann_  and team pulled together a great collection of Codex use cases, and based on how engineering *AND* non-engineering teams build with Codex daily at OpenAI.
-
-What else should we cover?](https://nitter.net/gabrielchua/status/2043339151278506234#m)**
+**[RT by @OpenAIDevs: Here’s how we use Codex to: > understand large codebases > review PRs faster > build macOS apps > turn Figma into code > automate bug triage > create a CLI as agent tools > analyze datasets > generate slide decks > coordinate new\-hire onboarding > learn a new concept …and more\. https://developers\.openai\.com/codex/use\-cases @kagigz , @Dimillian , @nickbaumann\\_ and team pulled together a great collection of Codex use cases, and based on how engineering \\*AND\\* non\-engineering teams build with Codex daily at OpenAI\. What else should we cover?](https://nitter.net/gabrielchua/status/2043339151278506234#m)**
 Here’s how we use Codex to:
 
 &gt; understand large codebases
@@ -827,9 +615,7 @@ Here’s how we use Codex to:
 &gt; coordinate new-hire onboarding
 &gt; learn a new…
 
-**[RT by @OpenAIDevs: Just switched my lobstar to use codex instead of claude.
-
-openclaw models auth login --provider openai-codex --set-default](https://nitter.net/pashmerepat/status/2041595218462662694#m)**
+**[RT by @OpenAIDevs: Just switched my lobstar to use codex instead of claude\. openclaw models auth login \-\-provider openai\-codex \-\-set\-default](https://nitter.net/pashmerepat/status/2041595218462662694#m)**
 Just switched my lobstar to use codex instead of claude.
 
 openclaw models auth login --provider openai-codex --set-default
@@ -838,13 +624,7 @@ Video
   
 
 
-**[RT by @OpenAIDevs: Really loved this conversation with @ashebytes.
-
-Ashe is one of the most original and creative builders in the community.
-
-We talked about building in public, relational intelligence, second brains, and how you can just build things with Codex.
-
-Full episode out later this week!](https://nitter.net/romainhuet/status/2041558953554014494#m)**
+**[RT by @OpenAIDevs: Really loved this conversation with @ashebytes\. Ashe is one of the most original and creative builders in the community\. We talked about building in public, relational intelligence, second brains, and how you can just build things with Codex\. Full episode out later this week\!](https://nitter.net/romainhuet/status/2041558953554014494#m)**
 Really loved this conversation with @ashebytes.
 
 Ashe is one of the most original and creative builders in the community.
@@ -857,11 +637,7 @@ Video
   
 
 
-**[RT by @OpenAIDevs: We recorded a Web Dev Challenge with three teams building apps with Codex in 4 hours! 🎬
-
-Loved the creative energy in the room and how much they were able to create in such a short time. Way more than would have felt possible not long ago.
-
-With Codex, you can just build things!](https://nitter.net/romainhuet/status/2042441644428181990#m)**
+**[RT by @OpenAIDevs: We recorded a Web Dev Challenge with three teams building apps with Codex in 4 hours\! 🎬 Loved the creative energy in the room and how much they were able to create in such a short time\. Way more than would have felt possible not long ago\. With Codex, you can just build things\!](https://nitter.net/romainhuet/status/2042441644428181990#m)**
 We recorded a Web Dev Challenge with three teams building apps with Codex in 4 hours! 🎬
 
 Loved the creative energy in the room and how much they were able to create in such a short time. Way more than would have felt possible not long ago.
@@ -875,9 +651,7 @@ With Codex, you can just build things!
 
 
 
-**[RT by @OpenAIDevs: We talk a lot about Codex for coding. But it’s actually useful for way more than that.
-
-Here are 3 ways I’ve been using it ⬇️](https://nitter.net/kagigz/status/2042666850559893682#m)**
+**[RT by @OpenAIDevs: We talk a lot about Codex for coding\. But it’s actually useful for way more than that\. Here are 3 ways I’ve been using it ⬇️](https://nitter.net/kagigz/status/2042666850559893682#m)**
 We talk a lot about Codex for coding. But it’s actually useful for way more than that.
 
 Here are 3 ways I’ve been using it ⬇️
@@ -886,16 +660,10 @@ Video
   
 
 
-**[RT by @OpenAIDevs: x.com/i/article/204269421766…](https://nitter.net/nickbaumann_/status/2042705384306336083#m)**
+**[RT by @OpenAIDevs: x\.com/i/article/204269421766…](https://nitter.net/nickbaumann_/status/2042705384306336083#m)**
 x.com/i/article/204269421766…
 
-**[RT by @OpenAIDevs: 💡 Codex Tip 
-
-Create a local environment to have Codex auto install dependencies for your worktrees and create actions for quick access to common commands.  
-
-Actions get executed in your integrated terminal so Codex can also access the terminal output.  
-
-For iOS developers check out the iOS plugin that automatically sets up your actions to build and run your app!](https://nitter.net/dkundel/status/2041939304751231147#m)**
+**[RT by @OpenAIDevs: 💡 Codex Tip Create a local environment to have Codex auto install dependencies for your worktrees and create actions for quick access to common commands\. Actions get executed in your integrated terminal so Codex can also access the terminal output\. For iOS developers check out the iOS plugin that automatically sets up your actions to build and run your app\!](https://nitter.net/dkundel/status/2041939304751231147#m)**
 💡 Codex Tip 
 
 Create a local environment to have Codex auto install dependencies for your worktrees and create actions for quick access to common commands.  
@@ -904,14 +672,7 @@ Actions get executed in your integrated terminal so Codex can also access the te
 
 For iOS developers check out the iOS…
 
-**[We’re retiring older models in Codex when you sign in to Codex with your ChatGPT account on April 14:
-
-• gpt-5.2-codex
-• gpt-5.1-codex-mini
-• gpt-5.1-codex-max
-• gpt-5.1-codex
-• gpt-5.1
-• gpt-5](https://nitter.net/OpenAIDevs/status/2041610989607727164#m)**
+**[We’re retiring older models in Codex when you sign in to Codex with your ChatGPT account on April 14: • gpt\-5\.2\-codex • gpt\-5\.1\-codex\-mini • gpt\-5\.1\-codex\-max • gpt\-5\.1\-codex • gpt\-5\.1 • gpt\-5](https://nitter.net/OpenAIDevs/status/2041610989607727164#m)**
 We’re retiring older models in Codex when you sign in to Codex with your ChatGPT account on April 14:
 
 • gpt-5.2-codex
@@ -923,19 +684,17 @@ We’re retiring older models in Codex when you sign in to Codex with your ChatG
 
 ### OpenAINewsroom
 
-**[90 days in and 400+ customer meetings later, Chief Revenue Officer Denise Dresser shares what she’s learned since starting at OpenAI and what it means for our enterprise strategy. https://openai.com/index/next-phase-of-enterprise-ai/](https://nitter.net/OpenAINewsroom/status/2042270154701361161#m)**
+**[90 days in and 400\+ customer meetings later, Chief Revenue Officer Denise Dresser shares what she’s learned since starting at OpenAI and what it means for our enterprise strategy\. https://openai\.com/index/next\-phase\-of\-enterprise\-ai/](https://nitter.net/OpenAINewsroom/status/2042270154701361161#m)**
 90 days in and 400+ customer meetings later, Chief Revenue Officer Denise Dresser shares what she’s learned since starting at OpenAI and what it means for our enterprise strategy. openai.com/index/next-phase-…
 
 Video
   
 
 
-**[Compute powers every layer of AI, and the investments we’ve made mean we can run more promising research experiments, train more capable models, and support broader access. @merettm talks about our progress building an automated AI researcher and what’s ahead as AI can take on harder and harder problems.](https://nitter.net/OpenAINewsroom/status/2042386846764974528#m)**
+**[Compute powers every layer of AI, and the investments we’ve made mean we can run more promising research experiments, train more capable models, and support broader access\. @merettm talks about our progress building an automated AI researcher and what’s ahead as AI can take on harder and harder problems\.](https://nitter.net/OpenAINewsroom/status/2042386846764974528#m)**
 Compute powers every layer of AI, and the investments we’ve made mean we can run more promising research experiments, train more capable models, and support broader access. @merettm talks about our progress building an automated AI researcher and what’s ahead as AI can take on harder and harder…
 
-**[Sam Altman on why this moment reminds him of early 2020. 
-
-Full conversation at https://forum.openai.com/public/videos/event-replay-sam-altman-on-building-the-future-of-ai-2026-04-06](https://nitter.net/OpenAINewsroom/status/2041618671236469200#m)**
+**[Sam Altman on why this moment reminds him of early 2020\. Full conversation at https://forum\.openai\.com/public/videos/event\-replay\-sam\-altman\-on\-building\-the\-future\-of\-ai\-2026\-04\-06](https://nitter.net/OpenAINewsroom/status/2041618671236469200#m)**
 Sam Altman on why this moment reminds him of early 2020. 
 
 Full conversation at forum.openai.com/public/vide…
@@ -944,28 +703,20 @@ Video
   
 
 
-**[Today we’re sharing recommendations to strengthen U.S. child protection in the age of AI. This policy blueprint was developed with input from leaders including >@NCMEC, @AGAlliance1, @NCAGO, @UtahAG, and @thorn and focuses on 3 priorities: 
-
-📜modernizing laws
-⚠️improving reporting  & coordination
-🛡️GenAI prevention & detection safeguards
-
-http://openai.com/index/introducing-child-safety-blueprint/](https://nitter.net/OpenAINewsroom/status/2041851289886425325#m)**
+**[Today we’re sharing recommendations to strengthen U\.S\. child protection in the age of AI\. This policy blueprint was developed with input from leaders including >@NCMEC, @AGAlliance1, @NCAGO, @UtahAG, and @thorn and focuses on 3 priorities: 📜modernizing laws ⚠️improving reporting & coordination 🛡️GenAI prevention & detection safeguards http://openai\.com/index/introducing\-child\-safety\-blueprint/](https://nitter.net/OpenAINewsroom/status/2041851289886425325#m)**
 Today we’re sharing recommendations to strengthen U.S. child protection in the age of AI. This policy blueprint was developed with input from leaders including @NCMEC, @AGAlliance1, @NCAGO, @UtahAG, and @thorn and focuses on 3 priorities: 
 
 📜modernizing laws
 ⚠️improving reporting  &…
 
-**[Today, at the eleventh hour, Elon lodged a court filing pretending to change his tune about attacking the nonprofit OpenAI Foundation.
-
-The truth is that this case has always been about Elon generating more power and more money for what he wants. Having increasingly realized that his attempt to damage the nonprofit OpenAI Foundation rests on a baseless legal case, Elon is once again trying to change the narrative and save face as the trial approaches. His lawsuit remains nothing more than a harassment campaign that's driven by ego, jealousy and a desire to slow down a competitor.](https://nitter.net/OpenAINewsroom/status/2041648263078801765#m)**
+**[Today, at the eleventh hour, Elon lodged a court filing pretending to change his tune about attacking the nonprofit OpenAI Foundation\. The truth is that this case has always been about Elon generating more power and more money for what he wants\. Having increasingly realized that his attempt to damage the nonprofit OpenAI Foundation rests on a baseless legal case, Elon is once again trying to change the narrative and save face as the trial approaches\. His lawsuit remains nothing more than a harassment campaign that's driven by ego, jealousy and a desire to slow down a competitor\.](https://nitter.net/OpenAINewsroom/status/2041648263078801765#m)**
 Today, at the eleventh hour, Elon lodged a court filing pretending to change his tune about attacking the nonprofit OpenAI Foundation.
 
 The truth is that this case has always been about Elon generating more power and more money for what he wants. Having increasingly realized that his attempt to…
 
 ### bcherny
 
-**[Claude Cowork, now generally available!](https://nitter.net/bcherny/status/2042344772153848043#m)**
+**[Claude Cowork, now generally available\!](https://nitter.net/bcherny/status/2042344772153848043#m)**
 Claude Cowork, now generally available!
 
 
@@ -973,17 +724,13 @@ Felix Rieseberg (@felixrieseberg)
 
 We released Claude Cowork as a research preview 12 weeks ago. Since then, millions of people have made it part of how they work - and hundreds of thousands more are trying it every week. I'm really optimistic about its…
 
-**[Just got a nice DM from a big enterprise customer using Claude Code in one of the world's biggest codebases
-
-Here's how we made @-mentions 3x faster in large enterprise codebases 🧵](https://nitter.net/bcherny/status/2042352720489955539#m)**
+**[Just got a nice DM from a big enterprise customer using Claude Code in one of the world's biggest codebases Here's how we made @\-mentions 3x faster in large enterprise codebases 🧵](https://nitter.net/bcherny/status/2042352720489955539#m)**
 Just got a nice DM from a big enterprise customer using Claude Code in one of the world's biggest codebases
 
 Here's how we made @-mentions 3x faster in large enterprise codebases 🧵
 
 
-**[Mythos is very powerful, and should feel terrifying. I am proud of our approach to responsibly preview it with cyber defenders, rather than generally releasing it into the wild.
-
-Model card here: https://www-cdn.anthropic.com/53566bf5440a10affd749724787c8913a2ae0841.pdf](https://nitter.net/bcherny/status/2041605852382351666#m)**
+**[Mythos is very powerful, and should feel terrifying\. I am proud of our approach to responsibly preview it with cyber defenders, rather than generally releasing it into the wild\. Model card here: https://www\-cdn\.anthropic\.com/53566bf5440a10affd749724787c8913a2ae0841\.pdf](https://nitter.net/bcherny/status/2041605852382351666#m)**
 Mythos is very powerful, and should feel terrifying. I am proud of our approach to responsibly preview it with cyber defenders, rather than generally releasing it into the wild.
 
 Model card here: www-cdn.anthropic.com/53566b…
@@ -993,29 +740,10 @@ Anthropic (@AnthropicAI)
 
 Introducing Project Glasswing: an urgent…
 
-**[R to @bcherny: After a few hours, I had a PR. The results were solid -- P99 got 3x faster after porting to TypeScript!](https://nitter.net/bcherny/status/2042352726613639570#m)**
-After a few hours, I had a PR. The results were solid -- P99 got 3x faster after porting to TypeScript!
-
-
-**[R to @bcherny: But in big codebases, it would fall over.
-
-So we introduced a new fileSuggestion setting in Claude Code, so customers with large codebases could plug in their custom code index (using SourceGraph, an in-house index, etc.).
-
-https://code.claude.com/docs/en/settings#file-suggestion-settings](https://nitter.net/bcherny/status/2042352723610517963#m)**
-But in big codebases, it would fall over.
-
-So we introduced a new fileSuggestion setting in Claude Code, so customers with large codebases could plug in their custom code index (using SourceGraph, an in-house index, etc.).
-
-code.claude.com/docs/en/sett…
-
-**[R to @bcherny: Enjoy faster @-mentions in Claude Code! This went out in v2.1.85.](https://nitter.net/bcherny/status/2042352730040394148#m)**
+**[R to @bcherny: Enjoy faster @\-mentions in Claude Code\! This went out in v2\.1\.85\.](https://nitter.net/bcherny/status/2042352730040394148#m)**
 Enjoy faster @-mentions in Claude Code! This went out in v2.1.85.
 
-**[R to @bcherny: The wins came from three places:
-
-1. Pre-computing upfront in a clever way that doesn't block the main thread
-2. Avoiding NAPI overhead for small result sets
-3. Iteratively asking Claude to find perf improvements for faster file search](https://nitter.net/bcherny/status/2042352728094245016#m)**
+**[R to @bcherny: The wins came from three places: 1\. Pre\-computing upfront in a clever way that doesn't block the main thread 2\. Avoiding NAPI overhead for small result sets 3\. Iteratively asking Claude to find perf improvements for faster file search](https://nitter.net/bcherny/status/2042352728094245016#m)**
 The wins came from three places:
 
 1. Pre-computing upfront in a clever way that doesn't block the main thread
@@ -1023,33 +751,7 @@ The wins came from three places:
 3. Iteratively asking Claude to find perf improvements for faster file search
 
 
-**[R to @bcherny: To power file @-mentions in Claude Code, we used to use a custom Rust-based file indexer that we invoked from Claude Code via NAPI. It was pretty fast.](https://nitter.net/bcherny/status/2042352722004099352#m)**
-To power file @-mentions in Claude Code, we used to use a custom Rust-based file indexer that we invoked from Claude Code via NAPI. It was pretty fast.
-
-**[R to @bcherny: To simplify our system, I asked Opus to port the file indexer to native TypeScript. Here's the prompt I used:
-
-> compile our rust+napi file index to native ts. compile the code over, and make sure the code perfectly passes the ORIGINAL test suite from the package. then profile compared to napi/wasm, and put up a pr with the result. dont stop until you have conclusively proven that the new impl is faster.
-
-I then followed up with:
-
-> anything else you can do to improve performance? profile it in <large monorepo>. hoping for p99 < 10ms
-
-And:
-
-> im still feeling a little stutter when i first start typing "@ cc"
-
-Finally:
-
-> nice that feels really good. /go](https://nitter.net/bcherny/status/2042352725481177315#m)**
-To simplify our system, I asked Opus to port the file indexer to native TypeScript. Here's the prompt I used:
-
-&gt; compile our rust+napi file index to native ts. compile the code over, and make sure the code perfectly passes the ORIGINAL test suite from the package. then profile compared to…
-
-**[RT by @bcherny: /autofix-pr now lets you kick off autofix straight from the command line.  
-
- After finishing up a PR, just run /autofix-pr. It  sends your session to the cloud so the PR autofixer has full context to address CI failures and comments.  
-
-Hugely win for my productivity.](https://nitter.net/noahzweben/status/2041654973491245509#m)**
+**[RT by @bcherny: /autofix\-pr now lets you kick off autofix straight from the command line\. After finishing up a PR, just run /autofix\-pr\. It sends your session to the cloud so the PR autofixer has full context to address CI failures and comments\. Hugely win for my productivity\.](https://nitter.net/noahzweben/status/2041654973491245509#m)**
 /autofix-pr now lets you kick off autofix straight from the command line.  
 
  After finishing up a PR, just run /autofix-pr. It  sends your session to the cloud so the PR autofixer has full context to address CI failures and comments.  
@@ -1060,9 +762,7 @@ Video
   
 
 
-**[RT by @bcherny: Claude now supports dynamic looping. If you run /loop without passing an interval, Claude will dynamically schedule the next tick based on your task. It also may directly use the Monitor tool to bypass polling altogether
-
- /loop check CI  on my PR](https://nitter.net/noahzweben/status/2042670949003153647#m)**
+**[RT by @bcherny: Claude now supports dynamic looping\. If you run /loop without passing an interval, Claude will dynamically schedule the next tick based on your task\. It also may directly use the Monitor tool to bypass polling altogether /loop check CI on my PR](https://nitter.net/noahzweben/status/2042670949003153647#m)**
 Claude now supports dynamic looping. If you run /loop without passing an interval, Claude will dynamically schedule the next tick based on your task. It also may directly use the Monitor tool to bypass polling altogether
 
  /loop check CI  on my PR
@@ -1071,11 +771,7 @@ Video
   
 
 
-**[RT by @bcherny: Had a great chat with @lennysan on some of the fun stuff happening at the intersection of AI and growth!
-
-Thanks for having me on Lenny, had a blast :) 
-
-https://open.spotify.com/episode/08QWCmKgDbMfpojknVW5Fa](https://nitter.net/TheAmolAvasare/status/2041725306277654925#m)**
+**[RT by @bcherny: Had a great chat with @lennysan on some of the fun stuff happening at the intersection of AI and growth\! Thanks for having me on Lenny, had a blast :\) https://open\.spotify\.com/episode/08QWCmKgDbMfpojknVW5Fa](https://nitter.net/TheAmolAvasare/status/2041725306277654925#m)**
 Had a great chat with @lennysan on some of the fun stuff happening at the intersection of AI and growth!
 
 Thanks for having me on Lenny, had a blast :) 
@@ -1083,14 +779,7 @@ Thanks for having me on Lenny, had a blast :)
 open.spotify.com/episode/08Q…
 
 
-**[RT by @bcherny: Thrilled to announce the Monitor tool which lets Claude create background scripts that wake the agent up when needed.  
-
-Big token saver and great way to move away from polling in the agent loop  
-
-Claude can now: 
-* Follow logs for errors 
-* Poll PRs via script 
-* and more!](https://nitter.net/noahzweben/status/2042332268450963774#m)**
+**[RT by @bcherny: Thrilled to announce the Monitor tool which lets Claude create background scripts that wake the agent up when needed\. Big token saver and great way to move away from polling in the agent loop Claude can now: \\* Follow logs for errors \\* Poll PRs via script \\* and more\!](https://nitter.net/noahzweben/status/2042332268450963774#m)**
 Thrilled to announce the Monitor tool which lets Claude create background scripts that wake the agent up when needed.  
 
 Big token saver and great way to move away from polling in the agent loop  
@@ -1104,7 +793,7 @@ Video
   
 
 
-**[RT by @bcherny: Tired of manually writing config files and env vars to use Claude Code with Amazon Bedrock or Google Vertex? Me too. Just shipped a setup wizard that handles it for you. Bonus: Claude Code now notices if you have an older model pinned and suggests a newer one if you have access!](https://nitter.net/morganlunt/status/2042333291924369890#m)**
+**[RT by @bcherny: Tired of manually writing config files and env vars to use Claude Code with Amazon Bedrock or Google Vertex? Me too\. Just shipped a setup wizard that handles it for you\. Bonus: Claude Code now notices if you have an older model pinned and suggests a newer one if you have access\!](https://nitter.net/morganlunt/status/2042333291924369890#m)**
 Tired of manually writing config files and env vars to use Claude Code with Amazon Bedrock or Google Vertex? Me too. Just shipped a setup wizard that handles it for you. Bonus: Claude Code now notices if you have an older model pinned and suggests a newer one if you have access!
 
 Video
@@ -1125,9 +814,7 @@ Connect TurboTax or Aiwyn Tax (formerly Column Tax) to Claude to estimate your r
 
 ### claudeai
 
-**[Claude Cowork is now generally available to all paid plans.
-
-For Enterprise, we are adding role-based access controls, group spend limits, usage analytics, and expanded OpenTelemetry to give admins what they need to deploy it across the org.](https://nitter.net/claudeai/status/2042273755485888810#m)**
+**[Claude Cowork is now generally available to all paid plans\. For Enterprise, we are adding role\-based access controls, group spend limits, usage analytics, and expanded OpenTelemetry to give admins what they need to deploy it across the org\.](https://nitter.net/claudeai/status/2042273755485888810#m)**
 Claude Cowork is now generally available to all paid plans.
 
 For Enterprise, we are adding role-based access controls, group spend limits, usage analytics, and expanded OpenTelemetry to give admins what they need to deploy it across the org.
@@ -1136,11 +823,7 @@ Video
   
 
 
-**[Claude for Word is now in beta.
-
-Draft, edit, and revise documents directly from the sidebar. Claude preserves your formatting, and edits appear as tracked changes.
-
-Available on Team and Enterprise plans.](https://nitter.net/claudeai/status/2042670341915295865#m)**
+**[Claude for Word is now in beta\. Draft, edit, and revise documents directly from the sidebar\. Claude preserves your formatting, and edits appear as tracked changes\. Available on Team and Enterprise plans\.](https://nitter.net/claudeai/status/2042670341915295865#m)**
 Claude for Word is now in beta.
 
 Draft, edit, and revise documents directly from the sidebar. Claude preserves your formatting, and edits appear as tracked changes.
@@ -1151,11 +834,7 @@ Video
   
 
 
-**[Introducing Claude Managed Agents: everything you need to build and deploy agents at scale.
-
-It pairs an agent harness tuned for performance with production infrastructure, so you can go from prototype to launch in days.
-
-Now in public beta on the Claude Platform.](https://nitter.net/claudeai/status/2041927687460024721#m)**
+**[Introducing Claude Managed Agents: everything you need to build and deploy agents at scale\. It pairs an agent harness tuned for performance with production infrastructure, so you can go from prototype to launch in days\. Now in public beta on the Claude Platform\.](https://nitter.net/claudeai/status/2041927687460024721#m)**
 Introducing Claude Managed Agents: everything you need to build and deploy agents at scale.
 
 It pairs an agent harness tuned for performance with production infrastructure, so you can go from prototype to launch in days.
@@ -1166,71 +845,57 @@ Video
   
 
 
-**[R to @claudeai: @NotionHQ lets teams delegate work to Claude directly inside their workspace. Dozens of tasks run in parallel, and whole teams collaborate on the outputs. Available now in private alpha: https://www.youtube.com/watch?v=45hPRdfDEsI&feature=youtu.be](https://nitter.net/claudeai/status/2041927691268497548#m)**
+**[R to @claudeai: @NotionHQ lets teams delegate work to Claude directly inside their workspace\. Dozens of tasks run in parallel, and whole teams collaborate on the outputs\. Available now in private alpha: https://www\.youtube\.com/watch?v=45hPRdfDEsI&feature=youtu\.be](https://nitter.net/claudeai/status/2041927691268497548#m)**
 @NotionHQ lets teams delegate work to Claude directly inside their workspace. Dozens of tasks run in parallel, and whole teams collaborate on the outputs. Available now in private alpha: piped.video/watch?v=45hPRdfD…
 
 
-**[R to @claudeai: @Rakuten deploys specialist agents, powered by Managed Agents, for product, sales, marketing, and finance, each one in under a week: https://claude.com/customers/rakuten](https://nitter.net/claudeai/status/2041927694628037022#m)**
+**[R to @claudeai: @Rakuten deploys specialist agents, powered by Managed Agents, for product, sales, marketing, and finance, each one in under a week: https://claude\.com/customers/rakuten](https://nitter.net/claudeai/status/2041927694628037022#m)**
 @Rakuten deploys specialist agents, powered by Managed Agents, for product, sales, marketing, and finance, each one in under a week: claude.com/customers/rakuten
 
 
-**[R to @claudeai: @asana built AI Teammates on Managed Agents: agents that work inside Asana as part of your team, picking up assigned tasks.
-
-Offloading the infrastructure let them put engineering time into the multiplayer experience.](https://nitter.net/claudeai/status/2041927692874895500#m)**
+**[R to @claudeai: @asana built AI Teammates on Managed Agents: agents that work inside Asana as part of your team, picking up assigned tasks\. Offloading the infrastructure let them put engineering time into the multiplayer experience\.](https://nitter.net/claudeai/status/2041927692874895500#m)**
 @asana built AI Teammates on Managed Agents: agents that work inside Asana as part of your team, picking up assigned tasks.
 
 Offloading the infrastructure let them put engineering time into the multiplayer experience.
 
-**[R to @claudeai: @sentry now takes you from Seer's root-cause analysis to a Claude-powered agent that writes the fix and opens a PR. They built the integration on Managed Agents in weeks: https://claude.com/customers/sentry](https://nitter.net/claudeai/status/2041927696351994006#m)**
+**[R to @claudeai: @sentry now takes you from Seer's root\-cause analysis to a Claude\-powered agent that writes the fix and opens a PR\. They built the integration on Managed Agents in weeks: https://claude\.com/customers/sentry](https://nitter.net/claudeai/status/2041927696351994006#m)**
 @sentry now takes you from Seer's root-cause analysis to a Claude-powered agent that writes the fix and opens a PR. They built the integration on Managed Agents in weeks: claude.com/customers/sentry
 
 
-**[R to @claudeai: Add the advisor tool to your Messages API call. When your Sonnet or Haiku agent hits a hard decision mid-run, it consults Opus, gets a plan, and continues, all within a single API request.](https://nitter.net/claudeai/status/2042308625989882054#m)**
+**[R to @claudeai: Add the advisor tool to your Messages API call\. When your Sonnet or Haiku agent hits a hard decision mid\-run, it consults Opus, gets a plan, and continues, all within a single API request\.](https://nitter.net/claudeai/status/2042308625989882054#m)**
 Add the advisor tool to your Messages API call. When your Sonnet or Haiku agent hits a hard decision mid-run, it consults Opus, gets a plan, and continues, all within a single API request.
 
-**[R to @claudeai: Available on macOS and Windows: https://claude.com/blog/cowork-for-enterprise](https://nitter.net/claudeai/status/2042273758208020610#m)**
+**[R to @claudeai: Available on macOS and Windows: https://claude\.com/blog/cowork\-for\-enterprise](https://nitter.net/claudeai/status/2042273758208020610#m)**
 Available on macOS and Windows: claude.com/blog/cowork-for-e…
 
 
-**[R to @claudeai: Build and deploy your agents through the Claude Console, Claude Code, or our new CLI: https://platform.claude.com/workspaces/default/agent-quickstart
-
-Read more on the blog: https://claude.com/blog/claude-managed-agents](https://nitter.net/claudeai/status/2041927700063883281#m)**
+**[R to @claudeai: Build and deploy your agents through the Claude Console, Claude Code, or our new CLI: https://platform\.claude\.com/workspaces/default/agent\-quickstart Read more on the blog: https://claude\.com/blog/claude\-managed\-agents](https://nitter.net/claudeai/status/2041927700063883281#m)**
 Build and deploy your agents through the Claude Console, Claude Code, or our new CLI: platform.claude.com/workspac…
 
 Read more on the blog: claude.com/blog/claude-manag…
 
 
-**[R to @claudeai: Claude for Word shares context with Claude for Excel and Claude for PowerPoint, so Claude can work across your open documents in a single conversation.
-
-Read more: https://claude.com/claude-for-word](https://nitter.net/claudeai/status/2042670343173574705#m)**
+**[R to @claudeai: Claude for Word shares context with Claude for Excel and Claude for PowerPoint, so Claude can work across your open documents in a single conversation\. Read more: https://claude\.com/claude\-for\-word](https://nitter.net/claudeai/status/2042670343173574705#m)**
 Claude for Word shares context with Claude for Excel and Claude for PowerPoint, so Claude can work across your open documents in a single conversation.
 
 Read more: claude.com/claude-for-word
 
 
-**[R to @claudeai: In evals, Sonnet with an Opus advisor scored 2.7 percentage points higher on SWE-bench Multilingual than Sonnet alone, while costing 11.9% less per task.](https://nitter.net/claudeai/status/2042308627478773808#m)**
+**[R to @claudeai: In evals, Sonnet with an Opus advisor scored 2\.7 percentage points higher on SWE\-bench Multilingual than Sonnet alone, while costing 11\.9% less per task\.](https://nitter.net/claudeai/status/2042308627478773808#m)**
 In evals, Sonnet with an Opus advisor scored 2.7 percentage points higher on SWE-bench Multilingual than Sonnet alone, while costing 11.9% less per task.
 
 
-Community note: The graph is misleading due to a zoom-in on BOTH the X- and the Y-axis, making the difference look much bigger than it…
-
-**[R to @claudeai: Now available in beta on the Claude Platform.
-
-Read more: https://claude.com/blog/the-advisor-strategy](https://nitter.net/claudeai/status/2042308629940855048#m)**
+**[R to @claudeai: Now available in beta on the Claude Platform\. Read more: https://claude\.com/blog/the\-advisor\-strategy](https://nitter.net/claudeai/status/2042308629940855048#m)**
 Now available in beta on the Claude Platform.
 
 Read more: claude.com/blog/the-advisor-…
 
 
-**[R to @claudeai: On @vibecodeapp_, developers can now spin up agent infrastructure at least 10x faster with Managed Agents, going from a prompt to a deployed app without weeks of setup: https://claude.com/customers/vibecode](https://nitter.net/claudeai/status/2041927698210058629#m)**
+**[R to @claudeai: On @vibecodeapp\\_, developers can now spin up agent infrastructure at least 10x faster with Managed Agents, going from a prompt to a deployed app without weeks of setup: https://claude\.com/customers/vibecode](https://nitter.net/claudeai/status/2041927698210058629#m)**
 On @vibecodeapp_, developers can now spin up agent infrastructure at least 10x faster with Managed Agents, going from a prompt to a deployed app without weeks of setup: claude.com/customers/vibecod…
 
 
-**[R to @claudeai: Shipping a production agent meant months of infrastructure work first.
-
-Managed Agents handles that for you. Define your agent's tasks, tools, and guardrails, and we run it on our infrastructure.
-
-Here's what early customers have built:](https://nitter.net/claudeai/status/2041927689397788789#m)**
+**[R to @claudeai: Shipping a production agent meant months of infrastructure work first\. Managed Agents handles that for you\. Define your agent's tasks, tools, and guardrails, and we run it on our infrastructure\. Here's what early customers have built:](https://nitter.net/claudeai/status/2041927689397788789#m)**
 Shipping a production agent meant months of infrastructure work first.
 
 Managed Agents handles that for you. Define your agent's tasks, tools, and guardrails, and we run it on our infrastructure.
@@ -1238,12 +903,10 @@ Managed Agents handles that for you. Define your agent's tasks, tools, and guard
 Here's what early customers have built:
 
 
-**[R to @claudeai: Since the research preview, teams have been using Cowork to prepare for client meetings, build financial models, review contracts, and work through the multi-step tasks that used to take handoffs across functions.](https://nitter.net/claudeai/status/2042273756983226661#m)**
+**[R to @claudeai: Since the research preview, teams have been using Cowork to prepare for client meetings, build financial models, review contracts, and work through the multi\-step tasks that used to take handoffs across functions\.](https://nitter.net/claudeai/status/2042273756983226661#m)**
 Since the research preview, teams have been using Cowork to prepare for client meetings, build financial models, review contracts, and work through the multi-step tasks that used to take handoffs across functions.
 
-**[We're bringing the advisor strategy to the Claude Platform.
-
-Pair Opus as an advisor with Sonnet or Haiku as an executor, and get near Opus-level intelligence in your agents at a fraction of the cost.](https://nitter.net/claudeai/status/2042308622181339453#m)**
+**[We're bringing the advisor strategy to the Claude Platform\. Pair Opus as an advisor with Sonnet or Haiku as an executor, and get near Opus\-level intelligence in your agents at a fraction of the cost\.](https://nitter.net/claudeai/status/2042308622181339453#m)**
 We're bringing the advisor strategy to the Claude Platform.
 
 Pair Opus as an advisor with Sonnet or Haiku as an executor, and get near Opus-level intelligence in your agents at a fraction of the cost.
@@ -1251,15 +914,7 @@ Pair Opus as an advisor with Sonnet or Haiku as an executor, and get near Opus-l
 
 ### googleaidevs
 
-**[Pinned: We've been shipping 🚢 ICYMI here's the recap now coming to you every week.
-
-Updates across the stack from models to tooling and the Gemini API:
-
-— @googlegemma 4: Byte for byte, the most capable open models. Released under an Apache 2.0 license.
-— Veo 3.1 Lite: Our latest video generation model, which delivers the same speed as Veo 3.1 Fast but at half the cost.
-— Flex and Priority inference tiers: Balance costs with reliability in the Gemini API.
-— Focus mode: Available in @GoogleAIStudio, it’s the fastest way to make targeted edits to specific parts of your apps.
-— @firebase Builders: Bring your Firebase Studio projects into AI studio with a new simple migration.](https://nitter.net/googleaidevs/status/2042708458592485483#m)**
+**[Pinned: We've been shipping 🚢 ICYMI here's the recap now coming to you every week\. Updates across the stack from models to tooling and the Gemini API: — @googlegemma 4: Byte for byte, the most capable open models\. Released under an Apache 2\.0 license\. — Veo 3\.1 Lite: Our latest video generation model, which delivers the same speed as Veo 3\.1 Fast but at half the cost\. — Flex and Priority inference tiers: Balance costs with reliability in the Gemini API\. — Focus mode: Available in @GoogleAIStudio, it’s the fastest way to make targeted edits to specific parts of your apps\. — @firebase Builders: Bring your Firebase Studio projects into AI studio with a new simple migration\.](https://nitter.net/googleaidevs/status/2042708458592485483#m)**
 We've been shipping 🚢 ICYMI here's the recap now coming to you every week.
 
 Updates across the stack from models to tooling and the Gemini API:
@@ -1267,12 +922,11 @@ Updates across the stack from models to tooling and the Gemini API:
 — @googlegemma 4: Byte for byte, the most capable open models. Released under an Apache 2.0 license.
 — Veo 3.1 Lite: Our latest video generation model,…
 
-**[R to @googleaidevs: As promised, reduced pricing for Veo 3.1 Fast is here ↓](https://nitter.net/googleaidevs/status/2041564835662475441#m)**
+**[R to @googleaidevs: As promised, reduced pricing for Veo 3\.1 Fast is here ↓](https://nitter.net/googleaidevs/status/2041564835662475441#m)**
 As promised, reduced pricing for Veo 3.1 Fast is here ↓
 
 
-**[R to @googleaidevs: Check your code
-https://x.com/UnslothAI/status/2040161518898319728?s=20](https://nitter.net/googleaidevs/status/2041639058137608254#m)**
+**[R to @googleaidevs: Check your code https://x\.com/UnslothAI/status/2040161518898319728?s=20](https://nitter.net/googleaidevs/status/2041639058137608254#m)**
 Check your code
 nitter.net/UnslothAI/status/20401…
 
@@ -1294,7 +948,7 @@ Video
 
 
 
-**[R to @googleaidevs: Describe what your camera sees as a medieval bard https://x.com/measure_plan/status/2039815699695104343?s=20](https://nitter.net/googleaidevs/status/2041639055851712616#m)**
+**[R to @googleaidevs: Describe what your camera sees as a medieval bard https://x\.com/measure\\_plan/status/2039815699695104343?s=20](https://nitter.net/googleaidevs/status/2041639055851712616#m)**
 Describe what your camera sees as a medieval bard nitter.net/measure_plan/status/20…
 
 
@@ -1304,8 +958,7 @@ i spent the afternoon experimenting with Gemma 4's vision capabilities
 
 made an app that uses roboflow RF-DETR for a first pass of object detections and Gemma to summarize the scene in one…
 
-**[R to @googleaidevs: Transcribe audio locally
-https://x.com/ai_for_success/status/2041177663029784704?s=20](https://nitter.net/googleaidevs/status/2041639064152240342#m)**
+**[R to @googleaidevs: Transcribe audio locally https://x\.com/ai\\_for\\_success/status/2041177663029784704?s=20](https://nitter.net/googleaidevs/status/2041639064152240342#m)**
 Transcribe audio locally
 nitter.net/ai_for_success/status/…
 
@@ -1337,12 +990,7 @@ Video
   
 
 
-**[Watch this ADK Agent powered by Gemma 4 31B use the Google Maps MCP Server to build a custom food tour in this demo 🍜📍
-
-See the model in action with:
--Multi-step reasoning (solving complex routes)
--Multimodal logic (processing visuals and text)
--Live data integration (direct connection to Google Maps)](https://nitter.net/googleaidevs/status/2042224957405483094#m)**
+**[Watch this ADK Agent powered by Gemma 4 31B use the Google Maps MCP Server to build a custom food tour in this demo 🍜📍 See the model in action with: \-Multi\-step reasoning \(solving complex routes\) \-Multimodal logic \(processing visuals and text\) \-Live data integration \(direct connection to Google Maps\)](https://nitter.net/googleaidevs/status/2042224957405483094#m)**
 Watch this ADK Agent powered by Gemma 4 31B use the Google Maps MCP Server to build a custom food tour in this demo 🍜📍
 
 See the model in action with:
@@ -1350,20 +998,12 @@ See the model in action with:
 -Multimodal logic (processing visuals and text)
 -Live data integration (direct connection to Google…
 
-**[We’ve seen some impressive use cases for Gemma 4
-
-Here are a few of them 🧵](https://nitter.net/googleaidevs/status/2041639052496232899#m)**
+**[We’ve seen some impressive use cases for Gemma 4 Here are a few of them 🧵](https://nitter.net/googleaidevs/status/2041639052496232899#m)**
 We’ve seen some impressive use cases for Gemma 4
 
 Here are a few of them 🧵
 
-**[💎 Gemma 4 31B can leverage an ADK Agent and code execution sandbox to autonomously navigate complex, ambiguous tasks.
-
-Follow along as this demo showcases:
-+ Zero-shot code generation
-+ Tool usage
-+ Multi-step debugging and recovery
-+ “Learned” multimodal output](https://nitter.net/googleaidevs/status/2042590030367973468#m)**
+**[💎 Gemma 4 31B can leverage an ADK Agent and code execution sandbox to autonomously navigate complex, ambiguous tasks\. Follow along as this demo showcases: \+ Zero\-shot code generation \+ Tool usage \+ Multi\-step debugging and recovery \+ “Learned” multimodal output](https://nitter.net/googleaidevs/status/2042590030367973468#m)**
 💎 Gemma 4 31B can leverage an ADK Agent and code execution sandbox to autonomously navigate complex, ambiguous tasks.
 
 Follow along as this demo showcases:
@@ -1378,14 +1018,14 @@ Video
 
 ### mistralvibe
 
-**[Here's me connected to Figma through MCP. In the clip, I'm extracting a full design system: components, colors, typography, spacing, and making it ready for implementing to the FE.](https://nitter.net/mistralvibe/status/2043704656367399313#m)**
+**[Here's me connected to Figma through MCP\. In the clip, I'm extracting a full design system: components, colors, typography, spacing, and making it ready for implementing to the FE\.](https://nitter.net/mistralvibe/status/2043704656367399313#m)**
 Here's me connected to Figma through MCP. In the clip, I'm extracting a full design system: components, colors, typography, spacing, and making it ready for implementing to the FE.
 
 Video
   
 
 
-**[🧮 Leanstral keeps things lean. The first open-source code agent for Lean 4 is built into Vibe so you can run formal verification and mathematical proofs. Run /leanstall to use it.](https://nitter.net/mistralvibe/status/2041894056712642794#m)**
+**[🧮 Leanstral keeps things lean\. The first open\-source code agent for Lean 4 is built into Vibe so you can run formal verification and mathematical proofs\. Run /leanstall to use it\.](https://nitter.net/mistralvibe/status/2041894056712642794#m)**
 🧮 Leanstral keeps things lean. The first open-source code agent for Lean 4 is built into Vibe so you can run formal verification and mathematical proofs. Run /leanstall to use it.
 
 Video
@@ -1394,11 +1034,7 @@ Video
 
 ### ollama
 
-**[.@steipete has been an amazing supporter of open models and local models. This is even before the rise of OpenClaw. 🦞
-
-Ollama is here to love. ❤️ 
-
-Let's make the world a better place together.](https://nitter.net/ollama/status/2041957768823996482#m)**
+**[\.@steipete has been an amazing supporter of open models and local models\. This is even before the rise of OpenClaw\. 🦞 Ollama is here to love\. ❤️ Let's make the world a better place together\.](https://nitter.net/ollama/status/2041957768823996482#m)**
 .@steipete has been an amazing supporter of open models and local models. This is even before the rise of OpenClaw. 🦞
 
 Ollama is here to love. ❤️ 
@@ -1410,27 +1046,13 @@ Peter Steinberger 🦞 (@steipete)
 
 Some folks try to spin a narrative that I don't like local models,…
 
-**[Pinned: Ollama 0.20.6 is here with improved Gemma 4 tool calling! 
-
-more improvements to come for Gemma 4!](https://nitter.net/ollama/status/2043609267236913164#m)**
+**[Ollama 0\.20\.6 is here with improved Gemma 4 tool calling\! more improvements to come for Gemma 4\!](https://nitter.net/ollama/status/2043609267236913164#m)**
 Ollama 0.20.6 is here with improved Gemma 4 tool calling! 
 
 more improvements to come for Gemma 4!
 
 
-**[R to @ollama: Try it immediately on Ollama's cloud: 
-
-ollama run gemma4:31b-cloud 
-
-Try it with OpenClaw: 
-ollama launch openclaw --model gemma4:31b-cloud
-
-Try it with Claude Code: 
-ollama launch claude --model gemma4:31b-cloud
-
-Model page for all the Gemma 4 models to run locally: 
-
-https://ollama.com/library/gemma4](https://nitter.net/ollama/status/2043609268931403939#m)**
+**[R to @ollama: Try it immediately on Ollama's cloud: ollama run gemma4:31b\-cloud Try it with OpenClaw: ollama launch openclaw \-\-model gemma4:31b\-cloud Try it with Claude Code: ollama launch claude \-\-model gemma4:31b\-cloud Model page for all the Gemma 4 models to run locally: https://ollama\.com/library/gemma4](https://nitter.net/ollama/status/2043609268931403939#m)**
 Try it immediately on Ollama's cloud: 
 
 ollama run gemma4:31b-cloud 
@@ -1446,27 +1068,13 @@ Model page for all the Gemma 4 models to run locally:
 ollama.com/library/gemma4
 
 
-**[R to @ollama: model page: 
-
-https://ollama.com/library/minimax-m2.7](https://nitter.net/ollama/status/2043139206499942651#m)**
+**[R to @ollama: model page: https://ollama\.com/library/minimax\-m2\.7](https://nitter.net/ollama/status/2043139206499942651#m)**
 model page: 
 
 ollama.com/library/minimax-m…
 
 
-**[RT by @ollama: GLM-5.1 is here! 
-
-Try it on OpenClaw🦞🦞🦞
-
-ollama launch openclaw --model glm-5.1:cloud
-
-Claude Code 
-
-ollama launch claude --model glm-5.1:cloud
-
-Chat with the model 
-
-ollama run glm-5.1:cloud](https://nitter.net/ollama/status/2041556572334428576#m)**
+**[RT by @ollama: GLM\-5\.1 is here\! Try it on OpenClaw🦞🦞🦞 ollama launch openclaw \-\-model glm\-5\.1:cloud Claude Code ollama launch claude \-\-model glm\-5\.1:cloud Chat with the model ollama run glm\-5\.1:cloud](https://nitter.net/ollama/status/2041556572334428576#m)**
 GLM-5.1 is here! 
 
 Try it on OpenClaw🦞🦞🦞
@@ -1488,21 +1096,7 @@ Introducing GLM-5.1: The Next Level of Open Source
 
 - Top-Tier Performance: #1 in…
 
-**[RT by @ollama: Google's Gemma 4 is pretty wild.
-
-You can now run it locally with OpenClaw in 3 steps.
-
-1. Install Ollama
-2. Pull Gemma 4 model
-3. Launch OpenClaw with Gemma as the backend
-
-Private local AI agents in minutes.
-
-Hardware guide:
-> E2B → any modern phones
-> E4B → most laptops
-> 26B A4B → Mac Studio 48GB+ RAM
-> 31B → Mac Studio 64GB+ RAM](https://nitter.net/minchoi/status/2041904081522823341#m)**
+**[RT by @ollama: Google's Gemma 4 is pretty wild\. You can now run it locally with OpenClaw in 3 steps\. 1\. Install Ollama 2\. Pull Gemma 4 model 3\. Launch OpenClaw with Gemma as the backend Private local AI agents in minutes\. Hardware guide: > E2B → any modern phones > E4B → most laptops > 26B A4B → Mac Studio 48GB\+ RAM > 31B → Mac Studio 64GB\+ RAM](https://nitter.net/minchoi/status/2041904081522823341#m)**
 Google's Gemma 4 is pretty wild.
 
 You can now run it locally with OpenClaw in 3 steps.
@@ -1518,29 +1112,14 @@ Hardware guide:
 &gt; E4B → most laptops
 &gt; 26B A4B →…
 
-**[RT by @ollama: Lots of love for Gemma 4! Team just told me it’s already had 10M+ downloads since last week’s launch. Gemma models have now been downloaded 500M+ times! Excited to see what you all are creating 👀](https://nitter.net/sundarpichai/status/2042014040055276028#m)**
+**[RT by @ollama: Lots of love for Gemma 4\! Team just told me it’s already had 10M\+ downloads since last week’s launch\. Gemma models have now been downloaded 500M\+ times\! Excited to see what you all are creating 👀](https://nitter.net/sundarpichai/status/2042014040055276028#m)**
 Lots of love for Gemma 4! Team just told me it’s already had 10M+ downloads since last week’s launch. Gemma models have now been downloaded 500M+ times! Excited to see what you all are creating 👀
 
-**[RT by @ollama: MLX creator @awnihannun sharing the story of MLX. Apple management called him right after the launch: “why didn’t you tell us this was going to be so big??” 😂](https://nitter.net/ronaldmannak/status/2042425851455902152#m)**
+**[RT by @ollama: MLX creator @awnihannun sharing the story of MLX\. Apple management called him right after the launch: “why didn’t you tell us this was going to be so big??” 😂](https://nitter.net/ronaldmannak/status/2042425851455902152#m)**
 MLX creator @awnihannun sharing the story of MLX. Apple management called him right after the launch: “why didn’t you tell us this was going to be so big??” 😂
 
 
-**[RT by @ollama: My @openclaw has been running Kimi K2.5 via @ollama all last night and this morning doing some serious content creation and editing and barely touched my session or weekly quotas. Do yourselves a favor folks, run, don’t walk, and get yourself an Ollama subscription! 🦞🦞🦞🦞](https://nitter.net/MichaelGannotti/status/2041533683685827000#m)**
-My @openclaw has been running Kimi K2.5 via @ollama all last night and this morning doing some serious content creation and editing and barely touched my session or weekly quotas. Do yourselves a favor folks, run, don’t walk, and get yourself an Ollama subscription! 🦞🦞🦞🦞
-
-
-ollama…
-
-**[RT by @ollama: OpenClaw 2026.4.7 🦞
-
-🔮 openclaw infer
-🎬 music + video editing
-💾 session branch/restore
-🔗 webhook-driven TaskFlows
-🤖 Arcee, Gemma 4, Ollama vision
-🧠 memory-wiki: persistent knowledge, not just vibes
-
-Because “trust me bro” is not a knowledge system. https://github.com/openclaw/openclaw/releases/tag/v2026.4.7](https://nitter.net/openclaw/status/2041714270212108657#m)**
+**[RT by @ollama: OpenClaw 2026\.4\.7 🦞 🔮 openclaw infer 🎬 music \+ video editing 💾 session branch/restore 🔗 webhook\-driven TaskFlows 🤖 Arcee, Gemma 4, Ollama vision 🧠 memory\-wiki: persistent knowledge, not just vibes Because “trust me bro” is not a knowledge system\. https://github\.com/openclaw/openclaw/releases/tag/v2026\.4\.7](https://nitter.net/openclaw/status/2041714270212108657#m)**
 OpenClaw 2026.4.7 🦞
 
 🔮 openclaw infer
@@ -1553,32 +1132,11 @@ OpenClaw 2026.4.7 🦞
 Because “trust me bro” is not a knowledge system. github.com/openclaw/openclaw…
 
 
-**[RT by @ollama: See you there!](https://nitter.net/awnihannun/status/2041666189634715804#m)**
-See you there!
+**[RT by @ollama: See you this Wednesday at the Ollama Gemma Meetup\! 💎](https://nitter.net/osanseviero/status/2043836929477882301#m)**
+See you this Wednesday at the Ollama Gemma Meetup! 💎
 
 
-ollama (@ollama)
-
-We are hosting Ollama's MLX meetup this Thursday night (April 9th) at Ollama's office in Palo Alto at 6pm. 
-
-Come meet amazing people! 
-
-RSVP is required as space is very limited. 
-
-Food & drinks will be available. 
-
-More details: 
-luma.com/mlx
-
-
-
-
-
-—…
-
-**[RT by @ollama: There were some exceptionally cool demos from @ollama and omlx using MLX to run Qwen 3.5 and Gemma 4 on Apple silicon.
-
-The capabilities of local LLMs and the surrounding ecosystem have come a long way in the past couple years.](https://nitter.net/awnihannun/status/2042456446122803275#m)**
+**[RT by @ollama: There were some exceptionally cool demos from @ollama and omlx using MLX to run Qwen 3\.5 and Gemma 4 on Apple silicon\. The capabilities of local LLMs and the surrounding ecosystem have come a long way in the past couple years\.](https://nitter.net/awnihannun/status/2042456446122803275#m)**
 There were some exceptionally cool demos from @ollama and omlx using MLX to run Qwen 3.5 and Gemma 4 on Apple silicon.
 
 The capabilities of local LLMs and the surrounding ecosystem have come a long way in the past couple years.
@@ -1598,13 +1156,24 @@ Watching @awnihannun at @ollama
 Watching @awnihannun at @ollama
 
 
-**[RT by @ollama: mlx @ollama!](https://nitter.net/parthsareen/status/2042428552126349374#m)**
-mlx @ollama!
+**[RT by @ollama: luma\.com/ollama\-gemma4](https://nitter.net/osanseviero/status/2043836950218715172#m)**
+luma.com/ollama-gemma4
 
 
-**[We are working through the night to continue to scale capacity for Ollama's cloud. 
+**[We are hosting Ollama's MLX meetup this Thursday night \(April 9th\) at Ollama's office in Palo Alto at 6pm\. Come meet amazing people\! RSVP is required as space is very limited\. Food & drinks will be available\. More details: https://luma\.com/mlx](https://nitter.net/ollama/status/2041610283152797818#m)**
+We are hosting Ollama's MLX meetup this Thursday night (April 9th) at Ollama's office in Palo Alto at 6pm. 
 
-Apologies if you see any performance degradation.](https://nitter.net/ollama/status/2043619568959341027#m)**
+Come meet amazing people! 
+
+RSVP is required as space is very limited. 
+
+Food & drinks will be available. 
+
+More details: 
+luma.com/mlx
+
+
+**[We are working through the night to continue to scale capacity for Ollama's cloud\. Apologies if you see any performance degradation\.](https://nitter.net/ollama/status/2043619568959341027#m)**
 We are working through the night to continue to scale capacity for Ollama's cloud. 
 
 Apologies if you see any performance degradation.
