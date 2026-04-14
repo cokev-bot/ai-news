@@ -358,11 +358,11 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
     if republish:
         # Only include links from the requested edition
         for link, ed in seen_links.items():
-            if ed == edition:
+            if ed == filename_base:
                 edition_links[link] = seen_links.get(link, "")
-        print(f"  📋 Republishing {len(edition_links)} links from edition '{edition}'")
+        print(f"  📋 Republishing {len(edition_links)} links from edition '{filename_base}'")
         if not edition_links:
-            print(f"  ✗ No links found for edition '{edition}' in state.")
+            print(f"  ✗ No links found for edition '{filename_base}' in state.")
             return False
     else:
         edition_links = {}  # fresh run — will be populated from fetched articles
@@ -429,7 +429,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
     # On fresh runs: persist new links; on republish: leave state untouched
     if not republish:
-        new_links = {a["link"]: edition for a in seen_this_run}
+        new_links = {a["link"]: filename_base for a in seen_this_run}}
         all_links = {**seen_links, **new_links}
         state["seen_links"] = all_links
         save_state(state_path, state)
@@ -441,9 +441,10 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
     for sub_key in subsection_articles:
         subsection_articles[sub_key].sort(key=lambda a: (a["source"], a["title"]))
 
-    date_str  = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    filename  = f"{date_str}-{edition.lower()}.html"
-    filepath  = site_root / "_posts" / filename
+    date_str      = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    filename_base = f"{date_str}-{edition.lower()}"
+    filename      = f"{filename_base}.html"
+    filepath      = site_root / "_posts" / filename
     header_dt = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     total_feeds = sum(
