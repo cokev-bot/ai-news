@@ -128,6 +128,30 @@ def parse_date(date_str: str) -> datetime | None:
     return None
 
 
+def linkify_urls(text: str) -> str:
+    """Turn bare URLs in text into clickable <a href> links.
+
+    Skips URLs already inside HTML anchor tags to avoid nesting.
+    Converts nitter.net URLs to x.com.
+    """
+    def make_link(m: re.Match) -> str:
+        url = m.group(0).strip()
+        # Normalize nitter → x
+        display = url.replace("nitter.net", "x.com")
+        return '<a href="{}">{}</a>'.format(display, display)
+
+    # Match URLs but not inside existing <a ...>...</a> tags
+    # Split on anchor tags, process URL portions only
+    parts = re.split(r'(<a[^>]*>.*?</a>)', text, flags=re.DOTALL | re.IGNORECASE)
+    out = []
+    for part in parts:
+        if re.match(r'<a[^>]*>.*?</a>', part, flags=re.DOTALL | re.IGNORECASE):
+            out.append(part)  # leave existing links alone
+        else:
+            out.append(re.sub(r'https?://[^\s<>"\')]+', make_link, part))
+    return ''.join(out)
+
+
 def clean_title(title: str) -> str:
     """Normalize title for clean markdown rendering.
 
@@ -155,13 +179,14 @@ def format_article_html(art: dict) -> str:
     """Return the HTML for a single article, tailored to source type.
 
     - Nitter (Twitter): show tweet text as a blockquote-style paragraph,
-      with 🔗 link to the x.com post at the end.
+      with 🔗 link to the x.com post at the end. URLs in tweet text
+      are auto-linked.
     - FT / other: title as a bold link + description paragraph.
     """
     if art["source"] in NITTER_FEEDS:
         x_link = nitter_to_x(art["link"])
-        # Tweet text as a near-plain-text block, no extra description
-        tweet_text = art["title"]
+        # Tweet text, with any bare URLs turned into links
+        tweet_text = linkify_urls(art["title"])
         return "<p>{} <a href=\"{}\">🔗</a></p>".format(tweet_text, x_link)
     else:
         # FT / news source: title as bold link + optional description
