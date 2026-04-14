@@ -6,6 +6,7 @@ Duplicates detected within the same edition using title + description
 similarity (Jaccard, word-level).
 """
 
+import json
 import xml.etree.ElementTree as ET
 import urllib.request
 import urllib.error
@@ -115,8 +116,32 @@ def text_similarity(a: str, b: str) -> float:
     return intersection / union if union > 0 else 0.0
 
 
-def is_duplicate(new_art: dict, seen: list[dict]) -> bool:
-    """Return True if new_art is a near-duplicate of any article in seen."""
+def load_state(state_path: Path) -> dict:
+    """Load persistent state from .news_state.json, creating if absent."""
+    if state_path.exists():
+        try:
+            return json.loads(state_path.read_text())
+        except Exception:
+            pass
+    return {"seen_links": [], "last_run": None}
+
+
+def save_state(state_path: Path, state: dict) -> None:
+    """Write state back to .news_state.json atomically."""
+    state["last_run"] = datetime.now(timezone.utc).isoformat()
+    tmp = state_path.with_suffix(".tmp")
+    tmp.write_text(json.dumps(state, indent=2))
+    tmp.replace(state_path)
+
+
+def is_duplicate(new_art: dict, seen: list[dict], seen_links: set[str]) -> bool:
+    """Return True if new_art is a near-duplicate of any article in seen
+    OR if its link has appeared in any previous edition.
+    """
+    # Fast path: link already seen in a prior edition
+    if new_art["link"] in seen_links:
+        return True
+
     new_title = new_art["title"]
     new_desc  = new_art.get("description", "")
     new_lower = new_title.lower()
@@ -299,8 +324,14 @@ def fetch_feed(name: str, url: str) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 def generate_post(edition: str, site_root: Path) -> bool:
-    """Fetch all feeds, deduplicate within edition, write Jekyll post."""
+    """Fetch all feeds, deduplicate within edition and across past editions,
+    write Jekyll post, and persist seen links to .news_state.json.
+    """
     print(f"\n📰 Generating {edition} edition...")
+
+    state_path = site_root / ".news_state.json"
+    state = load_state(state_path)
+    seen_links: set[str] = set(state.get("seen_links", []))
 
     # seen_this_run: all articles kept for this edition (deduplicated)
     seen_this_run: list[dict] = []
@@ -318,7 +349,7 @@ def generate_post(edition: str, site_root: Path) -> bool:
                 articles = fetch_feed(feed_name, feed_url)
                 print(f"    {len(articles)} fetched")
                 for a in articles:
-                    if not is_duplicate(a, seen_this_run):
+                    if not is_duplicate(a, seen_this_run, seen_links):
                         seen_this_run.append(a)
                         subsection_articles[sub_key].append(a)
                         print(f"      + kept: {a['title'][:60]}")
@@ -328,6 +359,12 @@ def generate_post(edition: str, site_root: Path) -> bool:
     if not seen_this_run:
         print("  ✗ No new articles, skipping edition.")
         return False
+
+    # Persist all seen links (prior + current) for cross-edition dedup
+    all_links = seen_links | {a["link"] for a in seen_this_run}
+    state["seen_links"] = sorted(all_links)
+    save_state(state_path, state)
+    print(f"  📡 {len(all_links)} total seen links persisted")
 
     # Sort each subsection's articles alphabetically by source then title
     for sub_key in subsection_articles:
