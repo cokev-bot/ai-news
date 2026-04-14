@@ -12,7 +12,24 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-# Nitter RSS feeds for AI news accounts
+# Nitter RSS feeds for AI news accounts (Twitter/X)
+NITTER_FEEDS = {
+    # OpenAI
+    "OpenAI", "OpenAIDevs", "OpenAINewsroom",
+    # Google
+    "GoogleAI", "GoogleAIStudio", "googleaidevs", "GeminiApp", "NotebookLM",
+    # Anthropic
+    "AnthropicAI", "claudeai", "antigravity",
+    # Mistral
+    "MistralAI", "MistralDevs", "mistralvibe",
+    # Ollama
+    "ollama",
+    # ChatGPT
+    "ChatGPTapp",
+    # Misc / influencers
+    "bcherny", "DarioAmodei",
+}
+
 FEEDS = {
     # OpenAI
     "OpenAI":         "https://nitter.net/OpenAI/rss",
@@ -129,6 +146,34 @@ def clean_title(title: str) -> str:
     return text
 
 
+def nitter_to_x(link: str) -> str:
+    """Convert a nitter.net URL to x.com URL."""
+    return link.replace("nitter.net", "x.com")
+
+
+def format_article_html(art: dict) -> str:
+    """Return the HTML for a single article, tailored to source type.
+
+    - Nitter (Twitter): show tweet text as a blockquote-style paragraph,
+      with 🔗 link to the x.com post at the end.
+    - FT / other: title as a bold link + description paragraph.
+    """
+    if art["source"] in NITTER_FEEDS:
+        x_link = nitter_to_x(art["link"])
+        # Tweet text as a near-plain-text block, no extra description
+        tweet_text = art["title"]
+        return "<p>{} <a href=\"{}\">🔗</a></p>".format(tweet_text, x_link)
+    else:
+        # FT / news source: title as bold link + optional description
+        lines = [
+            "<p><strong><a href=\"{}\">{}</a></strong></p>".format(
+                art["link"], art["title"])
+        ]
+        if art.get("description"):
+            lines.append("<p>{}</p>".format(art["description"]))
+        return "\n".join(lines)
+
+
 def fetch_feed(name: str, url: str) -> list[dict]:
     """Fetch and parse an RSS feed, returning a list of article dicts."""
     try:
@@ -235,12 +280,7 @@ def generate_post(edition: str, site_root: Path) -> bool:
             current_source = art["source"]
             html_lines.append("<h3>{}</h3>".format(current_source))
             html_lines.append("")
-        # Title as bold link — raw HTML, no markdown parsing issues
-        html_lines.append(
-            "<p><strong><a href=\"{}\">{}</a></strong></p>".format(
-                art["link"], art["title"]))
-        if art["description"]:
-            html_lines.append("<p>{}</p>".format(art["description"]))
+        html_lines.append(format_article_html(art))
         html_lines.append("")
 
     filepath.write_text("\n".join(html_lines), encoding="utf-8")
