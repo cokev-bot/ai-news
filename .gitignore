@@ -8,3 +8,6 @@ vendor
 .news_state.json
 Gemfile
 Gemfile.lock
+__pycache__/
+*.pyc
+*.pyo
