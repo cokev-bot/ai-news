@@ -124,9 +124,25 @@ def load_state(state_path: Path) -> dict:
             # Migrate legacy list format to dict format
             seen = data.get("seen_links", {})
             if isinstance(seen, list):
-                seen = {link: "2026-04-14-morning" for link in seen}
+                seen = {link: {"edition": "2026-04-14-morning", "feed": "Unknown", "title": link, "description": ""} for link in seen}
                 data["seen_links"] = seen
                 save_state(state_path, data)
+            # Migrate legacy string-value format ({"link": "edition"}) to full dict
+            elif isinstance(seen, dict) and seen and isinstance(next(iter(seen.values())), str):
+                migrated = {}
+                for link, ed in seen.items():
+                    migrated[link] = {"edition": ed, "feed": "Unknown", "title": link, "description": ""}
+                data["seen_links"] = migrated
+                save_state(state_path, data)
+            # Migrate partial dict entries missing feed/title/description keys
+            elif isinstance(seen, dict) and seen:
+                first_val = next(iter(seen.values()))
+                if isinstance(first_val, dict) and "feed" not in first_val:
+                    for link, info in seen.items():
+                        info.setdefault("feed", "Unknown")
+                        info.setdefault("title", link)
+                        info.setdefault("description", "")
+                    save_state(state_path, data)
             return data
         except Exception:
             pass
@@ -141,7 +157,7 @@ def save_state(state_path: Path, state: dict) -> None:
     tmp.replace(state_path)
 
 
-def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, str]) -> bool:
+def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, dict]) -> bool:
     """Return True if new_art is a near-duplicate of any article in seen
     OR if its link has appeared in any previous edition.
     """
@@ -167,16 +183,6 @@ def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, str]) ->
             return True
 
     return False
-
-
-def build_feed_url_map() -> dict[str, str]:
-    """Build a reverse map: link → feed_name for all feeds in SECTIONS."""
-    url_map = {}
-    for section in SECTIONS:
-        for subsection in section["subsections"]:
-            for feed_name, feed_url in subsection["feeds"].items():
-                url_map[feed_name] = feed_url
-    return url_map
 
 
 # ---------------------------------------------------------------------------
@@ -343,69 +349,82 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
     """Fetch all feeds, deduplicate within edition and across past editions,
     write Jekyll post, and persist seen links to .news_state.json.
 
-    If republish=True, rebuild the post from links already stored in
-    seen_links for the given edition (no fresh fetch, no dedup — just
-    re-render from known links).
+    Args:
+        edition: Full edition name e.g. "2026-04-14-evening"
+        site_root: Path to the AI news site root
+        republish: If True, rebuild post from links already stored in
+                   .news_state.json for the given edition (no fresh fetch).
     """
     print(f"\n📰 Generating {edition} edition...{(' [REPUBLISH]' if republish else '')}")
 
     state_path = site_root / ".news_state.json"
     state = load_state(state_path)
-    seen_links: dict[str, str] = state.get("seen_links", {})
+    seen_links: dict[str, dict] = state.get("seen_links", {})
 
-    # Partition links by whether they belong to this edition
-    edition_links: dict[str, str] = {}   # link → source feed name (if recoverable)
-    if republish:
-        # Only include links from the requested edition
-        for link, ed in seen_links.items():
-            if ed == filename_base:
-                edition_links[link] = seen_links.get(link, "")
-        print(f"  📋 Republishing {len(edition_links)} links from edition '{filename_base}'")
-        if not edition_links:
-            print(f"  ✗ No links found for edition '{filename_base}' in state.")
-            return False
-    else:
-        edition_links = {}  # fresh run — will be populated from fetched articles
-
-    # Build reverse map: link → feed_name
-    feed_name_by_url: dict[str, str] = {}
-    feed_url_by_name: dict[str, str] = {}
-    for section in SECTIONS:
-        for subsection in section["subsections"]:
-            for feed_name, feed_url in subsection["feeds"].items():
-                feed_name_by_url[feed_url] = feed_name
-                feed_url_by_name[feed_name] = feed_url
-
-    seen_this_run: list[dict] = []
     subsection_articles: dict[str, list[dict]] = {}
 
     if republish:
-        # Collect all feed URLs we need to refetch
-        feeds_to_fetch: dict[str, str] = {}  # feed_name → url, deduped
-        for link in edition_links:
-            # Find which feed this link belongs to by checking each feed's latest items
-            pass  # we don't know the feed from link alone; fetch all feeds instead
-
-        # For republish, fetch all feeds but only keep items whose links
-        # belong to this edition (ignore MAX_AGE_DAYS)
+        # Reconstruct articles directly from state — no feed fetching needed
         for section in SECTIONS:
             for subsection in section["subsections"]:
-                sub_key = subsection["title"]
-                subsection_articles[sub_key] = []
+                subsection_articles[subsection["title"]] = []
 
+        # Build a reverse map: feed_url → feed_name for all feeds
+        feed_name_by_url: dict[str, str] = {}
+        feed_url_by_name: dict[str, str] = {}
+        for section in SECTIONS:
+            for subsection in section["subsections"]:
                 for feed_name, feed_url in subsection["feeds"].items():
-                    print(f"  → {feed_name}…")
-                    articles = fetch_feed(feed_name, feed_url)
-                    print(f"    {len(articles)} fetched")
-                    for a in articles:
-                        # Only include if this article's link was in the target edition
-                        if a["link"] in edition_links:
-                            seen_this_run.append(a)
-                            subsection_articles[sub_key].append(a)
-                            print(f"      + republishing: {a['title'][:60]}")
-                        else:
-                            print(f"      - not in edition: {a['title'][:60]}")
+                    feed_name_by_url[feed_url] = feed_name
+                    feed_url_by_name[feed_name] = feed_url
+
+        for link, info in seen_links.items():
+            if info.get("edition") != edition:
+                continue
+            # If feed is Unknown, try to look it up by nitter username
+            raw_feed = info.get("feed", "Unknown")
+            feed_name = raw_feed if raw_feed != "Unknown" else None
+            if not feed_name:
+                # Try to extract nitter username from the link path
+                m = re.search(r"nitter\.net/([^/]+)/", link)
+                if m:
+                    nitter_user = m.group(1)
+                    for fname in feed_url_by_name:
+                        if fname.lower() == nitter_user.lower():
+                            feed_name = fname
+                            break
+            if not feed_name:
+                feed_name = "Unknown"
+
+            art = {
+                "title": info.get("title", link),
+                "link": link,
+                "description": info.get("description", ""),
+                "source": feed_name,
+                "pub": "",
+                "pub_dt": None,
+            }
+            # Find which subsection this feed belongs to
+            sub_key = None
+            for section in SECTIONS:
+                for subsection in section["subsections"]:
+                    if feed_name in subsection["feeds"]:
+                        sub_key = subsection["title"]
+                        break
+                if sub_key:
+                    break
+            if sub_key:
+                subsection_articles[sub_key].append(art)
+
+        total_items = sum(len(v) for v in subsection_articles.values())
+        print(f"  📋 Republished {total_items} items from edition '{edition}'")
+        if total_items == 0:
+            print(f"  ✗ No links found for edition '{edition}' in state.")
+            return False
     else:
+        # Fresh run: fetch feeds and deduplicate
+        seen_this_run: list[dict] = []
+
         for section in SECTIONS:
             for subsection in section["subsections"]:
                 sub_key = subsection["title"]
@@ -423,48 +442,57 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
                         else:
                             print(f"      - dup:  {a['title'][:60]}")
 
-    if not seen_this_run:
-        print("  ✗ No articles to publish, skipping edition.")
-        return False
+        if not seen_this_run:
+            print("  ✗ No articles to publish, skipping edition.")
+            return False
 
-    # On fresh runs: persist new links; on republish: leave state untouched
-    if not republish:
-        new_links = {a["link"]: filename_base for a in seen_this_run}}
-        all_links = {**seen_links, **new_links}
+        # Persist new links with metadata
+        new_entries = {}
+        for a in seen_this_run:
+            new_entries[a["link"]] = {
+                "edition": edition,
+                "feed": a["source"],
+                "title": a["title"],
+                "description": a.get("description", ""),
+            }
+        all_links = {**seen_links, **new_entries}
         state["seen_links"] = all_links
         save_state(state_path, state)
         print(f"  📡 {len(all_links)} total seen links persisted")
-    else:
-        print(f"  📡 State left unchanged (republish mode)")
 
     # Sort each subsection's articles alphabetically by source then title
     for sub_key in subsection_articles:
         subsection_articles[sub_key].sort(key=lambda a: (a["source"], a["title"]))
 
-    date_str      = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    filename_base = f"{date_str}-{edition.lower()}"
-    filename      = f"{filename_base}.html"
-    filepath      = site_root / "_posts" / filename
+    filename = f"{edition}.html"
+    filepath = site_root / "_posts" / filename
     header_dt = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
+    # Derive human-readable edition label from full name (e.g. "Evening" from "2026-04-14-evening")
+    edition_label = edition.split("-")[-1].capitalize()
 
     total_feeds = sum(
         len(ss["feeds"])
         for section in SECTIONS
         for ss in section["subsections"]
     )
-    num_sources = len(set(a["source"] for a in seen_this_run))
+    num_sources = len(set(
+        a["source"]
+        for items in subsection_articles.values()
+        for a in items
+    ))
 
     html_lines = [
         "---",
         "layout: post",
-        f'title: "AI News Digest — {edition} Edition"',
+        f'title: "AI News Digest — {edition_label} Edition"',
         f'date: {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S +0000")}',
         "categories: news digest",
         "---",
         "",
-        "<h2>🤖 AI News — {} Edition · {}</h2>".format(edition, header_dt),
+        "<h2>🤖 AI News — {} Edition · {}</h2>".format(edition_label, header_dt),
         "<p>Scanning {} feeds · {} accounts posted · {} items</p>".format(
-            total_feeds, num_sources, len(seen_this_run)),
+            total_feeds, num_sources, sum(len(v) for v in subsection_articles.values())),
         "<hr>",
     ]
 
@@ -485,7 +513,8 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
                 html_lines.append("")
 
     filepath.write_text("\n".join(html_lines), encoding="utf-8")
-    print(f"\n  ✓ Saved {len(seen_this_run)} items → {filepath}")
+    total_items = sum(len(v) for v in subsection_articles.values())
+    print(f"\n  ✓ Saved {total_items} items → {filepath}")
     return True
 
 
@@ -497,6 +526,7 @@ if __name__ == "__main__":
     import sys
     if len(sys.argv) < 3:
         print("Usage: generate_news.py <edition> <site-root> [--republish]")
+        print("  edition: Full edition name, e.g. '2026-04-14-evening'")
         sys.exit(1)
     edition   = sys.argv[1]
     site_root = Path(sys.argv[2]).resolve()
