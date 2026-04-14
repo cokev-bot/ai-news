@@ -111,6 +111,24 @@ def parse_date(date_str: str) -> datetime | None:
     return None
 
 
+def clean_title(title: str) -> str:
+    """Normalize title for clean markdown rendering.
+
+    - Replace newlines/multiple spaces with a single space
+    - Escape markdown special characters so titles don't break formatting
+    """
+    # Collapse whitespace and strip leading/trailing
+    text = re.sub(r"[\n\r\t]+", " ", title).strip()
+    text = re.sub(r" {2,}", " ", text)
+
+    # Escape characters that have special meaning in markdown
+    escape_chars = r"\`*_{}[\]()#+-.!|"
+    for ch in escape_chars:
+        text = text.replace(ch, "\\" + ch)
+
+    return text
+
+
 def fetch_feed(name: str, url: str) -> list[dict]:
     """Fetch and parse an RSS feed, returning a list of article dicts."""
     try:
@@ -165,7 +183,11 @@ def fetch_feed(name: str, url: str) -> list[dict]:
 
 
 def generate_post(edition: str, site_root: Path) -> bool:
-    """Fetch all feeds, deduplicate within edition, write Jekyll post."""
+    """Fetch all feeds, deduplicate within edition, write Jekyll post as HTML.
+
+    Uses .html extension with raw HTML body to bypass Kramdown's link+emphasis
+    parsing bug (GFM prohibits **bold [text](url) bold** constructs).
+    """
     print(f"\n📰 Generating {edition} edition...")
     seen_this_run: list[dict] = []  # articles kept for this edition
 
@@ -187,12 +209,13 @@ def generate_post(edition: str, site_root: Path) -> bool:
     seen_this_run.sort(key=lambda a: (a["source"], a["title"]))
 
     date_str  = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    filename  = f"{date_str}-{edition.lower()}.markdown"
+    filename  = f"{date_str}-{edition.lower()}.html"
     filepath  = site_root / "_posts" / filename
     header_dt = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     num_sources = len(set(a["source"] for a in seen_this_run))
 
-    lines = [
+    # Build HTML content ( Jekyll processes .html with layout=post )
+    html_lines = [
         "---",
         "layout: post",
         f'title: "AI News Digest — {edition} Edition"',
@@ -200,24 +223,27 @@ def generate_post(edition: str, site_root: Path) -> bool:
         "categories: news digest",
         "---",
         "",
-        f"## 🤖 AI News — {edition} Edition · {header_dt}",
-        "",
-        f"Scanning {len(FEEDS)} sources · {num_sources} accounts posted · {len(seen_this_run)} items",
-        "",
+        "<h2>🤖 AI News — {} Edition · {}</h2>".format(edition, header_dt),
+        "<p>Scanning {} sources · {} accounts posted · {} items</p>".format(
+            len(FEEDS), num_sources, len(seen_this_run)),
+        "<hr>",
     ]
 
     current_source = None
     for art in seen_this_run:
         if art["source"] != current_source:
             current_source = art["source"]
-            lines.append(f"### {current_source}")
-            lines.append("")
-        lines.append(f"**[{art['title']}]({art['link']})**")
+            html_lines.append("<h3>{}</h3>".format(current_source))
+            html_lines.append("")
+        # Title as bold link — raw HTML, no markdown parsing issues
+        html_lines.append(
+            "<p><strong><a href=\"{}\">{}</a></strong></p>".format(
+                art["link"], art["title"]))
         if art["description"]:
-            lines.append(art["description"])
-        lines.append("")
+            html_lines.append("<p>{}</p>".format(art["description"]))
+        html_lines.append("")
 
-    filepath.write_text("\n".join(lines), encoding="utf-8")
+    filepath.write_text("\n".join(html_lines), encoding="utf-8")
     print(f"  ✓ Saved {len(seen_this_run)} items → {filepath}")
     return True
 
