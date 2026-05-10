@@ -19,15 +19,6 @@ from pathlib import Path
 # Adding a new section/subsection/feed is just adding an entry here.
 # ---------------------------------------------------------------------------
 
-NITTER_FEEDS = {
-    "AnthropicAI", "claudeai", "antigravity",
-    "OpenAI", "OpenAIDevs", "OpenAINewsroom", "ChatGPTapp",
-    "GoogleAI", "GoogleAIStudio", "googleaidevs", "GeminiApp", "NotebookLM",
-    "MistralAI", "MistralDevs", "mistralvibe",
-    "ollama",
-    "bcherny", "DarioAmodei",
-}
-
 SECTIONS = [
     {
         "title": "News",
@@ -244,6 +235,10 @@ def linkify_urls(text: str) -> str:
 # HTML rendering per item
 # ---------------------------------------------------------------------------
 
+def is_nitter_link(url: str) -> bool:
+    """Detect if a URL is from Nitter."""
+    return "nitter.net" in url
+
 def nitter_to_x(link: str) -> str:
     """Convert nitter.net URL to x.com."""
     return link.replace("nitter.net", "x.com")
@@ -262,7 +257,7 @@ def render_item(art: dict) -> str:
     feed_name = art["source"]
     link = art["link"]
 
-    if feed_name in NITTER_FEEDS:
+    if is_nitter_link(link):
         x_link = nitter_to_x(link)
         tweet_text = linkify_urls(art["title"])
         return (
@@ -291,15 +286,12 @@ def render_item(art: dict) -> str:
 def linkify_summary(text: str, articles: list[dict]) -> str:
     """Replace (Source: ID, ...) citations in LLM summary with HTML links."""
     def replace_group(match):
-        # The group content inside the parentheses
         group_content = match.group(1)
-        # Split by comma to handle multiple citations in one pair of parens
         parts = group_content.split(',')
         processed_parts = []
         
         for part in parts:
             part = part.strip()
-            # Match "Source Name: ID"
             sub_match = re.search(r'([^:]+):\s*(\d+)', part)
             if sub_match:
                 source_name = sub_match.group(1).strip()
@@ -308,18 +300,16 @@ def linkify_summary(text: str, articles: list[dict]) -> str:
                     if 1 <= article_id <= len(articles):
                         art = articles[article_id - 1]
                         link = art["link"]
-                        if art["source"] in NITTER_FEEDS:
+                        if is_nitter_link(link):
                             link = nitter_to_x(link)
                         processed_parts.append(f'<a href="{link}">{source_name}</a>')
                 except (ValueError, IndexError):
                     pass
             else:
-                # If it doesn't match Source:ID, just put the text back
                 processed_parts.append(part)
         
         return '(' + ', '.join(processed_parts) + ')'
 
-    # Match anything inside parentheses: (...)
     return re.sub(r'\(([^)]+)\)', replace_group, text)
 
 
@@ -334,7 +324,6 @@ def get_section_summary(section_title: str, articles: list[dict], site_root: Pat
 
     prompt_base = prompt_path.read_text(encoding="utf-8")
     
-    # Format the articles into a clear numbered list for the LLM
     content_lines = []
     for i, a in enumerate(articles, 1):
         line = f"{i}. [{a['source']}] {a['title']}"
