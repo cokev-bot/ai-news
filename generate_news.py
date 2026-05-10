@@ -285,6 +285,49 @@ def render_item(art: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
+# LLM Summarization
+# ---------------------------------------------------------------------------
+
+def get_section_summary(section_title: str, articles: list[dict], site_root: Path) -> str:
+    """Use a local Ollama instance to summarize the articles in a section."""
+    if not articles:
+        return "No significant updates in this section."
+
+    prompt_path = site_root / "summary_prompt.txt"
+    if not prompt_path.exists():
+        return "Summary unavailable (prompt file missing)."
+
+    prompt_base = prompt_path.read_text(encoding="utf-8")
+    
+    # Format the articles into a clear list for the LLM
+    content_lines = []
+    for a in articles:
+        line = f"- {a['title']}"
+        if a.get("description"):
+            line += f": {a['description']}"
+        content_lines.append(line)
+    
+    full_prompt = f"{prompt_base}\n\nSection: {section_title}\nArticles:\n" + "\n".join(content_lines)
+
+    try:
+        req = urllib.request.Request(
+            "http://localhost:11434/api/generate",
+            data=json.dumps({
+                "model": "gemma4:31b-cloud",
+                "prompt": full_prompt,
+                "stream": False
+            }).encode("utf-8"),
+            headers={"Content-Type": "application/json"}
+        )
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            res_data = json.loads(resp.read().decode("utf-8"))
+            return res_data.get("response", "").strip()
+    except Exception as e:
+        print(f"  [!] LLM summary failed for {section_title}: {e}")
+        return "Summary could not be generated."
+
+
+# ---------------------------------------------------------------------------
 # Feed fetching
 # ---------------------------------------------------------------------------
 
@@ -497,11 +540,24 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
     ]
 
     for section in SECTIONS:
+        # 1. Gather all articles in this section for the summary
+        section_articles = []
+        for subsection in section["subsections"]:
+            sub_key = subsection["title"]
+            section_articles.extend(subsection_articles.get(sub_key, []))
+
+        # 2. Generate summary using LLM
+        print(f"  Summarizing section: {section['title']}...")
+        summary = get_section_summary(section["title"], section_articles, site_root)
+
+        # 3. Add section heading and summary to HTML
         html_lines.append("<h2>{}</h2>".format(section["title"]))
+        html_lines.append('<p><strong>Summary:</strong> {}</p>'.format(summary))
+        html_lines.append("")
 
         for subsection in section["subsections"]:
             sub_key = subsection["title"]
-            items = subsection_articles[sub_key]
+            items = subsection_articles.get(sub_key, [])
             if not items:
                 continue
 
@@ -527,6 +583,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 3:
         print("Usage: generate_news.py <edition> <site-root> [--republish]")
         print("  edition: Full edition name, e.g. '2026-04-14-evening'")
+        print("  site-root: Path to the AI news site root")
         sys.exit(1)
     edition   = sys.argv[1]
     site_root = Path(sys.argv[2]).resolve()
