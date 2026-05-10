@@ -288,6 +288,27 @@ def render_item(art: dict) -> str:
 # LLM Summarization
 # ---------------------------------------------------------------------------
 
+def linkify_summary(text: str, articles: list[dict]) -> str:
+    """Replace (Source: ID) citations in LLM summary with HTML links."""
+    def replace_citation(match):
+        source_name = match.group(1)
+        try:
+            article_id = int(match.group(2))
+            if 1 <= article_id <= len(articles):
+                art = articles[article_id - 1]
+                link = art["link"]
+                # Normalize nitter to x
+                if art["source"] in NITTER_FEEDS:
+                    link = nitter_to_x(link)
+                return f'<a href="{link}">({source_name})</a>'
+        except (ValueError, IndexError):
+            pass
+        return match.group(0)
+
+    # Match (Source Name: ID)
+    return re.sub(r'\(([^:]+):\s*(\d+)\)', replace_citation, text)
+
+
 def get_section_summary(section_title: str, articles: list[dict], site_root: Path) -> str:
     """Use a local Ollama instance to summarize the articles in a section."""
     if not articles:
@@ -299,10 +320,10 @@ def get_section_summary(section_title: str, articles: list[dict], site_root: Pat
 
     prompt_base = prompt_path.read_text(encoding="utf-8")
     
-    # Format the articles into a clear list for the LLM
+    # Format the articles into a clear numbered list for the LLM
     content_lines = []
-    for a in articles:
-        line = f"- {a['title']}"
+    for i, a in enumerate(articles, 1):
+        line = f"{i}. [{a['source']}] {a['title']}"
         if a.get("description"):
             line += f": {a['description']}"
         content_lines.append(line)
@@ -548,11 +569,14 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
         # 2. Generate summary using LLM
         print(f"  Summarizing section: {section['title']}...")
-        summary = get_section_summary(section["title"], section_articles, site_root)
+        summary_text = get_section_summary(section["title"], section_articles, site_root)
+        
+        # 3. Linkify the summary text
+        summary_html = linkify_summary(summary_text, section_articles)
 
-        # 3. Add section heading and summary to HTML
+        # 4. Add section heading and summary to HTML
         html_lines.append("<h2>{}</h2>".format(section["title"]))
-        html_lines.append('<p><strong>Summary:</strong> {}</p>'.format(summary))
+        html_lines.append('<p><strong>Summary:</strong> {}</p>'.format(summary_html))
         html_lines.append("")
 
         for subsection in section["subsections"]:
