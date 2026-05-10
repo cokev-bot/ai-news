@@ -15,77 +15,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
-# Structure: Sections → Subsections → Feeds
-# Adding a new section/subsection/feed is just adding an entry here.
+# Configuration Constants
 # ---------------------------------------------------------------------------
-
-SECTIONS = [
-    {
-        "title": "News",
-        "subsections": [
-            {
-                "title": "Financial Times",
-                "feeds": {
-                    "FT AI":           "https://www.ft.com/artificial-intelligence?format=rss",
-                    "FT The AI Shift":  "https://www.ft.com/the-ai-shift?format=rss",
-                },
-            },
-        ],
-    },
-    {
-        "title": "Social Media",
-        "subsections": [
-            {
-                "title": "Anthropic",
-                "feeds": {
-                    "AnthropicAI": "https://nitter.net/AnthropicAI/rss",
-                    "claudeai":    "https://nitter.net/claudeai/rss",
-                },
-            },
-            {
-                "title": "OpenAI",
-                "feeds": {
-                    "OpenAI":          "https://nitter.net/OpenAI/rss",
-                    "OpenAIDevs":      "https://nitter.net/OpenAIDevs/rss",
-                    "OpenAINewsroom":  "https://nitter.net/OpenAINewsroom/rss",
-                    "ChatGPTapp":      "https://nitter.net/ChatGPTapp/rss",
-                },
-            },
-            {
-                "title": "Google",
-                "feeds": {
-                    "GoogleAI":        "https://nitter.net/GoogleAI/rss",
-                    "GoogleAIStudio":  "https://nitter.net/GoogleAIStudio/rss",
-                    "googleaidevs":    "https://nitter.net/googleaidevs/rss",
-                    "GeminiApp":       "https://nitter.net/GeminiApp/rss",
-                    "NotebookLM":      "https://nitter.net/NotebookLM/rss",
-                    "antigravity":     "https://nitter.net/antigravity/rss",
-                },
-            },
-            {
-                "title": "Mistral",
-                "feeds": {
-                    "MistralAI":   "https://nitter.net/MistralAI/rss",
-                    "MistralDevs": "https://nitter.net/MistralDevs/rss",
-                    "mistralvibe": "https://nitter.net/mistralvibe/rss",
-                },
-            },
-            {
-                "title": "Ollama",
-                "feeds": {
-                    "ollama": "https://nitter.net/ollama/rss",
-                },
-            },
-            {
-                "title": "Influencers",
-                "feeds": {
-                    "bcherny":     "https://nitter.net/bcherny/rss",
-                    "DarioAmodei": "https://nitter.net/DarioAmodei/rss",
-                },
-            },
-        ],
-    },
-]
 
 MAX_AGE_DAYS = 7
 MAX_ITEMS_PER_SOURCE = 20
@@ -423,6 +354,17 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
                    .news_state.json for the given edition (no fresh fetch).
     """
     print(f"\n📰 Generating {edition} edition...{(' [REPUBLISH]' if republish else '')}")
+
+    # LOAD SECTIONS FROM EXTERNAL JSON
+    sections_path = site_root / "sections.json"
+    if not sections_path.exists():
+        print(f"  [!] Error: {sections_path} not found.")
+        return False
+    try:
+        SECTIONS = json.loads(sections_path.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"  [!] Error parsing sections.json: {e}")
+        return False
 
     state_path = site_root / ".news_state.json"
     state = load_state(state_path)
