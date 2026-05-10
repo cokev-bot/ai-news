@@ -289,24 +289,38 @@ def render_item(art: dict) -> str:
 # ---------------------------------------------------------------------------
 
 def linkify_summary(text: str, articles: list[dict]) -> str:
-    """Replace (Source: ID) citations in LLM summary with HTML links."""
-    def replace_citation(match):
-        source_name = match.group(1)
-        try:
-            article_id = int(match.group(2))
-            if 1 <= article_id <= len(articles):
-                art = articles[article_id - 1]
-                link = art["link"]
-                # Normalize nitter to x
-                if art["source"] in NITTER_FEEDS:
-                    link = nitter_to_x(link)
-                return f'<a href="{link}">({source_name})</a>'
-        except (ValueError, IndexError):
-            pass
-        return match.group(0)
+    """Replace (Source: ID, ...) citations in LLM summary with HTML links."""
+    def replace_group(match):
+        # The group content inside the parentheses
+        group_content = match.group(1)
+        # Split by comma to handle multiple citations in one pair of parens
+        parts = group_content.split(',')
+        processed_parts = []
+        
+        for part in parts:
+            part = part.strip()
+            # Match "Source Name: ID"
+            sub_match = re.search(r'([^:]+):\s*(\d+)', part)
+            if sub_match:
+                source_name = sub_match.group(1).strip()
+                try:
+                    article_id = int(sub_match.group(2))
+                    if 1 <= article_id <= len(articles):
+                        art = articles[article_id - 1]
+                        link = art["link"]
+                        if art["source"] in NITTER_FEEDS:
+                            link = nitter_to_x(link)
+                        processed_parts.append(f'<a href="{link}">{source_name}</a>')
+                except (ValueError, IndexError):
+                    pass
+            else:
+                # If it doesn't match Source:ID, just put the text back
+                processed_parts.append(part)
+        
+        return '(' + ', '.join(processed_parts) + ')'
 
-    # Match (Source Name: ID)
-    return re.sub(r'\(([^:]+):\s*(\d+)\)', replace_citation, text)
+    # Match anything inside parentheses: (...)
+    return re.sub(r'\(([^)]+)\)', replace_group, text)
 
 
 def get_section_summary(section_title: str, articles: list[dict], site_root: Path) -> str:
