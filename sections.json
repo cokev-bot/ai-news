@@ -5,17 +5,17 @@
             {
                 "title": "Financial Times",
                 "feeds": {
-                    "FT AI":           "https://www.ft.com/artificial-intelligence?format=rss",
-                    "FT The AI Shift":  "https://www.ft.com/the-ai-shift?format=rss",
-                },
+                    "FT AI": "https://www.ft.com/artificial-intelligence?format=rss",
+                    "FT The AI Shift": "https://www.ft.com/the-ai-shift?format=rss"
+                }
             },
             {
                 "title": "New York Times",
                 "feeds": {
-                    "NYT AI":           "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/spotlight/artificial-intelligence/rss.xml",
-                },
-            },
-        ],
+                    "NYT AI": "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/spotlight/artificial-intelligence/rss.xml"
+                }
+            }
+        ]
     },
     {
         "title": "Social Media",
@@ -24,50 +24,50 @@
                 "title": "Anthropic",
                 "feeds": {
                     "AnthropicAI": "https://nitter.net/AnthropicAI/rss",
-                    "claudeai":    "https://nitter.net/claudeai/rss",
-                },
+                    "claudeai": "https://nitter.net/claudeai/rss"
+                }
             },
             {
                 "title": "OpenAI",
                 "feeds": {
-                    "OpenAI":          "https://nitter.net/OpenAI/rss",
-                    "OpenAIDevs":      "https://nitter.net/OpenAIDevs/rss",
-                    "OpenAINewsroom":  "https://nitter.net/OpenAINewsroom/rss",
-                    "ChatGPTapp":      "https://nitter.net/ChatGPTapp/rss",
-                },
+                    "OpenAI": "https://nitter.net/OpenAI/rss",
+                    "OpenAIDevs": "https://nitter.net/OpenAIDevs/rss",
+                    "OpenAINewsroom": "https://nitter.net/OpenAINewsroom/rss",
+                    "ChatGPTapp": "https://nitter.net/ChatGPTapp/rss"
+                }
             },
             {
                 "title": "Google",
                 "feeds": {
-                    "GoogleAI":        "https://nitter.net/GoogleAI/rss",
-                    "GoogleAIStudio":  "https://nitter.net/GoogleAIStudio/rss",
-                    "googleaidevs":    "https://nitter.net/googleaidevs/rss",
-                    "GeminiApp":       "https://nitter.net/GeminiApp/rss",
-                    "NotebookLM":      "https://nitter.net/NotebookLM/rss",
-                    "antigravity":     "https://nitter.net/antigravity/rss",
-                },
+                    "GoogleAI": "https://nitter.net/GoogleAI/rss",
+                    "GoogleAIStudio": "https://nitter.net/GoogleAIStudio/rss",
+                    "googleaidevs": "https://nitter.net/googleaidevs/rss",
+                    "GeminiApp": "https://nitter.net/GeminiApp/rss",
+                    "NotebookLM": "https://nitter.net/NotebookLM/rss",
+                    "antigravity": "https://nitter.net/antigravity/rss"
+                }
             },
             {
                 "title": "Mistral",
                 "feeds": {
-                    "MistralAI":   "https://nitter.net/MistralAI/rss",
+                    "MistralAI": "https://nitter.net/MistralAI/rss",
                     "MistralDevs": "https://nitter.net/MistralDevs/rss",
-                    "mistralvibe": "https://nitter.net/mistralvibe/rss",
-                },
+                    "mistralvibe": "https://nitter.net/mistralvibe/rss"
+                }
             },
             {
                 "title": "Ollama",
                 "feeds": {
-                    "ollama": "https://nitter.net/ollama/rss",
-                },
+                    "ollama": "https://nitter.net/ollama/rss"
+                }
             },
             {
                 "title": "Influencers",
                 "feeds": {
-                    "bcherny":     "https://nitter.net/bcherny/rss",
-                    "DarioAmodei": "https://nitter.net/DarioAmodei/rss",
-                },
-            },
-        ],
-    },
+                    "bcherny": "https://nitter.net/bcherny/rss",
+                    "DarioAmodei": "https://nitter.net/DarioAmodei/rss"
+                }
+            }
+        ]
+    }
 ]
