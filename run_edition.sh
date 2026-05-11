@@ -10,6 +10,9 @@ fi
 DATE=$(date -u '+%Y-%m-%d')
 cd /home/ubuntu/ai-news
 
+# Pull latest changes to ensure we have the current config and content
+git pull
+
 echo "Running $EDITION edition for $DATE..."
 python3 generate_news.py "${DATE}-${EDITION}" /home/ubuntu/ai-news
 bundle exec jekyll build --destination _site 2>&1 | tail -3
