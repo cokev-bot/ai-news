@@ -18,7 +18,7 @@
         ]
     },
     {
-        "title": "Social Media",
+        "title": "AI Labs",
         "subsections": [
             {
                 "title": "Anthropic",
@@ -31,7 +31,6 @@
                 "title": "OpenAI",
                 "feeds": {
                     "OpenAI": "https://nitter.net/OpenAI/rss",
-                    "OpenAIDevs": "https://nitter.net/OpenAIDevs/rss",
                     "OpenAINewsroom": "https://nitter.net/OpenAINewsroom/rss",
                     "ChatGPTapp": "https://nitter.net/ChatGPTapp/rss"
                 }
@@ -40,18 +39,54 @@
                 "title": "Google",
                 "feeds": {
                     "GoogleAI": "https://nitter.net/GoogleAI/rss",
-                    "GoogleAIStudio": "https://nitter.net/GoogleAIStudio/rss",
-                    "googleaidevs": "https://nitter.net/googleaidevs/rss",
                     "GeminiApp": "https://nitter.net/GeminiApp/rss",
-                    "NotebookLM": "https://nitter.net/NotebookLM/rss",
+                    "NotebookLM": "https://nitter.net/NotebookLM/rss"
+                }
+            },
+            {
+                "title": "Mistral",
+                "feeds": {
+                    "MistralAI": "https://nitter.net/MistralAI/rss"
+                }
+            }
+        ]
+    },
+    {
+        "title": "Developers",
+        "subsections": [
+            {
+                "title": "OpenAI",
+                "feeds": {
+                    "OpenAIDevs": "https://nitter.net/OpenAIDevs/rss"
+                }
+            },
+            {
+                "title": "Google",
+                "feeds": {
+                    "googleaidevs": "https://nitter.net/googleaidevs/rss"
+                }
+            },
+            {
+                "title": "Mistral",
+                "feeds": {
+                    "MistralDevs": "https://nitter.net/MistralDevs/rss"
+                }
+            }
+        ]
+    },
+    {
+        "title": "Developer Tools",
+        "subsections": [
+            {
+                "title": "Google",
+                "feeds": {
+                    "GoogleAIStudio": "https://nitter.net/GoogleAIStudio/rss",
                     "antigravity": "https://nitter.net/antigravity/rss"
                 }
             },
             {
                 "title": "Mistral",
                 "feeds": {
-                    "MistralAI": "https://nitter.net/MistralAI/rss",
-                    "MistralDevs": "https://nitter.net/MistralDevs/rss",
                     "mistralvibe": "https://nitter.net/mistralvibe/rss"
                 }
             },
@@ -59,13 +94,6 @@
                 "title": "Ollama",
                 "feeds": {
                     "ollama": "https://nitter.net/ollama/rss"
-                }
-            },
-            {
-                "title": "Influencers",
-                "feeds": {
-                    "bcherny": "https://nitter.net/bcherny/rss",
-                    "DarioAmodei": "https://nitter.net/DarioAmodei/rss"
                 }
             }
         ]
