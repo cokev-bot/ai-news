@@ -9,6 +9,12 @@
                     "FT The AI Shift":  "https://www.ft.com/the-ai-shift?format=rss",
                 },
             },
+            {
+                "title": "New York Times",
+                "feeds": {
+                    "NYT AI":           "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/spotlight/artificial-intelligence/rss.xml",
+                },
+            },
         ],
     },
     {
