@@ -21,6 +21,18 @@
         "title": "AI Labs",
         "subsections": [
             {
+                "title": "Aleph Alpha",
+                "feeds": {
+                    "Aleph__Alpha": "https://nitter.net/Aleph__Alpha/rss"
+                }
+            },
+            {
+                "title": "Alibaba",
+                "feeds": {
+                    "Alibaba_Qwen": "https://nitter.net/Alibaba_Qwen/rss"
+                }
+            },
+            {
                 "title": "Anthropic",
                 "feeds": {
                     "AnthropicAI": "https://nitter.net/AnthropicAI/rss",
@@ -28,11 +40,15 @@
                 }
             },
             {
-                "title": "OpenAI",
+                "title": "Baidu AI",
                 "feeds": {
-                    "OpenAI": "https://nitter.net/OpenAI/rss",
-                    "OpenAINewsroom": "https://nitter.net/OpenAINewsroom/rss",
-                    "ChatGPTapp": "https://nitter.net/ChatGPTapp/rss"
+                    "BaiduAI_News": "https://nitter.net/BaiduAI_News/rss"
+                }
+            },
+            {
+                "title": "DeepSeek",
+                "feeds": {
+                    "deepseek_ai": "https://nitter.net/deepseek_ai/rss"
                 }
             },
             {
@@ -44,9 +60,35 @@
                 }
             },
             {
+                "title": "MiniMax",
+                "feeds": {
+                    "MiniMax_AI": "https://nitter.net/MiniMax_AI/rss"
+                }
+            },
+            {
                 "title": "Mistral",
                 "feeds": {
                     "MistralAI": "https://nitter.net/MistralAI/rss"
+                }
+            },
+            {
+                "title": "Moonshot AI",
+                "feeds": {
+                    "Kimi_Moonshot": "https://nitter.net/Kimi_Moonshot/rss"
+                }
+            },
+            {
+                "title": "OpenAI",
+                "feeds": {
+                    "OpenAI": "https://nitter.net/OpenAI/rss",
+                    "OpenAINewsroom": "https://nitter.net/OpenAINewsroom/rss",
+                    "ChatGPTapp": "https://nitter.net/ChatGPTapp/rss"
+                }
+            },
+            {
+                "title": "Z.AI",
+                "feeds": {
+                    "Zai_org": "https://nitter.net/Zai_org/rss"
                 }
             }
         ]
@@ -55,9 +97,9 @@
         "title": "Developers",
         "subsections": [
             {
-                "title": "OpenAI",
+                "title": "Anthropic",
                 "feeds": {
-                    "OpenAIDevs": "https://nitter.net/OpenAIDevs/rss"
+                    "ClaudeDevs": "https://nitter.net/ClaudeDevs/rss"
                 }
             },
             {
@@ -70,6 +112,12 @@
                 "title": "Mistral",
                 "feeds": {
                     "MistralDevs": "https://nitter.net/MistralDevs/rss"
+                }
+            },
+            {
+                "title": "OpenAI",
+                "feeds": {
+                    "OpenAIDevs": "https://nitter.net/OpenAIDevs/rss"
                 }
             }
         ]
@@ -94,6 +142,17 @@
                 "title": "Ollama",
                 "feeds": {
                     "ollama": "https://nitter.net/ollama/rss"
+                }
+            }
+        ]
+    },
+    {
+        "title": "Benchmarks",
+        "subsections": [
+            {
+                "title": "Arena.ai",
+                "feeds": {
+                    "arena": "https://nitter.net/arena/rss"
                 }
             }
         ]
