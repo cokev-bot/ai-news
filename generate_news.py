@@ -561,12 +561,21 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 if __name__ == "__main__":
     import sys
     if len(sys.argv) < 3:
-        print("Usage: generate_news.py <edition> <site-root> [--republish]")
+        print("Usage: generate_news.py <edition> <site-root>")
         print("  edition: Full edition name, e.g. '2026-04-14-evening'")
         print("  site-root: Path to the AI news site root")
+        print("  Auto-detects republish if edition already exists in .news_state.json")
         sys.exit(1)
     edition   = sys.argv[1]
     site_root = Path(sys.argv[2]).resolve()
-    republish = "--republish" in sys.argv or "-r" in sys.argv
+
+    # Auto-detect republish if edition already exists in state
+    state_path = site_root / ".news_state.json"
+    state = load_state(state_path)
+    seen_links = state.get("seen_links", {})
+    republish = any(info.get("edition") == edition for info in seen_links.values())
+    if republish:
+        print(f"  📋 Edition '{edition}' found in state — republishing.")
+
     success   = generate_post(edition, site_root, republish=republish)
     sys.exit(0 if success else 1)
