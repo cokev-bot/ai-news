@@ -535,18 +535,27 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         html_lines.append('<p><strong>Summary:</strong> {}</p>'.format(summary_html))
         html_lines.append("")
 
+        # 5. Build collapsible subsections
+        subsections_html_lines = []
         for subsection in section["subsections"]:
             sub_key = subsection["title"]
             items = subsection_articles.get(sub_key, [])
             if not items:
                 continue
 
-            html_lines.append("")
-            html_lines.append("<h3>{}</h3>".format(subsection["title"]))
-            html_lines.append("")
+            subsections_html_lines.append("")
+            subsections_html_lines.append("<h3>{}</h3>".format(subsection["title"]))
+            subsections_html_lines.append("")
             for art in items:
-                html_lines.append(render_item(art))
-                html_lines.append("")
+                subsections_html_lines.append(render_item(art))
+                subsections_html_lines.append("")
+
+        if subsections_html_lines:
+            html_lines.append('<details>')
+            html_lines.append('  <summary><strong>Subsections</strong></summary>')
+            html_lines.extend(subsections_html_lines)
+            html_lines.append('</details>')
+            html_lines.append("")
 
     filepath.write_text("\n".join(html_lines), encoding="utf-8")
     total_items = sum(len(v) for v in subsection_articles.values())
