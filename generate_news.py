@@ -24,6 +24,26 @@ MAX_ITEMS_PER_SOURCE = 20
 TITLE_SIM_THRESHOLD = 0.40   # Jaccard similarity threshold for duplicate detection
 LOG_FILE = "/home/ubuntu/ai-news/generate_news.log"
 
+DEFAULT_CONFIG = {
+    "model": "gemma4:31b-cloud",
+    "summary_prompt_file": "summary_prompt.txt",
+}
+
+
+def load_config(site_root: Path) -> dict:
+    """Load config.json from site root, falling back to DEFAULT_CONFIG."""
+    config_path = site_root / "config.json"
+    if config_path.exists():
+        try:
+            with config_path.open(encoding="utf-8") as fh:
+                cfg = json.load(fh)
+            # Merge with defaults so missing keys still work
+            merged = {**DEFAULT_CONFIG, **cfg}
+            return merged
+        except Exception as e:
+            logging.warning(f"Failed to load config.json: {e}. Using defaults.")
+    return DEFAULT_CONFIG.copy()
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -255,12 +275,16 @@ def linkify_summary(text: str, articles: list[dict]) -> str:
     return re.sub(r'\(([^)]+)\)', replace_group, text)
 
 
-def get_section_summary(section_title: str, articles: list[dict], site_root: Path) -> str:
+def get_section_summary(section_title: str, articles: list[dict], site_root: Path, config: dict | None = None) -> str:
     """Use a local Ollama instance to summarize the articles in a section."""
     if not articles:
         return "No significant updates in this section."
 
-    prompt_path = site_root / "summary_prompt.txt"
+    cfg = config if config is not None else load_config(site_root)
+    prompt_file = cfg.get("summary_prompt_file", DEFAULT_CONFIG["summary_prompt_file"])
+    model = cfg.get("model", DEFAULT_CONFIG["model"])
+
+    prompt_path = site_root / prompt_file
     if not prompt_path.exists():
         return "Summary unavailable (prompt file missing)."
 
@@ -279,7 +303,7 @@ def get_section_summary(section_title: str, articles: list[dict], site_root: Pat
         req = urllib.request.Request(
             "http://localhost:11434/api/generate",
             data=json.dumps({
-                "model": "gemma4:31b-cloud",
+                "model": model,
                 "prompt": full_prompt,
                 "stream": False
             }).encode("utf-8"),
@@ -365,6 +389,9 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
                    .news_state.json for the given edition (no fresh fetch).
     """
     print(f"\n📰 Generating {edition} edition...{(' [REPUBLISH]' if republish else '')}")
+
+    # Load site config (model, prompt file, etc.)
+    config = load_config(site_root)
 
     # LOAD SECTIONS FROM EXTERNAL JSON
     sections_path = site_root / "sections.json"
@@ -525,7 +552,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
         # 2. Generate summary using LLM
         logging.info(f"Summarizing section: {section['title']}...")
-        summary_text = get_section_summary(section["title"], section_articles, site_root)
+        summary_text = get_section_summary(section["title"], section_articles, site_root, config)
         
         # 3. Linkify the summary text
         summary_html = linkify_summary(summary_text, section_articles)
