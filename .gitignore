@@ -11,3 +11,4 @@ Gemfile.lock
 __pycache__/
 *.pyc
 *.pyo
+generate_news.log

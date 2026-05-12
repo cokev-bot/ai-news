@@ -11,6 +11,7 @@ import xml.etree.ElementTree as ET
 import urllib.request
 import urllib.error
 import re
+import logging
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -21,6 +22,16 @@ from pathlib import Path
 MAX_AGE_DAYS = 7
 MAX_ITEMS_PER_SOURCE = 20
 TITLE_SIM_THRESHOLD = 0.40   # Jaccard similarity threshold for duplicate detection
+LOG_FILE = "/home/ubuntu/ai-news/generate_news.log"
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler(LOG_FILE),
+        logging.StreamHandler()
+    ]
+)
 
 
 # ---------------------------------------------------------------------------
@@ -278,7 +289,7 @@ def get_section_summary(section_title: str, articles: list[dict], site_root: Pat
             res_data = json.loads(resp.read().decode("utf-8"))
             return res_data.get("response", "").strip()
     except Exception as e:
-        print(f"  [!] LLM summary failed for {section_title}: {e}")
+        logging.error(f"LLM summary failed for {section_title}: {e}")
         return "Summary could not be generated."
 
 
@@ -293,13 +304,13 @@ def fetch_feed(name: str, url: str) -> list[dict]:
         with urllib.request.urlopen(req, timeout=15) as resp:
             raw = resp.read()
     except Exception as e:
-        print(f"  [!] Failed to fetch {name}: {e}")
+        logging.error(f"Failed to fetch {name}: {e}")
         return []
 
     try:
         root = ET.fromstring(raw)
     except Exception as e:
-        print(f"  [!] Failed to parse {name}: {e}")
+        logging.error(f"Failed to parse {name}: {e}")
         return []
 
     articles = []
@@ -467,7 +478,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         all_links = {**seen_links, **new_entries}
         state["seen_links"] = all_links
         save_state(state_path, state)
-        print(f"  📡 {len(all_links)} total seen links persisted")
+        logging.info(f" {len(all_links)} total seen links persisted")
 
     # Sort each subsection's articles alphabetically by source then title
     for sub_key in subsection_articles:
@@ -513,7 +524,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
             section_articles.extend(subsection_articles.get(sub_key, []))
 
         # 2. Generate summary using LLM
-        print(f"  Summarizing section: {section['title']}...")
+        logging.info(f"Summarizing section: {section['title']}...")
         summary_text = get_section_summary(section["title"], section_articles, site_root)
         
         # 3. Linkify the summary text
@@ -539,7 +550,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
     filepath.write_text("\n".join(html_lines), encoding="utf-8")
     total_items = sum(len(v) for v in subsection_articles.values())
-    print(f"\n  ✓ Saved {total_items} items → {filepath}")
+    logging.info(f"Saved {total_items} items → {filepath}")
     return True
 
 
