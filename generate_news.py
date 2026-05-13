@@ -309,7 +309,7 @@ def get_section_summary(section_title: str, articles: list[dict], site_root: Pat
             }).encode("utf-8"),
             headers={"Content-Type": "application/json"}
         )
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        with urllib.request.urlopen(req, timeout=600) as resp:
             res_data = json.loads(resp.read().decode("utf-8"))
             return res_data.get("response", "").strip()
     except Exception as e:
