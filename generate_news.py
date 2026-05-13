@@ -568,6 +568,10 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
             sub_key = subsection["title"]
             section_articles.extend(subsection_articles.get(sub_key, []))
 
+        # Skip empty sections entirely
+        if not section_articles:
+            continue
+
         # 2. Generate summary using LLM
         logging.info(f"Summarizing section: {section['title']}...")
         summary_text = get_section_summary(section["title"], section_articles, site_root, config)
