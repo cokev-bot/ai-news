@@ -513,7 +513,25 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
     filename = f"{edition}.html"
     filepath = site_root / "_posts" / filename
-    header_dt = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
+    # Use Pacific Time for all display timestamps
+    import os
+    os.environ.setdefault("TZ", "America/Los_Angeles")
+    try:
+        import pytz
+        pt_tz = pytz.timezone("America/Los_Angeles")
+        pt_now = datetime.now(pt_tz)
+    except ImportError:
+        # Fallback if pytz not available (shouldn't happen on Ubuntu)
+        from datetime import timedelta
+        import time
+        # Check if DST is active
+        time.tzset()
+        is_dst = time.localtime().tm_isdst
+        offset = timedelta(hours=-7 if is_dst else -8)
+        pt_now = datetime.now(timezone.utc) + offset
+
+    header_dt = pt_now.strftime("%Y-%m-%d %H:%M %Z")
 
     # Derive human-readable edition label from full name (e.g. "Evening" from "2026-04-14-evening")
     edition_label = edition.split("-")[-1].capitalize()
@@ -533,7 +551,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         "---",
         "layout: post",
         f'title: "AI News Digest — {edition_label} Edition"',
-        f'date: {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S +0000")}',
+        f'date: {pt_now.strftime("%Y-%m-%d %H:%M:%S %z")}',
         "categories: news digest",
         "---",
         "",

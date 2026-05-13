@@ -7,13 +7,14 @@ if [ -z "$EDITION" ]; then
     exit 1
 fi
 
-DATE=$(date -u '+%Y-%m-%d')
+# Use Pacific Time for edition date so 00:00 UTC (5pm PT) stays on same PT day
+DATE=$(TZ='America/Los_Angeles' date '+%Y-%m-%d')
 cd /home/ubuntu/ai-news
 
 # Pull latest changes to ensure we have the current config and content
 git pull
 
-echo "Running $EDITION edition for $DATE..."
+echo "Running $EDITION edition for $DATE (PT)..."
 python3 generate_news.py "${DATE}-${EDITION}" /home/ubuntu/ai-news
 bundle exec jekyll build --destination _site 2>&1 | tail -3
 git add _posts/ _config.yml
