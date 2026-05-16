@@ -1,0 +1,112 @@
+---
+layout: post
+title: "AI News Digest — Afternoon Edition"
+date: 2026-05-16 13:02:54 -0700
+categories: news digest
+---
+
+<h2>🤖 AI News — Afternoon Edition · 2026-05-16 13:02 PDT</h2>
+<p>Scanning 28 feeds · 2 accounts posted · 6 items</p>
+<hr>
+<h2>AI Labs</h2>
+<p><strong>Summary:</strong> OpenAI has rolled out a series of significant performance and usability updates to Codex, focusing on streamlining the developer experience and reducing system latency (<a href="https://x.com/OpenAIDevs/status/2055718005309575431#m">OpenAIDevs</a>). These optimizations target the efficiency of large repositories and active coding sessions, resulting in approximately 75% less re-rendering during thread switches and a 10x to 50x reduction in the cost of expensive Git operations (<a href="https://x.com/OpenAIDevs/status/2055718005309575431#m">OpenAIDevs</a>).
+
+The updates also introduce several workflow enhancements to bring essential tools closer to the user's active workspace. Key Git controls, including PR creation, commit, push, and branch actions, have been integrated back into the review flow (<a href="https://x.com/OpenAIDevs/status/2055717859058495596#m">OpenAIDevs</a>). Additionally, the thread panel now features cleaner behavior for loading related context—such as local state, sources, and Git context—from the header (<a href="https://x.com/OpenAIDevs/status/2055717927064846802#m">OpenAIDevs</a>).
+
+Further refinements to the user interface include a "cleanup pass" for the local server list, which introduces better filtering, remembered sort states, and 120-second refreshes for non-listed ports (<a href="https://x.com/OpenAIDevs/status/2055717993460732191#m">OpenAIDevs</a>). To further personalize the environment, keyboard shortcuts are now fully customizable via settings (<a href="https://x.com/OpenAIDevs/status/2055717793841221796#m">OpenAIDevs</a>).
+
+Meanwhile, in the realm of agentic capabilities, recent results from the Slides Arena indicate a new state-of-the-art for "soft-verifiable domains" (<a href="https://x.com/Designarena/status/2055378562673520661#m">Zai_org</a>). Anthropic's Opus 4.7 and Opus 4.7 (Thinking) have claimed the first and second positions, respectively, followed by Zai_org's GLM 5.1 in third place (<a href="https://x.com/Designarena/status/2055378562673520661#m">Zai_org</a>).</p>
+
+<details>
+  <summary><strong>Subsections</strong></summary>
+
+<h3>OpenAI</h3>
+
+<p><strong>OpenAIDevs</strong>: R to @OpenAIDevs: Git actions are easier to reach.
+
+We moved key git controls back into the review flow, so common actions like commit, push, branch, PR creation, and PR status are closer to where you’re already working. <a href="https://x.com/OpenAIDevs/status/2055717859058495596#m">🔗</a></p>
+
+<p><strong>OpenAIDevs</strong>: R to @OpenAIDevs: Improved thread panel.
+
+Related context and controls now load and behave more cleanly from the thread header: summaries, local state, Git context, sources, and more. <a href="https://x.com/OpenAIDevs/status/2055717927064846802#m">🔗</a></p>
+
+<p><strong>OpenAIDevs</strong>: R to @OpenAIDevs: The local server list got a cleanup pass.
+
+Better filtering, remembered sort state, clearer empty states, connected route state, and refreshes for non-listed ports every 120 seconds. <a href="https://x.com/OpenAIDevs/status/2055717993460732191#m">🔗</a></p>
+
+<p><strong>OpenAIDevs</strong>: R to @OpenAIDevs: We’ve also been tightening Codex performance across the app, especially for large repos and active coding sessions.
+
+• ~75% less re-rendering when switching threads
+• Some streaming paths dropped to 0 unnecessary re-renders
+• Expensive Git operations in large repos reduced by ~10-50x, depending on the operation
+• Less UI churn across streaming responses, thread switching, and sidebar interactions
+• Faster time to usefulness around startup and first interaction
+
+Less background churn. More responsive coding. <a href="https://x.com/OpenAIDevs/status/2055718005309575431#m">🔗</a></p>
+
+<p><strong>OpenAIDevs</strong>: We’re having way too much fun working through your feedback.
+
+(Please, keep it coming.)
+
+Keyboard shortcuts are now customizable.
+
+Set Codex up around how you actually work, then tweak shortcuts from settings instead of adapting to our defaults. <a href="https://x.com/OpenAIDevs/status/2055717793841221796#m">🔗</a></p>
+
+
+<h3>Z.AI</h3>
+
+<p><strong>Zai_org</strong>: RT by @Zai_org: BREAKING: The results are in for Slides Arena... @AnthropicAI and @Zai_org models continue to lead the way in soft-verifiable domains
+
+1st: Opus 4.7 by @AnthropicAI
+2nd: Opus 4.7 (Thinking) by @AnthropicAI 
+3rd: GLM 5.1 by @Zai_org 
+
+Huge congrats to @AnthropicAI and @Zai_org for establishing the SOTA for Agentic Slides <a href="https://x.com/Designarena/status/2055378562673520661#m">🔗</a></p>
+
+</details>
+
+<h2>Developers</h2>
+<p><strong>Summary:</strong> OpenAI is rolling out a series of performance and usability updates to Codex, focusing heavily on reducing latency and streamlining the developer workflow (<a href="https://x.com/OpenAIDevs/status/2055718005309575431#m">OpenAIDevs</a>). These optimizations specifically target large repositories and active coding sessions, resulting in a 75% reduction in re-rendering when switching threads and a significant decrease in UI churn during streaming responses and sidebar interactions (<a href="https://x.com/OpenAIDevs/status/2055718005309575431#m">OpenAIDevs</a>). Furthermore, expensive Git operations in large repos have seen a performance boost of approximately 10-50x (<a href="https://x.com/OpenAIDevs/status/2055718005309575431#m">OpenAIDevs</a>).
+
+The developer experience is also receiving a variety of interface refinements aimed at efficiency. Key Git controls—including commit, push, branch, and PR creation—have been moved back into the review flow to keep them closer to the active workspace (<a href="https://x.com/OpenAIDevs/status/2055717859058495596#m">OpenAIDevs</a>). Additionally, the thread panel has been improved so that summaries, local state, Git context, and sources load more cleanly from the thread header (<a href="https://x.com/OpenAIDevs/status/2055717927064846802#m">OpenAIDevs</a>).
+
+Further quality-of-life updates include a "cleanup pass" for the local server list, which now features better filtering, remembered sort states, and refreshes for non-listed ports every 120 seconds (<a href="https://x.com/OpenAIDevs/status/2055717993460732191#m">OpenAIDevs</a>). To allow for a more personalized environment, OpenAI has also introduced customizable keyboard shortcuts, enabling developers to tweak settings rather than adapting to default configurations (<a href="https://x.com/OpenAIDevs/status/2055717793841221796#m">OpenAIDevs</a>).
+
+Together, these updates signal a concerted effort to refine the responsiveness and ergonomics of the Codex environment, ensuring a faster "time to usefulness" from the moment of startup (<a href="https://x.com/OpenAIDevs/status/2055718005309575431#m">OpenAIDevs</a>).</p>
+
+<details>
+  <summary><strong>Subsections</strong></summary>
+
+<h3>OpenAI</h3>
+
+<p><strong>OpenAIDevs</strong>: R to @OpenAIDevs: Git actions are easier to reach.
+
+We moved key git controls back into the review flow, so common actions like commit, push, branch, PR creation, and PR status are closer to where you’re already working. <a href="https://x.com/OpenAIDevs/status/2055717859058495596#m">🔗</a></p>
+
+<p><strong>OpenAIDevs</strong>: R to @OpenAIDevs: Improved thread panel.
+
+Related context and controls now load and behave more cleanly from the thread header: summaries, local state, Git context, sources, and more. <a href="https://x.com/OpenAIDevs/status/2055717927064846802#m">🔗</a></p>
+
+<p><strong>OpenAIDevs</strong>: R to @OpenAIDevs: The local server list got a cleanup pass.
+
+Better filtering, remembered sort state, clearer empty states, connected route state, and refreshes for non-listed ports every 120 seconds. <a href="https://x.com/OpenAIDevs/status/2055717993460732191#m">🔗</a></p>
+
+<p><strong>OpenAIDevs</strong>: R to @OpenAIDevs: We’ve also been tightening Codex performance across the app, especially for large repos and active coding sessions.
+
+• ~75% less re-rendering when switching threads
+• Some streaming paths dropped to 0 unnecessary re-renders
+• Expensive Git operations in large repos reduced by ~10-50x, depending on the operation
+• Less UI churn across streaming responses, thread switching, and sidebar interactions
+• Faster time to usefulness around startup and first interaction
+
+Less background churn. More responsive coding. <a href="https://x.com/OpenAIDevs/status/2055718005309575431#m">🔗</a></p>
+
+<p><strong>OpenAIDevs</strong>: We’re having way too much fun working through your feedback.
+
+(Please, keep it coming.)
+
+Keyboard shortcuts are now customizable.
+
+Set Codex up around how you actually work, then tweak shortcuts from settings instead of adapting to our defaults. <a href="https://x.com/OpenAIDevs/status/2055717793841221796#m">🔗</a></p>
+
+</details>
