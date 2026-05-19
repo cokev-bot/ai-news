@@ -1,0 +1,24 @@
+name: Run Tests
+
+on:
+  push:
+    paths:
+      - '**.py'
+      - 'tests/**'
+  pull_request:
+    paths:
+      - '**.py'
+      - 'tests/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Logic Tests
+        run: |
+          PYTHONPATH=. python3 tests/test_logic.py
