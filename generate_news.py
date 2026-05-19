@@ -22,7 +22,7 @@ from pathlib import Path
 MAX_AGE_DAYS = 7
 MAX_ITEMS_PER_SOURCE = 20
 TITLE_SIM_THRESHOLD = 0.40   # Jaccard similarity threshold for duplicate detection
-LOG_FILE = "/home/ubuntu/ai-news/generate_news.log"
+LOG_FILE = "generate_news.log"
 
 DEFAULT_CONFIG = {
     "model": "gemma4:31b-cloud",
