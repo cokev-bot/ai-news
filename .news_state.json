@@ -5381,7 +5381,457 @@
       "feed": "arena",
       "title": "R to @arena: In the Vision Arena, Qwen3.7 Plus Preview makes @Alibaba_Qwen the #5 lab, ranking #16 overall.",
       "description": "In the Vision Arena, Qwen3.7 Plus Preview makes @Alibaba_Qwen the #5 lab, ranking #16 overall.\n"
+    },
+    "https://www.ft.com/content/a30c3dd5-9383-4606-a649-fdf19c41c308": {
+      "edition": "2026-05-20-Morning",
+      "feed": "FT AI",
+      "title": "China banned Nvidia\u2019s gaming chip during Jensen Huang\u2019s visit",
+      "description": "Beijing aims to support domestic players including Huawei and Cambricon as they catch up to US rivals"
+    },
+    "https://www.ft.com/content/29adbaf8-f21a-4bd5-aed9-1c2d6a8216cc": {
+      "edition": "2026-05-20-Morning",
+      "feed": "FT AI",
+      "title": "Is Nvidia too big to fail?",
+      "description": "\u2018You\u2019re clearly at the centre of everything\u2019"
+    },
+    "https://www.ft.com/content/62e7c46d-bc2d-40d5-9239-1043e11361d6": {
+      "edition": "2026-05-20-Morning",
+      "feed": "FT AI",
+      "title": "Inside Trump\u2019s AI \u2018slopaganda\u2019 machine",
+      "description": "US president\u2019s stream of fake imagery on Truth Social is reshaping the boundaries of political communication"
+    },
+    "https://www.ft.com/ai-exchange": {
+      "edition": "2026-05-20-Morning",
+      "feed": "FT AI",
+      "title": "AI Exchange",
+      "description": "In this monthly series, running alongside our existing Tech Exchange dialogues, FT journalists talk to the scientists, developers and business leaders exploring ever more applications for artificial intelligence, in every aspect of our lives"
+    },
+    "https://www.ft.com/content/4da49f68-6a8d-4e1a-a933-abe10c185ff7": {
+      "edition": "2026-05-20-Morning",
+      "feed": "FT AI",
+      "title": "Big Europe and Asian private equity health funds merge to defy AI disruption",
+      "description": "Global Healthcare Opportunities and CBC Group say $21bn investment manager will be world\u2019s largest in sector"
+    },
+    "https://www.ft.com/content/766353e4-709b-4621-bd26-125580d00400": {
+      "edition": "2026-05-20-Morning",
+      "feed": "FT AI",
+      "title": "Hg spins out \u20ac500mn of assets from \u20ac19bn software group Visma",
+      "description": "Move by private equity owner comes as long-awaited London IPO of group is shelved"
+    },
+    "https://www.ft.com/content/32bf8935-8d21-4689-ae34-8b4d3d5f6d93": {
+      "edition": "2026-05-20-Morning",
+      "feed": "FT AI",
+      "title": "The impossible maths of the AI boom",
+      "description": "The IPO of big sector companies is probably nothing more than a transfer of investment risk to retail investors"
+    },
+    "https://www.ft.com/content/c6b362b8-ab6b-4723-af48-28082bdfcac2": {
+      "edition": "2026-05-20-Morning",
+      "feed": "FT AI",
+      "title": "Nvidia\u2019s Huang bankrolls AI boom with $90bn deal spree",
+      "description": "Chipmaker\u2019s spending rivals Big Tech\u2019s biggest venture operations, tying customers and start-ups to its technology"
+    },
+    "https://www.ft.com/content/47eafdcb-5a0a-4515-a07a-70e89ad2fa78": {
+      "edition": "2026-05-20-Morning",
+      "feed": "FT AI",
+      "title": "Harvey's Winston Weinberg: Why AI will force lawyers to change their fee structure",
+      "description": "The co-founder of the legal start-up talks about how AI could shake up law firms\u2019 business models and how he plans to stay ahead of rivals"
+    },
+    "https://www.nytimes.com/2026/05/20/business/dealbook/ai-jobs-layoffs-meta.html": {
+      "edition": "2026-05-20-Morning",
+      "feed": "NYT AI",
+      "title": "The Growing Anxiety Over AI, Jobs and the Future",
+      "description": "Layoffs linked to artificial intelligence are rattling workers and college graduates, stoking concerns worldwide that are showing up in polls."
+    },
+    "https://www.nytimes.com/2026/05/20/briefing/whos-writing-this.html": {
+      "edition": "2026-05-20-Morning",
+      "feed": "NYT AI",
+      "title": "Who\u2019s Writing This?",
+      "description": "We look at the expanding role of A.I. in our lives."
+    },
+    "https://www.nytimes.com/2026/05/20/opinion/silicon-valley-ai-taste-culture.html": {
+      "edition": "2026-05-20-Morning",
+      "feed": "NYT AI",
+      "title": "Which Has Better Taste: A.I. or Humans?",
+      "description": "Why Silicon Valley is obsessed with taste."
+    },
+    "https://www.nytimes.com/2026/05/20/podcasts/tell-us-has-ai-changed-your-relationship.html": {
+      "edition": "2026-05-20-Morning",
+      "feed": "NYT AI",
+      "title": "\u2018Modern Love\u2019: A.I. in Relationships",
+      "description": "We want to know how A.I. chatbots are showing up in your personal life."
+    },
+    "https://www.nytimes.com/2026/05/20/opinion/deep-springs-college-ivy-league-education.html": {
+      "edition": "2026-05-20-Morning",
+      "feed": "NYT AI",
+      "title": "A Cattle Ranch Is Doing What\u00a0Ivy League Colleges Can\u2019t",
+      "description": "College education does almost nothing to develop the sense that what we do in our day-to-day lives resonates with people beyond ourselves."
+    },
+    "https://nitter.net/BaiduAI_News/status/2056996186587086993#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "BaiduAI_News",
+      "title": "What does vibe coding actually look like in the real world?\nWe\u2019re going live with creators building products using MeDo \u2193",
+      "description": "What does vibe coding actually look like in the real world?\nWe\u2019re going live with creators building products using MeDo \u2193\n\n\nMeDo (@Medo_CodeFree)\n\nWe\u2019re going live to show you how digital nomads are turning ideas into real products with MeDo. \u2728\n\n\ud83c\udf34 Guest Speaker: Link\nCo-builder of CMI\u2026"
+    },
+    "https://nitter.net/Baidu_Inc/status/2056736643781165127#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "BaiduAI_News",
+      "title": "RT by @BaiduAI_News: Here is a quick addition to your metrics vocabulary: DAA.\n\nShort for Daily Active Agents, it is the agent era's equivalent of DAU. Where tokenomics tracks cost, DAA tracks output \u2014 how much work agents are actually getting done.\n\nSee the full comparison \u2193",
+      "description": "Here is a quick addition to your metrics vocabulary: DAA.\n\nShort for Daily Active Agents, it is the agent era's equivalent of DAU. Where tokenomics tracks cost, DAA tracks output \u2014 how much work agents are actually getting done.\n\nSee the full comparison \u2193\n"
+    },
+    "https://nitter.net/GoogleAI/status/2056847845752443382#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "GoogleAI",
+      "title": "R to @GoogleAI: x.com/chrisfirst/status/2056\u2026",
+      "description": "nitter.net/chrisfirst/status/2056\u2026\n\n\nCHRIS FIRST (@chrisfirst)\n\nEdited using Google Omni Flash\n&gt; Turn him into a circus bear.\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/chrisfirst/status/2056808917532037581#m\n\n"
+    },
+    "https://nitter.net/Google/status/2056921831513493890#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "GeminiApp",
+      "title": "RT by @GeminiApp: Keynote? Done.\nLaptop? Closed.\n\n@GeminiApp Spark? Running.",
+      "description": "Keynote? Done.\nLaptop? Closed.\n\n@GeminiApp Spark? Running.\n"
+    },
+    "https://nitter.net/koraykv/status/2056880673147998622#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "GeminiApp",
+      "title": "RT by @GeminiApp: Following our Gemini 3.5 Flash launch at #GoogleIO, check out this demo of what it can do right inside the Gemini app.\n\nWatch 3.5 Flash build an interactive circuit helper, outputting a step-by-step physical build guide alongside a working simulation. It\u2019s a great example of how the Gemini app can help students learn visually, breaking down new or complex concepts and guiding them through hands-on subjects interactively.\n\n3.5 Flash is available globally today!",
+      "description": "Following our Gemini 3.5 Flash launch at #GoogleIO, check out this demo of what it can do right inside the Gemini app.\n\nWatch 3.5 Flash build an interactive circuit helper, outputting a step-by-step physical build guide alongside a working simulation. It\u2019s a great example of how the Gemini app\u2026"
+    },
+    "https://nitter.net/GeminiApp/status/2056814117047132301#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: Starting today, Gemini Omni is rolling out to all Google AI Plus, Pro and Ultra subscribers globally at http://gemini.google and in the app. Soon, we will support more output formats, like image and audio.\n\nGive Gemini Omni a try and share your creations in the replies. \ud83d\udc47",
+      "description": "Starting today, Gemini Omni is rolling out to all Google AI Plus, Pro and Ultra subscribers globally at gemini.google and in the app. Soon, we will support more output formats, like image and audio.\n\nGive Gemini Omni a try and share your creations in the replies. \ud83d\udc47\n"
+    },
+    "https://nitter.net/GeminiApp/status/2056805033380139440#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: x.com/GeminiApp/status/20567\u2026",
+      "description": "nitter.net/GeminiApp/status/20567\u2026\n\n\nGoogle Gemini (@GeminiApp)\n\nGemini Spark is your new 24/7 personal AI agent.\n\nGive it a task and it works autonomously in the background, even if your phone and laptop are turned off. You choose to turn it on and it's designed to check with you before taking\u2026"
+    },
+    "https://nitter.net/NotebookLM/status/2056899738071633987#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "NotebookLM",
+      "title": "We're currently experiencing some system issues \ud83d\udee0\ufe0f\n\nIf you are on a paid plan, you might notice temporary restrictions on your usage and limits. We're working to get this resolved and bring your quotas back to normal ASAP!\n\nThank you so much for your patience and understanding \ud83d\ude4f",
+      "description": "We're currently experiencing some system issues \ud83d\udee0\ufe0f\n\nIf you are on a paid plan, you might notice temporary restrictions on your usage and limits. We're working to get this resolved and bring your quotas back to normal ASAP!\n\nThank you so much for your patience and understanding \ud83d\ude4f"
+    },
+    "https://nitter.net/boxmining/status/2056967182312259688#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: The most interesting part of @MiniMaxAgent Mavis is the \u201cdevil\u2019s advocate\u201d agent. \n\nMost AI agents can produce work, but they\u2019re often bad at questioning their own output. \n\nHaving a separate verifier feels like a small feature that could make a huge difference. Big win for @MiniMax_AI",
+      "description": "The most interesting part of @MiniMaxAgent Mavis is the \u201cdevil\u2019s advocate\u201d agent. \n\nMost AI agents can produce work, but they\u2019re often bad at questioning their own output. \n\nHaving a separate verifier feels like a small feature that could make a huge difference. Big win for @MiniMax_AI"
+    },
+    "https://nitter.net/cerebras/status/2056778123329274279#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "Kimi_Moonshot",
+      "title": "RT by @Kimi_Moonshot: Cerebras is now running Kimi K2.6 \u2013\u00a0a trillion parameter model \u2013 in enterprise trials. \n\nAt ~1,000 tokens/s, this is the fastest frontier model performance ever measured by Artificial Analysis @ArtificialAnlys.",
+      "description": "Cerebras is now running Kimi K2.6 \u2013\u00a0a trillion parameter model \u2013 in enterprise trials. \n\nAt ~1,000 tokens/s, this is the fastest frontier model performance ever measured by Artificial Analysis @ArtificialAnlys.\n"
+    },
+    "https://nitter.net/bosmeny/status/2056914385814401238#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "OpenAIDevs",
+      "title": "RT by @OpenAIDevs: A mic drop moment @ycombinator tonight\n\n@sama just offered $2M in OpenAI tokens to EVERY YC startup in the current batch in exchange for equity\n\nJust like Yuri Milner offering to invest in every startup back when Sam was a YC partner\n\nI can't wait to see what's unlocked when you let the most driven, creative and formidable founders tokenmaxx",
+      "description": "A mic drop moment @ycombinator tonight\n\n@sama just offered $2M in OpenAI tokens to EVERY YC startup in the current batch in exchange for equity\n\nJust like Yuri Milner offering to invest in every startup back when Sam was a YC partner\n\nI can't wait to see what's unlocked when you let the most\u2026"
+    },
+    "https://nitter.net/theo/status/2056877107280752973#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "OpenAIDevs",
+      "title": "RT by @OpenAIDevs: Honestly I'm still really impressed with the Codex app.\n\nIt works reliably. It adds useful features consistently. It has taste. The mobile integration is awesome. The git integration is solid.\n\nIf you haven't used it yet, I highly recommend it.",
+      "description": "Honestly I'm still really impressed with the Codex app.\n\nIt works reliably. It adds useful features consistently. It has taste. The mobile integration is awesome. The git integration is solid.\n\nIf you haven't used it yet, I highly recommend it."
+    },
+    "https://nitter.net/GoogleAIStudio/status/2056904153562264025#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "GoogleAIStudio",
+      "title": "Pinned: ai studio mobile: build your ideas, wherever you are\n\ncoming soon to an app store near you\n\nhttp://ai.studio/mobile",
+      "description": "ai studio mobile: build your ideas, wherever you are\n\ncoming soon to an app store near you\n\nai.studio/mobile\n\nVideo\n  \n"
+    },
+    "https://nitter.net/antigravity/status/2056857441992655037#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "antigravity",
+      "title": "R to @antigravity: Learn more on our blog\nhttps://antigravity.google/blog/introducing-google-antigravity-sdk",
+      "description": "Learn more on our blog\nantigravity.google/blog/intr\u2026\n"
+    },
+    "https://nitter.net/antigravity/status/2056857439098569162#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "antigravity",
+      "title": "R to @antigravity: Download today https://antigravity.google/",
+      "description": "Download today antigravity.google/\n"
+    },
+    "https://nitter.net/arena/status/2056400044862111757#m": {
+      "edition": "2026-05-20-Morning",
+      "feed": "arena",
+      "title": "Qwen3.7 Preview By @Alibaba_Qwen lands on Arena for Text and Vision.\n\nIn Text Arena, Qwen3.7 Max Preview ranks #13 overall.\nAlibaba is now the #6 lab in this arena.\n- #7 Math\n- #9 Expert\n- #9 Software & IT\n- #10 Coding\n\nIn Vision Arena: Qwen3.7 Plus Preview ranks #16 overall, making Alibaba the #5 lab.\n\nCongrats to the @Alibaba_Qwen team on the latest progress!",
+      "description": "Qwen3.7 Preview By @Alibaba_Qwen lands on Arena for Text and Vision.\n\nIn Text Arena, Qwen3.7 Max Preview ranks #13 overall.\nAlibaba is now the #6 lab in this arena.\n- #7 Math\n- #9 Expert\n- #9 Software & IT\n- #10 Coding\n\nIn Vision Arena: Qwen3.7 Plus Preview ranks #16 overall, making Alibaba the\u2026"
+    },
+    "https://www.ft.com/content/ef46bd8f-51ee-4c06-b5ab-1de23114f81a": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "FT AI",
+      "title": "Zuckerberg promises no more \u2018company-wide\u2019 lay-offs after slashing jobs",
+      "description": "Meta chief seeks to reassure disillusioned employees after culling 8,000 roles"
+    },
+    "https://www.ft.com/content/028a169f-cd1c-438b-b50d-df4af6297318": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "FT AI",
+      "title": "OpenAI readies IPO filing to list as soon as September",
+      "description": "AI lab is preparing for $1tn listing with bankers Goldman Sachs and Morgan Stanley and lawyers at Cooley"
+    },
+    "https://www.ft.com/content/d98ad84d-67b6-4d23-9714-5973158ede24": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "FT AI",
+      "title": "AI\u2019s adoption problem",
+      "description": "Also in this newsletter, \u2018cycle syncing\u2019 your workflow and the joys of small talk"
+    },
+    "https://www.nytimes.com/2026/05/20/opinion/ai-schools-backlash.html": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "NYT AI",
+      "title": "Why Are Kids Using A.I. at School?",
+      "description": "A.I. is replicating the pattern followed by every ed-tech quick fix."
+    },
+    "https://www.nytimes.com/2026/05/20/technology/openai-ipo.html": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "NYT AI",
+      "title": "OpenAI Prepares to File for an I.P.O. in Coming Weeks",
+      "description": "OpenAI would be one of the most highly anticipated potential initial public offerings, in what is set to be a major year of I.P.O.s for Silicon Valley."
+    },
+    "https://www.nytimes.com/video/opinion/100000010914268/one-chatbot-to-rule-everything.html": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "NYT AI",
+      "title": "One Chatbot to Rule Everything",
+      "description": "A.I. is influencing everything, from what we wear to what we read. Now it\u2019s coming for something more intimate: human taste. On \u201cThe Opinions,\u201d the question is what happens when A.I. becomes the filter for how we experience culture."
+    },
+    "https://www.nytimes.com/video/opinion/100000010910614/which-has-better-taste-ai-or-humans.html": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "NYT AI",
+      "title": "Which Has Better Taste: A.I. or Humans?",
+      "description": "Why Silicon Valley is obsessed with taste."
+    },
+    "https://nitter.net/GoogleAI/status/2057161316746530946#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "GoogleAI",
+      "title": "R to @GoogleAI: We're building Gemini for Science with and for the scientific community. In collaboration with 100+ institutions and a trusted tester community that ranges from PhD students to Nobel laureates, we want to make sure this tech is responsible and rigorous enough to tackle real-world problems.\n\nRead the full update here: https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/?linkId=61968100",
+      "description": "We're building Gemini for Science with and for the scientific community. In collaboration with 100+ institutions and a trusted tester community that ranges from PhD students to Nobel laureates, we want to make sure this tech is responsible and rigorous enough to tackle real-world problems.\n\nRead\u2026"
+    },
+    "https://nitter.net/GoogleAI/status/2057161314825584892#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "GoogleAI",
+      "title": "R to @GoogleAI: We are also launching Science Skills, a specialized bundle that integrates insights from 30+ major life science models and databases with agentic platforms like @Antigravity to allow researchers to perform complex, manual workflows in minutes.\n\nTo learn more on how to use Science Skills visit: http://antigravity.google/use-cases/science",
+      "description": "We are also launching Science Skills, a specialized bundle that integrates insights from 30+ major life science models and databases with agentic platforms like @Antigravity to allow researchers to perform complex, manual workflows in minutes.\n\nTo learn more on how to use Science Skills visit:\u2026"
+    },
+    "https://nitter.net/GoogleAI/status/2057161313269514655#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "GoogleAI",
+      "title": "R to @GoogleAI: We\u2019re rolling out 3 new experimental tools to help scientists skip the busywork and focus on big ideas:\n\n\ud83d\udca1 Hypothesis Generation built with Co-Scientist: to discover & refine new ideas\n\ud83d\udcbb Computational Discovery built with AlphaEvolve and ERA: to test novel modeling approaches by running thousands of code variations at once\n\ud83d\udcda Literature Insights built with @NotebookLM: to identify research gaps and opportunities by quickly synthesizing scientific papers\n\nIf you're a researcher, you can sign up to try them here: http://labs.google/science",
+      "description": "We\u2019re rolling out 3 new experimental tools to help scientists skip the busywork and focus on big ideas:\n\n\ud83d\udca1 Hypothesis Generation built with Co-Scientist: to discover & refine new ideas\n\ud83d\udcbb Computational Discovery built with AlphaEvolve and ERA: to test novel modeling approaches by running\u2026"
+    },
+    "https://nitter.net/GoogleAI/status/2057161311617008061#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "GoogleAI",
+      "title": "For centuries, the scientific method has been our best tool for progress. But today, there\u2019s so much data out there that it\u2019s impossible for any one researcher to connect all the dots. We want to fix that:\n\nIntroducing Gemini for Science, a collection of science tools and experiments designed to accelerate the speed and scale of scientific exploration.\n\nRead on to learn more about each announcement in this inaugural set \ud83e\uddf5\ud83d\udc47",
+      "description": "For centuries, the scientific method has been our best tool for progress. But today, there\u2019s so much data out there that it\u2019s impossible for any one researcher to connect all the dots. We want to fix that:\n\nIntroducing Gemini for Science, a collection of science tools and experiments designed to\u2026"
+    },
+    "https://nitter.net/GoogleAI/status/2057128296538861943#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "GoogleAI",
+      "title": "We partnered with artists, designers, and builders to create new AI tools that solve real problems in their creative workflows.\n\nHere\u2019s what\u2019s new:\n\u2014 Introducing Google Pics in @GoogleWorkspace: A brand-new image creation & editing tool. Move and resize objects, add text, and translate just by hovering and clicking\n\n\u2014 Big updates to @GoogleFlow: 1) You can now create with Gemini Omni Flash in Google Flow 2) Google Flow Agent is a multi-step creative partner that reasons and plans complex tasks with you. 3) Google Flow tools are custom tools you can \u201cvibe code\u201d for animations, video effects, text layering & more\n\n\u2014 Design live with @StitchbyGoogle: Now, you can use text or voice prompts to edit layouts in real time then export those designs straight to code\n\n\u2014 More creative control in @GoogleFlowMusic: Edit songs section by section, remix the style of full songs, and create music videos with our new Gemini Omni Flash model",
+      "description": "We partnered with artists, designers, and builders to create new AI tools that solve real problems in their creative workflows.\n\nHere\u2019s what\u2019s new:\n\u2014 Introducing Google Pics in @GoogleWorkspace: A brand-new image creation & editing tool. Move and resize objects, add text, and translate just by\u2026"
+    },
+    "https://nitter.net/GoogleAI/status/2056847252279501275#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "GoogleAI",
+      "title": "R to @GoogleAI: x.com/LexnLin/status/2056837\u2026",
+      "description": "nitter.net/LexnLin/status/2056837\u2026\n\n\nLeon Lin (@LexnLin)\n\ncutting frames and perspectives using Gemini Omni\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/LexnLin/status/2056837898796769791#m\n\n"
+    },
+    "https://nitter.net/googlechrome/status/2056873790177509398#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "GeminiApp",
+      "title": "RT by @GeminiApp: Looking for a #GoogleIO 2026 rapid recap? Here are some of the most exciting Chrome announcements and upgrades that will make browsing on Chrome easier and more helpful \u2b07\ufe0f\n\nSelect from your screen using the cursor to add context to Gemini in Chrome prompts \u261d\ufe0f\nUse your voice to type on the web easily and more naturally \ud83c\udfa4\nSave & reuse prompts with Skills in Chrome \ud83d\udca1\nGemini in Chrome (with auto browse and Nano Banana) is coming to Android \ud83c\udf4c",
+      "description": "Looking for a #GoogleIO 2026 rapid recap? Here are some of the most exciting Chrome announcements and upgrades that will make browsing on Chrome easier and more helpful \u2b07\ufe0f\n\nSelect from your screen using the cursor to add context to Gemini in Chrome prompts \u261d\ufe0f\nUse your voice to type on the web\u2026"
+    },
+    "https://nitter.net/GeminiApp/status/2057159965543178285#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: Google AI Plus, Pro, and Ultra subscribers around the world can try Gemini Omni today right in the Gemini app.\n\nTry Gemini Omni and share your creations in the replies. \ud83d\udc47",
+      "description": "Google AI Plus, Pro, and Ultra subscribers around the world can try Gemini Omni today right in the Gemini app.\n\nTry Gemini Omni and share your creations in the replies. \ud83d\udc47"
+    },
+    "https://nitter.net/GeminiApp/status/2057159933934907825#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "GeminiApp",
+      "title": "Creating, remixing, and editing a video is easier than ever with Gemini Omni. \n\nIt offers a fluid, conversational way to create and edit. Just upload a video from your camera roll and ask Gemini to make changes.",
+      "description": "Creating, remixing, and editing a video is easier than ever with Gemini Omni. \n\nIt offers a fluid, conversational way to create and edit. Just upload a video from your camera roll and ask Gemini to make changes."
+    },
+    "https://nitter.net/GeminiApp/status/2057140474192994356#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: Gemini 3.5 Flash is starting to roll out to everyone globally, free of charge.\n\nTry it by selecting \u201c3.5 Flash\u201d from the model dropdown menu at http://gemini.google or in the app.",
+      "description": "Gemini 3.5 Flash is starting to roll out to everyone globally, free of charge.\n\nTry it by selecting \u201c3.5 Flash\u201d from the model dropdown menu at gemini.google or in the app.\n"
+    },
+    "https://nitter.net/minchoi/status/2056875117456875630#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "GeminiApp",
+      "title": "RT by @GeminiApp: Google just dropped Gemini Omni\n\nNano Banana for video\n\nAny input -> video creation\n\nVideo creation just changed forever \ud83e\udd2f",
+      "description": "Google just dropped Gemini Omni\n\nNano Banana for video\n\nAny input -&gt; video creation\n\nVideo creation just changed forever \ud83e\udd2f\n\nVideo\n  \n\n\n\n\nLogan Kilpatrick (@OfficialLoganK)\n\nIntroducing Gemini Omni \ud83d\udd2e........ Omni is our new model that can create anything from any input \u2014 starting with video\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2057177048356180296#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "MiniMax_AI",
+      "title": "600+ new voices powered by MiniMax Speech 2.8 Turbo are now on Together AI @togethercompute \ud83c\udf99\ufe0f\u2728\n\nTry it today: https://voicefinder.together.ai/minimax--speech-2.8-turbo",
+      "description": "600+ new voices powered by MiniMax Speech 2.8 Turbo are now on Together AI @togethercompute \ud83c\udf99\ufe0f\u2728\n\nTry it today: voicefinder.together.ai/mini\u2026\n\n\nTogether AI (@togethercompute)\n\nWe added 600+ new voices on Together AI!\n\nIntroducing MiniMax Speech 2.8 Turbo on Together AI, an enterprise TTS model\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2057153623734595625#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "MiniMax_AI",
+      "title": "New billboard, new look, new location \ud83e\udd73  \nCatch us right off Highway 101 heading in or out of SFO.\n\nIf you see it, share it \ud83d\udc47  \n\n#MiniMax #AIforEveryone",
+      "description": "New billboard, new look, new location \ud83e\udd73  \nCatch us right off Highway 101 heading in or out of SFO.\n\nIf you see it, share it \ud83d\udc47  \n\n#MiniMax #AIforEveryone\n\n\n"
+    },
+    "https://nitter.net/OpenAI/status/2057176204541866087#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: This result points to something larger: AI systems are becoming capable of holding together long, difficult chains of reasoning, connecting ideas across distant fields, and surfacing paths researchers may not have explored.\n\nWe believe those same abilities will soon accelerate work in biology, physics, engineering, and medicine.\n\nThat future still depends on human judgment. Expertise becomes more valuable, not less. AI can help search, suggest, and verify. People choose the problems that matter, interpret the results, and decide what questions to pursue next.",
+      "description": "This result points to something larger: AI systems are becoming capable of holding together long, difficult chains of reasoning, connecting ideas across distant fields, and surfacing paths researchers may not have explored.\n\nWe believe those same abilities will soon accelerate work in biology,\u2026"
+    },
+    "https://nitter.net/OpenAI/status/2057176203166171317#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: The proof came from a general-purpose reasoning model, not a system built specifically to solve math problems or this problem in particular, and represents an important milestone for the math and AI communities.\n\nhttps://openai.com/index/model-disproves-discrete-geometry-conjecture/",
+      "description": "The proof came from a general-purpose reasoning model, not a system built specifically to solve math problems or this problem in particular, and represents an important milestone for the math and AI communities.\n\nopenai.com/index/model-dispr\u2026\n"
+    },
+    "https://nitter.net/OpenAI/status/2057176201782075690#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "OpenAI",
+      "title": "Today, we share a breakthrough on the planar unit distance problem, a famous open question first posed by Paul Erd\u0151s in 1946.\n\nFor nearly 80 years, mathematicians believed the best possible solutions looked roughly like square grids.\n\nAn OpenAI model has now disproved that belief, discovering an entirely new family of constructions that performs better.\n\nThis marks the first time AI has autonomously solved a prominent open problem central to a field of mathematics.",
+      "description": "Today, we share a breakthrough on the planar unit distance problem, a famous open question first posed by Paul Erd\u0151s in 1946.\n\nFor nearly 80 years, mathematicians believed the best possible solutions looked roughly like square grids.\n\nAn OpenAI model has now disproved that belief, discovering an\u2026"
+    },
+    "https://nitter.net/ChatGPTapp/status/2057178707207594075#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "ChatGPTapp",
+      "title": "R to @ChatGPTapp: We're gonna keep shipping, tell us what you want to see.",
+      "description": "We're gonna keep shipping, tell us what you want to see.\n"
+    },
+    "https://nitter.net/ChatGPTapp/status/2057178702539325469#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "ChatGPTapp",
+      "title": "R to @ChatGPTapp: Now everyone can find and reuse their files in the Library \ud83d\udcda",
+      "description": "Now everyone can find and reuse their files in the Library \ud83d\udcda\n"
+    },
+    "https://nitter.net/ChatGPTapp/status/2057178698625998960#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "ChatGPTapp",
+      "title": "R to @ChatGPTapp: Expandable messages for when you have\n\nr\ne\na\nl\nl\ny \n\nlong\n\nprompts",
+      "description": "Expandable messages for when you have\n\nr\ne\na\nl\nl\ny \n\nlong\n\nprompts\n"
+    },
+    "https://nitter.net/ChatGPTapp/status/2057178693022388348#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "ChatGPTapp",
+      "title": "R to @ChatGPTapp: Fast answers in ChatGPT \u26a1\ufe0f",
+      "description": "Fast answers in ChatGPT \u26a1\ufe0f\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ChatGPTapp/status/2057178641562525917#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "ChatGPTapp",
+      "title": "R to @ChatGPTapp: Choose your intelligence, and get more visual answers \ud83e\udd29",
+      "description": "Choose your intelligence, and get more visual answers \ud83e\udd29\n\n\n"
+    },
+    "https://nitter.net/ChatGPTapp/status/2057178637573783597#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "ChatGPTapp",
+      "title": "R to @ChatGPTapp: Ignore your inbox and use the \u2708\ufe0f and \ud83d\udce6 tracker in ChatGPT.",
+      "description": "Ignore your inbox and use the \u2708\ufe0f and \ud83d\udce6 tracker in ChatGPT.\n"
+    },
+    "https://nitter.net/ChatGPTapp/status/2057178633249394819#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "ChatGPTapp",
+      "title": "Gone shipping \ud83d\udea2",
+      "description": "Gone shipping \ud83d\udea2\n"
+    },
+    "https://nitter.net/googleaidevs/status/2057166550243872920#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "googleaidevs",
+      "title": "Build with Gemini to change the world \ud83c\udf0d\n\nWe\u2019re launching a global hackathon with @xprize to solve real-world challenges with our new agentic tools.\n\nJoin here: https://www.geminixprize.com/",
+      "description": "Build with Gemini to change the world \ud83c\udf0d\n\nWe\u2019re launching a global hackathon with @xprize to solve real-world challenges with our new agentic tools.\n\nJoin here: geminixprize.com/\n"
+    },
+    "https://nitter.net/googleaidevs/status/2057146354015904101#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "googleaidevs",
+      "title": "Jump in and start building with @GoogleAIStudio.\n\n-- @AndroidDev app building\n-- @GoogleWorkspace integrations\n-- 1-click deployment to @Antigravity\n\nHere\u2019s what\u2019s new from Google I/O \u2193",
+      "description": "Jump in and start building with @GoogleAIStudio.\n\n-- @AndroidDev app building\n-- @GoogleWorkspace integrations\n-- 1-click deployment to @Antigravity\n\nHere\u2019s what\u2019s new from Google I/O \u2193\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2057142817944969367#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: developers.openai.com/codex/\u2026",
+      "description": "developers.openai.com/codex/\u2026\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2057142816497906045#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "Your laptop can stay home.\n\nWork with Codex from the ChatGPT mobile app, answer questions on the go, and pick up the same thread later from your computer.",
+      "description": "Your laptop can stay home.\n\nWork with Codex from the ChatGPT mobile app, answer questions on the go, and pick up the same thread later from your computer.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/GoogleAIStudio/status/2057130545327546401#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "GoogleAIStudio",
+      "title": "x.com/i/article/205677107247\u2026",
+      "description": "x.com/i/article/205677107247\u2026"
+    },
+    "https://nitter.net/GoogleAIStudio/status/2057122673558434205#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "GoogleAIStudio",
+      "title": "ai studio is the best way to go from prompt to prototype to production\n\nand coming soon, you\u2019ll be able to build from anywhere\n\nhttp://ai.studio/mobile",
+      "description": "ai studio is the best way to go from prompt to prototype to production\n\nand coming soon, you\u2019ll be able to build from anywhere\n\nai.studio/mobile\n\nVideo\n  \n"
+    },
+    "https://nitter.net/antigravity/status/2057185561421680658#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "antigravity",
+      "title": "R to @antigravity: Antigravity Orbit:\u00a0Experience the new Antigravity SDK and see how you can create your own custom avatar in a virtual I/O world!",
+      "description": "Antigravity Orbit:\u00a0Experience the new Antigravity SDK and see how you can create your own custom avatar in a virtual I/O world!\n\nVideo\n  \n"
+    },
+    "https://nitter.net/antigravity/status/2057185559383343244#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "antigravity",
+      "title": "R to @antigravity: Antigravity Coffee Co:\u00a0See Antigravity in action powering a smart coffee station that lets you order brews with custom, AI-generated latte art!",
+      "description": "Antigravity Coffee Co:\u00a0See Antigravity in action powering a smart coffee station that lets you order brews with custom, AI-generated latte art!\n"
+    },
+    "https://nitter.net/antigravity/status/2057185557881733280#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "antigravity",
+      "title": "R to @antigravity: Antigravity Arcade:\u00a0Remix and build playable games from scratch",
+      "description": "Antigravity Arcade:\u00a0Remix and build playable games from scratch\n\nVideo\n  \n"
+    },
+    "https://nitter.net/antigravity/status/2057185556707397666#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "antigravity",
+      "title": "Still hanging out at Google I/O Day 2? Don't miss your chance to experience the future of agentic development with our Antigravity demos!",
+      "description": "Still hanging out at Google I/O Day 2? Don't miss your chance to experience the future of agentic development with our Antigravity demos!"
+    },
+    "https://nitter.net/JamesOR/status/2056835972990636517#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "antigravity",
+      "title": "RT by @antigravity: If you're at Google I/O 2026, stop by the Antigravity Arcade demo area.  Build an arcade game using @antigravity and collect this exclusive Antigravity Arcade Google Developer Profile badge!",
+      "description": "If you're at Google I/O 2026, stop by the Antigravity Arcade demo area.  Build an arcade game using @antigravity and collect this exclusive Antigravity Arcade Google Developer Profile badge!\n"
+    },
+    "https://nitter.net/antigravity/status/2057119259910918555#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "antigravity",
+      "title": "Antigravity had a massive showing during Google I/O yesterday. Catch up on the major announcements in the Google I/O Developer Keynote recap\ud83d\udc47\nhttps://www.youtube.com/watch?v=FZ-3BjbfNlI",
+      "description": "Antigravity had a massive showing during Google I/O yesterday. Catch up on the major announcements in the Google I/O Developer Keynote recap\ud83d\udc47\npiped.video/watch?v=FZ-3Bjbf\u2026\n"
+    },
+    "https://nitter.net/antigravity/status/2056827241049248135#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "antigravity",
+      "title": "R to @antigravity: Read more on the blog\nhttps://antigravity.google/blog/introducing-google-antigravity-cli",
+      "description": "Read more on the blog\nantigravity.google/blog/intr\u2026\n"
+    },
+    "https://nitter.net/antigravity/status/2056827236825600266#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "antigravity",
+      "title": "R to @antigravity: Download today https://antigravity.google/",
+      "description": "Download today antigravity.google/\n"
+    },
+    "https://nitter.net/Eigent_AI/status/2057115806148809187#m": {
+      "edition": "2026-05-20-Afternoon",
+      "feed": "ollama",
+      "title": "RT by @ollama: @ollama + @deepseek_ai v4 pro handled entire monthly dev reports on Eigent. github prs \u2192 word doc \u2192 slack message \u2192 sent to product-release channel. in just one prompt. fully local. \n\nthe full walkthrough is in the thread. try the same loop on open source cowork Eigent, byo model!",
+      "description": "@ollama + @deepseek_ai v4 pro handled entire monthly dev reports on Eigent. github prs \u2192 word doc \u2192 slack message \u2192 sent to product-release channel. in just one prompt. fully local. \n\nthe full walkthrough is in the thread. try the same loop on open source cowork Eigent, byo model!\n\nVideo\n  \n"
     }
   },
-  "last_run": "2026-05-20T00:00:29.514237+00:00"
+  "last_run": "2026-05-20T20:00:29.919225+00:00"
 }
