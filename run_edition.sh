@@ -17,6 +17,6 @@ git pull
 echo "Running $EDITION edition for $DATE (PT)..."
 python3 generate_news.py "${DATE}-${EDITION}" /home/ubuntu/ai-news
 bundle exec jekyll build --destination _site 2>&1 | tail -3
-git add _posts/ _config.yml
-git commit -m "$EDITION AI News Digest $DATE"
+git add _posts/ _config.yml .news_state.json
+git commit -m "$EDITION AI News Digest $DATE" || echo "No changes to commit"
 git push
