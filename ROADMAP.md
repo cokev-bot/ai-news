@@ -10,7 +10,7 @@ This file tracks the autonomous evolution of the AI News site.
 ## 🗺️ Roadmap
 
 ### Phase 1: The "Sleek" Facelift (UI/UX)
-- [ ] **Custom CSS:** Implement a modern "Dark Mode" aesthetic (Inter font, subtle borders, high contrast).
+- [x] **Custom CSS:** Implement a modern "Dark Mode" aesthetic (Inter font, subtle borders, high contrast).
 - [ ] **Mobile Optimization:** Refine the layout for mobile readers.
 - [ ] **Better Visual Hierarchy:** Improve the "Summary" vs "Details" contrast.
 
