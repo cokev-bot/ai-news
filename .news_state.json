@@ -6119,7 +6119,151 @@
       "feed": "antigravity",
       "title": "Tips on using the @antigravity CLI!",
       "description": "Tips on using the @antigravity CLI!\n\n\nShengzhe (@shengzheyao)\n\nSuper excited to finally drop \u2060agy\u2060 \u2014 the Antigravity CLI, \nbuilt completely in golang + bubbletea (@charmcli). We took the exact same agent harness powering antigravity and brought it straight to your terminal. It is blazingly fast,\u2026"
+    },
+    "https://www.ft.com/content/14213cb0-8d11-4118-bac0-12a403696185": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "FT AI",
+      "title": "Trump abruptly postpones AI order after White House infighting",
+      "description": "President refuses to approve order hours before planned signing due to fears US innovators will lose out to China"
+    },
+    "https://www.nytimes.com/video/opinion/100000010910563/a-defense-of-a-liberal-arts-education-in-the-age-of-ai.html": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "NYT AI",
+      "title": "A Defense of a Liberal Arts Education in the Age of A.I.",
+      "description": "Making the case for a \u2018useless\u2019 education."
+    },
+    "https://nitter.net/Alibaba_Qwen/status/2057450231638437940#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "Alibaba_Qwen",
+      "title": "R to @Alibaba_Qwen: Cross-Harness Generalization\uff1aAcross QwenClawBench and CoWorkBench, Qwen3.7-Max delivers strong, consistent performance regardless of the harness used at evaluation time, confirming that the model has learned to solve tasks \u2014 not to exploit particular harnesses.",
+      "description": "Cross-Harness Generalization\uff1aAcross QwenClawBench and CoWorkBench, Qwen3.7-Max delivers strong, consistent performance regardless of the harness used at evaluation time, confirming that the model has learned to solve tasks \u2014 not to exploit particular harnesses.\n"
+    },
+    "https://nitter.net/claudeai/status/2057487463518548073#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "claudeai",
+      "title": "Tinkering, prototyping, and seeing what happens with Claude Design:",
+      "description": "Tinkering, prototyping, and seeing what happens with Claude Design:"
+    },
+    "https://nitter.net/claudeai/status/2057487474117546089#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: x.com/mandyymakes/status/204\u2026",
+      "description": "nitter.net/mandyymakes/status/204\u2026\n\n\nmandy \u2740 (@mandyymakes)\n\nmagical pond background \ud80c\udd9d \u22c6.\nmade with claude design\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/mandyymakes/status/2045521996533154105#m\n\n"
+    },
+    "https://nitter.net/claudeai/status/2057487475983929388#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: What are you making with Claude Design?",
+      "description": "What are you making with Claude Design?"
+    },
+    "https://nitter.net/GoogleAI/status/2056829482993095143#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "GoogleAI",
+      "title": "R to @GoogleAI: x.com/mrfanduuuuu/status/205\u2026",
+      "description": "nitter.net/mrfanduuuuu/status/205\u2026\n\n\nFandu (@mrfanduuuuu)\n\nGemini Omni made me this video to explain photosynthesis\ud83d\udc40\n\nGoogle is wining hard \ud83d\udd25\n\nlink:gemini.google.com/share/cdba\u2026\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/mrfanduuuuu/status/2056692235174097398#m\n\n"
+    },
+    "https://nitter.net/GeminiApp/status/2057500511495143509#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: Daily Brief is now available to all Google AI Plus, Pro, and Ultra subscribers 18+, beginning in the U.S.\n\nTo get started, head to http://gemini.google or the app and select Daily Brief in the side panel.\n\nTry it out and let us know how it\u2019s making your day easier.",
+      "description": "Daily Brief is now available to all Google AI Plus, Pro, and Ultra subscribers 18+, beginning in the U.S.\n\nTo get started, head to gemini.google or the app and select Daily Brief in the side panel.\n\nTry it out and let us know how it\u2019s making your day easier."
+    },
+    "https://nitter.net/GeminiApp/status/2057500470147698936#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "GeminiApp",
+      "title": "Get a head start on your day with Daily Brief. \n\nGemini can now proactively flag what matters most in an easily digestible to-do list, so you\u2019re ready for the day before you even finish breakfast.",
+      "description": "Get a head start on your day with Daily Brief. \n\nGemini can now proactively flag what matters most in an easily digestible to-do list, so you\u2019re ready for the day before you even finish breakfast."
+    },
+    "https://nitter.net/Google/status/2057257773868388448#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "GeminiApp",
+      "title": "RT by @GeminiApp: Our new Gemini 3.5 Flash is our strongest agentic and coding model yet, delivering frontier-level performance at 4x the speed of comparable frontier models at less than half the cost.\n\nWe had @TulseeDoshi break down what you need to know about it.",
+      "description": "Our new Gemini 3.5 Flash is our strongest agentic and coding model yet, delivering frontier-level performance at 4x the speed of comparable frontier models at less than half the cost.\n\nWe had @TulseeDoshi break down what you need to know about it.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/MistralDevs/status/2057517264866267598#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "MistralDevs",
+      "title": "R to @MistralDevs: \ud83c\udfae Access Mistral Studio here: https://mistr.al/console-x",
+      "description": "\ud83c\udfae Access Mistral Studio here: mistr.al/console-x"
+    },
+    "https://nitter.net/MistralDevs/status/2057517262525866218#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "MistralDevs",
+      "title": "\ud83d\udd0cWorkflows - Multi-Step Pipeline\nThree Steps, One Workflow. Define three activities, chain them together, and Mistral Workflows runs each one durably, every step visible in Studio, in sequence.\nVoiceover generated with Voxtral TTS.",
+      "description": "\ud83d\udd0cWorkflows - Multi-Step Pipeline\nThree Steps, One Workflow. Define three activities, chain them together, and Mistral Workflows runs each one durably, every step visible in Studio, in sequence.\nVoiceover generated with Voxtral TTS.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2057536706778378692#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "Pinned: Codex anywhere and everywhere, all the time.\n\nNow your Mac doesn\u2019t have to be unlocked for Codex to use your computer.\n\nFrom your phone, Codex can securely use apps on your Mac, even when the screen is off and locked.\n\nhttps://developers.openai.com/codex/app/computer-use#locked-use",
+      "description": "Codex anywhere and everywhere, all the time.\n\nNow your Mac doesn\u2019t have to be unlocked for Codex to use your computer.\n\nFrom your phone, Codex can securely use apps on your Mac, even when the screen is off and locked.\n\ndevelopers.openai.com/codex/\u2026\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2057530213974814844#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: We\u2019ve improved Analytics in Codex for businesses and enterprises.\n\nGet more detailed breakdowns of:\n- Active users \n- Credits\n- Tokens\n- Runs\n- User leaderboards\n- Lines of code generated\n- Plugin usage\n\n+ updates to the Analytics API so teams can better understand how Codex is being used across their org.",
+      "description": "We\u2019ve improved Analytics in Codex for businesses and enterprises.\n\nGet more detailed breakdowns of:\n- Active users \n- Credits\n- Tokens\n- Runs\n- User leaderboards\n- Lines of code generated\n- Plugin usage\n\n+ updates to the Analytics API so teams can better understand how Codex is being used across\u2026"
+    },
+    "https://nitter.net/OpenAIDevs/status/2057530212339097994#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: Share plugins in Codex across teams.\n\nTeams can now distribute custom plugins, reuse internal tools, and manage what\u2019s available across their workspace.\n\nAvailable now to Business users. Enterprises can reach out to enable early access.",
+      "description": "Share plugins in Codex across teams.\n\nTeams can now distribute custom plugins, reuse internal tools, and manage what\u2019s available across their workspace.\n\nAvailable now to Business users. Enterprises can reach out to enable early access.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2057530210967523399#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: Iterating in the Codex in-app browser is getting faster and more precise.\n\nAdvanced annotation mode lets you directly adjust page elements while leaving feedback, preview changes instantly, and batch comments for Codex, so designers and developers can show exactly what they want changed without waiting for a full turn.",
+      "description": "Iterating in the Codex in-app browser is getting faster and more precise.\n\nAdvanced annotation mode lets you directly adjust page elements while leaving feedback, preview changes instantly, and batch comments for Codex, so designers and developers can show exactly what they want changed without\u2026"
+    },
+    "https://nitter.net/OpenAIDevs/status/2057530209470210453#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: \ud83e\udd45\n\n/goal has graduated from an experiment\u2014for tasks big and small, Codex gets your work done.\n\nUse goal mode in the Codex app, IDE Extension, or CLI to give Codex a specific milestone, and it will keep working until it gets there, even across hours or days.\n\nYou can check in and steer, and even pause Codex along the way.\n\nPro tip: start side chats to understand the work that has been done so far without having to interrupt the main task.\n\nhttp://developers.openai.com/codex/prompting#goal-mode",
+      "description": "\ud83e\udd45\n\n/goal has graduated from an experiment\u2014for tasks big and small, Codex gets your work done.\n\nUse goal mode in the Codex app, IDE Extension, or CLI to give Codex a specific milestone, and it will keep working until it gets there, even across hours or days.\n\nYou can check in and steer, and even\u2026"
+    },
+    "https://nitter.net/OpenAIDevs/status/2057530207976989179#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "It\u2019s Codex Thursday, and yes, we have updates for you.\n\nFirst up: Appshots, a new way to bring the context of what you\u2019re working on into Codex.\n\nOn your Mac, press Command-Command to attach your app window to a Codex thread. Codex gets both a screenshot and text from the window, including content beyond what\u2019s visible onscreen.\n\nAppshots are available across plans on Mac, with enterprise access coming soon.",
+      "description": "It\u2019s Codex Thursday, and yes, we have updates for you.\n\nFirst up: Appshots, a new way to bring the context of what you\u2019re working on into Codex.\n\nOn your Mac, press Command-Command to attach your app window to a Codex thread. Codex gets both a screenshot and text from the window, including\u2026"
+    },
+    "https://nitter.net/Firebase/status/2056875671607976233#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "antigravity",
+      "title": "RT by @antigravity: Live from #GoogleIO: Firebase is now integrated with Google Antigravity 2.0 \ud83d\ude80\n\nAntigravity's new onboarding flow features a one-click Firebase setup, installing all necessary components so you can build with Firebase directly within its platform.",
+      "description": "Live from #GoogleIO: Firebase is now integrated with Google Antigravity 2.0 \ud83d\ude80\n\nAntigravity's new onboarding flow features a one-click Firebase setup, installing all necessary components so you can build with Firebase directly within its platform.\n"
+    },
+    "https://nitter.net/arena/status/2057541511898923214#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: See the Text-to-Image Arena leaderboard details at: https://arena.ai/leaderboard/text-to-image",
+      "description": "See the Text-to-Image Arena leaderboard details at: arena.ai/leaderboard/text-to\u2026\n"
+    },
+    "https://nitter.net/arena/status/2057541510334488829#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "arena",
+      "title": "New provider HiDream-01-Image by @HiDream_AI ranks #27 overall in the Text-to-Image Arena, making it the #4 open source model. \n\nCongrats to the @HiDream_AI team on the release!",
+      "description": "New provider HiDream-01-Image by @HiDream_AI ranks #27 overall in the Text-to-Image Arena, making it the #4 open source model. \n\nCongrats to the @HiDream_AI team on the release!\n"
+    },
+    "https://nitter.net/arena/status/2057486891084337630#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Dive into the details of the Text Arena Pareto frontier. Filter and sort by lab, license, input/output price and context length. \n\nhttps://arena.ai/leaderboard/text/pareto",
+      "description": "Dive into the details of the Text Arena Pareto frontier. Filter and sort by lab, license, input/output price and context length. \n\narena.ai/leaderboard/text/pa\u2026\n"
+    },
+    "https://nitter.net/arena/status/2057486889872150735#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Watch a walkthrough of the Pareto frontier on Arena:  https://www.youtube.com/watch?v=G8WSWUWm4sQ",
+      "description": "Watch a walkthrough of the Pareto frontier on Arena:  piped.video/watch?v=G8WSWUWm\u2026\n"
+    },
+    "https://nitter.net/arena/status/2057486887938646370#m": {
+      "edition": "2026-05-21-Afternoon",
+      "feed": "arena",
+      "title": "5 patterns in Text Arena's price\u2013performance Pareto frontier since 2023:  \n\n1. GPT-4-level quality is now ~500x lower cost. \n- From a ~$50 blended price per million tokens in 2023 to ~$0.10 today.  \n\n2.  The higher-price end is both better and lower-priced since 2023. \n- The leading Arena score has climbed ~170 points (1,330 \u2192 1,500). While the price of the higher-end frontier models dropped from ~$50 to ~$20 per million tokens.  \n\n3. The low-cost end gained the most. \n- Under $0.20 per million tokens, the best available model went from ~1,000 Arena score in 2023 to ~1,440 today.  \n\n4. The low-cost/top performance gap has nearly closed.\n- In 2023, sub-$0.20 models trailed the leader by ~350 Arena points. Today, ~60.  5. The cast has rotated quite a bit. -\n\n- @OpenAI set the 2023\u201324 benchmark. \n- @AIatMeta strengthened the low-cost end in 2024. \n- @GoogleDeepMind drove the 2025 jump. \n- @AnthropicAI holds the peak in 2026. \n- @xAI and Chinese labs like @DeepSeekAI, @Zai_org, @Kimi_Moonshot, @XiaomiMiMo, and @Alibaba_Qwen are continuing to push the mid-price frontier.",
+      "description": "5 patterns in Text Arena's price\u2013performance Pareto frontier since 2023:  \n\n1. GPT-4-level quality is now ~500x lower cost. \n- From a ~$50 blended price per million tokens in 2023 to ~$0.10 today.  \n\n2.  The higher-price end is both better and lower-priced since 2023. \n- The leading Arena score\u2026"
     }
   },
-  "last_run": "2026-05-21T15:01:27.151369+00:00"
+  "last_run": "2026-05-21T20:00:26.174139+00:00"
 }
