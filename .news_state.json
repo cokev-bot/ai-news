@@ -6263,7 +6263,199 @@
       "feed": "arena",
       "title": "5 patterns in Text Arena's price\u2013performance Pareto frontier since 2023:  \n\n1. GPT-4-level quality is now ~500x lower cost. \n- From a ~$50 blended price per million tokens in 2023 to ~$0.10 today.  \n\n2.  The higher-price end is both better and lower-priced since 2023. \n- The leading Arena score has climbed ~170 points (1,330 \u2192 1,500). While the price of the higher-end frontier models dropped from ~$50 to ~$20 per million tokens.  \n\n3. The low-cost end gained the most. \n- Under $0.20 per million tokens, the best available model went from ~1,000 Arena score in 2023 to ~1,440 today.  \n\n4. The low-cost/top performance gap has nearly closed.\n- In 2023, sub-$0.20 models trailed the leader by ~350 Arena points. Today, ~60.  5. The cast has rotated quite a bit. -\n\n- @OpenAI set the 2023\u201324 benchmark. \n- @AIatMeta strengthened the low-cost end in 2024. \n- @GoogleDeepMind drove the 2025 jump. \n- @AnthropicAI holds the peak in 2026. \n- @xAI and Chinese labs like @DeepSeekAI, @Zai_org, @Kimi_Moonshot, @XiaomiMiMo, and @Alibaba_Qwen are continuing to push the mid-price frontier.",
       "description": "5 patterns in Text Arena's price\u2013performance Pareto frontier since 2023:  \n\n1. GPT-4-level quality is now ~500x lower cost. \n- From a ~$50 blended price per million tokens in 2023 to ~$0.10 today.  \n\n2.  The higher-price end is both better and lower-priced since 2023. \n- The leading Arena score\u2026"
+    },
+    "https://www.nytimes.com/2026/05/22/podcasts/sundar-pichai-understands-why-people-are-anxious-about-ai.html": {
+      "edition": "2026-05-22-Morning",
+      "feed": "NYT AI",
+      "title": "Sundar Pichai Understands Why People Are Anxious About A.I.",
+      "description": "After a busy Google I/O, the company\u2019s chief executive sits down with the hosts of \u201cHard Fork\u201d to discuss the future of Google Search, how he\u2019s using A.I. agents and his advice for college graduates."
+    },
+    "https://www.nytimes.com/2026/05/22/business/dealbook/newsom-universal-basic-capital-ai.html": {
+      "edition": "2026-05-22-Morning",
+      "feed": "NYT AI",
+      "title": "Giving Workers a Stake in A.I. Gains Traction",
+      "description": "Gov. Gavin Newsom of California has floated a policy idea that\u2019s getting attention in Silicon Valley: let workers own a piece of technology disruption."
+    },
+    "https://www.nytimes.com/video/podcasts/100000010920153/sundar-pichai-on-the-ai-race-agentic-coding-and-future-of-search.html": {
+      "edition": "2026-05-22-Morning",
+      "feed": "NYT AI",
+      "title": "Sundar Pichai on the A.I. Race, Agentic Coding and Future of Search",
+      "description": "Our interview with Sundar Pichai, Google\u2019s chief executive."
+    },
+    "https://www.nytimes.com/2026/05/22/podcasts/our-field-trip-to-google-i-o-a-sit-down-with-sundar-pichai-system-update.html": {
+      "edition": "2026-05-22-Morning",
+      "feed": "NYT AI",
+      "title": "Our Field Trip to Google I/O + A Sit-Down With Sundar Pichai + System Update",
+      "description": "\u201cThis is the only recent gathering of a large number of people where mentions of A.I. did not produce a large chorus of boos.\u201d"
+    },
+    "https://www.nytimes.com/video/podcasts/100000010919847/sundar-pichai-discusses-googles-position-in-the-ai-race.html": {
+      "edition": "2026-05-22-Morning",
+      "feed": "NYT AI",
+      "title": "Sundar Pichai Discusses Google\u2019s Position in the A.I. Race",
+      "description": "At this year\u2019s Google I/O developer conference, Kevin Roose and Casey Newton, hosts of the \u201cHard Fork\u201d podcast, sat down with Sundar Pichai, chief executive of Google, and talked about where he feels it is succeeding in the A.I. race, and where he thinks the company can do better."
+    },
+    "https://nitter.net/Alibaba_Qwen/status/2057767604048240987#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "Alibaba_Qwen",
+      "title": "\u26a1\ufe0f\u26a1\ufe0f",
+      "description": "\u26a1\ufe0f\u26a1\ufe0f\n\n\nOpenRouter (@OpenRouter)\n\nThe new Qwen3.7-Max from @Alibaba_Qwen is live on OpenRouter.\n\nThe flagship of the Qwen3.7 series, built for agent-centric work: coding, office and productivity tasks, and long-horizon autonomous execution. Big jumps in coding and agent benchmarks over Qwen3.6,\u2026"
+    },
+    "https://nitter.net/Alibaba_Qwen/status/2057764624720875975#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "Alibaba_Qwen",
+      "title": "\ud83d\udc40\ud83d\udc40",
+      "description": "\ud83d\udc40\ud83d\udc40\n\n\natomic.chat (@atomic_chat_hq)\n\nQwen 3.7-max beats Opus 4.7 and GPT-5.5\n\nWe tested three frontier models on a real agentic task: write a Tetris bot that plays the game and trains itself. Each model could read its own code, run benchmarks, and rewrite itself across 10 iterations. Then we\u2026"
+    },
+    "https://nitter.net/Alibaba_Qwen/status/2057450220708147250#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "Alibaba_Qwen",
+      "title": "\ud83d\udce3Meet Qwen3.7-Max \u2014 our latest flagship, made for the Agent Era.\n\nA versatile foundation for agents that actually get things done:\n\ud83e\uddd1\u200d\ud83d\udcbb Coding agent, end to end. Frontend prototypes, multi-file refactors, real debugging \u2014 nails it.\n\ud83d\uddc2\ufe0f A reliable office and productivity assistant. Get your work done through MCP integrations and multi-agent orchestration.\n\u23f1\ufe0f Long-horizon autonomy.  35 hours straight on a kernel optimization task \u2014 1,000+ tool calls, zero hand-holding.\n\ud83d\udd0c Scaffold-agnostic. Claude Code, OpenClaw, Qwen Code, or your own stack. Consistent reliability everywhere.\n\nAPI's up on Alibaba Model Studio. You can also take it for a spin on Qwen Studio.\n\nGo build something wild!\ud83c\udfc3\ud83c\udfc3\u200d\u2642\ufe0f\n\n\ud83d\udcd6 Blog: https://qwen.ai/blog?id=qwen3.7\n\u2705 Qwen Studio: https://chat.qwen.ai/?models=qwen3.7-max\n\u26a1\ufe0f API\uff1ahttps://modelstudio.console.alibabacloud.com/ap-southeast-1?tab=doc#/doc/?type=model&url=2840914_2&modelId=qwen3.7-max&serviceSite=international",
+      "description": "\ud83d\udce3Meet Qwen3.7-Max \u2014 our latest flagship, made for the Agent Era.\n\nA versatile foundation for agents that actually get things done:\n\ud83e\uddd1\u200d\ud83d\udcbb Coding agent, end to end. Frontend prototypes, multi-file refactors, real debugging \u2014 nails it.\n\ud83d\uddc2\ufe0f A reliable office and productivity assistant. Get your work\u2026"
+    },
+    "https://nitter.net/BaiduAI_News/status/2057674857320783892#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "BaiduAI_News",
+      "title": "Glad to see our ESG efforts recognized once again.\nWe\u2019ll keep working to make AI more accessible and beneficial to more people. \ud83d\udc47",
+      "description": "Glad to see our ESG efforts recognized once again.\nWe\u2019ll keep working to make AI more accessible and beneficial to more people. \ud83d\udc47\n\n\nBaidu Inc. (@Baidu_Inc)\n\nOver the past year, our ESG practices were recognized in a few ways \u2014 our MSCI ESG rating was raised to AA, and we were again included in\u2026"
+    },
+    "https://nitter.net/GoogleAI/status/2056829481218949533#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "GoogleAI",
+      "title": "R to @GoogleAI: x.com/venturetwins/status/20\u2026",
+      "description": "nitter.net/venturetwins/status/20\u2026\n\n\nJustine Moore (@venturetwins)\n\n3) Video editing\n\nYou can upload real videos to Omni and ask for edits - changing the action, style, or subject. Or you can annotate on top of a video.\n\nIn this video, I asked to \"change my hat every time I clap.\"\n\nVideo\n \u2026"
+    },
+    "https://nitter.net/GeminiApp/status/2057616380690841739#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: x.com/DontFearAI/status/2056\u2026",
+      "description": "nitter.net/DontFearAI/status/2056\u2026\n\n\nRyan \u2022 Web AI (@DontFearAI)\n\nGoogle Gemini Omni is on another level.\n\nFed it a video and a few photos of my rescue pup Benny, asked for a dream scene, and this is what it gave me back.\n\nSweet dreams are made of bunnies and big bowls of kibble. \ud83d\udc3e\n\nVideo\n \u2026"
+    },
+    "https://nitter.net/GeminiApp/status/2057616371748651054#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "GeminiApp",
+      "title": "Gemini Omni is here, and we\u2019ve been seeing amazing creations all week. Here are some standouts \ud83d\udc47",
+      "description": "Gemini Omni is here, and we\u2019ve been seeing amazing creations all week. Here are some standouts \ud83d\udc47"
+    },
+    "https://nitter.net/Google/status/2057492440106635763#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "GeminiApp",
+      "title": "RT by @GeminiApp: The future of intelligent eyewear is coming this fall. \ud83d\udc53\nHere\u2019s your first look at our upcoming audio glasses, designed in partnership with @SamsungMobile, @_GentleMonster_  and @WarbyParker. Blending style with hands-free help from @GeminiApp, they\u2019re made to keep you connected while staying in the moment.",
+      "description": "The future of intelligent eyewear is coming this fall. \ud83d\udc53\nHere\u2019s your first look at our upcoming audio glasses, designed in partnership with @SamsungMobile, @_GentleMonster_  and @WarbyParker. Blending style with hands-free help from @GeminiApp, they\u2019re made to keep you connected while staying in\u2026"
+    },
+    "https://nitter.net/GeminiApp/status/2057550225863246236#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "GeminiApp",
+      "title": "Gemini can now connect to even more apps, including @OpenTable, @Canva, and @Instacart.\n\nWhether you're booking a table at a restaurant, creating a flyer, or ordering groceries, Gemini doesn\u2019t just find info, it helps you take action seamlessly with connected apps.",
+      "description": "Gemini can now connect to even more apps, including @OpenTable, @Canva, and @Instacart.\n\nWhether you're booking a table at a restaurant, creating a flyer, or ordering groceries, Gemini doesn\u2019t just find info, it helps you take action seamlessly with connected apps."
+    },
+    "https://nitter.net/GeminiApp/status/2057237073397268970#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "GeminiApp",
+      "title": "Gemini 3.5 Flash understands complex topics and diagrams for your specific needs to visualize the results in a way that\u2019s perfect for you.\n\nWatch Gemini take an advanced math paper, explore it visually, and generate the elements that matter most.",
+      "description": "Gemini 3.5 Flash understands complex topics and diagrams for your specific needs to visualize the results in a way that\u2019s perfect for you.\n\nWatch Gemini take an advanced math paper, explore it visually, and generate the elements that matter most."
+    },
+    "https://nitter.net/RyanLeeMiniMax/status/2057646683467677988#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: I\u2019m delighted to represent open\u2011source models and connect with everyone at AMD DevDay. \nOSS YES\nAMD YES",
+      "description": "I\u2019m delighted to represent open\u2011source models and connect with everyone at AMD DevDay. \nOSS YES\nAMD YES\n\n\n\n\nLisa Su (@LisaSu)\n\nGreat being in China this week with customers, partners, developers, and our @AMD teams across Beijing, Shanghai, and Suzhou.  \n\nLoved the energy at AMD DevDay in\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2057576916778197351#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "MiniMax_AI",
+      "title": "R to @MiniMax_AI: @NotionDevs Platform Hackathon in SF alongside @OpenAI @AnthropicAI @vercel_dev @PlanetScale: we contributed to the prize pool and brought a raffle for the builders \ud83d\ude4c",
+      "description": "@NotionDevs Platform Hackathon in SF alongside @OpenAI @AnthropicAI @vercel_dev @PlanetScale: we contributed to the prize pool and brought a raffle for the builders \ud83d\ude4c\n\n\n\n\n\n\n"
+    },
+    "https://nitter.net/MiniMax_AI/status/2057576914328699166#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "MiniMax_AI",
+      "title": "R to @MiniMax_AI: Technical Leader's AI Agent Playbook by @awscloud: our Solutions Architect Justin Jia joined in Palo Alto for a deep dive on taking AI agents from POC to production.",
+      "description": "Technical Leader's AI Agent Playbook by @awscloud: our Solutions Architect Justin Jia joined in Palo Alto for a deep dive on taking AI agents from POC to production.\n\n\n"
+    },
+    "https://nitter.net/MiniMax_AI/status/2057576910713237748#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "MiniMax_AI",
+      "title": "R to @MiniMax_AI: America's Next Top Model x @vercel: developers picked a model, built live, and demoed to the crowd. The energy in the room was unreal!",
+      "description": "America's Next Top Model x @vercel: developers picked a model, built live, and demoed to the crowd. The energy in the room was unreal!\n\n\n\n\n"
+    },
+    "https://nitter.net/MiniMax_AI/status/2057576909274554595#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "MiniMax_AI",
+      "title": "MiniMax just wrapped up an eventful week in the US \ud83e\udd73 Quick recap \ud83e\uddf5",
+      "description": "MiniMax just wrapped up an eventful week in the US \ud83e\udd73 Quick recap \ud83e\uddf5"
+    },
+    "https://nitter.net/OpenAI/status/2057617863977165173#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: We\u2019re taking suggestions on what you want to see next week \u270d\ufe0f",
+      "description": "We\u2019re taking suggestions on what you want to see next week \u270d\ufe0f"
+    },
+    "https://nitter.net/OpenAI/status/2057617862479708650#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: 4\ufe0f\u20e3 Advanced annotation mode lets you directly adjust the way web pages look while leaving feedback, making it even easier to work together with Codex.",
+      "description": "4\ufe0f\u20e3 Advanced annotation mode lets you directly adjust the way web pages look while leaving feedback, making it even easier to work together with Codex.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2057617860986593680#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: 3\ufe0f\u20e3 Goal mode is now available in the Codex app, IDE extension, and CLI.\n\nGoal mode makes Codex more hands-off, letting you set a goal that it can work towards for hours or even days.",
+      "description": "3\ufe0f\u20e3 Goal mode is now available in the Codex app, IDE extension, and CLI.\n\nGoal mode makes Codex more hands-off, letting you set a goal that it can work towards for hours or even days.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2057617846449197480#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: 2\ufe0f\u20e3 Appshots bring context from your screen straight into the Codex app.",
+      "description": "2\ufe0f\u20e3 Appshots bring context from your screen straight into the Codex app.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2057617844800794878#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "OpenAI",
+      "title": "Highlights from today\u2019s Codex Thursday launches:\n\n1\ufe0f\u20e3 Codex can now securely use apps on your Mac from your phone, even when your Mac is locked and the screen is off.\n\nhttp://developers.openai.com/codex/app/computer-use#locked-use",
+      "description": "Highlights from today\u2019s Codex Thursday launches:\n\n1\ufe0f\u20e3 Codex can now securely use apps on your Mac from your phone, even when your Mac is locked and the screen is off.\n\ndevelopers.openai.com/codex/\u2026\n"
+    },
+    "https://nitter.net/ChatGPTapp/status/2057597319076512219#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "ChatGPTapp",
+      "title": "R to @ChatGPTapp: btw ChatGPT can also generate images in PowerPoint \ud83d\uddbc\ufe0f",
+      "description": "btw ChatGPT can also generate images in PowerPoint \ud83d\uddbc\ufe0f"
+    },
+    "https://nitter.net/ChatGPTapp/status/2057560277970035069#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "ChatGPTapp",
+      "title": "R to @ChatGPTapp: chatgpt.com/apps/powerpoint/",
+      "description": "chatgpt.com/apps/powerpoint/\n"
+    },
+    "https://nitter.net/ChatGPTapp/status/2057560276384563560#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "ChatGPTapp",
+      "title": "Have you ever thought to yourself: I really don't want to make this PowerPoint.\n\nGood news: ChatGPT can now create and edit presentations directly in PowerPoint.\n\nBuild, update, understand, and polish presentations directly in PowerPoint while keeping slides editable.\n\nNow in beta, we\u2019d love your feedback \ud83d\udc40",
+      "description": "Have you ever thought to yourself: I really don't want to make this PowerPoint.\n\nGood news: ChatGPT can now create and edit presentations directly in PowerPoint.\n\nBuild, update, understand, and polish presentations directly in PowerPoint while keeping slides editable.\n\nNow in beta, we\u2019d love\u2026"
+    },
+    "https://nitter.net/googleaidevs/status/2057680511217393899#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "googleaidevs",
+      "title": "Update: *Weekly* Gemini quotas on all paid @Antigravity tiers have just been tripled (again!), and quotas are officially reset (again!).",
+      "description": "Update: *Weekly* Gemini quotas on all paid @Antigravity tiers have just been tripled (again!), and quotas are officially reset (again!).\n\n\nVarun Mohan (@_mohansolo)\n\nYesterday, we 3x\u2019d limits on Antigravity and are seeing you build so much more. One thing we heard was people are worried about\u2026"
+    },
+    "https://nitter.net/googleaidevs/status/2057576093775978755#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "googleaidevs",
+      "title": "Rate limits for Gemini on all paid @Antigravity tiers just permanently tripled. We also hit refresh on everyone's weekly quotas. \u2935\ufe0f",
+      "description": "Rate limits for Gemini on all paid @Antigravity tiers just permanently tripled. We also hit refresh on everyone's weekly quotas. \u2935\ufe0f\n\n\nVarun Mohan (@_mohansolo)\n\nAn update: we\u2019re 3xing the rate limits for Gemini models across all paid tiers in Antigravity and resetting everyone\u2019s Gemini quota for\u2026"
+    },
+    "https://nitter.net/dkundel/status/2057543060817641478#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "OpenAIDevs",
+      "title": "RT by @OpenAIDevs: Heads up: in the Codex app you might have to ask Codex to enable the feature.\n\n> Run `codex features enable goals`\n\nThen restart the app. We will have a fix rolling out soon to properly enable it by default.",
+      "description": "Heads up: in the Codex app you might have to ask Codex to enable the feature.\n\n&gt; Run `codex features enable goals`\n\nThen restart the app. We will have a fix rolling out soon to properly enable it by default.\n\n\nOpenAI Developers (@OpenAIDevs)\n\n\ud83e\udd45\n\n/goal has graduated from an experiment\u2014for\u2026"
+    },
+    "https://nitter.net/_mohansolo/status/2057656550286885284#m": {
+      "edition": "2026-05-22-Morning",
+      "feed": "antigravity",
+      "title": "RT by @antigravity: Yesterday, we 3x\u2019d limits on Antigravity and are seeing you build so much more. One thing we heard was people are worried about hitting their weekly limits after a couple work sessions. To give you more runway, we\u2019re 3x\u2019ing the weekly Gemini quotas AGAIN on all paid plans.\n\nWe\u2019ve also gone ahead and reset Gemini quotas on all paid plans. Don\u2019t stop building!",
+      "description": "Yesterday, we 3x\u2019d limits on Antigravity and are seeing you build so much more. One thing we heard was people are worried about hitting their weekly limits after a couple work sessions. To give you more runway, we\u2019re 3x\u2019ing the weekly Gemini quotas AGAIN on all paid plans.\n\nWe\u2019ve also gone ahead\u2026"
     }
   },
-  "last_run": "2026-05-21T20:00:26.174139+00:00"
+  "last_run": "2026-05-22T15:00:38.413845+00:00"
 }
