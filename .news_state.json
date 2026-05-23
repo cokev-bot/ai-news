@@ -6599,7 +6599,73 @@
       "feed": "OpenAIDevs",
       "title": "Shipped papercut: new diff markers setting in Appearance.\n\nPrefer classic + / - markers when reviewing diffs? You can now use those instead of only color-coded diff bars.\n\nDefault stays the same unless you opt in.",
       "description": "Shipped papercut: new diff markers setting in Appearance.\n\nPrefer classic + / - markers when reviewing diffs? You can now use those instead of only color-coded diff bars.\n\nDefault stays the same unless you opt in.\n\nVideo\n  \n"
+    },
+    "https://www.ft.com/content/ae9bb47d-bd1d-473c-b4c5-abae0420cc12": {
+      "edition": "2026-05-23-Morning",
+      "feed": "FT AI",
+      "title": "SpaceX, OpenAI and Anthropic IPOs set to test limits of AI boom",
+      "description": "Elon Musk, Sam Altman and Dario Amodei battle over who can command Wall Street\u2019s deepest pools of capital"
+    },
+    "https://www.ft.com/content/20aed12e-b196-44f8-8a9d-54ba5e37979f": {
+      "edition": "2026-05-23-Morning",
+      "feed": "FT AI",
+      "title": "How AI has changed M&A",
+      "description": "Deals hit record highs, unloved companies turn sexy and PE finds a new gold mine"
+    },
+    "https://www.ft.com/content/f11e025d-bc28-49ac-a8ca-a881275f4f2b": {
+      "edition": "2026-05-23-Morning",
+      "feed": "FT AI",
+      "title": "Get ready to take sides in Big Tech\u2019s giant IPO bake-off",
+      "description": "With SpaceX, OpenAI and Anthropic targeting the same market, investors must decide what qualities they prize most"
+    },
+    "https://www.ft.com/content/f5c96fa6-5b9b-4951-b71d-e32b3b57d8df": {
+      "edition": "2026-05-23-Morning",
+      "feed": "FT AI",
+      "title": "The new Luddite movement",
+      "description": "If governments don\u2019t slow AI down, voters \u2014 like their predecessors \u2014 might take matters into their own hands"
+    },
+    "https://www.ft.com/content/0216ee07-6523-4c3e-967a-ea3905cfff9d": {
+      "edition": "2026-05-23-Morning",
+      "feed": "FT AI",
+      "title": "Classical music has survived for centuries. Will AI kill it?",
+      "description": "Composers have always experimented with new technology \u2014 but the latest advances threaten \u2018skill death\u2019 in this centuries-old art form"
+    },
+    "https://www.nytimes.com/2026/05/23/opinion/artificial-intelligence-philanthropy-beauty.html": {
+      "edition": "2026-05-23-Morning",
+      "feed": "NYT AI",
+      "title": "What A.I. Philanthropists Can Learn From the Gilded Age",
+      "description": "Leave a physical legacy to future generations, not just a record of programs and disbursements."
+    },
+    "https://nitter.net/GeminiApp/status/2057974680242512071#m": {
+      "edition": "2026-05-23-Morning",
+      "feed": "GeminiApp",
+      "title": "x.com/i/article/205755113838\u2026",
+      "description": "x.com/i/article/205755113838\u2026"
+    },
+    "https://nitter.net/GeminiApp/status/2057616377616429404#m": {
+      "edition": "2026-05-23-Morning",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: x.com/nischeom/status/205716\u2026",
+      "description": "nitter.net/nischeom/status/205716\u2026\n\n\nNISCH\u039eOM (@nischeom)\n\n\ud835\udc00\ud835\udc25\ud835\udc22\ud835\udc2f\ud835\udc1e\n\ud835\udc06\ud835\udc28\ud835\udc28\ud835\udc20\ud835\udc25\ud835\udc1e \ud835\udc06\ud835\udc1e\ud835\udc26\ud835\udc22\ud835\udc27\ud835\udc22 \ud835\udc0e\ud835\udc26\ud835\udc27\ud835\udc22 \n\n#AI\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/nischeom/status/2057161690505195759#m\n\n"
+    },
+    "https://nitter.net/MiniMax_AI/status/2058012127206785094#m": {
+      "edition": "2026-05-23-Morning",
+      "feed": "MiniMax_AI",
+      "title": "Congratulaitons on the launch of Gizmo @gradium!\nGizmo is powered by our dual\u2011LLMarchitecture, eliminating awkward silence during conversations. \n\nThe lightning-fast M2-her model delivers instant acknowledgements, while the powerful M2.7 handles complex reasoning in the background.\n\nThe result is a voice agent that feels present, responsive, and effortlessly natural, putting customer experience first",
+      "description": "Congratulaitons on the launch of Gizmo @gradium!\nGizmo is powered by our dual\u2011LLMarchitecture, eliminating awkward silence during conversations. \n\nThe lightning-fast M2-her model delivers instant acknowledgements, while the powerful M2.7 handles complex reasoning in the background.\n\nThe result\u2026"
+    },
+    "https://nitter.net/AravSrinivas/status/2057848932882170152#m": {
+      "edition": "2026-05-23-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: MiniMax, a leading open source model and agent, is now powered by Perplexity\u2019s search infrastructure",
+      "description": "MiniMax, a leading open source model and agent, is now powered by Perplexity\u2019s search infrastructure\n\n\nMiniMax_Agent (@MiniMaxAgent)\n\nMiniMax Agent now uses @perplexity_ai  Search.\n\nWe benchmarked 3 AI-native search providers across 700+ agent tasks. Perplexity delivered the best combination of\u2026"
+    },
+    "https://nitter.net/_mohansolo/status/2057969609480032313#m": {
+      "edition": "2026-05-23-Morning",
+      "feed": "antigravity",
+      "title": "RT by @antigravity: We doubled max context length in Antigravity for Gemini 3.5 Flash.\n\nSome of you have been hitting compaction many times for hard tasks, which hurt performance. This should help in those cases. Was going to reset quotas but just did a couple hours ago \ud83d\ude42",
+      "description": "We doubled max context length in Antigravity for Gemini 3.5 Flash.\n\nSome of you have been hitting compaction many times for hard tasks, which hurt performance. This should help in those cases. Was going to reset quotas but just did a couple hours ago \ud83d\ude42"
     }
   },
-  "last_run": "2026-05-23T00:00:23.791768+00:00"
+  "last_run": "2026-05-23T15:00:26.014671+00:00"
 }
