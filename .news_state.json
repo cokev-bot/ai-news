@@ -6665,7 +6665,19 @@
       "feed": "antigravity",
       "title": "RT by @antigravity: We doubled max context length in Antigravity for Gemini 3.5 Flash.\n\nSome of you have been hitting compaction many times for hard tasks, which hurt performance. This should help in those cases. Was going to reset quotas but just did a couple hours ago \ud83d\ude42",
       "description": "We doubled max context length in Antigravity for Gemini 3.5 Flash.\n\nSome of you have been hitting compaction many times for hard tasks, which hurt performance. This should help in those cases. Was going to reset quotas but just did a couple hours ago \ud83d\ude42"
+    },
+    "https://nitter.net/claudeai/status/2057487467956097158#m": {
+      "edition": "2026-05-23-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: x.com/av3rnicus/status/20453\u2026",
+      "description": "nitter.net/av3rnicus/status/20453\u2026\n\n\nAniket (@av3rnicus)\n\nMade ASCII loading animation with claude design.\n\nTo be very honest, I think this could work out really well if you know what and how to build.\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/av3rnicus/status/2045302229092254016#m\n\n"
+    },
+    "https://nitter.net/antigravity/status/2056864981988065702#m": {
+      "edition": "2026-05-23-Afternoon",
+      "feed": "antigravity",
+      "title": "Introducing Gemini 3.5 Flash \u26a1\ufe0f\n\nNormally, Gemini 3.5 Flash is 4x faster than other models with frontier performance. For a limited time, Antigravity is serving it 12x faster thanks to custom inference tricks, delivering incredible speed for your workflows. \ud83d\ude80\n\nSee the performance in this demo: generating pixel art from photos, orchestrating multi-agent workflows to write and register sprites, and spawning browser subagents to auto-test rendering: \ud83d\udc47",
+      "description": "Introducing Gemini 3.5 Flash \u26a1\ufe0f\n\nNormally, Gemini 3.5 Flash is 4x faster than other models with frontier performance. For a limited time, Antigravity is serving it 12x faster thanks to custom inference tricks, delivering incredible speed for your workflows. \ud83d\ude80\n\nSee the performance in this demo:\u2026"
     }
   },
-  "last_run": "2026-05-23T15:00:26.014671+00:00"
+  "last_run": "2026-05-23T20:00:22.542939+00:00"
 }
