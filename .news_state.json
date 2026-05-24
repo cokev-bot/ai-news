@@ -6767,7 +6767,25 @@
       "feed": "arena",
       "title": "Asked Gemini 3.5 Flash to render the Petra Treasury. It built the entire stone canyon around it - something other frontier models didn't do.\n\nGemini also added ambient sound, which wasn\u2019t in the prompt either.\n\nWhether you want this agentic behavior depends on what you're trying to do, but it's a notable departure from how other frontier models behave on the same prompts.\n\nMore side-by-side prompts with @GoogleDeepMind's latest release in the full video (link in thread) \ud83d\udc47",
       "description": "Asked Gemini 3.5 Flash to render the Petra Treasury. It built the entire stone canyon around it - something other frontier models didn't do.\n\nGemini also added ambient sound, which wasn\u2019t in the prompt either.\n\nWhether you want this agentic behavior depends on what you're trying to do, but it's\u2026"
+    },
+    "https://www.ft.com/content/75af4d22-03ba-4fcc-b269-0ffee042d8cc": {
+      "edition": "2026-05-24-Afternoon",
+      "feed": "FT AI",
+      "title": "Robotaxis need to be tested in real traffic",
+      "description": "To achieve safe, cost-effective autonomy we need to see how other road users react to the vehicles"
+    },
+    "https://www.ft.com/content/482c56aa-6d2b-4456-9d33-b42dc30788bd": {
+      "edition": "2026-05-24-Afternoon",
+      "feed": "FT AI",
+      "title": "ECB summons banks to urge them to fix flaws exposed by latest AI models",
+      "description": "Supervisor to stress seriousness of risks to financial system at hastily arranged meeting"
+    },
+    "https://nitter.net/arena/status/2056793182680301708#m": {
+      "edition": "2026-05-24-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Dive into Gemini 3.5 Flash across all the leaderboards at: http://arena.ai/leaderboard",
+      "description": "Dive into Gemini 3.5 Flash across all the leaderboards at: arena.ai/leaderboard"
     }
   },
-  "last_run": "2026-05-24T15:00:32.209319+00:00"
+  "last_run": "2026-05-24T20:00:24.432588+00:00"
 }
