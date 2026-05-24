@@ -6701,7 +6701,73 @@
       "feed": "arena",
       "title": "R to @arena: Watch the full video with more comparisons of @GoogleDeepMind's latest Gemini 3.5 Flash on YouTube: https://www.youtube.com/watch?v=BScuyWDzm8Y",
       "description": "Watch the full video with more comparisons of @GoogleDeepMind's latest Gemini 3.5 Flash on YouTube: piped.video/watch?v=BScuyWDz\u2026\n"
+    },
+    "https://www.ft.com/content/8318a754-7b63-4f1f-8978-7691e7ed3511": {
+      "edition": "2026-05-24-Morning",
+      "feed": "FT AI",
+      "title": "How AI is forcing McKinsey and its peers to rethink pricing",
+      "description": "Clients are questioning the value of advice while getting more used to fees based on successful task completion"
+    },
+    "https://www.ft.com/content/5aecd7b6-652f-4edb-b666-71f3f50fc43e": {
+      "edition": "2026-05-24-Morning",
+      "feed": "FT AI",
+      "title": "The new arms race in computing power",
+      "description": "Military capability depends increasingly on data centres. Now governments outpaced in AI are looking to experimental technologies"
+    },
+    "https://www.nytimes.com/2026/05/24/opinion/doctor-ai-chatgpt.html": {
+      "edition": "2026-05-24-Morning",
+      "feed": "NYT AI",
+      "title": "As a Doctor, I Can Understand the Allure of ChatGPT",
+      "description": "Even doctors can learn something from A.I."
+    },
+    "https://www.nytimes.com/2026/05/24/technology/uk-ai-safety-institute.html": {
+      "edition": "2026-05-24-Morning",
+      "feed": "NYT AI",
+      "title": "UK Institute Is Hunting for Dangers Lurking in AI",
+      "description": "The government\u2019s A.I. Security Institute, staffed by alumni from OpenAI and Google, is becoming a model for countries grappling with A.I.\u2019s emerging risks."
+    },
+    "https://www.nytimes.com/2026/05/24/technology/one-job-that-is-growing-in-the-ai-era-cybersecurity-experts.html": {
+      "edition": "2026-05-24-Morning",
+      "feed": "NYT AI",
+      "title": "One Job That Is Growing in the A.I. Era? Cybersecurity Experts.",
+      "description": "Demand for security engineers has surged as artificial intelligence generates a glut of new code and models like Anthropic\u2019s Mythos create new concerns."
+    },
+    "https://www.nytimes.com/2026/05/24/business/meat-computer-brain-artificial-intelligence.html": {
+      "edition": "2026-05-24-Morning",
+      "feed": "NYT AI",
+      "title": "To A.I. Executives, We\u2019re All Just \u2018Meat Computers\u2019",
+      "description": "A term first used in philosophy and cognitive science circles has lately taken on a more ominous cast. Moo."
+    },
+    "https://www.nytimes.com/2026/05/24/opinion/war-memories-memorial-day.html": {
+      "edition": "2026-05-24-Morning",
+      "feed": "NYT AI",
+      "title": "The 15-Year-Old Keeping War Memories Alive",
+      "description": "Luke Morrison may be the youngest person keeping alive an age-old tradition: to process war through the memories and mementos of those who experienced it."
+    },
+    "https://nitter.net/claudeai/status/2057487464575467943#m": {
+      "edition": "2026-05-24-Morning",
+      "feed": "claudeai",
+      "title": "R to @claudeai: x.com/Iruhdam24/status/20475\u2026",
+      "description": "nitter.net/Iruhdam24/status/20475\u2026\n\n\nMadhuri \u2733\ufe0e (@Iruhdam24)\n\nMaking my personal set of characters using @claude Design for my website, coming soon!\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/Iruhdam24/status/2047571920716185920#m\n\n"
+    },
+    "https://nitter.net/GeminiApp/status/2057616374621724811#m": {
+      "edition": "2026-05-24-Morning",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: x.com/HBCoop_/status/2057131\u2026",
+      "description": "nitter.net/HBCoop_/status/2057131\u2026\n\n\nHeather Cooper (@HBCoop_)\n\nGoogle Omni lets you edit videos with natural language in the prompt, like Nano Banana.\n\nReplace the blacksmith with:\n\u2022 a female elf blacksmith in a mystical forest\n\u2022 an alien blacksmith on an alien planet with deep valleys\n\u2022 an\u2026"
+    },
+    "https://nitter.net/GoogleAIStudio/status/2058343004575084619#m": {
+      "edition": "2026-05-24-Morning",
+      "feed": "GoogleAIStudio",
+      "title": "What are you vibe coding this weekend?",
+      "description": "What are you vibe coding this weekend?"
+    },
+    "https://nitter.net/arena/status/2057209766112547265#m": {
+      "edition": "2026-05-24-Morning",
+      "feed": "arena",
+      "title": "Asked Gemini 3.5 Flash to render the Petra Treasury. It built the entire stone canyon around it - something other frontier models didn't do.\n\nGemini also added ambient sound, which wasn\u2019t in the prompt either.\n\nWhether you want this agentic behavior depends on what you're trying to do, but it's a notable departure from how other frontier models behave on the same prompts.\n\nMore side-by-side prompts with @GoogleDeepMind's latest release in the full video (link in thread) \ud83d\udc47",
+      "description": "Asked Gemini 3.5 Flash to render the Petra Treasury. It built the entire stone canyon around it - something other frontier models didn't do.\n\nGemini also added ambient sound, which wasn\u2019t in the prompt either.\n\nWhether you want this agentic behavior depends on what you're trying to do, but it's\u2026"
     }
   },
-  "last_run": "2026-05-24T00:00:29.056475+00:00"
+  "last_run": "2026-05-24T15:00:32.209319+00:00"
 }
