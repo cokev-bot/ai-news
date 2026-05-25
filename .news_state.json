@@ -6797,7 +6797,55 @@
       "feed": "arena",
       "title": "R to @arena: Gemini 3.5 Flash\u2019s pricing shifts the Pareto frontier in Text. 8 models from @GoogleDeepMind dominate the Text Arena Pareto curve where only 4 labs are represented for top performance in their price tiers.",
       "description": "Gemini 3.5 Flash\u2019s pricing shifts the Pareto frontier in Text. 8 models from @GoogleDeepMind dominate the Text Arena Pareto curve where only 4 labs are represented for top performance in their price tiers.\n"
+    },
+    "https://www.ft.com/content/12313f08-991d-4079-9631-9ce7ae70c3e3": {
+      "edition": "2026-05-25-Morning",
+      "feed": "FT AI",
+      "title": "Pope Leo says AI \u2018needs to be disarmed\u2019",
+      "description": "Pontiff warns of dangers of a technological revolution driven by \u2018the idolatry of profit\u2019"
+    },
+    "https://www.ft.com/content/5630ed79-a263-41ed-9a1a-321617ae310e": {
+      "edition": "2026-05-25-Morning",
+      "feed": "FT AI",
+      "title": "AI guardrails stripped from Meta and Google models in minutes",
+      "description": "Software designed to remove safety protections creates systems that provide responses on biological weapons and malware"
+    },
+    "https://www.nytimes.com/2026/05/25/us/politics/artificial-intelliegence-courts.html": {
+      "edition": "2026-05-25-Morning",
+      "feed": "NYT AI",
+      "title": "Artificial Intelligence Floods Court Dockets with Home-Brewed Lawsuits",
+      "description": "For years, courts have welcomed cases brought by self-represented litigants. Now those plaintiffs have A.I., and their filings are consuming more and more bandwidth."
+    },
+    "https://www.nytimes.com/2026/05/25/world/europe/pope-leo-encyclical.html": {
+      "edition": "2026-05-25-Morning",
+      "feed": "NYT AI",
+      "title": "Pope Leo Warns of Risks From A.I. in 42,300-Word Encyclical",
+      "description": "The document marks a powerful foray by the leader of the Roman Catholic Church into the debate about the misuse or overuse of artificial intelligence."
+    },
+    "https://www.nytimes.com/2026/05/25/opinion/iran-trolling-propaganda.html": {
+      "edition": "2026-05-25-Morning",
+      "feed": "NYT AI",
+      "title": "Iran Is Trolling Us and We\u2019re Not Doing Anything About It",
+      "description": "This is a novel form of propaganda."
+    },
+    "https://www.nytimes.com/2026/05/25/world/europe/pope-leo-encyclical-ai.html": {
+      "edition": "2026-05-25-Morning",
+      "feed": "NYT AI",
+      "title": "Pope Leo Has Released an Encyclical About A.I. Why Is That Important?",
+      "description": "Leo XIV issued his thoughts about artificial intelligence in the modern world using a centuries-old form of papal communication called an encyclical."
+    },
+    "https://nitter.net/Designarena/status/2058780135952978324#m": {
+      "edition": "2026-05-25-Morning",
+      "feed": "Kimi_Moonshot",
+      "title": "RT by @Kimi_Moonshot: An open source model has returned to #1 on the 3D Design leaderboard by Design Arena.\n\nKimi K2.6 has reached the top of the leaderboard for 3D Design, ahead of models 10X more expensive like Opus 4.7 by @AnthropicAI, Gemini 3.5 Flash by @GoogleDeepMind, and GPT 5.5 by @OpenAI. This is an 18 position increase from its previous model Kimi K2.5.\n\nIn fact, it\u2019s not just Kimi K2.6 - 3D Design is a striking outlier capability that\u2019s mostly dominated by open-weight models, like GLM 5.1 by @Zai_org, MiMo v2.5 by @Xiaomi, amongst others.\n\nCongrats on the @Kimi_Moonshot team for this accomplishment!",
+      "description": "An open source model has returned to #1 on the 3D Design leaderboard by Design Arena.\n\nKimi K2.6 has reached the top of the leaderboard for 3D Design, ahead of models 10X more expensive like Opus 4.7 by @AnthropicAI, Gemini 3.5 Flash by @GoogleDeepMind, and GPT 5.5 by @OpenAI. This is an 18\u2026"
+    },
+    "https://nitter.net/_mohansolo/status/2058740603563966758#m": {
+      "edition": "2026-05-25-Morning",
+      "feed": "antigravity",
+      "title": "RT by @antigravity: We heard concerns that Antigravity consumes many tokens for simple tasks now. So, we're adding Gemini 3.5 Flash (Low) as a way to optimize token usage for these tasks. In our internal testing, it generates around 45% fewer tokens than Gemini 3.5 Flash (Medium) and generally outperforms Gemini 3 Flash (High) on SWE tasks.\n\nWe've also gone ahead and reset Gemini quota across all paid plans to make sure you have all the tokens needed to build for the next week \ud83d\ude42",
+      "description": "We heard concerns that Antigravity consumes many tokens for simple tasks now. So, we're adding Gemini 3.5 Flash (Low) as a way to optimize token usage for these tasks. In our internal testing, it generates around 45% fewer tokens than Gemini 3.5 Flash (Medium) and generally outperforms Gemini 3\u2026"
     }
   },
-  "last_run": "2026-05-25T00:00:32.556806+00:00"
+  "last_run": "2026-05-25T15:00:36.822580+00:00"
 }
