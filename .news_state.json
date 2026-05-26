@@ -6845,7 +6845,61 @@
       "feed": "antigravity",
       "title": "RT by @antigravity: We heard concerns that Antigravity consumes many tokens for simple tasks now. So, we're adding Gemini 3.5 Flash (Low) as a way to optimize token usage for these tasks. In our internal testing, it generates around 45% fewer tokens than Gemini 3.5 Flash (Medium) and generally outperforms Gemini 3 Flash (High) on SWE tasks.\n\nWe've also gone ahead and reset Gemini quota across all paid plans to make sure you have all the tokens needed to build for the next week \ud83d\ude42",
       "description": "We heard concerns that Antigravity consumes many tokens for simple tasks now. So, we're adding Gemini 3.5 Flash (Low) as a way to optimize token usage for these tasks. In our internal testing, it generates around 45% fewer tokens than Gemini 3.5 Flash (Medium) and generally outperforms Gemini 3\u2026"
+    },
+    "https://www.ft.com/content/a01dd0e8-b8da-4783-aff1-0cde33782071": {
+      "edition": "2026-05-25-Evening",
+      "feed": "FT AI",
+      "title": "The 19th-century guide to running an effective meeting",
+      "description": "A US officer and engineer devised the process that is still in use today"
+    },
+    "https://www.nytimes.com/2026/05/25/technology/pope-ai-silicon-valley.html": {
+      "edition": "2026-05-25-Evening",
+      "feed": "NYT AI",
+      "title": "As A.I. Fever Rises in Silicon Valley, Pope Leo Has a Few Words",
+      "description": "The American pope wants to take artificial intelligence down a notch. Is he challenging the tech companies, or will tech take over the papacy?"
+    },
+    "https://www.nytimes.com/2026/05/25/us/pope-leo-encyclical-highlights.html": {
+      "edition": "2026-05-25-Evening",
+      "feed": "NYT AI",
+      "title": "Main Takeaways From Pope Leo\u2019s Encyclical on A.I.",
+      "description": "In his letter, the first American pontiff called for putting care for humans at the heart of technological change."
+    },
+    "https://www.nytimes.com/video/world/europe/100000010924143/pope-leo-ai-encyclical-risks.html": {
+      "edition": "2026-05-25-Evening",
+      "feed": "NYT AI",
+      "title": "Pope Leo Warns of A.I. Risks in His First Papal Encyclical",
+      "description": "Pope Leo XIV presented his first encyclical, \u201cMagnifica Humanitas,\u201d in which he outlined his desire to protect human dignity and agency in an age when technology threatens to replace people in many professional and social roles."
+    },
+    "https://www.nytimes.com/2026/05/24/technology/ai-cybersecurity-jobs.html": {
+      "edition": "2026-05-25-Evening",
+      "feed": "NYT AI",
+      "title": "One Job That Is Growing in the A.I. Era? Cybersecurity Experts.",
+      "description": "Demand for security engineers has surged as artificial intelligence generates a glut of new code and models like Anthropic\u2019s Mythos create new concerns."
+    },
+    "https://nitter.net/Alibaba_Qwen/status/2058932656797368619#m": {
+      "edition": "2026-05-25-Evening",
+      "feed": "Alibaba_Qwen",
+      "title": "\u2705Implicit caching is now live on Qwen3.7-Max \u2014 kicks in automatically, no setup needed. \n\u26a1\ufe0fFaster + cheaper out of the box.\n\nNeed higher, more deterministic hit rates? Try explicit caching instead. \ud83d\ude4c\n\ud83d\udd17Best practices \ud83d\udd17\u00a0\uff1ahttps://www.alibabacloud.com/help/en/model-studio/explicit-cache-best-practice",
+      "description": "\u2705Implicit caching is now live on Qwen3.7-Max \u2014 kicks in automatically, no setup needed. \n\u26a1\ufe0fFaster + cheaper out of the box.\n\nNeed higher, more deterministic hit rates? Try explicit caching instead. \ud83d\ude4c\n\ud83d\udd17Best practices \ud83d\udd17\u00a0\uff1aalibabacloud.com/help/en/mod\u2026"
+    },
+    "https://nitter.net/AnthropicAI/status/2058983299092009421#m": {
+      "edition": "2026-05-25-Evening",
+      "feed": "AnthropicAI",
+      "title": "Anthropic co-founder Chris Olah was invited to speak at today's presentation of Pope Leo XIV's encyclical \"Magnifica humanitas.\"\n\nRead the full text of his remarks: https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
+      "description": "Anthropic co-founder Chris Olah was invited to speak at today's presentation of Pope Leo XIV's encyclical \"Magnifica humanitas.\"\n\nRead the full text of his remarks: anthropic.com/news/chris-ola\u2026\n"
+    },
+    "https://nitter.net/antigravity/status/2058990383011397902#m": {
+      "edition": "2026-05-25-Evening",
+      "feed": "antigravity",
+      "title": "We\u2019re thrilled to announce the Antigravity CLI, a lightweight way to spin up the same Antigravity agents right from the terminal. \ud83d\udcbb\n\nIt gives you the exact same harness and same models, with a product experience tailored for the command line. It adapts entirely to you: your keybindings, your themes, your workflows.\n\nFull Antigravity CLI Walkthrough:",
+      "description": "We\u2019re thrilled to announce the Antigravity CLI, a lightweight way to spin up the same Antigravity agents right from the terminal. \ud83d\udcbb\n\nIt gives you the exact same harness and same models, with a product experience tailored for the command line. It adapts entirely to you: your keybindings, your\u2026"
+    },
+    "https://nitter.net/arena/status/2056793176720195693#m": {
+      "edition": "2026-05-25-Evening",
+      "feed": "arena",
+      "title": "Gemini 3.5 Flash has landed #9 for Text and Code Arena: Frontend.\n\nCode Arena: Frontend evaluates models on agentic frontend coding tasks from real users building apps and websites (HTML and React). Scoring 1507, this is a significant +70 point improvement over Gemini-3 Flash. Sub-category highlights:\n- #7 Content Creation Tools\n- #8 Gaming\n- #8 Consumer Product\n- #9 Data & Analytics\n- #10 Reference-Based Design\n\nIn Text Arena: #9 overall. Gemini 3.5 Flash also moves the price\u2013performance frontier as the new top Arena score in its price tier.\n\nCongrats to the @GoogleDeepMind team on this launch! Click into the thread to see the rankings by each arena.",
+      "description": "Gemini 3.5 Flash has landed #9 for Text and Code Arena: Frontend.\n\nCode Arena: Frontend evaluates models on agentic frontend coding tasks from real users building apps and websites (HTML and React). Scoring 1507, this is a significant +70 point improvement over Gemini-3 Flash. Sub-category\u2026"
     }
   },
-  "last_run": "2026-05-25T15:00:36.822580+00:00"
+  "last_run": "2026-05-26T00:00:35.510429+00:00"
 }
