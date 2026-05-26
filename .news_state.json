@@ -6899,7 +6899,241 @@
       "feed": "arena",
       "title": "Gemini 3.5 Flash has landed #9 for Text and Code Arena: Frontend.\n\nCode Arena: Frontend evaluates models on agentic frontend coding tasks from real users building apps and websites (HTML and React). Scoring 1507, this is a significant +70 point improvement over Gemini-3 Flash. Sub-category highlights:\n- #7 Content Creation Tools\n- #8 Gaming\n- #8 Consumer Product\n- #9 Data & Analytics\n- #10 Reference-Based Design\n\nIn Text Arena: #9 overall. Gemini 3.5 Flash also moves the price\u2013performance frontier as the new top Arena score in its price tier.\n\nCongrats to the @GoogleDeepMind team on this launch! Click into the thread to see the rankings by each arena.",
       "description": "Gemini 3.5 Flash has landed #9 for Text and Code Arena: Frontend.\n\nCode Arena: Frontend evaluates models on agentic frontend coding tasks from real users building apps and websites (HTML and React). Scoring 1507, this is a significant +70 point improvement over Gemini-3 Flash. Sub-category\u2026"
+    },
+    "https://www.ft.com/content/5c442b38-6989-461a-988e-653f7a275eee": {
+      "edition": "2026-05-26-Morning",
+      "feed": "FT AI",
+      "title": "AI tools lead to \u2018clear racial disparities\u2019 in job hiring",
+      "description": "New Stanford-led study finds candidates that fail AI-hiring tests face \u2018systemic rejection\u2019 across companies"
+    },
+    "https://www.ft.com/content/66fc88ec-af0d-452f-a535-193d9d5279f8": {
+      "edition": "2026-05-26-Morning",
+      "feed": "FT AI",
+      "title": "Hedge funds are AImaxxing",
+      "description": "Software is out, semis are in"
+    },
+    "https://www.ft.com/content/7ecdff9f-4f3a-40dd-b984-9860097dd083": {
+      "edition": "2026-05-26-Morning",
+      "feed": "FT AI",
+      "title": "ECB says private-credit fuelled AI boom poses risk to financial system",
+      "description": "Central bank warns that investors could be exposed to losses if the technology does not meet its potential"
+    },
+    "https://www.ft.com/content/557561df-4b72-48e8-89cb-239829de694a": {
+      "edition": "2026-05-26-Morning",
+      "feed": "FT AI",
+      "title": "ByteDance offers AI team special stock to fend off poaching",
+      "description": "TikTok owner issues shares tied to AI business unit as China\u2019s tech talent war heats up"
+    },
+    "https://www.ft.com/content/a676eae2-8a56-4511-bff2-2afa4211547a": {
+      "edition": "2026-05-26-Morning",
+      "feed": "FT AI",
+      "title": "FTAV\u2019s further reading",
+      "description": "Is AI profitable yet; Enhanced Games; SpaceX; Shoreditch lunching"
+    },
+    "https://www.ft.com/content/1be506e5-8fdb-49d3-847c-7fa05ee9aa4f": {
+      "edition": "2026-05-26-Morning",
+      "feed": "FT AI",
+      "title": "AI and the brave new world of deals",
+      "description": "Global M&A is now dominated by the race to control the world\u2019s energy, fibre networks and compute"
+    },
+    "https://www.ft.com/content/2d08b0c7-3ffe-49a8-9f89-ba204cb196f4": {
+      "edition": "2026-05-26-Morning",
+      "feed": "FT AI",
+      "title": "AI stories aren\u2019t inevitably \u2018not art\u2019",
+      "description": "Exercising our own judgment when it comes to quality is something we should not outsource to machines"
+    },
+    "https://www.ft.com/content/dbdec57b-1e24-455b-b9e8-81fd3efe85da": {
+      "edition": "2026-05-26-Morning",
+      "feed": "FT AI",
+      "title": "Spotify chief defends AI-generated music",
+      "description": "Streaming app strikes deal with Universal allowing subscribers to create \u2018controlled\u2019 covers and remixes"
+    },
+    "https://www.ft.com/content/d16f3ae6-8e27-4293-8bef-6bda7a9706d2": {
+      "edition": "2026-05-26-Morning",
+      "feed": "FT AI",
+      "title": "Apple has an innovation gap. Will its new CEO fill it?",
+      "description": "As John Ternus prepares to take charge, the tech titan that once urged consumers to \u2018think different\u2019 may itself be ripe for disruption"
+    },
+    "https://www.nytimes.com/2026/05/26/business/dealbook/vatican-ai-silicon-valley.html": {
+      "edition": "2026-05-26-Morning",
+      "feed": "NYT AI",
+      "title": "The Vatican Takes on Silicon Valley With an A.I. Warning",
+      "description": "Pope Leo XIV\u2019s encyclical on artificial intelligence puts technology giants on notice. But will it slow down the A.I. race?"
+    },
+    "https://www.nytimes.com/2026/05/26/business/dealbook/openrouter-ai-models-fundraising.html": {
+      "edition": "2026-05-26-Morning",
+      "feed": "NYT AI",
+      "title": "OpenRouter, an Exchange for A.I. Models, Raises $113 Million",
+      "description": "An investment arm of Alphabet is backing OpenRouter, which helps companies choose among hundreds of models for different software tasks."
+    },
+    "https://www.nytimes.com/2026/05/26/podcasts/the-headlines/white-house-green-card-pope-ai.html": {
+      "edition": "2026-05-26-Morning",
+      "feed": "NYT AI",
+      "title": "White House Shakes Up Green Card Policy, and the Pope Takes On A.I.",
+      "description": "Plus, will anyone want an electric Ferrari?"
+    },
+    "https://www.nytimes.com/2026/05/26/opinion/ezra-klein-podcast-yuval-noah-harari.html": {
+      "edition": "2026-05-26-Morning",
+      "feed": "NYT AI",
+      "title": "Yuval Noah Harari on the Mistake Strongmen Keep Making",
+      "description": "The best-selling author of \u201cSapiens\u201d and \u201cNexus\u201d discusses the core delusions deranging our politics."
+    },
+    "https://www.nytimes.com/2026/05/26/us/pope-leo-ai-anthropic.html": {
+      "edition": "2026-05-26-Morning",
+      "feed": "NYT AI",
+      "title": "To Understand Pope Leo\u2019s Efforts on A.I., Look at the Man Shaking His Hand",
+      "description": "The co-founder of a prominent A.I. company was nearby as the pope implored A.I. leaders to slow down and consider the technology\u2019s possible perils."
+    },
+    "https://www.nytimes.com/2026/05/26/us/data-centers-kassi-solberg.html": {
+      "edition": "2026-05-26-Morning",
+      "feed": "NYT AI",
+      "title": "The Homesteading Mother of 6 Taking On Big Tech",
+      "description": "Kassi Solberg has concerns about a proposed data center complex, the size of 3,800 football fields, near her home. Trust us, the developer says."
+    },
+    "https://www.nytimes.com/2026/05/26/opinion/pope-leo-encyclical-ai.html": {
+      "edition": "2026-05-26-Morning",
+      "feed": "NYT AI",
+      "title": "Pope Leo\u2019s Encyclical on A.I. Is Disappointingly Mild",
+      "description": "\u201cMagnifica Humanitas\u201d was measured and cautious."
+    },
+    "https://www.nytimes.com/2026/05/26/opinion/progressives-left-ai.html": {
+      "edition": "2026-05-26-Morning",
+      "feed": "NYT AI",
+      "title": "Progressives Are Listening to the Wrong People on A.I.",
+      "description": "An obsession with the most doomer prospects of A.I. is blinding progressives from thinking about serious, realistic policies."
+    },
+    "https://www.nytimes.com/2026/05/26/well/eat/ai-chatbots-nutrition-advice.html": {
+      "edition": "2026-05-26-Morning",
+      "feed": "NYT AI",
+      "title": "Should You Take Nutrition Advice From a Chatbot?",
+      "description": "Many people are turning to artificial intelligence for help with their diet. Experts weigh the potential pros and cons."
+    },
+    "https://nitter.net/BaiduAI_News/status/2059199663065149947#m": {
+      "edition": "2026-05-26-Morning",
+      "feed": "BaiduAI_News",
+      "title": "DuMate has officially ranked #1 in two leading AI Agent benchmarks! \ud83e\udd47\nBy topping both PinchBench and the DeepResearch Bench, it demonstrates industry-leading performance in executing complex tasks and conducting in-depth research analysis. \ud83d\udcc8\u2728",
+      "description": "DuMate has officially ranked #1 in two leading AI Agent benchmarks! \ud83e\udd47\nBy topping both PinchBench and the DeepResearch Bench, it demonstrates industry-leading performance in executing complex tasks and conducting in-depth research analysis. \ud83d\udcc8\u2728\n\n\n"
+    },
+    "https://www.ft.com/content/95415dfc-904e-4ce5-a457-f50041c07ec9": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "FT AI",
+      "title": "Chipmaker ETF rides AI excitement to quickest $10bn valuation on record",
+      "description": "Roundhill Memory ETF, known as DRAM, surges 87% within 50 days of April launch"
+    },
+    "https://www.ft.com/content/5ba4690b-8b98-43b3-ba0b-f2ec5591a572": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "FT AI",
+      "title": "UK law firm Pinsent Masons reprimanded by court over AI error",
+      "description": "Judge Mark Mullen warns lawyers against outsourcing legal research or reasoning"
+    },
+    "https://www.nytimes.com/2026/05/26/technology/pope-leo-ai-religion.html": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "NYT AI",
+      "title": "At the A.I. Epicenter, Technologists Dismiss Pope Leo\u2019s Warnings About the New Technology",
+      "description": "Pope Leo XIV\u2019s spiritual message on artificial intelligence arrived as Silicon Valley\u2019s A.I. enthusiasts pursue their own spirituality through technology."
+    },
+    "https://nitter.net/AnthropicAI/status/2059351260243919269#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "AnthropicAI",
+      "title": "New on the Engineering Blog: The access and permissions we grant agents should evolve with their capabilities. In our own products, we set these parameters through sandboxing, which limits the scope of any potentially destructive actions.\n\nRead more: https://www.anthropic.com/engineering/how-we-contain-claude",
+      "description": "New on the Engineering Blog: The access and permissions we grant agents should evolve with their capabilities. In our own products, we set these parameters through sandboxing, which limits the scope of any potentially destructive actions.\n\nRead more: anthropic.com/engineering/ho\u2026\n"
+    },
+    "https://nitter.net/claudeai/status/2059292347678986251#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: What are you building?",
+      "description": "What are you building?"
+    },
+    "https://nitter.net/claudeai/status/2059292345800048714#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: x.com/kathytzhou/status/2036\u2026",
+      "description": "nitter.net/kathytzhou/status/2036\u2026\n\n\nkathy zhou (@kathytzhou)\n\nby popular demand, you can now see sunset predictions for any location! just enter coordinates or use your current location\n\nthank you for all the love on this project :) i hope it helps you catch a sunset no matter where you\u2026"
+    },
+    "https://nitter.net/claudeai/status/2059292334714466595#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "claudeai",
+      "title": "Six Claude projects that all came from the same question: \u201cwhy not?\u201d",
+      "description": "Six Claude projects that all came from the same question: \u201cwhy not?\u201d"
+    },
+    "https://nitter.net/GeminiApp/status/2059308592457777574#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "GeminiApp",
+      "title": "Catch up on all the Gemini app updates from Google I/O in about a minute.",
+      "description": "Catch up on all the Gemini app updates from Google I/O in about a minute."
+    },
+    "https://nitter.net/MiniMax_AI/status/2059286515155599595#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "MiniMax_AI",
+      "title": "#MSA #OpenSource #M3\n\ud83e\udee3\ud83d\ude0e",
+      "description": "#MSA #OpenSource #M3\n\ud83e\udee3\ud83d\ude0e\n\n\nSkyler Miao (@SkylerMiao7)\n\nSomething BIG is coming\n\n\n\n\n\n\u2014 https://nitter.net/SkylerMiao7/status/2059285750458544561#m\n\n"
+    },
+    "https://nitter.net/NotTomBrown/status/2057194829986300375#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "RT by @ClaudeDevs: We\u2019re expanding our partnership with @SpaceX, and will be scaling up on GB200 capacity in Colossus 2 throughout June. \n\nAppreciate @elonmusk and the team helping us find good homes for the Claudes.",
+      "description": "We\u2019re expanding our partnership with @SpaceX, and will be scaling up on GB200 capacity in Colossus 2 throughout June. \n\nAppreciate @elonmusk and the team helping us find good homes for the Claudes.\n\n\nTom Brown (@NotTomBrown)\n\nIn the next few days we'll be ramping up Claude inference on Colossus.\u2026"
+    },
+    "https://nitter.net/OpenAIDevs/status/2059354472791646354#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "\ud83e\udd33",
+      "description": "\ud83e\udd33\n\n\nMatt Shumer (@mattshumer_)\n\nCodex Mobile is making me a better developer in a way I didn\u2019t expect: I step away from my laptop and stop micromanaging.\n\nI give it much more ambitious prompts (the way models work best).\n\nAnd I get space to think instead of sitting there with burning eyes\u2026"
+    },
+    "https://nitter.net/OpenAIDevs/status/2059353129569907169#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: openai.com/index/databricks/",
+      "description": "openai.com/index/databricks/\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2059353117934899289#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "GPT-5.5 in Codex helps @databricks parse complex customer documents more reliably.",
+      "description": "GPT-5.5 in Codex helps @databricks parse complex customer documents more reliably.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/GoogleAIStudio/status/2059324735649968543#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "GoogleAIStudio",
+      "title": "build your ideas wherever inspiration strikes\n\npre-register on Android: https://play.google.com/store/apps/details?id=com.google.android.apps.aistudio\n\npre-order on iOS:\nhttps://apps.apple.com/us/app/google-ai-studio/id6761388855",
+      "description": "build your ideas wherever inspiration strikes\n\npre-register on Android: play.google.com/store/apps/d\u2026\n\npre-order on iOS:\napps.apple.com/us/app/google\u2026\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ZDNET/status/2059318784649732437#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "ollama",
+      "title": "RT by @ollama: I quit ChatGPT for a free, private, and local AI called Ollama - here's why https://www.zdnet.com/article/reasons-to-use-ollama-instead-of-chatgpt/?taid=6a15d1b1cd9b3d000140f77c&utm_campaign=trueAnthem%3A+Trending+Content&utm_medium=trueAnthem&utm_source=twitter",
+      "description": "I quit ChatGPT for a free, private, and local AI called Ollama - here's why zdnet.com/article/reasons-to\u2026\n"
+    },
+    "https://nitter.net/MicrosoftAI/status/2059344061358563838#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "arena",
+      "title": "RT by @arena: Meet MAI-Image-2.5 - ranked third on the @arena text-to-image leaderboard. It's another great advance in quality. And with Build just a week away, there is much more to come. Learn more here: https://msft.it/6010vk3iy",
+      "description": "Meet MAI-Image-2.5 - ranked third on the @arena text-to-image leaderboard. It's another great advance in quality. And with Build just a week away, there is much more to come. Learn more here: msft.it/6010vk3iy\n\n\n\n\n\n\n"
+    },
+    "https://nitter.net/arena/status/2059346030924296227#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Dive into the score details of Image Arena http://arena.ai/leaderboard/text-to-image",
+      "description": "Dive into the score details of Image Arena arena.ai/leaderboard/text-to\u2026\n"
+    },
+    "https://nitter.net/arena/status/2059319351006957655#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "arena",
+      "title": "R to @Alibaba_Qwen: Correction: Qwen3.7 Max (20250517) in the title should be rank #4, matching the visual.",
+      "description": "Correction: Qwen3.7 Max (20250517) in the title should be rank #4, matching the visual."
+    },
+    "https://nitter.net/arena/status/2059297722369487315#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: See more leaderboard details for the Code Arena: Frontend https://arena.ai/leaderboard/code",
+      "description": "See more leaderboard details for the Code Arena: Frontend arena.ai/leaderboard/code\n"
+    },
+    "https://nitter.net/arena/status/2059297720079393107#m": {
+      "edition": "2026-05-26-Afternoon",
+      "feed": "arena",
+      "title": "Qwen3.7 Max (20250517) debuts at #4 in Code Arena: Frontend - the top-ranked Chinese lab on the board, surpassing GLM-5.1 and is now on par with Claude Opus 4.6 on agentic web development tasks.\n\nHuge congrats to @Alibaba_Qwen on this achievement!",
+      "description": "Qwen3.7 Max (20250517) debuts at #4 in Code Arena: Frontend - the top-ranked Chinese lab on the board, surpassing GLM-5.1 and is now on par with Claude Opus 4.6 on agentic web development tasks.\n\nHuge congrats to @Alibaba_Qwen on this achievement!\n\n\n\n\nQwen (@Alibaba_Qwen)\n\n\ud83d\udce3Meet Qwen3.7-Max \u2014\u2026"
     }
   },
-  "last_run": "2026-05-26T00:00:35.510429+00:00"
+  "last_run": "2026-05-26T20:00:29.762554+00:00"
 }
