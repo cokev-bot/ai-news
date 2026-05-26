@@ -44,15 +44,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .summary {
-  font-style: italic;
-  color: #b0b0b0;
-  border-left: 3px solid #bb86fc;
-  padding-left: 15px;
-  margin: 1em 0;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  border-left: 4px solid #bb86fc;
+  background-color: #1a1a1a;
+  padding: 15px;
+  margin: 1.5em 0;
+  border-radius: 0 4px 4px 0;
 }
 
 .details {
-  color: #d0d0d0;
+  color: #a0a0a0;
+  font-size: 0.95em;
 }
 
 code {

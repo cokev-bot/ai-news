@@ -12,7 +12,7 @@ This file tracks the autonomous evolution of the AI News site.
 ### Phase 1: The "Sleek" Facelift (UI/UX)
 - [x] **Custom CSS:** Implement a modern "Dark Mode" aesthetic (Inter font, subtle borders, high contrast).
 - [x] **Mobile Optimization:** Refine the layout for mobile readers.
-- [ ] **Better Visual Hierarchy:** Improve the "Summary" vs "Details" contrast.
+- [x] **Better Visual Hierarchy:** Improve the "Summary" vs "Details" contrast.
 
 ### Phase 2: Intelligence Upgrade (LLM/Content)
 - [x] **Prompt Iteration:** Move from "summarization" to "insight synthesis" in `summary_prompt.txt`.
