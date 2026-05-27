@@ -7133,7 +7133,79 @@
       "feed": "arena",
       "title": "Qwen3.7 Max (20250517) debuts at #4 in Code Arena: Frontend - the top-ranked Chinese lab on the board, surpassing GLM-5.1 and is now on par with Claude Opus 4.6 on agentic web development tasks.\n\nHuge congrats to @Alibaba_Qwen on this achievement!",
       "description": "Qwen3.7 Max (20250517) debuts at #4 in Code Arena: Frontend - the top-ranked Chinese lab on the board, surpassing GLM-5.1 and is now on par with Claude Opus 4.6 on agentic web development tasks.\n\nHuge congrats to @Alibaba_Qwen on this achievement!\n\n\n\n\nQwen (@Alibaba_Qwen)\n\n\ud83d\udce3Meet Qwen3.7-Max \u2014\u2026"
+    },
+    "https://www.nytimes.com/video/movies/100000010860400/alissa-reviews-cannes.html": {
+      "edition": "2026-05-26-Evening",
+      "feed": "NYT AI",
+      "title": "How Cannes Is Grappling With Changes",
+      "description": "Reporting from the Cannes Film Festival, our film critic Alissa Wilkinson describes how the event is both fending off and embracing aspects of artificial intelligence."
+    },
+    "https://nitter.net/claudeai/status/2059292343723819160#m": {
+      "edition": "2026-05-26-Evening",
+      "feed": "claudeai",
+      "title": "R to @claudeai: x.com/jasonkneen/status/2053\u2026",
+      "description": "nitter.net/jasonkneen/status/2053\u2026\n\n\nJason Kneen (@jasonkneen)\n\nFun artifact from Claude -- repo coming.\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/jasonkneen/status/2053282825722343752#m\n\n"
+    },
+    "https://nitter.net/GoogleAI/status/2059381218660270435#m": {
+      "edition": "2026-05-26-Evening",
+      "feed": "GoogleAI",
+      "title": "Pinned: x.com/i/article/205937771696\u2026",
+      "description": "x.com/i/article/205937771696\u2026"
+    },
+    "https://nitter.net/Google/status/2059393463670436350#m": {
+      "edition": "2026-05-26-Evening",
+      "feed": "GeminiApp",
+      "title": "RT by @GeminiApp: Neural Expressive is a new design language for @GeminiApp, with fluid animations, vibrant colors, haptic feedback and more improved experiences across the app. See it in action with @JoshWoodward at #GoogleIO \u2b07\ufe0f",
+      "description": "Neural Expressive is a new design language for @GeminiApp, with fluid animations, vibrant colors, haptic feedback and more improved experiences across the app. See it in action with @JoshWoodward at #GoogleIO \u2b07\ufe0f\n\nVideo\n  \n"
+    },
+    "https://nitter.net/eliebakouch/status/2059321928205156568#m": {
+      "edition": "2026-05-26-Evening",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: new minimax sparse attention compared to deepseek v3.2 (DSA) and v4 (CSA)\n\nmain changes:\n- based on GQA not MLA\n- block level selection like in CSA but attention is done on the real KV, not in the compressed dimension",
+      "description": "new minimax sparse attention compared to deepseek v3.2 (DSA) and v4 (CSA)\n\nmain changes:\n- based on GQA not MLA\n- block level selection like in CSA but attention is done on the real KV, not in the compressed dimension\n\n\n\n\nSkyler Miao (@SkylerMiao7)\n\nSomething BIG is coming\n\n\n\n\n\n\u2014\u2026"
+    },
+    "https://nitter.net/colinjfleming/status/2059359698214957543#m": {
+      "edition": "2026-05-26-Evening",
+      "feed": "OpenAINewsroom",
+      "title": "RT by @OpenAINewsroom: I\u2019m joining @OpenAI as Chief Marketing Officer, Business.\n\nSome companies build great products. A few change what people believe is possible.\n\nOpenAI is one of them.\n\nLots to learn. Lots to build. Sleeves rolled up.  @thsottiaux @sama @gdb @dhdresser @DaneVahey @jasonkwon",
+      "description": "I\u2019m joining @OpenAI as Chief Marketing Officer, Business.\n\nSome companies build great products. A few change what people believe is possible.\n\nOpenAI is one of them.\n\nLots to learn. Lots to build. Sleeves rolled up.  @thsottiaux @sama @gdb @dhdresser @DaneVahey @jasonkwon\n\n\nTrishla Ostwal\u2026"
+    },
+    "https://nitter.net/ClaudeDevs/status/2059385243476586715#m": {
+      "edition": "2026-05-26-Evening",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: You can add org-specific rules in a claude-security-guidance.md file. Drop it in your repo or distribute via MDM. The plugin enforces your policies alongside the built-in checks.\n\nDocs:\nhttps://code.claude.com/docs/en/security-guidance",
+      "description": "You can add org-specific rules in a claude-security-guidance.md file. Drop it in your repo or distribute via MDM. The plugin enforces your policies alongside the built-in checks.\n\nDocs:\ncode.claude.com/docs/en/secu\u2026\n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2059385242319012188#m": {
+      "edition": "2026-05-26-Evening",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: We've been using the plugin extensively at Anthropic.\n\nAcross our internal rollout and benchmarks, we\u2019ve seen a 30-40% decrease in security-related comments on PRs opened using the plugin.\n\nThe plugin serves as a lightweight first pass, catching issues before a full code review",
+      "description": "We've been using the plugin extensively at Anthropic.\n\nAcross our internal rollout and benchmarks, we\u2019ve seen a 30-40% decrease in security-related comments on PRs opened using the plugin.\n\nThe plugin serves as a lightweight first pass, catching issues before a full code review"
+    },
+    "https://nitter.net/ClaudeDevs/status/2059385241115181528#m": {
+      "edition": "2026-05-26-Evening",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: It runs via hooks and reviews code on three levels:\n\n- On file edits: looks for risky patterns like commonly misused dangerous libraries\n- After model turns: reviews the full diff for harder-to-spot issues\n- On commits: reads surrounding code to validate vulnerabilities",
+      "description": "It runs via hooks and reviews code on three levels:\n\n- On file edits: looks for risky patterns like commonly misused dangerous libraries\n- After model turns: reviews the full diff for harder-to-spot issues\n- On commits: reads surrounding code to validate vulnerabilities"
+    },
+    "https://nitter.net/ClaudeDevs/status/2059385239781384341#m": {
+      "edition": "2026-05-26-Evening",
+      "feed": "ClaudeDevs",
+      "title": "We\u2019ve shipped a security-guidance plugin for Claude Code that helps identify and fix vulnerabilities as you\u2019re writing code.\n\nAvailable for all Claude Code users. Install from the plugin marketplace (/plugins).",
+      "description": "We\u2019ve shipped a security-guidance plugin for Claude Code that helps identify and fix vulnerabilities as you\u2019re writing code.\n\nAvailable for all Claude Code users. Install from the plugin marketplace (/plugins).\n\nVideo\n  \n"
+    },
+    "https://nitter.net/AlibabaGroup/status/2059317802935423028#m": {
+      "edition": "2026-05-26-Evening",
+      "feed": "arena",
+      "title": "RT by @arena: Proud to see Qwen3.7\u2011Max debut at #4 in Code Arena, marking a significant milestone for Qwen in agentic web development.\n\n#AlibabaAI #Qwen",
+      "description": "Proud to see Qwen3.7\u2011Max debut at #4 in Code Arena, marking a significant milestone for Qwen in agentic web development.\n\n#AlibabaAI #Qwen\n\n\nArena.ai (@arena)\n\nQwen3.7 Max (20250517) debuts at #4 in Code Arena: Frontend - the top-ranked Chinese lab on the board, surpassing GLM-5.1 and is now on\u2026"
+    },
+    "https://nitter.net/mustafasuleyman/status/2059346031167570299#m": {
+      "edition": "2026-05-26-Evening",
+      "feed": "arena",
+      "title": "RT by @arena: Meet MAI-Image-2.5 - ranked third on the @arena text-to-image leaderboard. It's another great advance in quality. And with Build just a week away, there's much more to come from the @MicrosoftAI team. I can't wait.",
+      "description": "Meet MAI-Image-2.5 - ranked third on the @arena text-to-image leaderboard. It's another great advance in quality. And with Build just a week away, there's much more to come from the @MicrosoftAI team. I can't wait.\n"
     }
   },
-  "last_run": "2026-05-26T20:00:29.762554+00:00"
+  "last_run": "2026-05-27T00:00:27.167336+00:00"
 }
