@@ -7205,7 +7205,145 @@
       "feed": "arena",
       "title": "RT by @arena: Meet MAI-Image-2.5 - ranked third on the @arena text-to-image leaderboard. It's another great advance in quality. And with Build just a week away, there's much more to come from the @MicrosoftAI team. I can't wait.",
       "description": "Meet MAI-Image-2.5 - ranked third on the @arena text-to-image leaderboard. It's another great advance in quality. And with Build just a week away, there's much more to come from the @MicrosoftAI team. I can't wait.\n"
+    },
+    "https://www.ft.com/content/09089fa8-d2d8-4328-92b5-5a4a186e6523": {
+      "edition": "2026-05-27-Morning",
+      "feed": "FT AI",
+      "title": "Pope\u2019s appeal can\u2019t change the AI race\u2019s risky logic",
+      "description": "Pontiff\u2019s safety crusade runs into basic problems of game theory"
+    },
+    "https://www.ft.com/content/c532aac6-e13a-4e0f-bfe0-8418db1ed7fb": {
+      "edition": "2026-05-27-Morning",
+      "feed": "FT AI",
+      "title": "AI\u2019s mixed economic signals",
+      "description": "Plus, the euro convergence trade"
+    },
+    "https://www.ft.com/content/bacf6b79-2cab-4870-8890-e7a4fce23f96": {
+      "edition": "2026-05-27-Morning",
+      "feed": "FT AI",
+      "title": "KPMG scouts Silicon Valley start-ups in bid to head off AI disruption",
+      "description": "Firm looks to partner or invest in groups that could otherwise undermine its business model"
+    },
+    "https://www.ft.com/content/f8fa4739-4359-4720-af77-9be1e8370f82": {
+      "edition": "2026-05-27-Morning",
+      "feed": "FT AI",
+      "title": "China overhauls world\u2019s biggest surveillance network with advanced AI",
+      "description": "Local police forces are modernising the country\u2019s ageing infrastructure with more powerful tracking systems"
+    },
+    "https://www.ft.com/content/d82d2a5c-74ab-4eb9-a658-fd5467e71670": {
+      "edition": "2026-05-27-Morning",
+      "feed": "FT AI",
+      "title": "How AI threatens the giants of consulting",
+      "description": "The technology opens the door for smaller, well-funded challengers to take market share from the Big Four and others"
+    },
+    "https://www.nytimes.com/2026/05/27/technology/ai-screens-schools-weingarten.html": {
+      "edition": "2026-05-27-Morning",
+      "feed": "NYT AI",
+      "title": "Teachers Union Urges Schools to Curb A.I. Chatbots and Screen Time",
+      "description": "The American Federation of Teachers recommended \u201cno screens\u201d at all for those in second grade or younger, and no A.I. chatbots for students in elementary school."
+    },
+    "https://www.nytimes.com/2026/05/27/business/dealbook/ai-chips-war-samsung-micron.html": {
+      "edition": "2026-05-27-Morning",
+      "feed": "NYT AI",
+      "title": "Why Memory Chips Are Dominating the A.I. Rally",
+      "description": "Three major producers \u2014 Micron, Samsung and SK Hynix \u2014 are now trillion-dollar companies. Politicians and Wall Street have taken notice."
+    },
+    "https://www.nytimes.com/2026/05/27/world/asia/samsung-ai-profit-bonus-workers.html": {
+      "edition": "2026-05-27-Morning",
+      "feed": "NYT AI",
+      "title": "Samsung Unions Approve Pay Deal That Highlights Inequality of A.I. Age",
+      "description": "The agreement all but guarantees hefty bonuses for employees in the top-performing chip unit. Other workers say they feel left out."
+    },
+    "https://www.nytimes.com/2026/05/27/magazine/spencer-pratt-batman-ads-mayor.html": {
+      "edition": "2026-05-27-Morning",
+      "feed": "NYT AI",
+      "title": "Spencer Pratt Wants to Be Mayor. His Fans Want Him to Be Batman.",
+      "description": "What an A.I.-generated video of the former reality TV star teaches us about the future of political ads."
+    },
+    "https://www.nytimes.com/2026/05/27/opinion/writing-creativity-ai.html": {
+      "edition": "2026-05-27-Morning",
+      "feed": "NYT AI",
+      "title": "Writing Is Fundamental to How We Think",
+      "description": "A.I. can be a crutch that hurts our ability to think creatively."
+    },
+    "https://www.nytimes.com/video/us/100000010903992/ai-data-center-ice-detention-center-arizona.html": {
+      "edition": "2026-05-27-Morning",
+      "feed": "NYT AI",
+      "title": "The Two Issues That Could Swing This District",
+      "description": "Two national controversies \u2014 A.I. data centers and ICE detention centers \u2014 are converging in one swing congressional district. Our Southwest reporter Reis Thebault visits the town of Marana, Ariz., where some people are angry about both potential projects."
+    },
+    "https://www.nytimes.com/2026/05/27/us/politics/marana-arizona-data-center-ice-detention.html": {
+      "edition": "2026-05-27-Morning",
+      "feed": "NYT AI",
+      "title": "Two of America\u2019s Thorniest Political Issues Are Dividing an Arizona Town",
+      "description": "Marana, Ariz., is used to placid local politics, but the town, in a congressional swing district held by Juan Ciscomani, has been convulsed by two national issues, A.I. and immigration detention."
+    },
+    "https://www.nytimes.com/2026/05/27/technology/ai-startups-videos-marketing.html": {
+      "edition": "2026-05-27-Morning",
+      "feed": "NYT AI",
+      "title": "Go Ask Alice Why Tech Start-Ups Are Spending Big on Hype Videos",
+      "description": "A Mad Hatter and a giant rabbit sit around a table discussing an A.I. start-up. This is normal behavior around the Bay Area these days."
+    },
+    "https://nitter.net/Alibaba_Qwen/status/2059611776984244404#m": {
+      "edition": "2026-05-27-Morning",
+      "feed": "Alibaba_Qwen",
+      "title": "\ud83d\ude80\ud83d\ude80",
+      "description": "\ud83d\ude80\ud83d\ude80\n\n\nNous Research (@NousResearch)\n\nQwen 3.7 Max is now supported in Hermes Agent\n\n\n\n\n\n\u2014 https://nitter.net/NousResearch/status/2059385136366440803#m\n\n"
+    },
+    "https://nitter.net/opencode/status/2059335771002114462#m": {
+      "edition": "2026-05-27-Morning",
+      "feed": "Alibaba_Qwen",
+      "title": "RT by @Alibaba_Qwen: Qwen3.7 Max now available in Go\n- text only\n- 1M context\n- smartest model in the Qwen family to date",
+      "description": "Qwen3.7 Max now available in Go\n- text only\n- 1M context\n- smartest model in the Qwen family to date"
+    },
+    "https://nitter.net/Alibaba_Qwen/status/2059586373456380225#m": {
+      "edition": "2026-05-27-Morning",
+      "feed": "Alibaba_Qwen",
+      "title": "\ud83d\ude4c\ud83d\ude4c",
+      "description": "\ud83d\ude4c\ud83d\ude4c\n\n\nQoder (@qoder_ai_ide)\n\nQwen3.7-Max, halved. \n\nStarting today, Qwen3.7-Max \u2014 the latest flagship from the @Alibaba_Qwen family \u2014 is half price on Qoder. Limited time. \n\nNew here? You also get 100 free model calls a day. Auto-applied. No claim. No toggle. \nDesktop, JetBrains Plugin, CLI,\u2026"
+    },
+    "https://nitter.net/Alibaba_Qwen/status/2059445345667747849#m": {
+      "edition": "2026-05-27-Morning",
+      "feed": "Alibaba_Qwen",
+      "title": "\ud83d\ude80\ud83d\ude80 Qwen3.7-Max just hit #4 on Code Arena, on par with Claude Opus 4.6 \uff0ctop-ranked Chinese lab on the board!  @arena \n\nMore to ship. Stay tuned. \ud83d\udd76\ufe0f",
+      "description": "\ud83d\ude80\ud83d\ude80 Qwen3.7-Max just hit #4 on Code Arena, on par with Claude Opus 4.6 \uff0ctop-ranked Chinese lab on the board!  @arena \n\nMore to ship. Stay tuned. \ud83d\udd76\ufe0f\n\n\nArena.ai (@arena)\n\nQwen3.7 Max (20250517) debuts at #4 in Code Arena: Frontend - the top-ranked Chinese lab on the board, surpassing GLM-5.1 and is\u2026"
+    },
+    "https://nitter.net/BaiduAI_News/status/2059480615796576517#m": {
+      "edition": "2026-05-27-Morning",
+      "feed": "BaiduAI_News",
+      "title": "AI isn\u2019t just creating new possibilities \u2014 it\u2019s also helping unlock the past.\nSee the story behind this PaddleOCR-powered project \ud83d\udc47",
+      "description": "AI isn\u2019t just creating new possibilities \u2014 it\u2019s also helping unlock the past.\nSee the story behind this PaddleOCR-powered project \ud83d\udc47\n\n\nBaidu Inc. (@Baidu_Inc)\n\nZack Williams brought one of the world's oldest writing systems to the ERNIE AI Developer Challenge: ancient cuneiform tablets.  \n\nUsing\u2026"
+    },
+    "https://nitter.net/GeminiApp/status/2059443101526331704#m": {
+      "edition": "2026-05-27-Morning",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: x.com/genel_ai/status/205699\u2026",
+      "description": "nitter.net/genel_ai/status/205699\u2026\n\n\nGENEL | AI\u3092\u7528\u3044\u305f\u52d5\u753b\u5236\u4f5c (@genel_ai)\n\nGemini Omni Flash\u3067\n\u4eba\u7269\u306e\u52d5\u4f5c\u3092\u30e2\u30fc\u30b7\u30e7\u30f3\u89e3\u6790\u98a8\u306b\u53ef\u8996\u5316\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/genel_ai/status/2056995537279447177#m\n\n"
+    },
+    "https://nitter.net/MiniMax_AI/status/2059473229253902516#m": {
+      "edition": "2026-05-27-Morning",
+      "feed": "MiniMax_AI",
+      "title": "This marks the end of the M2 series, and MiniMax-M3 is coming",
+      "description": "This marks the end of the M2 series, and MiniMax-M3 is coming\n\n\nRyanLee (@RyanLeeMiniMax)\n\nRecently, we took time to consolidate all of the work behind M2 and published it here: our M2 paper on arXiv\n\nIt\u2019s been just over six months since we first open-sourced M2 on December 23 last year.\nDuring\u2026"
+    },
+    "https://nitter.net/OpenAIDevs/status/2059638868983562640#m": {
+      "edition": "2026-05-27-Morning",
+      "feed": "OpenAIDevs",
+      "title": "\u2699\ufe0f Behind the build of self-improving tax agents with Codex\n\nWe co-built Tax AI with @ThriveHoldings around tax prep workflows so when reviewers fix any errors, Codex can trace the failure, improve the system, and test the change before it ships.\n\nhttps://openai.com/index/building-self-improving-tax-agents-with-codex",
+      "description": "\u2699\ufe0f Behind the build of self-improving tax agents with Codex\n\nWe co-built Tax AI with @ThriveHoldings around tax prep workflows so when reviewers fix any errors, Codex can trace the failure, improve the system, and test the change before it ships.\n\nopenai.com/index/building-se\u2026\n"
+    },
+    "https://nitter.net/agupta/status/2059385240771084601#m": {
+      "edition": "2026-05-27-Morning",
+      "feed": "ollama",
+      "title": "RT by @ollama: v0.13.0 of Exo just dropped, and it's one I've been looking forward to for a while. tl;dr swapping out anthropic for @ollama cloud dropped my usage costs from $30/day to just $20 per MONTH with no noticeable effect on quality.\n\nThree huge features:  \n\n(1) Option to replace Anthropic models with Ollama open weight models. Kimi K2.6 works great. tons of usage with an ollama cloud account.  \n\n(2) Option to replace Anthropic web search with the much better/cheaper Exa web search \n\n(3) Unified inbox support \n\nTry it out!",
+      "description": "v0.13.0 of Exo just dropped, and it's one I've been looking forward to for a while. tl;dr swapping out anthropic for @ollama cloud dropped my usage costs from $30/day to just $20 per MONTH with no noticeable effect on quality.\n\nThree huge features:  \n\n(1) Option to replace Anthropic models with\u2026"
+    },
+    "https://nitter.net/arena/status/2059346032157462668#m": {
+      "edition": "2026-05-27-Morning",
+      "feed": "arena",
+      "title": "R to @arena: MAI-Image-2.5 will be coming to MAI Playground and Foundry in the next week, public early access of this model is on Arena right now. Check it out: http://arena.ai/image",
+      "description": "MAI-Image-2.5 will be coming to MAI Playground and Foundry in the next week, public early access of this model is on Arena right now. Check it out: arena.ai/image\n"
     }
   },
-  "last_run": "2026-05-27T00:00:27.167336+00:00"
+  "last_run": "2026-05-27T15:00:33.195912+00:00"
 }
