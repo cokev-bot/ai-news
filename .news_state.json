@@ -7811,7 +7811,247 @@
       "feed": "mistralvibe",
       "title": "RT by @mistralvibe: Keynote sketch from the intro of AI Now Summit, the very first conference of my company @MistralAI! Introducing tons of stuff including our very own @mistralvibe new work and code modes!!",
       "description": "Keynote sketch from the intro of AI Now Summit, the very first conference of my company @MistralAI! Introducing tons of stuff including our very own @mistralvibe new work and code modes!!\n\nVideo\n  \n"
+    },
+    "https://www.ft.com/content/fd0aec4a-50d1-4594-b489-7420bd0b4268": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "FT AI",
+      "title": "Anthropic finalises $65bn funding deal to surpass OpenAI\u2019s valuation",
+      "description": "New round values Claude AI maker at $965bn including the new money"
+    },
+    "https://www.ft.com/content/7df0906c-6d9b-4440-b94e-65af0a785f7b": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "FT AI",
+      "title": "Musk\u2019s tweet undermines SpaceX\u2019s claims about Anthropic data centre deal",
+      "description": "Billionaire says the arrangement, described in IPO filings as a three-year agreement, only lasts for 180 days"
+    },
+    "https://www.ft.com/content/f757f67f-a7b4-45ec-a42e-026b986631e0": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "FT AI",
+      "title": "SpaceX IPO boldly steps into the unknown of AI economics",
+      "description": "We still need to learn many things about the basic business model of frontier models"
+    },
+    "https://www.ft.com/content/e98d7451-19ee-472e-9b92-8938eab0e205": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "FT AI",
+      "title": "The Pope disrupts Silicon Valley",
+      "description": "Unlike the US president, the pontiff is choosing to grapple with the serious challenges of AI"
+    },
+    "https://nitter.net/claudeai/status/2060074627032838438#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "AnthropicAI",
+      "title": "RT by @AnthropicAI: Before we ship a new model, these teams try to break it.\n\nThey build with it, push it to its limits, and tell us where it falls short. What they find makes the final model better.",
+      "description": "Before we ship a new model, these teams try to break it.\n\nThey build with it, push it to its limits, and tell us where it falls short. What they find makes the final model better.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/AnthropicAI/status/2060061348818518493#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "AnthropicAI",
+      "title": "R to @AnthropicAI: Earlier this month, our run-rate revenue crossed $47 billion. \n\nThis growth has been driven by organizations across many industries deploying Claude in their core operations, and by a growing number of people using it for their everyday work.\n\nRead more: https://www.anthropic.com/news/series-h",
+      "description": "Earlier this month, our run-rate revenue crossed $47 billion. \n\nThis growth has been driven by organizations across many industries deploying Claude in their core operations, and by a growing number of people using it for their everyday work.\n\nRead more: anthropic.com/news/series-h\n"
+    },
+    "https://nitter.net/AnthropicAI/status/2060061347522433422#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "AnthropicAI",
+      "title": "We've raised $65 billion in Series H funding at a $965 billion post-money valuation, led by @AltimeterCap, Dragoneer, @Greenoaks, and @sequoia.\n\nThis investment will help us advance our research and expand our capacity to meet growing demand for Claude.",
+      "description": "We've raised $65 billion in Series H funding at a $965 billion post-money valuation, led by @AltimeterCap, Dragoneer, @Greenoaks, and @sequoia.\n\nThis investment will help us advance our research and expand our capacity to meet growing demand for Claude."
+    },
+    "https://nitter.net/claudeai/status/2060042702150930686#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "AnthropicAI",
+      "title": "RT by @AnthropicAI: Introducing Claude Opus 4.8: it builds on Opus 4.7 with sharper judgment, more honesty about its own progress, and the ability to work independently for longer than its predecessors.\n\nAvailable today at the same price.",
+      "description": "Introducing Claude Opus 4.8: it builds on Opus 4.7 with sharper judgment, more honesty about its own progress, and the ability to work independently for longer than its predecessors.\n\nAvailable today at the same price.\n"
+    },
+    "https://nitter.net/claudeai/status/2060045358445576332#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: Claude Opus 4.8 is available today on the web, the Claude Platform, and all major cloud platforms.\n\nRead more: http://anthropic.com/news/claude-opus-4-8",
+      "description": "Claude Opus 4.8 is available today on the web, the Claude Platform, and all major cloud platforms.\n\nRead more: anthropic.com/news/claude-op\u2026\n"
+    },
+    "https://nitter.net/claudeai/status/2060042710753382816#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: Also new in Claude Code: dynamic workflows (research preview).\n\nFor the hardest tasks, Claude makes a plan, runs hundreds of parallel subagents, and verifies its work before reporting back. Think a migration touching hundreds of files.\n\nRead more: http://claude.com/blog/introducing-dynamic-workflows-in-claude-code",
+      "description": "Also new in Claude Code: dynamic workflows (research preview).\n\nFor the hardest tasks, Claude makes a plan, runs hundreds of parallel subagents, and verifies its work before reporting back. Think a migration touching hundreds of files.\n\nRead more: claude.com/blog/introducing-\u2026"
+    },
+    "https://nitter.net/claudeai/status/2060042706844315866#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: Fast mode is available for Opus 4.8. It's the same model at roughly 2.5x the speed, and we've made it three times cheaper than before.\n\nTurn it on with /fast in Claude Code. On the API, contact your account manager to request access or join the waitlist: http://claude.com/fast-mode",
+      "description": "Fast mode is available for Opus 4.8. It's the same model at roughly 2.5x the speed, and we've made it three times cheaper than before.\n\nTurn it on with /fast in Claude Code. On the API, contact your account manager to request access or join the waitlist: claude.com/fast-mode"
+    },
+    "https://nitter.net/claudeai/status/2059292335746273331#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: x.com/yescynfria/status/2047\u2026",
+      "description": "nitter.net/yescynfria/status/2047\u2026\n\n\nCynthia (@yescynfria)\n\nPressed Petals is live!! Take a walk and press some flowers \ud83c\udf3a\n\napps.apple.com/us/app/presse\u2026\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/yescynfria/status/2047382983263522909#m\n\n"
+    },
+    "https://nitter.net/GoogleAI/status/2060043029835116826#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "GoogleAI",
+      "title": "Pinned: We wanted to see if we could take simple, physical materials (like cardboard and markers) and use AI to bring them to life. What was the result? A short film starring a bunch of TPUs getting ready for the big stage at Google I/O 2026!\n\nWorking with director Laurie Rowan and Nexus Studios, we kept human artistry at the center of the film by blending puppetry and 3D animation with our models to do the following \u2193\n\nNano Banana: Generated beautifully stylized first frames from the raw puppet footage and basic 3D animations.\n\n@GoogleAIStudio: Built a custom tool inside the platform to test these frames at scale, ensuring pixel-perfect consistency\n\nGemini Omni & experimental @GoogleDeepMind Models: Merged the base animation and stylized frames to elevate the final piece to a cinematic level.\n\nOur AI pipelines were specifically designed to protect the crafty details that give these films their heart, like the tiny human imperfections of puppetry, or the nuance an animator can build into an expression.",
+      "description": "We wanted to see if we could take simple, physical materials (like cardboard and markers) and use AI to bring them to life. What was the result? A short film starring a bunch of TPUs getting ready for the big stage at Google I/O 2026!\n\nWorking with director Laurie Rowan and Nexus Studios, we\u2026"
+    },
+    "https://nitter.net/GeminiApp/status/2060074415304610168#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "GeminiApp",
+      "title": "You\u2019re in luck! Users in India can now upload videos (from their camera roll or saved files) and use Gemini Omni to edit and transform them. Give it a try and let us know what you think.",
+      "description": "You\u2019re in luck! Users in India can now upload videos (from their camera roll or saved files) and use Gemini Omni to edit and transform them. Give it a try and let us know what you think.\n\n\nVijay Choudhary (@_vijaychoudhary)\n\nGemini Omni seems to outperform everything.  \nCrazy updates for Vibe\u2026"
+    },
+    "https://nitter.net/Android/status/2060059255252631876#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "GeminiApp",
+      "title": "RT by @GeminiApp: Need a mood switch-up? CHAEWON might have found a fix \ud83d\udc40\nWith Gemini on Android, she can get a reco for that upbeat track on Spotify \ud83d\udc9a\ud83c\udfb6",
+      "description": "Need a mood switch-up? CHAEWON might have found a fix \ud83d\udc40\nWith Gemini on Android, she can get a reco for that upbeat track on Spotify \ud83d\udc9a\ud83c\udfb6\n\nVideo\n  \n"
+    },
+    "https://nitter.net/GeminiApp/status/2060025441155711321#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: Gemini Omni is available to all Google AI Plus, Pro, and Ultra subscribers globally on the web and in the Gemini app. Learn more: http://gemini.google/overview/video-generation",
+      "description": "Gemini Omni is available to all Google AI Plus, Pro, and Ultra subscribers globally on the web and in the Gemini app. Learn more: gemini.google/overview/video\u2026"
+    },
+    "https://nitter.net/GeminiApp/status/2060022813373890648#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "GeminiApp",
+      "title": "Great news: Users in India can now upload and edit videos directly with Gemini Omni! \n\nGet started in the app or http://gemini.google.com:\n> Upload your video\n> Tell Gemini the change you want to make\n> Enjoy your new creation\n\nWe can't wait to see what you make!",
+      "description": "Great news: Users in India can now upload and edit videos directly with Gemini Omni! \n\nGet started in the app or gemini.google.com:\n&gt; Upload your video\n&gt; Tell Gemini the change you want to make\n&gt; Enjoy your new creation\n\nWe can't wait to see what you make!"
+    },
+    "https://nitter.net/MiniMax_AI/status/2060071852970844377#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "MiniMax_AI",
+      "title": "Free agentic coding with MiniMax M2.7 on @OpenHandsDev? \n\nYes, please! Available for a limited time \u26a1\ud83d\udc40",
+      "description": "Free agentic coding with MiniMax M2.7 on @OpenHandsDev? \n\nYes, please! Available for a limited time \u26a1\ud83d\udc40\n\n\nOpenHands (@OpenHandsDev)\n\nWe have also partnered with @MiniMax_AI to provide\n\n*free access to agents with MiniMax-M2.7*\n\nfor a limited time!\n\nThis is a great opportunity to test out how to\u2026"
+    },
+    "https://nitter.net/OpenAI/status/2060032839991914619#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "OpenAI",
+      "title": "R&D Part 1: Here to Win",
+      "description": "R&amp;D Part 1: Here to Win\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2060044860984529368#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: Available today on Max, Team, Enterprise, and via the API \u2014 including Bedrock, Vertex AI, and Foundry. \n\nOn by default for Max and Team plans, Enterprise admins can opt in via managed settings.\n\nDocs: http://code.claude.com/docs/en/workflows",
+      "description": "Available today on Max, Team, Enterprise, and via the API \u2014 including Bedrock, Vertex AI, and Foundry. \n\nOn by default for Max and Team plans, Enterprise admins can opt in via managed settings.\n\nDocs: code.claude.com/docs/en/work\u2026\n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2060044859730547138#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: More on how the orchestration works, and what early users have built with it, on the blog:\n\nhttps://claude.com/blog/introducing-dynamic-workflows-in-claude-code",
+      "description": "More on how the orchestration works, and what early users have built with it, on the blog:\n\nclaude.com/blog/introducing-\u2026\n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2060044858480599067#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: Dynamic workflows are reusable. Save one as a slash command in your project to share with the team, or in your home directory to use it everywhere.",
+      "description": "Dynamic workflows are reusable. Save one as a slash command in your project to share with the team, or in your home directory to use it everywhere."
+    },
+    "https://nitter.net/ClaudeDevs/status/2060044857339724158#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: You can also set \"/effort ultracode\", a new effort level that runs at xhigh and lets Claude decide on its own when a task warrants a dynamic workflow.",
+      "description": "You can also set \"/effort ultracode\", a new effort level that runs at xhigh and lets Claude decide on its own when a task warrants a dynamic workflow."
+    },
+    "https://nitter.net/ClaudeDevs/status/2060044856114942328#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: Dynamic workflows are useful for tasks that are too big for a single agent loop, such as service-wide bug hunts, large migrations, or stress-testing a design.\n\nThey're powerful and can be expensive, consuming a lot of tokens fast. Start with a scoped task to get a feel for it.",
+      "description": "Dynamic workflows are useful for tasks that are too big for a single agent loop, such as service-wide bug hunts, large migrations, or stress-testing a design.\n\nThey're powerful and can be expensive, consuming a lot of tokens fast. Start with a scoped task to get a feel for it."
+    },
+    "https://nitter.net/ClaudeDevs/status/2060044853279617150#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "New in Claude Code (research preview): dynamic workflows.\n\nClaude writes an orchestration script on the fly, then spins up a large fleet of coordinated subagents in parallel to take on your most complex tasks.\n\nUse the word \"workflow\" in a prompt to get started.",
+      "description": "New in Claude Code (research preview): dynamic workflows.\n\nClaude writes an orchestration script on the fly, then spins up a large fleet of coordinated subagents in parallel to take on your most complex tasks.\n\nUse the word \"workflow\" in a prompt to get started.\n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2060043209833951575#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: Opus 4.8 hits 69.2% on SWE-bench Pro, up from 64.3% on Opus 4.7.\n\nOur evaluations show that Opus 4.8 is around four times less likely than Opus 4.7 to allow flaws in code it has written to pass unremarked.",
+      "description": "Opus 4.8 hits 69.2% on SWE-bench Pro, up from 64.3% on Opus 4.7.\n\nOur evaluations show that Opus 4.8 is around four times less likely than Opus 4.7 to allow flaws in code it has written to pass unremarked."
+    },
+    "https://nitter.net/googleaidevs/status/2060068108090400951#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Start building today: https://ai.google.dev/gemini-api/docs/image-generation",
+      "description": "Start building today: ai.google.dev/gemini-api/doc\u2026\n"
+    },
+    "https://nitter.net/googleaidevs/status/2060068106009977029#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Production-ready specs:\nhttps://x.com/Diplomeme/status/2052223786351755597?s=20",
+      "description": "Production-ready specs:\nnitter.net/Diplomeme/status/20522\u2026\n\n\n\u1d0d\u1d1c\u0280\u1d18\u029c\u028f (@Diplomeme)\n\nCosmetic products Promotional with Nano Banana 2 on @itsPolloAI \n\nGenerate ur product with prompt : \u2935\ufe0f\n\n\n\n\n\n\n\n\u2014 https://nitter.net/Diplomeme/status/2052223786351755597#m\n\n"
+    },
+    "https://nitter.net/googleaidevs/status/2060068103044665402#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Text rendering:\nhttps://x.com/pallavmac/status/2027065609091969267?s=20",
+      "description": "Text rendering:\nnitter.net/pallavmac/status/20270\u2026\n\n\nPallav Agarwal (@pallavmac)\n\nNano Banana 2 really solves text rendering and accuracy. Not a single word in this is wrong. Press and hold to load in 4k!\n\n\n\n\n\n\u2014 https://nitter.net/pallavmac/status/2027065609091969267#m\n\n"
+    },
+    "https://nitter.net/googleaidevs/status/2060068100888776806#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Style transfer:\nhttps://x.com/youwillmakemaps/status/2039399485135270126?s=20",
+      "description": "Style transfer:\nnitter.net/youwillmakemaps/status\u2026\n\n\nEvan Applegate (@youwillmakemaps)\n\n1) I use \"Max concision, reply like a continental open source maintainer\", I like it curt\n\n2) For nano banana I found this one that works great for getting landscape architecture-style illos from\u2026"
+    },
+    "https://nitter.net/googleaidevs/status/2060068098179305861#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Subject consistency:\nhttps://x.com/LTXStudio/status/1992324223612994013?s=20",
+      "description": "Subject consistency:\nnitter.net/LTXStudio/status/19923\u2026\n\n\nLTX Studio (@LTXStudio)\n\nWhile everyone's hyping effects, Nano Banana Pro in LTX solved character consistency across angles.\n\n\u2192 Native 4K\n\u2192 Native lipsync\n\nNB PRO \ud83e\udd1d LTX-2\n\n\n\n\u2014 https://nitter.net/LTXStudio/status/1992324223612994013#m\n\n"
+    },
+    "https://nitter.net/googleaidevs/status/2060068096191103338#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Advanced world knowledge:\nhttps://x.com/BoWang87/status/2027070025643745776?s=20",
+      "description": "Advanced world knowledge:\nnitter.net/BoWang87/status/202707\u2026\n\n\nBo Wang (@BoWang87)\n\nOne prompt: \"generate a high resolution image about a cell.\"\n\nThis is what Nano Banana 2 (@GoogleDeepMind) rendered.\n\nNucleus, mitochondria, Golgi apparatus, cytoskeleton \u2014 all anatomically correct, all\u2026"
+    },
+    "https://nitter.net/googleaidevs/status/2060068093485895978#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "googleaidevs",
+      "title": "\ud83c\udf4c Nano Banana Pro [gemini-3-pro-image] and Nano Banana 2 [gemini-3.1-flash-image] are now GA and ready for production via the Gemini API. Check out these great community examples to see the capabilities of both models in action \ud83e\uddf5\u2193",
+      "description": "\ud83c\udf4c Nano Banana Pro [gemini-3-pro-image] and Nano Banana 2 [gemini-3.1-flash-image] are now GA and ready for production via the Gemini API. Check out these great community examples to see the capabilities of both models in action \ud83e\uddf5\u2193\n"
+    },
+    "https://nitter.net/antigravity/status/2060051630771286487#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "antigravity",
+      "title": "How powerful is Gemini 3.5 Flash?\n\nIn a recent research preview, we pushed it to the extreme, powering 93 subagents across 15,314 model calls that wrote a custom kernel, filesystem, and drivers from scratch. 12 hours later, it booted Doom. \ud83d\udda5\ufe0f\n\nThis is just a glimpse of the model's reasoning depth and code generation capabilities. Full breakdown below \ud83d\udc47",
+      "description": "How powerful is Gemini 3.5 Flash?\n\nIn a recent research preview, we pushed it to the extreme, powering 93 subagents across 15,314 model calls that wrote a custom kernel, filesystem, and drivers from scratch. 12 hours later, it booted Doom. \ud83d\udda5\ufe0f\n\nThis is just a glimpse of the model's reasoning\u2026"
+    },
+    "https://nitter.net/antigravity/status/2060051634500075788#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "antigravity",
+      "title": "R to @antigravity: Learn more http://antigravity.google/blog/google-antigravity-built-an-os",
+      "description": "Learn more antigravity.google/blog/goog\u2026\n"
+    },
+    "https://nitter.net/antigravity/status/2060069859724300560#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "antigravity",
+      "title": "R to @antigravity: Watch Antigravity boot up Doom live https://www.youtube.com/watch?v=T_fnhr5lVBw",
+      "description": "Watch Antigravity boot up Doom live piped.video/watch?v=T_fnhr5l\u2026\n"
+    },
+    "https://nitter.net/arena/status/2060016379139649754#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Dive into the 7 new categories to see which models perform best across each domain. https://arena.ai/leaderboard/code/webdev",
+      "description": "Dive into the 7 new categories to see which models perform best across each domain. arena.ai/leaderboard/code/we\u2026\n"
+    },
+    "https://nitter.net/arena/status/2060016370641973764#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Read more about the methodology on our blog: https://arena.ai/blog/new-categories-code-arena/",
+      "description": "Read more about the methodology on our blog: arena.ai/blog/new-categories\u2026\n"
+    },
+    "https://nitter.net/arena/status/2060016362484048316#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "arena",
+      "title": "Where is AI-assisted web development heading?\n\nWe've added new categories to Code Arena: Frontend, covering 7 domains across agentic web development. \n\nLearn about the ML methodology behind it, what the shifting data tells us about how people are actually using AI to build for the web, and which models are quietly excelling in specific niches.\n\n0:00 What sparked the new 7 categories?\n0:34 The classical ML approach: building a taxonomy from scratch\n2:06 Clustering prompts at scale\n2:19 Prototype extraction: using LLMs to name and label clusters\n3:26 Why raw embeddings fail: language bias and multi-angle prompts\n4:07 Breaking down user intent: what to build, style, components\n5:09 From clusters to categories: the key research decision\n6:43 Optimization goal #1: Coverage \u2014 how much of the data is represented?\n7:12 Optimization goal #2: Boundary clarity \u2014 keeping definitions tight\n8:19 The iterative refinement loop: human-in-the-loop + LLM polish\n9:38 Measuring coverage (aiming for 80%+) and sampling the long tail\n10:09 Optimization goal #3: Interpretability \u2014 titles that make intuitive sense\n10:20 How available tools (web search, screenshots) shape the final categories\n12:07 How prompt category distribution has shifted over time\n14:40 Growing categories: brand/marketing sites and consumer products\n14:41 Model-specific strengths: GPT-5.5 and Gemma-4-31b\n15:09 Radar plots as a practical model-selection tool\n16:11 Combining domain rankings with price/speed Pareto curves\n16:52 Predictions: what new categories are coming next?",
+      "description": "Where is AI-assisted web development heading?\n\nWe've added new categories to Code Arena: Frontend, covering 7 domains across agentic web development. \n\nLearn about the ML methodology behind it, what the shifting data tells us about how people are actually using AI to build for the web, and which\u2026"
+    },
+    "https://nitter.net/arena/status/2059346028508389801#m": {
+      "edition": "2026-05-28-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: With a +72 point improvement over MAI-Image-2. The latest model MAI-Image-2.5 (Preview) by @MicrosoftAI is well rounded and demonstrates strong gains across categories with every evolution since MAI-Image-1.",
+      "description": "With a +72 point improvement over MAI-Image-2. The latest model MAI-Image-2.5 (Preview) by @MicrosoftAI is well rounded and demonstrates strong gains across categories with every evolution since MAI-Image-1.\n"
     }
   },
-  "last_run": "2026-05-28T15:00:36.695072+00:00"
+  "last_run": "2026-05-28T20:01:19.168029+00:00"
 }
