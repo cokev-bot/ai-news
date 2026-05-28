@@ -7571,7 +7571,61 @@
       "feed": "arena",
       "title": "Exciting news, MAI-Image-2.5 (Preview) from @MicrosoftAI debuts at #3 in the Text-to-Image Arena with a score of 1,254 \u2014 a +72 point improvement over MAI-Image-2.\n\nA top 5 arena previously held only by @GoogleDeepMind and @OpenAI has a new lab in the mix.\n\nCongrats to the @MicrosoftAI team on this accomplishment.",
       "description": "Exciting news, MAI-Image-2.5 (Preview) from @MicrosoftAI debuts at #3 in the Text-to-Image Arena with a score of 1,254 \u2014 a +72 point improvement over MAI-Image-2.\n\nA top 5 arena previously held only by @GoogleDeepMind and @OpenAI has a new lab in the mix.\n\nCongrats to the @MicrosoftAI team on\u2026"
+    },
+    "https://www.nytimes.com/2026/05/27/opinion/pope-leo-ai-encyclical.html": {
+      "edition": "2026-05-27-Evening",
+      "feed": "NYT AI",
+      "title": "Pope Leo\u2019s A.I. Vision Might Not Be Strange Enough",
+      "description": "He is both a critic and a normalizer of artificial intelligence."
+    },
+    "https://nitter.net/claudeai/status/2059292339739185191#m": {
+      "edition": "2026-05-27-Evening",
+      "feed": "claudeai",
+      "title": "R to @claudeai: x.com/pau_wee_/status/204260\u2026",
+      "description": "nitter.net/pau_wee_/status/204260\u2026\n\n\npauline (@pau_wee_)\n\nnyc weather has been insane \ud83e\udd76\ud83e\udd75\ud83e\udd76\n\nso i made a bunny that shows you the right layers for the weather!\n\nalso available as a widget \ud83d\udc30\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/pau_wee_/status/2042608561197297942#m\n\n"
+    },
+    "https://nitter.net/GoogleAI/status/2059748312236921149#m": {
+      "edition": "2026-05-27-Evening",
+      "feed": "GoogleAI",
+      "title": "Look back at last week\u2019s I/O announcements with @NotebookLM.\n\nYou can listen to an audio overview, watch the video recap, and even check out our detailed slide deck summarizing all of the biggest news and launches.\n\nCheck it out here: https://blog.google/innovation-and-ai/products/notebooklm/notebooklm-google-io-2026/?linkId=62068662",
+      "description": "Look back at last week\u2019s I/O announcements with @NotebookLM.\n\nYou can listen to an audio overview, watch the video recap, and even check out our detailed slide deck summarizing all of the biggest news and launches.\n\nCheck it out here: blog.google/innovation-and-a\u2026\n"
+    },
+    "https://nitter.net/GeminiApp/status/2059754290630320482#m": {
+      "edition": "2026-05-27-Evening",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: Gemini Omni is available to all Google AI Plus, Pro, and Ultra subscribers globally on the web and in the Gemini app.",
+      "description": "Gemini Omni is available to all Google AI Plus, Pro, and Ultra subscribers globally on the web and in the Gemini app."
+    },
+    "https://nitter.net/GeminiApp/status/2059754264248139968#m": {
+      "edition": "2026-05-27-Evening",
+      "feed": "GeminiApp",
+      "title": "Easily transform your videos into new visual styles with Gemini Omni.\n\nJust upload a video or photo and ask Gemini to apply a look or style to your final output.",
+      "description": "Easily transform your videos into new visual styles with Gemini Omni.\n\nJust upload a video or photo and ask Gemini to apply a look or style to your final output."
+    },
+    "https://nitter.net/googleaidevs/status/2059774113670148386#m": {
+      "edition": "2026-05-27-Evening",
+      "feed": "googleaidevs",
+      "title": "We love a good dogfooding session! \ud83d\udc36\n\nBefore bringing these updates to you, we asked Googlers to try building @AndroidDev apps in @GoogleAIStudio.\n\nHere are some of our faves\u2026",
+      "description": "We love a good dogfooding session! \ud83d\udc36\n\nBefore bringing these updates to you, we asked Googlers to try building @AndroidDev apps in @GoogleAIStudio.\n\nHere are some of our faves\u2026"
+    },
+    "https://nitter.net/googleaidevs/status/2059774269006184570#m": {
+      "edition": "2026-05-27-Evening",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Memorization game",
+      "description": "Memorization game\n\nVideo\n  \n"
+    },
+    "https://nitter.net/googleaidevs/status/2059774407141409190#m": {
+      "edition": "2026-05-27-Evening",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Miniature world weather app",
+      "description": "Miniature world weather app\n\nVideo\n  \n"
+    },
+    "https://nitter.net/googleaidevs/status/2059722540776636663#m": {
+      "edition": "2026-05-27-Evening",
+      "feed": "googleaidevs",
+      "title": "Agents require speed and performance across complex tasks.\n\nWatch Gemini 3.5 Flash\u2019s intelligence tackle these tasks at scale while you build \u2193",
+      "description": "Agents require speed and performance across complex tasks.\n\nWatch Gemini 3.5 Flash\u2019s intelligence tackle these tasks at scale while you build \u2193"
     }
   },
-  "last_run": "2026-05-27T20:00:26.572879+00:00"
+  "last_run": "2026-05-28T00:00:25.688726+00:00"
 }
