@@ -8051,7 +8051,61 @@
       "feed": "arena",
       "title": "R to @arena: With a +72 point improvement over MAI-Image-2. The latest model MAI-Image-2.5 (Preview) by @MicrosoftAI is well rounded and demonstrates strong gains across categories with every evolution since MAI-Image-1.",
       "description": "With a +72 point improvement over MAI-Image-2. The latest model MAI-Image-2.5 (Preview) by @MicrosoftAI is well rounded and demonstrates strong gains across categories with every evolution since MAI-Image-1.\n"
+    },
+    "https://www.ft.com/content/b1a62a7f-6df5-4c90-94ce-64ce9c9961b6": {
+      "edition": "2026-05-28-Evening",
+      "feed": "FT AI",
+      "title": "Amazon scraps AI leaderboard to stop workers chasing usage scores",
+      "description": "Senior executive Dave Treadwell tells staff \u2018don\u2019t use AI just for the sake of using AI\u2019 as costs rise"
+    },
+    "https://www.ft.com/content/e6e2228a-1f94-4afb-b165-ce3c2daaa084": {
+      "edition": "2026-05-28-Evening",
+      "feed": "FT AI",
+      "title": "The chip and memory stock frenzy",
+      "description": "As software lags, semiconductors catch up to the AI spending"
+    },
+    "https://www.nytimes.com/2026/05/28/world/ai-ipo-anthropic-openai-spacex-iran.html": {
+      "edition": "2026-05-28-Evening",
+      "feed": "NYT AI",
+      "title": "A.I.\u2019s Big Next Step",
+      "description": "Three major companies are planning to go public with share sales in the coming months. They could be some of the biggest market debuts in history."
+    },
+    "https://www.nytimes.com/2026/05/28/technology/anthropic-tops-openai-valuation.html": {
+      "edition": "2026-05-28-Evening",
+      "feed": "NYT AI",
+      "title": "Anthropic Tops OpenAI to Become the World\u2019s Most Valuable A.I. Start-Up",
+      "description": "Anthropic raised $65 billion in new fund-raising that put its value at $900 billion, ahead of OpenAI\u2019s last valuation of $730 billion, as the companies duel for A.I. dominance."
+    },
+    "https://www.nytimes.com/2026/05/28/opinion/trump-texas-paxton-cornyn.html": {
+      "edition": "2026-05-28-Evening",
+      "feed": "NYT AI",
+      "title": "Trump\u2019s Retribution Comes to Texas as Paxton Defeats Cornyn",
+      "description": "Readers discuss Senator John Cornyn\u2019s loss to Ken Paxton in Tuesday\u2019s Republican primary. Also: Investigating E. Jean Carroll; Mets and Knicks; religion and A.I."
+    },
+    "https://www.nytimes.com/video/opinion/100000010921303/our-military-is-built-for-the-wrong-century.html": {
+      "edition": "2026-05-28-Evening",
+      "feed": "NYT AI",
+      "title": "Our Military Is Built for the Wrong Century",
+      "description": "Ukraine and Iran have shown us that war as we\u2019ve known it is over."
+    },
+    "https://nitter.net/claudeai/status/2060042709209928018#m": {
+      "edition": "2026-05-28-Evening",
+      "feed": "claudeai",
+      "title": "R to @claudeai: In Claude Code, Opus 4.8 makes calls like an experienced engineer without needing constant check-ins.\n\nIt stays on track across long-running sessions and follows work through in your repo, so you can hand off a feature or a bug sweep while you focus on what's next.",
+      "description": "In Claude Code, Opus 4.8 makes calls like an experienced engineer without needing constant check-ins.\n\nIt stays on track across long-running sessions and follows work through in your repo, so you can hand off a feature or a bug sweep while you focus on what's next.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2060043211129909732#m": {
+      "edition": "2026-05-28-Evening",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: Opus 4.8 defaults to high effort. For coding tasks, it spends similar tokens to the 4.7 default while delivering better performance.\n\nFor difficult tasks and long-running async work, use xhigh. We\u2019ve increased rate limits in Claude Code to accommodate the increased token usage.",
+      "description": "Opus 4.8 defaults to high effort. For coding tasks, it spends similar tokens to the 4.7 default while delivering better performance.\n\nFor difficult tasks and long-running async work, use xhigh. We\u2019ve increased rate limits in Claude Code to accommodate the increased token usage."
+    },
+    "https://nitter.net/googleaidevs/status/2060105868994322602#m": {
+      "edition": "2026-05-28-Evening",
+      "feed": "googleaidevs",
+      "title": "Save countless hours of manual migration work. Watch messy legacy code autonomously modernize into Next.js in this example from @Antigravity, powered by Gemini 3.5 Flash.",
+      "description": "Save countless hours of manual migration work. Watch messy legacy code autonomously modernize into Next.js in this example from @Antigravity, powered by Gemini 3.5 Flash.\n\nVideo\n  \n"
     }
   },
-  "last_run": "2026-05-28T20:01:19.168029+00:00"
+  "last_run": "2026-05-29T00:00:31.671910+00:00"
 }
