@@ -8417,7 +8417,85 @@
       "feed": "ollama",
       "title": "Pinned: OpenJarvis: a local-first personal AI is now available to run with Ollama\n\nBuilt by Stanford\u2019s @HazyResearch and Scaling Intelligence labs, as part of their \u201cIntelligence Per Watt\u201d research into efficient local AI. @Stanford \n\nLearn more in the blog post \ud83d\udc47\ud83d\udc47\ud83d\udc47",
       "description": "OpenJarvis: a local-first personal AI is now available to run with Ollama\n\nBuilt by Stanford\u2019s @HazyResearch and Scaling Intelligence labs, as part of their \u201cIntelligence Per Watt\u201d research into efficient local AI. @Stanford \n\nLearn more in the blog post \ud83d\udc47\ud83d\udc47\ud83d\udc47\n"
+    },
+    "https://nitter.net/GeminiApp/status/2060473827164033372#m": {
+      "edition": "2026-05-30-Evening",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: x.com/MayorKingAI/status/206\u2026",
+      "description": "nitter.net/MayorKingAI/status/206\u2026\n\n\nMayorkingAI (@MayorKingAI)\n\nGemini Omni Flash\n\nPrompt: preserve all original footage exactly, but make the sugar glider on the laptop screen come to life and jump onto the open palm in front of it\n\nVideo\n  \n\n\n\n\n\n\u2014\u2026"
+    },
+    "https://nitter.net/GeminiApp/status/2060473816393150965#m": {
+      "edition": "2026-05-30-Evening",
+      "feed": "GeminiApp",
+      "title": "From the screen to reality in a single prompt. \n\nCheck out these incredible examples of how Gemini Omni can understand your video input, apply physics, and generate seamless new motion. \n\nTry it out for yourself and share how you're experimenting with Gemini Omni in the replies \ud83d\udc47",
+      "description": "From the screen to reality in a single prompt. \n\nCheck out these incredible examples of how Gemini Omni can understand your video input, apply physics, and generate seamless new motion. \n\nTry it out for yourself and share how you're experimenting with Gemini Omni in the replies \ud83d\udc47"
+    },
+    "https://nitter.net/GeminiApp/status/2060409296828199076#m": {
+      "edition": "2026-05-30-Evening",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: 5) Gemini 3.5 Flash is our fastest and most efficient model yet\n\nGemini 3.5 Flash delivers frontier-level intelligence to help you with your complex tasks.",
+      "description": "5) Gemini 3.5 Flash is our fastest and most efficient model yet\n\nGemini 3.5 Flash delivers frontier-level intelligence to help you with your complex tasks.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/GeminiApp/status/2060409290427703373#m": {
+      "edition": "2026-05-30-Evening",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: 2) Combine ingredients to create custom videos with Gemini Omni\n\nBring any idea to life using any combination of text, images, and video inputs. No special equipment, editing tools, or tech jargon required.\n\nGemini Omni is available to all Google AI Plus, Pro and Ultra subscribers at http://gemini.google and in the mobile app.",
+      "description": "2) Combine ingredients to create custom videos with Gemini Omni\n\nBring any idea to life using any combination of text, images, and video inputs. No special equipment, editing tools, or tech jargon required.\n\nGemini Omni is available to all Google AI Plus, Pro and Ultra subscribers at\u2026"
+    },
+    "https://nitter.net/OpenAI/status/2060451760033214653#m": {
+      "edition": "2026-05-30-Evening",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: In conversation with OpenAI\u2019s @markchen90, Terence reflects on a future where AI reduces the cognitive friction of research, helps preserve the paths behind discovery, and expands what mathematicians and scientists can attempt. \nhttps://forum.openai.com/public/videos/event-replay-terence-tao-and-mark-chen-on-ai-and-mathatical-discovery-2026-03-11",
+      "description": "In conversation with OpenAI\u2019s @markchen90, Terence reflects on a future where AI reduces the cognitive friction of research, helps preserve the paths behind discovery, and expands what mathematicians and scientists can attempt. \nforum.openai.com/public/vide\u2026\n"
+    },
+    "https://nitter.net/OpenAI/status/2060451757818601808#m": {
+      "edition": "2026-05-30-Evening",
+      "feed": "OpenAI",
+      "title": "AI can give researchers the freedom to pursue \u201ccrazier\u201d ideas.\n\nFor Terence Tao, AI creates more room to experiment, test unexpected paths, and discover what might otherwise stay out of reach.",
+      "description": "AI can give researchers the freedom to pursue \u201ccrazier\u201d ideas.\n\nFor Terence Tao, AI creates more room to experiment, test unexpected paths, and discover what might otherwise stay out of reach.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ChatGPTapp/status/2060467129066070182#m": {
+      "edition": "2026-05-30-Evening",
+      "feed": "ChatGPTapp",
+      "title": "For every ChatGPT conversation that started as \u201cone quick thing\u201d and became a full on saga: table of contents is here.\n\nAvailable now for chats with 5+ responses.",
+      "description": "For every ChatGPT conversation that started as \u201cone quick thing\u201d and became a full on saga: table of contents is here.\n\nAvailable now for chats with 5+ responses.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2060432688281251998#m": {
+      "edition": "2026-05-30-Evening",
+      "feed": "ClaudeDevs",
+      "title": "With Opus 4.8, you can add system instructions mid-conversation without breaking the prompt cache.\n\nMore cache hits means lower cost and latency for your API requests.",
+      "description": "With Opus 4.8, you can add system instructions mid-conversation without breaking the prompt cache.\n\nMore cache hits means lower cost and latency for your API requests.\n"
+    },
+    "https://nitter.net/googleaidevs/status/2060476641688842424#m": {
+      "edition": "2026-05-30-Evening",
+      "feed": "googleaidevs",
+      "title": "Good implementation of Managed Agents in the Gemini API by our friends at @Eigent_AI! Root causing CI failures at lightning speed. \u26a1",
+      "description": "Good implementation of Managed Agents in the Gemini API by our friends at @Eigent_AI! Root causing CI failures at lightning speed. \u26a1\n\n\nEigent AI (@Eigent_AI)\n\nGemini 3.5 flash + Gemini managed agents api just audited a real megatron-lm ci failure inside Eigent. root cause in minutes!\n\nwatch the\u2026"
+    },
+    "https://nitter.net/OpenAIDevs/status/2060478379619676330#m": {
+      "edition": "2026-05-30-Evening",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: Search through all prior chat content to find past threads:",
+      "description": "Search through all prior chat content to find past threads:\n\n\nFrancis Chalissery (@fchalissery)\n\nSmall QoL improvement in today\u2019s Codex App update: you can now search through all prior chat content to find past threads!\u2728\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/fchalissery/status/2060460422575366609#m\n\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2060478367921831936#m": {
+      "edition": "2026-05-30-Evening",
+      "feed": "OpenAIDevs",
+      "title": "2 quality-of-life improvements for developers working with Codex today:\n\nCodex background agents now have stable pixel identicons.\n\nWhen the same agent shows up across tabs, mentions, transcripts, and the thread panel, it\u2019s easier to recognize at a glance.",
+      "description": "2 quality-of-life improvements for developers working with Codex today:\n\nCodex background agents now have stable pixel identicons.\n\nWhen the same agent shows up across tabs, mentions, transcripts, and the thread panel, it\u2019s easier to recognize at a glance.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2060459412255584661#m": {
+      "edition": "2026-05-30-Evening",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: Watch the full episode on YouTube:\n\nhttps://youtube.com/watch?v=8QKqENa_eQQ",
+      "description": "Watch the full episode on YouTube:\n\npiped.video/watch?v=8QKqENa_\u2026\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2060459409659375804#m": {
+      "edition": "2026-05-30-Evening",
+      "feed": "OpenAIDevs",
+      "title": "Builders Unscripted with @0xmts\n\nMatias talked to @romainhuet about bringing Codex to work and into side-project workflows.\n\n00:58 Codex at Alchemy\n01:51 Code review catches bugs\n08:04 Side projects with Codex\n18:51 Codex App Server projects\n24:01 Computer use, GPT-5.5, SnapCat",
+      "description": "Builders Unscripted with @0xmts\n\nMatias talked to @romainhuet about bringing Codex to work and into side-project workflows.\n\n00:58 Codex at Alchemy\n01:51 Code review catches bugs\n08:04 Side projects with Codex\n18:51 Codex App Server projects\n24:01 Computer use, GPT-5.5, SnapCat\n\nVideo\n  \n"
     }
   },
-  "last_run": "2026-05-29T20:00:28.247386+00:00"
+  "last_run": "2026-05-30T00:00:38.634823+00:00"
 }
