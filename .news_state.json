@@ -8495,7 +8495,127 @@
       "feed": "OpenAIDevs",
       "title": "Builders Unscripted with @0xmts\n\nMatias talked to @romainhuet about bringing Codex to work and into side-project workflows.\n\n00:58 Codex at Alchemy\n01:51 Code review catches bugs\n08:04 Side projects with Codex\n18:51 Codex App Server projects\n24:01 Computer use, GPT-5.5, SnapCat",
       "description": "Builders Unscripted with @0xmts\n\nMatias talked to @romainhuet about bringing Codex to work and into side-project workflows.\n\n00:58 Codex at Alchemy\n01:51 Code review catches bugs\n08:04 Side projects with Codex\n18:51 Codex App Server projects\n24:01 Computer use, GPT-5.5, SnapCat\n\nVideo\n  \n"
+    },
+    "https://www.ft.com/content/1022f9bd-5b6d-44a5-9303-c8b05b8c6463": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "FT AI",
+      "title": "SoftBank pledges \u20ac75bn to build Europe\u2019s biggest AI facility in France",
+      "description": "Masayoshi Son places France at the centre of his global AI ambitions"
+    },
+    "https://www.ft.com/content/a21607ce-c25b-40ab-bd9c-e0262d344c8c": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "FT AI",
+      "title": "UK military looks at allowing lethal strikes without human approval",
+      "description": "Officials push for machines to make autonomous decisions on targets in exceptional circumstances"
+    },
+    "https://www.ft.com/content/aceabeb1-1152-43d1-ad76-e1531cd37f39": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "FT AI",
+      "title": "Should AI steal your job?",
+      "description": "The real question is not what the technology can do but what it ought to do. Sarah O\u2019Connor on the people fighting for the future of work"
+    },
+    "https://www.nytimes.com/2026/05/30/opinion/ai-high-school.html": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "NYT AI",
+      "title": "The First A.I. High School in the U.S. Is Surprisingly Human",
+      "description": "Schools are not like start-ups, because children\u2019s minds should not be tied to the whims of the marketplace."
+    },
+    "https://www.nytimes.com/2026/05/30/magazine/partner-chatbot-dependence-ethics.html": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "NYT AI",
+      "title": "My Partner\u2019s Dependence on Chatbots Is Becoming a Problem. How Do I Tell Him?",
+      "description": "One reason I love my partner is his sharp mind and critical thinking. Using A.I. for every decision is something I don\u2019t understand."
+    },
+    "https://www.nytimes.com/2026/05/30/magazine/laurie-santos-interview.html": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "NYT AI",
+      "title": "Want to \u2018Optimize\u2019 Your Happiness? This Happiness Expert Says: Don\u2019t.",
+      "description": "Laurie Santos on what will really bring meaning and fulfillment to your life, and what won\u2019t."
+    },
+    "https://www.nytimes.com/2026/05/30/us/politics/anthropic-openai-super-pacs-midterms.html": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "NYT AI",
+      "title": "Powerful A.I. Super PACs Duel Over the Midterms: \u2018This Is a War\u2019",
+      "description": "One super PAC is allied with Anthropic. The other is tied to OpenAI. They\u2019re both spending millions to influence this year\u2019s elections."
+    },
+    "https://www.nytimes.com/video/us/100000010907463/california-high-schools-construction-trade-classes.html": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "NYT AI",
+      "title": "Can California Convince Teens to Work in Construction?",
+      "description": "Facing an uncertain job market and the looming threat of A.I., graduating high school seniors in America\u2019s tech capital are increasingly rethinking their career plans. Job demand in fields like construction, along with the allure of potential six-figure salaries, have some high schools investing\u2026"
+    },
+    "https://nitter.net/GeminiApp/status/2060473824022561245#m": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: x.com/gong_yun74374/status/2\u2026",
+      "description": "nitter.net/gong_yun74374/status/2\u2026\n\n\nyun long (@gong_yun74374)\n\nWow! The bird can fly out of the screen!\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/gong_yun74374/status/2060392392990306597#m\n\n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2060043213600367030#m": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: We\u2019ve updated Claude Code's built-in claude-api skill migration guidance for 4.8.\n\nRun \"/claude-api migrate\" to update your model strings and suggest prompt improvements that are tuned for Opus 4.8.",
+      "description": "We\u2019ve updated Claude Code's built-in claude-api skill migration guidance for 4.8.\n\nRun \"/claude-api migrate\" to update your model strings and suggest prompt improvements that are tuned for Opus 4.8."
+    },
+    "https://nitter.net/googleaidevs/status/2060685345738375640#m": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "googleaidevs",
+      "title": "ICYMI: Nano Banana Pro [gemini-3-pro-image] and Nano Banana 2 [gemini-3.1-flash-image] are now GA and ready for production via the Gemini API. \n\nCheck out these great community examples to see the capabilities of both models in action \ud83e\uddf5",
+      "description": "ICYMI: Nano Banana Pro [gemini-3-pro-image] and Nano Banana 2 [gemini-3.1-flash-image] are now GA and ready for production via the Gemini API. \n\nCheck out these great community examples to see the capabilities of both models in action \ud83e\uddf5\n"
+    },
+    "https://nitter.net/googleaidevs/status/2060685356333207697#m": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Production-ready specs:\nhttps://x.com/Diplomeme/status/2052223786351755597?s=20",
+      "description": "Production-ready specs:\nnitter.net/Diplomeme/status/20522\u2026\n\n\n\u1d0d\u1d1c\u0280\u1d18\u029c\u028f (@Diplomeme)\n\nCosmetic products Promotional with Nano Banana 2 on @itsPolloAI \n\nGenerate ur product with prompt : \u2935\ufe0f\n\n\n\n\n\n\n\n\u2014 https://nitter.net/Diplomeme/status/2052223786351755597#m\n\n"
+    },
+    "https://nitter.net/googleaidevs/status/2060685358120018133#m": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Start building today: https://ai.google.dev/gemini-api/docs/image-generation",
+      "description": "Start building today: ai.google.dev/gemini-api/doc\u2026\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2060768896580452841#m": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: \ud83e\udd33 Agentic OS for a Phone\n\nA voice-first mobile OS. Users talk, agents answer, and they can take action across the phone.\n\nhttps://cerebralvalley.ai/e/openai-voice-hack-night/hackathon/gallery?project=49",
+      "description": "\ud83e\udd33 Agentic OS for a Phone\n\nA voice-first mobile OS. Users talk, agents answer, and they can take action across the phone.\n\ncerebralvalley.ai/e/openai-v\u2026\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2060768795254550966#m": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: \ud83d\udde3\ufe0f Wagner\n\nA multi-agent virtual meeting room for infrastructure planning. Teams can talk through plans with agents in the room.\n\nhttps://cerebralvalley.ai/e/openai-voice-hack-night/hackathon/gallery?project=50",
+      "description": "\ud83d\udde3\ufe0f Wagner\n\nA multi-agent virtual meeting room for infrastructure planning. Teams can talk through plans with agents in the room.\n\ncerebralvalley.ai/e/openai-v\u2026\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2060768692653392065#m": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: \ud83d\udc3b Curo\n\nA one-on-one AI tutor that helps students talk through concepts step by step, with voice as the interface.\n\nhttps://cerebralvalley.ai/e/openai-voice-hack-night/hackathon/gallery?project=54",
+      "description": "\ud83d\udc3b Curo\n\nA one-on-one AI tutor that helps students talk through concepts step by step, with voice as the interface.\n\ncerebralvalley.ai/e/openai-v\u2026\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2060768589926502638#m": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "R to @cerebral_valley: \ud83e\ude7a Surgical Triage\n\nA voice-first workflow for triage: transfer requests, patient details, images, and next steps in one place.\n\nhttps://cerebralvalley.ai/e/openai-voice-hack-night/hackathon/gallery?project=14",
+      "description": "\ud83e\ude7a Surgical Triage\n\nA voice-first workflow for triage: transfer requests, patient details, images, and next steps in one place.\n\ncerebralvalley.ai/e/openai-v\u2026\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2060768476386689253#m": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "Pinned: \ud83e\uddf5 Our Voice Hack Night finalists are here.\n\n4 projects. 6 hours. Realtime voice agents in real-world builds.\n\nNow it\u2019s your turn to vote for your favorite. We\u2019ll announce the winner on Monday.\n\nhttps://cerebralvalley.ai/e/openai-voice-hack-night/hackathon/gallery",
+      "description": "\ud83e\uddf5 Our Voice Hack Night finalists are here.\n\n4 projects. 6 hours. Realtime voice agents in real-world builds.\n\nNow it\u2019s your turn to vote for your favorite. We\u2019ll announce the winner on Monday.\n\ncerebralvalley.ai/e/openai-v\u2026\n\n\n\n\n\n\n"
+    },
+    "https://nitter.net/arena/status/2060532942406033410#m": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Dive into the Video Arena leaderboard details at: http://arena.ai/leaderboard/text-to-video",
+      "description": "Dive into the Video Arena leaderboard details at: arena.ai/leaderboard/text-to\u2026\n"
+    },
+    "https://nitter.net/arena/status/2060532939914682751#m": {
+      "edition": "2026-05-30-Afternoon",
+      "feed": "arena",
+      "title": "Wan2.7-t2v-2026-04-25 is #3 on the Text-to-Video Arena! \n\nCongrats to the @Alibaba_Wan team on this achievement.",
+      "description": "Wan2.7-t2v-2026-04-25 is #3 on the Text-to-Video Arena! \n\nCongrats to the @Alibaba_Wan team on this achievement.\n\n\n\n\nWan (@Alibaba_Wan)\n\n1/2 Meet Wan2.7-Video \u2014 The Comprehensive Model for Controllable Video Storytelling!  \n\nFrom single clips to full-scale narrative direction, we\u2019ve built more\u2026"
     }
   },
-  "last_run": "2026-05-30T00:00:38.634823+00:00"
+  "last_run": "2026-05-30T20:00:24.270634+00:00"
 }
