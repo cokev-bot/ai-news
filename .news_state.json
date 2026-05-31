@@ -8615,7 +8615,115 @@
       "feed": "arena",
       "title": "Wan2.7-t2v-2026-04-25 is #3 on the Text-to-Video Arena! \n\nCongrats to the @Alibaba_Wan team on this achievement.",
       "description": "Wan2.7-t2v-2026-04-25 is #3 on the Text-to-Video Arena! \n\nCongrats to the @Alibaba_Wan team on this achievement.\n\n\n\n\nWan (@Alibaba_Wan)\n\n1/2 Meet Wan2.7-Video \u2014 The Comprehensive Model for Controllable Video Storytelling!  \n\nFrom single clips to full-scale narrative direction, we\u2019ve built more\u2026"
+    },
+    "https://www.ft.com/content/90dbca8c-fb63-4fa5-a5d6-e6d6d9f6d10e": {
+      "edition": "2026-05-31-Morning",
+      "feed": "FT AI",
+      "title": "Wall Street bulls bet US stocks rally will defy bubble fears",
+      "description": "Investors and strategists shrug off worries that markets could be overheating by betting on huge gains for AI-linked shares"
+    },
+    "https://www.ft.com/content/4f18256e-a58f-4411-97e4-ac5e5eb055aa": {
+      "edition": "2026-05-31-Morning",
+      "feed": "FT AI",
+      "title": "How Iran\u2019s military harnesses ChatGPT",
+      "description": "Western AI models are turbocharging Tehran\u2019s cyber operations, helping it develop malware and launch attacks"
+    },
+    "https://www.ft.com/content/da80e72b-31e5-42ca-995c-5fc7d457915e": {
+      "edition": "2026-05-31-Morning",
+      "feed": "FT AI",
+      "title": "AI is here. What do you want from it?",
+      "description": "The technology\u2019s development belongs to everyone \u2014 share your vision with us"
+    },
+    "https://www.nytimes.com/2026/05/31/briefing/pope-leo-encyclical-ai-ethics.html": {
+      "edition": "2026-05-31-Morning",
+      "feed": "NYT AI",
+      "title": "How Should You Use A.I. Ethically?",
+      "description": "The response to Pope Leo\u2019s encyclical was intense, which I read as an acute hunger for moral direction. But what direction did people receive?"
+    },
+    "https://www.nytimes.com/2026/05/31/briefing/ai-actress-tilly-norwood.html": {
+      "edition": "2026-05-31-Morning",
+      "feed": "NYT AI",
+      "title": "Scene Stealer",
+      "description": "What happens when a reporter who has interviewed some of the biggest names in Hollywood sits down with the first A.I. actress?"
+    },
+    "https://www.nytimes.com/2026/05/31/opinion/artificial-intelligence-public-good.html": {
+      "edition": "2026-05-31-Morning",
+      "feed": "NYT AI",
+      "title": "We Have to Take the Future of A.I. Into Our Own Hands",
+      "description": "We\u2019ve heard a lot about what it can do for businesses, and for individuals, but what about society?"
+    },
+    "https://www.nytimes.com/2026/05/31/magazine/ai-actress-tilly-norwood.html": {
+      "edition": "2026-05-31-Morning",
+      "feed": "NYT AI",
+      "title": "Tilly Norwood, A.I. Actress, Wants to Know Why Everyone\u2019s Mad at Her",
+      "description": "The A.I. actress on her craft, the future of film and how she definitely does not intend to murder us."
+    },
+    "https://www.nytimes.com/2026/05/31/business/airbnb-brian-chesky.html": {
+      "edition": "2026-05-31-Morning",
+      "feed": "NYT AI",
+      "title": "What Is Airbnb For, Exactly?",
+      "description": "The home-sharing app recently added car rentals, groceries and \u2014 perhaps most surprisingly \u2014 hotels. Brian Chesky, the co-founder and chief executive, is always thinking about how to redesign it."
+    },
+    "https://nitter.net/ClaudeDevs/status/2060043212425933076#m": {
+      "edition": "2026-05-31-Morning",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: Opus 4.8 is especially strong at long-horizon work.\n\nIn Claude Code, pair it with /goal. If you're building on Claude Managed Agents, try it with Outcomes.",
+      "description": "Opus 4.8 is especially strong at long-horizon work.\n\nIn Claude Code, pair it with /goal. If you're building on Claude Managed Agents, try it with Outcomes."
+    },
+    "https://nitter.net/googleaidevs/status/2060685354433208420#m": {
+      "edition": "2026-05-31-Morning",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Text rendering:\nhttps://x.com/pallavmac/status/2027065609091969267?s=20",
+      "description": "Text rendering:\nnitter.net/pallavmac/status/20270\u2026\n\n\nPallav Agarwal (@pallavmac)\n\nNano Banana 2 really solves text rendering and accuracy. Not a single word in this is wrong. Press and hold to load in 4k!\n\n\n\n\n\n\u2014 https://nitter.net/pallavmac/status/2027065609091969267#m\n\n"
+    },
+    "https://nitter.net/googleaidevs/status/2060685352679948731#m": {
+      "edition": "2026-05-31-Morning",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Style transfer:\nhttps://x.com/youwillmakemaps/status/2039399485135270126?s=20",
+      "description": "Style transfer:\nnitter.net/youwillmakemaps/status\u2026\n\n\nEvan Applegate (@youwillmakemaps)\n\n1) I use \"Max concision, reply like a continental open source maintainer\", I like it curt\n\n2) For nano banana I found this one that works great for getting landscape architecture-style illos from\u2026"
+    },
+    "https://nitter.net/googleaidevs/status/2060685350758977789#m": {
+      "edition": "2026-05-31-Morning",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Subject consistency:\nhttps://x.com/LTXStudio/status/1992324223612994013?s=20",
+      "description": "Subject consistency:\nnitter.net/LTXStudio/status/19923\u2026\n\n\nLTX Studio (@LTXStudio)\n\nWhile everyone's hyping effects, Nano Banana Pro in LTX solved character consistency across angles.\n\n\u2192 Native 4K\n\u2192 Native lipsync\n\nNB PRO \ud83e\udd1d LTX-2\n\n\n\n\u2014 https://nitter.net/LTXStudio/status/1992324223612994013#m\n\n"
+    },
+    "https://nitter.net/googleaidevs/status/2060685348586299581#m": {
+      "edition": "2026-05-31-Morning",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Advanced world knowledge:\nhttps://x.com/BoWang87/status/2027070025643745776?s=20",
+      "description": "Advanced world knowledge:\nnitter.net/BoWang87/status/202707\u2026\n\n\nBo Wang (@BoWang87)\n\nOne prompt: \"generate a high resolution image about a cell.\"\n\nThis is what Nano Banana 2 (@GoogleDeepMind) rendered.\n\nNucleus, mitochondria, Golgi apparatus, cytoskeleton \u2014 all anatomically correct, all\u2026"
+    },
+    "https://nitter.net/GoogleAIStudio/status/2060816969268633893#m": {
+      "edition": "2026-05-31-Morning",
+      "feed": "GoogleAIStudio",
+      "title": "What are you vibe coding this weekend?",
+      "description": "What are you vibe coding this weekend?"
+    },
+    "https://nitter.net/mistralvibe/status/2061057563966189988#m": {
+      "edition": "2026-05-31-Morning",
+      "feed": "mistralvibe",
+      "title": "\u14da\u208d ^. .^\u208e",
+      "description": "\u14da\u208d ^. .^\u208e\n\n\nRDPerso (@RDPerso)\n\nMy @mistralvibe coding agent now has a physical status light that tells me, from across the room, what it's doing. Each activity gets its own LED signature on the matrix. \ud83e\uddf5\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/RDPerso/status/2060825353820451017#m\n\n"
+    },
+    "https://nitter.net/arena/status/2060874689711591810#m": {
+      "edition": "2026-05-31-Morning",
+      "feed": "arena",
+      "title": "R to @xai: Learn more about this latest model here: https://docs.x.ai/developers/models/grok-imagine-video-1.5-preview",
+      "description": "Learn more about this latest model here: docs.x.ai/developers/models/\u2026\n"
+    },
+    "https://nitter.net/arena/status/2060874060008243302#m": {
+      "edition": "2026-05-31-Morning",
+      "feed": "arena",
+      "title": "R to @arena: Dive into the Video Arena leaderboard details at: https://arena.ai/leaderboard/image-to-video",
+      "description": "Dive into the Video Arena leaderboard details at: arena.ai/leaderboard/image-t\u2026\n"
+    },
+    "https://nitter.net/arena/status/2060874057130934376#m": {
+      "edition": "2026-05-31-Morning",
+      "feed": "arena",
+      "title": "Grok-Imagine-Video-1.5-Preview (720p) has landed #1 in the Image-to-Video Arena! \n\nThis is a massive +52 pt improvement over Grok-Imagine-Video (720p), surpassing the best video models Seedance-2.0 and HappyHorse. \n\nCongrats to @xAI and @elonmusk on this big achievement!",
+      "description": "Grok-Imagine-Video-1.5-Preview (720p) has landed #1 in the Image-to-Video Arena! \n\nThis is a massive +52 pt improvement over Grok-Imagine-Video (720p), surpassing the best video models Seedance-2.0 and HappyHorse. \n\nCongrats to @xAI and @elonmusk on this big achievement!\n"
     }
   },
-  "last_run": "2026-05-30T20:00:24.270634+00:00"
+  "last_run": "2026-05-31T15:00:23.550500+00:00"
 }
