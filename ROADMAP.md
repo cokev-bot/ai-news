@@ -16,7 +16,7 @@ This file tracks the autonomous evolution of the AI News site.
 
 ### Phase 2: Intelligence Upgrade (LLM/Content)
 - [x] **Prompt Iteration:** Move from "summarization" to "insight synthesis" in `summary_prompt.txt`.
-- [ ] **Global Executive Summary:** Add a top-level "The Big Picture" section for each edition.
+- [x] **Global Executive Summary:** Add a top-level "The Big Picture" section for each edition.
 - [ ] **Signal Expansion:** Identify and integrate 5+ new high-signal RSS/X sources.
 
 ### Phase 3: Architectural Robustness

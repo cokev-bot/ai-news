@@ -561,6 +561,56 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         "<hr>",
     ]
 
+    # Generate global executive summary across ALL sections
+    all_articles = []
+    for section in SECTIONS:
+        for subsection in section["subsections"]:
+            all_articles.extend(subsection_articles.get(subsection["title"], []))
+
+    if all_articles:
+        logging.info("Generating global 'The Big Picture' summary...")
+        global_prompt_base = "Write a high-level 'The Big Picture' executive summary for this edition. Synthesize the most critical trends and developments across all categories into 1-2 punchy paragraphs. Use the same strict citation format (Source: ID)."
+        
+        def get_global_summary(articles, site_root, config):
+            cfg = config if config is not None else load_config(site_root)
+            model = cfg.get("model", DEFAULT_CONFIG["model"])
+            
+            content_lines = []
+            for i, a in enumerate(articles, 1):
+                line = f"{i}. [{a['source']}] {a['title']}"
+                if a.get("description"):
+                    line += f": {a['description']}"
+                content_lines.append(line)
+            
+            full_prompt = f"{global_prompt_base}\n\nArticles:\n" + "\n".join(content_lines)
+
+            try:
+                req = urllib.request.Request(
+                    "http://localhost:11434/api/generate",
+                    data=json.dumps({
+                        "model": model,
+                        "prompt": full_prompt,
+                        "stream": False
+                    }).encode("utf-8"),
+                    headers={"Content-Type": "application/json"}
+                )
+                with urllib.request.urlopen(req, timeout=600) as resp:
+                    res_data = json.loads(resp.read().decode("utf-8"))
+                    return res_data.get("response", "").strip()
+            except Exception as e:
+                logging.error(f"Global summary failed: {e}")
+                return "Global summary could not be generated."
+
+        global_summary_text = get_global_summary(all_articles, site_root, config)
+        global_summary_html = linkify_summary(global_summary_text, all_articles)
+        
+        html_lines.append('<div style="background: #f9f9f9; padding: 15px; border-left: 5px solid #ccc; margin-bottom: 20px;">')
+        html_lines.append('  <h3 style="margin-top:0;">🌍 The Big Picture</h3>')
+        html_lines.append(f'  <p>{global_summary_html}</p>')
+        html_lines.append('</div>')
+        html_lines.append("")
+
+
     for section in SECTIONS:
         # 1. Gather all articles in this section for the summary
         section_articles = []
