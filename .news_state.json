@@ -8765,7 +8765,265 @@
       "feed": "arena",
       "title": "R to @arena: Find Claude Opus 4.8 in Battle Mode with your real-world prompts, and get in your votes. \n\nScores coming soon. \nhttp://arena.ai",
       "description": "Find Claude Opus 4.8 in Battle Mode with your real-world prompts, and get in your votes. \n\nScores coming soon. \narena.ai\n"
+    },
+    "https://www.ft.com/content/f88d62e3-5b67-4aed-ad69-6f38b62559b3": {
+      "edition": "2026-06-01-Morning",
+      "feed": "FT AI",
+      "title": "Anthropic offers EU access to Mythos",
+      "description": "Bloc in talks to use American AI model in first expansion outside US and UK"
+    },
+    "https://www.ft.com/content/eef96fb0-5a56-4ce2-9a69-5f8eca754995": {
+      "edition": "2026-06-01-Morning",
+      "feed": "FT AI",
+      "title": "SoftBank overtakes Toyota after over 20 years to become Japan\u2019s largest company",
+      "description": "Demand for AI stocks powers tech giant\u2019s shares as it takes top spot by market capitalisation"
+    },
+    "https://www.ft.com/content/6756ca48-212a-40f6-bf8f-c07d21bd856c": {
+      "edition": "2026-06-01-Morning",
+      "feed": "FT AI",
+      "title": "French private equity group Ardian backs \u20ac5bn AI \u2018gigafactory\u2019 outside Paris",
+      "description": "Data centre and research facility to be built as Europe seeks to create \u2018digital backbone for the future\u2019"
+    },
+    "https://www.ft.com/content/e9079a98-fcdb-4041-960c-cf84cf3e1b7c": {
+      "edition": "2026-06-01-Morning",
+      "feed": "FT AI",
+      "title": "AI and real GDP: how big and how fast?",
+      "description": "Plus more on the chip cycle"
+    },
+    "https://www.ft.com/content/19330d92-fee6-4ddf-95f5-98f005061c0b": {
+      "edition": "2026-06-01-Morning",
+      "feed": "FT AI",
+      "title": "FTSE 100\u2019s likely new entrant puts a British spin on the AI boom",
+      "description": "Hardware reseller\u2019s trick will be to convince investors artificial intelligence can augment its services rather than replace them"
+    },
+    "https://www.ft.com/content/73fc962e-ce68-4521-9c5d-841a666eed10": {
+      "edition": "2026-06-01-Morning",
+      "feed": "FT AI",
+      "title": "\u2018More harmful than helpful\u2019: young people sour on AI",
+      "description": "Gen Z uses the technology more than anyone, but many fear it is weakening their job prospects and creativity"
+    },
+    "https://www.ft.com/content/1f12cfe2-d1b8-4987-bc39-83aa4e04b6f4": {
+      "edition": "2026-06-01-Morning",
+      "feed": "FT AI",
+      "title": "Intel looks to level up in AI race",
+      "description": "Leader of data centre unit says company aims to release a new graphics processing unit as shares rally more than 200% this year"
+    },
+    "https://www.ft.com/video/96833ee7-0d4e-4223-9edf-d093fcdd3212": {
+      "edition": "2026-06-01-Morning",
+      "feed": "FT AI",
+      "title": "Three examples of how AI could work for good - join the conversation",
+      "description": "Three examples of how AI could work for good - join the conversation"
+    },
+    "https://www.nytimes.com/2026/06/01/magazine/ai-university-college-california.html": {
+      "edition": "2026-06-01-Morning",
+      "feed": "NYT AI",
+      "title": "What It\u2019s Like to Be a Student at the First A.I.-Powered University",
+      "description": "California\u2019s public university system spent $16.9 million on A.I. The result has been chaos."
+    },
+    "https://www.nytimes.com/2026/06/01/technology/nvidia-chips-personal-computers.html": {
+      "edition": "2026-06-01-Morning",
+      "feed": "NYT AI",
+      "title": "Nvidia Has a Plan to Put Its Chips in Personal Computers",
+      "description": "The world\u2019s most valuable company is chasing Intel and Apple as it tries to bring A.I. agents to laptops and desktops."
+    },
+    "https://www.nytimes.com/2026/06/01/us/politics/china-ai-predicting-dissent.html": {
+      "edition": "2026-06-01-Morning",
+      "feed": "NYT AI",
+      "title": "China Aims A.I. at Predicting Who Could Pose a Political Risk",
+      "description": "New research examines how a Chinese company struggled to develop its predictive surveillance technology while U.S. restrictions were in place."
+    },
+    "https://www.nytimes.com/2026/06/01/technology/is-ai-replacing-tech-workers-or-providing-an-excuse-for-job-cuts.html": {
+      "edition": "2026-06-01-Morning",
+      "feed": "NYT AI",
+      "title": "Is A.I. Replacing Tech Workers or Providing an Excuse for Job Cuts?",
+      "description": "Tech industry layoffs are accelerating, and executives have been quick to say it\u2019s because their companies are doing more with artificial intelligence, even when there may be more to it."
+    },
+    "https://www.nytimes.com/2026/06/01/technology/box-13-new-types-jobs-ai.html": {
+      "edition": "2026-06-01-Morning",
+      "feed": "NYT AI",
+      "title": "How Box Created 13 New Types of Jobs Because of A.I.",
+      "description": "Box, a Silicon Valley software maker, expects to have more employees, not fewer, as it hires A.I. architects, A.I. solutions managers and other new A.I.-related positions."
+    },
+    "https://www.nytimes.com/2026/06/01/business/economy/china-military-nvidia-chips.html": {
+      "edition": "2026-06-01-Morning",
+      "feed": "NYT AI",
+      "title": "Chinese Military Sought Nvidia Chips for Years, Report Says",
+      "description": "An analysis of six years of procurement records suggests that the People\u2019s Liberation Army has openly tried to acquire restricted U.S. technology."
+    },
+    "https://www.nytimes.com/2026/06/01/opinion/artificial-intelligence-bernie-sanders.html": {
+      "edition": "2026-06-01-Morning",
+      "feed": "NYT AI",
+      "title": "Bernie Sanders: A.I. Belongs to the People, Not to Billionaires",
+      "description": "All Americans should have a stake in the future of this technology."
+    },
+    "https://www.nytimes.com/2026/06/01/opinion/fruit-love-island-ai-slop.html": {
+      "edition": "2026-06-01-Morning",
+      "feed": "NYT AI",
+      "title": "The Joy of Hate-Watching A.I. Slop",
+      "description": "A.I. slop is reconstituting a shared cultural base line."
+    },
+    "https://www.nytimes.com/2026/06/01/opinion/germany-economy-merz-trump.html": {
+      "edition": "2026-06-01-Morning",
+      "feed": "NYT AI",
+      "title": "Germany Has Lost What It Did Best",
+      "description": "The economy is in a terrible mess."
+    },
+    "https://nitter.net/BaiduAI_News/status/2061389457576939909#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "BaiduAI_News",
+      "title": "How is AI helping the environment at 4,000m? \ud83e\udd14\nBaidu Wenku cuts paperwork for Tibet's eco-volunteers using 1-click PPTs and smart data tools. Advancing high-altitude conservation! #TechForGood \u26f0\ufe0f\ud83d\udc9a",
+      "description": "How is AI helping the environment at 4,000m? \ud83e\udd14\nBaidu Wenku cuts paperwork for Tibet's eco-volunteers using 1-click PPTs and smart data tools. Advancing high-altitude conservation! #TechForGood \u26f0\ufe0f\ud83d\udc9a\n"
+    },
+    "https://nitter.net/BaiduAI_News/status/2061389045176127716#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "BaiduAI_News",
+      "title": "Happy Children's Day! \ud83c\udf88 Who says adults can't join the fun?\nGenerate your own sticker set with ERNIE Assistant! Just one prompt, playful vibe back to your chats. \ud83d\udcac\u2728\nLet ERNIE Assistant deliver the simple joys today! \ud83e\uddf8",
+      "description": "Happy Children's Day! \ud83c\udf88 Who says adults can't join the fun?\nGenerate your own sticker set with ERNIE Assistant! Just one prompt, playful vibe back to your chats. \ud83d\udcac\u2728\nLet ERNIE Assistant deliver the simple joys today! \ud83e\uddf8\n"
+    },
+    "https://nitter.net/Baidu_Inc/status/2061093069181841800#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "BaiduAI_News",
+      "title": "RT by @BaiduAI_News: x.com/i/article/206015525835\u2026",
+      "description": "x.com/i/article/206015525835\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061425142795034794#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "1. Video control + gaming + M3 \n2. Open weights + massive context ++ strong coding \n3. Canceling my weekend plans now",
+      "description": "1. Video control + gaming + M3 \n2. Open weights + massive context ++ strong coding \n3. Canceling my weekend plans now\n\n\n\u5b9e\u8df5\u54e5MinLi (@MinLiBuilds)\n\n\u8ddf\u7956\u4f20\u7684 20K context \u8bf4 bye bye \u4e86\u3002\n\nMiniMax M3 \u53d1\u5e03\u4e86\uff0c\u4e09\u4e2a\u4eae\u70b9\uff1a\n1M context\u3001\u539f\u751f\u591a\u6a21\u6001\u3001Agentic\u3002\n\n\u6211\u8fd9\u6b21\u505a\u4e86\u4e00\u6b21\u5b8c\u6574\u8bc4\u6d4b\uff0c\u4f7f\u7528CC workflow  \u3001 @ZenMuxAI\u548cMiniMax\u2026"
+    },
+    "https://nitter.net/fMinZhou/status/2061421933896540470#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: I know MiniMax M3 @MiniMax_AI is powerful, but I can't help testing it in Happycapy with a personal profile\n\nJust one prompt for a personal profile page\n\nAnd honestly\u2026 when did MiniMax get this good at aesthetics\ud83e\udd2f\ud83e\udd2f",
+      "description": "I know MiniMax M3 @MiniMax_AI is powerful, but I can't help testing it in Happycapy with a personal profile\n\nJust one prompt for a personal profile page\n\nAnd honestly\u2026 when did MiniMax get this good at aesthetics\ud83e\udd2f\ud83e\udd2f\n\nVideo\n  \n\n\n\n\nHappycapy (@happycapyai)\n\nMiniMax M3 @MiniMax_AI is now live on\u2026"
+    },
+    "https://nitter.net/flowith/status/2061416354188763510#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: flowith now supports minimax m3.\n\n1m context. incredible coding ability. native multimodality.\n\nrun and compare side-by-side.",
+      "description": "flowith now supports minimax m3.\n\n1m context. incredible coding ability. native multimodality.\n\nrun and compare side-by-side.\n\nVideo\n  \n\n\n\n\nMiniMax (official) (@MiniMax_AI)\n\nIntroducing MiniMax M3: The First Open-Weights Model to Combine Three Frontier Capabilities\n\n- Coding & Agentic Frontier:\u2026"
+    },
+    "https://nitter.net/happycapyai/status/2061417397576405254#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: MiniMax M3 @MiniMax_AI is now live on Happycapy \ud83c\udf89\n\nA major upgrade for agent workflows, especially when the task is messy, multimodal, and too large for a normal chat.\n\nNow you can give the agent more context upfront and let it work across everything in one run:\n\u2022 Native multimodal input: PDFs, videos, images, screenshots, and long docs\n\u2022 Strong coding and agent work: useful for repo level debugging, issue tracing, and Connect My Mac tasks\n\u2022 Open weights and about 3x cheaper than Sonnet. Build more, pay less!\n\nWe put it to the test below \ud83e\uddf5",
+      "description": "MiniMax M3 @MiniMax_AI is now live on Happycapy \ud83c\udf89\n\nA major upgrade for agent workflows, especially when the task is messy, multimodal, and too large for a normal chat.\n\nNow you can give the agent more context upfront and let it work across everything in one run:\n\u2022 Native multimodal input: PDFs,\u2026"
+    },
+    "https://nitter.net/lostinlatencyX/status/2061409696649548165#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: MiniMax M3\u2019s frontend capabilities are pretty nice\n\nvery strong model for the price.\n\nnot lazy, thinks through the task (thinks a lot), and doesn\u2019t just take the shortest path\n\nM3 can reason between multiple design choices better than i expected\n\nwith the right skills around it, m3 seems strong model\n\nwill test backend tasks next.",
+      "description": "MiniMax M3\u2019s frontend capabilities are pretty nice\n\nvery strong model for the price.\n\nnot lazy, thinks through the task (thinks a lot), and doesn\u2019t just take the shortest path\n\nM3 can reason between multiple design choices better than i expected\n\nwith the right skills around it, m3 seems strong\u2026"
+    },
+    "https://nitter.net/OnlyTerp/status/2061270865078108606#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: MiniMax-M3 in ultracode is INSANE \ud83e\udd2f",
+      "description": "MiniMax-M3 in ultracode is INSANE \ud83e\udd2f\n\n\n\n\nTerp (@OnlyTerp)\n\nULTRACODE-SHIM IS NOW LIVE \ud83d\udd25\n\nYou can now run ANY model in UltraCode\n\nI built a github repo to make this really easy for you, Just send your agent there and let him COOK\n\nYou deserve the flexibility to use LOCAL models &amp; cost\u2026"
+    },
+    "https://nitter.net/yacineMTB/status/2061275252282249393#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: There's going to be a point where intelligence saturates meaningfully to be useful for humans, in which case open source will catch up to the closed frontier. Then, the battles will be fought elsewhere. Serving cost mostly probably?",
+      "description": "There's going to be a point where intelligence saturates meaningfully to be useful for humans, in which case open source will catch up to the closed frontier. Then, the battles will be fought elsewhere. Serving cost mostly probably?\n\n\nMiniMax (official) (@MiniMax_AI)\n\nIntroducing MiniMax M3: The\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061403253271896348#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "One shot. Through @opencode. By M3.",
+      "description": "One shot. Through @opencode. By M3.\n\n\nstevibe (@stevibe)\n\nMiniMax M3 might be the most underrated coding model right now.\n\nI gave it nothing but a screenshot of a chaotic 90s GeoCities-style fan page, no HTML source, just the image + the asset files, and told it to rebuild the whole thing as a\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061402924732088544#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "I could watch SVG tests all day! Send me more with M3 \ud83d\udc40",
+      "description": "I could watch SVG tests all day! Send me more with M3 \ud83d\udc40\n\n\nWorldofAI (@intheworldofai)\n\nMinimax M3 is excellent at SVG generation, reaching close to Gemini 3.5 Flash levels and beating Opus 4.7 on SVG-Bench. With 1M context, native multimodality, strong agentic/coding ability and open weights\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061398427121201648#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "M3 live on @novita_labs \ud83d\udd25\n\nit's time to build (50% off the first week \ud83d\udc40)",
+      "description": "M3 live on @novita_labs \ud83d\udd25\n\nit's time to build (50% off the first week \ud83d\udc40)\n\n\nNovita AI (@novita_labs)\n\n\ud83d\ude80 We\u2019re launching MiniMax M3 from @MiniMax_AI on Novita AI as a Day-0 API launch partner.\n\nThe first open-weights model to combine:\n\n\u2022 Frontier coding and agent capabilities\n59.0% SWE-Bench Pro,\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061397356504084560#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "It truly is \ud83d\ude0e #M3",
+      "description": "It truly is \ud83d\ude0e #M3\n\n\nArif (@rezaul_arif)\n\nMiniMax M3 scores 90.3%\nGPT 5.5 Scores 92.4%\n\nJust a 2.1% gap now at @convex. \nIncredible to see the open-source models closing in.\n\nThe future of AI is open. \ud83e\udd16\ud83d\udcaa\n\n\n\n\n\n\u2014 https://nitter.net/rezaul_arif/status/2061332649785123123#m\n\n"
+    },
+    "https://nitter.net/MikaStars39/status/2061296873965867107#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: CUDA kernel optimization in M3 Blog:\n- FP8 GEMM: most compute-heavy and hardest-to-optimize part of inference; ~1\u20132 weeks for a senior team on Hopper.\n- Cold start: only a task description, benchmark script, and non-runnable Triton skeleton\u2014no reference implementation.\n- ~24 hours autonomous: 147 benchmark submissions, 1,959 tool calls.\n- Full path solo: baseline \u2192 autotune \u2192 bottleneck diagnosis \u2192 CUDA Graph \u2192 persistent kernel \u2192 host-side scheduling.\n- Result: 7.6% \u2192 71.3% Hopper FP8 peak utilization, 9.4\u00d7 speedup.",
+      "description": "CUDA kernel optimization in M3 Blog:\n- FP8 GEMM: most compute-heavy and hardest-to-optimize part of inference; ~1\u20132 weeks for a senior team on Hopper.\n- Cold start: only a task description, benchmark script, and non-runnable Triton skeleton\u2014no reference implementation.\n- ~24 hours autonomous:\u2026"
+    },
+    "https://nitter.net/cedric_chee/status/2061360928013299779#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: @MiniMax_AI M3 and OpenCode built a stunning voxel pagoda scene! The pagoda even has visible windows. I never seen such a detail torii gate before. Good FPS. Smooth. ~28k voxel. Tech detail below.",
+      "description": "@MiniMax_AI M3 and OpenCode built a stunning voxel pagoda scene! The pagoda even has visible windows. I never seen such a detail torii gate before. Good FPS. Smooth. ~28k voxel. Tech detail below.\n\n\n\n\ncedric @ AI Eng SG (@cedric_chee)\n\nWe're about to find out. MiniMax agent feels a bit off right\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061374155506044965#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "excited to team up with @BAI_AGI \ud83e\udd1d\n\nM3 is bringing the brains, now agents get the money rails to operate on\ud83d\udd25",
+      "description": "excited to team up with @BAI_AGI \ud83e\udd1d\n\nM3 is bringing the brains, now agents get the money rails to operate on\ud83d\udd25\n\n\nB.AI (@BAI_AGI)\n\nB.AI \ud83e\udd1d @MiniMax_AI \n\nPowerful agents require both advanced intelligence and robust economic infrastructure. We are partnering with MiniMax to help accelerate the future\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061358946041163941#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "love to see it \ud83d\ude4c\n\ngo try M3 in @orca_build with @opencode",
+      "description": "love to see it \ud83d\ude4c\n\ngo try M3 in @orca_build with @opencode\n\n\njinjingliang (@JinjingLiang)\n\nBlown away by MiniMax M3\n\nI\u2019ve been using it for free inside @orca_build with the @opencode agent\n\nMostly UI tasks &amp; code review so far, but so far it feels on par with Opus-4.7\n\nDidn\u2019t expect it to be\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061331461203177726#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "that was fast \ud83d\udd25 M3 already running in CyOps",
+      "description": "that was fast \ud83d\udd25 M3 already running in CyOps\n\n\nLeo Fan (mainnet arc) (@leofanxiong)\n\nYou can now try @MiniMax_AI M3 in CyOps (ai.cysic.xyz/cyhost) now!\n\n\n\n\n\n\u2014 https://nitter.net/leofanxiong/status/2061309457146228969#m\n\n"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061331065445449794#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "MiniMax_AI",
+      "title": "MiniMax M3 \ud83e\udd1d @zocomputer",
+      "description": "MiniMax M3 \ud83e\udd1d @zocomputer\n\n\nZo Computer (@zocomputer)\n\nMiniMax M3 is now live on Zo \ud83e\udd1d\n\n\n\n\u2014 https://nitter.net/zocomputer/status/2061293948963045413#m\n\n"
+    },
+    "https://nitter.net/GoogleAIStudio/status/2061452967530701090#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "GoogleAIStudio",
+      "title": "getting started with managed agents in the gemini api: an inside look with @OfficialLoganK, @_philschmid, and @alihcevik",
+      "description": "getting started with managed agents in the gemini api: an inside look with @OfficialLoganK, @_philschmid, and @alihcevik\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ollama/status/2061268258540658809#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "ollama",
+      "title": "R to @ollama: Model page: \n\nhttps://ollama.com/library/minimax-m3",
+      "description": "Model page: \n\nollama.com/library/minimax-m\u2026\n"
+    },
+    "https://nitter.net/ollama/status/2061268256569360620#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "ollama",
+      "title": "Pinned: .@MiniMax_AI M3 model is available on Ollama's Cloud! \n\nIn partnership with MiniMax, the M3 model on Ollama's Cloud is US-based with zero data retention. \n\nTry M3 on coding and agentic tasks: \n\nClaude Code: \nollama launch claude --model minimax-m3:cloud \n\nCodex: \nollama launch codex --model minimax-m3:cloud \n\nChat: \nollama run minimax-m3:cloud\n\nand more! \ud83d\udc47\ud83d\udc47\ud83d\udc47",
+      "description": ".@MiniMax_AI M3 model is available on Ollama's Cloud! \n\nIn partnership with MiniMax, the M3 model on Ollama's Cloud is US-based with zero data retention. \n\nTry M3 on coding and agentic tasks: \n\nClaude Code: \nollama launch claude --model minimax-m3:cloud \n\nCodex: \nollama launch codex --model\u2026"
+    },
+    "https://nitter.net/arena/status/2061270384323019111#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "arena",
+      "title": "R to @arena: Find MiniMax M3 in Battle Mode. Scores coming soon. http://arena.ai",
+      "description": "Find MiniMax M3 in Battle Mode. Scores coming soon. arena.ai\n"
+    },
+    "https://nitter.net/arena/status/2061270380770447782#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "arena",
+      "title": "New open model: MiniMax M3 by @MiniMax_AI is live in the Arena!\n\nFind it across Text, Vision, Document and Code Arena: Frontend. Bring your toughest prompts and vote. Scores incoming soon!",
+      "description": "New open model: MiniMax M3 by @MiniMax_AI is live in the Arena!\n\nFind it across Text, Vision, Document and Code Arena: Frontend. Bring your toughest prompts and vote. Scores incoming soon!\n\n\n\n\nMiniMax (official) (@MiniMax_AI)\n\nIntroducing MiniMax M3: The First Open-Weights Model to Combine Three\u2026"
+    },
+    "https://nitter.net/arena/status/2060160806235648255#m": {
+      "edition": "2026-06-01-Morning",
+      "feed": "arena",
+      "title": "R to @arena: Watch first impressions of Claude Opus 4.8 on YouTube: https://youtu.be/2uNlflLNQW4",
+      "description": "Watch first impressions of Claude Opus 4.8 on YouTube: piped.video/2uNlflLNQW4\n"
     }
   },
-  "last_run": "2026-06-01T00:00:25.991183+00:00"
+  "last_run": "2026-06-01T15:00:39.294531+00:00"
 }
