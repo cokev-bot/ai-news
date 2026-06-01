@@ -14,6 +14,10 @@ fi
 
 if [ -z "$EDITION" ] || [[ ! "$EDITION" =~ ^(Morning|Afternoon|Evening)$ ]]; then
     echo "Usage: $0 <Morning|Afternoon|Evening> [--dry-run]"
+    echo ""
+    echo "Env vars:"
+    echo "  MANUAL_RUN=1  Use UTC for the post frontmatter date (avoids URL"
+    echo "                collisions with cron-driven runs of the same edition)"
     exit 1
 fi
 
