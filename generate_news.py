@@ -12,6 +12,7 @@ import urllib.request
 import urllib.error
 import re
 import logging
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -531,16 +532,20 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
     filename = f"{edition}.html"
     filepath = site_root / "_posts" / filename
 
-    # Use Pacific Time for all display timestamps.
-    # Prefer zoneinfo (stdlib since 3.9, no extra deps) and avoid pytz because
-    # the previous fallback (`datetime.now(timezone.utc) + timedelta(hours=-7)`)
-    # produced a datetime whose tzinfo was still UTC, so %z formatted as
-    # "+0000" instead of "-0700". The header line in the post body
-    # would also say "UTC" instead of "PDT". zoneinfo produces a real
-    # tzinfo so strftime yields the correct offset and abbreviation.
-    pt_now = pacific_now()
+    # Use Pacific Time for all display timestamps by default (cron-driven
+    # runs at 15:00/20:00/00:00 UTC, where 00:00 UTC = 17:00 PT previous day).
+    # Set MANUAL_RUN=1 in the environment for ad-hoc runs; in that mode the
+    # filename and frontmatter `date:` use UTC, so the post's permalink
+    # (computed by Jekyll from the frontmatter date) matches the filename's
+    # date and cannot collide with a cron-driven Evening post from the
+    # same UTC day. See tests/test_manual_run.py.
+    from zoneinfo import ZoneInfo
+    if os.environ.get("MANUAL_RUN") == "1":
+        post_now = datetime.now(timezone.utc)
+    else:
+        post_now = datetime.now(ZoneInfo("America/Los_Angeles"))
 
-    header_dt = pt_now.strftime("%Y-%m-%d %H:%M %Z")
+    header_dt = post_now.strftime("%Y-%m-%d %H:%M %Z")
 
     # Derive human-readable edition label from full name (e.g. "Evening" from "2026-04-14-evening")
     edition_label = edition.split("-")[-1].capitalize()
@@ -560,7 +565,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         "---",
         "layout: post",
         f'title: "AI News Digest — {edition_label} Edition"',
-        f'date: {pt_now.strftime("%Y-%m-%d %H:%M:%S %z")}',
+        f'date: {post_now.strftime("%Y-%m-%d %H:%M:%S %z")}',
         "categories: news digest",
         "---",
         "",
