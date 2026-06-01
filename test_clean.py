@@ -8,14 +8,15 @@ def clean_title(title):
         text = text.replace(ch, '\\' + ch)
     return text
 
-tests = [
-    "RT by @OpenAIDevs: Here's how we use Codex to:\n\n> understand",
-    '**bold title**',
-    'Check this out: https://example.com/foo#bar',
-    'Title with [brackets] and *asterisks*',
-    'Introducing Project Glasswing: an urgent initiative to help…',
-]
-for t in tests:
-    print(f'INPUT:  {repr(t[:60])}')
-    print(f'OUTPUT: {repr(clean_title(t)[:70])}')
-    print()
+if __name__ == "__main__":
+    tests = [
+        "RT by @OpenAIDevs: Here's how we use Codex to:\n\n> understand",
+        '**bold title**',
+        'Check this out: https://example.com/foo#bar',
+        'Title with [brackets] and *asterisks*',
+        'Introducing Project Glasswing: an urgent initiative to help…',
+    ]
+    for t in tests:
+        print(f'INPUT:  {repr(t[:60])}')
+        print(f'OUTPUT: {repr(clean_title(t)[:70])}')
+        print()
