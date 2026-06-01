@@ -9233,7 +9233,121 @@
       "feed": "antigravity",
       "title": "We\u2019re transforming Google Antigravity into a scientific workbench. The new Science Skills bundle allows researchers to run complex workflows like protein analysis in minutes using specialized Alpha* models and 30+ major scientific databases.",
       "description": "We\u2019re transforming Google Antigravity into a scientific workbench. The new Science Skills bundle allows researchers to run complex workflows like protein analysis in minutes using specialized Alpha* models and 30+ major scientific databases.\n\nVideo\n  \n"
+    },
+    "https://www.ft.com/content/341f151b-f472-4530-8579-d4b803519257": {
+      "edition": "2026-06-01-Evening",
+      "feed": "FT AI",
+      "title": "Alphabet to sell $80bn in stock to fund AI spending spree",
+      "description": "Landmark fundraising plans include $10bn private placement to Berkshire Hathaway"
+    },
+    "https://www.ft.com/content/3ddf001d-d7f6-40f1-8fe4-1cc577868da0": {
+      "edition": "2026-06-01-Evening",
+      "feed": "FT AI",
+      "title": "HPE shares soar 37% on booming demand for AI infrastructure",
+      "description": "Data centre equipment provider says sales of servers and networking equipment are rising rapidly"
+    },
+    "https://www.nytimes.com/interactive/2026/06/01/magazine/ai-slop-viral-videos.html": {
+      "edition": "2026-06-01-Evening",
+      "feed": "NYT AI",
+      "title": "Can Content Creators Get Rich Off A.I. Slop Like Tung Tung Tung Sahur?",
+      "description": "Brainrot videos are specifically designed to confuse us. They can also be a financial bonanza for their creators."
+    },
+    "https://nitter.net/Alibaba_Qwen/status/2061506818917244937#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "Alibaba_Qwen",
+      "title": "R to @Alibaba_Qwen: Demo2: Multimodal Interactive Hybrid Agent",
+      "description": "Demo2: Multimodal Interactive Hybrid Agent\n\nVideo\n  \n"
+    },
+    "https://nitter.net/Alibaba_Qwen/status/2061506644367069392#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "Alibaba_Qwen",
+      "title": "R to @Alibaba_Qwen: Performance1\uff1aText Benchmarks\n\nQwen3.7-Plus delivers competitive text performance that approaches Max-tier models across the board.",
+      "description": "Performance1\uff1aText Benchmarks\n\nQwen3.7-Plus delivers competitive text performance that approaches Max-tier models across the board.\n"
+    },
+    "https://nitter.net/GoogleAI/status/2061544208289132791#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "GoogleAI",
+      "title": "R to @GoogleAI: Read more about all the fun ways we used AI to bring I/O to life this year: https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
+      "description": "Read more about all the fun ways we used AI to bring I/O to life this year: blog.google/innovation-and-a\u2026\n"
+    },
+    "https://nitter.net/GeminiApp/status/2061543806454088032#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: x.com/gong_yun74374/status/2\u2026",
+      "description": "nitter.net/gong_yun74374/status/2\u2026\n\n\nyun long (@gong_yun74374)\n\nI ran a vase experiment with Gemini Omni~\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/gong_yun74374/status/2057669719348633780#m\n\n"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061584342342893954#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "MiniMax_AI",
+      "title": "M3 on Cloudflare AI Gateway, day one \u26a1 \n\nFrontier coding, 1M context, and native multimodal and now just one fetch away. \n\nIt is time to build something. \ud83e\udd9e",
+      "description": "M3 on Cloudflare AI Gateway, day one \u26a1 \n\nFrontier coding, 1M context, and native multimodal and now just one fetch away. \n\nIt is time to build something. \ud83e\udd9e\n\n\nCloudflare Developers (@CloudflareDev)\n\nM3 from @MiniMax_AI is now available on Cloudflare AI Gateway:\n- First open model to push SOTA\u2026"
+    },
+    "https://nitter.net/gitlawb/status/2061581678871806083#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: \ud83d\udfe2 MiniMax M3 is now in OpenClaude\n\nOpenClaude (coding CLI that works with any LLM) \n\njust shipped first-class support for MiniMax M3, MiniMax's next-gen coding/agentic model with a 1,048,576-token (1M) context window.\n\n@MiniMax_AI",
+      "description": "\ud83d\udfe2 MiniMax M3 is now in OpenClaude\n\nOpenClaude (coding CLI that works with any LLM) \n\njust shipped first-class support for MiniMax M3, MiniMax's next-gen coding/agentic model with a 1,048,576-token (1M) context window.\n\n@MiniMax_AI\n\nVideo\n  \n"
+    },
+    "https://nitter.net/togethercompute/status/2061552660151509449#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: Make sure to join our live Spaces chat on MiniMax M3 starting in 4 hours. \n\nYou can pre-submit questions by replying to this tweet.",
+      "description": "Make sure to join our live Spaces chat on MiniMax M3 starting in 4 hours. \n\nYou can pre-submit questions by replying to this tweet.\n\n\n\n\nTogether AI (@togethercompute)\n\nMiniMax M3 is live and Together AI is powering its inference \ud83d\ude80\n\nTomorrow at 6pm PT we're going live on X Spaces with the teams\u2026"
+    },
+    "https://nitter.net/CommandCodeAI/status/2061267713251848320#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: MiniMax M3 is live now on CommandCode! \n\nA frontier-class open-weight model with 1M context, frontier coding, agentic performance, and native multimodality\n\nGive it a try with our $1 Go plan with 10x free usage credits!",
+      "description": "MiniMax M3 is live now on CommandCode! \n\nA frontier-class open-weight model with 1M context, frontier coding, agentic performance, and native multimodality\n\nGive it a try with our $1 Go plan with 10x free usage credits!\n"
+    },
+    "https://nitter.net/prathamdby/status/2061347167730807131#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: Okay, the @MiniMax_AI team has cooked hard with the M3 release, because holy shit! I prefer this over the Claude Opus 4.8 output... both the same skills and the same prompt... this entire design (full image below) was one-shot. Proof: https://opncd.ai/share/uCAHNZRH",
+      "description": "Okay, the @MiniMax_AI team has cooked hard with the M3 release, because holy shit! I prefer this over the Claude Opus 4.8 output... both the same skills and the same prompt... this entire design (full image below) was one-shot. Proof: opncd.ai/share/uCAHNZRH\n\n\n\n\n\ud835\udd95\ud835\udd97\ud835\udd86\ud835\udd99\ud835\udd8d (@prathamdby)\n\nAnthropic\u2026"
+    },
+    "https://nitter.net/OpenAI/status/2061564502160892138#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "OpenAI",
+      "title": "OpenAI frontier models and Codex are now generally available on AWS, giving enterprises a new way to build on Amazon Bedrock with OpenAI through the security, compliance, and governance workflows they already use.\n\nThis is also the beginning of a broader expansion of OpenAI capabilities on AWS, including future availability for cybersecurity capabilities like Daybreak.\n\nhttps://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws/",
+      "description": "OpenAI frontier models and Codex are now generally available on AWS, giving enterprises a new way to build on Amazon Bedrock with OpenAI through the security, compliance, and governance workflows they already use.\n\nThis is also the beginning of a broader expansion of OpenAI capabilities on AWS,\u2026"
+    },
+    "https://nitter.net/ChatGPTapp/status/2061571468992126982#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "ChatGPTapp",
+      "title": "Long-form writing works better with a little more space. \n\nNow you can edit longer pieces in full-screen and save them to your Library to come back to later.",
+      "description": "Long-form writing works better with a little more space. \n\nNow you can edit longer pieces in full-screen and save them to your Library to come back to later.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/googleaidevs/status/2061569280991502475#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "googleaidevs",
+      "title": "From Google I/O to building real world solutions in one weekend. Always inspired by the energy of this community!",
+      "description": "From Google I/O to building real world solutions in one weekend. Always inspired by the energy of this community!\n\n\nCerebral Valley (@cerebral_valley)\n\nGoogle I/O showed where AI is headed.\nOur community spent the weekend building it.\n\nBuilders gathered in San Francisco alongside @GoogleDeepMind\u2026"
+    },
+    "https://nitter.net/OpenAIDevs/status/2061564723150418307#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: developers.openai.com/codex/\u2026",
+      "description": "developers.openai.com/codex/\u2026\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2061564710173224985#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "OpenAIDevs",
+      "title": "Pinned: OpenAI models and Codex, now in your AWS workflows.\n\nBuild AI apps and software engineering workflows with OpenAI on Amazon Bedrock, using the AWS environments and controls your team already trusts.",
+      "description": "OpenAI models and Codex, now in your AWS workflows.\n\nBuild AI apps and software engineering workflows with OpenAI on Amazon Bedrock, using the AWS environments and controls your team already trusts.\n\n\nOpenAI (@OpenAI)\n\nOpenAI frontier models and Codex are now generally available on AWS, giving\u2026"
+    },
+    "https://nitter.net/OpenAIDevs/status/2061558256821305700#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: Congratulations to all the finalists:\n\n\ud83e\udd47Agentic OS for a Phone \u2013 @isausmanov\n\ud83e\udd48Wagner \u2013 @iamstevesuarez\n\ud83e\udd49 Surgical Triage \u2013 @HandEManAI\n\ud83c\udfc5 Curo \u2013 @anshchopra_\n\nThanks to @cerebral_valley for co-hosting Voice Hack Night with us.\n\nhttps://cerebralvalley.ai/e/openai-voice-hack-night/hackathon/gallery",
+      "description": "Congratulations to all the finalists:\n\n\ud83e\udd47Agentic OS for a Phone \u2013 @isausmanov\n\ud83e\udd48Wagner \u2013 @iamstevesuarez\n\ud83e\udd49 Surgical Triage \u2013 @HandEManAI\n\ud83c\udfc5 Curo \u2013 @anshchopra_\n\nThanks to @cerebral_valley for co-hosting Voice Hack Night with us.\n\ncerebralvalley.ai/e/openai-v\u2026\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2061558243911155722#m": {
+      "edition": "2026-06-01-Evening",
+      "feed": "OpenAIDevs",
+      "title": "The votes are in.\n\n@isausmanov\u2019s Agentic OS for a Phone is the Voice Hack Night People\u2019s Choice winner.\n\nA voice-first mobile OS. Users talk, agents answer and take action across the phone.\n\nCongrats to the team on taking home $50,000 in API credits.",
+      "description": "The votes are in.\n\n@isausmanov\u2019s Agentic OS for a Phone is the Voice Hack Night People\u2019s Choice winner.\n\nA voice-first mobile OS. Users talk, agents answer and take action across the phone.\n\nCongrats to the team on taking home $50,000 in API credits.\n\n\nOpenAI Developers (@OpenAIDevs)\n\n\ud83e\udd33 Agentic\u2026"
     }
   },
-  "last_run": "2026-06-01T20:00:39.396040+00:00"
+  "last_run": "2026-06-01T23:31:46.109724+00:00"
 }
