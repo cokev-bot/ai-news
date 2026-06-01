@@ -55,6 +55,23 @@ logging.basicConfig(
 
 
 # ---------------------------------------------------------------------------
+# Timezone helpers
+# ---------------------------------------------------------------------------
+
+def pacific_now() -> datetime:
+    """Return current wall-clock time in America/Los_Angeles, with a real tzinfo.
+
+    Replaces an older pytz-based path whose fallback (`datetime.now(timezone.utc)
+    + timedelta(hours=-7)`) silently produced UTC-tagged datetimes — %z then
+    formatted as "+0000" instead of "-0700", and %Z as "UTC" instead of "PDT".
+    This implementation uses zoneinfo (stdlib since Python 3.9) and always
+    returns a datetime with a correct fixed-offset tzinfo.
+    """
+    from zoneinfo import ZoneInfo
+    return datetime.now(ZoneInfo("America/Los_Angeles"))
+
+
+# ---------------------------------------------------------------------------
 # Duplicate detection
 # ---------------------------------------------------------------------------
 
@@ -514,22 +531,14 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
     filename = f"{edition}.html"
     filepath = site_root / "_posts" / filename
 
-    # Use Pacific Time for all display timestamps
-    import os
-    os.environ.setdefault("TZ", "America/Los_Angeles")
-    try:
-        import pytz
-        pt_tz = pytz.timezone("America/Los_Angeles")
-        pt_now = datetime.now(pt_tz)
-    except ImportError:
-        # Fallback if pytz not available (shouldn't happen on Ubuntu)
-        from datetime import timedelta
-        import time
-        # Check if DST is active
-        time.tzset()
-        is_dst = time.localtime().tm_isdst
-        offset = timedelta(hours=-7 if is_dst else -8)
-        pt_now = datetime.now(timezone.utc) + offset
+    # Use Pacific Time for all display timestamps.
+    # Prefer zoneinfo (stdlib since 3.9, no extra deps) and avoid pytz because
+    # the previous fallback (`datetime.now(timezone.utc) + timedelta(hours=-7)`)
+    # produced a datetime whose tzinfo was still UTC, so %z formatted as
+    # "+0000" instead of "-0700". The header line in the post body
+    # would also say "UTC" instead of "PDT". zoneinfo produces a real
+    # tzinfo so strftime yields the correct offset and abbreviation.
+    pt_now = pacific_now()
 
     header_dt = pt_now.strftime("%Y-%m-%d %H:%M %Z")
 
