@@ -9473,7 +9473,211 @@
       "feed": "ollama",
       "title": "Excited for Ollama to be working with @nvidia for the NVIDIA RTX Spark launch!",
       "description": "Excited for Ollama to be working with @nvidia for the NVIDIA RTX Spark launch!\n\n\n\n\nNVIDIA (@nvidia)\n\nNVIDIA RTX Spark: a 1-petaflop superchip, the full CUDA and RTX ecosystem, and Windows-native agents. A new beginning for personal computers.\n\n\n\n\n\n\u2014\u2026"
+    },
+    "https://www.ft.com/content/e2980d15-b593-4946-8f2f-fecf2b543e1a": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "FT AI",
+      "title": "Trump signs watered-down AI vetting order after Maga infighting",
+      "description": "President\u2019s directive will allow the US government to gain early access to cutting-edge models"
+    },
+    "https://www.ft.com/content/1b3e3117-b979-4187-b983-c785d230c09b": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "FT AI",
+      "title": "Kyle included \u2018more positive language\u2019 in AI speech after Mandelson advice",
+      "description": "Documents raise questions since the advisory firm co-founded by Labour veteran represented big AI companies"
+    },
+    "https://www.ft.com/content/e8b86648-61b3-4b48-8bd4-a50f03de92d8": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "FT AI",
+      "title": "Microsoft targets Anthropic with new model releases",
+      "description": "Software giant\u2019s AI chief Mustafa Suleyman says focus is on developing products for business users"
+    },
+    "https://www.ft.com/content/7344ae89-6104-4b3f-a86b-18c7348830de": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "FT AI",
+      "title": "The China-US tech truce is fragile",
+      "description": "A new wave of supply chain conflict is brewing"
+    },
+    "https://www.ft.com/content/159fde75-7ad7-452f-a385-574655558da0": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "FT AI",
+      "title": "US convertible bonds set for record year as issuers harness AI boom",
+      "description": "Investors embrace zero-interest debt for options on high-growth tech stocks"
+    },
+    "https://www.nytimes.com/2026/06/02/technology/trump-executive-order-ai.html": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "NYT AI",
+      "title": "Trump Signs Executive Order Seeking Oversight of A.I. Models",
+      "description": "The order, which signaled a shift from the hands-off approach the White House had previously taken toward A.I., followed debates over how to gain control of A.I. models without disrupting innovation."
+    },
+    "https://www.nytimes.com/2026/06/02/us/politics/military-ai-laws-congress.html": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "NYT AI",
+      "title": "Congress to Consider Restricting How the Military Uses A.I.",
+      "description": "One measure would codify rules tech companies have requested, including a ban on using artificial intelligence for domestic surveillance."
+    },
+    "https://www.nytimes.com/video/opinion/100000010932835/ian-bremmer-on-the-risks-america-poses-to-the-world.html": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "NYT AI",
+      "title": "Ian Bremmer on the Risks America Poses to the World",
+      "description": "The political risk analyst Ian Bremmer argues that the greatest driver of risk in the world right now is President Trump."
+    },
+    "https://nitter.net/claudeai/status/2061829560505655316#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: From The Problem Solvers, our series featuring founders taking on hard problems with Claude: https://claude.com/problem-solvers",
+      "description": "From The Problem Solvers, our series featuring founders taking on hard problems with Claude: claude.com/problem-solvers"
+    },
+    "https://nitter.net/claudeai/status/2061829558999912680#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "claudeai",
+      "title": "Interpreting law is one of the oldest jobs in the world. @MaxJunestrand, co-founder and CEO of @WeAreLegora, is bringing it into its next era with Claude.\n\nHis bet: every new model release raises the tide, and Legora is building the boats for everyone else.",
+      "description": "Interpreting law is one of the oldest jobs in the world. @MaxJunestrand, co-founder and CEO of @WeAreLegora, is bringing it into its next era with Claude.\n\nHis bet: every new model release raises the tide, and Legora is building the boats for everyone else.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/GeminiApp/status/2061842235457720507#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "GeminiApp",
+      "title": "See Gemini Omni in action with a live demo from one of the team members who helped build it.\n\nJoin us on Discord as Product Manager Chloe shares how to use Gemini Omni\u2019s multimodal inputs, real-world knowledge, and easy conversational editing to create videos like never before.\n\n\ud83d\udc49Join the Discord to watch live: http://discord.gg/gemini\n\ud83d\udcc5 Wednesday, June 3 at 11:30am PT",
+      "description": "See Gemini Omni in action with a live demo from one of the team members who helped build it.\n\nJoin us on Discord as Product Manager Chloe shares how to use Gemini Omni\u2019s multimodal inputs, real-world knowledge, and easy conversational editing to create videos like never before.\n\n\ud83d\udc49Join the\u2026"
+    },
+    "https://nitter.net/EasyRouterIO/status/2061824301033209934#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: MiniMax M3 is now available on and it\u2019s 50% off this week.@MiniMax_AI \n\n1M context \u00b7 SOTA coding (SWE-Bench Pro 59%) \u00b7 Native multimodal \u00b7 caching read $0.12/M tokens originally and now only $0.06/M tokens!\n\nAccess M3 \u2014 and 60+ other frontier models \u2014 through a single EasyRouter API endpoint.\nTry it now \u2192 http://easyrouter.io/login?promo=2i\u2026",
+      "description": "MiniMax M3 is now available on and it\u2019s 50% off this week.@MiniMax_AI \n\n1M context \u00b7 SOTA coding (SWE-Bench Pro 59%) \u00b7 Native multimodal \u00b7 caching read $0.12/M tokens originally and now only $0.06/M tokens!\n\nAccess M3 \u2014 and 60+ other frontier models \u2014 through a single EasyRouter API\u2026"
+    },
+    "https://nitter.net/OpenAI/status/2061888058459570279#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: From question to model.\n\nThe public equity investing plugin for Codex.",
+      "description": "From question to model.\n\nThe public equity investing plugin for Codex.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2061887949516730502#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: Prep faster. Sell smarter.\n\nThe sales plugin for Codex.",
+      "description": "Prep faster. Sell smarter.\n\nThe sales plugin for Codex.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2061887890607755498#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: Turn ideas into live prototypes.\n\nThe product design plugin for Codex.",
+      "description": "Turn ideas into live prototypes.\n\nThe product design plugin for Codex.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2061887828058075190#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: Bring your briefs to life.\n\nThe creative production plugin for Codex.",
+      "description": "Bring your briefs to life.\n\nThe creative production plugin for Codex.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2061887650391625870#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "We\u2019re making Codex more useful for your work by expanding plugins beyond individual tools.\n\nThese plugins turn Codex into a specialist for a specific role with a single install, no coding required.\n\nCodex can access 62 popular apps and 110 skills for work across sales, data analytics, creative production, product design, and public equity investing.\n\nhttps://openai.com/index/codex-for-every-role-tool-workflow/",
+      "description": "We\u2019re making Codex more useful for your work by expanding plugins beyond individual tools.\n\nThese plugins turn Codex into a specialist for a specific role with a single install, no coding required.\n\nCodex can access 62 popular apps and 110 skills for work across sales, data analytics, creative\u2026"
+    },
+    "https://nitter.net/OpenAI/status/2061845950705140121#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: openai.com/index/codex-for-e\u2026",
+      "description": "openai.com/index/codex-for-e\u2026\n"
+    },
+    "https://nitter.net/OpenAI/status/2061845949170045346#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "Building apps has never been easier.\n\nWith Sites, Codex can turn your work, ideas, and plans into an interactive website or app your team can explore, use, and share with a URL.\n\nRolling out to Business and Enterprise plans, before expanding more broadly.",
+      "description": "Building apps has never been easier.\n\nWith Sites, Codex can turn your work, ideas, and plans into an interactive website or app your team can explore, use, and share with a URL.\n\nRolling out to Business and Enterprise plans, before expanding more broadly.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAINewsroom/status/2061834718224777579#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAINewsroom",
+      "title": "Codex now has more than 5M weekly active users.\n\nBut the bigger story is what people are using it for: not just writing code, but getting more work done across research, analysis, content, and operations.\n\nOur new report on how Codex is becoming a productivity tool for knowledge work: https://openai.com/index/codex-for-knowledge-work/",
+      "description": "Codex now has more than 5M weekly active users.\n\nBut the bigger story is what people are using it for: not just writing code, but getting more work done across research, analysis, content, and operations.\n\nOur new report on how Codex is becoming a productivity tool for knowledge work:\u2026"
+    },
+    "https://nitter.net/ClaudeDevs/status/2061877343078244459#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "We\u2019ve added a CLI for Claude Platform to make every API endpoint runnable from your terminal.\n\nCall the Messages API, stand up Claude Managed Agents, pipe results straight into your shell.\n\nThe ant CLI is well understood by coding agents (Claude Code) using the claude-api skill.",
+      "description": "We\u2019ve added a CLI for Claude Platform to make every API endpoint runnable from your terminal.\n\nCall the Messages API, stand up Claude Managed Agents, pipe results straight into your shell.\n\nThe ant CLI is well understood by coding agents (Claude Code) using the claude-api skill.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2061877351253004619#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: The CLI can kick off a Managed Agents session, send it an event, and the agent goes to work: reasoning, calling tools, working toward an answer. \n\nWhen it's done (or stuck), pull the trace: every event, every tool call, every decision is retrievable from the same CLI.",
+      "description": "The CLI can kick off a Managed Agents session, send it an event, and the agent goes to work: reasoning, calling tools, working toward an answer. \n\nWhen it's done (or stuck), pull the trace: every event, every tool call, every decision is retrievable from the same CLI.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2061877352725200963#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: Claude Code knows how to use ant using the built-in \"/claude-api\" skill\n\nAsk it to list your sessions, upload a folder of PDFs, or debug a run.\n\nIt shells out to the CLI and reads the results back without any glue code.\n\nInstall with brew, curl, or go: https://platform.claude.com/docs/en/api/sdks/cli",
+      "description": "Claude Code knows how to use ant using the built-in \"/claude-api\" skill\n\nAsk it to list your sessions, upload a folder of PDFs, or debug a run.\n\nIt shells out to the CLI and reads the results back without any glue code.\n\nInstall with brew, curl, or go: platform.claude.com/docs/en/\u2026\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2061888366791246071#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "Pinned: Role-specific plugins in Codex are built around the work teams actually do.\n\nPlugins for Data Analytics, Creative Production, and Product Design give Codex the tools and context to create reports, creative directions, and prototypes.\n\nBuilt and used by OpenAI teams.",
+      "description": "Role-specific plugins in Codex are built around the work teams actually do.\n\nPlugins for Data Analytics, Creative Production, and Product Design give Codex the tools and context to create reports, creative directions, and prototypes.\n\nBuilt and used by OpenAI teams.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/arena/status/2061894546359980126#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Learn more about MAI-Image-2.5 on the @MicrosoftAI blog: https://microsoft.ai/news/introducing-mai-image-2-5",
+      "description": "Learn more about MAI-Image-2.5 on the @MicrosoftAI blog: microsoft.ai/news/introducin\u2026\n"
+    },
+    "https://nitter.net/arena/status/2061887246165582140#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Dive into the leaderboard details for Image Edit Arena at: https://arena.ai/leaderboard/image-edit",
+      "description": "Dive into the leaderboard details for Image Edit Arena at: arena.ai/leaderboard/image-e\u2026\n"
+    },
+    "https://nitter.net/arena/status/2060122770743390252#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: We took Claude Opus 4.8 for a test drive in the Code Arena: Frontend. Check out some of the outputs on YouTube: https://www.youtube.com/watch?v=TwbuM-Owg4A\n\nCode Arena: Frontend evaluates models on agentic frontend coding tasks from real users building apps and websites (HTML and React). Head over to Arena and try it for yourself in Battle Mode.\n\nScores for Opus 4.8 coming soon.",
+      "description": "We took Claude Opus 4.8 for a test drive in the Code Arena: Frontend. Check out some of the outputs on YouTube: piped.video/watch?v=TwbuM-Ow\u2026\n\nCode Arena: Frontend evaluates models on agentic frontend coding tasks from real users building apps and websites (HTML and React). Head over to Arena\u2026"
+    },
+    "https://huggingface.co/blog/Hcompany/holo31": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Holo3.1: Fast & Local Computer Use Agents",
+      "description": ""
+    },
+    "https://huggingface.co/blog/JetBrains/mellum2-launch": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Introducing Mellum2: A 12B Mixture-of-Experts Model by JetBrains",
+      "description": ""
+    },
+    "https://huggingface.co/blog/ibm-research/agent-logic-and-scalable-ai-adoption": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Beyond LLMs: Why Scalable Enterprise AI Adoption Depends on Agent Logic",
+      "description": ""
+    },
+    "https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Welcome NVIDIA Cosmos 3: The First Open Omni-model for Physical AI Reasoning and Action",
+      "description": ""
+    },
+    "https://huggingface.co/blog/torch-profiler": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Profiling in PyTorch (Part 1): A Beginner's Guide to torch.profiler",
+      "description": ""
+    },
+    "https://huggingface.co/blog/local-reachy-mini-conversation": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Reachy Mini goes fully local",
+      "description": ""
+    },
+    "https://huggingface.co/blog/delta-weight-sync": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Shipping a Trillion Parameters With a Hub Bucket: Delta Weight Sync in TRL",
+      "description": ""
     }
   },
-  "last_run": "2026-06-02T15:01:02.075622+00:00"
+  "last_run": "2026-06-02T20:00:54.126965+00:00"
 }
