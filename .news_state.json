@@ -10007,7 +10007,79 @@
       "feed": "HuggingFace Blog",
       "title": "Adding MCP Tools to Reachy Mini",
       "description": ""
+    },
+    "https://www.ft.com/content/2f5d890e-9987-43cd-86d2-52acb3738985": {
+      "edition": "2026-06-03-Evening",
+      "feed": "FT AI",
+      "title": "MP sues Musk\u2019s xAI in UK test case over fake sexual images",
+      "description": "Legal claim by Jess Asato challenges whether AI model-makers are liable for what their systems produce"
+    },
+    "https://www.ft.com/content/85299cdd-d9b3-4b40-8d10-73fc9ddb4573": {
+      "edition": "2026-06-03-Evening",
+      "feed": "FT AI",
+      "title": "Google parent Alphabet upsizes record-breaking equity raise to $85bn",
+      "description": "Tech giant launches first stock offering in more than two decades in effort to fund AI spending"
+    },
+    "https://www.ft.com/content/1cc27b92-4ad0-4c62-9d8c-a58900f9a1d4": {
+      "edition": "2026-06-03-Evening",
+      "feed": "FT AI",
+      "title": "Meta bets on AI agents to unlock WhatsApp revenues",
+      "description": "Mark Zuckerberg expands group\u2019s AI push as it seeks to turn messaging app into bigger business"
+    },
+    "https://www.nytimes.com/2026/06/03/opinion/elon-musk-spacex-ipo-leo-rockefeller.html": {
+      "edition": "2026-06-03-Evening",
+      "feed": "NYT AI",
+      "title": "What Elon Musk Really Wants From the SpaceX I.P.O.",
+      "description": "What Elon Musk really wants out of the SpaceX I.P.O.: the funds to control the highly profitable earnings potential of low-Earth orbit."
+    },
+    "https://nitter.net/GeminiApp/status/2062198153139646613#m": {
+      "edition": "2026-06-03-Evening",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: Gemini Spark is available in Beta for Google AI Ultra subscribers, starting in the U.S.",
+      "description": "Gemini Spark is available in Beta for Google AI Ultra subscribers, starting in the U.S."
+    },
+    "https://nitter.net/GeminiApp/status/2062194069623988297#m": {
+      "edition": "2026-06-03-Evening",
+      "feed": "GeminiApp",
+      "title": "Join @GoogleDeepMind Principal Engineer @__apf__  to walk through how Gemini Spark helps simplify your daily workflows.\n\nPowered by Gemini 3.5 Flash, Spark builds upon Gemini's ability to connect with @GoogleWorkspace apps like Docs and Gmail to execute complex tasks.",
+      "description": "Join @GoogleDeepMind Principal Engineer @__apf__  to walk through how Gemini Spark helps simplify your daily workflows.\n\nPowered by Gemini 3.5 Flash, Spark builds upon Gemini's ability to connect with @GoogleWorkspace apps like Docs and Gmail to execute complex tasks."
+    },
+    "https://nitter.net/googleaidevs/status/2062204917087899809#m": {
+      "edition": "2026-06-03-Evening",
+      "feed": "googleaidevs",
+      "title": "R to @lmstudio: - Read the blog to learn more: http://goo.gle/4elEBO4\n- Check out the developer guide: http://goo.gle/4o3HJRY",
+      "description": "- Read the blog to learn more: goo.gle/4elEBO4\n- Check out the developer guide: goo.gle/4o3HJRY\n"
+    },
+    "https://nitter.net/googleaidevs/status/2062204434608771080#m": {
+      "edition": "2026-06-03-Evening",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: > Ecosystem: Compatible with llama.cpp, MLX, @LMStudio, vLLM, @ollama, @UnslothAI, and SGLang.\n> Download: Grab the weights on @Kaggle and @HuggingFace: https://huggingface.co/collections/google/gemma-4",
+      "description": "&gt; Ecosystem: Compatible with llama.cpp, MLX, @LMStudio, vLLM, @ollama, @UnslothAI, and SGLang.\n&gt; Download: Grab the weights on @Kaggle and @HuggingFace: huggingface.co/collections/g\u2026\n"
+    },
+    "https://nitter.net/googleaidevs/status/2062204432658386950#m": {
+      "edition": "2026-06-03-Evening",
+      "feed": "googleaidevs",
+      "title": "Pinned: We\u2019re launching Gemma 4 12B: Our unified, encoder-free model that brings powerful multimodal intelligence straight to your laptop \ud83d\ude80\n\nThe model bridges the gap between our mobile E4B model and larger 26B MoE models, packaging frontier-class reasoning and native audio into a highly optimized footprint, all under a permissive Apache 2.0 license.\n\nHere\u2019s what makes it unique:\n\n+ Encoder-Less Architecture: We removed the multimodal encoders. The vision and audio inputs flow directly into the LLM backbone.\n+ Agentic Performance (16GB VRAM): Run complex, multi-step workflows locally, with performance nearing our 26B model.",
+      "description": "We\u2019re launching Gemma 4 12B: Our unified, encoder-free model that brings powerful multimodal intelligence straight to your laptop \ud83d\ude80\n\nThe model bridges the gap between our mobile E4B model and larger 26B MoE models, packaging frontier-class reasoning and native audio into a highly optimized\u2026"
+    },
+    "https://nitter.net/arena/status/2062203354844209485#m": {
+      "edition": "2026-06-03-Evening",
+      "feed": "arena",
+      "title": "R to @arena: Head over and dive into the Text-to-Image Arena leaderboard details at: https://arena.ai/leaderboard/text-to-image",
+      "description": "Head over and dive into the Text-to-Image Arena leaderboard details at: arena.ai/leaderboard/text-to\u2026\n"
+    },
+    "https://nitter.net/arena/status/2062203351106982246#m": {
+      "edition": "2026-06-03-Evening",
+      "feed": "arena",
+      "title": "R to @arena: The new #1 open model in Text-to-Image: Ideogram-4.0-Quality shows huge improvement over past generations across all sub categories. \n\nThis latest version shows the largest gains in Text Rendering and Product, Branding & Commercial Design.",
+      "description": "The new #1 open model in Text-to-Image: Ideogram-4.0-Quality shows huge improvement over past generations across all sub categories. \n\nThis latest version shows the largest gains in Text Rendering and Product, Branding &amp; Commercial Design.\n"
+    },
+    "https://nitter.net/arena/status/2061887242579382660#m": {
+      "edition": "2026-06-03-Evening",
+      "feed": "arena",
+      "title": "MAI-Image-2.5 has officially released from @MicrosoftAI landing at #2 in the Image Edit Arena (Single-Image-Edit) with a score of 1401 and advances the Pareto frontier!\n\nThis puts the model +10 pts over Nano Banana 2, Grok Imagine Image Quality and ChatGPT-Image-Latest-High Fidelity. \n\nCongrats to the @MicrosoftAI team on this big accomplishment!",
+      "description": "MAI-Image-2.5 has officially released from @MicrosoftAI landing at #2 in the Image Edit Arena (Single-Image-Edit) with a score of 1401 and advances the Pareto frontier!\n\nThis puts the model +10 pts over Nano Banana 2, Grok Imagine Image Quality and ChatGPT-Image-Latest-High Fidelity. \n\nCongrats\u2026"
     }
   },
-  "last_run": "2026-06-03T15:01:23.084317+00:00"
+  "last_run": "2026-06-03T16:16:47.278161+00:00"
 }
