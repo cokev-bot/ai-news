@@ -10079,7 +10079,109 @@
       "feed": "arena",
       "title": "MAI-Image-2.5 has officially released from @MicrosoftAI landing at #2 in the Image Edit Arena (Single-Image-Edit) with a score of 1401 and advances the Pareto frontier!\n\nThis puts the model +10 pts over Nano Banana 2, Grok Imagine Image Quality and ChatGPT-Image-Latest-High Fidelity. \n\nCongrats to the @MicrosoftAI team on this big accomplishment!",
       "description": "MAI-Image-2.5 has officially released from @MicrosoftAI landing at #2 in the Image Edit Arena (Single-Image-Edit) with a score of 1401 and advances the Pareto frontier!\n\nThis puts the model +10 pts over Nano Banana 2, Grok Imagine Image Quality and ChatGPT-Image-Latest-High Fidelity. \n\nCongrats\u2026"
+    },
+    "https://www.ft.com/content/837cd1be-548d-4a64-8d78-a42d65a9afe5": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "FT AI",
+      "title": "UK government urges companies to share data about AI effects on workforce",
+      "description": "Move comes amid concerns that AI will exacerbate youth unemployment"
+    },
+    "https://www.ft.com/content/a6ee67b1-bff8-4140-ad2c-249f460779a6": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "FT AI",
+      "title": "Employers step in to fill the AI education gap",
+      "description": "School and university curricula aren\u2019t nimble enough to keep up with rapid tech transformation"
+    },
+    "https://nitter.net/AnthropicAI/status/2062243425580367905#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "AnthropicAI",
+      "title": "How well do the security community's techniques hold up against AI-enabled cyberattacks? \n\nWe examined 832 malicious accounts and mapped their activity onto a longstanding database of tactics and techniques used by threat actors.  \n\nHere's what we learned:https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
+      "description": "How well do the security community's techniques hold up against AI-enabled cyberattacks? \n\nWe examined 832 malicious accounts and mapped their activity onto a longstanding database of tactics and techniques used by threat actors.  \n\nHere's what we learned:anthropic.com/news/AI-enable\u2026\n"
+    },
+    "https://nitter.net/claudeai/status/2062220051587952973#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: Image",
+      "description": "\n"
+    },
+    "https://nitter.net/claudeai/status/2062220049146876347#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: Ben kept getting distracted during long Claude Code sessions, so he built a miniature Clawd to get his attention. When \u2028Claude Code needs input, a solenoid inside the aluminum body pushes it upward. In other words, it jumps up and down.",
+      "description": "Ben kept getting distracted during long Claude Code sessions, so he built a miniature Clawd to get his attention. When \u2028Claude Code needs input, a solenoid inside the aluminum body pushes it upward. In other words, it jumps up and down.\n"
+    },
+    "https://nitter.net/claudeai/status/2062220045984346276#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: To build the typewriter terminal, he intercepted the keyboard signals and re-routed them to an Arduino. In the back, a Raspberry Pi Zero acts as the \u2018brains.\u2019",
+      "description": "To build the typewriter terminal, he intercepted the keyboard signals and re-routed them to an Arduino. In the back, a Raspberry Pi Zero acts as the \u2018brains.\u2019\n"
+    },
+    "https://nitter.net/claudeai/status/2062220043413246146#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: Ben is a technologist and writer based in London. When he\u2019s not writing about energy and climate, he\u2019s building peculiar things\u2014like a typewriter-turned-Claude-terminal, or a jumping USB crab that lights up when Claude Code is thinking.",
+      "description": "Ben is a technologist and writer based in London. When he\u2019s not writing about energy and climate, he\u2019s building peculiar things\u2014like a typewriter-turned-Claude-terminal, or a jumping USB crab that lights up when Claude Code is thinking.\n"
+    },
+    "https://nitter.net/claudeai/status/2062220040934449596#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "claudeai",
+      "title": "We spoke with @BenJames_____ about building things, creativity, and why silly ideas matter.",
+      "description": "We spoke with @BenJames_____ about building things, creativity, and why silly ideas matter.\n"
+    },
+    "https://nitter.net/MiniMax_AI/status/2062254981747822921#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "MiniMax_AI",
+      "title": "We are part of @nvidia and @Microsoft \u2019s Local LLM lineup at #GTC Taipei.\ud83d\udd25\n\nThe PC is being reinvented around local, agentic, open-weight models\n\nMiniMax-M3 is built exactly for this future:\nOpen-weight.\n1M context.\nStrong coding.\nNative multimodality.\n\nExcited for what comes next!",
+      "description": "We are part of @nvidia and @Microsoft \u2019s Local LLM lineup at #GTC Taipei.\ud83d\udd25\n\nThe PC is being reinvented around local, agentic, open-weight models\n\nMiniMax-M3 is built exactly for this future:\nOpen-weight.\n1M context.\nStrong coding.\nNative multimodality.\n\nExcited for what comes next!\n"
+    },
+    "https://nitter.net/OpenAI/status/2062249312839434452#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "OpenAI",
+      "title": "Pinned: It's time to fly.",
+      "description": "It's time to fly.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAINewsroom/status/2062225755854274629#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "OpenAINewsroom",
+      "title": "There\u2019s real momentum right now for AI safety policy. Yesterday\u2019s EO on cyber was an important step forward.\n\nWe\u2019re proposing a set of ideas for policymakers to consider next and to put the US out in front on frontier safety.\n\nhttps://openai.com/index/frontier-safety-blueprint/",
+      "description": "There\u2019s real momentum right now for AI safety policy. Yesterday\u2019s EO on cyber was an important step forward.\n\nWe\u2019re proposing a set of ideas for policymakers to consider next and to put the US out in front on frontier safety.\n\nopenai.com/index/frontier-sa\u2026"
+    },
+    "https://nitter.net/ClaudeDevs/status/2062257177788858398#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "We've changed the trigger word from \"workflow\" to \"ultracode\".\n\nYou can still say \"use a workflow for this\", but when you're clearly referring to something else, Claude won't kick off a dynamic workflow. For an explicit trigger, use \"ultracode\". We appreciate the feedback!",
+      "description": "We've changed the trigger word from \"workflow\" to \"ultracode\".\n\nYou can still say \"use a workflow for this\", but when you're clearly referring to something else, Claude won't kick off a dynamic workflow. For an explicit trigger, use \"ultracode\". We appreciate the feedback!\n\n\nClaudeDevs\u2026"
+    },
+    "https://nitter.net/Jilles/status/2062209724636876809#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "RT by @OpenAIDevs: You can literally build and host a website for free today. \n\nIf you're already paying for a ChatGPT subscription, you have access to a world-class software engineer, called Codex. \n\nCombine that with Cloudflare, and you have superpowers. \n\nNo coding or terminal required.",
+      "description": "You can literally build and host a website for free today. \n\nIf you're already paying for a ChatGPT subscription, you have access to a world-class software engineer, called Codex. \n\nCombine that with Cloudflare, and you have superpowers. \n\nNo coding or terminal required.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/_mohansolo/status/2062254895475138873#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "antigravity",
+      "title": "RT by @antigravity: We\u2019ve shipped a new release for the Antigravity IDE that significantly reduces cases of memory usage blowing up. We\u2019ve been making a huge push to improve performance and reliability. The feedback is very helpful, we\u2019ll get to all of it!",
+      "description": "We\u2019ve shipped a new release for the Antigravity IDE that significantly reduces cases of memory usage blowing up. We\u2019ve been making a huge push to improve performance and reliability. The feedback is very helpful, we\u2019ll get to all of it!"
+    },
+    "https://nitter.net/ollama/status/2062250524075000220#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "ollama",
+      "title": "R to @ollama: Model page: \n\nhttps://ollama.com/library/gemma4",
+      "description": "Model page: \n\nollama.com/library/gemma4\n"
+    },
+    "https://nitter.net/ollama/status/2062250522598572345#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "ollama",
+      "title": "Pinned: .@GoogleDeepMind's Gemma 4 - 12B is available on Ollama!  \n\nChat: \nollama run gemma4:12b-mlx\n\nHermes Agent: \nollama launch hermes --model gemma4:12b-mlx\n\nClaude Code: \nollama launch claude --model gemma4:12b-mlx\n\nand more \ud83d\udc47\ud83d\udc47\ud83d\udc47\n\n(Note, this currently works via MLX)",
+      "description": ".@GoogleDeepMind's Gemma 4 - 12B is available on Ollama!  \n\nChat: \nollama run gemma4:12b-mlx\n\nHermes Agent: \nollama launch hermes --model gemma4:12b-mlx\n\nClaude Code: \nollama launch claude --model gemma4:12b-mlx\n\nand more \ud83d\udc47\ud83d\udc47\ud83d\udc47\n\n(Note, this currently works via MLX)\n"
+    },
+    "https://nitter.net/arena/status/2062203346996605116#m": {
+      "edition": "2026-06-03-Afternoon",
+      "feed": "arena",
+      "title": "New open model Ideogram-4.0-Quality has landed at #8 in the Text-to-Image Arena. This makes the new model by @ideogram_ai the #1 open model in that arena! Scoring 1204, this open model approaches the performance of Nano Banana Pro.\n\nCongrats to the @ideogram_ai team on this release!",
+      "description": "New open model Ideogram-4.0-Quality has landed at #8 in the Text-to-Image Arena. This makes the new model by @ideogram_ai the #1 open model in that arena! Scoring 1204, this open model approaches the performance of Nano Banana Pro.\n\nCongrats to the @ideogram_ai team on this release!\n\n\n\n\nIdeogram\u2026"
     }
   },
-  "last_run": "2026-06-03T16:16:47.278161+00:00"
+  "last_run": "2026-06-03T20:01:35.660822+00:00"
 }
