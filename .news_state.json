@@ -9827,7 +9827,187 @@
       "feed": "karpathy",
       "title": "RT by @karpathy: x.com/i/article/206185053570\u2026",
       "description": "x.com/i/article/206185053570\u2026"
+    },
+    "https://www.ft.com/content/c9d562d6-1448-4a40-8198-0cb1f0dc2032": {
+      "edition": "2026-06-03-Morning",
+      "feed": "FT AI",
+      "title": "Hyperscalers and the equity tap: more to come",
+      "description": "Plus, corporate culture and returns"
+    },
+    "https://www.ft.com/content/d26faf9d-6ef0-4480-ab80-bac6a36fe173": {
+      "edition": "2026-06-03-Morning",
+      "feed": "FT AI",
+      "title": "Inside Alexandr Wang\u2019s bid to revive Meta\u2019s AI edge",
+      "description": "Muse Spark model has brought momentum, but doubts linger over whether billionaire prodigy can close the gap with rivals"
+    },
+    "https://www.ft.com/content/7cbc3986-be9f-4568-a3e5-fbd3b987f2e9": {
+      "edition": "2026-06-03-Morning",
+      "feed": "FT AI",
+      "title": "A guide for the perplexed on AI",
+      "description": "Should we think of this technology as boon, bane or bubble?"
+    },
+    "https://www.ft.com/content/9f8b9962-7674-442f-82d2-dc457135e023": {
+      "edition": "2026-06-03-Morning",
+      "feed": "FT AI",
+      "title": "The AI boom gives 1990s IT brands a second crack at youth",
+      "description": "Top-line growth is exciting Wall Street even though the groups are just one link in a much larger AI-related domino rally"
+    },
+    "https://www.ft.com/content/7cc7800f-18ed-47d8-9539-221ae3e16182": {
+      "edition": "2026-06-03-Morning",
+      "feed": "FT AI",
+      "title": "\u2018Close to the Terminator narrative\u2019: the dawn of self-improving AI",
+      "description": "Industry chiefs say a looming tech breakthrough might deliver superintelligence. Safety experts say we\u2019re not ready"
+    },
+    "https://www.ft.com/content/cf4ef84e-811e-423b-a29b-037f9d361cdf": {
+      "edition": "2026-06-03-Morning",
+      "feed": "FT AI",
+      "title": "AI Labs: Zuckerberg\u2019s $100bn gamble",
+      "description": "Can Mark Zuckerberg\u2019s Meta buy its way into the AI game?"
+    },
+    "https://www.nytimes.com/2026/06/03/technology/european-union-tech-sovereignty.html": {
+      "edition": "2026-06-03-Morning",
+      "feed": "NYT AI",
+      "title": "European Union Outlines Plan to Reduce Dependence on American Tech",
+      "description": "The 27-nation European Union outlined how it hopes to expand the region\u2019s data centers, semiconductors and cloud computing capabilities."
+    },
+    "https://www.nytimes.com/2026/06/03/business/dealbook/trump-ai-pivot.html": {
+      "edition": "2026-06-03-Morning",
+      "feed": "NYT AI",
+      "title": "What\u2019s Driving Trump\u2019s Big A.I. Pivot",
+      "description": "Even the industry-friendly Trump White House is finding that it needs to have greater oversight of powerful new artificial intelligence models."
+    },
+    "https://www.nytimes.com/2026/06/03/opinion/american-dream-politics-negativity.html": {
+      "edition": "2026-06-03-Morning",
+      "feed": "NYT AI",
+      "title": "Feeling Nihilistic? You\u2019re Not Alone.",
+      "description": "A case for mourning the American dream."
+    },
+    "https://www.nytimes.com/2026/06/02/technology/scientists-find-way-to-supercharge-dangerous-computer-worms-with-ai.html": {
+      "edition": "2026-06-03-Morning",
+      "feed": "NYT AI",
+      "title": "Scientists Find Way to Supercharge Dangerous Computer \u2018Worms\u2019 With A.I.",
+      "description": "Researchers at the University of Toronto showed how hackers could use artificial intelligence to create a program that could target any known flaw in the world\u2019s computers."
+    },
+    "https://nitter.net/BaiduAI_News/status/2062076967948865887#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "BaiduAI_News",
+      "title": "What if martial arts could be learned from AI? \ud83e\udd16\nWe\u2019ve built an AI model for Chinese Wushu \u2014 turning master-to-student teachings into visual, easy-to-learn experiences.\nMaking tradition easier to learn, and easier to pass on. \u2728",
+      "description": "What if martial arts could be learned from AI? \ud83e\udd16\nWe\u2019ve built an AI model for Chinese Wushu \u2014 turning master-to-student teachings into visual, easy-to-learn experiences.\nMaking tradition easier to learn, and easier to pass on. \u2728\n\nVideo\n  \n"
+    },
+    "https://nitter.net/BaiduAI_News/status/2062075875189784809#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "BaiduAI_News",
+      "title": "Bringing the stars to the mountains!\nTogether with an aerospace educator, Baidu App brought a hands-on aerospace class to children in rural Hebei. Through interactive AI-powered experiences, students explored the wonders of space and discovered new possibilities beyond the classroom.\ud83c\udf0d",
+      "description": "Bringing the stars to the mountains!\nTogether with an aerospace educator, Baidu App brought a hands-on aerospace class to children in rural Hebei. Through interactive AI-powered experiences, students explored the wonders of space and discovered new possibilities beyond the classroom.\ud83c\udf0d\n"
+    },
+    "https://nitter.net/BaiduAI_News/status/2062006093191209185#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "BaiduAI_News",
+      "title": "Your next mobile app might start with a sentence. \ud83d\ude80\ud83c\udf1f",
+      "description": "Your next mobile app might start with a sentence. \ud83d\ude80\ud83c\udf1f\n\n\nMeDo (@Medo_CodeFree)\n\n\ud83d\udd25Breaking Boundaries: You can now build REAL mobile apps with MeDo! \ud83d\ude80\n\nJust describe your idea in natural language. and watch MeDo generate your first mobile app.\n\n\ud83c\udf1f iOS & Android Support: Build native apps for both\u2026"
+    },
+    "https://nitter.net/joshwoodward/status/2062025667852812583#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "GeminiApp",
+      "title": "RT by @GeminiApp: \u2705 Papercut fixed: Thinking Levels are now available on Gemini across Web, iOS, and Android.",
+      "description": "\u2705 Papercut fixed: Thinking Levels are now available on Gemini across Web, iOS, and Android.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/victoriawu77/status/2061858677322309966#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: 10 minutes with @MiniMax_AI M3 and it built this magic website.\n\nHand-tracking particle playground. \ud83d\udc4b\n\nWave your hand \u2192 Saturn rings spin, galaxies explode, hearts and flowers float in real time. \ud83e\ude90\n\nMinimax M3 somehow nailed complex + three.js @threejs gesture controls + particle systems in one go. \n\nThe coding ability of this open-weight model is seriously impressive. Honestly didn't expect it to handle this level of frontend interaction so well.\n\nLive demo + prompt below \ud83d\udc47",
+      "description": "10 minutes with @MiniMax_AI M3 and it built this magic website.\n\nHand-tracking particle playground. \ud83d\udc4b\n\nWave your hand \u2192 Saturn rings spin, galaxies explode, hearts and flowers float in real time. \ud83e\ude90\n\nMinimax M3 somehow nailed complex + three.js @threejs gesture controls + particle systems in one\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2062044105447018506#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "\ud83c\udfc6 Build with Minimax-M3 \u2192 win a Token Plan Plus\n\nOur official Discord Showcase Event is live! \ud83c\udf89\n\nCreate a case or project with Minimax-M3, post it in our showcase forum, and you could be 1 of 10 winners.\n\nHow to enter:\n1. Join the Discord \ud83d\udc49 https://discord.gg/mmx\n2. Build something with Minimax-M3\n3. Post it in the showcase forum + tag Minimax-M3\n4. Add a short note on how you used it\n\n\ud83d\uddd3 June 2\u20138, 2026\n\ud83c\udf81 10 winners, announced June 9 in our official Discord\n\n#MinimaxM3 #AI",
+      "description": "\ud83c\udfc6 Build with Minimax-M3 \u2192 win a Token Plan Plus\n\nOur official Discord Showcase Event is live! \ud83c\udf89\n\nCreate a case or project with Minimax-M3, post it in our showcase forum, and you could be 1 of 10 winners.\n\nHow to enter:\n1. Join the Discord \ud83d\udc49 discord.gg/mmx\n2. Build something with Minimax-M3\n3.\u2026"
+    },
+    "https://nitter.net/VictorSuOrtiz/status/2062024383326204200#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: We heard, and we executed. MiniMax M3 faster than ever.",
+      "description": "We heard, and we executed. MiniMax M3 faster than ever.\n\n\nRyanLee (@RyanLeeMiniMax)\n\n\ud83d\udd25 MiniMax-M3 just got faster.\n\nThanks for all the excitement around MiniMax-M3 \u2014 the response has been far beyond our expectations.\nLast night, we rolled out a major inference upgrade:\n\n\ud83d\udee0\ufe0f Fixed an issue that\u2026"
+    },
+    "https://nitter.net/SkylerMiao7/status/2062030819988996472#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: M3 brings sparse attention + 1M context + multimodality, and Together did the hard serving work to make it fast.\n\nGreat collaboration with the Together team.",
+      "description": "M3 brings sparse attention + 1M context + multimodality, and Together did the hard serving work to make it fast.\n\nGreat collaboration with the Together team.\n\n\nTogether AI (@togethercompute)\n\nx.com/i/article/206189124776\u2026\n\n\n\n\u2014 https://nitter.net/togethercompute/status/2061894792020197881#m\n\n"
+    },
+    "https://nitter.net/elliotarledge/status/2061896243258020129#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: timelapse #147 (15.5 hrs)\n- woke up to @MiniMax_AI M3 launch including my kernelbench-hard (lowest score at below 30% which emphasizes the hardness)\n- did a space with the minimax and together ai folks\n- burned 1.1B tokens\n- got nanogpt at nvfp4 training stability to match bf16. this is a prereq for another problem im trying to solve\n- got my timelapse workflow nailed with a solid html page lol\n- loosing patience from anthropic rate limits",
+      "description": "timelapse #147 (15.5 hrs)\n- woke up to @MiniMax_AI M3 launch including my kernelbench-hard (lowest score at below 30% which emphasizes the hardness)\n- did a space with the minimax and together ai folks\n- burned 1.1B tokens\n- got nanogpt at nvfp4 training stability to match bf16. this is a prereq\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061987216914788401#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "Day-0 on SiliconFlow and 50% off \ud83d\udd25 the first week\n\nfrontier coding, 1M context, and native multimodal, all in one open-weights model. This is what we built M3 for.  \n\nGo try it \ud83d\udc47",
+      "description": "Day-0 on SiliconFlow and 50% off \ud83d\udd25 the first week\n\nfrontier coding, 1M context, and native multimodal, all in one open-weights model. This is what we built M3 for.  \n\nGo try it \ud83d\udc47\n\n\nSiliconFlow (@SiliconFlowAI)\n\nCoding like Opus4.7 / 1M context window / Native multimodal\n@MiniMax_AI M3 is now on\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061982733266833572#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT @RyanLeeMiniMax: \ud83d\udd25 MiniMax-M3 just got faster.\n\nThanks for all the excitement around MiniMax-M3 \u2014 the response has been far beyond our e\u2026",
+      "description": "RT @RyanLeeMiniMax: \ud83d\udd25 MiniMax-M3 just got faster.\n\nThanks for all the excitement around MiniMax-M3 \u2014 the response has been far beyond our e\u2026"
+    },
+    "https://nitter.net/gneubig/status/2061427328555573446#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: Looking good \ud83d\udc40\n\nHistorically MiniMax models have worked well in OpenHands, looking forward to giving this one a whirl!",
+      "description": "Looking good \ud83d\udc40\n\nHistorically MiniMax models have worked well in OpenHands, looking forward to giving this one a whirl!\n\n\nMiniMax (official) (@MiniMax_AI)\n\nIntroducing MiniMax M3: The First Open-Weights Model to Combine Three Frontier Capabilities\n\n- Coding & Agentic Frontier: 59.0% SWE-Bench\u2026"
+    },
+    "https://nitter.net/MistralDevs/status/2062142245424271675#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MistralDevs",
+      "title": "Check this out!\n@Jordanis_Staf just shipped a full AI support triage system using @MistralAI Workflows \u2014 and it's genuinely impressive.\n\nHere's what it does:\n\ud83d\udce7 Classifies incoming support emails into your own categories\n\ud83c\udf0d Drafts replies in the sender's language\n\ud83d\udc1b Uses Devstral to actually read your codebase and propose concrete bug fixes or feature options\n\nAnd the whole thing is customizable \u2014 routing rules, model per step, reply tone, human-in-the-loop triggers.\n\nRepo \ud83d\udc49 https://github.com/J-Staff/mistral-workflow-support-triage\nDemo \ud83d\udc49 https://youtu.be/4-l-yOpV4vo\n\nBig ups to @Jordanis_Staf for showing what's possible with Workflows\ud83d\udd25",
+      "description": "Check this out!\n@Jordanis_Staf just shipped a full AI support triage system using @MistralAI Workflows \u2014 and it's genuinely impressive.\n\nHere's what it does:\n\ud83d\udce7 Classifies incoming support emails into your own categories\n\ud83c\udf0d Drafts replies in the sender's language\n\ud83d\udc1b Uses Devstral to actually read\u2026"
+    },
+    "https://nitter.net/fal/status/2061858129940279657#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "OpenAIDevs",
+      "title": "RT by @OpenAIDevs: fal is an official launch partner for @OpenAI's new role-specific plugins in Codex, live today.\n\nWith fal in Codex, creative teams can pull models, assets, and workflows from fal directly into Codex sessions. Faster from a question or brief to useful output, without leaving the agent.",
+      "description": "fal is an official launch partner for @OpenAI's new role-specific plugins in Codex, live today.\n\nWith fal in Codex, creative teams can pull models, assets, and workflows from fal directly into Codex sessions. Faster from a question or brief to useful output, without leaving the agent.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/_mohansolo/status/2061960989143441735#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "antigravity",
+      "title": "RT by @antigravity: We\u2019ve rolled out a new version of Gemini 3.5 Flash in Antigravity that boasts much less and has higher endurance on harder tasks. Thanks for all of the feedback on the model. Keep it coming, we will act quickly across the stack to make the experience even better.\n\nWe\u2019ve also gone ahead and reset Gemini rate limits for all users so you can start running this new model immediately.",
+      "description": "We\u2019ve rolled out a new version of Gemini 3.5 Flash in Antigravity that boasts much less and has higher endurance on harder tasks. Thanks for all of the feedback on the model. Keep it coming, we will act quickly across the stack to make the experience even better.\n\nWe\u2019ve also gone ahead and reset\u2026"
+    },
+    "https://nitter.net/ollama/status/2062011586940956762#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "ollama",
+      "title": "R to @ollama: docs.ollama.com/integrations\u2026",
+      "description": "docs.ollama.com/integrations\u2026\n"
+    },
+    "https://nitter.net/ollama/status/2062011585355551231#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "ollama",
+      "title": "Pinned: You can use Hermes Desktop with Ollama using local or cloud models. \n\nGet started \ud83d\udc47\ud83d\udc47\ud83d\udc47",
+      "description": "You can use Hermes Desktop with Ollama using local or cloud models. \n\nGet started \ud83d\udc47\ud83d\udc47\ud83d\udc47\n\n\nNous Research (@NousResearch)\n\nThe next evolution of Hermes Agent is here! \n\nIntroducing Hermes Desktop: everything you love about Hermes, now native on your machine.\n\nFirst demoed in Jensen's GTC keynote,\u2026"
+    },
+    "https://nitter.net/arena/status/2061894541888962712#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "arena",
+      "title": "MAI-Image-2.5 ranks #2 in the Image Edit Arena and advances the Pareto frontier.\n\nThat means: at its price tier, no model scores higher on Arena.\n\nCongrats again to @MicrosoftAI on this release!",
+      "description": "MAI-Image-2.5 ranks #2 in the Image Edit Arena and advances the Pareto frontier.\n\nThat means: at its price tier, no model scores higher on Arena.\n\nCongrats again to @MicrosoftAI on this release!\n\n\n\n\nArena.ai (@arena)\n\nMAI-Image-2.5 has officially released from @MicrosoftAI landing at #2 in the\u2026"
+    },
+    "https://huggingface.co/blog/Dharma-AI/direct-preference-optimization-beyond-chatbots": {
+      "edition": "2026-06-03-Morning",
+      "feed": "HuggingFace Blog",
+      "title": "Direct Preference Optimization Beyond\u00a0Chatbots",
+      "description": ""
+    },
+    "https://huggingface.co/blog/adding-mcp-tools-to-reachy-mini": {
+      "edition": "2026-06-03-Morning",
+      "feed": "HuggingFace Blog",
+      "title": "Adding MCP Tools to Reachy Mini",
+      "description": ""
     }
   },
-  "last_run": "2026-06-03T00:00:40.748633+00:00"
+  "last_run": "2026-06-03T15:01:23.084317+00:00"
 }
