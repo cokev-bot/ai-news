@@ -9473,7 +9473,541 @@
       "feed": "ollama",
       "title": "Excited for Ollama to be working with @nvidia for the NVIDIA RTX Spark launch!",
       "description": "Excited for Ollama to be working with @nvidia for the NVIDIA RTX Spark launch!\n\n\n\n\nNVIDIA (@nvidia)\n\nNVIDIA RTX Spark: a 1-petaflop superchip, the full CUDA and RTX ecosystem, and Windows-native agents. A new beginning for personal computers.\n\n\n\n\n\n\u2014\u2026"
+    },
+    "https://www.ft.com/content/e2980d15-b593-4946-8f2f-fecf2b543e1a": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "FT AI",
+      "title": "Trump signs watered-down AI vetting order after Maga infighting",
+      "description": "President\u2019s directive will allow the US government to gain early access to cutting-edge models"
+    },
+    "https://www.ft.com/content/1b3e3117-b979-4187-b983-c785d230c09b": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "FT AI",
+      "title": "Kyle included \u2018more positive language\u2019 in AI speech after Mandelson advice",
+      "description": "Documents raise questions since the advisory firm co-founded by Labour veteran represented big AI companies"
+    },
+    "https://www.ft.com/content/e8b86648-61b3-4b48-8bd4-a50f03de92d8": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "FT AI",
+      "title": "Microsoft targets Anthropic with new model releases",
+      "description": "Software giant\u2019s AI chief Mustafa Suleyman says focus is on developing products for business users"
+    },
+    "https://www.ft.com/content/7344ae89-6104-4b3f-a86b-18c7348830de": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "FT AI",
+      "title": "The China-US tech truce is fragile",
+      "description": "A new wave of supply chain conflict is brewing"
+    },
+    "https://www.ft.com/content/159fde75-7ad7-452f-a385-574655558da0": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "FT AI",
+      "title": "US convertible bonds set for record year as issuers harness AI boom",
+      "description": "Investors embrace zero-interest debt for options on high-growth tech stocks"
+    },
+    "https://www.nytimes.com/2026/06/02/technology/trump-executive-order-ai.html": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "NYT AI",
+      "title": "Trump Signs Executive Order Seeking Oversight of A.I. Models",
+      "description": "The order, which signaled a shift from the hands-off approach the White House had previously taken toward A.I., followed debates over how to gain control of A.I. models without disrupting innovation."
+    },
+    "https://www.nytimes.com/2026/06/02/us/politics/military-ai-laws-congress.html": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "NYT AI",
+      "title": "Congress to Consider Restricting How the Military Uses A.I.",
+      "description": "One measure would codify rules tech companies have requested, including a ban on using artificial intelligence for domestic surveillance."
+    },
+    "https://www.nytimes.com/video/opinion/100000010932835/ian-bremmer-on-the-risks-america-poses-to-the-world.html": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "NYT AI",
+      "title": "Ian Bremmer on the Risks America Poses to the World",
+      "description": "The political risk analyst Ian Bremmer argues that the greatest driver of risk in the world right now is President Trump."
+    },
+    "https://nitter.net/claudeai/status/2061829560505655316#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: From The Problem Solvers, our series featuring founders taking on hard problems with Claude: https://claude.com/problem-solvers",
+      "description": "From The Problem Solvers, our series featuring founders taking on hard problems with Claude: claude.com/problem-solvers"
+    },
+    "https://nitter.net/claudeai/status/2061829558999912680#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "claudeai",
+      "title": "Interpreting law is one of the oldest jobs in the world. @MaxJunestrand, co-founder and CEO of @WeAreLegora, is bringing it into its next era with Claude.\n\nHis bet: every new model release raises the tide, and Legora is building the boats for everyone else.",
+      "description": "Interpreting law is one of the oldest jobs in the world. @MaxJunestrand, co-founder and CEO of @WeAreLegora, is bringing it into its next era with Claude.\n\nHis bet: every new model release raises the tide, and Legora is building the boats for everyone else.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/GeminiApp/status/2061842235457720507#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "GeminiApp",
+      "title": "See Gemini Omni in action with a live demo from one of the team members who helped build it.\n\nJoin us on Discord as Product Manager Chloe shares how to use Gemini Omni\u2019s multimodal inputs, real-world knowledge, and easy conversational editing to create videos like never before.\n\n\ud83d\udc49Join the Discord to watch live: http://discord.gg/gemini\n\ud83d\udcc5 Wednesday, June 3 at 11:30am PT",
+      "description": "See Gemini Omni in action with a live demo from one of the team members who helped build it.\n\nJoin us on Discord as Product Manager Chloe shares how to use Gemini Omni\u2019s multimodal inputs, real-world knowledge, and easy conversational editing to create videos like never before.\n\n\ud83d\udc49Join the\u2026"
+    },
+    "https://nitter.net/EasyRouterIO/status/2061824301033209934#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: MiniMax M3 is now available on and it\u2019s 50% off this week.@MiniMax_AI \n\n1M context \u00b7 SOTA coding (SWE-Bench Pro 59%) \u00b7 Native multimodal \u00b7 caching read $0.12/M tokens originally and now only $0.06/M tokens!\n\nAccess M3 \u2014 and 60+ other frontier models \u2014 through a single EasyRouter API endpoint.\nTry it now \u2192 http://easyrouter.io/login?promo=2i\u2026",
+      "description": "MiniMax M3 is now available on and it\u2019s 50% off this week.@MiniMax_AI \n\n1M context \u00b7 SOTA coding (SWE-Bench Pro 59%) \u00b7 Native multimodal \u00b7 caching read $0.12/M tokens originally and now only $0.06/M tokens!\n\nAccess M3 \u2014 and 60+ other frontier models \u2014 through a single EasyRouter API\u2026"
+    },
+    "https://nitter.net/OpenAI/status/2061888058459570279#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: From question to model.\n\nThe public equity investing plugin for Codex.",
+      "description": "From question to model.\n\nThe public equity investing plugin for Codex.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2061887949516730502#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: Prep faster. Sell smarter.\n\nThe sales plugin for Codex.",
+      "description": "Prep faster. Sell smarter.\n\nThe sales plugin for Codex.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2061887890607755498#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: Turn ideas into live prototypes.\n\nThe product design plugin for Codex.",
+      "description": "Turn ideas into live prototypes.\n\nThe product design plugin for Codex.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2061887828058075190#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: Bring your briefs to life.\n\nThe creative production plugin for Codex.",
+      "description": "Bring your briefs to life.\n\nThe creative production plugin for Codex.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2061887650391625870#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "We\u2019re making Codex more useful for your work by expanding plugins beyond individual tools.\n\nThese plugins turn Codex into a specialist for a specific role with a single install, no coding required.\n\nCodex can access 62 popular apps and 110 skills for work across sales, data analytics, creative production, product design, and public equity investing.\n\nhttps://openai.com/index/codex-for-every-role-tool-workflow/",
+      "description": "We\u2019re making Codex more useful for your work by expanding plugins beyond individual tools.\n\nThese plugins turn Codex into a specialist for a specific role with a single install, no coding required.\n\nCodex can access 62 popular apps and 110 skills for work across sales, data analytics, creative\u2026"
+    },
+    "https://nitter.net/OpenAI/status/2061845950705140121#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: openai.com/index/codex-for-e\u2026",
+      "description": "openai.com/index/codex-for-e\u2026\n"
+    },
+    "https://nitter.net/OpenAI/status/2061845949170045346#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAI",
+      "title": "Building apps has never been easier.\n\nWith Sites, Codex can turn your work, ideas, and plans into an interactive website or app your team can explore, use, and share with a URL.\n\nRolling out to Business and Enterprise plans, before expanding more broadly.",
+      "description": "Building apps has never been easier.\n\nWith Sites, Codex can turn your work, ideas, and plans into an interactive website or app your team can explore, use, and share with a URL.\n\nRolling out to Business and Enterprise plans, before expanding more broadly.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAINewsroom/status/2061834718224777579#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAINewsroom",
+      "title": "Codex now has more than 5M weekly active users.\n\nBut the bigger story is what people are using it for: not just writing code, but getting more work done across research, analysis, content, and operations.\n\nOur new report on how Codex is becoming a productivity tool for knowledge work: https://openai.com/index/codex-for-knowledge-work/",
+      "description": "Codex now has more than 5M weekly active users.\n\nBut the bigger story is what people are using it for: not just writing code, but getting more work done across research, analysis, content, and operations.\n\nOur new report on how Codex is becoming a productivity tool for knowledge work:\u2026"
+    },
+    "https://nitter.net/ClaudeDevs/status/2061877343078244459#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "We\u2019ve added a CLI for Claude Platform to make every API endpoint runnable from your terminal.\n\nCall the Messages API, stand up Claude Managed Agents, pipe results straight into your shell.\n\nThe ant CLI is well understood by coding agents (Claude Code) using the claude-api skill.",
+      "description": "We\u2019ve added a CLI for Claude Platform to make every API endpoint runnable from your terminal.\n\nCall the Messages API, stand up Claude Managed Agents, pipe results straight into your shell.\n\nThe ant CLI is well understood by coding agents (Claude Code) using the claude-api skill.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2061877351253004619#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: The CLI can kick off a Managed Agents session, send it an event, and the agent goes to work: reasoning, calling tools, working toward an answer. \n\nWhen it's done (or stuck), pull the trace: every event, every tool call, every decision is retrievable from the same CLI.",
+      "description": "The CLI can kick off a Managed Agents session, send it an event, and the agent goes to work: reasoning, calling tools, working toward an answer. \n\nWhen it's done (or stuck), pull the trace: every event, every tool call, every decision is retrievable from the same CLI.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2061877352725200963#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: Claude Code knows how to use ant using the built-in \"/claude-api\" skill\n\nAsk it to list your sessions, upload a folder of PDFs, or debug a run.\n\nIt shells out to the CLI and reads the results back without any glue code.\n\nInstall with brew, curl, or go: https://platform.claude.com/docs/en/api/sdks/cli",
+      "description": "Claude Code knows how to use ant using the built-in \"/claude-api\" skill\n\nAsk it to list your sessions, upload a folder of PDFs, or debug a run.\n\nIt shells out to the CLI and reads the results back without any glue code.\n\nInstall with brew, curl, or go: platform.claude.com/docs/en/\u2026\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2061888366791246071#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "Pinned: Role-specific plugins in Codex are built around the work teams actually do.\n\nPlugins for Data Analytics, Creative Production, and Product Design give Codex the tools and context to create reports, creative directions, and prototypes.\n\nBuilt and used by OpenAI teams.",
+      "description": "Role-specific plugins in Codex are built around the work teams actually do.\n\nPlugins for Data Analytics, Creative Production, and Product Design give Codex the tools and context to create reports, creative directions, and prototypes.\n\nBuilt and used by OpenAI teams.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/arena/status/2061894546359980126#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Learn more about MAI-Image-2.5 on the @MicrosoftAI blog: https://microsoft.ai/news/introducing-mai-image-2-5",
+      "description": "Learn more about MAI-Image-2.5 on the @MicrosoftAI blog: microsoft.ai/news/introducin\u2026\n"
+    },
+    "https://nitter.net/arena/status/2061887246165582140#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Dive into the leaderboard details for Image Edit Arena at: https://arena.ai/leaderboard/image-edit",
+      "description": "Dive into the leaderboard details for Image Edit Arena at: arena.ai/leaderboard/image-e\u2026\n"
+    },
+    "https://nitter.net/arena/status/2060122770743390252#m": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: We took Claude Opus 4.8 for a test drive in the Code Arena: Frontend. Check out some of the outputs on YouTube: https://www.youtube.com/watch?v=TwbuM-Owg4A\n\nCode Arena: Frontend evaluates models on agentic frontend coding tasks from real users building apps and websites (HTML and React). Head over to Arena and try it for yourself in Battle Mode.\n\nScores for Opus 4.8 coming soon.",
+      "description": "We took Claude Opus 4.8 for a test drive in the Code Arena: Frontend. Check out some of the outputs on YouTube: piped.video/watch?v=TwbuM-Ow\u2026\n\nCode Arena: Frontend evaluates models on agentic frontend coding tasks from real users building apps and websites (HTML and React). Head over to Arena\u2026"
+    },
+    "https://huggingface.co/blog/Hcompany/holo31": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Holo3.1: Fast & Local Computer Use Agents",
+      "description": ""
+    },
+    "https://huggingface.co/blog/JetBrains/mellum2-launch": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Introducing Mellum2: A 12B Mixture-of-Experts Model by JetBrains",
+      "description": ""
+    },
+    "https://huggingface.co/blog/ibm-research/agent-logic-and-scalable-ai-adoption": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Beyond LLMs: Why Scalable Enterprise AI Adoption Depends on Agent Logic",
+      "description": ""
+    },
+    "https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Welcome NVIDIA Cosmos 3: The First Open Omni-model for Physical AI Reasoning and Action",
+      "description": ""
+    },
+    "https://huggingface.co/blog/torch-profiler": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Profiling in PyTorch (Part 1): A Beginner's Guide to torch.profiler",
+      "description": ""
+    },
+    "https://huggingface.co/blog/local-reachy-mini-conversation": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Reachy Mini goes fully local",
+      "description": ""
+    },
+    "https://huggingface.co/blog/delta-weight-sync": {
+      "edition": "2026-06-02-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Shipping a Trillion Parameters With a Hub Bucket: Delta Weight Sync in TRL",
+      "description": ""
+    },
+    "https://www.ft.com/content/7567c267-366b-416d-9a5b-d06528297fa0": {
+      "edition": "2026-06-02-Evening",
+      "feed": "FT AI",
+      "title": "Could we interest you in $675bn in tech stocks?",
+      "description": "Tech offers more equity to hungry investors"
+    },
+    "https://nitter.net/AnthropicAI/status/2061924580222968183#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "AnthropicAI",
+      "title": "This Executive Order is an important step in strengthening America\u2019s leadership in AI. \n\nWe look forward to collaborating with the White House to support its implementation.\n\nhttps://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
+      "description": "This Executive Order is an important step in strengthening America\u2019s leadership in AI. \n\nWe look forward to collaborating with the White House to support its implementation.\n\nwhitehouse.gov/presidential-\u2026\n"
+    },
+    "https://nitter.net/GeminiApp/status/2061908161074978964#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: x.com/DavidMaliglowka/status\u2026",
+      "description": "nitter.net/DavidMaliglowka/status\u2026\n\n\nDavid Maliglowka (@DavidMaliglowka)\n\nGemini Omni \ud83c\udfd5\ufe0f prompt in \ud83e\uddf5\n\nVideo\n  \n\n\n\n\n\n\u2014 https://nitter.net/DavidMaliglowka/status/2061892937122718152#m\n\n"
+    },
+    "https://nitter.net/NotebookLM/status/2061916823860174980#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "NotebookLM",
+      "title": "Notice anything different about the NotebookLM mobile app recently? \ud83d\ude09\n\nWell, we\u2019re excited to REPORT that you can now create briefing docs, study guides, and blog posts on-the-go! \ud83d\udcf1\u2728\n\nAre there any other report formats you'd want specifically for mobile? Let us know!",
+      "description": "Notice anything different about the NotebookLM mobile app recently? \ud83d\ude09\n\nWell, we\u2019re excited to REPORT that you can now create briefing docs, study guides, and blog posts on-the-go! \ud83d\udcf1\u2728\n\nAre there any other report formats you'd want specifically for mobile? Let us know!\n"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061947988306760143#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "MiniMax_AI",
+      "title": "MiniMax M3 now on GMI Cloud @gmi_cloud",
+      "description": "MiniMax M3 now on GMI Cloud @gmi_cloud\n\n\nGMI Cloud (@gmi_cloud)\n\nCompared MiniMax M3 against three other frontier open-source models: DeepSeek V4, Qwen 3.7 Max, and MiMo 2.5 Pro\n\nMiniMax M3 crashed others on:\n1. collision physics\n2. 3D pinball generation\n\nIt was the only model that produced a\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061944355896885502#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "MiniMax_AI",
+      "title": "R to @togethercompute: Try MiniMax-M3 today -> https://platform.minimax.io",
+      "description": "Try MiniMax-M3 today -&gt; platform.minimax.io\n"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061944204604101020#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "MiniMax_AI",
+      "title": "We wrapped a live session on M3 yesterday with the @togethercompute  team & our researchers @zpysky1125 and @HaohaiSun \n\nA few highlights \ud83e\uddf5  \n1. MSA (MiniMax Sparse Attention) is the star \u2b50\ufe0f. Unlike CSA/HCA, which compress the KV cache, MSA keeps the real, uncompressed KV and does block-level selection with a small top-K. That's how the 1M context window stays tractable.\n\n2. The efficiency win is huge. In our previous generation, ~30% of per-decode wall-clock time went to the attention kernel. With MSA that now drops to ~5%. Big gains for long-context generation.  \n\n3. M3 isn't just a coding model. Natively multimodal (image + video in), ability to handle long-horizon agentic tasks, and even operate a desktop computer. People are already throwing game-dev + Minecraft-style builds at it (Unity included) and it's holding its own.\n\n4. M3 can self-evaluate on vision-coding tasks: it builds a website or SVG, browses and inspects its own rendered output, judges it, and iterates - grading work visually.\n\n5. We're also seeing junior-analyst-level performance on finance tasks; something we haven't even showcased publicly yet.  \n\n6. What's next: harder long-horizon / multi-file tasks in future releases, scaling data + post-training (RL) compute toward pre-training scale, and going deeper into finance, legal & bio.  \n\nThanks to everyone who joined \ud83d\ude4f\n\nTry M3 link in the comments\ud83d\udc47",
+      "description": "We wrapped a live session on M3 yesterday with the @togethercompute  team & our researchers @zpysky1125 and @HaohaiSun \n\nA few highlights \ud83e\uddf5  \n1. MSA (MiniMax Sparse Attention) is the star \u2b50\ufe0f. Unlike CSA/HCA, which compress the KV cache, MSA keeps the real, uncompressed KV and does block-level\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061935980291223631#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "MiniMax_AI",
+      "title": "MiniMax-M3 #6 overall on @ValsAI \n\nthe new open-weight SOTA \ud83d\ude80",
+      "description": "MiniMax-M3 #6 overall on @ValsAI \n\nthe new open-weight SOTA \ud83d\ude80\n\n\nVals AI (@ValsAI)\n\nMiniMax just released MiniMax-M3, their first multimodal model. It is the new open-weight SOTA on the Vals Index and the Vals Multimodal Index, and #6 overall.\n\n\n\n\n\n\u2014\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061913941702533241#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "MiniMax_AI",
+      "title": "Amazing deep dive from the @togethercompute  team on serving MiniMax M3 in production. \n\nM3 with its 1M context, native multimodality and MiniMax Sparse Attention requires real work across paged decode, index scoring, and multimodal preprocessing to get it efficient.\n\nThis is what a partnership at the frontier looks like\ud83e\udd1d.",
+      "description": "Amazing deep dive from the @togethercompute  team on serving MiniMax M3 in production. \n\nM3 with its 1M context, native multimodality and MiniMax Sparse Attention requires real work across paged decode, index scoring, and multimodal preprocessing to get it efficient.\n\nThis is what a partnership\u2026"
+    },
+    "https://nitter.net/OpenAI/status/2061887715520721151#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: Translate data into answers.\n\nThe data analytics plugin for Codex.",
+      "description": "Translate data into answers.\n\nThe data analytics plugin for Codex.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2061947411141169494#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "ClaudeDevs",
+      "title": "We've updated /fork in Claude Code\n\n/fork now runs a background agent with your exact context (system prompt, tools, history, model) and prompt cache. The result gets returned to your session.\n\n/branch (the old /fork) still copies the transcript to a new session you drive.",
+      "description": "We've updated /fork in Claude Code\n\n/fork now runs a background agent with your exact context (system prompt, tools, history, model) and prompt cache. The result gets returned to your session.\n\n/branch (the old /fork) still copies the transcript to a new session you drive.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/trq212/status/2061907538741006796#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "ClaudeDevs",
+      "title": "RT by @ClaudeDevs: Workflows are the biggest upgrade to Claude Code\u2019s capabilities since skills and subagents.\n\nI dove deep into it with @sidbid to figure out best practices, examples and more. \u00a0I\u2019m particularly excited about the non-technical tasks it enables for Claude Code.",
+      "description": "Workflows are the biggest upgrade to Claude Code\u2019s capabilities since skills and subagents.\n\nI dove deep into it with @sidbid to figure out best practices, examples and more. \u00a0I\u2019m particularly excited about the non-technical tasks it enables for Claude Code.\n\n\nThariq\u2026"
+    },
+    "https://nitter.net/ClaudeDevs/status/2061900434722496604#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "ClaudeDevs",
+      "title": "How do you get Claude Code to check its own work before handing it back?\n\nWatch how you can encode your manual checks so Claude closes its own feedback loop:",
+      "description": "How do you get Claude Code to check its own work before handing it back?\n\nWatch how you can encode your manual checks so Claude closes its own feedback loop:\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2061877349629759847#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: Use the ant CLI to create and update Claude Managed Agents, locally or from CI.\n\nVersion control your agent as YAML in Git and have CI run \"ant beta:agents update\" to sync changes to the Claude Platform.",
+      "description": "Use the ant CLI to create and update Claude Managed Agents, locally or from CI.\n\nVersion control your agent as YAML in Git and have CI run \"ant beta:agents update\" to sync changes to the Claude Platform.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2061877346790191615#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: Every API resource is a subcommand, including messages, models, and files.\n\nBuild requests from typed flags or piped YAML, inline a file with @.path, reshape any response with --transform.\n\nOutput as json, yaml, jsonl, or explore (default) for a TUI you can fold and search.",
+      "description": "Every API resource is a subcommand, including messages, models, and files.\n\nBuild requests from typed flags or piped YAML, inline a file with @.path, reshape any response with --transform.\n\nOutput as json, yaml, jsonl, or explore (default) for a TUI you can fold and search.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/ClaudeDevs/status/2061877344772722848#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "ClaudeDevs",
+      "title": "R to @ClaudeDevs: For interactive login, the CLI supports \"ant auth login\". \n\nThis runs a browser OAuth flow, scopes the token to a workspace, and stores it for you.\n\nThat one credential is then used by the CLI (and even the SDKs) to authenticate your API calls.",
+      "description": "For interactive login, the CLI supports \"ant auth login\". \n\nThis runs a browser OAuth flow, scopes the token to a workspace, and stores it for you.\n\nThat one credential is then used by the CLI (and even the SDKs) to authenticate your API calls.\n"
+    },
+    "https://nitter.net/googleaidevs/status/2061924474178650294#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "googleaidevs",
+      "title": "R to @googleaidevs: Check out how you can use Science Skills  \u2193\nhttps://antigravity.google/use-cases/science",
+      "description": "Check out how you can use Science Skills  \u2193\nantigravity.google/use-cases\u2026\n"
+    },
+    "https://nitter.net/googleaidevs/status/2061924472245153863#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "googleaidevs",
+      "title": "Building autonomous agents for scientific discovery? \ud83e\uddec\ud83e\udd16\n\n@GoogleDeepMind Science Skills is now available on GitHub. We've open-sourced this specialized toolkit to accelerate your agentic workflows with scientific grounding and higher token efficiency.\n\nDownload now \u2193\nhttps://github.com/google-deepmind/science-skills",
+      "description": "Building autonomous agents for scientific discovery? \ud83e\uddec\ud83e\udd16\n\n@GoogleDeepMind Science Skills is now available on GitHub. We've open-sourced this specialized toolkit to accelerate your agentic workflows with scientific grounding and higher token efficiency.\n\nDownload now \u2193\ngithub.com/google-deepmind/s\u2026\n"
+    },
+    "https://nitter.net/jeffbarg/status/2061855890370662421#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "OpenAIDevs",
+      "title": "RT by @OpenAIDevs: Clay is now available in Codex.\n\nSales Reps can prioritize accounts, research buyers, draft outreach, and send emails \u2014 all from OpenAI's coding agent, powered by the Functions your team already built in Clay.\n\nIt was great working with the @OpenAIDevs team on this!",
+      "description": "Clay is now available in Codex.\n\nSales Reps can prioritize accounts, research buyers, draft outreach, and send emails \u2014 all from OpenAI's coding agent, powered by the Functions your team already built in Clay.\n\nIt was great working with the @OpenAIDevs team on this!\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2061888379093184727#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: When the output is a prototype, Sites gives your team a place to review it together.",
+      "description": "When the output is a prototype, Sites gives your team a place to review it together.\n\n\nOpenAI (@OpenAI)\n\nBuilding apps has never been easier.\n\nWith Sites, Codex can turn your work, ideas, and plans into an interactive website or app your team can explore, use, and share with a URL.\n\nRolling out\u2026"
+    },
+    "https://nitter.net/antigravity/status/2061928539499421968#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "antigravity",
+      "title": "Keep your Antigravity workflow unified. Sync conversations in Antigravity 2.0 with Antigravity CLI by simply confirming the import.",
+      "description": "Keep your Antigravity workflow unified. Sync conversations in Antigravity 2.0 with Antigravity CLI by simply confirming the import.\n\n\nJack Wotherspoon (@JackWoth98)\n\nStart a conversation in Antigravity and pick up where you left off in Antigravity CLI \ud83d\udcab\n\nAs of yesterday's v1.0.4 release of the\u2026"
+    },
+    "https://nitter.net/chihyaoma/status/2061888354342588487#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "arena",
+      "title": "RT by @arena: Our image editing model is out today!\n\nBetter than latest Nano banana from Gemini, landing us top 2 worldwide!\n\nAnother milestone by such a small and incredible team.",
+      "description": "Our image editing model is out today!\n\nBetter than latest Nano banana from Gemini, landing us top 2 worldwide!\n\nAnother milestone by such a small and incredible team.\n\n\nArena.ai (@arena)\n\nMAI-Image-2.5 has officially released from @MicrosoftAI landing at #2 in the Image Edit Arena\u2026"
+    },
+    "https://nitter.net/arena/status/2061904818227257705#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "arena",
+      "title": "R to @MicrosoftAI: Learn more about all the new MAI models from Build, including MAI-Image-2.5 here: \n\nhttps://x.com/MicrosoftAI/status/2061887500541366489?s=20",
+      "description": "Learn more about all the new MAI models from Build, including MAI-Image-2.5 here: \n\nnitter.net/MicrosoftAI/status/206\u2026\n\n\nMicrosoft AI (@MicrosoftAI)\n\nSeven new models launching at Build: let\u2019s go!\nReasoning. Code. Image. Transcribe. Voice. \n\nBuilt from scratch on a clean data lineage, designed\u2026"
+    },
+    "https://nitter.net/DKThomp/status/2061110056293106118#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "karpathy",
+      "title": "RT by @karpathy: This has quietly been a miracle month in medicine. \n\nIn the last 5 weeks we\u2019ve got news on:  \n\n- retatrutide, the triple agonist GLP-1 from Lilly, basically melting fat and body-wide inflammation at record levels \n- RevMed\u2019s new pancreatic cancer drug showing unprecedented abilities to extend life \n- small trial of a one-and-done PCSK9 gene editing therapy for slashing LDL cholesterol \n- Mayo\u2019s AI-assisted radiology showing vastly improved cancer detection \n- this new therapy for metastatic solid tumors\n\nThis stuff is at varying levels of evidence. Retatrutide is ~100% on its way, other stuff needs more clinical trial data. But put it together and we\u2019re maybe on the verge of majorly reducing the mortality of heart disease and cancer, the two leading causes of death in America.",
+      "description": "This has quietly been a miracle month in medicine. \n\nIn the last 5 weeks we\u2019ve got news on:  \n\n- retatrutide, the triple agonist GLP-1 from Lilly, basically melting fat and body-wide inflammation at record levels \n- RevMed\u2019s new pancreatic cancer drug showing unprecedented abilities to extend\u2026"
+    },
+    "https://nitter.net/trq212/status/2061907337154367865#m": {
+      "edition": "2026-06-02-Evening",
+      "feed": "karpathy",
+      "title": "RT by @karpathy: x.com/i/article/206185053570\u2026",
+      "description": "x.com/i/article/206185053570\u2026"
+    },
+    "https://www.ft.com/content/c9d562d6-1448-4a40-8198-0cb1f0dc2032": {
+      "edition": "2026-06-03-Morning",
+      "feed": "FT AI",
+      "title": "Hyperscalers and the equity tap: more to come",
+      "description": "Plus, corporate culture and returns"
+    },
+    "https://www.ft.com/content/d26faf9d-6ef0-4480-ab80-bac6a36fe173": {
+      "edition": "2026-06-03-Morning",
+      "feed": "FT AI",
+      "title": "Inside Alexandr Wang\u2019s bid to revive Meta\u2019s AI edge",
+      "description": "Muse Spark model has brought momentum, but doubts linger over whether billionaire prodigy can close the gap with rivals"
+    },
+    "https://www.ft.com/content/7cbc3986-be9f-4568-a3e5-fbd3b987f2e9": {
+      "edition": "2026-06-03-Morning",
+      "feed": "FT AI",
+      "title": "A guide for the perplexed on AI",
+      "description": "Should we think of this technology as boon, bane or bubble?"
+    },
+    "https://www.ft.com/content/9f8b9962-7674-442f-82d2-dc457135e023": {
+      "edition": "2026-06-03-Morning",
+      "feed": "FT AI",
+      "title": "The AI boom gives 1990s IT brands a second crack at youth",
+      "description": "Top-line growth is exciting Wall Street even though the groups are just one link in a much larger AI-related domino rally"
+    },
+    "https://www.ft.com/content/7cc7800f-18ed-47d8-9539-221ae3e16182": {
+      "edition": "2026-06-03-Morning",
+      "feed": "FT AI",
+      "title": "\u2018Close to the Terminator narrative\u2019: the dawn of self-improving AI",
+      "description": "Industry chiefs say a looming tech breakthrough might deliver superintelligence. Safety experts say we\u2019re not ready"
+    },
+    "https://www.ft.com/content/cf4ef84e-811e-423b-a29b-037f9d361cdf": {
+      "edition": "2026-06-03-Morning",
+      "feed": "FT AI",
+      "title": "AI Labs: Zuckerberg\u2019s $100bn gamble",
+      "description": "Can Mark Zuckerberg\u2019s Meta buy its way into the AI game?"
+    },
+    "https://www.nytimes.com/2026/06/03/technology/european-union-tech-sovereignty.html": {
+      "edition": "2026-06-03-Morning",
+      "feed": "NYT AI",
+      "title": "European Union Outlines Plan to Reduce Dependence on American Tech",
+      "description": "The 27-nation European Union outlined how it hopes to expand the region\u2019s data centers, semiconductors and cloud computing capabilities."
+    },
+    "https://www.nytimes.com/2026/06/03/business/dealbook/trump-ai-pivot.html": {
+      "edition": "2026-06-03-Morning",
+      "feed": "NYT AI",
+      "title": "What\u2019s Driving Trump\u2019s Big A.I. Pivot",
+      "description": "Even the industry-friendly Trump White House is finding that it needs to have greater oversight of powerful new artificial intelligence models."
+    },
+    "https://www.nytimes.com/2026/06/03/opinion/american-dream-politics-negativity.html": {
+      "edition": "2026-06-03-Morning",
+      "feed": "NYT AI",
+      "title": "Feeling Nihilistic? You\u2019re Not Alone.",
+      "description": "A case for mourning the American dream."
+    },
+    "https://www.nytimes.com/2026/06/02/technology/scientists-find-way-to-supercharge-dangerous-computer-worms-with-ai.html": {
+      "edition": "2026-06-03-Morning",
+      "feed": "NYT AI",
+      "title": "Scientists Find Way to Supercharge Dangerous Computer \u2018Worms\u2019 With A.I.",
+      "description": "Researchers at the University of Toronto showed how hackers could use artificial intelligence to create a program that could target any known flaw in the world\u2019s computers."
+    },
+    "https://nitter.net/BaiduAI_News/status/2062076967948865887#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "BaiduAI_News",
+      "title": "What if martial arts could be learned from AI? \ud83e\udd16\nWe\u2019ve built an AI model for Chinese Wushu \u2014 turning master-to-student teachings into visual, easy-to-learn experiences.\nMaking tradition easier to learn, and easier to pass on. \u2728",
+      "description": "What if martial arts could be learned from AI? \ud83e\udd16\nWe\u2019ve built an AI model for Chinese Wushu \u2014 turning master-to-student teachings into visual, easy-to-learn experiences.\nMaking tradition easier to learn, and easier to pass on. \u2728\n\nVideo\n  \n"
+    },
+    "https://nitter.net/BaiduAI_News/status/2062075875189784809#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "BaiduAI_News",
+      "title": "Bringing the stars to the mountains!\nTogether with an aerospace educator, Baidu App brought a hands-on aerospace class to children in rural Hebei. Through interactive AI-powered experiences, students explored the wonders of space and discovered new possibilities beyond the classroom.\ud83c\udf0d",
+      "description": "Bringing the stars to the mountains!\nTogether with an aerospace educator, Baidu App brought a hands-on aerospace class to children in rural Hebei. Through interactive AI-powered experiences, students explored the wonders of space and discovered new possibilities beyond the classroom.\ud83c\udf0d\n"
+    },
+    "https://nitter.net/BaiduAI_News/status/2062006093191209185#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "BaiduAI_News",
+      "title": "Your next mobile app might start with a sentence. \ud83d\ude80\ud83c\udf1f",
+      "description": "Your next mobile app might start with a sentence. \ud83d\ude80\ud83c\udf1f\n\n\nMeDo (@Medo_CodeFree)\n\n\ud83d\udd25Breaking Boundaries: You can now build REAL mobile apps with MeDo! \ud83d\ude80\n\nJust describe your idea in natural language. and watch MeDo generate your first mobile app.\n\n\ud83c\udf1f iOS & Android Support: Build native apps for both\u2026"
+    },
+    "https://nitter.net/joshwoodward/status/2062025667852812583#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "GeminiApp",
+      "title": "RT by @GeminiApp: \u2705 Papercut fixed: Thinking Levels are now available on Gemini across Web, iOS, and Android.",
+      "description": "\u2705 Papercut fixed: Thinking Levels are now available on Gemini across Web, iOS, and Android.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/victoriawu77/status/2061858677322309966#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: 10 minutes with @MiniMax_AI M3 and it built this magic website.\n\nHand-tracking particle playground. \ud83d\udc4b\n\nWave your hand \u2192 Saturn rings spin, galaxies explode, hearts and flowers float in real time. \ud83e\ude90\n\nMinimax M3 somehow nailed complex + three.js @threejs gesture controls + particle systems in one go. \n\nThe coding ability of this open-weight model is seriously impressive. Honestly didn't expect it to handle this level of frontend interaction so well.\n\nLive demo + prompt below \ud83d\udc47",
+      "description": "10 minutes with @MiniMax_AI M3 and it built this magic website.\n\nHand-tracking particle playground. \ud83d\udc4b\n\nWave your hand \u2192 Saturn rings spin, galaxies explode, hearts and flowers float in real time. \ud83e\ude90\n\nMinimax M3 somehow nailed complex + three.js @threejs gesture controls + particle systems in one\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2062044105447018506#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "\ud83c\udfc6 Build with Minimax-M3 \u2192 win a Token Plan Plus\n\nOur official Discord Showcase Event is live! \ud83c\udf89\n\nCreate a case or project with Minimax-M3, post it in our showcase forum, and you could be 1 of 10 winners.\n\nHow to enter:\n1. Join the Discord \ud83d\udc49 https://discord.gg/mmx\n2. Build something with Minimax-M3\n3. Post it in the showcase forum + tag Minimax-M3\n4. Add a short note on how you used it\n\n\ud83d\uddd3 June 2\u20138, 2026\n\ud83c\udf81 10 winners, announced June 9 in our official Discord\n\n#MinimaxM3 #AI",
+      "description": "\ud83c\udfc6 Build with Minimax-M3 \u2192 win a Token Plan Plus\n\nOur official Discord Showcase Event is live! \ud83c\udf89\n\nCreate a case or project with Minimax-M3, post it in our showcase forum, and you could be 1 of 10 winners.\n\nHow to enter:\n1. Join the Discord \ud83d\udc49 discord.gg/mmx\n2. Build something with Minimax-M3\n3.\u2026"
+    },
+    "https://nitter.net/VictorSuOrtiz/status/2062024383326204200#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: We heard, and we executed. MiniMax M3 faster than ever.",
+      "description": "We heard, and we executed. MiniMax M3 faster than ever.\n\n\nRyanLee (@RyanLeeMiniMax)\n\n\ud83d\udd25 MiniMax-M3 just got faster.\n\nThanks for all the excitement around MiniMax-M3 \u2014 the response has been far beyond our expectations.\nLast night, we rolled out a major inference upgrade:\n\n\ud83d\udee0\ufe0f Fixed an issue that\u2026"
+    },
+    "https://nitter.net/SkylerMiao7/status/2062030819988996472#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: M3 brings sparse attention + 1M context + multimodality, and Together did the hard serving work to make it fast.\n\nGreat collaboration with the Together team.",
+      "description": "M3 brings sparse attention + 1M context + multimodality, and Together did the hard serving work to make it fast.\n\nGreat collaboration with the Together team.\n\n\nTogether AI (@togethercompute)\n\nx.com/i/article/206189124776\u2026\n\n\n\n\u2014 https://nitter.net/togethercompute/status/2061894792020197881#m\n\n"
+    },
+    "https://nitter.net/elliotarledge/status/2061896243258020129#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: timelapse #147 (15.5 hrs)\n- woke up to @MiniMax_AI M3 launch including my kernelbench-hard (lowest score at below 30% which emphasizes the hardness)\n- did a space with the minimax and together ai folks\n- burned 1.1B tokens\n- got nanogpt at nvfp4 training stability to match bf16. this is a prereq for another problem im trying to solve\n- got my timelapse workflow nailed with a solid html page lol\n- loosing patience from anthropic rate limits",
+      "description": "timelapse #147 (15.5 hrs)\n- woke up to @MiniMax_AI M3 launch including my kernelbench-hard (lowest score at below 30% which emphasizes the hardness)\n- did a space with the minimax and together ai folks\n- burned 1.1B tokens\n- got nanogpt at nvfp4 training stability to match bf16. this is a prereq\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061987216914788401#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "Day-0 on SiliconFlow and 50% off \ud83d\udd25 the first week\n\nfrontier coding, 1M context, and native multimodal, all in one open-weights model. This is what we built M3 for.  \n\nGo try it \ud83d\udc47",
+      "description": "Day-0 on SiliconFlow and 50% off \ud83d\udd25 the first week\n\nfrontier coding, 1M context, and native multimodal, all in one open-weights model. This is what we built M3 for.  \n\nGo try it \ud83d\udc47\n\n\nSiliconFlow (@SiliconFlowAI)\n\nCoding like Opus4.7 / 1M context window / Native multimodal\n@MiniMax_AI M3 is now on\u2026"
+    },
+    "https://nitter.net/MiniMax_AI/status/2061982733266833572#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT @RyanLeeMiniMax: \ud83d\udd25 MiniMax-M3 just got faster.\n\nThanks for all the excitement around MiniMax-M3 \u2014 the response has been far beyond our e\u2026",
+      "description": "RT @RyanLeeMiniMax: \ud83d\udd25 MiniMax-M3 just got faster.\n\nThanks for all the excitement around MiniMax-M3 \u2014 the response has been far beyond our e\u2026"
+    },
+    "https://nitter.net/gneubig/status/2061427328555573446#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MiniMax_AI",
+      "title": "RT by @MiniMax_AI: Looking good \ud83d\udc40\n\nHistorically MiniMax models have worked well in OpenHands, looking forward to giving this one a whirl!",
+      "description": "Looking good \ud83d\udc40\n\nHistorically MiniMax models have worked well in OpenHands, looking forward to giving this one a whirl!\n\n\nMiniMax (official) (@MiniMax_AI)\n\nIntroducing MiniMax M3: The First Open-Weights Model to Combine Three Frontier Capabilities\n\n- Coding & Agentic Frontier: 59.0% SWE-Bench\u2026"
+    },
+    "https://nitter.net/MistralDevs/status/2062142245424271675#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "MistralDevs",
+      "title": "Check this out!\n@Jordanis_Staf just shipped a full AI support triage system using @MistralAI Workflows \u2014 and it's genuinely impressive.\n\nHere's what it does:\n\ud83d\udce7 Classifies incoming support emails into your own categories\n\ud83c\udf0d Drafts replies in the sender's language\n\ud83d\udc1b Uses Devstral to actually read your codebase and propose concrete bug fixes or feature options\n\nAnd the whole thing is customizable \u2014 routing rules, model per step, reply tone, human-in-the-loop triggers.\n\nRepo \ud83d\udc49 https://github.com/J-Staff/mistral-workflow-support-triage\nDemo \ud83d\udc49 https://youtu.be/4-l-yOpV4vo\n\nBig ups to @Jordanis_Staf for showing what's possible with Workflows\ud83d\udd25",
+      "description": "Check this out!\n@Jordanis_Staf just shipped a full AI support triage system using @MistralAI Workflows \u2014 and it's genuinely impressive.\n\nHere's what it does:\n\ud83d\udce7 Classifies incoming support emails into your own categories\n\ud83c\udf0d Drafts replies in the sender's language\n\ud83d\udc1b Uses Devstral to actually read\u2026"
+    },
+    "https://nitter.net/fal/status/2061858129940279657#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "OpenAIDevs",
+      "title": "RT by @OpenAIDevs: fal is an official launch partner for @OpenAI's new role-specific plugins in Codex, live today.\n\nWith fal in Codex, creative teams can pull models, assets, and workflows from fal directly into Codex sessions. Faster from a question or brief to useful output, without leaving the agent.",
+      "description": "fal is an official launch partner for @OpenAI's new role-specific plugins in Codex, live today.\n\nWith fal in Codex, creative teams can pull models, assets, and workflows from fal directly into Codex sessions. Faster from a question or brief to useful output, without leaving the agent.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/_mohansolo/status/2061960989143441735#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "antigravity",
+      "title": "RT by @antigravity: We\u2019ve rolled out a new version of Gemini 3.5 Flash in Antigravity that boasts much less and has higher endurance on harder tasks. Thanks for all of the feedback on the model. Keep it coming, we will act quickly across the stack to make the experience even better.\n\nWe\u2019ve also gone ahead and reset Gemini rate limits for all users so you can start running this new model immediately.",
+      "description": "We\u2019ve rolled out a new version of Gemini 3.5 Flash in Antigravity that boasts much less and has higher endurance on harder tasks. Thanks for all of the feedback on the model. Keep it coming, we will act quickly across the stack to make the experience even better.\n\nWe\u2019ve also gone ahead and reset\u2026"
+    },
+    "https://nitter.net/ollama/status/2062011586940956762#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "ollama",
+      "title": "R to @ollama: docs.ollama.com/integrations\u2026",
+      "description": "docs.ollama.com/integrations\u2026\n"
+    },
+    "https://nitter.net/ollama/status/2062011585355551231#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "ollama",
+      "title": "Pinned: You can use Hermes Desktop with Ollama using local or cloud models. \n\nGet started \ud83d\udc47\ud83d\udc47\ud83d\udc47",
+      "description": "You can use Hermes Desktop with Ollama using local or cloud models. \n\nGet started \ud83d\udc47\ud83d\udc47\ud83d\udc47\n\n\nNous Research (@NousResearch)\n\nThe next evolution of Hermes Agent is here! \n\nIntroducing Hermes Desktop: everything you love about Hermes, now native on your machine.\n\nFirst demoed in Jensen's GTC keynote,\u2026"
+    },
+    "https://nitter.net/arena/status/2061894541888962712#m": {
+      "edition": "2026-06-03-Morning",
+      "feed": "arena",
+      "title": "MAI-Image-2.5 ranks #2 in the Image Edit Arena and advances the Pareto frontier.\n\nThat means: at its price tier, no model scores higher on Arena.\n\nCongrats again to @MicrosoftAI on this release!",
+      "description": "MAI-Image-2.5 ranks #2 in the Image Edit Arena and advances the Pareto frontier.\n\nThat means: at its price tier, no model scores higher on Arena.\n\nCongrats again to @MicrosoftAI on this release!\n\n\n\n\nArena.ai (@arena)\n\nMAI-Image-2.5 has officially released from @MicrosoftAI landing at #2 in the\u2026"
+    },
+    "https://huggingface.co/blog/Dharma-AI/direct-preference-optimization-beyond-chatbots": {
+      "edition": "2026-06-03-Morning",
+      "feed": "HuggingFace Blog",
+      "title": "Direct Preference Optimization Beyond\u00a0Chatbots",
+      "description": ""
+    },
+    "https://huggingface.co/blog/adding-mcp-tools-to-reachy-mini": {
+      "edition": "2026-06-03-Morning",
+      "feed": "HuggingFace Blog",
+      "title": "Adding MCP Tools to Reachy Mini",
+      "description": ""
     }
   },
-  "last_run": "2026-06-02T15:01:02.075622+00:00"
+  "last_run": "2026-06-03T15:01:23.084317+00:00"
 }

@@ -1,0 +1,266 @@
+---
+layout: post
+title: "AI News Digest — Evening Edition"
+date: 2026-06-02 17:00:40 -0700
+categories: news digest
+---
+
+<h2>🤖 AI News — Evening Edition · 2026-06-02 17:00 PDT</h2>
+<p>Scanning 31 feeds · 7 accounts posted · 19 items</p>
+<hr>
+<div style="background: #f9f9f9; padding: 15px; border-left: 5px solid #ccc; margin-bottom: 20px;">
+  <h3 style="margin-top:0;">🌍 The Big Picture</h3>
+  <p>**The Big Picture**
+
+The AI landscape is rapidly shifting from simple chat interfaces toward autonomous, "closed-loop" agentic workflows and specialized high-performance models. There is a significant push toward integrating LLMs directly into developer environments via sophisticated CLIs—exemplified by Claude Code’s new workflows, background agent `/fork` capabilities, and YAML-based agent versioning (<a href="https://x.com/trq212/status/2061907538741006796#m">Source</a>, 7, 19)—as well as OpenAI’s Codex integrating professional tools like Clay and "Sites" for instant prototyping (<a href="https://x.com/OpenAIDevs/status/2061888379093184727#m">Source</a>, 15). This trend toward "agentic" software engineering is mirrored in the model layer by the release of MiniMax M3, which utilizes Sparse Attention to handle 1M context windows and can self-evaluate its own visual coding outputs (<a href="https://x.com/MiniMax_AI/status/2061944204604101020#m">Source</a>).
+
+Simultaneously, frontier models are diversifying into high-stakes specialized domains. While Microsoft AI is pushing the boundaries of image editing with MAI-Image-2.5 (<a href="https://x.com/chihyaoma/status/2061888354342588487#m">Source</a>), the broader impact of AI is scaling into critical infrastructure and healthcare, with AI-assisted radiology and gene-editing therapies signaling a potential paradigm shift in reducing global mortality from cancer and heart disease (<a href="https://x.com/DKThomp/status/2061110056293106118#m">Source</a>). Together, these developments indicate a transition where AI is no longer just a generative assistant but a functional operator capable of autonomous iteration and real-world clinical application.</p>
+</div>
+
+<h2>News</h2>
+<p><strong>Summary:</strong> The current AI landscape is being shaped by a significant shift in how technology companies are structuring returns for investors. There is a growing trend of tech firms offering increased equity to attract and retain hungry investors, with a notable valuation of $675 billion in tech stocks currently being positioned (<a href="https://www.ft.com/content/7567c267-366b-416d-9a5b-d06528297fa0">FT AI</a>).
+
+This movement reflects a strategic pivot in the financial ecosystem supporting AI development, as companies seek to maintain capital inflows by leveraging equity as a primary incentive (<a href="https://www.ft.com/content/7567c267-366b-416d-9a5b-d06528297fa0">FT AI</a>). For AI executives, this suggests a high-stakes environment where the appetite for tech equity remains strong despite the immense capital requirements of the sector.
+
+Collectively, these developments underscore the financial volatility and opportunity inherent in the AI race, where the mechanisms of investment are evolving to keep pace with the rapid scale of technological ambition (<a href="https://www.ft.com/content/7567c267-366b-416d-9a5b-d06528297fa0">FT AI</a>).</p>
+
+<details>
+  <summary><strong>Subsections</strong></summary>
+
+<h3>Financial Times</h3>
+
+<p><strong>FT AI</strong>: <a href="https://www.ft.com/content/7567c267-366b-416d-9a5b-d06528297fa0">Could we interest you in $675bn in tech stocks?</a></p><p>Tech offers more equity to hungry investors</p>
+
+</details>
+
+<h2>AI Labs</h2>
+<p><strong>Summary:</strong> **Strategic Briefing: Evolution of Agentic Workflows and Frontier Multimodal Models**
+
+The AI ecosystem is shifting from simple chat interfaces toward sophisticated agentic environments, highlighted by the expansion of Claude Code’s orchestration capabilities and the release of MiniMax M3. These developments signal a move toward "closed-loop" systems where AI can not only generate code but also self-evaluate, version-control its own configurations, and manage complex, long-horizon tasks (<a href="https://x.com/ClaudeDevs/status/2061900434722496604#m">ClaudeDevs</a>, 4, 12).
+
+Claude Code has introduced significant tooling enhancements to bridge the gap between development and deployment. The introduction of "Workflows" is described as the most substantial upgrade since the addition of skills and subagents, specifically enabling non-technical tasks (<a href="https://x.com/trq212/status/2061907538741006796#m">ClaudeDevs</a>). The platform now supports the creation and update of "Claude Managed Agents" via the `ant` CLI, allowing developers to version-control agents as YAML in Git and sync changes through CI (<a href="https://x.com/ClaudeDevs/status/2061877349629759847#m">ClaudeDevs</a>). Technical agility has been further improved with the updated `/fork` command, which runs a background agent using the exact session context and prompt cache, and a comprehensive CLI that treats API resources as subcommands (<a href="https://x.com/ClaudeDevs/status/2061877346790191615#m">ClaudeDevs</a>, 6). User experience is further streamlined through a browser OAuth flow for interactive login via `ant auth login` (<a href="https://x.com/ClaudeDevs/status/2061877344772722848#m">ClaudeDevs</a>), while complementary tools like Antigravity 2.0 now allow for synchronized conversations between the app and CLI (<a href="https://x.com/antigravity/status/2061928539499421968#m">antigravity</a>).
+
+Simultaneously, MiniMax has released M3, a natively multimodal open-weight model that has achieved a #6 overall ranking on the Vals Index (<a href="https://x.com/MiniMax_AI/status/2061935980291223631#m">MiniMax_AI</a>). M3 distinguishes itself through MiniMax Sparse Attention (MSA), which utilizes block-level selection to maintain an uncompressed KV cache, reducing attention kernel wall-clock time from ~30% to ~5% and making a 1M context window tractable (<a href="https://x.com/MiniMax_AI/status/2061944204604101020#m">MiniMax_AI</a>). The model demonstrates superior performance in complex physics and 3D generation compared to other frontier models like DeepSeek V4 and Qwen 3.7 Max (<a href="https://x.com/MiniMax_AI/status/2061947988306760143#m">MiniMax_AI</a>). Beyond coding, M3 can operate a desktop computer, perform junior-analyst level finance tasks, and self-evaluate vision-coding tasks by inspecting its own rendered outputs (<a href="https://x.com/MiniMax_AI/status/2061944204604101020#m">MiniMax_AI</a>).
+
+Other major labs are focusing on integrating third-party utility and rapid prototyping. OpenAI’s Codex now includes "Sites," which transforms plans into interactive websites shared via URL (<a href="https://x.com/OpenAIDevs/status/2061888379093184727#m">OpenAIDevs</a>), and has integrated Clay, enabling sales representatives to conduct account research and outreach directly from the coding agent (<a href="https://x.com/jeffbarg/status/2061855890370662421#m">OpenAIDevs</a>). Collectively, these updates suggest a trajectory where AI models are no longer standalone tools but are integrated into the full DevOps and business lifecycle, from Git-based versioning and production serving (<a href="https://x.com/MiniMax_AI/status/2061913941702533241#m">MiniMax_AI</a>) to automated lead generation (<a href="https://x.com/jeffbarg/status/2061855890370662421#m">OpenAIDevs</a>).</p>
+
+<details>
+  <summary><strong>Subsections</strong></summary>
+
+<h3>Anthropic</h3>
+
+<p><strong>ClaudeDevs</strong>: How do you get Claude Code to check its own work before handing it back?
+
+Watch how you can encode your manual checks so Claude closes its own feedback loop: <a href="https://x.com/ClaudeDevs/status/2061900434722496604#m">🔗</a></p>
+
+<p><strong>ClaudeDevs</strong>: R to @ClaudeDevs: Every API resource is a subcommand, including messages, models, and files.
+
+Build requests from typed flags or piped YAML, inline a file with @.path, reshape any response with --transform.
+
+Output as json, yaml, jsonl, or explore (default) for a TUI you can fold and search. <a href="https://x.com/ClaudeDevs/status/2061877346790191615#m">🔗</a></p>
+
+<p><strong>ClaudeDevs</strong>: R to @ClaudeDevs: For interactive login, the CLI supports "ant auth login". 
+
+This runs a browser OAuth flow, scopes the token to a workspace, and stores it for you.
+
+That one credential is then used by the CLI (and even the SDKs) to authenticate your API calls. <a href="https://x.com/ClaudeDevs/status/2061877344772722848#m">🔗</a></p>
+
+<p><strong>ClaudeDevs</strong>: R to @ClaudeDevs: Use the ant CLI to create and update Claude Managed Agents, locally or from CI.
+
+Version control your agent as YAML in Git and have CI run "ant beta:agents update" to sync changes to the Claude Platform. <a href="https://x.com/ClaudeDevs/status/2061877349629759847#m">🔗</a></p>
+
+<p><strong>ClaudeDevs</strong>: RT by @ClaudeDevs: Workflows are the biggest upgrade to Claude Code’s capabilities since skills and subagents.
+
+I dove deep into it with @sidbid to figure out best practices, examples and more.  I’m particularly excited about the non-technical tasks it enables for Claude Code. <a href="https://x.com/trq212/status/2061907538741006796#m">🔗</a></p>
+
+<p><strong>ClaudeDevs</strong>: We've updated /fork in Claude Code
+
+/fork now runs a background agent with your exact context (system prompt, tools, history, model) and prompt cache. The result gets returned to your session.
+
+/branch (the old /fork) still copies the transcript to a new session you drive. <a href="https://x.com/ClaudeDevs/status/2061947411141169494#m">🔗</a></p>
+
+
+<h3>Google</h3>
+
+<p><strong>antigravity</strong>: Keep your Antigravity workflow unified. Sync conversations in Antigravity 2.0 with Antigravity CLI by simply confirming the import. <a href="https://x.com/antigravity/status/2061928539499421968#m">🔗</a></p>
+
+
+<h3>MiniMax</h3>
+
+<p><strong>MiniMax_AI</strong>: Amazing deep dive from the @togethercompute  team on serving MiniMax M3 in production. 
+
+M3 with its 1M context, native multimodality and MiniMax Sparse Attention requires real work across paged decode, index scoring, and multimodal preprocessing to get it efficient.
+
+This is what a partnership at the frontier looks like🤝. <a href="https://x.com/MiniMax_AI/status/2061913941702533241#m">🔗</a></p>
+
+<p><strong>MiniMax_AI</strong>: MiniMax M3 now on GMI Cloud @gmi_cloud <a href="https://x.com/MiniMax_AI/status/2061947988306760143#m">🔗</a></p>
+
+<p><strong>MiniMax_AI</strong>: MiniMax-M3 #6 overall on @ValsAI 
+
+the new open-weight SOTA 🚀 <a href="https://x.com/MiniMax_AI/status/2061935980291223631#m">🔗</a></p>
+
+<p><strong>MiniMax_AI</strong>: R to @togethercompute: Try MiniMax-M3 today -> <a href="https://platform.minimax.io">https://platform.minimax.io</a> <a href="https://x.com/MiniMax_AI/status/2061944355896885502#m">🔗</a></p>
+
+<p><strong>MiniMax_AI</strong>: We wrapped a live session on M3 yesterday with the @togethercompute  team & our researchers @zpysky1125 and @HaohaiSun 
+
+A few highlights 🧵  
+1. MSA (MiniMax Sparse Attention) is the star ⭐️. Unlike CSA/HCA, which compress the KV cache, MSA keeps the real, uncompressed KV and does block-level selection with a small top-K. That's how the 1M context window stays tractable.
+
+2. The efficiency win is huge. In our previous generation, ~30% of per-decode wall-clock time went to the attention kernel. With MSA that now drops to ~5%. Big gains for long-context generation.  
+
+3. M3 isn't just a coding model. Natively multimodal (image + video in), ability to handle long-horizon agentic tasks, and even operate a desktop computer. People are already throwing game-dev + Minecraft-style builds at it (Unity included) and it's holding its own.
+
+4. M3 can self-evaluate on vision-coding tasks: it builds a website or SVG, browses and inspects its own rendered output, judges it, and iterates - grading work visually.
+
+5. We're also seeing junior-analyst-level performance on finance tasks; something we haven't even showcased publicly yet.  
+
+6. What's next: harder long-horizon / multi-file tasks in future releases, scaling data + post-training (RL) compute toward pre-training scale, and going deeper into finance, legal & bio.  
+
+Thanks to everyone who joined 🙏
+
+Try M3 link in the comments👇 <a href="https://x.com/MiniMax_AI/status/2061944204604101020#m">🔗</a></p>
+
+
+<h3>OpenAI</h3>
+
+<p><strong>OpenAIDevs</strong>: R to @OpenAIDevs: When the output is a prototype, Sites gives your team a place to review it together. <a href="https://x.com/OpenAIDevs/status/2061888379093184727#m">🔗</a></p>
+
+<p><strong>OpenAIDevs</strong>: RT by @OpenAIDevs: Clay is now available in Codex.
+
+Sales Reps can prioritize accounts, research buyers, draft outreach, and send emails — all from OpenAI's coding agent, powered by the Functions your team already built in Clay.
+
+It was great working with the @OpenAIDevs team on this! <a href="https://x.com/jeffbarg/status/2061855890370662421#m">🔗</a></p>
+
+</details>
+
+<h2>Developers</h2>
+<p><strong>Summary:</strong> The developer ecosystem is currently shifting toward "agentic" orchestration, with a heavy emphasis on integrating AI coding tools directly into professional DevOps and business workflows. OpenAI is expanding the utility of its Codex agent by integrating third-party tools like Clay for sales automation (<a href="https://x.com/jeffbarg/status/2061855890370662421#m">OpenAIDevs</a>) and introducing "Sites," which allows teams to transform ideas and plans into shareable, interactive websites or apps (<a href="https://x.com/OpenAIDevs/status/2061888379093184727#m">OpenAIDevs</a>).
+
+Simultaneously, the Claude ecosystem is aggressively maturing its developer toolchain via the "ant" CLI. New capabilities allow developers to manage Claude Managed Agents through version-controlled YAML files in Git, enabling synchronization to the Claude Platform via CI (<a href="https://x.com/ClaudeDevs/status/2061877349629759847#m">ClaudeDevs</a>). The CLI further streamlines the developer experience with "ant auth login" for browser-based OAuth authentication (<a href="https://x.com/ClaudeDevs/status/2061877344772722848#m">ClaudeDevs</a>) and a comprehensive set of subcommands for managing API resources such as messages, models, and files (<a href="https://x.com/ClaudeDevs/status/2061877346790191615#m">ClaudeDevs</a>).
+
+Technical refinements to Claude Code are focusing on autonomy and context management. The introduction of "Workflows" is cited as a major capability upgrade, particularly for non-technical tasks (<a href="https://x.com/trq212/status/2061907538741006796#m">ClaudeDevs</a>). Additionally, the updated `/fork` command now launches a background agent that maintains the user's exact context and prompt cache, returning results to the active session (<a href="https://x.com/ClaudeDevs/status/2061947411141169494#m">ClaudeDevs</a>). Developers are also finding ways to encode manual checks into Claude Code to ensure the model closes its own feedback loop before delivering work (<a href="https://x.com/ClaudeDevs/status/2061900434722496604#m">ClaudeDevs</a>).
+
+Collectively, these updates signal a move away from simple chat interfaces toward integrated environments where AI agents are version-controlled, authenticated, and capable of autonomous background execution (<a href="https://x.com/ClaudeDevs/status/2061877349629759847#m">ClaudeDevs</a>, <a href="https://x.com/ClaudeDevs/status/2061947411141169494#m">ClaudeDevs</a>). This trend is further bolstered by cross-platform synchronization, as seen in Antigravity 2.0’s ability to sync conversations between its interface and CLI (<a href="https://x.com/antigravity/status/2061928539499421968#m">antigravity</a>).</p>
+
+<details>
+  <summary><strong>Subsections</strong></summary>
+
+<h3>Anthropic</h3>
+
+<p><strong>ClaudeDevs</strong>: How do you get Claude Code to check its own work before handing it back?
+
+Watch how you can encode your manual checks so Claude closes its own feedback loop: <a href="https://x.com/ClaudeDevs/status/2061900434722496604#m">🔗</a></p>
+
+<p><strong>ClaudeDevs</strong>: R to @ClaudeDevs: Every API resource is a subcommand, including messages, models, and files.
+
+Build requests from typed flags or piped YAML, inline a file with @.path, reshape any response with --transform.
+
+Output as json, yaml, jsonl, or explore (default) for a TUI you can fold and search. <a href="https://x.com/ClaudeDevs/status/2061877346790191615#m">🔗</a></p>
+
+<p><strong>ClaudeDevs</strong>: R to @ClaudeDevs: For interactive login, the CLI supports "ant auth login". 
+
+This runs a browser OAuth flow, scopes the token to a workspace, and stores it for you.
+
+That one credential is then used by the CLI (and even the SDKs) to authenticate your API calls. <a href="https://x.com/ClaudeDevs/status/2061877344772722848#m">🔗</a></p>
+
+<p><strong>ClaudeDevs</strong>: R to @ClaudeDevs: Use the ant CLI to create and update Claude Managed Agents, locally or from CI.
+
+Version control your agent as YAML in Git and have CI run "ant beta:agents update" to sync changes to the Claude Platform. <a href="https://x.com/ClaudeDevs/status/2061877349629759847#m">🔗</a></p>
+
+<p><strong>ClaudeDevs</strong>: RT by @ClaudeDevs: Workflows are the biggest upgrade to Claude Code’s capabilities since skills and subagents.
+
+I dove deep into it with @sidbid to figure out best practices, examples and more.  I’m particularly excited about the non-technical tasks it enables for Claude Code. <a href="https://x.com/trq212/status/2061907538741006796#m">🔗</a></p>
+
+<p><strong>ClaudeDevs</strong>: We've updated /fork in Claude Code
+
+/fork now runs a background agent with your exact context (system prompt, tools, history, model) and prompt cache. The result gets returned to your session.
+
+/branch (the old /fork) still copies the transcript to a new session you drive. <a href="https://x.com/ClaudeDevs/status/2061947411141169494#m">🔗</a></p>
+
+
+<h3>Google</h3>
+
+<p><strong>antigravity</strong>: Keep your Antigravity workflow unified. Sync conversations in Antigravity 2.0 with Antigravity CLI by simply confirming the import. <a href="https://x.com/antigravity/status/2061928539499421968#m">🔗</a></p>
+
+
+<h3>OpenAI</h3>
+
+<p><strong>OpenAIDevs</strong>: R to @OpenAIDevs: When the output is a prototype, Sites gives your team a place to review it together. <a href="https://x.com/OpenAIDevs/status/2061888379093184727#m">🔗</a></p>
+
+<p><strong>OpenAIDevs</strong>: RT by @OpenAIDevs: Clay is now available in Codex.
+
+Sales Reps can prioritize accounts, research buyers, draft outreach, and send emails — all from OpenAI's coding agent, powered by the Functions your team already built in Clay.
+
+It was great working with the @OpenAIDevs team on this! <a href="https://x.com/jeffbarg/status/2061855890370662421#m">🔗</a></p>
+
+</details>
+
+<h2>Developer Tools</h2>
+<p><strong>Summary:</strong> The latest update to the Antigravity developer ecosystem focuses on enhancing workflow continuity by bridging the gap between graphical and command-line interfaces. The v1.0.4 release introduces the ability to sync conversations between Antigravity 2.0 and the Antigravity CLI (<a href="https://x.com/antigravity/status/2061928539499421968#m">antigravity</a>).
+
+This integration allows developers to maintain a unified workflow, enabling them to start a conversation in the Antigravity application and seamlessly resume that same interaction within the CLI (<a href="https://x.com/antigravity/status/2061928539499421968#m">antigravity</a>). By simplifying the import process through a basic confirmation, the update reduces friction when switching between different development environments (<a href="https://x.com/antigravity/status/2061928539499421968#m">antigravity</a>).
+
+Collectively, these developments signal a push toward more flexible, hybrid interfaces that allow AI-assisted development to move fluidly between high-level UI tools and the terminal.</p>
+
+<details>
+  <summary><strong>Subsections</strong></summary>
+
+<h3>Google</h3>
+
+<p><strong>antigravity</strong>: Keep your Antigravity workflow unified. Sync conversations in Antigravity 2.0 with Antigravity CLI by simply confirming the import. <a href="https://x.com/antigravity/status/2061928539499421968#m">🔗</a></p>
+
+</details>
+
+<h2>Benchmarks</h2>
+<p><strong>Summary:</strong> Microsoft AI has significantly expanded its model ecosystem with the launch of seven new models at its Build event (<a href="https://x.com/arena/status/2061904818227257705#m">MicrosoftAI</a>). These releases span a diverse range of capabilities, including reasoning, coding, transcription, voice, and image generation (<a href="https://x.com/arena/status/2061904818227257705#m">MicrosoftAI</a>). Notably, these models were developed from scratch using a clean data lineage (<a href="https://x.com/arena/status/2061904818227257705#m">MicrosoftAI</a>).
+
+A standout among these releases is MAI-Image-2.5, which is specifically designed for image editing (<a href="https://x.com/chihyaoma/status/2061888354342588487#m">Arena.ai</a>). According to performance data from the Image Edit Arena, MAI-Image-2.5 has secured the #2 position worldwide (<a href="https://x.com/chihyaoma/status/2061888354342588487#m">Arena.ai</a>). This performance puts the model ahead of Gemini's latest "Nano banana" iteration (<a href="https://x.com/chihyaoma/status/2061888354342588487#m">Arena.ai</a>).
+
+Collectively, these developments signal Microsoft's strategy to deploy a broad suite of specialized, high-performance models across multiple modalities (<a href="https://x.com/arena/status/2061904818227257705#m">MicrosoftAI</a>). By achieving a top-two global ranking in image editing, Microsoft AI is positioning its new image capabilities as a primary competitor to other leading AI labs (<a href="https://x.com/chihyaoma/status/2061888354342588487#m">Arena.ai</a>).</p>
+
+<details>
+  <summary><strong>Subsections</strong></summary>
+
+<h3>Arena.ai</h3>
+
+<p><strong>arena</strong>: R to @MicrosoftAI: Learn more about all the new MAI models from Build, including MAI-Image-2.5 here: 
+
+<a href="https://x.com/MicrosoftAI/status/2061887500541366489?s=20">https://x.com/MicrosoftAI/status/2061887500541366489?s=20</a> <a href="https://x.com/arena/status/2061904818227257705#m">🔗</a></p>
+
+<p><strong>arena</strong>: RT by @arena: Our image editing model is out today!
+
+Better than latest Nano banana from Gemini, landing us top 2 worldwide!
+
+Another milestone by such a small and incredible team. <a href="https://x.com/chihyaoma/status/2061888354342588487#m">🔗</a></p>
+
+</details>
+
+<h2>Under Review</h2>
+<p><strong>Summary:</strong> Recent developments in medical science suggest a potential paradigm shift in treating the leading causes of mortality in the United States, specifically heart disease and cancer (<a href="https://x.com/DKThomp/status/2061110056293106118#m">karpathy</a>). This "miracle month" in medicine is characterized by a convergence of breakthroughs across gene editing, pharmacology, and artificial intelligence (<a href="https://x.com/DKThomp/status/2061110056293106118#m">karpathy</a>).
+
+A significant portion of this progress is driven by advanced pharmacology and genetics. Eli Lilly's retatrutide, a triple agonist GLP-1, has demonstrated record levels of fat reduction and body-wide inflammation (<a href="https://x.com/DKThomp/status/2061110056293106118#m">karpathy</a>). In the realm of cardiovascular health, a small-scale trial for a "one-and-done" PCSK9 gene editing therapy has shown success in slashing LDL cholesterol (<a href="https://x.com/DKThomp/status/2061110056293106118#m">karpathy</a>).
+
+Simultaneously, oncology is seeing a surge in high-impact updates, including a new therapy for metastatic solid tumors and a pancreatic cancer drug from RevMed that has shown unprecedented ability to extend patient lives (<a href="https://x.com/DKThomp/status/2061110056293106118#m">karpathy</a>). These pharmaceutical gains are being augmented by AI integration, such as Mayo Clinic's AI-assisted radiology, which has vastly improved cancer detection rates (<a href="https://x.com/DKThomp/status/2061110056293106118#m">karpathy</a>).
+
+While these developments vary in their level of evidence—with retatrutide being nearly certain and others requiring further clinical trial data—collectively they signal a move toward drastically reducing mortality from the world's most lethal diseases (<a href="https://x.com/DKThomp/status/2061110056293106118#m">karpathy</a>).</p>
+
+<details>
+  <summary><strong>Subsections</strong></summary>
+
+<h3>Researchers</h3>
+
+<p><strong>karpathy</strong>: RT by @karpathy: This has quietly been a miracle month in medicine. 
+
+In the last 5 weeks we’ve got news on:  
+
+- retatrutide, the triple agonist GLP-1 from Lilly, basically melting fat and body-wide inflammation at record levels 
+- RevMed’s new pancreatic cancer drug showing unprecedented abilities to extend life 
+- small trial of a one-and-done PCSK9 gene editing therapy for slashing LDL cholesterol 
+- Mayo’s AI-assisted radiology showing vastly improved cancer detection 
+- this new therapy for metastatic solid tumors
+
+This stuff is at varying levels of evidence. Retatrutide is ~100% on its way, other stuff needs more clinical trial data. But put it together and we’re maybe on the verge of majorly reducing the mortality of heart disease and cancer, the two leading causes of death in America. <a href="https://x.com/DKThomp/status/2061110056293106118#m">🔗</a></p>
+
+<p><strong>karpathy</strong>: RT by @karpathy: x.com/i/article/206185053570… <a href="https://x.com/trq212/status/2061907337154367865#m">🔗</a></p>
+
+</details>

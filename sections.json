@@ -156,5 +156,23 @@
                 }
             }
         ]
+    },
+    {
+        "title": "Under Review",
+        "subsections": [
+            {
+                "title": "Independent Blogs",
+                "feeds": {
+                    "Simon Willison": "https://simonwillison.net/atom/everything/",
+                    "HuggingFace Blog": "https://huggingface.co/blog/feed.xml"
+                }
+            },
+            {
+                "title": "Researchers",
+                "feeds": {
+                    "karpathy": "https://nitter.net/karpathy/rss"
+                }
+            }
+        ]
     }
 ]
