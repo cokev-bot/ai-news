@@ -10493,7 +10493,271 @@
       "feed": "HuggingFace Blog",
       "title": "How to Fine-Tune Nemotron 3.5 ASR for Your Language, Domain, or Accent",
       "description": ""
+    },
+    "https://www.ft.com/content/d02d91b3-2636-454e-9442-dc7e69f51815": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "FT AI",
+      "title": "NSA using Anthropic\u2019s Mythos for cyber attacks",
+      "description": "Arrangement comes as AI lab is locked in legal battle with Pentagon over Claude model"
+    },
+    "https://www.ft.com/content/d6c1b19e-f28d-404c-b9c3-62f43848b9c1": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "FT AI",
+      "title": "Tech groups find a new way to monetise AI hype: selling volatility",
+      "description": "Elevated convertible bond issuance is, at heart, a response to the market being twitchier than usual"
+    },
+    "https://www.ft.com/content/516cd0e5-a402-4b6c-8035-d688dc5f0cf4": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "FT AI",
+      "title": "Goldman Sachs expects SpaceX\u2019s AI revenue to increase 100-fold by 2030",
+      "description": "Projections by Wall Street bank underpin the $1.78tn valuation group is pitching in IPO"
+    },
+    "https://www.nytimes.com/2026/06/04/world/canada/canada-national-ai-strategy.html": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "NYT AI",
+      "title": "Wary of Americans, Canada Bets on Its Own A.I.",
+      "description": "The country on Thursday released a national artificial intelligence strategy that focuses on building its sovereign capability and protecting consumers."
+    },
+    "https://www.nytimes.com/2026/06/04/technology/ai-agents-arena.html": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "NYT AI",
+      "title": "What Are A.I. Agents Actually Doing?",
+      "description": "A San Francisco start-up called Arena found that people are most likely to use A.I. agents on the job, particularly if they are in the tech industry."
+    },
+    "https://nitter.net/AnthropicAI/status/2062568873321513443#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "AnthropicAI",
+      "title": "R to @AnthropicAI: None of this guarantees recursive self-improvement is on the horizon. It\u2019s not yet clear that Claude is capable of research judgment\u2014of choosing the right problems to work on.\n\nBut if these trends continue, AI systems designing and building their own successors is plausible. This could revolutionize society\u2014medicine, technology, the economy\u2014for the better. But it may also compound alignment issues and ultimately lead to loss of control.\n\nThe Anthropic Institute (in collaboration with external stakeholders) will conduct research to think through the implications of increasingly powerful, potentially self-improving systems\u2014and how to create the ability for the world to make deliberate choices about the future development of the technology.\n\nRead the full post: https://www.anthropic.com/institute/recursive-self-improvement",
+      "description": "None of this guarantees recursive self-improvement is on the horizon. It\u2019s not yet clear that Claude is capable of research judgment\u2014of choosing the right problems to work on.\n\nBut if these trends continue, AI systems designing and building their own successors is plausible. This could\u2026"
+    },
+    "https://nitter.net/AnthropicAI/status/2062568870872003021#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "AnthropicAI",
+      "title": "R to @AnthropicAI: AI research is a series of next-step decisions. We looked at sessions where a human researcher took a wrong turn, showed Claude the session up to that point, and asked it what to do next. Mythos Preview improved on humans 64% of the time\u2014up from 22% in 2024.",
+      "description": "AI research is a series of next-step decisions. We looked at sessions where a human researcher took a wrong turn, showed Claude the session up to that point, and asked it what to do next. Mythos Preview improved on humans 64% of the time\u2014up from 22% in 2024.\n"
+    },
+    "https://nitter.net/AnthropicAI/status/2062568869240476050#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "AnthropicAI",
+      "title": "R to @AnthropicAI: Each time we release a model, we run the same test: give it code that trains a small AI model, ask the new model to speed it up. It takes a skilled human 4-8 hours to reach 4x faster.\n\nIn May 2024, Claude Opus 4 averaged a ~3x speedup. This April, Mythos Preview achieved ~52x.",
+      "description": "Each time we release a model, we run the same test: give it code that trains a small AI model, ask the new model to speed it up. It takes a skilled human 4-8 hours to reach 4x faster.\n\nIn May 2024, Claude Opus 4 averaged a ~3x speedup. This April, Mythos Preview achieved ~52x."
+    },
+    "https://nitter.net/AnthropicAI/status/2062568867151684045#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "AnthropicAI",
+      "title": "R to @AnthropicAI: The speedup isn\u2019t just in volume. On open-ended coding problems where answers are unclear, Claude\u2019s success rate is now 76%\u2014a 50 point jump in just 6 months.\n\nMany engineers also say Claude\u2019s code quality is now on par with human code; we expect it to be better within the year.",
+      "description": "The speedup isn\u2019t just in volume. On open-ended coding problems where answers are unclear, Claude\u2019s success rate is now 76%\u2014a 50 point jump in just 6 months.\n\nMany engineers also say Claude\u2019s code quality is now on par with human code; we expect it to be better within the year.\n"
+    },
+    "https://nitter.net/AnthropicAI/status/2062568864240836995#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "AnthropicAI",
+      "title": "R to @AnthropicAI: Today, Anthropic engineers on average ship 8x as much code per quarter as they did compared to 2021-2025.",
+      "description": "Today, Anthropic engineers on average ship 8x as much code per quarter as they did compared to 2021-2025.\n"
+    },
+    "https://nitter.net/AnthropicAI/status/2062568862479208923#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "AnthropicAI",
+      "title": "Our internal data shows Claude is accelerating AI development\u2014a possible path to recursive self-improvement, or AI autonomously building a more capable successor.\n\nIt\u2019s happening faster than we thought, and the implications deserve greater attention. https://www.anthropic.com/institute/recursive-self-improvement",
+      "description": "Our internal data shows Claude is accelerating AI development\u2014a possible path to recursive self-improvement, or AI autonomously building a more capable successor.\n\nIt\u2019s happening faster than we thought, and the implications deserve greater attention. anthropic.com/institute/recu\u2026\n"
+    },
+    "https://nitter.net/claudeai/status/2062558335358927317#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "claudeai",
+      "title": "R to @claudeai: From The Problem Solvers, our series featuring founders taking on hard problems with Claude: https://claude.com/problem-solvers",
+      "description": "From The Problem Solvers, our series featuring founders taking on hard problems with Claude: claude.com/problem-solvers"
+    },
+    "https://nitter.net/claudeai/status/2062558332695556378#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "claudeai",
+      "title": "Anton Osika (@antonosika) is the co-founder and CEO of @lovable, where anyone can build software through conversation.\n\nHis working thesis: the most underrated moat in AI is trust, and earning it takes craft, care, and obsession.",
+      "description": "Anton Osika (@antonosika) is the co-founder and CEO of @lovable, where anyone can build software through conversation.\n\nHis working thesis: the most underrated moat in AI is trust, and earning it takes craft, care, and obsession.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/GeminiApp/status/2062576290251809050#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "GeminiApp",
+      "title": "R to @GeminiApp: Prompt: \"A gigantic version of me wearing the exact same outfit and sharing the same face walks into the scene from the left. We both look at each other and wave enthusiastically.\"\n\nGemini Omni is available to all Google AI Plus, Pro and Ultra subscribers at http://gemini.google and in the app.",
+      "description": "Prompt: \"A gigantic version of me wearing the exact same outfit and sharing the same face walks into the scene from the left. We both look at each other and wave enthusiastically.\"\n\nGemini Omni is available to all Google AI Plus, Pro and Ultra subscribers at gemini.google and in the app."
+    },
+    "https://nitter.net/GeminiApp/status/2062576239001690146#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "GeminiApp",
+      "title": "See how easy it is to bring your wildest ideas to life with Gemini Omni. \n\nJust select \"Create videos\" in Gemini, add text, video, or up to five images, and let your imagination run wild.",
+      "description": "See how easy it is to bring your wildest ideas to life with Gemini Omni. \n\nJust select \"Create videos\" in Gemini, add text, video, or up to five images, and let your imagination run wild."
+    },
+    "https://nitter.net/NotebookLM/status/2062582348194197743#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "NotebookLM",
+      "title": "PRO TIP: Gamify your notebooks\n\nDon't just read your notes\u2014 investigate them. Our new Sherlock Holmes notebook turns studying into an interactive mystery game. Deduce facts, uncover clues, & prove that even the most complex matters can be elementary.\n\n\u27a1\ufe0f https://goo.gle/Sherlock",
+      "description": "PRO TIP: Gamify your notebooks\n\nDon't just read your notes\u2014 investigate them. Our new Sherlock Holmes notebook turns studying into an interactive mystery game. Deduce facts, uncover clues, &amp; prove that even the most complex matters can be elementary.\n\n\u27a1\ufe0f goo.gle/Sherlock\n"
+    },
+    "https://nitter.net/OpenAI/status/2062567561276100809#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: The new memory system will keep track of important details automatically. If you prefer the legacy saved memories experience, you can switch back in settings.\n\nThe new memory system is rolling out to Plus and Pro users in the US today, along with 2x more memory.\n\nTo access it on iOS or Android, update your ChatGPT app to the latest version. We\u2019ll expand to more plans and countries soon.",
+      "description": "The new memory system will keep track of important details automatically. If you prefer the legacy saved memories experience, you can switch back in settings.\n\nThe new memory system is rolling out to Plus and Pro users in the US today, along with 2x more memory.\n\nTo access it on iOS or Android,\u2026"
+    },
+    "https://nitter.net/OpenAI/status/2062567559673856346#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: With the new memory system, you can review and steer what ChatGPT remembers through a memory summary, with more visibility and control over how context is used.",
+      "description": "With the new memory system, you can review and steer what ChatGPT remembers through a memory summary, with more visibility and control over how context is used.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2062567558252007554#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: We\u2019re building ChatGPT to remember what matters, follow your preferences and constraints, and adapt as things change.\n\nIf you tell ChatGPT you\u2019re planning a trip in July, memory should understand when the trip is upcoming, happening, and already over.\n\nThat helps ChatGPT keep giving relevant answers as context changes.",
+      "description": "We\u2019re building ChatGPT to remember what matters, follow your preferences and constraints, and adapt as things change.\n\nIf you tell ChatGPT you\u2019re planning a trip in July, memory should understand when the trip is upcoming, happening, and already over.\n\nThat helps ChatGPT keep giving relevant\u2026"
+    },
+    "https://nitter.net/OpenAI/status/2062567556524003631#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "OpenAI",
+      "title": "We\u2019ve been researching new ways for ChatGPT memory to carry context across conversations and keep it useful over time.\n\nToday, that work is rolling out as a more capable memory system in ChatGPT. https://openai.com/index/chatgpt-memory-dreaming/",
+      "description": "We\u2019ve been researching new ways for ChatGPT memory to carry context across conversations and keep it useful over time.\n\nToday, that work is rolling out as a more capable memory system in ChatGPT. openai.com/index/chatgpt-mem\u2026\n"
+    },
+    "https://nitter.net/googleaidevs/status/2062603374789263646#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "googleaidevs",
+      "title": "Play our new open-weights music model, @GoogleMagenta RealTime 2, using a MIDI keyboard, live text prompts, and even hand gestures \u270c\ufe0f\nhttps://x.com/GoogleMagenta/status/2062589313372594538",
+      "description": "Play our new open-weights music model, @GoogleMagenta RealTime 2, using a MIDI keyboard, live text prompts, and even hand gestures \u270c\ufe0f\nnitter.net/GoogleMagenta/status/2\u2026\n\n\nGoogle Magenta Project (@GoogleMagenta)\n\nIntroducing Magenta RealTime 2 (MRT2): the live music model you can play as an\u2026"
+    },
+    "https://nitter.net/OpenAIDevs/status/2062619558440267801#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "Moderation scores are now available in the Responses API and Completions API.\n\nReturn moderation signals in the same request flow as generation, then decide how your app uses them for logging, routing, review, or blocking.\n\nhttps://developers.openai.com/api/docs/guides/moderation",
+      "description": "Moderation scores are now available in the Responses API and Completions API.\n\nReturn moderation signals in the same request flow as generation, then decide how your app uses them for logging, routing, review, or blocking.\n\ndevelopers.openai.com/api/do\u2026\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2062599303231922239#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: Shoutout to the open source projects behind this:\n\n\u2022 Serve-sim powers the streaming simulator by @Baconbrix\nhttps://github.com/EvanBacon/serve-sim\n\n\u2022 SnapshotPreviews extracts SwiftUI previews by @sentry\nhttps://github.com/getsentry/SnapshotPreviews",
+      "description": "Shoutout to the open source projects behind this:\n\n\u2022 Serve-sim powers the streaming simulator by @Baconbrix\ngithub.com/EvanBacon/serve-s\u2026\n\n\u2022 SnapshotPreviews extracts SwiftUI previews by @sentry\ngithub.com/getsentry/Snapsho\u2026\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2062599291479478275#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "More of the iOS app loop, now inside Codex.\n\nThe Build iOS Apps plugin lets Codex view and test your iOS app in the in-app browser, open SwiftUI previews, and hot reload edits without leaving Codex.",
+      "description": "More of the iOS app loop, now inside Codex.\n\nThe Build iOS Apps plugin lets Codex view and test your iOS app in the in-app browser, open SwiftUI previews, and hot reload edits without leaving Codex.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/alexxubyte/status/2062186586431987780#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "OpenAIDevs",
+      "title": "RT by @OpenAIDevs: How OpenAI Built Its Data Agent\n\nMost teams building data agents stack routers, fine-tunes, and complex retrieval pipelines on top of multiple LLMs. OpenAI didn't.\n\nTheir data agent runs on a single model and only 13 tools, across 1.5 exabytes and 90,000 tables. It's \"pretty vanilla\" by design.\n\nWe spoke with Emma Tang, Head of Data Platform Engineering at OpenAI, to better understand the architecture and the engineering decisions behind it.\n\nThe article covers:\n- The architecture behind the data agent\n- The six layers of context that make a single LLM reliable across 90,000 tables\n- How OpenAI Uses Codex Internally: 3 Use Cases\n- Five practical lessons for any team building a domain agent\n- Where OpenAI's data platform is headed next",
+      "description": "How OpenAI Built Its Data Agent\n\nMost teams building data agents stack routers, fine-tunes, and complex retrieval pipelines on top of multiple LLMs. OpenAI didn't.\n\nTheir data agent runs on a single model and only 13 tools, across 1.5 exabytes and 90,000 tables. It's \"pretty vanilla\" by\u2026"
+    },
+    "https://nitter.net/_mohansolo/status/2062624694323515543#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "antigravity",
+      "title": "RT by @antigravity: We\u2019ve seen you all build impressive projects with large (>100) teams of subagents in Antigravity so we\u2019ve gone ahead and enabled /teamwork-preview for all paid plans. It runs parallel implementation and verification agents to complete complex tasks. We\u2019ve been able to build a working OS with it. Beware that it can consume lots of tokens.",
+      "description": "We\u2019ve seen you all build impressive projects with large (&gt;100) teams of subagents in Antigravity so we\u2019ve gone ahead and enabled /teamwork-preview for all paid plans. It runs parallel implementation and verification agents to complete complex tasks. We\u2019ve been able to build a working OS with\u2026"
+    },
+    "https://nitter.net/ollama/status/2062591292778168323#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "ollama",
+      "title": "R to @ollama: ollama.com/library/nemotron-\u2026",
+      "description": "ollama.com/library/nemotron-\u2026\n"
+    },
+    "https://nitter.net/ollama/status/2062591290743853291#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "ollama",
+      "title": "Pinned: NVIDIA\u2019s Nemotron 3 Ultra is available on Ollama\u2019s cloud! \n\nTry it \ud83d\udc47\n\nClaude Code: \n\nollama launch claude --model nemotron-3-ultra:cloud\n\nHermes Agent: \n\nollama launch hermes --model nemotron-3-ultra:cloud\n\nOpenClaw:\n\nollama launch openclaw --model nemotron-3-ultra:cloud\n\nGeneral chat:\n\nollama run nemotron-3-ultra:cloud\n\nModel page \ud83d\udc47\ud83d\udc47\ud83d\udc47",
+      "description": "NVIDIA\u2019s Nemotron 3 Ultra is available on Ollama\u2019s cloud! \n\nTry it \ud83d\udc47\n\nClaude Code: \n\nollama launch claude --model nemotron-3-ultra:cloud\n\nHermes Agent: \n\nollama launch hermes --model nemotron-3-ultra:cloud\n\nOpenClaw:\n\nollama launch openclaw --model nemotron-3-ultra:cloud\n\nGeneral chat:\n\nollama\u2026"
+    },
+    "https://nitter.net/arena/status/2062566771660619942#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: The full Agent Arena Leaderboard is here:  http://arena.ai/leaderboard/agent",
+      "description": "The full Agent Arena Leaderboard is here:  arena.ai/leaderboard/agent"
+    },
+    "https://nitter.net/arena/status/2062566769659912281#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Check out our technical blog for the Agent Arena methodology + a deep dive into how people delegate, correct, and steer agents: https://arena.ai/blog/agent-arena-methodology",
+      "description": "Check out our technical blog for the Agent Arena methodology + a deep dive into how people delegate, correct, and steer agents: arena.ai/blog/agent-arena-me\u2026\n"
+    },
+    "https://nitter.net/arena/status/2062566766996508734#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: What real Agent Arena use looks like: building and debugging full workflows, live sports dashboards, self-hosted apps, robotics simulations, RAG pipelines, study platforms, streaming servers, Blender add-ons, and even Minecraft servers.\n\nMany sessions ran for 50+ turns with hundreds of tool calls.\n\nThis is the core motivation for Agent Arena: evaluate agents on real, messy, long-horizon work.",
+      "description": "What real Agent Arena use looks like: building and debugging full workflows, live sports dashboards, self-hosted apps, robotics simulations, RAG pipelines, study platforms, streaming servers, Blender add-ons, and even Minecraft servers.\n\nMany sessions ran for 50+ turns with hundreds of tool\u2026"
+    },
+    "https://nitter.net/arena/status/2062566764698095893#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Agents are writing real code and artifacts at scale.\n\nIn 7 days, successful write_file calls produced tens of millions of lines across many languages and file types.\n\nThe largest volumes were:\n- .py: 8.5M lines\n- .md: 7.8M lines\n- .html: 4.3M lines\n- .js: 3.0M lines\n- .tsx: 2.6M lines\n\nAgent Arena captures models creating code, docs, webpages, apps, scripts, and structured files.",
+      "description": "Agents are writing real code and artifacts at scale.\n\nIn 7 days, successful write_file calls produced tens of millions of lines across many languages and file types.\n\nThe largest volumes were:\n- .py: 8.5M lines\n- .md: 7.8M lines\n- .html: 4.3M lines\n- .js: 3.0M lines\n- .tsx: 2.6M lines\n\nAgent\u2026"
+    },
+    "https://nitter.net/arena/status/2062566762110148783#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: In a 7-day window, Agent Arena logged 2.06M tool calls across 160K+ real user tasks.\n\nThe most-used tools were:\n- bash: 936K calls\n- write_file: 550K calls\n- web_search: 276K calls\n- read_file: 118K calls\n- fetch_page: 86K calls\n\nThis gives us a new lens on agent behavior: not just what models answer, but how they search, code, edit, recover, and interact with the environment.",
+      "description": "In a 7-day window, Agent Arena logged 2.06M tool calls across 160K+ real user tasks.\n\nThe most-used tools were:\n- bash: 936K calls\n- write_file: 550K calls\n- web_search: 276K calls\n- read_file: 118K calls\n- fetch_page: 86K calls\n\nThis gives us a new lens on agent behavior: not just what models\u2026"
+    },
+    "https://nitter.net/arena/status/2062566759774011614#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Models on the cost-performance Pareto frontier:\n- GPT-5.5 (High)\n- Claude-Opus-4.7 (Thinking)\n- GPT-5.4 (High)\n- GPT-5.5\n- Claude-Sonnet-4.6\n- GLM-5.1\n- Qwen-3.6-Plus\n- DeepSeek-V4-Flash\n\nHigher-cost models generally deliver stronger agentic performance, but not always. Agent Arena helps measure the trade-off: which models are strongest, which are most efficient, and track how the frontier is moving.",
+      "description": "Models on the cost-performance Pareto frontier:\n- GPT-5.5 (High)\n- Claude-Opus-4.7 (Thinking)\n- GPT-5.4 (High)\n- GPT-5.5\n- Claude-Sonnet-4.6\n- GLM-5.1\n- Qwen-3.6-Plus\n- DeepSeek-V4-Flash\n\nHigher-cost models generally deliver stronger agentic performance, but not always. Agent Arena helps measure\u2026"
+    },
+    "https://nitter.net/arena/status/2062566756795953256#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Agent performance is not one-dimensional.\n\nThe aggregate ranking combines multiple signals: task success, user praise vs. complaints, steerability, bash recovery, and tool hallucination.\n\nTop models win in different ways: some complete tasks more reliably, some recover better from errors, and some are easier for users to steer.",
+      "description": "Agent performance is not one-dimensional.\n\nThe aggregate ranking combines multiple signals: task success, user praise vs. complaints, steerability, bash recovery, and tool hallucination.\n\nTop models win in different ways: some complete tasks more reliably, some recover better from errors, and\u2026"
+    },
+    "https://nitter.net/arena/status/2062566753163784417#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: What are people actually using agents for?\n\nWe analyzed the task distribution in Agent Arena across a 7-day window: 160K real user tasks spanning coding, debugging, research, document creation, frontend development, file analysis, and long multi-step workflows.\n\nThe largest categories were:\n- Code writing (17.5%)\n- Research and lookup (10.8%)\n- Planning and brainstorming (10.6%)\n- Multimodal image/video work (10.2%)\n- Document creation (9.1%)\n- Code debugging (8.9%)\n\nAgent usage is broad: it\u2019s not just coding, but research, planning, content creation, file work, and complex workflows that combine multiple tools over many turns.",
+      "description": "What are people actually using agents for?\n\nWe analyzed the task distribution in Agent Arena across a 7-day window: 160K real user tasks spanning coding, debugging, research, document creation, frontend development, file analysis, and long multi-step workflows.\n\nThe largest categories were:\n-\u2026"
+    },
+    "https://nitter.net/arena/status/2062566749418233981#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "arena",
+      "title": "Introducing Agent Arena: real-world agentic evals at scale.\n\nHow do you evaluate agents doing actual work? We measure millions of live sessions where real users accomplish real tasks.\n\nOn Arena, models now get web search, filesystem, and terminal tools to complete complex workflows: writing code, creating slide deck, researching the web, building apps, and analyzing documents.\n\nEvery session produces rich signals. Users iterate with the agent turn-by-turn: approving, editing, correcting, praise or expressing frustration. The environment gives feedback too: shell errors, tool failures, recovery attempts, and more.\n\nOur leaderboard measures each model's agentic performance using causal inference across five signals: task success, steerability, error recovery, user praise vs. complaint, and tool hallucination.\n\nThis leaderboard snapshot is built from 300K+ tasks, 2M+ tool calls, and 40M lines of code by agents.\n\nTop labs in Agent Arena:\n- #1 @OpenAI: GPT-5.5 (High)\n- #2 @AnthropicAI: Claude-Opus-4.7 (Thinking)\n- #3 @Zai_org: GLM-5.1\n- #4 @GoogleDeepMind: Gemini-3.1-Pro\n- #5 @Kimi_Moonshot: Kimi-K2.6\n\nMore analysis in the thread, with the full technical blog below.",
+      "description": "Introducing Agent Arena: real-world agentic evals at scale.\n\nHow do you evaluate agents doing actual work? We measure millions of live sessions where real users accomplish real tasks.\n\nOn Arena, models now get web search, filesystem, and terminal tools to complete complex workflows: writing\u2026"
+    },
+    "https://nitter.net/arena/status/2062565131784163410#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Start evaluating agentic AI on Arena today with Agent Mode at: http://arena.ai/agent",
+      "description": "Start evaluating agentic AI on Arena today with Agent Mode at: arena.ai/agent\n"
+    },
+    "https://nitter.net/arena/status/2062565130165182946#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Read more about Agent Mode, dig into the FAQ, and get a preview of what we've learned so far on our blog at:\nhttps://arena.ai/blog/agent-mode/",
+      "description": "Read more about Agent Mode, dig into the FAQ, and get a preview of what we've learned so far on our blog at:\narena.ai/blog/agent-mode/\n"
+    },
+    "https://nitter.net/arena/status/2062565128424640663#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "arena",
+      "title": "R to @arena: Agent Mode helps streamline multi-step workflows, minimizing the need for multiple prompts. Learn how you can evaluate the frontier of AI:",
+      "description": "Agent Mode helps streamline multi-step workflows, minimizing the need for multiple prompts. Learn how you can evaluate the frontier of AI:\n\nVideo\n  \n"
+    },
+    "https://nitter.net/arena/status/2062565126600114484#m": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "arena",
+      "title": "Pinned: Introducing Agent Mode: Agentic AI is now measured in the Arena.\n\nAgent Mode can do deep research, create reports, generate images, build websites, debug code, and more.\n\nIt completes more complex tasks by using tools like web search, bash in a sandbox environment, image generation, file writing, and asking follow-up questions.\n\nFrontier models are waiting for you in Agent Mode to take on real-world tasks. GPT-5.5, Claude Opus 4.7, Gemini 3.1 Pro, and top open models. Test them yourself.",
+      "description": "Introducing Agent Mode: Agentic AI is now measured in the Arena.\n\nAgent Mode can do deep research, create reports, generate images, build websites, debug code, and more.\n\nIt completes more complex tasks by using tools like web search, bash in a sandbox environment, image generation, file\u2026"
+    },
+    "https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Nemotron 3.5 Content Safety: Customizable Multimodal Safety for Global Enterprise AI",
+      "description": ""
+    },
+    "https://huggingface.co/blog/ServiceNow-AI/eva-bench-data": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "EVA-Bench Data 2.0: 3 Domains, 121 Tools, 213 Scenarios",
+      "description": ""
+    },
+    "https://huggingface.co/blog/hf-cli-for-agents": {
+      "edition": "2026-06-04-Afternoon",
+      "feed": "HuggingFace Blog",
+      "title": "Designing the hf CLI as an agent-optimized way to work with the Hub",
+      "description": ""
     }
   },
-  "last_run": "2026-06-04T15:01:01.350226+00:00"
+  "last_run": "2026-06-04T20:00:35.413620+00:00"
 }
