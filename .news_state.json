@@ -10757,7 +10757,115 @@
       "feed": "HuggingFace Blog",
       "title": "Designing the hf CLI as an agent-optimized way to work with the Hub",
       "description": ""
+    },
+    "https://www.ft.com/content/ab04db62-3a9a-467c-8dd2-fda069906cb2": {
+      "edition": "2026-06-04-Evening",
+      "feed": "FT AI",
+      "title": "Big energy getting bigger",
+      "description": "NextEra and Dominion announce plans to create a $420bn giant"
+    },
+    "https://nitter.net/AnthropicAI/status/2062634151556292775#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "AnthropicAI",
+      "title": "R to @AnthropicAI: Correction: Claude Opus 4's ~3x average speedup dates to May 2025, not May 2024. \n\nThis evaluation has only existed since September 2024, but we backtested it on earlier models: those from May 2024 showed no speedup whatsoever.",
+      "description": "Correction: Claude Opus 4's ~3x average speedup dates to May 2025, not May 2024. \n\nThis evaluation has only existed since September 2024, but we backtested it on earlier models: those from May 2024 showed no speedup whatsoever."
+    },
+    "https://nitter.net/GeminiApp/status/2062652523945836770#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "GeminiApp",
+      "title": "Get tailored help for what's on your screen using the Gemini app for macOS. \ud83d\udcbb\n\nSimply press both Command \u2318 keys at the same time to seamlessly attach your active window to the chat, without needing to take manual screenshots or switch tabs.",
+      "description": "Get tailored help for what's on your screen using the Gemini app for macOS. \ud83d\udcbb\n\nSimply press both Command \u2318 keys at the same time to seamlessly attach your active window to the chat, without needing to take manual screenshots or switch tabs."
+    },
+    "https://nitter.net/NotebookLM/status/2062653124326863077#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "NotebookLM",
+      "title": "Pinned: Today we\u2019re launching another highly requested feature: Source Attribution! \ud83e\udd73\n\nNo more guessing. Now you can see the exact formula (prompts + sources) used to make each of your artifacts. Want to make an adjustment? Just tap \"Iterate\" and customize to your heart\u2019s content \ud83d\udc96",
+      "description": "Today we\u2019re launching another highly requested feature: Source Attribution! \ud83e\udd73\n\nNo more guessing. Now you can see the exact formula (prompts + sources) used to make each of your artifacts. Want to make an adjustment? Just tap \"Iterate\" and customize to your heart\u2019s content \ud83d\udc96\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2062630454537424930#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "OpenAI",
+      "title": "What happened when one of our models found a counterexample to an 80-year-old Erd\u0151s conjecture?\n\nResearchers @alexwei_, @HongxunWu, and @wjmzbmr1 shared the story on the OpenAI Podcast with @AndrewMayne and explained how mathematicians and models can work together to make new discoveries.",
+      "description": "What happened when one of our models found a counterexample to an 80-year-old Erd\u0151s conjecture?\n\nResearchers @alexwei_, @HongxunWu, and @wjmzbmr1 shared the story on the OpenAI Podcast with @AndrewMayne and explained how mathematicians and models can work together to make new discoveries.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/OpenAI/status/2062630458433917126#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "OpenAI",
+      "title": "R to @OpenAI: Listen to the OpenAI Podcast on\u2014\n\nSpotify\nhttps://open.spotify.com/episode/3ca5s3o53D5xcEKmKgLLGj?si=4a9a555641fa4293\n\nApple\nhttps://podcasts.apple.com/us/podcast/how-a-reasoning-model-cracked-an-80-year-old/id1820330260?i=1000771190131\n\nYouTube\nhttps://youtu.be/wNWz5Hbh5VQ",
+      "description": "Listen to the OpenAI Podcast on\u2014\n\nSpotify\nopen.spotify.com/episode/3ca\u2026\n\nApple\npodcasts.apple.com/us/podcas\u2026\n\nYouTube\npiped.video/wNWz5Hbh5VQ\n"
+    },
+    "https://nitter.net/ChatGPTapp/status/2062653758178549798#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "ChatGPTapp",
+      "title": "ChatGPT is getting better at remembering what matters: your preferences, constraints, and the context that helps you pick things up where you left off. And with memory summaries, you can review and steer what it remembers.\n\nRolling to all users over the next few weeks, starting today with Plus and Pro users in the US.",
+      "description": "ChatGPT is getting better at remembering what matters: your preferences, constraints, and the context that helps you pick things up where you left off. And with memory summaries, you can review and steer what it remembers.\n\nRolling to all users over the next few weeks, starting today with Plus\u2026"
+    },
+    "https://nitter.net/ChatGPTapp/status/2062653759881412989#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "ChatGPTapp",
+      "title": "R to @ChatGPTapp: openai.com/index/chatgpt-mem\u2026",
+      "description": "openai.com/index/chatgpt-mem\u2026\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2062674786782990773#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "OpenAIDevs",
+      "title": "R to @OpenAIDevs: developers.openai.com/codex/\u2026",
+      "description": "developers.openai.com/codex/\u2026\n"
+    },
+    "https://nitter.net/OpenAIDevs/status/2062674774644687268#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "OpenAIDevs",
+      "title": "Your Codex activity now has a home, and an easier way to share it.\n\nCodex profiles show your activity graph, streaks, lifetime tokens, peak daily tokens, and top features like plugins and /fast mode.\n\nPrivate by default. Share a card when you want to.",
+      "description": "Your Codex activity now has a home, and an easier way to share it.\n\nCodex profiles show your activity graph, streaks, lifetime tokens, peak daily tokens, and top features like plugins and /fast mode.\n\nPrivate by default. Share a card when you want to.\n\nVideo\n  \n"
+    },
+    "https://nitter.net/reach_vb/status/2062595984350142972#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "OpenAIDevs",
+      "title": "RT by @OpenAIDevs: Super excited to host our first OpenAI Developer Office Hours tomorrow!\n\nWe\u2019ll cover everything new across Codex and the OpenAI platform - /goal, mobile, plugins, Amazon Bedrock and more!\n\nFollowed by a live AMA.\n\nCome with questions. Come with ideas. Come one, come all!",
+      "description": "Super excited to host our first OpenAI Developer Office Hours tomorrow!\n\nWe\u2019ll cover everything new across Codex and the OpenAI platform - /goal, mobile, plugins, Amazon Bedrock and more!\n\nFollowed by a live AMA.\n\nCome with questions. Come with ideas. Come one, come all!\n\nVideo\n  \n"
+    },
+    "https://nitter.net/dkundel/status/2062650573250560253#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "OpenAIDevs",
+      "title": "RT by @OpenAIDevs: I've been using /goal for a lot of different tasks and have experimented with both helpful and ridiculous goals. \n\nHere are some learnings/tips from that \ud83d\udc47",
+      "description": "I've been using /goal for a lot of different tasks and have experimented with both helpful and ridiculous goals. \n\nHere are some learnings/tips from that \ud83d\udc47\n\n\ndominik kundel (@dkundel)\n\nx.com/i/article/206264539471\u2026\n\n\n\n\u2014 https://nitter.net/dkundel/status/2062650378089594955#m\n\n"
+    },
+    "https://nitter.net/ollama/status/2062679475142471845#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "ollama",
+      "title": "R to @ollama: ollama.com/library/gemma4",
+      "description": "ollama.com/library/gemma4\n"
+    },
+    "https://nitter.net/ollama/status/2062679473443725736#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "ollama",
+      "title": "ollama run gemma4:12b\n\nGemma 4 12B is updated on Ollama, and available across all platforms! \n\nTry it on: \n\nClaude Code \nollama launch claude --model gemma4:12b\n\nHermes Agent\nollama launch hermes --model gemma4:12b\n\nOpenClaw\nollama launch openclaw --model gemma4:12b \n\nCodex\nollama launch codex --model gemma4:12b\n\nCodex App\nollama launch codex-app --model gemma4:12b\n\nLet's go @googlegemma & @GoogleDeepMind !",
+      "description": "ollama run gemma4:12b\n\nGemma 4 12B is updated on Ollama, and available across all platforms! \n\nTry it on: \n\nClaude Code \nollama launch claude --model gemma4:12b\n\nHermes Agent\nollama launch hermes --model gemma4:12b\n\nOpenClaw\nollama launch openclaw --model gemma4:12b \n\nCodex\nollama launch codex\u2026"
+    },
+    "https://nitter.net/arena/status/2062678350704083305#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "arena",
+      "title": "Nemotron 3 Ultra has been added to the new Agent Mode! \n\nThis latest model from @NVIDIA and other top frontier models are ready for your complex, multi-step tasks. Your sessions will help shape the new Agent Arena leaderboard.",
+      "description": "Nemotron 3 Ultra has been added to the new Agent Mode! \n\nThis latest model from @NVIDIA and other top frontier models are ready for your complex, multi-step tasks. Your sessions will help shape the new Agent Arena leaderboard.\n\n\n\n\nArena.ai (@arena)\n\nIntroducing Agent Arena: real-world agentic\u2026"
+    },
+    "https://nitter.net/arena/status/2062678353531043928#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "arena",
+      "title": "R to @arena: Learn more about Nemotron 3 Ultra https://x.com/NVIDIAAI/status/2062521325076299981?s=20",
+      "description": "Learn more about Nemotron 3 Ultra nitter.net/NVIDIAAI/status/206252\u2026\n\n\nNVIDIA AI (@NVIDIAAI)\n\nToday we're shipping Nemotron 3 Ultra.\n\nA 550B MoE frontier-intelligence open model built for long-running agents.\n\nIt delivers 5x faster inference and lowers the cost of complex agentic tasks by up to\u2026"
+    },
+    "https://nitter.net/arena/status/2062678355082899458#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "arena",
+      "title": "R to @arena: Start getting your real-world work done with the help of agents in Agent Mode at: http://arena.ai/agent",
+      "description": "Start getting your real-world work done with the help of agents in Agent Mode at: arena.ai/agent\n"
+    },
+    "https://nitter.net/arena/status/2062648091266936968#m": {
+      "edition": "2026-06-04-Evening",
+      "feed": "arena",
+      "title": "As we launch Agent Mode on Arena today, we want to celebrate the community that brought us here.\n\nBattle Mode - where it all started - just passed 50 million votes.\n\nThank you.",
+      "description": "As we launch Agent Mode on Arena today, we want to celebrate the community that brought us here.\n\nBattle Mode - where it all started - just passed 50 million votes.\n\nThank you.\n\nVideo\n  \n\n\n\n\nArena.ai (@arena)\n\nIntroducing Agent Mode: Agentic AI is now measured in the Arena.\n\nAgent Mode can do\u2026"
     }
   },
-  "last_run": "2026-06-04T20:00:35.413620+00:00"
+  "last_run": "2026-06-05T00:01:25.089460+00:00"
 }
