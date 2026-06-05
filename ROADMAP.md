@@ -41,7 +41,11 @@ The current critical path. Items here are addressed by the `ai-news-roadmap-dail
 ### Phase 5: Discovery (Brainstorm Backlog)
 Items here were brainstormed by the `ai-news-brainstorm-daily` cron. Each is a candidate for Phase 4 if the daily cron picks it.
 
-- _(populated by ai-news-brainstorm-daily)_
+- [ ] **Add a per-day "All editions" landing page (`/news/:year/:month/:day/`)** — current site only has per-edition posts and a flat chronological home list. Add a Jekyll `archive.html` layout (or `day.html` permalink) that lists Morning/Afternoon/Evening for a given day, with a one-line tease pulled from each post's "Big Picture". Users can land on a day's overview without scrolling the post list. 2026-06-05.
+- [ ] **Add JSON-LD `NewsArticle` schema to generated posts** — `_posts/*.html` has no structured data; Jekyll's SEO plugin only adds WebSite-level schema on the home page. Embed a `<script type="application/ld+json">` block (datePublished, headline from "Big Picture", articleSection, keywords) in `generate_news.py`'s render path so search engines can index individual editions as news articles. 2026-06-05.
+- [ ] **Convert source-name labels (`<strong>FT AI</strong>` etc.) into linked source pills** — each item currently renders the source name as a plain bold string. In `generate_news.py`'s post-render step, replace with `<a class="source-pill" href="<source_homepage>">` where `source_homepage` is looked up from a new `source_urls` map in `sections.json`. Improves navigation back to original publishers and gives visual consistency. 2026-06-05.
+- [ ] **Add `/archive/` page grouped by month with per-month counts** — the post list grows linearly and has no year/month grouping. Add a Jekyll page that walks `site.posts`, groups by `date | date: '%B %Y'`, and shows count + a list of dated editions. Gives readers (and crawlers) a navigable structure beyond the flat 5-deep list. 2026-06-05.
+- [ ] **Expose `TIMEZONE` in `config.json` and read it from both `run_edition.sh` and `pacific_now()`** — `America/Los_Angeles` is hardcoded in two places (`run_edition.sh` `TZ=`, `generate_news.py` `pacific_now()`). Centralize into `config.json` so future contributors in other zones (or DST edge cases) can override without code edits. 2026-06-05.
 
 ---
 
