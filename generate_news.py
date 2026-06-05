@@ -7,6 +7,8 @@ similarity (Jaccard, word-level).
 """
 
 import json
+import time
+import socket
 import xml.etree.ElementTree as ET
 import urllib.request
 import urllib.error
@@ -339,15 +341,69 @@ def get_section_summary(section_title: str, articles: list[dict], site_root: Pat
 # Feed fetching
 # ---------------------------------------------------------------------------
 
-def fetch_feed(name: str, url: str) -> list[dict]:
-    """Fetch and parse an RSS feed, returning a list of article dicts."""
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "AI-News-Digest/1.0"})
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            raw = resp.read()
-    except Exception as e:
-        logging.error(f"Failed to fetch {name}: {e}")
+def _looks_like_rss(body: bytes) -> bool:
+    """Cheap check that the body is actually an RSS/Atom payload, not an empty
+    200 or an HTML error page. nitter.net and friends have been known to
+    return 200 OK with an empty body when rate-limited. The 100-byte floor
+    is small enough to admit tiny test fixtures and is still well below any
+    real feed's size (a feed with one item is usually 1-2 KB)."""
+    if not body or len(body) < 100:
+        return False
+    head = body[:4096].lstrip().lower()
+    return (b"<rss" in head) or (b"<feed" in head) or (b"<channel" in head)
+
+
+def _http_get_with_retry(url: str, *, timeout: int = 15, attempts: int = 3,
+                         backoff_base: float = 0.6) -> bytes | None:
+    """GET a URL with exponential backoff. Returns the body bytes on success,
+    or None if all attempts fail (network error, non-200, or body fails the
+    RSS-shape check). Never raises — callers don't need try/except."""
+    last_err = ""
+    for attempt in range(1, attempts + 1):
+        try:
+            req = urllib.request.Request(
+                url,
+                headers={"User-Agent": "AI-News-Digest/1.1 (+https://cokev-bot.github.io/ai-news/)"},
+            )
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                raw = resp.read()
+            if _looks_like_rss(raw):
+                return raw
+            last_err = f"empty/non-RSS body ({len(raw)} bytes)"
+        except (urllib.error.URLError, urllib.error.HTTPError, socket.timeout, TimeoutError) as e:
+            last_err = f"{type(e).__name__}: {e}"
+        except Exception as e:  # pragma: no cover
+            last_err = f"{type(e).__name__}: {e}"
+        if attempt < attempts:
+            time.sleep(backoff_base * (2 ** (attempt - 1)))
+    return None
+
+
+def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None) -> list[dict]:
+    """Fetch and parse an RSS feed, returning a list of article dicts.
+
+    `fallbacks` is an ordered list of alternative URLs to try if the primary
+    URL fails (network error, HTTP error, or empty/non-RSS body). Each URL
+    goes through the same retry/backoff logic. We log one line per attempt so
+    the run log makes feed health observable. We never raise — a single bad
+    feed cannot abort the whole edition.
+    """
+    fallbacks = list(fallbacks or [])
+    candidates = [url] + fallbacks
+    raw: bytes | None = None
+    used_idx: int = -1
+    for idx, candidate in enumerate(candidates):
+        raw = _http_get_with_retry(candidate, timeout=15, attempts=3)
+        if raw is not None:
+            used_idx = idx
+            break
+        if idx == 0:
+            logging.warning(f"{name}: primary failed, trying {len(fallbacks)} fallback(s)")
+    if raw is None:
+        logging.error(f"{name}: all {len(candidates)} URL(s) failed — feed skipped")
         return []
+    if used_idx > 0:
+        logging.info(f"{name}: served by fallback #{used_idx} ({candidates[used_idx]})")
 
     try:
         root = ET.fromstring(raw)
@@ -496,8 +552,14 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
                 subsection_articles[sub_key] = []
 
                 for feed_name, feed_url in subsection["feeds"].items():
+                    # Per-feed fallback chain, looked up by feed_name so the
+                    # primary URL can move between instances without breaking
+                    # the alts mapping. Missing key = no fallbacks (same as
+                    # before the Phase 4 nitter rework).
+                    alts_map = subsection.get("feeds_alts", {}) or {}
+                    feed_fallbacks = alts_map.get(feed_name, []) or []
                     print(f"  → {feed_name}…")
-                    articles = fetch_feed(feed_name, feed_url)
+                    articles = fetch_feed(feed_name, feed_url, fallbacks=feed_fallbacks)
                     print(f"    {len(articles)} fetched")
                     for a in articles:
                         if not is_duplicate(a, seen_this_run, seen_links):
