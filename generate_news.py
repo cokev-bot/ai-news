@@ -15,6 +15,7 @@ import urllib.error
 import re
 import logging
 import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -26,6 +27,12 @@ MAX_AGE_DAYS = 7
 MAX_ITEMS_PER_SOURCE = 20
 TITLE_SIM_THRESHOLD = 0.40   # Jaccard similarity threshold for duplicate detection
 LOG_FILE = "generate_news.log"
+# Cap concurrent LLM section-summary workers. Each one holds a long-lived
+# HTTP request to the local Ollama instance (up to 600s). Capping at the
+# number of top-level sections keeps the wall-clock bounded by the slowest
+# section while not overloading the local model server.
+MAX_SUMMARY_WORKERS = 6
+OLLAMA_ENDPOINT = "http://localhost:11434/api/generate"
 
 DEFAULT_CONFIG = {
     "model": "gemma4:31b-cloud",
@@ -295,6 +302,38 @@ def linkify_summary(text: str, articles: list[dict]) -> str:
     return re.sub(r'\(([^)]+)\)', replace_group, text)
 
 
+def _query_ollama(prompt: str, model: str, *, timeout: int = 600) -> str:
+    """Single HTTP call to the local Ollama /api/generate endpoint.
+
+    Returns the model's response text, or an empty string on any failure
+    (caller decides what to do with that — usually log + substitute a
+    "summary unavailable" message). Never raises; the network/parse
+    failure path is expected to be hit in production when the local model
+    is overloaded, and we don't want a single bad call to abort the
+    whole edition.
+
+    Extracted from the old in-line body of get_section_summary() so it
+    can be reused by summarize_sections_concurrent() without dragging
+    prompt-building along.
+    """
+    try:
+        req = urllib.request.Request(
+            OLLAMA_ENDPOINT,
+            data=json.dumps({
+                "model": model,
+                "prompt": prompt,
+                "stream": False
+            }).encode("utf-8"),
+            headers={"Content-Type": "application/json"}
+        )
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            res_data = json.loads(resp.read().decode("utf-8"))
+            return res_data.get("response", "").strip()
+    except Exception as e:
+        logging.error(f"Ollama query failed: {e}")
+        return ""
+
+
 def get_section_summary(section_title: str, articles: list[dict], site_root: Path, config: dict | None = None) -> str:
     """Use a local Ollama instance to summarize the articles in a section."""
     if not articles:
@@ -309,32 +348,90 @@ def get_section_summary(section_title: str, articles: list[dict], site_root: Pat
         return "Summary unavailable (prompt file missing)."
 
     prompt_base = prompt_path.read_text(encoding="utf-8")
-    
+
     content_lines = []
     for i, a in enumerate(articles, 1):
         line = f"{i}. [{a['source']}] {a['title']}"
         if a.get("description"):
             line += f": {a['description']}"
         content_lines.append(line)
-    
+
     full_prompt = f"{prompt_base}\n\nSection: {section_title}\nArticles:\n" + "\n".join(content_lines)
 
-    try:
-        req = urllib.request.Request(
-            "http://localhost:11434/api/generate",
-            data=json.dumps({
-                "model": model,
-                "prompt": full_prompt,
-                "stream": False
-            }).encode("utf-8"),
-            headers={"Content-Type": "application/json"}
-        )
-        with urllib.request.urlopen(req, timeout=600) as resp:
-            res_data = json.loads(resp.read().decode("utf-8"))
-            return res_data.get("response", "").strip()
-    except Exception as e:
-        logging.error(f"LLM summary failed for {section_title}: {e}")
-        return "Summary could not be generated."
+    response = _query_ollama(full_prompt, model)
+    return response or "Summary could not be generated."
+
+
+def summarize_sections_concurrent(section_jobs: list[tuple[str, list[dict]]],
+                                  site_root: Path,
+                                  config: dict | None = None,
+                                  max_workers: int = MAX_SUMMARY_WORKERS) -> dict[str, str]:
+    """Run get_section_summary() across many sections in parallel.
+
+    `section_jobs` is a list of (section_title, articles) tuples in the
+    order they should appear in the final post. We dispatch each tuple
+    to its own worker thread and collect the results. The returned dict
+    maps section_title -> summary text.
+
+    The function preserves caller's intent that one failing section does
+    not abort the others: get_section_summary() already swallows Ollama
+    errors and returns a "summary could not be generated" string, so
+    worker threads never raise. The wall-clock cost of N serial ~20s
+    LLM calls drops to roughly max(per_call_latency) when N <= max_workers.
+
+    `max_workers` is exposed for tests so they can pin it without
+    monkey-patching the module-level constant.
+    """
+    results: dict[str, str] = {}
+
+    if not section_jobs:
+        return results
+
+    # cap workers defensively — a typo / future change to MAX_SUMMARY_WORKERS
+    # should not cause us to spawn 1000 threads.
+    workers = max(1, min(max_workers, len(section_jobs)))
+    if workers == 1:
+        # Serial fast path: no need to spin up an executor for a single
+        # job. Preserves behavior for the tiny single-section case
+        # (e.g. a degenerate sections.json in a test fixture).
+        for title, articles in section_jobs:
+            results[title] = get_section_summary(title, articles, site_root, config)
+        return results
+
+    start = time.monotonic()
+    logging.info(
+        f"Summarizing {len(section_jobs)} sections with up to {workers} workers..."
+    )
+
+    # We use submit() + a title-keyed future dict so we can preserve
+    # the caller's section order if the caller wants to iterate the
+    # returned dict, AND so the slow-first / fast-last case doesn't
+    # unnecessarily block collection. The caller already iterates
+    # SECTIONS in order using the returned dict, so a non-ordered
+    # gather is fine — the order in `results` is not load-bearing.
+    future_to_title: dict = {}
+    with ThreadPoolExecutor(max_workers=workers, thread_name_prefix="llm-sum") as pool:
+        for title, articles in section_jobs:
+            future_to_title[
+                pool.submit(get_section_summary, title, articles, site_root, config)
+            ] = title
+        for fut in as_completed(future_to_title):
+            title = future_to_title[fut]
+            try:
+                results[title] = fut.result()
+            except Exception as e:  # pragma: no cover - defensive
+                # get_section_summary is designed not to raise, but if a
+                # future from it ever did, we'd rather capture a string
+                # than crash the post.
+                logging.error(f"Concurrent summary worker for {title!r} raised: {e}")
+                results[title] = "Summary could not be generated."
+
+    elapsed = time.monotonic() - start
+    logging.info(
+        f"Finished {len(section_jobs)} section summaries in {elapsed:.1f}s "
+        f"(parallelism ≤ {workers})."
+    )
+    return results
 
 
 # ---------------------------------------------------------------------------
@@ -646,36 +743,21 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
     if all_articles:
         logging.info("Generating global 'The Big Picture' summary...")
         global_prompt_base = "Write a high-level 'The Big Picture' executive summary for this edition. Synthesize the most critical trends and developments across all categories into 1-2 punchy paragraphs. Use the same strict citation format (Source: ID)."
-        
+
         def get_global_summary(articles, site_root, config):
             cfg = config if config is not None else load_config(site_root)
             model = cfg.get("model", DEFAULT_CONFIG["model"])
-            
+
             content_lines = []
             for i, a in enumerate(articles, 1):
                 line = f"{i}. [{a['source']}] {a['title']}"
                 if a.get("description"):
                     line += f": {a['description']}"
                 content_lines.append(line)
-            
-            full_prompt = f"{global_prompt_base}\n\nArticles:\n" + "\n".join(content_lines)
 
-            try:
-                req = urllib.request.Request(
-                    "http://localhost:11434/api/generate",
-                    data=json.dumps({
-                        "model": model,
-                        "prompt": full_prompt,
-                        "stream": False
-                    }).encode("utf-8"),
-                    headers={"Content-Type": "application/json"}
-                )
-                with urllib.request.urlopen(req, timeout=600) as resp:
-                    res_data = json.loads(resp.read().decode("utf-8"))
-                    return res_data.get("response", "").strip()
-            except Exception as e:
-                logging.error(f"Global summary failed: {e}")
-                return "Global summary could not be generated."
+            full_prompt = f"{global_prompt_base}\n\nArticles:\n" + "\n".join(content_lines)
+            response = _query_ollama(full_prompt, model)
+            return response or "Global summary could not be generated."
 
         global_summary_text = get_global_summary(all_articles, site_root, config)
         global_summary_html = linkify_summary(global_summary_text, all_articles)
@@ -687,21 +769,37 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         html_lines.append("")
 
 
+    # Build the (section_title, section_articles) job list once, in the
+    # canonical SECTIONS order. We dispatch all summaries concurrently
+    # below, then iterate SECTIONS again to render — that way output
+    # order is preserved even though the LLM calls run in parallel.
+    section_jobs: list[tuple[str, list[dict]]] = []
+    section_articles_by_title: dict[str, list[dict]] = {}
     for section in SECTIONS:
-        # 1. Gather all articles in this section for the summary
-        section_articles = []
+        section_articles: list[dict] = []
         for subsection in section["subsections"]:
             sub_key = subsection["title"]
             section_articles.extend(subsection_articles.get(sub_key, []))
+        if not section_articles:
+            # Skip empty sections entirely — no summary, no HTML block.
+            continue
+        section_articles_by_title[section["title"]] = section_articles
+        section_jobs.append((section["title"], section_articles))
 
-        # Skip empty sections entirely
+    section_summaries = summarize_sections_concurrent(
+        section_jobs, site_root, config
+    )
+
+    for section in SECTIONS:
+        section_articles = section_articles_by_title.get(section["title"])
         if not section_articles:
             continue
 
-        # 2. Generate summary using LLM
-        logging.info(f"Summarizing section: {section['title']}...")
-        summary_text = get_section_summary(section["title"], section_articles, site_root, config)
-        
+        summary_text = section_summaries.get(
+            section["title"],
+            "Summary could not be generated.",
+        )
+
         # 3. Linkify the summary text
         summary_html = linkify_summary(summary_text, section_articles)
 
