@@ -6,6 +6,10 @@ vendor
 .bundle
 .vendor
 .news_state.json
+# Per-day Big Picture summary cache (see ROADMAP Phase 4). One file per
+# PT-day; the daily edition cron overwrites the same file 3x/day, so they
+# are runtime artifacts, not source.
+*-bp.json
 Gemfile
 Gemfile.lock
 __pycache__/

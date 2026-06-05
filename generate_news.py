@@ -546,6 +546,110 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None) -> list[
 
 
 # ---------------------------------------------------------------------------
+# Big Picture daily cache
+# ---------------------------------------------------------------------------
+#
+# The "The Big Picture" global summary normally takes a slow LLM call to
+# generate. Morning/Afternoon/Evening all run the same day in Pacific time
+# and observe largely the same news; regenerating the Big Picture 3x per
+# day is wasteful and produces drift (different wording for the same day
+# in different editions). We cache it once per PT-day in
+# ``<pt-date>-bp.json`` and reuse the cached summary text + rendered HTML
+# across same-day editions.
+#
+# The cache key is the PT date (e.g. ``2026-06-05``), not the edition name,
+# so Morning/Afternoon/Evening all share. A small article fingerprint is
+# stored alongside the summary so we can detect a substantively different
+# article set and regenerate (e.g. if the cache file from a previous
+# day is somehow read against a wildly different article set).
+# ---------------------------------------------------------------------------
+
+
+def _big_picture_fingerprint(articles: list[dict]) -> str:
+    """Stable short hash of an article set, independent of order.
+
+    Two article sets that share the same (source, title) pairs hash equal,
+    so reordering or shifting the same set across editions produces the
+    same fingerprint. We do not include the link — multiple X statuses can
+    share titles — but (source, title) is a good "the news is the same"
+    proxy for the same-day reuse case.
+    """
+    import hashlib
+    pairs = sorted(
+        ((a.get("source", ""), a.get("title", "")) for a in articles),
+        key=lambda p: (p[0].lower(), p[1].lower()),
+    )
+    payload = "\u241f".join(
+        f"{s.lower()}\u241e{t.lower()}" for s, t in pairs
+    ).encode("utf-8")
+    return hashlib.sha1(payload).hexdigest()[:16]
+
+
+def _big_picture_cache_path(site_root: Path, pt_date_str: str) -> Path:
+    """Path to the per-day Big Picture cache file.
+
+    Filename: ``<pt-date>-bp.json`` (e.g. ``2026-06-05-bp.json``), per the
+    ROADMAP Phase 4 spec. The file is gitignored (see ``*-bp.json`` rule
+    in ``.gitignore``) since it is a runtime artifact that is overwritten
+    multiple times per day.
+    """
+    return site_root / f"{pt_date_str}-bp.json"
+
+
+def load_big_picture_cache(site_root: Path, pt_date_str: str) -> dict | None:
+    """Load a per-day Big Picture cache if it exists and is well-formed.
+
+    Returns the cache dict (``{date, generated_at, fingerprint,
+    summary_text, summary_html}``) on success, or ``None`` if the file is
+    missing, unreadable, or missing required fields. The caller is
+    responsible for fingerprint comparison; this function does not
+    invalidate the cache on its own.
+    """
+    path = _big_picture_cache_path(site_root, pt_date_str)
+    if not path.exists():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as e:
+        logging.warning(f"Big Picture cache at {path} unreadable: {e}")
+        return None
+    required = ("date", "fingerprint", "summary_text", "summary_html")
+    if not all(k in data for k in required):
+        logging.warning(
+            f"Big Picture cache at {path} missing required fields; ignoring."
+        )
+        return None
+    return data
+
+
+def save_big_picture_cache(
+    site_root: Path,
+    pt_date_str: str,
+    fingerprint: str,
+    summary_text: str,
+    summary_html: str,
+) -> None:
+    """Persist a per-day Big Picture cache. Best-effort: failure is logged
+    but does not abort edition generation (the post has already been
+    rendered; we just won't get a same-day reuse next time)."""
+    path = _big_picture_cache_path(site_root, pt_date_str)
+    payload = {
+        "date": pt_date_str,
+        "generated_at": pacific_now().isoformat(),
+        "fingerprint": fingerprint,
+        "summary_text": summary_text,
+        "summary_html": summary_html,
+    }
+    try:
+        path.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+    except OSError as e:
+        logging.warning(f"Failed to write Big Picture cache to {path}: {e}")
+
+
+# ---------------------------------------------------------------------------
 # Post generation
 # ---------------------------------------------------------------------------
 
@@ -741,27 +845,59 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
             all_articles.extend(subsection_articles.get(subsection["title"], []))
 
     if all_articles:
-        logging.info("Generating global 'The Big Picture' summary...")
-        global_prompt_base = "Write a high-level 'The Big Picture' executive summary for this edition. Synthesize the most critical trends and developments across all categories into 1-2 punchy paragraphs. Use the same strict citation format (Source: ID)."
+        pt_date_str = post_now.strftime("%Y-%m-%d")
+        article_fingerprint = _big_picture_fingerprint(all_articles)
 
-        def get_global_summary(articles, site_root, config):
-            cfg = config if config is not None else load_config(site_root)
-            model = cfg.get("model", DEFAULT_CONFIG["model"])
+        cached = load_big_picture_cache(site_root, pt_date_str)
+        if cached and cached.get("fingerprint") == article_fingerprint:
+            logging.info(
+                f"Reusing 'The Big Picture' from cache for {pt_date_str} "
+                f"(fingerprint {article_fingerprint} matches)."
+            )
+            global_summary_text = cached["summary_text"]
+            global_summary_html = cached["summary_html"]
+        else:
+            if cached and cached.get("fingerprint") != article_fingerprint:
+                logging.info(
+                    f"Big Picture cache fingerprint drift for {pt_date_str} "
+                    f"(cached={cached.get('fingerprint')} vs "
+                    f"new={article_fingerprint}); regenerating."
+                )
+            else:
+                logging.info(
+                    f"Generating global 'The Big Picture' summary for {pt_date_str}..."
+                )
 
-            content_lines = []
-            for i, a in enumerate(articles, 1):
-                line = f"{i}. [{a['source']}] {a['title']}"
-                if a.get("description"):
-                    line += f": {a['description']}"
-                content_lines.append(line)
+            global_prompt_base = "Write a high-level 'The Big Picture' executive summary for this edition. Synthesize the most critical trends and developments across all categories into 1-2 punchy paragraphs. Use the same strict citation format (Source: ID)."
 
-            full_prompt = f"{global_prompt_base}\n\nArticles:\n" + "\n".join(content_lines)
-            response = _query_ollama(full_prompt, model)
-            return response or "Global summary could not be generated."
+            def get_global_summary(articles, site_root, config):
+                cfg = config if config is not None else load_config(site_root)
+                model = cfg.get("model", DEFAULT_CONFIG["model"])
 
-        global_summary_text = get_global_summary(all_articles, site_root, config)
-        global_summary_html = linkify_summary(global_summary_text, all_articles)
-        
+                content_lines = []
+                for i, a in enumerate(articles, 1):
+                    line = f"{i}. [{a['source']}] {a['title']}"
+                    if a.get("description"):
+                        line += f": {a['description']}"
+                    content_lines.append(line)
+
+                full_prompt = f"{global_prompt_base}\n\nArticles:\n" + "\n".join(content_lines)
+                response = _query_ollama(full_prompt, model)
+                return response or "Global summary could not be generated."
+
+            global_summary_text = get_global_summary(all_articles, site_root, config)
+            global_summary_html = linkify_summary(global_summary_text, all_articles)
+
+            # Persist for the remaining same-day editions. Best-effort: a
+            # write failure here does not break this edition's render.
+            save_big_picture_cache(
+                site_root,
+                pt_date_str,
+                article_fingerprint,
+                global_summary_text,
+                global_summary_html,
+            )
+
         html_lines.append('<div style="background: #f9f9f9; padding: 15px; border-left: 5px solid #ccc; margin-bottom: 20px;">')
         html_lines.append('  <h3 style="margin-top:0;">🌍 The Big Picture</h3>')
         html_lines.append(f'  <p>{global_summary_html}</p>')
