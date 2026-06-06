@@ -26,6 +26,11 @@ from pathlib import Path
 MAX_AGE_DAYS = 7
 MAX_ITEMS_PER_SOURCE = 20
 TITLE_SIM_THRESHOLD = 0.40   # Jaccard similarity threshold for duplicate detection
+# Stories re-reported by another source within this window are considered
+# the same story even if the link differs. Catches "breaking" rewrites
+# 12h later that the per-edition seen-list misses. Older re-reports are
+# allowed through (treated as fresh coverage).
+CROSS_EDITION_DEDUP_HOURS = 24
 LOG_FILE = "generate_news.log"
 # Cap concurrent LLM section-summary workers. Each one holds a long-lived
 # HTTP request to the local Ollama instance (up to 600s). Capping at the
@@ -123,6 +128,18 @@ def load_state(state_path: Path) -> dict:
                         info.setdefault("title", link)
                         info.setdefault("description", "")
                     save_state(state_path, data)
+            # Migrate entries missing seen_at: treat legacy entries as
+            # seen_at=now so they fall outside the 24h cross-edition dedup
+            # window and behave exactly as before this Phase 4 change.
+            if isinstance(seen, dict):
+                needs_seen_at_migration = False
+                for info in seen.values():
+                    if isinstance(info, dict) and "seen_at" not in info:
+                        info["seen_at"] = datetime.now(timezone.utc).isoformat()
+                        needs_seen_at_migration = True
+                if needs_seen_at_migration:
+                    data["seen_links"] = seen
+                    save_state(state_path, data)
             return data
         except Exception:
             pass
@@ -137,9 +154,35 @@ def save_state(state_path: Path, state: dict) -> None:
     tmp.replace(state_path)
 
 
-def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, dict]) -> bool:
+def _parse_seen_at(info: dict) -> datetime | None:
+    """Parse the seen_at ISO timestamp from a seen_links entry.
+
+    Returns None if the field is missing or unparseable. The caller is
+    expected to treat None as "old" (fall outside the dedup window) so
+    that legacy state and unparseable timestamps behave conservatively
+    and never cause a new story to be suppressed.
+    """
+    raw = info.get("seen_at") if isinstance(info, dict) else None
+    if not raw:
+        return None
+    try:
+        # datetime.fromisoformat handles both "...+00:00" and trailing "Z"
+        # in Python 3.11+. We normalize the rare "Z" suffix for safety.
+        if isinstance(raw, str) and raw.endswith("Z"):
+            raw = raw[:-1] + "+00:00"
+        dt = datetime.fromisoformat(raw)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt
+    except (ValueError, TypeError):
+        return None
+
+
+def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, dict], *, now: datetime | None = None) -> bool:
     """Return True if new_art is a near-duplicate of any article in seen
-    OR if its link has appeared in any previous edition.
+    OR if its link has appeared in any previous edition
+    OR if its title closely matches a recent (last CROSS_EDITION_DEDUP_HOURS)
+    seen_links entry from a different link.
     """
     if new_art["link"] in seen_links:
         return True
@@ -159,6 +202,36 @@ def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, dict]) -
         )
         new_models = set(model_pattern.findall(new_lower))
         old_models = set(model_pattern.findall(existing["title"].lower()))
+        if new_models and old_models and new_models == old_models:
+            return True
+
+    # Cross-edition dedup: stories re-reported by another source with a
+    # different link within CROSS_EDITION_DEDUP_HOURS are considered the
+    # same story. We only need a title similarity check here because the
+    # exact-link check above already handled the "same link" case.
+    if now is None:
+        now = datetime.now(timezone.utc)
+    window_start = now.timestamp() - CROSS_EDITION_DEDUP_HOURS * 3600
+    for link, info in seen_links.items():
+        if link == new_art["link"]:
+            # Same link, already handled by the membership check above.
+            continue
+        seen_at = _parse_seen_at(info)
+        if seen_at is None:
+            # Legacy/unparseable entry: skip the cross-edition check
+            # rather than suppress. Conservative = do not lose new stories.
+            continue
+        if seen_at.timestamp() < window_start:
+            continue
+        old_title = info.get("title", link) if isinstance(info, dict) else link
+        if text_similarity(new_title, old_title) >= TITLE_SIM_THRESHOLD:
+            return True
+        # Also catch the model-name pattern across editions.
+        model_pattern = re.compile(
+            r"(claude[-\s]\d[.\d]*|gpt[-\s]\d[.\d]*|\d+\.\d+[a-z]?)", re.I
+        )
+        new_models = set(model_pattern.findall(new_lower))
+        old_models = set(model_pattern.findall(old_title.lower()))
         if new_models and old_models and new_models == old_models:
             return True
 
@@ -776,12 +849,14 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
         # Persist new links with metadata
         new_entries = {}
+        seen_at_now = datetime.now(timezone.utc).isoformat()
         for a in seen_this_run:
             new_entries[a["link"]] = {
                 "edition": edition,
                 "feed": a["source"],
                 "title": a["title"],
                 "description": a.get("description", ""),
+                "seen_at": seen_at_now,
             }
         all_links = {**seen_links, **new_entries}
         state["seen_links"] = all_links
