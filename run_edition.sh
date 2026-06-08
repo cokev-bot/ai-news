@@ -53,8 +53,16 @@ if [ "$DRY_RUN" = "1" ]; then
     exit 0
 fi
 
-git add _posts/ _config.yml .news_state.json
-git commit -m "$EDITION AI News Digest $DATE" || echo "No changes to commit"
-# Push explicitly to origin/main so the live site updates regardless of any
-# local branch the working tree may have been on before this run.
-git push origin main
+# `git add` exits non-zero when a path is fully gitignored (e.g.
+# .news_state.json), and `set -e` would then kill the script before commit.
+# Use `--ignore-errors` so ignored paths are skipped silently and the real
+# content (_posts/) still gets staged.
+git add --ignore-errors _posts/ _config.yml .news_state.json
+if ! git diff --cached --quiet; then
+    git commit -m "$EDITION AI News Digest $DATE"
+    # Push explicitly to origin/main so the live site updates regardless of
+    # any local branch the working tree may have been on before this run.
+    git push origin main
+else
+    echo "No changes to commit (all paths either unchanged or gitignored)."
+fi
