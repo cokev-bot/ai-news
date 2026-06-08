@@ -2,7 +2,7 @@ import unittest
 from pathlib import Path
 import json
 from generate_news import text_similarity, linkify_urls, nitter_to_x, is_nitter_link
-from test_clean import clean_title
+from clean_title import clean_title
 
 class TestAiNewsLogic(unittest.TestCase):
 
