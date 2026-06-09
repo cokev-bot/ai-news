@@ -16,3 +16,6 @@ __pycache__/
 *.pyc
 *.pyo
 generate_news.log*
+# Per-feed health tracking for the RSS health monitor (tools/check_feeds.py).
+# Updated every cron run; not version-controlled.
+.feed_health.json
