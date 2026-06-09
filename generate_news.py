@@ -14,6 +14,7 @@ import urllib.request
 import urllib.error
 import re
 import logging
+import logging.handlers
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
@@ -24,6 +25,7 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 
 MAX_AGE_DAYS = 7
+MAX_HISTORY_DAYS = 60
 MAX_ITEMS_PER_SOURCE = 20
 TITLE_SIM_THRESHOLD = 0.40   # Jaccard similarity threshold for duplicate detection
 # Stories re-reported by another source within this window are considered
@@ -37,12 +39,36 @@ LOG_FILE = "generate_news.log"
 # number of top-level sections keeps the wall-clock bounded by the slowest
 # section while not overloading the local model server.
 MAX_SUMMARY_WORKERS = 6
+# Cap concurrent feed-fetch workers. Separate pool from the LLM summary
+# workers so slow feeds don't starve summaries (and vice-versa). 10 is
+# enough to overlap 31 feeds (typical config) without hammering hosts.
+MAX_FEED_WORKERS = 10
 OLLAMA_ENDPOINT = "http://localhost:11434/api/generate"
 
 DEFAULT_CONFIG = {
     "model": "gemma4:31b-cloud",
     "summary_prompt_file": "summary_prompt.txt",
+    "tuning": {
+        "max_items_per_source": MAX_ITEMS_PER_SOURCE,
+        "max_age_days": MAX_AGE_DAYS,
+        "title_sim_threshold": TITLE_SIM_THRESHOLD,
+        "cross_edition_dedup_hours": CROSS_EDITION_DEDUP_HOURS,
+    },
 }
+
+
+def get_tuning(site_root: Path) -> dict:
+    """Load tuning overrides from config.json, merged with DEFAULT_CONFIG defaults.
+
+    Returns a dict with keys: max_items_per_source, max_age_days,
+    title_sim_threshold, cross_edition_dedup_hours.  Missing keys in
+    the user's config.json fall back to the values in
+    DEFAULT_CONFIG['tuning'].
+    """
+    cfg = load_config(site_root)
+    defaults = DEFAULT_CONFIG["tuning"]
+    user_tuning = cfg.get("tuning", {})
+    return {**defaults, **user_tuning}
 
 
 def load_config(site_root: Path) -> dict:
@@ -63,7 +89,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.FileHandler(LOG_FILE),
+        logging.handlers.RotatingFileHandler(LOG_FILE, maxBytes=10*1024*1024, backupCount=3),
         logging.StreamHandler()
     ]
 )
@@ -140,6 +166,10 @@ def load_state(state_path: Path) -> dict:
                 if needs_seen_at_migration:
                     data["seen_links"] = seen
                     save_state(state_path, data)
+            # Prune stale entries older than MAX_HISTORY_DAYS.
+            # Run after migrations so legacy entries have a seen_at stamp.
+            data = prune_state(data)
+            save_state(state_path, data)
             return data
         except Exception:
             pass
@@ -152,6 +182,41 @@ def save_state(state_path: Path, state: dict) -> None:
     tmp = state_path.with_suffix(".tmp")
     tmp.write_text(json.dumps(state, indent=2))
     tmp.replace(state_path)
+
+
+def prune_state(state: dict, max_history_days: int = MAX_HISTORY_DAYS, now: datetime | None = None) -> dict:
+    """Remove seen_links entries older than max_history_days.
+
+    This caps the growth of .news_state.json by evicting stale entries.
+    Entries without a parseable seen_at timestamp are kept (conservative:
+    never lose data we can't reason about).  The one-shot seen_at migration
+    in load_state() ensures legacy entries get a timestamp before the first
+    prune, so nothing is lost on the first run.
+    """
+    if now is None:
+        now = datetime.now(timezone.utc)
+
+    seen_links = state.get("seen_links", {})
+    if not isinstance(seen_links, dict):
+        return state
+
+    cutoff_ts = now.timestamp() - (max_history_days * 86400)
+    pruned = {}
+    for link, info in seen_links.items():
+        if not isinstance(info, dict):
+            # Malformed entry — keep it rather than silently discard.
+            pruned[link] = info
+            continue
+        seen_at = _parse_seen_at(info)
+        if seen_at is None:
+            # Unparseable or missing timestamp — keep it (conservative).
+            pruned[link] = info
+            continue
+        if seen_at.timestamp() >= cutoff_ts:
+            pruned[link] = info
+
+    state["seen_links"] = pruned
+    return state
 
 
 def _parse_seen_at(info: dict) -> datetime | None:
@@ -178,10 +243,10 @@ def _parse_seen_at(info: dict) -> datetime | None:
         return None
 
 
-def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, dict], *, now: datetime | None = None) -> bool:
+def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, dict], *, now: datetime | None = None, title_sim_threshold: float = TITLE_SIM_THRESHOLD, cross_edition_dedup_hours: int = CROSS_EDITION_DEDUP_HOURS) -> bool:
     """Return True if new_art is a near-duplicate of any article in seen
     OR if its link has appeared in any previous edition
-    OR if its title closely matches a recent (last CROSS_EDITION_DEDUP_HOURS)
+    OR if its title closely matches a recent (last cross_edition_dedup_hours)
     seen_links entry from a different link.
     """
     if new_art["link"] in seen_links:
@@ -194,7 +259,7 @@ def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, dict], *
     for existing in seen:
         title_sim = text_similarity(new_title, existing["title"])
         desc_sim  = text_similarity(new_desc, existing.get("description", ""))
-        if title_sim >= TITLE_SIM_THRESHOLD or desc_sim >= TITLE_SIM_THRESHOLD:
+        if title_sim >= title_sim_threshold or desc_sim >= title_sim_threshold:
             return True
 
         model_pattern = re.compile(
@@ -206,12 +271,12 @@ def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, dict], *
             return True
 
     # Cross-edition dedup: stories re-reported by another source with a
-    # different link within CROSS_EDITION_DEDUP_HOURS are considered the
+    # different link within cross_edition_dedup_hours are considered the
     # same story. We only need a title similarity check here because the
     # exact-link check above already handled the "same link" case.
     if now is None:
         now = datetime.now(timezone.utc)
-    window_start = now.timestamp() - CROSS_EDITION_DEDUP_HOURS * 3600
+    window_start = now.timestamp() - cross_edition_dedup_hours * 3600
     for link, info in seen_links.items():
         if link == new_art["link"]:
             # Same link, already handled by the membership check above.
@@ -224,7 +289,7 @@ def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, dict], *
         if seen_at.timestamp() < window_start:
             continue
         old_title = info.get("title", link) if isinstance(info, dict) else link
-        if text_similarity(new_title, old_title) >= TITLE_SIM_THRESHOLD:
+        if text_similarity(new_title, old_title) >= title_sim_threshold:
             return True
         # Also catch the model-name pattern across editions.
         model_pattern = re.compile(
@@ -305,6 +370,14 @@ def nitter_to_x(link: str) -> str:
     """Convert nitter.net URL to x.com."""
     return link.replace("nitter.net", "x.com")
 
+def is_retweet(title: str) -> bool:
+    """Return True if the title is a retweet-only item from Nitter.
+
+    Nitter renders retweets with titles like 'R to @user: ...'.
+    These are low-signal noise that clutter the digest, so we drop them.
+    """
+    return title.startswith("R to @")
+
 
 def render_item(art: dict) -> str:
     """Render a single article as HTML.
@@ -316,6 +389,10 @@ def render_item(art: dict) -> str:
         <strong>FeedName</strong>: <a href="...">Title</a>
         Summary text
     """
+    # Safety net: skip retweet-only items that slipped through fetch_feed
+    if is_retweet(art.get("title", "")):
+        return ""
+
     feed_name = art["source"]
     link = art["link"]
 
@@ -549,7 +626,7 @@ def _http_get_with_retry(url: str, *, timeout: int = 15, attempts: int = 3,
     return None
 
 
-def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None) -> list[dict]:
+def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_items_per_source: int = MAX_ITEMS_PER_SOURCE, max_age_days: int = MAX_AGE_DAYS) -> list[dict]:
     """Fetch and parse an RSS feed, returning a list of article dicts.
 
     `fallbacks` is an ordered list of alternative URLs to try if the primary
@@ -583,9 +660,9 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None) -> list[
 
     articles = []
     now = datetime.now(timezone.utc)
-    cutoff = now.timestamp() - (MAX_AGE_DAYS * 86400)
+    cutoff = now.timestamp() - (max_age_days * 86400)
 
-    for item in root.findall(".//item")[:MAX_ITEMS_PER_SOURCE]:
+    for item in root.findall(".//item")[:max_items_per_source]:
         title_el = item.find("title")
         link_el  = item.find("link")
         desc_el  = item.find("description")
@@ -605,6 +682,10 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None) -> list[
         if pub_dt is not None and pub_dt.timestamp() < cutoff:
             continue
 
+        # Filter out retweet-only items (low-signal Nitter noise)
+        if is_retweet(title):
+            continue
+
         if title and link:
             articles.append({
                 "title": title,
@@ -616,6 +697,58 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None) -> list[
             })
 
     return articles
+
+
+def fetch_all_feeds(sections: list[dict], *, max_items_per_source: int = MAX_ITEMS_PER_SOURCE, max_age_days: int = MAX_AGE_DAYS) -> dict[str, list[tuple[str, list[dict]]]]:
+    """Fetch all RSS feeds in parallel, grouped by subsection.
+
+    Returns a mapping of subsection_title → ordered list of
+    (feed_name, articles) tuples — one per feed — in the same order
+    the feeds appear in sections.json.  Errors in individual feeds are
+    logged but never propagated (fetch_feed never raises).
+    """
+    # Collect every feed with its subsection context.
+    feed_jobs: list[tuple[str, str, list[str], str]] = []  # (name, url, fallbacks, sub_key)
+    subsection_order: list[str] = []
+    seen_subkeys: set[str] = set()
+    for section in sections:
+        for subsection in section["subsections"]:
+            sub_key = subsection["title"]
+            alts_map = subsection.get("feeds_alts", {}) or {}
+            for feed_name, feed_url in subsection["feeds"].items():
+                feed_fallbacks = alts_map.get(feed_name, []) or []
+                feed_jobs.append((feed_name, feed_url, feed_fallbacks, sub_key))
+            if sub_key not in seen_subkeys:
+                subsection_order.append(sub_key)
+                seen_subkeys.add(sub_key)
+
+    # Parallel fetch — each worker calls fetch_feed which never raises.
+    raw_results: dict[tuple[str, str, str, str], list[dict]] = {}
+    num_workers = min(MAX_FEED_WORKERS, len(feed_jobs)) if feed_jobs else 1
+    with ThreadPoolExecutor(max_workers=num_workers) as pool:
+        future_to_job = {
+            pool.submit(fetch_feed, name, url, fallbacks=fallbacks, max_items_per_source=max_items_per_source, max_age_days=max_age_days): (name, url, fallbacks, sub_key)
+            for name, url, fallbacks, sub_key in feed_jobs
+        }
+        for future in as_completed(future_to_job):
+            name, url, fallbacks, sub_key = future_to_job[future]
+            try:
+                articles = future.result()
+            except Exception:
+                # fetch_feed shouldn't raise, but guard anyway.
+                logging.exception(f"{name}: unexpected error in parallel fetch")
+                articles = []
+            raw_results[(name, url, "|".join(fallbacks), sub_key)] = articles
+            print(f"  → {name}… {len(articles)} fetched (parallel)")
+
+    # Reassemble in canonical section/subsection/feed order so dedup is
+    # deterministic.
+    results: dict[str, list[tuple[str, list[dict]]]] = {k: [] for k in subsection_order}
+    for name, url, fallbacks, sub_key in feed_jobs:
+        key = (name, url, "|".join(fallbacks), sub_key)
+        results[sub_key].append((name, raw_results.get(key, [])))
+
+    return results
 
 
 # ---------------------------------------------------------------------------
@@ -740,6 +873,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
     # Load site config (model, prompt file, etc.)
     config = load_config(site_root)
+    tuning = get_tuning(site_root)
 
     # LOAD SECTIONS FROM EXTERNAL JSON
     sections_path = site_root / "sections.json"
@@ -817,26 +951,24 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
             print(f"  ✗ No links found for edition '{edition}' in state.")
             return False
     else:
-        # Fresh run: fetch feeds and deduplicate
+        # Fresh run: fetch feeds in parallel, then deduplicate in order
         seen_this_run: list[dict] = []
+
+        # Initialise every subsection key so empty subsections still appear
+        for section in SECTIONS:
+            for subsection in section["subsections"]:
+                subsection_articles[subsection["title"]] = []
+
+        feed_results = fetch_all_feeds(SECTIONS, max_items_per_source=tuning["max_items_per_source"], max_age_days=tuning["max_age_days"])
 
         for section in SECTIONS:
             for subsection in section["subsections"]:
                 sub_key = subsection["title"]
-                subsection_articles[sub_key] = []
-
-                for feed_name, feed_url in subsection["feeds"].items():
-                    # Per-feed fallback chain, looked up by feed_name so the
-                    # primary URL can move between instances without breaking
-                    # the alts mapping. Missing key = no fallbacks (same as
-                    # before the Phase 4 nitter rework).
-                    alts_map = subsection.get("feeds_alts", {}) or {}
-                    feed_fallbacks = alts_map.get(feed_name, []) or []
-                    print(f"  → {feed_name}…")
-                    articles = fetch_feed(feed_name, feed_url, fallbacks=feed_fallbacks)
-                    print(f"    {len(articles)} fetched")
+                for feed_name, articles in feed_results.get(sub_key, []):
                     for a in articles:
-                        if not is_duplicate(a, seen_this_run, seen_links):
+                        if not is_duplicate(a, seen_this_run, seen_links,
+                                            title_sim_threshold=tuning["title_sim_threshold"],
+                                            cross_edition_dedup_hours=tuning["cross_edition_dedup_hours"]):
                             seen_this_run.append(a)
                             subsection_articles[sub_key].append(a)
                             print(f"      + kept: {a['title'][:60]}")

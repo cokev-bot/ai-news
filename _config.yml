@@ -6,6 +6,7 @@ twitter_username: ""
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 collections:
   posts:
