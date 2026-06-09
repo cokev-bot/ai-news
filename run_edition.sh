@@ -53,11 +53,11 @@ if [ "$DRY_RUN" = "1" ]; then
     exit 0
 fi
 
-# `git add` exits non-zero when a path is fully gitignored (e.g.
-# .news_state.json), and `set -e` would then kill the script before commit.
-# Use `--ignore-errors` so ignored paths are skipped silently and the real
-# content (_posts/) still gets staged.
-git add --ignore-errors _posts/ _config.yml .news_state.json
+# Stage content paths only. .news_state.json is gitignored and will cause
+# `git add` to exit 1 even with --ignore-errors, which kills the script
+# under `set -e`. The `|| true` guards against any other gitignored paths
+# that might slip in.
+git add --ignore-errors _posts/ _config.yml || true
 if ! git diff --cached --quiet; then
     git commit -m "$EDITION AI News Digest $DATE"
     # Push explicitly to origin/main so the live site updates regardless of
