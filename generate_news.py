@@ -1187,6 +1187,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         for subsection in section["subsections"]:
             all_articles.extend(subsection_articles.get(subsection["title"], []))
 
+    global_summary_html = ""
     if all_articles:
         pt_date_str = post_now.strftime("%Y-%m-%d")
         article_fingerprint = _big_picture_fingerprint(all_articles)
@@ -1241,14 +1242,8 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
                 global_summary_html,
             )
 
-        html_lines.append('<div style="background: #f9f9f9; padding: 15px; border-left: 5px solid #ccc; margin-bottom: 20px;">')
-        html_lines.append('  <h3 style="margin-top:0;">🌍 The Big Picture</h3>')
-        if "big-picture" in audio_paths:
-            html_lines.append(f'  {audio_player_html(audio_paths["big-picture"], "Big Picture summary")}')
-        html_lines.append(f'  <p>{global_summary_html}</p>')
-        html_lines.append('</div>')
-        html_lines.append("")
-
+        # Defer Big Picture HTML rendering to after TTS audio is generated
+        # (audio_paths is computed after section_summaries below).
 
     # Build the (section_title, section_articles) job list once, in the
     # canonical SECTIONS order. We dispatch all summaries concurrently
@@ -1277,6 +1272,16 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         global_summary_text if all_articles else None,
         section_summaries, config,
     )
+
+    # Render Big Picture HTML (deferred from above so audio_paths is available)
+    if all_articles and global_summary_html:
+        html_lines.append('<div style="background: #f9f9f9; padding: 15px; border-left: 5px solid #ccc; margin-bottom: 20px;">')
+        html_lines.append('  <h3 style="margin-top:0;">🌍 The Big Picture</h3>')
+        if "big-picture" in audio_paths:
+            html_lines.append(f'  {audio_player_html(audio_paths["big-picture"], "Big Picture summary")}')
+        html_lines.append(f'  <p>{global_summary_html}</p>')
+        html_lines.append('</div>')
+        html_lines.append("")
 
     for section in SECTIONS:
         section_articles = section_articles_by_title.get(section["title"])
