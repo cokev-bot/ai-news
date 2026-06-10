@@ -14,6 +14,23 @@
                 "feeds": {
                     "NYT AI": "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/spotlight/artificial-intelligence/rss.xml"
                 }
+            },
+            {
+                "title": "Newsletters",
+                "feeds": {
+                    "The Rundown AI": "https://news.google.com/rss/search?q=site:therundown.ai&hl=en-US&gl=US&ceid=US:en"
+                }
+            }
+        ]
+    },
+    {
+        "title": "Research",
+        "subsections": [
+            {
+                "title": "arXiv",
+                "feeds": {
+                    "arXiv cs.AI": "https://arxiv.org/rss/cs.AI"
+                }
             }
         ]
     },
@@ -272,6 +289,12 @@
                         "https://nitter.privacyredirect.com/antigravity/rss",
                         "https://xcancel.com/antigravity/rss"
                     ]
+                }
+            },
+            {
+                "title": "HuggingFace",
+                "feeds": {
+                    "HuggingFace Trending Models": "https://huggingface.co/blog/feed.xml"
                 }
             },
             {
