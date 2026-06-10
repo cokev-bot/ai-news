@@ -6,5 +6,10 @@
     "max_age_days": 7,
     "title_sim_threshold": 0.40,
     "cross_edition_dedup_hours": 24
+  },
+  "tts": {
+    "enabled": true,
+    "voice": "en-US-AriaNeural",
+    "rate": "+0%"
   }
 }

@@ -16,6 +16,7 @@ import re
 import logging
 import logging.handlers
 import os
+import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -585,6 +586,141 @@ def summarize_sections_concurrent(section_jobs: list[tuple[str, list[dict]]],
 
 
 # ---------------------------------------------------------------------------
+# Text-to-Speech
+# ---------------------------------------------------------------------------
+
+DEFAULT_TTS_CONFIG = {
+    "enabled": True,
+    "voice": "en-US-AriaNeural",
+    "rate": "+0%",
+}
+
+def get_tts_config(site_root: Path) -> dict:
+    """Load TTS config from config.json, merged with defaults."""
+    cfg = load_config(site_root)
+    tts = cfg.get("tts", {})
+    return {**DEFAULT_TTS_CONFIG, **tts}
+
+def _strip_html(text: str) -> str:
+    """Remove HTML tags from summary text for TTS."""
+    clean = re.sub(r'<a[^>]*>([^<]*)</a>', r'\1', text)  # link text only
+    clean = re.sub(r'<[^>]+>', ' ', clean)  # strip all other tags
+    clean = re.sub(r'\s+', ' ', clean).strip()  # normalize whitespace
+    return clean
+
+def generate_audio(text: str, output_path: Path, voice: str = "en-US-AriaNeural", rate: str = "+0%") -> bool:
+    """Generate an MP3 audio file from text using edge-tts.
+    
+    Returns True on success, False on failure. Failures are logged but never raise.
+    The caller should check the return value and simply skip audio embedding
+    when generation fails (degraded mode, not a build-breaker).
+    """
+    if not text.strip():
+        logging.warning(f"TTS: empty text, skipping {output_path}")
+        return False
+    
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    try:
+        result = subprocess.run(
+            ["edge-tts", "--voice", voice, "--rate", rate,
+             "--text", text, "--write-media", str(output_path)],
+            capture_output=True, text=True, timeout=120,
+        )
+        if result.returncode != 0:
+            logging.error(f"TTS edge-tts failed (rc={result.returncode}): {result.stderr[:200]}")
+            return False
+        if not output_path.exists() or output_path.stat().st_size < 100:
+            logging.error(f"TTS: output file missing or too small: {output_path}")
+            return False
+        logging.info(f"TTS: generated {output_path} ({output_path.stat().st_size // 1024}KB)")
+        return True
+    except FileNotFoundError:
+        logging.error("TTS: edge-tts not found on PATH; audio generation disabled")
+        return False
+    except subprocess.TimeoutExpired:
+        logging.error(f"TTS: edge-tts timed out for {output_path}")
+        return False
+    except Exception as e:
+        logging.error(f"TTS: unexpected error: {e}")
+        return False
+
+def _slugify(text: str) -> str:
+    """Convert a section title to a URL-safe slug for filenames."""
+    slug = text.lower().strip()
+    slug = re.sub(r'[^\w\s-]', '', slug)
+    slug = re.sub(r'[-\s]+', '-', slug)
+    return slug[:60]
+
+def generate_edition_audio(
+    edition: str,
+    site_root: Path,
+    global_summary_text: str | None,
+    section_summaries: dict[str, str],
+    config: dict | None = None,
+) -> dict[str, str]:
+    """Generate MP3 audio files for each section and the Big Picture.
+    
+    Returns a dict mapping section slugs to their audio path relative to site_root
+    (e.g. 'assets/audio/2026-06-10-afternoon/big-picture.mp3').
+    Only includes entries for successfully generated audio files.
+    
+    If TTS is disabled in config, returns an empty dict immediately.
+    """
+    cfg = config or load_config(site_root)
+    tts_cfg = get_tts_config(site_root) if config is None else {**DEFAULT_TTS_CONFIG, **cfg.get("tts", {})}
+    
+    if not tts_cfg.get("enabled", True):
+        logging.info("TTS: disabled in config, skipping audio generation")
+        return {}
+    
+    audio_dir = site_root / "assets" / "audio" / edition
+    voice = tts_cfg["voice"]
+    rate = tts_cfg["rate"]
+    audio_paths: dict[str, str] = {}
+    
+    # Big Picture audio
+    if global_summary_text:
+        clean_text = _strip_html(global_summary_text)
+        if clean_text:
+            bp_path = audio_dir / "big-picture.mp3"
+            rel_path = f"assets/audio/{edition}/big-picture.mp3"
+            if generate_audio(clean_text, bp_path, voice=voice, rate=rate):
+                audio_paths["big-picture"] = rel_path
+    
+    # Section summaries
+    for section_title, summary_text in section_summaries.items():
+        if not summary_text or summary_text == "Summary could not be generated.":
+            continue
+        clean_text = _strip_html(summary_text)
+        if clean_text:
+            slug = _slugify(section_title)
+            sec_path = audio_dir / f"{slug}.mp3"
+            rel_path = f"assets/audio/{edition}/{slug}.mp3"
+            if generate_audio(clean_text, sec_path, voice=voice, rate=rate):
+                audio_paths[slug] = rel_path
+    
+    logging.info(f"TTS: generated {len(audio_paths)} audio file(s) for {edition}")
+    return audio_paths
+
+def audio_player_html(audio_path: str, label: str = "Listen") -> str:
+    """Return an HTML audio player snippet for a given audio file path.
+    
+    Uses a minimal, accessible <audio> element with a download link fallback.
+    The path should be relative to the site root or absolute.
+    """
+    # Prepend base path for Jekyll
+    full_path = f"/ai-news/{audio_path.lstrip('/')}"
+    return (
+        f'<div class="audio-player" style="margin: 8px 0;">'
+        f'<audio controls preload="none" style="width:100%;max-width:400px;">'
+        f'<source src="{full_path}" type="audio/mpeg">'
+        f'<a href="{full_path}">Download {label}</a>'
+        f'</audio></div>'
+    )
+
+
+# ---------------------------------------------------------------------------
 # Feed fetching
 # ---------------------------------------------------------------------------
 
@@ -1107,6 +1243,8 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
         html_lines.append('<div style="background: #f9f9f9; padding: 15px; border-left: 5px solid #ccc; margin-bottom: 20px;">')
         html_lines.append('  <h3 style="margin-top:0;">🌍 The Big Picture</h3>')
+        if "big-picture" in audio_paths:
+            html_lines.append(f'  {audio_player_html(audio_paths["big-picture"], "Big Picture summary")}')
         html_lines.append(f'  <p>{global_summary_html}</p>')
         html_lines.append('</div>')
         html_lines.append("")
@@ -1133,6 +1271,13 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         section_jobs, site_root, config
     )
 
+    # Generate TTS audio files for each section and Big Picture
+    audio_paths = generate_edition_audio(
+        edition, site_root,
+        global_summary_text if all_articles else None,
+        section_summaries, config,
+    )
+
     for section in SECTIONS:
         section_articles = section_articles_by_title.get(section["title"])
         if not section_articles:
@@ -1148,6 +1293,9 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
         # 4. Add section heading and summary to HTML
         html_lines.append("<h2>{}</h2>".format(section["title"]))
+        section_slug = _slugify(section["title"])
+        if section_slug in audio_paths:
+            html_lines.append(audio_player_html(audio_paths[section_slug], f"{section['title']} summary"))
         html_lines.append('<p><strong>Summary:</strong> {}</p>'.format(summary_html))
         html_lines.append("")
 

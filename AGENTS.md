@@ -20,6 +20,7 @@ The Python engine handles the "intelligence" of the site:
 - **Deduplication:** Uses Jaccard similarity and link tracking (via `.news_state.json`) to prevent duplicate stories across editions.
 - **Summarization:** Sends a curated list of articles to a local Ollama instance (`gemma4:31b-cloud`) using the prompt defined in `summary_prompt.txt`.
 - **Rendering:** Converts raw data and LLM summaries into Jekyll-compatible HTML posts.
+- **Text-to-Speech:** Generates MP3 audio for each section and Big Picture summary using `edge-tts`, with inline audio players embedded in posts. Audio files are stored in `assets/audio/<edition>/` and committed to the repo.
 
 ## 🛠️ Key Configuration Files
 
