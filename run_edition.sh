@@ -57,7 +57,7 @@ fi
 # `git add` to exit 1 even with --ignore-errors, which kills the script
 # under `set -e`. The `|| true` guards against any other gitignored paths
 # that might slip in.
-git add --ignore-errors _posts/ _config.yml || true
+git add --ignore-errors _posts/ _config.yml assets/ || true
 if ! git diff --cached --quiet; then
     git commit -m "$EDITION AI News Digest $DATE"
     # Push explicitly to origin/main so the live site updates regardless of
