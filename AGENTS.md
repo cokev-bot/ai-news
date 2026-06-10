@@ -25,7 +25,7 @@ The Python engine handles the "intelligence" of the site:
 ## 🛠️ Key Configuration Files
 
 - **`sections.json`**: Defines the hierarchy of News $\rightarrow$ Subsections $\rightarrow$ RSS Feeds.
-- **`config.json`**: Contains LLM model settings and prompt file paths.
+- **`config.json`**: Contains LLM model settings, prompt file paths, tuning overrides, and TTS settings (`tts.voice`, `tts.rate`, `tts.enabled`).
 - **`summary_prompt.txt`**: The system prompt used by the LLM to generate section summaries.
 - **`.news_state.json`**: Persistent state tracking all previously seen links to ensure unique content.
 
@@ -36,8 +36,9 @@ The Python engine handles the "intelligence" of the site:
 - **Test Suite:** Located in `tests/`.
 - **Running Tests:** Execute from the repo root using:
   ```bash
-  PYTHONPATH=. python3 tests/test_logic.py
+  PYTHONPATH=. python3 -m unittest discover -s tests
   ```
+  Or for a single test file: `PYTHONPATH=. python3 -m unittest tests.test_tts`
 - **Requirement:** No code changes should be pushed to the repository without accompanying test updates and a successful test run.
 
 ## 📅 Schedule
