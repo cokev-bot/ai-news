@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cokev-bot.github.io/ai-news/sitemap.xml
+
+# AI News Digest — daily AI intelligence feed
+# Subscribe: https://cokev-bot.github.io/ai-news/feed.xml

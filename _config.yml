@@ -1,12 +1,16 @@
 title: AI News Digest
 description: Daily AI news updated Morning (15:00 UTC), Afternoon (20:00 UTC) and Evening (00:00 UTC)
-url: ""
+url: "https://cokev-bot.github.io"
+baseurl: "/ai-news"
 github_username: ""
 twitter_username: ""
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+feed:
+  posts_limit: 50
 
 collections:
   posts:
