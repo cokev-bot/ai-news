@@ -9,12 +9,19 @@ import socketserver
 import threading
 import time
 import unittest
+from datetime import datetime, timezone, timedelta
 from urllib.parse import urlparse
 
 from generate_news import _looks_like_rss, _http_get_with_retry, fetch_feed
 
 
-VALID_RSS = b"""<?xml version="1.0" encoding="UTF-8"?>
+def _recent_rss() -> bytes:
+    """Build a valid RSS fixture with a pubDate that is always within
+    MAX_AGE_DAYS (7) so the age filter in fetch_feed never drops it."""
+    pub = (datetime.now(timezone.utc) - timedelta(hours=1)).strftime(
+        "%a, %d %b %Y %H:%M:%S +0000"
+    )
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
 <title>Test Feed</title>
 <link>http://example.com</link>
@@ -23,9 +30,14 @@ VALID_RSS = b"""<?xml version="1.0" encoding="UTF-8"?>
   <title>Test Item One</title>
   <link>http://example.com/a</link>
   <description>First item</description>
-  <pubDate>Mon, 04 Jun 2026 12:00:00 +0000</pubDate>
+  <pubDate>{pub}</pubDate>
 </item>
-</channel></rss>"""
+</channel></rss>""".encode()
+
+
+# Kept as a module-level constant for the _looks_like_rss tests that only
+# need a body with the right XML shape (age filtering is irrelevant there).
+VALID_RSS = _recent_rss()
 
 EMPTY_BODY = b""
 HTML_ERROR = b"<html><body>503 Service Unavailable</body></html>"
