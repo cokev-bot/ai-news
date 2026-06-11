@@ -36,7 +36,7 @@ The current critical path. Items here are addressed by the `ai-news-roadmap-dail
 - [x] **Add RSS feed health monitor** — `tools/check_feeds.py` runs from a separate cron, alerts to Discord when a feed has been failing for 3+ consecutive runs. Tracks per-feed consecutive failures in `.feed_health.json`; supports `--dry-run` and `--json`; Discord alert via `DISCORD_WEBHOOK_URL` env var. 27 tests in `tests/test_feed_health.py`. *Completed 2026-06-09 (commit 893b9df).*
 - [x] **Add 3 new sources: arXiv cs.AI, HuggingFace Trending Models, The Rundown AI** — added arXiv cs.AI under new Research section, HuggingFace Trending Models (blog feed) under Developer Tools > HuggingFace, The Rundown AI (via Google News RSS proxy) under News > Newsletters. 14 new tests in `tests/test_new_feeds.py`. *Completed 2026-06-10 (commit da21f1d).*
 - [x] **Fill in `index.markdown`** — home page now shows recent editions (last 9), section index, and archive link. *Completed 2026-06-09.*
-- [ ] **Add site-level RSS feed (`feed.xml`)** — meta, but: an AI news site with no RSS is ironic. `jekyll-feed` already generates `/feed.xml` for posts; verify it works end-to-end. 2026-06-05.
+- [x] **Add site-level RSS feed (`feed.xml`)** — `jekyll-feed` was already generating feed.xml but with relative URLs (empty `url` in `_config.yml`). Fixed: set `url` and `baseurl` for absolute URLs, added `feed.posts_limit: 50` (was default 10), added `robots.txt` referencing both sitemap.xml and feed.xml. 26 tests in `tests/test_feed.py`. *Completed 2026-06-11 (commit d3c14b6).*
 
 ### Phase 5: Discovery (Brainstorm Backlog)
 Items here were brainstormed by the `ai-news-brainstorm-daily` cron. Each is a candidate for Phase 4 if the daily cron picks it.
