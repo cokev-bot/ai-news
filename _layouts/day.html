@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper">
+      <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="wrapper">
+      <h2>{{ page.title }}</h2>
+
+      <ul class="edition-list">
+        {% for edition in page.editions %}
+        <li class="edition-item">
+          <h3><a href="{{ edition.url | relative_url }}">{{ edition.title }}</a></h3>
+          {% if edition.bp_tease != "" %}
+          <p class="bp-tease">{{ edition.bp_tease }}</p>
+          {% endif %}
+          <time datetime="{{ edition.date | date_to_xmlschema }}">{{ edition.date | date: "%-I:%M %p %Z" }}</time>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <p><a href="{{ "/news/" | relative_url }}">&larr; All editions</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+    </div>
+  </footer>
+</body>
+</html>
