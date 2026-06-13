@@ -32,3 +32,7 @@ layout: home
 <h3>Archive</h3>
 
 <p>Browse all past editions <a href="{{ '/news/' | relative_url }}">by date</a>.</p>
+
+<h3>Subscribe</h3>
+
+<p>Get updates in your feed reader: <a href="{{ '/feed.xml' | relative_url }}">RSS Feed</a></p>
