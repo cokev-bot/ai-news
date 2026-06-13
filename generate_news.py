@@ -645,6 +645,72 @@ def generate_audio(text: str, output_path: Path, voice: str = "en-US-AriaNeural"
         logging.error(f"TTS: unexpected error: {e}")
         return False
 
+def generate_json_ld(
+    edition_label: str,
+    post_now: datetime,
+    global_summary_text: str | None,
+    section_titles: list[str],
+    sources: list[str],
+    site_url: str = "https://cokev-bot.github.io/ai-news/",
+) -> str:
+    """Generate a JSON-LD NewsArticle schema block for embedding in post HTML.
+
+    Returns a <script type=\"application/ld+json\"> block with structured data
+    that search engines can use to index the edition as a news article.
+
+    Args:
+        edition_label: Human-readable edition name (e.g. "Morning").
+        post_now: The datetime used for the post (Pacific or UTC).
+        global_summary_text: The raw text of the Big Picture summary (used as
+            the headline/description). May be None if no summary was generated.
+        section_titles: List of section titles in this edition.
+        sources: Unique source names from this edition's articles.
+        site_url: Base URL of the site for constructing the URL field.
+    """
+    date_published = post_now.strftime("%Y-%m-%dT%H:%M:%S%z")
+    # Strip trailing zeros from timezone offset for cleaner ISO 8601
+    # e.g. -0700 -> -07:00
+    if len(date_published) > 5 and date_published[-5] in ("+", "-"):
+        date_published = date_published[:-2] + ":" + date_published[-2:]
+
+    headline = (
+        f"AI News Digest — {edition_label} Edition"
+    )
+    # Use the Big Picture text as the description, truncated to 300 chars
+    description = ""
+    if global_summary_text:
+        description = global_summary_text.strip()
+        if len(description) > 300:
+            description = description[:297].rsplit(" ", 1)[0] + "…"
+
+    article_section = ", ".join(section_titles) if section_titles else "AI News"
+    keywords = list(dict.fromkeys(sources))[:20]  # unique, capped at 20
+
+    post_date = post_now.strftime("%Y-%m-%d")
+    post_slug = f"{post_date}-{edition_label.lower()}"
+    article_url = f"{site_url.rstrip('/')}/{post_date}-{edition_label.lower()}.html"
+
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": headline,
+        "datePublished": date_published,
+        "articleSection": article_section,
+        "keywords": keywords,
+        "url": article_url,
+        "publisher": {
+            "@type": "Organization",
+            "name": "AI News Digest",
+            "url": site_url.rstrip("/"),
+        },
+    }
+    if description:
+        schema["description"] = description
+
+    json_str = json.dumps(schema, ensure_ascii=False, indent=2)
+    return f'<script type="application/ld+json">\n{json_str}\n</script>'
+
+
 def _slugify(text: str) -> str:
     """Convert a section title to a URL-safe slug for filenames."""
     slug = text.lower().strip()
@@ -1187,6 +1253,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         for subsection in section["subsections"]:
             all_articles.extend(subsection_articles.get(subsection["title"], []))
 
+    global_summary_text = ""
     global_summary_html = ""
     if all_articles:
         pt_date_str = post_now.strftime("%Y-%m-%d")
@@ -1325,6 +1392,36 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
             html_lines.extend(subsections_html_lines)
             html_lines.append('</details>')
             html_lines.append("")
+
+    # Inject JSON-LD structured data after front matter (after the second "---")
+    section_titles = [
+        s["title"] for s in SECTIONS
+        if section_articles_by_title.get(s["title"])
+    ]
+    sources = list(dict.fromkeys(
+        a["source"]
+        for items in subsection_articles.values()
+        for a in items
+    ))
+    json_ld = generate_json_ld(
+        edition_label=edition_label,
+        post_now=post_now,
+        global_summary_text=global_summary_text if all_articles else None,
+        section_titles=section_titles,
+        sources=sources,
+    )
+    # Find the closing front-matter "---" and insert after it
+    fm_end = None
+    for idx, line in enumerate(html_lines):
+        if idx > 0 and line.strip() == "---":
+            fm_end = idx
+            break
+    if fm_end is not None:
+        html_lines.insert(fm_end + 1, "")
+        html_lines.insert(fm_end + 2, json_ld)
+    else:
+        # Fallback: prepend
+        html_lines.insert(0, json_ld)
 
     filepath.write_text("\n".join(html_lines), encoding="utf-8")
     total_items = sum(len(v) for v in subsection_articles.values())
