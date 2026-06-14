@@ -1,371 +1,409 @@
-[
-    {
-        "title": "News",
-        "subsections": [
-            {
-                "title": "Financial Times",
-                "feeds": {
-                    "FT AI": "https://www.ft.com/artificial-intelligence?format=rss",
-                    "FT The AI Shift": "https://www.ft.com/the-ai-shift?format=rss"
-                }
-            },
-            {
-                "title": "New York Times",
-                "feeds": {
-                    "NYT AI": "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/spotlight/artificial-intelligence/rss.xml"
-                }
-            },
-            {
-                "title": "Newsletters",
-                "feeds": {
-                    "The Rundown AI": "https://news.google.com/rss/search?q=site:therundown.ai&hl=en-US&gl=US&ceid=US:en"
-                }
-            }
-        ]
+{
+    "source_urls": {
+        "FT AI": "https://www.ft.com/artificial-intelligence",
+        "FT The AI Shift": "https://www.ft.com/the-ai-shift",
+        "NYT AI": "https://www.nytimes.com/spotlight/artificial-intelligence",
+        "The Rundown AI": "https://www.therundown.ai",
+        "arXiv cs.AI": "https://arxiv.org/list/cs.AI",
+        "Aleph__Alpha": "https://x.com/Aleph__Alpha",
+        "Alibaba_Qwen": "https://x.com/Alibaba_Qwen",
+        "AnthropicAI": "https://x.com/AnthropicAI",
+        "claudeai": "https://x.com/claudeai",
+        "BaiduAI_News": "https://x.com/BaiduAI_News",
+        "deepseek_ai": "https://x.com/deepseek_ai",
+        "GoogleAI": "https://x.com/GoogleAI",
+        "GeminiApp": "https://x.com/GeminiApp",
+        "NotebookLM": "https://x.com/NotebookLM",
+        "MiniMax_AI": "https://x.com/MiniMax_AI",
+        "MistralAI": "https://x.com/MistralAI",
+        "Kimi_Moonshot": "https://x.com/Kimi_Moonshot",
+        "OpenAI": "https://x.com/OpenAI",
+        "OpenAINewsroom": "https://x.com/OpenAINewsroom",
+        "ChatGPTapp": "https://x.com/ChatGPTapp",
+        "Zai_org": "https://x.com/Zai_org",
+        "ClaudeDevs": "https://x.com/ClaudeDevs",
+        "googleaidevs": "https://x.com/googleaidevs",
+        "MistralDevs": "https://x.com/MistralDevs",
+        "OpenAIDevs": "https://x.com/OpenAIDevs",
+        "GoogleAIStudio": "https://x.com/GoogleAIStudio",
+        "antigravity": "https://x.com/antigravity",
+        "HuggingFace Trending Models": "https://huggingface.co/models",
+        "HuggingFace Blog": "https://huggingface.co/blog",
+        "mistralvibe": "https://x.com/mistralvibe",
+        "ollama": "https://x.com/ollama",
+        "arena": "https://x.com/arena",
+        "Simon Willison": "https://simonwillison.net",
+        "karpathy": "https://x.com/karpathy"
     },
-    {
-        "title": "Research",
-        "subsections": [
-            {
-                "title": "arXiv",
-                "feeds": {
-                    "arXiv cs.AI": "https://arxiv.org/rss/cs.AI"
-                }
-            }
-        ]
-    },
-    {
-        "title": "AI Labs",
-        "subsections": [
-            {
-                "title": "Aleph Alpha",
-                "feeds": {
-                    "Aleph__Alpha": "https://nitter.net/Aleph__Alpha/rss"
+    "sections": [
+        {
+            "title": "News",
+            "subsections": [
+                {
+                    "title": "Financial Times",
+                    "feeds": {
+                        "FT AI": "https://www.ft.com/artificial-intelligence?format=rss",
+                        "FT The AI Shift": "https://www.ft.com/the-ai-shift?format=rss"
+                    }
                 },
-                "feeds_alts": {
-                    "Aleph__Alpha": [
-                        "https://nitter.privacydev.net/Aleph__Alpha/rss",
-                        "https://nitter.privacyredirect.com/Aleph__Alpha/rss",
-                        "https://xcancel.com/Aleph__Alpha/rss"
-                    ]
-                }
-            },
-            {
-                "title": "Alibaba",
-                "feeds": {
-                    "Alibaba_Qwen": "https://nitter.net/Alibaba_Qwen/rss"
+                {
+                    "title": "New York Times",
+                    "feeds": {
+                        "NYT AI": "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/spotlight/artificial-intelligence/rss.xml"
+                    }
                 },
-                "feeds_alts": {
-                    "Alibaba_Qwen": [
-                        "https://nitter.privacydev.net/Alibaba_Qwen/rss",
-                        "https://nitter.privacyredirect.com/Alibaba_Qwen/rss",
-                        "https://xcancel.com/Alibaba_Qwen/rss"
-                    ]
+                {
+                    "title": "Newsletters",
+                    "feeds": {
+                        "The Rundown AI": "https://news.google.com/rss/search?q=site:therundown.ai&hl=en-US&gl=US&ceid=US:en"
+                    }
                 }
-            },
-            {
-                "title": "Anthropic",
-                "feeds": {
-                    "AnthropicAI": "https://nitter.net/AnthropicAI/rss",
-                    "claudeai": "https://nitter.net/claudeai/rss"
+            ]
+        },
+        {
+            "title": "Research",
+            "subsections": [
+                {
+                    "title": "arXiv",
+                    "feeds": {
+                        "arXiv cs.AI": "https://arxiv.org/rss/cs.AI"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "AI Labs",
+            "subsections": [
+                {
+                    "title": "Aleph Alpha",
+                    "feeds": {
+                        "Aleph__Alpha": "https://nitter.net/Aleph__Alpha/rss"
+                    },
+                    "feeds_alts": {
+                        "Aleph__Alpha": [
+                            "https://nitter.privacydev.net/Aleph__Alpha/rss",
+                            "https://nitter.privacyredirect.com/Aleph__Alpha/rss",
+                            "https://xcancel.com/Aleph__Alpha/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "AnthropicAI": [
-                        "https://nitter.privacydev.net/AnthropicAI/rss",
-                        "https://nitter.privacyredirect.com/AnthropicAI/rss",
-                        "https://xcancel.com/AnthropicAI/rss"
-                    ],
-                    "claudeai": [
-                        "https://nitter.privacydev.net/claudeai/rss",
-                        "https://nitter.privacyredirect.com/claudeai/rss",
-                        "https://xcancel.com/claudeai/rss"
-                    ]
-                }
-            },
-            {
-                "title": "Baidu AI",
-                "feeds": {
-                    "BaiduAI_News": "https://nitter.net/BaiduAI_News/rss"
+                {
+                    "title": "Alibaba",
+                    "feeds": {
+                        "Alibaba_Qwen": "https://nitter.net/Alibaba_Qwen/rss"
+                    },
+                    "feeds_alts": {
+                        "Alibaba_Qwen": [
+                            "https://nitter.privacydev.net/Alibaba_Qwen/rss",
+                            "https://nitter.privacyredirect.com/Alibaba_Qwen/rss",
+                            "https://xcancel.com/Alibaba_Qwen/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "BaiduAI_News": [
-                        "https://nitter.privacydev.net/BaiduAI_News/rss",
-                        "https://nitter.privacyredirect.com/BaiduAI_News/rss",
-                        "https://xcancel.com/BaiduAI_News/rss"
-                    ]
-                }
-            },
-            {
-                "title": "DeepSeek",
-                "feeds": {
-                    "deepseek_ai": "https://nitter.net/deepseek_ai/rss"
+                {
+                    "title": "Anthropic",
+                    "feeds": {
+                        "AnthropicAI": "https://nitter.net/AnthropicAI/rss",
+                        "claudeai": "https://nitter.net/claudeai/rss"
+                    },
+                    "feeds_alts": {
+                        "AnthropicAI": [
+                            "https://nitter.privacydev.net/AnthropicAI/rss",
+                            "https://nitter.privacyredirect.com/AnthropicAI/rss",
+                            "https://xcancel.com/AnthropicAI/rss"
+                        ],
+                        "claudeai": [
+                            "https://nitter.privacydev.net/claudeai/rss",
+                            "https://nitter.privacyredirect.com/claudeai/rss",
+                            "https://xcancel.com/claudeai/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "deepseek_ai": [
-                        "https://nitter.privacydev.net/deepseek_ai/rss",
-                        "https://nitter.privacyredirect.com/deepseek_ai/rss",
-                        "https://xcancel.com/deepseek_ai/rss"
-                    ]
-                }
-            },
-            {
-                "title": "Google",
-                "feeds": {
-                    "GoogleAI": "https://nitter.net/GoogleAI/rss",
-                    "GeminiApp": "https://nitter.net/GeminiApp/rss",
-                    "NotebookLM": "https://nitter.net/NotebookLM/rss"
+                {
+                    "title": "Baidu AI",
+                    "feeds": {
+                        "BaiduAI_News": "https://nitter.net/BaiduAI_News/rss"
+                    },
+                    "feeds_alts": {
+                        "BaiduAI_News": [
+                            "https://nitter.privacydev.net/BaiduAI_News/rss",
+                            "https://nitter.privacyredirect.com/BaiduAI_News/rss",
+                            "https://xcancel.com/BaiduAI_News/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "GoogleAI": [
-                        "https://nitter.privacydev.net/GoogleAI/rss",
-                        "https://nitter.privacyredirect.com/GoogleAI/rss",
-                        "https://xcancel.com/GoogleAI/rss"
-                    ],
-                    "GeminiApp": [
-                        "https://nitter.privacydev.net/GeminiApp/rss",
-                        "https://nitter.privacyredirect.com/GeminiApp/rss",
-                        "https://xcancel.com/GeminiApp/rss"
-                    ],
-                    "NotebookLM": [
-                        "https://nitter.privacydev.net/NotebookLM/rss",
-                        "https://nitter.privacyredirect.com/NotebookLM/rss",
-                        "https://xcancel.com/NotebookLM/rss"
-                    ]
-                }
-            },
-            {
-                "title": "MiniMax",
-                "feeds": {
-                    "MiniMax_AI": "https://nitter.net/MiniMax_AI/rss"
+                {
+                    "title": "DeepSeek",
+                    "feeds": {
+                        "deepseek_ai": "https://nitter.net/deepseek_ai/rss"
+                    },
+                    "feeds_alts": {
+                        "deepseek_ai": [
+                            "https://nitter.privacydev.net/deepseek_ai/rss",
+                            "https://nitter.privacyredirect.com/deepseek_ai/rss",
+                            "https://xcancel.com/deepseek_ai/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "MiniMax_AI": [
-                        "https://nitter.privacydev.net/MiniMax_AI/rss",
-                        "https://nitter.privacyredirect.com/MiniMax_AI/rss",
-                        "https://xcancel.com/MiniMax_AI/rss"
-                    ]
-                }
-            },
-            {
-                "title": "Mistral",
-                "feeds": {
-                    "MistralAI": "https://nitter.net/MistralAI/rss"
+                {
+                    "title": "Google",
+                    "feeds": {
+                        "GoogleAI": "https://nitter.net/GoogleAI/rss",
+                        "GeminiApp": "https://nitter.net/GeminiApp/rss",
+                        "NotebookLM": "https://nitter.net/NotebookLM/rss"
+                    },
+                    "feeds_alts": {
+                        "GoogleAI": [
+                            "https://nitter.privacydev.net/GoogleAI/rss",
+                            "https://nitter.privacyredirect.com/GoogleAI/rss",
+                            "https://xcancel.com/GoogleAI/rss"
+                        ],
+                        "GeminiApp": [
+                            "https://nitter.privacydev.net/GeminiApp/rss",
+                            "https://nitter.privacyredirect.com/GeminiApp/rss",
+                            "https://xcancel.com/GeminiApp/rss"
+                        ],
+                        "NotebookLM": [
+                            "https://nitter.privacydev.net/NotebookLM/rss",
+                            "https://nitter.privacyredirect.com/NotebookLM/rss",
+                            "https://xcancel.com/NotebookLM/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "MistralAI": [
-                        "https://nitter.privacydev.net/MistralAI/rss",
-                        "https://nitter.privacyredirect.com/MistralAI/rss",
-                        "https://xcancel.com/MistralAI/rss"
-                    ]
-                }
-            },
-            {
-                "title": "Moonshot AI",
-                "feeds": {
-                    "Kimi_Moonshot": "https://nitter.net/Kimi_Moonshot/rss"
+                {
+                    "title": "MiniMax",
+                    "feeds": {
+                        "MiniMax_AI": "https://nitter.net/MiniMax_AI/rss"
+                    },
+                    "feeds_alts": {
+                        "MiniMax_AI": [
+                            "https://nitter.privacydev.net/MiniMax_AI/rss",
+                            "https://nitter.privacyredirect.com/MiniMax_AI/rss",
+                            "https://xcancel.com/MiniMax_AI/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "Kimi_Moonshot": [
-                        "https://nitter.privacydev.net/Kimi_Moonshot/rss",
-                        "https://nitter.privacyredirect.com/Kimi_Moonshot/rss",
-                        "https://xcancel.com/Kimi_Moonshot/rss"
-                    ]
-                }
-            },
-            {
-                "title": "OpenAI",
-                "feeds": {
-                    "OpenAI": "https://nitter.net/OpenAI/rss",
-                    "OpenAINewsroom": "https://nitter.net/OpenAINewsroom/rss",
-                    "ChatGPTapp": "https://nitter.net/ChatGPTapp/rss"
+                {
+                    "title": "Mistral",
+                    "feeds": {
+                        "MistralAI": "https://nitter.net/MistralAI/rss"
+                    },
+                    "feeds_alts": {
+                        "MistralAI": [
+                            "https://nitter.privacydev.net/MistralAI/rss",
+                            "https://nitter.privacyredirect.com/MistralAI/rss",
+                            "https://xcancel.com/MistralAI/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "OpenAI": [
-                        "https://nitter.privacydev.net/OpenAI/rss",
-                        "https://nitter.privacyredirect.com/OpenAI/rss",
-                        "https://xcancel.com/OpenAI/rss"
-                    ],
-                    "OpenAINewsroom": [
-                        "https://nitter.privacydev.net/OpenAINewsroom/rss",
-                        "https://nitter.privacyredirect.com/OpenAINewsroom/rss",
-                        "https://xcancel.com/OpenAINewsroom/rss"
-                    ],
-                    "ChatGPTapp": [
-                        "https://nitter.privacydev.net/ChatGPTapp/rss",
-                        "https://nitter.privacyredirect.com/ChatGPTapp/rss",
-                        "https://xcancel.com/ChatGPTapp/rss"
-                    ]
-                }
-            },
-            {
-                "title": "Z.AI",
-                "feeds": {
-                    "Zai_org": "https://nitter.net/Zai_org/rss"
+                {
+                    "title": "Moonshot AI",
+                    "feeds": {
+                        "Kimi_Moonshot": "https://nitter.net/Kimi_Moonshot/rss"
+                    },
+                    "feeds_alts": {
+                        "Kimi_Moonshot": [
+                            "https://nitter.privacydev.net/Kimi_Moonshot/rss",
+                            "https://nitter.privacyredirect.com/Kimi_Moonshot/rss",
+                            "https://xcancel.com/Kimi_Moonshot/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "Zai_org": [
-                        "https://nitter.privacydev.net/Zai_org/rss",
-                        "https://nitter.privacyredirect.com/Zai_org/rss",
-                        "https://xcancel.com/Zai_org/rss"
-                    ]
-                }
-            }
-        ]
-    },
-    {
-        "title": "Developers",
-        "subsections": [
-            {
-                "title": "Anthropic",
-                "feeds": {
-                    "ClaudeDevs": "https://nitter.net/ClaudeDevs/rss"
+                {
+                    "title": "OpenAI",
+                    "feeds": {
+                        "OpenAI": "https://nitter.net/OpenAI/rss",
+                        "OpenAINewsroom": "https://nitter.net/OpenAINewsroom/rss",
+                        "ChatGPTapp": "https://nitter.net/ChatGPTapp/rss"
+                    },
+                    "feeds_alts": {
+                        "OpenAI": [
+                            "https://nitter.privacydev.net/OpenAI/rss",
+                            "https://nitter.privacyredirect.com/OpenAI/rss",
+                            "https://xcancel.com/OpenAI/rss"
+                        ],
+                        "OpenAINewsroom": [
+                            "https://nitter.privacydev.net/OpenAINewsroom/rss",
+                            "https://nitter.privacyredirect.com/OpenAINewsroom/rss",
+                            "https://xcancel.com/OpenAINewsroom/rss"
+                        ],
+                        "ChatGPTapp": [
+                            "https://nitter.privacydev.net/ChatGPTapp/rss",
+                            "https://nitter.privacyredirect.com/ChatGPTapp/rss",
+                            "https://xcancel.com/ChatGPTapp/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "ClaudeDevs": [
-                        "https://nitter.privacydev.net/ClaudeDevs/rss",
-                        "https://nitter.privacyredirect.com/ClaudeDevs/rss",
-                        "https://xcancel.com/ClaudeDevs/rss"
-                    ]
+                {
+                    "title": "Z.AI",
+                    "feeds": {
+                        "Zai_org": "https://nitter.net/Zai_org/rss"
+                    },
+                    "feeds_alts": {
+                        "Zai_org": [
+                            "https://nitter.privacydev.net/Zai_org/rss",
+                            "https://nitter.privacyredirect.com/Zai_org/rss",
+                            "https://xcancel.com/Zai_org/rss"
+                        ]
+                    }
                 }
-            },
-            {
-                "title": "Google",
-                "feeds": {
-                    "googleaidevs": "https://nitter.net/googleaidevs/rss"
+            ]
+        },
+        {
+            "title": "Developers",
+            "subsections": [
+                {
+                    "title": "Anthropic",
+                    "feeds": {
+                        "ClaudeDevs": "https://nitter.net/ClaudeDevs/rss"
+                    },
+                    "feeds_alts": {
+                        "ClaudeDevs": [
+                            "https://nitter.privacydev.net/ClaudeDevs/rss",
+                            "https://nitter.privacyredirect.com/ClaudeDevs/rss",
+                            "https://xcancel.com/ClaudeDevs/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "googleaidevs": [
-                        "https://nitter.privacydev.net/googleaidevs/rss",
-                        "https://nitter.privacyredirect.com/googleaidevs/rss",
-                        "https://xcancel.com/googleaidevs/rss"
-                    ]
-                }
-            },
-            {
-                "title": "Mistral",
-                "feeds": {
-                    "MistralDevs": "https://nitter.net/MistralDevs/rss"
+                {
+                    "title": "Google",
+                    "feeds": {
+                        "googleaidevs": "https://nitter.net/googleaidevs/rss"
+                    },
+                    "feeds_alts": {
+                        "googleaidevs": [
+                            "https://nitter.privacydev.net/googleaidevs/rss",
+                            "https://nitter.privacyredirect.com/googleaidevs/rss",
+                            "https://xcancel.com/googleaidevs/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "MistralDevs": [
-                        "https://nitter.privacydev.net/MistralDevs/rss",
-                        "https://nitter.privacyredirect.com/MistralDevs/rss",
-                        "https://xcancel.com/MistralDevs/rss"
-                    ]
-                }
-            },
-            {
-                "title": "OpenAI",
-                "feeds": {
-                    "OpenAIDevs": "https://nitter.net/OpenAIDevs/rss"
+                {
+                    "title": "Mistral",
+                    "feeds": {
+                        "MistralDevs": "https://nitter.net/MistralDevs/rss"
+                    },
+                    "feeds_alts": {
+                        "MistralDevs": [
+                            "https://nitter.privacydev.net/MistralDevs/rss",
+                            "https://nitter.privacyredirect.com/MistralDevs/rss",
+                            "https://xcancel.com/MistralDevs/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "OpenAIDevs": [
-                        "https://nitter.privacydev.net/OpenAIDevs/rss",
-                        "https://nitter.privacyredirect.com/OpenAIDevs/rss",
-                        "https://xcancel.com/OpenAIDevs/rss"
-                    ]
+                {
+                    "title": "OpenAI",
+                    "feeds": {
+                        "OpenAIDevs": "https://nitter.net/OpenAIDevs/rss"
+                    },
+                    "feeds_alts": {
+                        "OpenAIDevs": [
+                            "https://nitter.privacydev.net/OpenAIDevs/rss",
+                            "https://nitter.privacyredirect.com/OpenAIDevs/rss",
+                            "https://xcancel.com/OpenAIDevs/rss"
+                        ]
+                    }
                 }
-            }
-        ]
-    },
-    {
-        "title": "Developer Tools",
-        "subsections": [
-            {
-                "title": "Google",
-                "feeds": {
-                    "GoogleAIStudio": "https://nitter.net/GoogleAIStudio/rss",
-                    "antigravity": "https://nitter.net/antigravity/rss"
+            ]
+        },
+        {
+            "title": "Developer Tools",
+            "subsections": [
+                {
+                    "title": "Google",
+                    "feeds": {
+                        "GoogleAIStudio": "https://nitter.net/GoogleAIStudio/rss",
+                        "antigravity": "https://nitter.net/antigravity/rss"
+                    },
+                    "feeds_alts": {
+                        "GoogleAIStudio": [
+                            "https://nitter.privacydev.net/GoogleAIStudio/rss",
+                            "https://nitter.privacyredirect.com/GoogleAIStudio/rss",
+                            "https://xcancel.com/GoogleAIStudio/rss"
+                        ],
+                        "antigravity": [
+                            "https://nitter.privacydev.net/antigravity/rss",
+                            "https://nitter.privacyredirect.com/antigravity/rss",
+                            "https://xcancel.com/antigravity/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "GoogleAIStudio": [
-                        "https://nitter.privacydev.net/GoogleAIStudio/rss",
-                        "https://nitter.privacyredirect.com/GoogleAIStudio/rss",
-                        "https://xcancel.com/GoogleAIStudio/rss"
-                    ],
-                    "antigravity": [
-                        "https://nitter.privacydev.net/antigravity/rss",
-                        "https://nitter.privacyredirect.com/antigravity/rss",
-                        "https://xcancel.com/antigravity/rss"
-                    ]
-                }
-            },
-            {
-                "title": "HuggingFace",
-                "feeds": {
-                    "HuggingFace Trending Models": "https://huggingface.co/blog/feed.xml"
-                }
-            },
-            {
-                "title": "Mistral",
-                "feeds": {
-                    "mistralvibe": "https://nitter.net/mistralvibe/rss"
+                {
+                    "title": "HuggingFace",
+                    "feeds": {
+                        "HuggingFace Trending Models": "https://huggingface.co/blog/feed.xml"
+                    }
                 },
-                "feeds_alts": {
-                    "mistralvibe": [
-                        "https://nitter.privacydev.net/mistralvibe/rss",
-                        "https://nitter.privacyredirect.com/mistralvibe/rss",
-                        "https://xcancel.com/mistralvibe/rss"
-                    ]
-                }
-            },
-            {
-                "title": "Ollama",
-                "feeds": {
-                    "ollama": "https://nitter.net/ollama/rss"
+                {
+                    "title": "Mistral",
+                    "feeds": {
+                        "mistralvibe": "https://nitter.net/mistralvibe/rss"
+                    },
+                    "feeds_alts": {
+                        "mistralvibe": [
+                            "https://nitter.privacydev.net/mistralvibe/rss",
+                            "https://nitter.privacyredirect.com/mistralvibe/rss",
+                            "https://xcancel.com/mistralvibe/rss"
+                        ]
+                    }
                 },
-                "feeds_alts": {
-                    "ollama": [
-                        "https://nitter.privacydev.net/ollama/rss",
-                        "https://nitter.privacyredirect.com/ollama/rss",
-                        "https://xcancel.com/ollama/rss"
-                    ]
+                {
+                    "title": "Ollama",
+                    "feeds": {
+                        "ollama": "https://nitter.net/ollama/rss"
+                    },
+                    "feeds_alts": {
+                        "ollama": [
+                            "https://nitter.privacydev.net/ollama/rss",
+                            "https://nitter.privacyredirect.com/ollama/rss",
+                            "https://xcancel.com/ollama/rss"
+                        ]
+                    }
                 }
-            }
-        ]
-    },
-    {
-        "title": "Benchmarks",
-        "subsections": [
-            {
-                "title": "Arena.ai",
-                "feeds": {
-                    "arena": "https://nitter.net/arena/rss"
+            ]
+        },
+        {
+            "title": "Benchmarks",
+            "subsections": [
+                {
+                    "title": "Arena.ai",
+                    "feeds": {
+                        "arena": "https://nitter.net/arena/rss"
+                    },
+                    "feeds_alts": {
+                        "arena": [
+                            "https://nitter.privacydev.net/arena/rss",
+                            "https://nitter.privacyredirect.com/arena/rss",
+                            "https://xcancel.com/arena/rss"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Under Review",
+            "subsections": [
+                {
+                    "title": "Independent Blogs",
+                    "feeds": {
+                        "Simon Willison": "https://simonwillison.net/atom/everything/",
+                        "HuggingFace Blog": "https://huggingface.co/blog/feed.xml"
+                    }
                 },
-                "feeds_alts": {
-                    "arena": [
-                        "https://nitter.privacydev.net/arena/rss",
-                        "https://nitter.privacyredirect.com/arena/rss",
-                        "https://xcancel.com/arena/rss"
-                    ]
+                {
+                    "title": "Researchers",
+                    "feeds": {
+                        "karpathy": "https://nitter.net/karpathy/rss"
+                    },
+                    "feeds_alts": {
+                        "karpathy": [
+                            "https://nitter.privacydev.net/karpathy/rss",
+                            "https://nitter.privacyredirect.com/karpathy/rss",
+                            "https://xcancel.com/karpathy/rss"
+                        ]
+                    }
                 }
-            }
-        ]
-    },
-    {
-        "title": "Under Review",
-        "subsections": [
-            {
-                "title": "Independent Blogs",
-                "feeds": {
-                    "Simon Willison": "https://simonwillison.net/atom/everything/",
-                    "HuggingFace Blog": "https://huggingface.co/blog/feed.xml"
-                }
-            },
-            {
-                "title": "Researchers",
-                "feeds": {
-                    "karpathy": "https://nitter.net/karpathy/rss"
-                },
-                "feeds_alts": {
-                    "karpathy": [
-                        "https://nitter.privacydev.net/karpathy/rss",
-                        "https://nitter.privacyredirect.com/karpathy/rss",
-                        "https://xcancel.com/karpathy/rss"
-                    ]
-                }
-            }
-        ]
-    }
-]
+            ]
+        }
+    ]
+}

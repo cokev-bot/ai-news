@@ -49,9 +49,16 @@ NEW_FEEDS = {
 
 
 def _load_sections() -> list[dict]:
-    """Load and return sections.json as a Python list."""
+    """Load and return sections from sections.json as a Python list.
+
+    Handles both old format (flat array) and new format (object with
+    'sections' and 'source_urls' keys).
+    """
     with SECTIONS_FILE.open(encoding="utf-8") as fh:
-        return json.load(fh)
+        data = json.load(fh)
+    if isinstance(data, list):
+        return data
+    return data.get("sections", [])
 
 
 class FeedUnavailableError(Exception):

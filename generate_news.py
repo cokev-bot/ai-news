@@ -380,39 +380,55 @@ def is_retweet(title: str) -> bool:
     return title.startswith("R to @")
 
 
-def render_item(art: dict) -> str:
+def render_source_pill(feed_name: str, source_urls: dict[str, str]) -> str:
+    """Render a source name as a linked pill element.
+
+    If the feed name has a known homepage URL in source_urls, renders as
+    an anchor with class ``source-pill``.  Otherwise falls back to a plain
+    ``<strong>`` tag (backwards-compatible with feeds not yet in the map).
+    """
+    url = source_urls.get(feed_name)
+    if url:
+        return f'<a class="source-pill" href="{url}">{feed_name}</a>'
+    return f'<strong>{feed_name}</strong>'
+
+
+def render_item(art: dict, source_urls: dict[str, str] | None = None) -> str:
     """Render a single article as HTML.
 
     Nitter / Twitter feeds:
-        <strong>FeedName</strong>: tweet text <a href="x.com/...">🔗</a>
+        <a class="source-pill" href="...">FeedName</a>: tweet text <a href="x.com/...">🔗</a>
 
     News / FT feeds:
-        <strong>FeedName</strong>: <a href="...">Title</a>
+        <a class="source-pill" href="...">FeedName</a>: <a href="...">Title</a>
         Summary text
     """
+    if source_urls is None:
+        source_urls = {}
     # Safety net: skip retweet-only items that slipped through fetch_feed
     if is_retweet(art.get("title", "")):
         return ""
 
     feed_name = art["source"]
     link = art["link"]
+    pill = render_source_pill(feed_name, source_urls)
 
     if is_nitter_link(link):
         x_link = nitter_to_x(link)
         tweet_text = linkify_urls(art["title"])
         return (
             '<p>'
-            '<strong>{}</strong>: {} '
+            '{}: {} '
             '<a href="{}">🔗</a>'
             '</p>'
-        ).format(feed_name, tweet_text, x_link)
+        ).format(pill, tweet_text, x_link)
     else:
         # News/FT: title as link, description below
         title_html = (
             '<p>'
-            '<strong>{}</strong>: <a href="{}">{}</a>'
+            '{}: <a href="{}">{}</a>'
             '</p>'
-        ).format(feed_name, link, art["title"])
+        ).format(pill, link, art["title"])
         desc_html = ""
         if art.get("description"):
             desc_html = "<p>{}</p>".format(art["description"])
@@ -1083,10 +1099,19 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         print(f"  [!] Error: {sections_path} not found.")
         return False
     try:
-        SECTIONS = json.loads(sections_path.read_text(encoding="utf-8"))
+        _sections_data = json.loads(sections_path.read_text(encoding="utf-8"))
     except Exception as e:
         print(f"  [!] Error parsing sections.json: {e}")
         return False
+
+    # Backward-compatible: sections.json may be a flat list (old) or an
+    # object with "sections" + "source_urls" keys (new).
+    if isinstance(_sections_data, list):
+        SECTIONS = _sections_data
+        SOURCE_URLS: dict[str, str] = {}
+    else:
+        SECTIONS = _sections_data.get("sections", [])
+        SOURCE_URLS = _sections_data.get("source_urls", {})
 
     state_path = site_root / ".news_state.json"
     state = load_state(state_path)
@@ -1245,6 +1270,24 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         "<p>Scanning {} feeds · {} accounts posted · {} items</p>".format(
             total_feeds, num_sources, sum(len(v) for v in subsection_articles.values())),
         "<hr>",
+        "<style>",
+        ".source-pill {",
+        "  display: inline-block;",
+        "  background: #e8edf2;",
+        "  color: #2c3e50;",
+        "  font-size: 0.85em;",
+        "  font-weight: 600;",
+        "  padding: 1px 6px;",
+        "  border-radius: 3px;",
+        "  text-decoration: none;",
+        "  white-space: nowrap;",
+        "  vertical-align: baseline;",
+        "  margin-right: 2px;",
+        "}",
+        ".source-pill:hover {",
+        "  background: #cdd5de;",
+        "}",
+        "</style>",
     ]
 
     # Generate global executive summary across ALL sections
@@ -1383,7 +1426,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
             subsections_html_lines.append("<h3>{}</h3>".format(subsection["title"]))
             subsections_html_lines.append("")
             for art in items:
-                subsections_html_lines.append(render_item(art))
+                subsections_html_lines.append(render_item(art, SOURCE_URLS))
                 subsections_html_lines.append("")
 
         if subsections_html_lines:
