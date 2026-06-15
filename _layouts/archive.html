@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper">
+      <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="wrapper">
+      <h2>{{ page.title }}</h2>
+
+      <p>Browse all past editions by month.</p>
+
+      {% for month in page.months %}
+      <div class="archive-month">
+        <h3 class="archive-month-heading">
+          {{ month.month_label }}
+          <span class="archive-count">({{ month.count }} edition{% if month.count != 1 %}s{% endif %})</span>
+        </h3>
+        <ul class="archive-edition-list">
+          {% for edition in month.editions %}
+          <li class="archive-edition-item">
+            <time datetime="{{ edition.date | date_to_xmlschema }}">{{ edition.date | date: "%B %-d, %Y" }}</time>
+            — <a href="{{ edition.url | relative_url }}">{{ edition.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+
+      <p><a href="{{ "/" | relative_url }}">&larr; Home</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+    </div>
+  </footer>
+</body>
+</html>
