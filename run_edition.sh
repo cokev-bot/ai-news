@@ -21,8 +21,9 @@ if [ -z "$EDITION" ] || [[ ! "$EDITION" =~ ^(Morning|Afternoon|Evening)$ ]]; the
     exit 1
 fi
 
-# Use Pacific Time for edition date so 00:00 UTC (5pm PT) stays on same PT day
-DATE=$(TZ='America/Los_Angeles' date '+%Y-%m-%d')
+# Read timezone from config.json; fall back to America/Los_Angeles
+TIMEZONE=$(python3 -c "import json; print(json.load(open('/home/ubuntu/ai-news/config.json')).get('timezone','America/Los_Angeles'))" 2>/dev/null || echo 'America/Los_Angeles')
+DATE=$(TZ="$TIMEZONE" date '+%Y-%m-%d')
 cd /home/ubuntu/ai-news
 
 # Always publish to main so the live site (https://cokev-bot.github.io/ai-news/)

@@ -34,6 +34,7 @@ TITLE_SIM_THRESHOLD = 0.40   # Jaccard similarity threshold for duplicate detect
 # 12h later that the per-edition seen-list misses. Older re-reports are
 # allowed through (treated as fresh coverage).
 CROSS_EDITION_DEDUP_HOURS = 24
+DEFAULT_TIMEZONE = "America/Los_Angeles"
 LOG_FILE = "generate_news.log"
 # Cap concurrent LLM section-summary workers. Each one holds a long-lived
 # HTTP request to the local Ollama instance (up to 600s). Capping at the
@@ -49,6 +50,7 @@ OLLAMA_ENDPOINT = "http://localhost:11434/api/generate"
 DEFAULT_CONFIG = {
     "model": "gemma4:31b-cloud",
     "summary_prompt_file": "summary_prompt.txt",
+    "timezone": DEFAULT_TIMEZONE,
     "tuning": {
         "max_items_per_source": MAX_ITEMS_PER_SOURCE,
         "max_age_days": MAX_AGE_DAYS,
@@ -70,6 +72,18 @@ def get_tuning(site_root: Path) -> dict:
     defaults = DEFAULT_CONFIG["tuning"]
     user_tuning = cfg.get("tuning", {})
     return {**defaults, **user_tuning}
+
+
+def get_timezone(site_root: Path) -> str:
+    """Load timezone from config.json, falling back to DEFAULT_TIMEZONE.
+
+    Returns an IANA timezone string (e.g. 'America/Los_Angeles').
+    Empty or whitespace-only strings are treated as missing and fall back
+    to the default.
+    """
+    cfg = load_config(site_root)
+    tz = cfg.get("timezone", DEFAULT_TIMEZONE)
+    return tz.strip() or DEFAULT_TIMEZONE
 
 
 def load_config(site_root: Path) -> dict:
@@ -100,8 +114,12 @@ logging.basicConfig(
 # Timezone helpers
 # ---------------------------------------------------------------------------
 
-def pacific_now() -> datetime:
-    """Return current wall-clock time in America/Los_Angeles, with a real tzinfo.
+def pacific_now(site_root: Path | None = None) -> datetime:
+    """Return current wall-clock time in the configured timezone, with a real tzinfo.
+
+    The timezone is read from config.json (``timezone`` key, defaulting to
+    ``America/Los_Angeles``).  Pass ``site_root`` to resolve the config path;
+    if omitted, the default timezone is used.
 
     Replaces an older pytz-based path whose fallback (`datetime.now(timezone.utc)
     + timedelta(hours=-7)`) silently produced UTC-tagged datetimes — %z then
@@ -110,7 +128,8 @@ def pacific_now() -> datetime:
     returns a datetime with a correct fixed-offset tzinfo.
     """
     from zoneinfo import ZoneInfo
-    return datetime.now(ZoneInfo("America/Los_Angeles"))
+    tz_name = get_timezone(site_root) if site_root else DEFAULT_TIMEZONE
+    return datetime.now(ZoneInfo(tz_name))
 
 
 # ---------------------------------------------------------------------------
@@ -1229,7 +1248,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
     filename = f"{edition}.html"
     filepath = site_root / "_posts" / filename
 
-    # Use Pacific Time for all display timestamps by default (cron-driven
+    # Use the configured timezone for all display timestamps by default (cron-driven
     # runs at 15:00/20:00/00:00 UTC, where 00:00 UTC = 17:00 PT previous day).
     # Set MANUAL_RUN=1 in the environment for ad-hoc runs; in that mode the
     # filename and frontmatter `date:` use UTC, so the post's permalink
@@ -1240,7 +1259,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
     if os.environ.get("MANUAL_RUN") == "1":
         post_now = datetime.now(timezone.utc)
     else:
-        post_now = datetime.now(ZoneInfo("America/Los_Angeles"))
+        post_now = datetime.now(ZoneInfo(get_timezone(site_root)))
 
     header_dt = post_now.strftime("%Y-%m-%d %H:%M %Z")
 

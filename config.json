@@ -1,6 +1,7 @@
 {
   "model": "glm-5.1:cloud",
   "summary_prompt_file": "summary_prompt.txt",
+  "timezone": "America/Los_Angeles",
   "tuning": {
     "max_items_per_source": 20,
     "max_age_days": 7,
