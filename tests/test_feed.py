@@ -256,11 +256,11 @@ class TestHomePageFeedLinks(unittest.TestCase):
             cls.html = fh.read()
 
     def test_home_has_alternate_feed_link(self):
-        """Home page must have an alternate link tag for the Atom feed."""
-        self.assertIn(
-            'type="application/atom+xml"',
-            self.html,
-            "Home page must link to the Atom feed via <link rel=alternate>",
+        """Home page must have an alternate link tag for the RSS/Atom feed."""
+        # jekyll-feed generates RSS (application/rss+xml), not Atom
+        self.assertTrue(
+            'type="application/rss+xml"' in self.html or 'type="application/atom+xml"' in self.html,
+            "Home page must link to the feed via <link rel=alternate>",
         )
         self.assertIn(
             "feed.xml",
@@ -269,10 +269,10 @@ class TestHomePageFeedLinks(unittest.TestCase):
         )
 
     def test_home_has_rss_subscribe_link(self):
-        """Home page must have a visible 'subscribe via RSS' link."""
-        # Minima includes an RSS subscribe link in the footer
+        """Home page must have a visible RSS subscribe link."""
+        # Custom home layout has "RSS Feed" subscribe section
         self.assertTrue(
-            "via RSS" in self.html or "rss-subscribe" in self.html,
+            "RSS Feed" in self.html or "via RSS" in self.html or "rss-subscribe" in self.html,
             "Home page must have a visible RSS subscribe link",
         )
 

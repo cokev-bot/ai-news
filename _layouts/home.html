@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
+  <meta name="description" content="{{ site.description | escape }}">
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+  <link rel="sitemap" type="application/xml" href="{{ "/sitemap.xml" | relative_url }}">
+  <style>
+    .editions-by-date { margin-top: 1em; }
+    .day-group { margin-bottom: 1.5em; }
+    .day-heading { margin-bottom: 0.3em; }
+    .day-heading a { text-decoration: none; color: inherit; }
+    .day-heading a:hover { text-decoration: underline; }
+    .day-count { font-size: 0.75em; color: #666; margin-left: 0.5em; font-weight: normal; }
+    .day-editions { list-style: none; padding-left: 0; margin: 0; }
+    .day-edition-item { padding: 0.25em 0 0.25em 0; line-height: 1.6; }
+    .day-edition-item a { text-decoration: none; }
+    .day-edition-item a:hover { text-decoration: underline; }
+    .edition-badge { display: inline-block; font-size: 0.7em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.15em 0.5em; border-radius: 3px; margin-right: 0.4em; vertical-align: middle; }
+    .edition-badge-morning { background: #fff3cd; color: #664d03; }
+    .edition-badge-afternoon { background: #cff4fc; color: #055160; }
+    .edition-badge-evening { background: #e2e3e5; color: #383d41; }
+    .edition-badge-edition { background: #f0f0f0; color: #555; }
+    .archive-link { margin-top: 1em; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper">
+      <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+    </div>
+  </footer>
+</body>
+</html>
