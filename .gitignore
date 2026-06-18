@@ -19,3 +19,6 @@ generate_news.log*
 # Per-feed health tracking for the RSS health monitor (tools/check_feeds.py).
 # Updated every cron run; not version-controlled.
 .feed_health.json
+# Per-edition OG social card images (tools/make_og_image.py). Generated
+# on each edition run; ~200KB each, regenerated daily so no need to track.
+assets/og/

@@ -17,6 +17,7 @@ import logging
 import logging.handlers
 import os
 import subprocess
+import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -822,6 +823,80 @@ def audio_player_html(audio_path: str, label: str = "Listen") -> str:
 
 
 # ---------------------------------------------------------------------------
+# OG Image (Social Card) Generation
+# ---------------------------------------------------------------------------
+
+DEFAULT_OG_IMAGE_CONFIG = {
+    "enabled": True,
+}
+
+
+def get_og_image_config(site_root: Path) -> dict:
+    """Load OG image config from config.json, merged with defaults."""
+    cfg = load_config(site_root)
+    og = cfg.get("og_image", {})
+    return {**DEFAULT_OG_IMAGE_CONFIG, **og}
+
+
+def generate_og_image_for_edition(
+    edition: str,
+    site_root: Path,
+    global_summary_text: str | None,
+) -> str | None:
+    """Generate an OG social card image for an edition.
+
+    Delegates to tools/make_og_image.py for the actual Pillow rendering.
+    Returns the relative path to the PNG (e.g. "assets/og/2026-06-18-Morning.png")
+    on success, or None on failure (graceful degradation — the post is still
+    published without an og:image, just without a preview card on social).
+    """
+    # Import the OG image tool. It's in tools/ which may not be on the
+    # default sys.path, so we add it dynamically.
+    tools_dir = str((site_root / "tools").resolve())
+    if tools_dir not in sys.path:
+        sys.path.insert(0, tools_dir)
+
+    try:
+        from make_og_image import render_og_image, first_sentence
+    except ImportError:
+        logging.warning("OG image: make_og_image module not found; OG image generation skipped")
+        return None
+
+    # Parse edition components: "2026-06-18-Morning"
+    parts = edition.rsplit("-", 1)
+    if len(parts) == 2:
+        date_str, edition_label = parts
+        edition_label = edition_label.capitalize()
+    else:
+        date_str = edition
+        edition_label = ""
+
+    title = f"AI News Digest — {edition_label} Edition" if edition_label else "AI News Digest"
+    excerpt = first_sentence(global_summary_text or "", max_chars=200)
+
+    output_dir = site_root / "assets" / "og"
+    filename = f"{date_str}-{edition_label}.png"
+    output_path = output_dir / filename
+    rel_path = f"assets/og/{filename}"
+
+    try:
+        result = render_og_image(
+            title=title,
+            excerpt=excerpt,
+            date_str=date_str,
+            edition_label=edition_label,
+            output_path=output_path,
+        )
+        if result is not None:
+            logging.info(f"OG image: generated {rel_path}")
+            return rel_path
+    except Exception as e:
+        logging.error(f"OG image generation failed for {edition}: {e}")
+
+    return None
+
+
+# ---------------------------------------------------------------------------
 # Feed fetching
 # ---------------------------------------------------------------------------
 
@@ -1401,6 +1476,24 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         global_summary_text if all_articles else None,
         section_summaries, config,
     )
+
+    # Generate OG social card image
+    og_image_rel_path = None
+    og_cfg = get_og_image_config(site_root)
+    if og_cfg.get("enabled", True):
+        og_image_rel_path = generate_og_image_for_edition(
+            edition, site_root,
+            global_summary_text if all_articles else None,
+        )
+
+    # Inject og:image into front matter if we generated one
+    if og_image_rel_path:
+        # Insert "image:" line before the closing "---" of the front matter
+        for idx, line in enumerate(html_lines):
+            if idx > 0 and line.strip() == "---":
+                # Insert before the closing ---
+                html_lines.insert(idx, f"image: /ai-news/{og_image_rel_path}")
+                break
 
     # Render Big Picture HTML (deferred from above so audio_paths is available)
     if all_articles and global_summary_html:

@@ -12,5 +12,8 @@
     "enabled": true,
     "voice": "en-US-AriaNeural",
     "rate": "+0%"
+  },
+  "og_image": {
+    "enabled": true
   }
 }
