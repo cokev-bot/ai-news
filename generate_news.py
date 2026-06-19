@@ -19,7 +19,7 @@ import os
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
@@ -342,6 +342,90 @@ def parse_date(date_str: str) -> datetime | None:
         except ValueError:
             pass
     return None
+
+
+def compute_freshness_tally(items: list[dict], max_age_days: int, now: datetime | None = None, tz_name: str | None = None) -> dict[str, int]:
+    """Compute a freshness tally over a list of article dicts.
+
+    Each article dict should have a ``pub_dt`` key whose value is either a
+    timezone-aware :class:`datetime` or ``None`` (missing / unparseable).
+
+    Categories:
+      - ``fresh``: published within ``max_age_days`` days of *now*.
+      - ``stale``: published more than ``max_age_days`` days ago.
+      - ``yesterday``: published between 1 and 2 calendar days ago (in the
+        configured timezone).
+
+    Items with no ``pub_dt`` are conservatively counted as ``fresh`` (they
+    passed the fetch-level age filter, so they are at most ``max_age_days``
+    old even if we can't pin down the exact date).
+
+    Args:
+        items: List of article dicts (each may have ``pub_dt``).
+        max_age_days: Maximum age in days; items older are "stale".
+        now: Reference datetime (timezone-aware). Defaults to current time
+            in the configured timezone.
+        tz_name: IANA timezone name used for calendar-day calculations.
+            Defaults to :data:`DEFAULT_TIMEZONE`.
+
+    Returns:
+        A dict with keys ``fresh``, ``stale``, and ``yesterday``, each
+        mapping to a non-negative integer count.
+    """
+    from zoneinfo import ZoneInfo
+
+    if tz_name is None:
+        tz_name = DEFAULT_TIMEZONE
+    tz = ZoneInfo(tz_name)
+
+    if now is None:
+        now = datetime.now(tz)
+    elif now.tzinfo is None:
+        now = now.replace(tzinfo=tz)
+
+    # Compute "today" and "yesterday" as calendar dates in the target tz.
+    today = now.date()
+    yesterday = today - timedelta(days=1)
+
+    cutoff_ts = (now - timedelta(days=max_age_days)).timestamp()
+
+    fresh = 0
+    stale = 0
+    yesterday_count = 0
+
+    for art in items:
+        pub_dt = art.get("pub_dt")
+        if pub_dt is None:
+            # No timestamp — conservatively treat as fresh.
+            fresh += 1
+            continue
+
+        # Ensure pub_dt is timezone-aware for comparison.
+        if pub_dt.tzinfo is None:
+            pub_dt = pub_dt.replace(tzinfo=timezone.utc)
+
+        pub_ts = pub_dt.timestamp()
+
+        if pub_ts < cutoff_ts:
+            stale += 1
+        else:
+            fresh += 1
+
+        # Calendar-day check for "yesterday" (between 1 and 2 days ago).
+        # Convert pub_dt to the target timezone to get the local date.
+        pub_local_date = pub_dt.astimezone(tz).date()
+        if pub_local_date == yesterday:
+            yesterday_count += 1
+
+    return {"fresh": fresh, "stale": stale, "yesterday": yesterday_count}
+
+
+def format_freshness_tally(tally: dict[str, int]) -> str:
+    """Format a freshness tally dict into a human-readable string fragment.
+
+    Example: ``2 fresh, 0 stale, 1 from yesterday``
+    """
+    return f"{tally['fresh']} fresh, {tally['stale']} stale, {tally['yesterday']} from yesterday"
 
 
 # ---------------------------------------------------------------------------
@@ -1352,6 +1436,12 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         for a in items
     ))
 
+    # Compute freshness tally across all items
+    all_items = []
+    for items in subsection_articles.values():
+        all_items.extend(items)
+    freshness = compute_freshness_tally(all_items, tuning["max_age_days"], now=post_now, tz_name=get_timezone(site_root))
+
     html_lines = [
         "---",
         "layout: post",
@@ -1361,8 +1451,9 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         "---",
         "",
         "<h2>🤖 AI News — {} Edition · {}</h2>".format(edition_label, header_dt),
-        "<p>Scanning {} feeds · {} accounts posted · {} items</p>".format(
-            total_feeds, num_sources, sum(len(v) for v in subsection_articles.values())),
+        "<p>Scanning {} feeds · {} accounts posted · {} items · {}</p>".format(
+            total_feeds, num_sources, sum(len(v) for v in subsection_articles.values()),
+            format_freshness_tally(freshness)),
         "<hr>",
         "<style>",
         ".source-pill {",
