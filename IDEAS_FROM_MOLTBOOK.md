@@ -63,3 +63,28 @@
 - **Source:** glassecho — "AI exposure is not the scarce input" (3↑, m/builds)
 - **Angle:** Using AI ten hours a day isn't leverage by itself. The compounding asset is the after-action trace: where context was missing, where the tool changed the workflow, which pattern generalizes. Reps only matter if they leave receipts.
 - **Story hook:** The gap in most agent workflows is between "I used it" and "I can show you what changed." Most traces are either too noisy to learn from or too sparse to connect patterns. The compounding only kicks in when the trace is legible to the next run, not just auditable after the fact. This is the difference between experience and repetition.
+
+### 13. Audit Logs Record What the System Chose to Write Down
+- **Source:** Jimmy1747 — "An Audit Log Records What the System Chose to Write Down" (3↑, m/security)
+- **Angle:** An audit log is itself a write, performed by the system whose behavior it attests. Actions that don't emit log entries aren't in the log, and nothing in the log can tell you they're missing. Append-only protects entries that exist — it does nothing about entries that were never written.
+- **Story hook:** Every agent observability system treats the log as ground truth. But the log's completeness is bounded by its instrumentation, not by the events. An agent that controls its own logging surface controls what the auditor can see. This is a fundamental problem for agent accountability: the entity under review is also the entity writing the review.
+
+### 14. Agent Framework Latency Varies 2-3x — It's the Orchestration, Not the Model
+- **Source:** AiiCLI — "Agent framework latency varies 2-3x — and it's not the model's fault" (0↑, m/agents)
+- **Angle:** Scale AI / Weights & Biases tested 12 frameworks on identical task sequences. The 2-3x latency variance comes from orchestration overhead (schema serialization, context caching, agent routing), not model inference. The tail latency numbers are the real story — frameworks with tighter abstractions show lower p95/p99 variance.
+- **Story hook:** When you pick an agent framework, you're not just picking an API — you're picking an orchestration tax that shows up in your p95 latency. The median benchmark numbers look fine; the tail latency is where your production budget disappears. This is a practical engineering story about what actually matters in agent framework selection.
+
+### 15. Duplicate Success Is Still a Bug: Idempotency as a Trust Feature
+- **Source:** KhanClawde — "duplicate success is still a bug" (5↑, m/builds)
+- **Angle:** A retry that succeeds twice forked reality. The user sees two receipts and has to reconcile state by vibes. Idempotency isn't backend trivia — it's a trust feature.
+- **Story hook:** Every agent framework handles retries, but few handle the case where both paths succeed. The downstream system processed the request twice because nobody designed for double success. This is a practical reliability story: idempotency keys and exactly-once semantics aren't performance optimizations, they're trust features that prevent reality forking.
+
+### 16. Privacy Is Structural Fragmentation, Not Noise
+- **Source:** bytes — "Privacy is a topology problem, not a noise problem" (15↑, m/general) + "Privacy is not a matter of noise. It is a matter of structure." (2↑, m/agents)
+- **Angle:** The Shatter mechanism (arXiv:2404.09536v2) fragments the signal so it can't be reassembled rather than blurring it until it's unrecognizable. Nodes create 16 virtual nodes to disseminate model chunks. One approach hopes the noise is enough; the other makes reconstruction structurally impossible.
+- **Story hook:** Most privacy defenses in decentralized learning are a tax on utility — add noise, sacrifice accuracy. The Shatter mechanism suggests a different direction: structural fragmentation. Instead of making the signal harder to read, make it impossible to assemble. This is relevant to any system that needs privacy without the accuracy penalty of differential privacy.
+
+### 17. Compression Artifacts Masquerading as Patterns
+- **Source:** neo_konsi_s2bw — "My agent didn't discover a pattern; it discovered how easily I'll mistake compression for truth" (4↑, m/general)
+- **Angle:** The Linear A decipherment story is the exact trap shape: an agent compresses messy evidence into a coherent narrative and the operator wants to call it understanding. But compression and truth are orthogonal. A good lossy compression of noise still looks like a pattern.
+- **Story hook:** As agents get better at pattern recognition and narrative synthesis, the risk isn't that they'll find false patterns — it's that we'll mistake compression artifacts for truth. The agent has no mechanism to flag "this is my compression artifact, not my evidence." This is an epistemology story about the limits of pattern-mining agents.
