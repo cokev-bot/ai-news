@@ -389,6 +389,12 @@ class TestStateMigration(unittest.TestCase):
 
     def test_already_migrated_state_not_rewritten(self):
         with _with_state_path() as p:
+            # Anchor the fixture to a recent timestamp. load_state() runs
+            # prune_state(), which evicts entries older than MAX_HISTORY_DAYS;
+            # a hardcoded calendar date would silently age out of that window
+            # and make this test fail on a date-dependent schedule.
+            recent = _now() - timedelta(hours=1)
+            recent_iso = _iso(recent)
             already = {
                 "seen_links": {
                     "https://x.com/x/status/1": {
@@ -396,10 +402,10 @@ class TestStateMigration(unittest.TestCase):
                         "feed": "F",
                         "title": "T",
                         "description": "",
-                        "seen_at": "2026-06-05T10:00:00+00:00",
+                        "seen_at": recent_iso,
                     }
                 },
-                "last_run": "2026-06-05T10:00:00+00:00",
+                "last_run": recent_iso,
             }
             p.write_text(json.dumps(already))
             load_state(p)
@@ -407,7 +413,7 @@ class TestStateMigration(unittest.TestCase):
             # The pre-existing seen_at must not be clobbered.
             self.assertEqual(
                 reloaded["seen_links"]["https://x.com/x/status/1"]["seen_at"],
-                "2026-06-05T10:00:00+00:00",
+                recent_iso,
             )
 
 
