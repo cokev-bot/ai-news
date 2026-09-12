@@ -15,6 +15,8 @@ import urllib.error
 import re
 import logging
 import logging.handlers
+import math
+import html as html_module
 import os
 import subprocess
 import sys
@@ -47,6 +49,11 @@ MAX_SUMMARY_WORKERS = 6
 # enough to overlap 31 feeds (typical config) without hammering hosts.
 MAX_FEED_WORKERS = 10
 OLLAMA_ENDPOINT = "http://localhost:11434/api/generate"
+# Average adult reading speed (words per minute) used to estimate how long
+# an edition takes to read. 230 wpm is the mid-range consensus figure for
+# non-fiction prose; the estimate is deliberately coarse — it only needs to
+# separate a 2-minute skim from a 10-minute deep read.
+READING_WORDS_PER_MINUTE = 230
 
 DEFAULT_CONFIG = {
     "model": "gemma4:31b-cloud",
@@ -426,6 +433,72 @@ def format_freshness_tally(tally: dict[str, int]) -> str:
     Example: ``2 fresh, 0 stale, 1 from yesterday``
     """
     return f"{tally['fresh']} fresh, {tally['stale']} stale, {tally['yesterday']} from yesterday"
+
+
+# ---------------------------------------------------------------------------
+# Reading-time estimate + section count badges
+# ---------------------------------------------------------------------------
+
+def count_words(text: str | None) -> int:
+    """Count readable words in a string, ignoring any HTML markup.
+
+    ``<a href="...">OpenAI</a>`` counts as one word; tag names and
+    attribute values never count. HTML entities are decoded first, so
+    ``it&#8217;s`` counts as one word and ``GPT&amp;Gemini`` as two.
+    """
+    if not text:
+        return 0
+    plain = html_module.unescape(_strip_html(str(text)))
+    # Typographic apostrophes are word-joiners, not separators.
+    plain = plain.replace("\u2019", "'")
+    return len(re.findall(r"[A-Za-z0-9']+", plain))
+
+
+def format_reading_time(minutes: int) -> str:
+    """Format a minute count as a header fragment, e.g. ``~4 min read``."""
+    return f"~{int(minutes)} min read"
+
+
+def compute_reading_time_minutes(
+    section_summaries: dict[str, str] | None = None,
+    global_summary_text: str | None = None,
+    subsection_articles: dict[str, list[dict]] | None = None,
+    words_per_minute: int = READING_WORDS_PER_MINUTE,
+) -> int:
+    """Estimate how many minutes an edition takes to read.
+
+    Counts every word a reader actually reads: the Big Picture summary,
+    every section summary, and the title + description of every item.
+    Returns whole minutes (rounded up), or 0 for an edition with no
+    readable text at all (so callers can omit the fragment entirely rather
+    than print "~0 min read").
+    """
+    total_words = count_words(global_summary_text)
+
+    for summary in (section_summaries or {}).values():
+        total_words += count_words(summary)
+
+    for items in (subsection_articles or {}).values():
+        for art in items:
+            total_words += count_words(art.get("title", ""))
+            total_words += count_words(art.get("description", ""))
+
+    if total_words <= 0:
+        return 0
+
+    wpm = words_per_minute if words_per_minute and words_per_minute > 0 else READING_WORDS_PER_MINUTE
+    return max(1, math.ceil(total_words / wpm))
+
+
+def format_section_heading(section_title: str, item_count: int) -> str:
+    """Render a section heading with an item-count badge, e.g. ``News (3)``.
+
+    The count is wrapped in a ``section-count`` span so the visual weight
+    can be tuned by styling without regenerating existing posts.
+    """
+    return '<h2>{} <span class="section-count">({})</span></h2>'.format(
+        section_title, int(item_count)
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -1451,29 +1524,12 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         "---",
         "",
         "<h2>🤖 AI News — {} Edition · {}</h2>".format(edition_label, header_dt),
-        "<p>Scanning {} feeds · {} accounts posted · {} items · {}</p>".format(
-            total_feeds, num_sources, sum(len(v) for v in subsection_articles.values()),
-            format_freshness_tally(freshness)),
-        "<hr>",
-        "<style>",
-        ".source-pill {",
-        "  display: inline-block;",
-        "  background: #e8edf2;",
-        "  color: #2c3e50;",
-        "  font-size: 0.85em;",
-        "  font-weight: 600;",
-        "  padding: 1px 6px;",
-        "  border-radius: 3px;",
-        "  text-decoration: none;",
-        "  white-space: nowrap;",
-        "  vertical-align: baseline;",
-        "  margin-right: 2px;",
-        "}",
-        ".source-pill:hover {",
-        "  background: #cdd5de;",
-        "}",
-        "</style>",
     ]
+
+    # The "Scanning ..." header line and the inline <style> block are appended
+    # further down, after section summaries (and therefore the reading-time
+    # estimate) exist. Order in the rendered post is unchanged:
+    # h2 → scanning line → hr → style → Big Picture → sections.
 
     # Generate global executive summary across ALL sections
     all_articles = []
@@ -1561,6 +1617,51 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         section_jobs, site_root, config
     )
 
+    # Now that section summaries exist we can estimate reading time, so the
+    # header line and inline style block are appended here (the h2 and the
+    # front matter were already emitted above).
+    reading_minutes = compute_reading_time_minutes(
+        section_summaries=section_summaries,
+        global_summary_text=global_summary_text if all_articles else None,
+        subsection_articles=subsection_articles,
+    )
+    header_fragments = [
+        "Scanning {} feeds".format(total_feeds),
+        "{} accounts posted".format(num_sources),
+        "{} items".format(sum(len(v) for v in subsection_articles.values())),
+        format_freshness_tally(freshness),
+    ]
+    if reading_minutes > 0:
+        header_fragments.append(format_reading_time(reading_minutes))
+
+    html_lines.append("<p>{}</p>".format(" · ".join(header_fragments)))
+    html_lines.append("<hr>")
+    html_lines.append("<style>")
+    html_lines.extend([
+        ".source-pill {",
+        "  display: inline-block;",
+        "  background: #e8edf2;",
+        "  color: #2c3e50;",
+        "  font-size: 0.85em;",
+        "  font-weight: 600;",
+        "  padding: 1px 6px;",
+        "  border-radius: 3px;",
+        "  text-decoration: none;",
+        "  white-space: nowrap;",
+        "  vertical-align: baseline;",
+        "  margin-right: 2px;",
+        "}",
+        ".source-pill:hover {",
+        "  background: #cdd5de;",
+        "}",
+        ".section-count {",
+        "  color: #7f8c8d;",
+        "  font-size: 0.7em;",
+        "  font-weight: 500;",
+        "}",
+    ])
+    html_lines.append("</style>")
+
     # Generate TTS audio files for each section and Big Picture
     audio_paths = generate_edition_audio(
         edition, site_root,
@@ -1609,8 +1710,8 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         # 3. Linkify the summary text
         summary_html = linkify_summary(summary_text, section_articles)
 
-        # 4. Add section heading and summary to HTML
-        html_lines.append("<h2>{}</h2>".format(section["title"]))
+        # 4. Add section heading (with item-count badge) and summary to HTML
+        html_lines.append(format_section_heading(section["title"], len(section_articles)))
         section_slug = _slugify(section["title"])
         if section_slug in audio_paths:
             html_lines.append(audio_player_html(audio_paths[section_slug], f"{section['title']} summary"))
