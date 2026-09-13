@@ -24,6 +24,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 # ---------------------------------------------------------------------------
 # Configuration Constants
@@ -623,32 +624,107 @@ def render_item(art: dict, source_urls: dict[str, str] | None = None) -> str:
 # LLM Summarization
 # ---------------------------------------------------------------------------
 
+def _read_post_frontmatter_date(post_path: Path) -> datetime | None:
+    """Read the ``date:`` field from an existing Jekyll post's frontmatter.
+
+    Returns a timezone-aware datetime, or ``None`` when the file is missing or
+    has no parseable date. Used to keep a republish's permalink stable: Jekyll
+    derives the post URL from this value, so re-deriving it from "now" silently
+    moves a live URL.
+    """
+    if not post_path.exists():
+        return None
+    try:
+        head = post_path.read_text(encoding="utf-8")[:2000]
+    except OSError:
+        return None
+    for line in head.splitlines():
+        line = line.strip()
+        if not line.startswith("date:"):
+            continue
+        raw = line[len("date:"):].strip().strip('"').strip("'")
+        # Jekyll frontmatter form: "2026-09-12 09:49:19 -0700"
+        for fmt in ("%Y-%m-%d %H:%M:%S %z", "%Y-%m-%d %H:%M %z",
+                    "%Y-%m-%d %H:%M:%S", "%Y-%m-%d"):
+            try:
+                dt = datetime.strptime(raw, fmt)
+            except ValueError:
+                continue
+            if dt.tzinfo is None:
+                return dt.replace(tzinfo=ZoneInfo(get_timezone(post_path.parent.parent)))
+            return dt
+        return None
+    return None
+
+
+def _article_link(art: dict) -> str:
+    """Outbound link for an article, converting dead nitter URLs to x.com."""
+    link = art["link"]
+    if is_nitter_link(link):
+        link = nitter_to_x(link)
+    return link
+
+
 def linkify_summary(text: str, articles: list[dict]) -> str:
-    """Replace (Source: ID, ...) citations in LLM summary with HTML links."""
+    """Replace ``(Source Name: ID, ...)`` citations in an LLM summary with links.
+
+    ``summary_prompt.txt`` mandates ``Source Name: ID`` and the model mostly
+    complies, but it also drifts into two collapsed forms where only the first
+    index carries the label:
+
+        (Source: 1, 4)          -> one label, trailing bare indices
+        (Source, 22, 24, 29)    -> label with no colon at all
+
+    Those produced bare integers with no reference list to resolve them (nine
+    resolved links became ``Source</a>, 22, 24, 29`` in a live post on
+    2026-09-13). The index -> article mapping is authoritative, so we resolve
+    every in-range index and label each link with that article's *own* source
+    name. Prose parentheses are left untouched: resolution requires a leading
+    non-numeric label followed only by in-range integers, and falls back to the
+    original text otherwise, so an unresolvable index never yields an invented
+    link.
+    """
     def replace_group(match):
-        group_content = match.group(1)
-        parts = group_content.split(',')
-        processed_parts = []
-        
-        for part in parts:
-            part = part.strip()
-            sub_match = re.search(r'([^:]+):\s*(\d+)', part)
-            if sub_match:
-                source_name = sub_match.group(1).strip()
-                try:
-                    article_id = int(sub_match.group(2))
-                    if 1 <= article_id <= len(articles):
-                        art = articles[article_id - 1]
-                        link = art["link"]
-                        if is_nitter_link(link):
-                            link = nitter_to_x(link)
-                        processed_parts.append(f'<a href="{link}">{source_name}</a>')
-                except (ValueError, IndexError):
-                    pass
-            else:
-                processed_parts.append(part)
-        
-        return '(' + ', '.join(processed_parts) + ')'
+        parts = [p.strip() for p in match.group(1).split(',')]
+        resolved: list[str] = []
+        label: str | None = None
+
+        for i, part in enumerate(parts):
+            colon = re.search(r'([^:]+):\s*(\d+)$', part)
+            if colon:
+                idx = int(colon.group(2))
+                if not 1 <= idx <= len(articles):
+                    return match.group(0)
+                resolved.append(
+                    f'<a href="{_article_link(articles[idx - 1])}">'
+                    f'{colon.group(1).strip()}</a>'
+                )
+                label = colon.group(1).strip()
+                continue
+
+            if part.isdigit():
+                idx = int(part)
+                # A bare index is only meaningful under a preceding label;
+                # "(1, 2, 3)" is prose, not a citation.
+                if label is None or not 1 <= idx <= len(articles):
+                    return match.group(0)
+                art = articles[idx - 1]
+                resolved.append(
+                    f'<a href="{_article_link(art)}">'
+                    f'{art.get("source", "Source")}</a>'
+                )
+                continue
+
+            # Non-numeric text: only valid as the leading label of a collapsed
+            # citation. Anything else is ordinary prose.
+            if label is None and i == 0 and part:
+                label = part
+                continue
+            return match.group(0)
+
+        if not resolved:
+            return match.group(0)
+        return '(' + ', '.join(resolved) + ')'
 
     return re.sub(r'\(([^)]+)\)', replace_group, text)
 
@@ -1720,10 +1796,24 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
     else:
         post_now = datetime.now(ZoneInfo(get_timezone(site_root)))
 
-    header_dt = post_now.strftime("%Y-%m-%d %H:%M %Z")
-
     # Derive human-readable edition label from full name (e.g. "Evening" from "2026-04-14-evening")
     edition_label = edition.split("-")[-1].capitalize()
+
+    # A republish must REPRODUCE a post, not re-derive it as if it were new.
+    # The frontmatter date drives the Jekyll permalink (/news/YYYY/MM/DD/<ed>/),
+    # so stamping the current time moved an already-published post's URL and
+    # 404'd every existing link to it. Reuse the original timestamp from the
+    # existing post file when present.
+    if republish:
+        original_dt = _read_post_frontmatter_date(filepath)
+        if original_dt is not None:
+            logging.info(
+                f"Republish: preserving original post date {original_dt.isoformat()} "
+                f"(permalink /news/{original_dt.strftime('%Y/%m/%d')}/{edition_label}/)"
+            )
+            post_now = original_dt
+
+    header_dt = post_now.strftime("%Y-%m-%d %H:%M %Z")
 
     total_feeds = sum(
         len(ss["feeds"])
@@ -1777,7 +1867,13 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
                 f"(fingerprint {article_fingerprint} matches)."
             )
             global_summary_text = cached["summary_text"]
-            global_summary_html = cached["summary_html"]
+            # Re-render from the cached *text* rather than reusing the cached
+            # HTML. The HTML was rendered by whatever version of
+            # linkify_summary() was current when it was cached, so reusing it
+            # verbatim pins a stale renderer for the whole PT day and no
+            # citation-parsing fix can ever reach a cached edition. Rendering is
+            # cheap and deterministic (no LLM call), so always do it here.
+            global_summary_html = linkify_summary(global_summary_text, all_articles)
         else:
             if cached and cached.get("fingerprint") != article_fingerprint:
                 logging.info(
