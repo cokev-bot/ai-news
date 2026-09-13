@@ -59,6 +59,27 @@ class TestSocialBuild(unittest.TestCase):
         content = page.read_text()
         self.assertIn('href="https://github.com/cokev-bot/ai-news"', content)
 
+    def test_github_link_is_icon_only(self):
+        """The repo URL must appear on the GitHub icon, not as a text link.
+
+        The social list renders the link as an <svg> icon inside the anchor;
+        there must be no visible username/repo-URL text next to it.
+        """
+        page = SITE_DIR / "source-status" / "index.html"
+        if not page.exists():
+            self.skipTest("source-status not built")
+        content = page.read_text()
+        # The anchor wraps the svg icon and nothing else visible.
+        self.assertIn(
+            'href="https://github.com/cokev-bot/ai-news"><svg class="svg-icon">',
+            content,
+        )
+        # No username span carrying the URL as text.
+        self.assertNotIn('class="username"', content)
+        # The raw URL must not be emitted as visible text in the footer.
+        footer = content.split("<footer", 1)[-1] if "<footer" in content else content
+        self.assertNotIn(">https://github.com/cokev-bot/ai-news<", footer)
+
     def test_no_broken_empty_github_link(self):
         page = SITE_DIR / "source-status" / "index.html"
         if not page.exists():
