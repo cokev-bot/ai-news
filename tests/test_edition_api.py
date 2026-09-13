@@ -520,10 +520,55 @@ class TestPipelineWiring(unittest.TestCase):
 
     def test_run_edition_stages_api_dir(self):
         script = (PROJECT_ROOT / "run_edition.sh").read_text(encoding="utf-8")
-        add_line = [l for l in script.splitlines() if l.startswith("git add")]
-        self.assertTrue(add_line, "git add line not found in run_edition.sh")
-        self.assertIn("api/", add_line[0],
+        self.assertIn("api/", script,
                       "api/ is not staged — payloads would never be published")
+        # It must be guarded by an existence check. A bare `git add api/` exits
+        # 128 when the directory is absent and, with --ignore-errors, stages
+        # nothing at all — so a failed payload write would silently produce no
+        # commit for the whole edition.
+        self.assertRegex(
+            script,
+            r"if \[ -d api \]; then\s*\n\s*git add --ignore-errors api/",
+            "api/ must be staged behind an `if [ -d api ]` guard",
+        )
+
+    def test_missing_directory_makes_bare_git_add_stage_nothing(self):
+        """Pins the reason for the guard above, against real git."""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            subprocess.run(["git", "init", "-q", str(root)], check=True)
+            (root / "_posts").mkdir()
+            (root / "_posts" / "a.html").write_text("hi")
+            res = subprocess.run(
+                ["git", "add", "--ignore-errors", "_posts/", "api/"],
+                cwd=str(root), capture_output=True, text=True,
+            )
+            self.assertNotEqual(res.returncode, 0)
+            staged = subprocess.run(
+                ["git", "diff", "--cached", "--name-only"],
+                cwd=str(root), capture_output=True, text=True,
+            ).stdout.strip()
+            self.assertEqual(staged, "", "git unexpectedly staged files")
+
+    def test_api_dir_present_is_staged_normally(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            subprocess.run(["git", "init", "-q", str(root)], check=True)
+            (root / "_posts").mkdir()
+            (root / "_posts" / "a.html").write_text("hi")
+            (root / "api").mkdir()
+            (root / "api" / "e.json").write_text("{}")
+            res = subprocess.run(
+                ["git", "add", "--ignore-errors", "_posts/", "api/"],
+                cwd=str(root), capture_output=True, text=True,
+            )
+            self.assertEqual(res.returncode, 0, res.stderr)
+            staged = subprocess.run(
+                ["git", "diff", "--cached", "--name-only"],
+                cwd=str(root), capture_output=True, text=True,
+            ).stdout.split()
+            self.assertIn("api/e.json", staged)
+            self.assertIn("_posts/a.html", staged)
 
     def test_api_dir_not_gitignored(self):
         ignore = (PROJECT_ROOT / ".gitignore").read_text(encoding="utf-8")
