@@ -16,6 +16,7 @@ import re
 import logging
 import logging.handlers
 import math
+import shutil
 import html as html_module
 import os
 import subprocess
@@ -1150,6 +1151,29 @@ def _looks_like_rss(body: bytes) -> bool:
     return (b"<rss" in head) or (b"<feed" in head) or (b"<channel" in head)
 
 
+_CURL_AVAILABLE: bool | None = None
+
+
+def _curl_available() -> bool:
+    """Whether the ``curl`` binary is on PATH. Cached after the first check.
+
+    26 of 34 feeds depend on this transport, and if curl disappears they do not
+    fail loudly — they silently revert to xcancel's 1971 placeholder. Checking
+    once and logging a single clear error turns that into an unmissable signal
+    instead of ~78 per-feed warnings spread through the run log.
+    """
+    global _CURL_AVAILABLE
+    if _CURL_AVAILABLE is None:
+        _CURL_AVAILABLE = shutil.which("curl") is not None
+        if not _CURL_AVAILABLE:
+            logging.error(
+                "curl is not on PATH — the xcancel feed transport is unavailable "
+                "and all X/Twitter feeds will return placeholder data. "
+                "Install curl (apt-get install curl) to restore them."
+            )
+    return _CURL_AVAILABLE
+
+
 def _http_get_with_curl(url: str, *, timeout: int = 20) -> bytes | None:
     """GET *url* using the system ``curl`` binary instead of urllib.
 
@@ -1163,6 +1187,8 @@ def _http_get_with_curl(url: str, *, timeout: int = 20) -> bytes | None:
 
     Returns body bytes, or None on any failure. Never raises.
     """
+    if not _curl_available():
+        return None
     try:
         proc = subprocess.run(
             ["curl", "-s", "--max-time", str(timeout), "-A", XCANCEL_UA, url],

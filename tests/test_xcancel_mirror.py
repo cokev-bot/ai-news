@@ -249,6 +249,31 @@ class TestCurlBinaryAvailable(unittest.TestCase):
         r = subprocess.run(["curl", "--version"], capture_output=True)
         self.assertEqual(r.returncode, 0, "curl must be installed for the xcancel transport")
 
+    def test_missing_curl_logs_one_clear_error_and_degrades(self):
+        """A missing curl must produce ONE diagnostic, not a silent 26-feed failure."""
+        import generate_news as gn
+        with patch.object(gn.shutil, "which", return_value=None), \
+             patch.object(gn, "_CURL_AVAILABLE", None), \
+             patch.object(gn, "subprocess") as mock_sub, \
+             self.assertLogs("root", level="ERROR") as cm:
+            result = gn._http_get_with_curl("https://rss.xcancel.com/a/rss")
+        self.assertIsNone(result)
+        mock_sub.run.assert_not_called()
+        joined = " ".join(cm.output)
+        self.assertIn("curl is not on PATH", joined)
+        self.assertIn("X/Twitter", joined)
+        # cache is populated so the error is logged only once per process
+        self.assertFalse(gn._CURL_AVAILABLE)
+
+    def test_curl_availability_is_cached(self):
+        """Repeated calls must not re-run which() or re-log."""
+        import generate_news as gn
+        with patch.object(gn.shutil, "which", return_value="/usr/bin/curl") as m, \
+             patch.object(gn, "_CURL_AVAILABLE", None):
+            self.assertTrue(gn._curl_available())
+            self.assertTrue(gn._curl_available())
+            self.assertEqual(m.call_count, 1)
+
 
 if __name__ == "__main__":
     unittest.main()
