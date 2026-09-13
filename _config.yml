@@ -12,6 +12,17 @@ timezone: "America/Los_Angeles"
 github_username: ""
 twitter_username: ""
 theme: minima
+# Minima's header renders one nav link per page in site.pages by default. The
+# day-index generator adds a page for every day ("AI News Digest — <date>"),
+# which flooded the header with hundreds of date links. Pin the nav to the real
+# top-level pages only. `archive/` and `news/` share a title ("Archive"), so we
+# list only /news/ here to avoid two identical links.
+header_pages:
+  - about.markdown
+  - now.html
+  - news.html
+  - week.html
+  - source-status.html
 plugins:
   - jekyll-feed
   - jekyll-sitemap
