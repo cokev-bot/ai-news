@@ -77,7 +77,7 @@
                 {
                     "title": "Aleph Alpha",
                     "feeds": {
-                        "Aleph__Alpha": "https://nitter.net/Aleph__Alpha/rss"
+                        "Aleph__Alpha": "https://rss.xcancel.com/Aleph__Alpha/rss"
                     },
                     "feeds_alts": {
                         "Aleph__Alpha": [
@@ -90,7 +90,7 @@
                 {
                     "title": "Alibaba",
                     "feeds": {
-                        "Alibaba_Qwen": "https://nitter.net/Alibaba_Qwen/rss"
+                        "Alibaba_Qwen": "https://rss.xcancel.com/Alibaba_Qwen/rss"
                     },
                     "feeds_alts": {
                         "Alibaba_Qwen": [
@@ -103,8 +103,8 @@
                 {
                     "title": "Anthropic",
                     "feeds": {
-                        "AnthropicAI": "https://nitter.net/AnthropicAI/rss",
-                        "claudeai": "https://nitter.net/claudeai/rss"
+                        "AnthropicAI": "https://rss.xcancel.com/AnthropicAI/rss",
+                        "claudeai": "https://rss.xcancel.com/claudeai/rss"
                     },
                     "feeds_alts": {
                         "AnthropicAI": [
@@ -122,7 +122,7 @@
                 {
                     "title": "Baidu AI",
                     "feeds": {
-                        "BaiduAI_News": "https://nitter.net/BaiduAI_News/rss"
+                        "BaiduAI_News": "https://rss.xcancel.com/BaiduAI_News/rss"
                     },
                     "feeds_alts": {
                         "BaiduAI_News": [
@@ -135,7 +135,7 @@
                 {
                     "title": "DeepSeek",
                     "feeds": {
-                        "deepseek_ai": "https://nitter.net/deepseek_ai/rss"
+                        "deepseek_ai": "https://rss.xcancel.com/deepseek_ai/rss"
                     },
                     "feeds_alts": {
                         "deepseek_ai": [
@@ -148,9 +148,9 @@
                 {
                     "title": "Google",
                     "feeds": {
-                        "GoogleAI": "https://nitter.net/GoogleAI/rss",
-                        "GeminiApp": "https://nitter.net/GeminiApp/rss",
-                        "NotebookLM": "https://nitter.net/NotebookLM/rss"
+                        "GoogleAI": "https://rss.xcancel.com/GoogleAI/rss",
+                        "GeminiApp": "https://rss.xcancel.com/GeminiApp/rss",
+                        "NotebookLM": "https://rss.xcancel.com/NotebookLM/rss"
                     },
                     "feeds_alts": {
                         "GoogleAI": [
@@ -173,7 +173,7 @@
                 {
                     "title": "MiniMax",
                     "feeds": {
-                        "MiniMax_AI": "https://nitter.net/MiniMax_AI/rss"
+                        "MiniMax_AI": "https://rss.xcancel.com/MiniMax_AI/rss"
                     },
                     "feeds_alts": {
                         "MiniMax_AI": [
@@ -186,7 +186,7 @@
                 {
                     "title": "Mistral",
                     "feeds": {
-                        "MistralAI": "https://nitter.net/MistralAI/rss"
+                        "MistralAI": "https://rss.xcancel.com/MistralAI/rss"
                     },
                     "feeds_alts": {
                         "MistralAI": [
@@ -199,7 +199,7 @@
                 {
                     "title": "Moonshot AI",
                     "feeds": {
-                        "Kimi_Moonshot": "https://nitter.net/Kimi_Moonshot/rss"
+                        "Kimi_Moonshot": "https://rss.xcancel.com/Kimi_Moonshot/rss"
                     },
                     "feeds_alts": {
                         "Kimi_Moonshot": [
@@ -212,9 +212,9 @@
                 {
                     "title": "OpenAI",
                     "feeds": {
-                        "OpenAI": "https://nitter.net/OpenAI/rss",
-                        "OpenAINewsroom": "https://nitter.net/OpenAINewsroom/rss",
-                        "ChatGPTapp": "https://nitter.net/ChatGPTapp/rss"
+                        "OpenAI": "https://rss.xcancel.com/OpenAI/rss",
+                        "OpenAINewsroom": "https://rss.xcancel.com/OpenAINewsroom/rss",
+                        "ChatGPTapp": "https://rss.xcancel.com/ChatGPTapp/rss"
                     },
                     "feeds_alts": {
                         "OpenAI": [
@@ -237,7 +237,7 @@
                 {
                     "title": "Z.AI",
                     "feeds": {
-                        "Zai_org": "https://nitter.net/Zai_org/rss"
+                        "Zai_org": "https://rss.xcancel.com/Zai_org/rss"
                     },
                     "feeds_alts": {
                         "Zai_org": [
@@ -255,7 +255,7 @@
                 {
                     "title": "Anthropic",
                     "feeds": {
-                        "ClaudeDevs": "https://nitter.net/ClaudeDevs/rss"
+                        "ClaudeDevs": "https://rss.xcancel.com/ClaudeDevs/rss"
                     },
                     "feeds_alts": {
                         "ClaudeDevs": [
@@ -268,7 +268,7 @@
                 {
                     "title": "Google",
                     "feeds": {
-                        "googleaidevs": "https://nitter.net/googleaidevs/rss"
+                        "googleaidevs": "https://rss.xcancel.com/googleaidevs/rss"
                     },
                     "feeds_alts": {
                         "googleaidevs": [
@@ -281,7 +281,7 @@
                 {
                     "title": "Mistral",
                     "feeds": {
-                        "MistralDevs": "https://nitter.net/MistralDevs/rss"
+                        "MistralDevs": "https://rss.xcancel.com/MistralDevs/rss"
                     },
                     "feeds_alts": {
                         "MistralDevs": [
@@ -294,7 +294,7 @@
                 {
                     "title": "OpenAI",
                     "feeds": {
-                        "OpenAIDevs": "https://nitter.net/OpenAIDevs/rss"
+                        "OpenAIDevs": "https://rss.xcancel.com/OpenAIDevs/rss"
                     },
                     "feeds_alts": {
                         "OpenAIDevs": [
@@ -312,8 +312,8 @@
                 {
                     "title": "Google",
                     "feeds": {
-                        "GoogleAIStudio": "https://nitter.net/GoogleAIStudio/rss",
-                        "antigravity": "https://nitter.net/antigravity/rss"
+                        "GoogleAIStudio": "https://rss.xcancel.com/GoogleAIStudio/rss",
+                        "antigravity": "https://rss.xcancel.com/antigravity/rss"
                     },
                     "feeds_alts": {
                         "GoogleAIStudio": [
@@ -337,7 +337,7 @@
                 {
                     "title": "Mistral",
                     "feeds": {
-                        "mistralvibe": "https://nitter.net/mistralvibe/rss"
+                        "mistralvibe": "https://rss.xcancel.com/mistralvibe/rss"
                     },
                     "feeds_alts": {
                         "mistralvibe": [
@@ -350,7 +350,7 @@
                 {
                     "title": "Ollama",
                     "feeds": {
-                        "ollama": "https://nitter.net/ollama/rss"
+                        "ollama": "https://rss.xcancel.com/ollama/rss"
                     },
                     "feeds_alts": {
                         "ollama": [
@@ -368,7 +368,7 @@
                 {
                     "title": "Arena.ai",
                     "feeds": {
-                        "arena": "https://nitter.net/arena/rss"
+                        "arena": "https://rss.xcancel.com/arena/rss"
                     },
                     "feeds_alts": {
                         "arena": [
@@ -393,7 +393,7 @@
                 {
                     "title": "Researchers",
                     "feeds": {
-                        "karpathy": "https://nitter.net/karpathy/rss"
+                        "karpathy": "https://rss.xcancel.com/karpathy/rss"
                     },
                     "feeds_alts": {
                         "karpathy": [

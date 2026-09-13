@@ -226,123 +226,98 @@ class TestExtractSections(unittest.TestCase):
 # ---------------------------------------------------------------------------
 
 class TestCheckFeed(unittest.TestCase):
+    """check_feed() delegates to generate_news.fetch_feed.
 
-    @patch("check_feeds._http_get_with_retry", return_value=MINI_RSS)
-    def test_success_primary(self, mock_get):
-        ok, msg = check_feed("FeedA", "https://example.com/feedA.rss")
+    The monitor previously had its own fetch/validate logic and drifted from
+    the pipeline, reporting "34 feeds healthy" while 26 X feeds were dead.
+    check_feed now calls the pipeline's own fetch_feed, so these tests assert
+    the delegation contract: fetch_feed's verdict is the verdict.
+    """
+
+    def test_delegates_to_pipeline_fetch_feed(self):
+        with patch("check_feeds.fetch_feed", return_value=[{"title": "x"}]) as m:
+            ok, msg = check_feed("FeedA", "https://example.com/a.rss")
         self.assertTrue(ok)
         self.assertEqual(msg, "OK")
+        m.assert_called_once()
 
-    @patch("check_feeds._http_get_with_retry")
-    def test_success_fallback(self, mock_get):
-        """Primary fails, fallback succeeds."""
-        mock_get.side_effect = [None, MINI_RSS]
-        ok, msg = check_feed(
-            "FeedA", "https://primary.example.com/rss",
-            fallbacks=["https://fallback.example.com/rss"],
-        )
+    def test_reachable_but_quiet_feed_is_ok(self):
+        """No items in the window is not a failure if the body is usable."""
+        with patch("check_feeds.fetch_feed", return_value=[]), \
+             patch("check_feeds._http_get_with_retry", return_value=MINI_RSS):
+            ok, msg = check_feed("FeedA", "https://example.com/a.rss")
         self.assertTrue(ok)
-        self.assertIn("fallback", msg.lower())
+        self.assertIn("no items", msg.lower())
 
-    @patch("check_feeds._http_get_with_retry", return_value=None)
-    def test_all_fail(self, mock_get):
-        ok, msg = check_feed("FeedA", "https://example.com/rss")
+    def test_unreachable_feed_is_not_ok(self):
+        with patch("check_feeds.fetch_feed", return_value=[]), \
+             patch("check_feeds._http_get_with_retry", return_value=None):
+            ok, msg = check_feed("FeedA", "https://example.com/a.rss")
         self.assertFalse(ok)
         self.assertIn("failed", msg.lower())
 
-    @patch("check_feeds._http_get_with_retry", return_value=None)
-    def test_all_fail_with_fallbacks(self, mock_get):
-        ok, msg = check_feed(
-            "FeedA", "https://primary.example.com/rss",
-            fallbacks=["https://fb1.example.com/rss", "https://fb2.example.com/rss"],
-        )
-        self.assertFalse(ok)
-        self.assertIn("3", msg)  # "all 3 URL(s) failed"
-
-    @patch("check_feeds._http_get_with_retry")
-    def test_http_200_with_unparseable_body_is_not_ok(self, mock_get):
-        """xcancel.com shape: valid-looking body with 2 leading whitespace bytes.
-
-        Expat rejects a declaration that is not at byte 0, so the pipeline gets
-        zero items. Reporting this as "OK" made the monitor say 34/34 healthy
-        while 26 X feeds were dead.
-        """
-        body = b'  <?xml version="1.0" encoding="UTF-8"?><rss><channel>' \
-               b'<item><title>hi</title></item></channel></rss>'
-        mock_get.return_value = body
-        ok, msg = check_feed("FeedA", "https://xcancel.com/a/rss")
-        self.assertFalse(ok)
-        self.assertIn("unparseable", msg)
-
-    @patch("check_feeds._http_get_with_retry")
-    def test_placeholder_whitelist_feed_is_not_ok(self, mock_get):
-        """xcancel's placeholder is *valid RSS* with one 1971-dated item."""
-        body = (b'<?xml version="1.0" encoding="UTF-8"?><rss><channel>'
-                b'<item><title>RSS reader not yet whitelisted!</title>'
-                b'<pubDate>Mon, 01 January 1971 00:00:00 GMT</pubDate>'
-                b'</item></channel></rss>')
-        mock_get.return_value = body
-        ok, msg = check_feed("FeedA", "https://xcancel.com/a/rss")
+    def test_placeholder_body_is_not_ok(self):
+        """A 200 carrying only the 1971 placeholder must not read as healthy."""
+        placeholder = (b'<?xml version="1.0" encoding="UTF-8"?><rss><channel>'
+                       b'<item><title>RSS reader not yet whitelisted!</title>'
+                       b'<pubDate>Mon, 01 January 1971 00:00:00 GMT</pubDate>'
+                       b'</item></channel></rss>')
+        with patch("check_feeds.fetch_feed", return_value=[]), \
+             patch("check_feeds._http_get_with_retry", return_value=placeholder):
+            ok, msg = check_feed("FeedA", "https://example.com/a.rss")
         self.assertFalse(ok)
         self.assertIn("placeholder", msg)
 
-    @patch("check_feeds._http_get_with_retry")
-    def test_valid_xml_with_zero_items_is_not_ok(self, mock_get):
-        mock_get.return_value = b'<?xml version="1.0"?><rss><channel></channel></rss>'
-        ok, msg = check_feed("FeedA", "https://example.com/rss")
+    def test_unparseable_body_is_not_ok(self):
+        garbage = b"<html><body>" + b"x" * 200 + b"</body></html>"
+        with patch("check_feeds.fetch_feed", return_value=[]), \
+             patch("check_feeds._http_get_with_retry", return_value=garbage):
+            ok, msg = check_feed("FeedA", "https://example.com/a.rss")
+        self.assertFalse(ok)
+
+    def test_zero_item_document_is_not_ok(self):
+        with patch("check_feeds.fetch_feed", return_value=[]), \
+             patch("check_feeds._http_get_with_retry",
+                   return_value=b'<?xml version="1.0"?><rss><channel></channel></rss>'):
+            ok, msg = check_feed("FeedA", "https://example.com/a.rss")
         self.assertFalse(ok)
         self.assertIn("0 items", msg)
 
-    @patch("check_feeds._http_get_with_retry")
-    def test_atom_entry_feed_is_ok(self, mock_get):
+    def test_atom_entry_feed_is_ok(self):
         """Atom feeds use <entry>, not <item>; they must not read as broken."""
         atom = (b'<?xml version="1.0" encoding="utf-8"?>'
                 b'<feed xmlns="http://www.w3.org/2005/Atom">'
                 b'<title>Blog</title>'
                 b'<entry><title>Post</title><link href="https://x/1"/></entry>'
                 b'</feed>')
-        mock_get.return_value = atom
-        ok, msg = check_feed("Simon Willison", "https://simonwillison.net/atom/everything/")
+        with patch("check_feeds.fetch_feed", return_value=[]), \
+             patch("check_feeds._http_get_with_retry", return_value=atom):
+            ok, msg = check_feed("Simon Willison", "https://simonwillison.net/atom/everything/")
         self.assertTrue(ok, msg)
 
-    @patch("check_feeds._http_get_with_retry")
-    def test_fallback_used_when_primary_only_has_garbage_body(self, mock_get):
-        """A 200 with garbage must not stop the fallback chain."""
-        garbage = b'  <?xml version="1.0"?><rss><channel><item><title>x</title></item></channel></rss>'
-        mock_get.side_effect = [garbage, MINI_RSS]
-        ok, msg = check_feed(
-            "FeedA", "https://primary.example.com/rss",
-            fallbacks=["https://fallback.example.com/rss"],
-        )
+    def test_fallbacks_tried_when_primary_unreachable(self):
+        with patch("check_feeds.fetch_feed", return_value=[]), \
+             patch("check_feeds._http_get_with_retry",
+                   side_effect=[None, MINI_RSS]) as m:
+            ok, msg = check_feed("FeedA", "https://primary.example.com/rss",
+                                 fallbacks=["https://fallback.example.com/rss"])
         self.assertTrue(ok)
         self.assertIn("fallback", msg.lower())
+        self.assertEqual(m.call_count, 2)
 
-    @patch("check_feeds._http_get_with_retry", return_value=MINI_RSS)
-    def test_plain_body_without_declaration_is_ok(self, mock_get):
-        """A body with no XML declaration at all parses fine and is healthy."""
-        mock_get.return_value = b"<rss><channel><item><title>x</title></item></channel></rss>"
-        ok, _ = check_feed("FeedA", "https://example.com/rss")
-        self.assertTrue(ok)
+    def test_all_urls_failing_reports_count(self):
+        with patch("check_feeds.fetch_feed", return_value=[]), \
+             patch("check_feeds._http_get_with_retry", return_value=None):
+            ok, msg = check_feed("FeedA", "https://primary.example.com/rss",
+                                 fallbacks=["https://fb1/rss", "https://fb2/rss"])
+        self.assertFalse(ok)
+        self.assertIn("3", msg)
 
-    @patch("check_feeds._http_get_with_retry")
-    def test_monitor_agrees_with_pipeline_on_whitespace_body(self, mock_get):
-        """The monitor must give the same verdict as generate_news.fetch_feed.
-
-        fetch_feed calls ET.fromstring(raw) with no lstrip, so a body with
-        leading whitespace yields 0 items. If the monitor stripped it, the two
-        would disagree and the status page would contradict the pipeline.
-        """
-        from generate_news import fetch_feed
-        body = (b'  <?xml version="1.0" encoding="UTF-8"?><rss><channel>'
-                b'<item><title>Real story</title>'
-                b'<link>https://example.com/1</link></item></channel></rss>')
-        mock_get.return_value = body
-
-        monitor_ok, _ = check_feed("FeedA", "https://example.com/rss")
-        with patch("generate_news._http_get_with_retry", return_value=body):
-            pipeline_items = fetch_feed("FeedA", "https://example.com/rss")
-
-        self.assertEqual(monitor_ok, bool(pipeline_items))
+    def test_fetch_feed_exception_is_contained(self):
+        with patch("check_feeds.fetch_feed", side_effect=RuntimeError("boom")):
+            ok, msg = check_feed("FeedA", "https://example.com/a.rss")
+        self.assertFalse(ok)
+        self.assertIn("boom", msg)
 
 
 # ---------------------------------------------------------------------------

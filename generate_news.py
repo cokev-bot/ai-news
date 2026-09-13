@@ -48,6 +48,12 @@ MAX_SUMMARY_WORKERS = 6
 # workers so slow feeds don't starve summaries (and vice-versa). 10 is
 # enough to overlap 31 feeds (typical config) without hammering hosts.
 MAX_FEED_WORKERS = 10
+# User-Agent for the xcancel RSS mirror. xcancel gates /rss on a per-reader
+# allowlist (it returns a 1971-dated "not yet whitelisted" placeholder to
+# everything else) and this is the reader identity the mirror serves real
+# content to. Do not "modernise" this string — most UAs, including the
+# pipeline's own, get the placeholder. See _http_get_with_curl().
+XCANCEL_UA = "Inoreader/1.0"
 OLLAMA_ENDPOINT = "http://localhost:11434/api/generate"
 # Average adult reading speed (words per minute) used to estimate how long
 # an edition takes to read. 230 wpm is the mid-range consensus figure for
@@ -1144,23 +1150,66 @@ def _looks_like_rss(body: bytes) -> bool:
     return (b"<rss" in head) or (b"<feed" in head) or (b"<channel" in head)
 
 
+def _http_get_with_curl(url: str, *, timeout: int = 20) -> bytes | None:
+    """GET *url* using the system ``curl`` binary instead of urllib.
+
+    Needed for the xcancel RSS mirror, which serves a 1971-dated "RSS reader
+    not yet whitelisted!" placeholder to Python's TLS/HTTP stack no matter what
+    headers are sent, while serving real content to ``curl`` with an identical
+    request (verified 2026-09-13: same method, path, host and User-Agent — 1442
+    bytes of placeholder via urllib/http.client/aiohttp/curl_cffi, 31949 bytes
+    of 20 real items via curl). The discriminator is below the HTTP layer, so it
+    cannot be fixed by headers; shelling out to curl is the pragmatic workaround.
+
+    Returns body bytes, or None on any failure. Never raises.
+    """
+    try:
+        proc = subprocess.run(
+            ["curl", "-s", "--max-time", str(timeout), "-A", XCANCEL_UA, url],
+            capture_output=True,
+            timeout=timeout + 10,
+        )
+    except (subprocess.SubprocessError, OSError) as e:
+        logging.warning(f"curl transport failed for {url}: {e}")
+        return None
+    raw = proc.stdout
+    if not raw:
+        return None
+    return raw
+
+
 def _http_get_with_retry(url: str, *, timeout: int = 15, attempts: int = 3,
                          backoff_base: float = 0.6) -> bytes | None:
     """GET a URL with exponential backoff. Returns the body bytes on success,
     or None if all attempts fail (network error, non-200, or body fails the
-    RSS-shape check). Never raises — callers don't need try/except."""
+    RSS-shape check). Never raises — callers don't need try/except.
+
+    xcancel mirror URLs are routed through ``_http_get_with_curl`` because that
+    host refuses real content to Python's HTTP stack (see its docstring).
+    """
     last_err = ""
+    use_curl = "xcancel.com" in url
     for attempt in range(1, attempts + 1):
         try:
-            req = urllib.request.Request(
-                url,
-                headers={"User-Agent": "AI-News-Digest/1.1 (+https://cokev-bot.github.io/ai-news/)"},
-            )
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                raw = resp.read()
-            if _looks_like_rss(raw):
-                return raw
-            last_err = f"empty/non-RSS body ({len(raw)} bytes)"
+            if use_curl:
+                raw = _http_get_with_curl(url, timeout=timeout)
+                if raw is not None and _looks_like_rss(raw):
+                    return raw
+                last_err = (
+                    "curl transport returned no usable RSS body"
+                    if raw is None else
+                    f"empty/non-RSS body ({len(raw)} bytes) via curl"
+                )
+            else:
+                req = urllib.request.Request(
+                    url,
+                    headers={"User-Agent": "AI-News-Digest/1.1 (+https://cokev-bot.github.io/ai-news/)"},
+                )
+                with urllib.request.urlopen(req, timeout=timeout) as resp:
+                    raw = resp.read()
+                if _looks_like_rss(raw):
+                    return raw
+                last_err = f"empty/non-RSS body ({len(raw)} bytes)"
         except (urllib.error.URLError, urllib.error.HTTPError, socket.timeout, TimeoutError) as e:
             last_err = f"{type(e).__name__}: {e}"
         except Exception as e:  # pragma: no cover
@@ -1209,7 +1258,12 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_i
         logging.info(f"{name}: served by fallback #{used_idx} ({candidates[used_idx]})")
 
     try:
-        root = ET.fromstring(raw)
+        # lstrip() is required, not cosmetic: the xcancel mirror prefixes its
+        # XML declaration with two whitespace bytes, and expat rejects a
+        # declaration that is not at byte 0 ("XML or text declaration not at
+        # start of entity: line 1, column 2"). Without this the entire X feed
+        # set parses to zero items. Verified 2026-09-13.
+        root = ET.fromstring(raw.lstrip())
     except Exception as e:
         logging.error(f"Failed to parse {name}: {e}")
         if health_sink is not None:

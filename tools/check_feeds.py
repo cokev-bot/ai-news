@@ -42,6 +42,7 @@ if SITE_ROOT_DEFAULT not in sys.path:
 from generate_news import (
     _http_get_with_retry,
     _looks_like_rss,
+    fetch_feed,
     load_config,
 )
 
@@ -182,32 +183,35 @@ def _parses_as_feed(raw: bytes) -> tuple[bool, str]:
 def check_feed(name: str, url: str, fallbacks: list[str] | None = None) -> tuple[bool, str]:
     """Check whether a feed URL returns a valid, usable RSS/Atom body.
 
-    Uses the same ``_http_get_with_retry`` logic as the edition pipeline
-    so health checks are consistent with production fetches, plus a real parse
-    of the body (see ``_parses_as_feed``) so that an HTTP 200 carrying an
-    unparseable or placeholder payload is not reported as healthy.
+    Delegates to ``generate_news.fetch_feed`` — the exact code the edition
+    pipeline uses — so the monitor and the pipeline can never disagree about
+    whether a source works. That matters because the monitor previously had its
+    own fetch logic and reported "34 feeds healthy" while 26 X feeds were dead.
 
-    Returns ``(ok, message)`` where *ok* is True on success and *message*
-    is a human-readable status string.
+    Returns ``(ok, message)`` where *ok* is True on success and *message* is a
+    human-readable status string.
     """
     fallbacks = list(fallbacks or [])
-    candidates = [url] + fallbacks
-    last_error = "no URL attempted"
-    for idx, candidate in enumerate(candidates):
-        raw = _http_get_with_retry(candidate, timeout=15, attempts=1)
+    try:
+        articles = fetch_feed(name, url, fallbacks=fallbacks, max_age_days=1)
+        if articles:
+            return True, "OK"
+        # No items within the window is not a fetch failure, but we still want
+        # to distinguish "reachable, quiet" from "unreachable". Probe the raw
+        # body to tell them apart.
+        raw = _http_get_with_retry(url, timeout=20, attempts=1)
         if raw is None:
-            last_error = "fetch failed (network error, non-200, or non-RSS body)"
-            if idx == 0 and fallbacks:
-                log.info(f"{name}: primary failed, trying {len(fallbacks)} fallback(s)")
-            continue
+            for idx, fb in enumerate(fallbacks, start=1):
+                raw = _http_get_with_retry(fb, timeout=20, attempts=1)
+                if raw is not None:
+                    return True, f"OK (fallback #{idx}: {fb})"
+            return False, f"all {len(fallbacks) + 1} URL(s) failed"
         usable, detail = _parses_as_feed(raw)
         if not usable:
-            last_error = detail
-            continue
-        if idx > 0:
-            return True, f"OK (fallback #{idx}: {candidate})"
-        return True, "OK"
-    return False, f"all {len(candidates)} URL(s) failed ({last_error})"
+            return False, detail
+        return True, "OK (no items in window)"
+    except Exception as e:  # pragma: no cover - fetch_feed never raises
+        return False, f"{type(e).__name__}: {e}"
 
 
 # ---------------------------------------------------------------------------
