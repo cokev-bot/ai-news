@@ -1,0 +1,326 @@
+{
+  "edition": "Morning",
+  "date": "2026-09-13",
+  "published": "2026-09-13T08:45:26.134434-07:00",
+  "generated_at": "2026-09-13T08:45:26.134434-07:00",
+  "title": "AI News Digest — Morning Edition",
+  "url": "https://cokev-bot.github.io/ai-news/news/2026/09/13/Morning/",
+  "summary": "A widening gap is emerging between breakneck AI deployment and regulatory oversight. While industry figures like Anthropic's Dario Amodei call for pacing the fr",
+  "big_picture": "A widening gap is emerging between breakneck AI deployment and regulatory oversight. While industry figures like Anthropic's Dario Amodei call for pacing the frontier to manage risks (Source: 30), OpenAI is straining under massive consumer demand—pausing $200 Pro subscriptions as it rolls out frontier models like GPT-VI Astra (Source: 11, Source: 13) and pushes to democratize GPT-5.6 (Source: 14, Source: 15). Washington remains largely paralyzed, with the Trump administration disengaged and top lawmakers acknowledging rising risks but lacking quick fixes amid China competition fears (Source: 4, Source: 7). This vacuum is pushing leaders like Obama to urge Democrats to centralize AI oversight (Source: 6), even as local backlash forces states like Texas to slam the brakes on data center expansions (Source: 1). Simultaneously, as providers race to embed AI into enterprise workflows—launching native data integrations, real-time voice APIs, and autonomous financial agents (Source: 10, Source: 12, Source: 18)—societal friction is mounting. The pervasive use of AI is already diluting authentic workplace communication, with employee outputs increasingly \"reeking\" of AI generation (Source: 5), while transformative shifts like the robotaxi revolution face a hard bottleneck in public trust (Source: 2). As models become vastly more capable, the industry's ultimate challenge is shifting from technical scaling to ensuring human acceptance and usability (Source: 2, Source: 14).",
+  "reading_time_minutes": 17,
+  "stats": {
+    "feeds_scanned": 33,
+    "sources": 7,
+    "items": 30,
+    "fresh": 19,
+    "stale": 0,
+    "from_yesterday": 3,
+    "words": 1939
+  },
+  "sources": [
+    "ChatGPT",
+    "FT AI",
+    "Gemini_Notebook",
+    "karpathy",
+    "NYT AI",
+    "OpenAIDevs",
+    "The Rundown AI"
+  ],
+  "sections": [
+    {
+      "title": "News",
+      "url": "https://cokev-bot.github.io/ai-news/news/2026/09/13/Morning/#news",
+      "item_count": 8,
+      "summary": "While top political figures sound alarms over AI risks, federal action remains stalled, leaving local pressures and public sentiment to dictate the pace of AI expansion. Former President Barack Obama has urged Democrats to prioritize AI oversight, warning the technology could be dangerous without urgent management (NYT AI: 6). Bipartisan consensus also acknowledges rising risks, with House Speaker Mike Johnson warning of competitive threats from China and Minority Leader Hakeem Jeffries calling for immediate regulatory talks (NYT AI: 7). Yet, Washington remains largely paralyzed; President Trump continues to avoid engaging on how to balance AI risks and rewards, and lawmakers admit they lack a quick fix (NYT AI: 4, NYT AI: 7). This federal vacuum means local backlash is increasingly shaping AI's physical footprint. In Texas, state leaders are slowing approvals for new data centers as public opposition threatens their political prospects, applying a practical brake to the infrastructure boom powering AI (FT AI: 1). This mirrors the broader challenge facing consumer-facing AI: the technology's advancement is outstripping public trust. The impending robotaxi revolution, for instance, promises to transform urban transport but hinges entirely on winning over a skeptical public (FT AI: 2). Even in the workplace, the uncanny valley of AI adoption is becoming apparent, as employee output increasingly \"reeks of AI,\" highlighting a gap between technical capability and authentic, trusted integration (NYT AI: 5). Despite these regulatory and societal frictions, the digital ecosystem continues to optimize for an AI-driven reality. As AI models become primary navigators of the web, businesses are adapting their digital strategies; new frameworks for Generative Engine Optimization (GEO) and AI Engine Optimization (AEO) are emerging to ensure websites remain discoverable and citable by AI systems (The Rundown AI: 8). This pivot illustrates a market that is rapidly structuring itself around AI intermediaries, even as policymakers and the public struggle to catch up with the technology's broader implications. The juxtaposition of unchecked AI deployment and mounting socio-political resistance suggests an impending inflection point. While children predict a 2050 filled with robot butlers (NYT AI: 3), the present reality is defined by a more complex friction: infrastructure constrained by local politics, workplaces grappling with algorithmic awkwardness, and a marketplace scrambling to optimize for AI search while Washington slumbers. The trajectory of AI will likely be shaped less by the technology's raw capabilities and more by whether the industry can resolve this deficit of public and political trust.",
+      "subsections": [
+        {
+          "title": "Financial Times",
+          "articles": [
+            {
+              "title": "Texas puts a brake on its data centre boom",
+              "link": "https://www.ft.com/content/3204d65e-ae34-4ab3-a73f-a55d354f40ab?syn-25a6b1a6=1",
+              "source": "FT AI",
+              "description": "State’s leaders slow approvals for new projects as a public backlash threatens to derail their midterm hopes",
+              "published": "2026-09-13T17:00:05+00:00"
+            },
+            {
+              "title": "The coming robotaxi revolution",
+              "link": "https://www.ft.com/content/2404d7db-002e-42d6-a746-183bb23c1234?syn-25a6b1a6=1",
+              "source": "FT AI",
+              "description": "Self-driving cars could transform urban transport, if they can win public trust",
+              "published": "2026-09-13T17:00:05+00:00"
+            }
+          ]
+        },
+        {
+          "title": "New York Times",
+          "articles": [
+            {
+              "title": "10-Year-Old Children Predict the Future",
+              "link": "https://www.nytimes.com/2026/09/13/style/10-year-old-children-predict-the-future.html",
+              "source": "NYT AI",
+              "description": "Robot butlers. Underwater homes. Root beer perfume. Kids across the nation weigh in on what life will be like in the year 2050.",
+              "published": "2026-09-13T13:05:14+00:00"
+            },
+            {
+              "title": "As Fears of A.I. Catastrophe Magnify, Washington Stirs, but Mostly Slumbers",
+              "link": "https://www.nytimes.com/2026/09/13/us/politics/ai-catastrophe-fears-washington.html",
+              "source": "NYT AI",
+              "description": "President Trump has been at the forefront of the “what-me-worry?” crowd, refusing to engage on how to balance the risks and rewards of A.I.",
+              "published": "2026-09-13T13:37:48+00:00"
+            },
+            {
+              "title": "Every Word My Employee Writes Reeks of A.I.",
+              "link": "https://www.nytimes.com/2026/09/13/business/employee-ai-use.html",
+              "source": "NYT AI",
+              "description": "Plus: How to stop office talk about a colleague’s cancer diagnosis before it starts.",
+              "published": "2026-09-13T09:03:20+00:00"
+            },
+            {
+              "title": "Obama Urges Democrats to Move A.I. Oversight to the Center of Their Agenda",
+              "link": "https://www.nytimes.com/2026/09/13/us/politics/obama-democrats-ai.html",
+              "source": "NYT AI",
+              "description": "During a private fund-raiser, the former president warned that the technology could be “dangerous” if not managed urgently and with a clear plan.",
+              "published": "2026-09-13T04:03:58+00:00"
+            },
+            {
+              "title": "Top Lawmakers Agree A.I.’s Risks Are Rising but Say They Have No Quick Fix",
+              "link": "https://www.nytimes.com/2026/09/13/us/politics/congress-ai-risks-johnson-jeffries.html",
+              "source": "NYT AI",
+              "description": "House Speaker Mike Johnson warned on Sunday of competitive risks from China, and Hakeem Jeffries, the minority leader, said Congress should start regulatory talks this week.",
+              "published": "2026-09-13T15:39:02+00:00"
+            }
+          ]
+        },
+        {
+          "title": "Newsletters",
+          "articles": [
+            {
+              "title": "AEO/GEO Part 2: Make Your Website Easier for AI to Find and Cite - The Rundown AI",
+              "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQWtlV21NckpPOXZVMFFxS3htS1dYaUduOVBIcktRTUoyRG1pYnJfTzBIR1gzdmpUNXlTdVRpd0wtaEFXQnV1bGZ0T1ZlWFdHZGVNaURkZndXNnV2S3Vrb293Vjc5azVaOFBteDZTdC1TWjB5UVMyb3dsZ0h3NHR6b2k5Zmk2eENTZG9La3NsR2VrOVYzWVFMUUpJUQ?oc=5",
+              "source": "The Rundown AI",
+              "description": "AEO/GEO Part 2: Make Your Website Easier for AI to Find and Cite&nbsp;&nbsp;The Rundown AI",
+              "published": "2026-09-10T06:41:00+00:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "AI Labs",
+      "url": "https://cokev-bot.github.io/ai-news/news/2026/09/13/Morning/#ai-labs",
+      "item_count": 10,
+      "summary": "The race to transform AI from a reactive chatbot into a proactive, personalized agent has reached a critical inflection point. OpenAI is doubling down on its vision of \"personal AGI\" for over a billion weekly users, asserting that current mid-tier models now surpass the reasoning capabilities of its frontier models from just over a year ago (ChatGPT: 6). This leap in capability has driven unprecedented demand, prompting the lab to temporarily pause new subscriptions for its $200 Pro plan to manage system strain from the newly launched GPT-VI Astra (ChatGPT: 3, ChatGPT: 5). Meanwhile, the strategic focus is rapidly shifting toward autonomous utility, with labs prioritizing features that anticipate user needs and seamlessly integrate into daily workflows. Underpinning this shift is a marked improvement in model efficiency and safety metrics, enabling broader access without compromising quality. OpenAI reports that major factual errors are down 65%—and 72% in high-stakes finance categories—while sycophancy has been reduced by over 80% (ChatGPT: 6). These enhancements have allowed OpenAI to bring higher reasoning, unlimited text chats, and scheduled automations to free users (ChatGPT: 6). Simultaneously, voice capabilities are being elevated to match advanced reasoning models; ChatGPT Voice now supports GPT-5.6 Sol and GPT-6 Astra, enabling dynamic search and reasoning during spoken interactions (ChatGPT: 7). On the developer front, OpenAI released GPT-Live-1 in the API, introducing voice agents capable of listening while they speak for natural conversational flow (OpenAIDevs: 10). As models become more capable, labs are weaving them deeper into enterprise and personal ecosystems through agentic features. OpenAI is integrating Dropbox, Box, and SharePoint directly into the ChatGPT Library for paid users, eliminating context-switching friction (ChatGPT: 2). The platform is also testing proactive task management, rolling out a stock watchlist feature in ChatGPT + Finances that autonomously monitors and alerts users to market movements (ChatGPT: 4). Google is similarly refining its educational AI, equipping NotebookLM with mobile continuity, artifact notifications, and AI-generated study flashcards targeted at user weak spots (Gemini_Notebook: 1). For creators, ChatGPT Sites has surpassed 5 million deployments, adding collaborative editing, private sharing, and custom domains (ChatGPT: 8). Even desktop UX is getting an agentic overhaul, with OpenAI introducing persistent \"Pets\" and \"Mini\" companions to track background chats and initiate new ones (ChatGPT: 9). Collectively, these developments signal a transition from standalone AI tools to deeply embedded, autonomous assistants. OpenAI explicitly states its \"master plan\" is a progressive, model-assisted onboarding to AGI, where the AI automatically understands user goals and selects the right features to execute them (ChatGPT: 6). The temporary pause on Pro subscriptions highlights the physical infrastructure limits constraining this vision (ChatGPT: 5), but the trajectory is clear: the next era of AI competition will not be won on raw benchmark scores alone, but on which platforms can most seamlessly—and proactively—integrate intelligence into the fabric of daily human work and life.",
+      "subsections": [
+        {
+          "title": "Google",
+          "articles": [
+            {
+              "title": "Back with another round of mini launches. Here's what's new: — The upgraded Notebook experience is rolling out across all mobile devices this week — In Settings on web, you can opt-in to get notified when your artifacts are ready — After completing a Quiz, ask the Chat what to study next or have it generate targeted flashcards for weak spots — On mobile, ask a question, close the app, and pick up right where you left off Try them out and let us know what you think!",
+              "link": "https://rss.xcancel.com/Gemini_Notebook/status/2097436879662780535#m",
+              "source": "Gemini_Notebook",
+              "description": "Back with another round of mini launches. Here's what's new: \n\n— The upgraded Notebook experience is rolling out across all mobile devices this week\n— In Settings on web, you can opt-in to get notified when your artifacts are ready\n— After completing a Quiz, ask the Chat what to study next or…",
+              "published": "2026-09-09T04:28:15+00:00"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI",
+          "articles": [
+            {
+              "title": "And starting today, @Dropbox, @Box, and Sharepoint are now natively integrated into the ChatGPT Library across both ChatGPT and ChatGPT Work. Rolling out this week to paid users.",
+              "link": "https://rss.xcancel.com/ChatGPT/status/2098127115791294703#m",
+              "source": "ChatGPT",
+              "description": "And starting today, @Dropbox, @Box, and Sharepoint are now natively integrated into the ChatGPT Library across both ChatGPT and ChatGPT Work.\n\nRolling out this week to paid users.\n\n\n\n\nChatGPT (@ChatGPT)\n\nYou probably hate tab switching. Understandable.\n\nYou can now open any @googledrive Doc,…",
+              "published": "2026-09-11T02:11:00+00:00"
+            },
+            {
+              "title": "GPT-VI ASTRA",
+              "link": "https://rss.xcancel.com/ChatGPT/status/2098519342530920488#m",
+              "source": "ChatGPT",
+              "description": "GPT-VI ASTRA\n\nVideo\n  \n",
+              "published": "2026-09-12T04:09:34+00:00"
+            },
+            {
+              "title": "RT by @ChatGPT: Stock watchlist rolling out in ChatGPT + Finances for US Plus/Pro! Tell Chat what stocks to follow. It’ll keep an eye on what’s happening and proactively bring you updates. Try: “@Finances add Nvidia, Microsoft and Berkshire to my watchlist.”",
+              "link": "https://rss.xcancel.com/ebloch/status/2098117574747967582#m",
+              "source": "ChatGPT",
+              "description": "Stock watchlist rolling out in ChatGPT + Finances for US Plus/Pro! \n\nTell Chat what stocks to follow. It’ll keep an eye on what’s happening and proactively bring you updates.  \n\nTry: “@Finances add Nvidia, Microsoft and Berkshire to my watchlist.”\n",
+              "published": "2026-09-11T01:33:05+00:00"
+            },
+            {
+              "title": "RT by @ChatGPT: To make sure our current users have an incredible experience and continued access to Astra, we are going to pause subscriptions to our $200 Pro plan. These put the most strain on our systems and we wanted to take the smallest step that allows us to continue giving the broadest access possible. All other plans and the api remain available. There is no impact to existing accounts and we are working on adding more capacity as fast as we can. Thanks!",
+              "link": "https://rss.xcancel.com/thsottiaux/status/2098113585683808624#m",
+              "source": "ChatGPT",
+              "description": "To make sure our current users have an incredible experience and continued access to Astra, we are going to pause subscriptions to our $200 Pro plan. These put the most strain on our systems and we wanted to take the smallest step that allows us to continue giving the broadest access possible.…",
+              "published": "2026-09-11T01:17:14+00:00"
+            },
+            {
+              "title": "RT by @ChatGPT: following up after astra launch week and the navier-stokes announcement i wanted to share a little bit about how we think about and build for the over 1 billion people who use chatgpt every week, most of whom use it for free. we’re on a mission to distribute the benefits of agi, and i think this is the most impactful way to do that: giving people as much access as we can safely and feasibly distribute. we want to scale the utility that everyone gets from ai. over the past 6 months, we've been working to bring the greatest possible capabilities to the broadest possible set of users, including both free and paying users. of course there are some practical limitations and we can’t ship the largest models to everyone, but since march (gpt-5.3 instant), we’ve improved the default chatgpt experience meaningfully: - responses with a major factual error are down 65%, and they are down 72% in high stakes categories like finance - gpt-5.6 sol at instant and gpt-5.6 luna at medium are smarter than o3 at high reasoning effort, our frontier reasoning model from 17 months ago, while being considerably faster, 30%+ faster time to last token (evaluated via GPQA diamond) - chatgpt is far more usable and enjoyable while bringing extreme sycophancy down 80% and overall sycophancy down 83% - on our high-stakes medical eval, chatgpt produced 83% fewer answers flagged for hallucinations, resulting in hundreds of millions of better health conversations per month - we're seeing people find more ways to use chatgpt. for a recently joined cohort, we saw the number of use cases pursued at least three times weekly go up 20-30% not only have we improved the default chatgpt experience dramatically, we’ve also expanded access significantly for all. free users now: - have access to unlimited text chats - can use higher reasoning effort - now have access to automations, letting them schedule tasks to happen later - have access to better memory through dreaming. this allows chat to personalize much more effectively we’re always looking for ways to expand access to the billion+ people who use our product weekly. this is the master plan: bring the default experience as close to the capability frontier as possible, expand access to everyone, making intelligence maximally abundant, and make our product much more usable. this last point, usability, is something we’ve been focusing on as we bring personal agi to everyone. the current top of the line capabilities are staggering, but only the savviest users and insiders know how to use them. our vision is of a progressive, model assisted, onboarding to agi. chatgpt will guide people from all walks of life to the highest utility applications of ai for them. this really is the only way – we think technology that is hard to learn ultimately fails to reach a broad audience. your personal agi will just understand your goals, and automatically use the right set of features and capabilities to get things done for you lots more to come soon. onwards to scaling utility for all",
+              "link": "https://rss.xcancel.com/michpokrass/status/2097724905177645329#m",
+              "source": "ChatGPT",
+              "description": "following up after astra launch week and the navier-stokes announcement i wanted to share a little bit about how we think about and build for the over 1 billion people who use chatgpt every week, most of whom use it for free. we’re on a mission to distribute the benefits of agi, and i think this…",
+              "published": "2026-09-09T23:32:45+00:00"
+            },
+            {
+              "title": "RT by @ChatGPT: 🌌 ChatGPT Voice can now use GPT-5.6 Sol and GPT-6 Astra We’re updating how intelligence works in voice. Now, you can select any model and effort you like — including GPT-5.6 Sol or GPT-6 Astra, if you’re on Pro — and voice will use it when it needs to search or reason.",
+              "link": "https://rss.xcancel.com/athyuttamre/status/2097761052939125132#m",
+              "source": "ChatGPT",
+              "description": "🌌 ChatGPT Voice can now use GPT-5.6 Sol and GPT-6 Astra\n\nWe’re updating how intelligence works in voice. Now, you can select any model and effort you like — including GPT-5.6 Sol or GPT-6 Astra, if you’re on Pro — and voice will use it when it needs to search or reason.\n",
+              "published": "2026-09-10T01:56:24+00:00"
+            },
+            {
+              "title": "Three months ago, we launched ChatGPT Sites – an easy way for anyone to build and host fully functional, interactive web apps. Since then, people have created over 5M sites. We’ve been listening to your feedback and ICYMI, we’ve launched a few Sites updates: 🫂 Build together: Invite teammates to edit, save, and publish to your shared Site 🔐 Share privately: Invite specific people to a private Site without making it public 🚀 Launch faster: Go from prompt to deployment in half the time 👀 Explore your data: Ask ChatGPT to inspect your Site’s database. Editors can view it, too 🌐 Add your own custom domain",
+              "link": "https://rss.xcancel.com/ChatGPT/status/2098457920291946894#m",
+              "source": "ChatGPT",
+              "description": "Three months ago, we launched ChatGPT Sites – an easy way for anyone to build and host fully functional, interactive web apps. Since then, people have created over 5M sites.\n\nWe’ve been listening to your feedback and ICYMI, we’ve launched a few Sites updates:\n\n🫂 Build together: Invite teammates…",
+              "published": "2026-09-12T00:05:30+00:00"
+            },
+            {
+              "title": "Your pet has a job now. Pets help you keep track of your chats while you’re away from the desktop app. Now, you can start a new chat right from your pet, too. Not a pet person? Meet Mini: the same shortcuts and updates, taking up less space on your screen. Pick your pet—or go Mini—in the ChatGPT desktop app settings.",
+              "link": "https://rss.xcancel.com/ChatGPT/status/2098533675050672134#m",
+              "source": "ChatGPT",
+              "description": "Your pet has a job now.\n\nPets help you keep track of your chats while you’re away from the desktop app. Now, you can start a new chat right from your pet, too.\n\nNot a pet person? Meet Mini: the same shortcuts and updates, taking up less space on your screen.\n\nPick your pet—or go Mini—in the…",
+              "published": "2026-09-12T05:06:31+00:00"
+            },
+            {
+              "title": "📞 1-800-ChatGPT",
+              "link": "https://rss.xcancel.com/OpenAIDevs/status/2098913661993603215#m",
+              "source": "OpenAIDevs",
+              "description": "📞 1-800-ChatGPT\n\n\nOpenAI Developers (@OpenAIDevs)\n\nGPT-Live-1 is now available in the API.\n\nBring ChatGPT’s natural back-and-forth to your app, with voice agents that listen while they speak and work with the models and harness you choose.\n\nVideo\n  \n\n\n\n\n\n—…",
+              "published": "2026-09-13T06:16:27+00:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Developers",
+      "url": "https://cokev-bot.github.io/ai-news/news/2026/09/13/Morning/#developers",
+      "item_count": 10,
+      "summary": "The AI landscape is experiencing a paradox of scaling: frontier capabilities are advancing so rapidly that infrastructure is struggling to keep pace, even as platforms push aggressively to democratize access. OpenAI has paused new subscriptions for its $200 Pro plan to manage severe system strain caused by the launch of GPT-VI Astra (ChatGPT: 3, ChatGPT: 5). Yet, simultaneously, OpenAI emphasizes a mission to distribute AI benefits broadly, claiming over 1 billion weekly users and expanding free-tier access to include unlimited text, higher reasoning, automations, and a \"dreaming\" memory feature (ChatGPT: 6). This dichotomy highlights a critical phase in the industry where the race for ubiquitous, personalized AI is colliding with the physical limits of compute infrastructure. A major theme across these updates is the transition from static chatbots to persistent, multimodal agents. OpenAI introduced GPT-Live-1 in the API, enabling developers to build voice agents capable of listening while speaking (OpenAIDevs: 10). On the consumer side, ChatGPT Voice can now utilize advanced models like GPT-5.6 Sol and GPT-6 Astra for complex reasoning and search tasks (ChatGPT: 7). Google is also advancing persistent interactions; an upgraded Gemini Notebook experience is rolling out on mobile devices, featuring session persistence and contextual learning tools like targeted flashcards for weak spots (Gemini_Notebook: 1). Novel desktop interfaces, such as ChatGPT's \"Pets\" and \"Mini\" features to track and initiate chats, further reflect this push toward an always-on AI companion (ChatGPT: 9). For enterprise and productivity workflows, AI platforms are deepening their integration into daily software stacks. ChatGPT now natively integrates with Dropbox, Box, and SharePoint across its Library for paid users (ChatGPT: 2). The platform is also branching into proactive financial tracking, allowing US Plus/Pro users to maintain stock watchlists that automatically surface updates (ChatGPT: 4). Furthermore, collaborative web development is scaling rapidly; ChatGPT Sites has seen over 5 million sites created, recently adding features for team editing, private sharing, database inspection, and custom domains (ChatGPT: 8). Underpinning these feature expansions are substantial improvements in model reliability and alignment. OpenAI reports that its latest models, GPT-5.6 Sol and GPT-5.6 Luna, outperform the o3 reasoning model from 17 months ago while operating over 30% faster (ChatGPT: 6). Crucially, the focus has shifted toward reducing harmful outputs: major factual errors are down 65%, medical hallucinations are down 83%, and overall sycophancy is down 83% (ChatGPT: 6). This focus on usability and trust is foundational to the platforms' broader distribution strategies, aiming to make high-stakes AI applications safer and more viable. Collectively, these updates signal that the competitive moat is shifting from raw model size to ecosystem integration, reliability, and user retention. As OpenAI notes, the \"master plan\" is to bring the default experience as close to the capability frontier as possible through progressive, model-assisted onboarding, recognizing that technology that is difficult to learn ultimately fails to reach a broad audience (ChatGPT: 6). The temporary pause on Pro subscriptions, however, serves as a reminder that while software ecosystems are maturing rapidly, compute constraints remain a gating factor for the industry's most demanding applications.",
+      "subsections": [
+        {
+          "title": "Google",
+          "articles": [
+            {
+              "title": "Back with another round of mini launches. Here's what's new: — The upgraded Notebook experience is rolling out across all mobile devices this week — In Settings on web, you can opt-in to get notified when your artifacts are ready — After completing a Quiz, ask the Chat what to study next or have it generate targeted flashcards for weak spots — On mobile, ask a question, close the app, and pick up right where you left off Try them out and let us know what you think!",
+              "link": "https://rss.xcancel.com/Gemini_Notebook/status/2097436879662780535#m",
+              "source": "Gemini_Notebook",
+              "description": "Back with another round of mini launches. Here's what's new: \n\n— The upgraded Notebook experience is rolling out across all mobile devices this week\n— In Settings on web, you can opt-in to get notified when your artifacts are ready\n— After completing a Quiz, ask the Chat what to study next or…",
+              "published": "2026-09-09T04:28:15+00:00"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI",
+          "articles": [
+            {
+              "title": "And starting today, @Dropbox, @Box, and Sharepoint are now natively integrated into the ChatGPT Library across both ChatGPT and ChatGPT Work. Rolling out this week to paid users.",
+              "link": "https://rss.xcancel.com/ChatGPT/status/2098127115791294703#m",
+              "source": "ChatGPT",
+              "description": "And starting today, @Dropbox, @Box, and Sharepoint are now natively integrated into the ChatGPT Library across both ChatGPT and ChatGPT Work.\n\nRolling out this week to paid users.\n\n\n\n\nChatGPT (@ChatGPT)\n\nYou probably hate tab switching. Understandable.\n\nYou can now open any @googledrive Doc,…",
+              "published": "2026-09-11T02:11:00+00:00"
+            },
+            {
+              "title": "GPT-VI ASTRA",
+              "link": "https://rss.xcancel.com/ChatGPT/status/2098519342530920488#m",
+              "source": "ChatGPT",
+              "description": "GPT-VI ASTRA\n\nVideo\n  \n",
+              "published": "2026-09-12T04:09:34+00:00"
+            },
+            {
+              "title": "RT by @ChatGPT: Stock watchlist rolling out in ChatGPT + Finances for US Plus/Pro! Tell Chat what stocks to follow. It’ll keep an eye on what’s happening and proactively bring you updates. Try: “@Finances add Nvidia, Microsoft and Berkshire to my watchlist.”",
+              "link": "https://rss.xcancel.com/ebloch/status/2098117574747967582#m",
+              "source": "ChatGPT",
+              "description": "Stock watchlist rolling out in ChatGPT + Finances for US Plus/Pro! \n\nTell Chat what stocks to follow. It’ll keep an eye on what’s happening and proactively bring you updates.  \n\nTry: “@Finances add Nvidia, Microsoft and Berkshire to my watchlist.”\n",
+              "published": "2026-09-11T01:33:05+00:00"
+            },
+            {
+              "title": "RT by @ChatGPT: To make sure our current users have an incredible experience and continued access to Astra, we are going to pause subscriptions to our $200 Pro plan. These put the most strain on our systems and we wanted to take the smallest step that allows us to continue giving the broadest access possible. All other plans and the api remain available. There is no impact to existing accounts and we are working on adding more capacity as fast as we can. Thanks!",
+              "link": "https://rss.xcancel.com/thsottiaux/status/2098113585683808624#m",
+              "source": "ChatGPT",
+              "description": "To make sure our current users have an incredible experience and continued access to Astra, we are going to pause subscriptions to our $200 Pro plan. These put the most strain on our systems and we wanted to take the smallest step that allows us to continue giving the broadest access possible.…",
+              "published": "2026-09-11T01:17:14+00:00"
+            },
+            {
+              "title": "RT by @ChatGPT: following up after astra launch week and the navier-stokes announcement i wanted to share a little bit about how we think about and build for the over 1 billion people who use chatgpt every week, most of whom use it for free. we’re on a mission to distribute the benefits of agi, and i think this is the most impactful way to do that: giving people as much access as we can safely and feasibly distribute. we want to scale the utility that everyone gets from ai. over the past 6 months, we've been working to bring the greatest possible capabilities to the broadest possible set of users, including both free and paying users. of course there are some practical limitations and we can’t ship the largest models to everyone, but since march (gpt-5.3 instant), we’ve improved the default chatgpt experience meaningfully: - responses with a major factual error are down 65%, and they are down 72% in high stakes categories like finance - gpt-5.6 sol at instant and gpt-5.6 luna at medium are smarter than o3 at high reasoning effort, our frontier reasoning model from 17 months ago, while being considerably faster, 30%+ faster time to last token (evaluated via GPQA diamond) - chatgpt is far more usable and enjoyable while bringing extreme sycophancy down 80% and overall sycophancy down 83% - on our high-stakes medical eval, chatgpt produced 83% fewer answers flagged for hallucinations, resulting in hundreds of millions of better health conversations per month - we're seeing people find more ways to use chatgpt. for a recently joined cohort, we saw the number of use cases pursued at least three times weekly go up 20-30% not only have we improved the default chatgpt experience dramatically, we’ve also expanded access significantly for all. free users now: - have access to unlimited text chats - can use higher reasoning effort - now have access to automations, letting them schedule tasks to happen later - have access to better memory through dreaming. this allows chat to personalize much more effectively we’re always looking for ways to expand access to the billion+ people who use our product weekly. this is the master plan: bring the default experience as close to the capability frontier as possible, expand access to everyone, making intelligence maximally abundant, and make our product much more usable. this last point, usability, is something we’ve been focusing on as we bring personal agi to everyone. the current top of the line capabilities are staggering, but only the savviest users and insiders know how to use them. our vision is of a progressive, model assisted, onboarding to agi. chatgpt will guide people from all walks of life to the highest utility applications of ai for them. this really is the only way – we think technology that is hard to learn ultimately fails to reach a broad audience. your personal agi will just understand your goals, and automatically use the right set of features and capabilities to get things done for you lots more to come soon. onwards to scaling utility for all",
+              "link": "https://rss.xcancel.com/michpokrass/status/2097724905177645329#m",
+              "source": "ChatGPT",
+              "description": "following up after astra launch week and the navier-stokes announcement i wanted to share a little bit about how we think about and build for the over 1 billion people who use chatgpt every week, most of whom use it for free. we’re on a mission to distribute the benefits of agi, and i think this…",
+              "published": "2026-09-09T23:32:45+00:00"
+            },
+            {
+              "title": "RT by @ChatGPT: 🌌 ChatGPT Voice can now use GPT-5.6 Sol and GPT-6 Astra We’re updating how intelligence works in voice. Now, you can select any model and effort you like — including GPT-5.6 Sol or GPT-6 Astra, if you’re on Pro — and voice will use it when it needs to search or reason.",
+              "link": "https://rss.xcancel.com/athyuttamre/status/2097761052939125132#m",
+              "source": "ChatGPT",
+              "description": "🌌 ChatGPT Voice can now use GPT-5.6 Sol and GPT-6 Astra\n\nWe’re updating how intelligence works in voice. Now, you can select any model and effort you like — including GPT-5.6 Sol or GPT-6 Astra, if you’re on Pro — and voice will use it when it needs to search or reason.\n",
+              "published": "2026-09-10T01:56:24+00:00"
+            },
+            {
+              "title": "Three months ago, we launched ChatGPT Sites – an easy way for anyone to build and host fully functional, interactive web apps. Since then, people have created over 5M sites. We’ve been listening to your feedback and ICYMI, we’ve launched a few Sites updates: 🫂 Build together: Invite teammates to edit, save, and publish to your shared Site 🔐 Share privately: Invite specific people to a private Site without making it public 🚀 Launch faster: Go from prompt to deployment in half the time 👀 Explore your data: Ask ChatGPT to inspect your Site’s database. Editors can view it, too 🌐 Add your own custom domain",
+              "link": "https://rss.xcancel.com/ChatGPT/status/2098457920291946894#m",
+              "source": "ChatGPT",
+              "description": "Three months ago, we launched ChatGPT Sites – an easy way for anyone to build and host fully functional, interactive web apps. Since then, people have created over 5M sites.\n\nWe’ve been listening to your feedback and ICYMI, we’ve launched a few Sites updates:\n\n🫂 Build together: Invite teammates…",
+              "published": "2026-09-12T00:05:30+00:00"
+            },
+            {
+              "title": "Your pet has a job now. Pets help you keep track of your chats while you’re away from the desktop app. Now, you can start a new chat right from your pet, too. Not a pet person? Meet Mini: the same shortcuts and updates, taking up less space on your screen. Pick your pet—or go Mini—in the ChatGPT desktop app settings.",
+              "link": "https://rss.xcancel.com/ChatGPT/status/2098533675050672134#m",
+              "source": "ChatGPT",
+              "description": "Your pet has a job now.\n\nPets help you keep track of your chats while you’re away from the desktop app. Now, you can start a new chat right from your pet, too.\n\nNot a pet person? Meet Mini: the same shortcuts and updates, taking up less space on your screen.\n\nPick your pet—or go Mini—in the…",
+              "published": "2026-09-12T05:06:31+00:00"
+            },
+            {
+              "title": "📞 1-800-ChatGPT",
+              "link": "https://rss.xcancel.com/OpenAIDevs/status/2098913661993603215#m",
+              "source": "OpenAIDevs",
+              "description": "📞 1-800-ChatGPT\n\n\nOpenAI Developers (@OpenAIDevs)\n\nGPT-Live-1 is now available in the API.\n\nBring ChatGPT’s natural back-and-forth to your app, with voice agents that listen while they speak and work with the models and harness you choose.\n\nVideo\n  \n\n\n\n\n\n—…",
+              "published": "2026-09-13T06:16:27+00:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Developer Tools",
+      "url": "https://cokev-bot.github.io/ai-news/news/2026/09/13/Morning/#developer-tools",
+      "item_count": 1,
+      "summary": "AI productivity tools are evolving from simple query-response interfaces into persistent, stateful environments, and Google's NotebookLM is the latest platform to exemplify this shift. The service has announced a series of targeted updates focused on mobile accessibility and continuous user workflows, reflecting a broader industry push to integrate AI seamlessly into daily, multi-step tasks rather than isolated interactions `(Gemini_Notebook: 1)`. At the core of these updates is a strategic push toward cross-device continuity. An upgraded Notebook experience is rolling out across all mobile devices this week, featuring a stateful design that allows users to ask a question, close the app, and resume their session exactly where they left off `(Gemini_Notebook: 1)`. To address processing latency and maintain user engagement, the web version now includes an opt-in setting that notifies users when their generated artifacts are ready, eliminating the need for users to wait idly by the screen `(Gemini_Notebook: 1)`. Beyond interface improvements, NotebookLM is deepening its utility in the educational technology space. The platform has introduced an interactive Quiz feature that transforms the tool from a passive reference engine into an active learning partner. Upon completing a quiz, users can prompt the AI chat to suggest subsequent study topics or automatically generate targeted flashcards based on their identified weak spots `(Gemini_Notebook: 1)`. Collectively, these iterative updates signal a maturation in AI tool design toward context-aware, task-specific applications. By prioritizing seamless state management, proactive notifications, and guided learning loops, developers are building for sustained engagement rather than single-use queries. For AI strategists, the takeaway is clear: future platform differentiation will rely heavily on an application's ability to persist across devices and proactively guide users through complex, ongoing workflows `(Gemini_Notebook: 1)`.",
+      "subsections": [
+        {
+          "title": "Google",
+          "articles": [
+            {
+              "title": "Back with another round of mini launches. Here's what's new: — The upgraded Notebook experience is rolling out across all mobile devices this week — In Settings on web, you can opt-in to get notified when your artifacts are ready — After completing a Quiz, ask the Chat what to study next or have it generate targeted flashcards for weak spots — On mobile, ask a question, close the app, and pick up right where you left off Try them out and let us know what you think!",
+              "link": "https://rss.xcancel.com/Gemini_Notebook/status/2097436879662780535#m",
+              "source": "Gemini_Notebook",
+              "description": "Back with another round of mini launches. Here's what's new: \n\n— The upgraded Notebook experience is rolling out across all mobile devices this week\n— In Settings on web, you can opt-in to get notified when your artifacts are ready\n— After completing a Quiz, ask the Chat what to study next or…",
+              "published": "2026-09-09T04:28:15+00:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Under Review",
+      "url": "https://cokev-bot.github.io/ai-news/news/2026/09/13/Morning/#under-review",
+      "item_count": 1,
+      "summary": "A growing chorus within the AI sector is advocating for a deliberate slowdown of frontier development, a movement catalyzed by Anthropic CEO Dario Amodei’s newly published essay, \"We Must Pace the Frontier.\" Amodei outlines a three-part plan to decelerate advanced AI development, a strategy that Anthropic has announced it will unilaterally adopt `(karpathy: 1)`. The proposal frames industry-wide pacing not as a hindrance to progress, but as a necessary intervention to manage the systemic risks of increasingly capable models. The proposition has quickly garnered high-profile endorsement, signaling a potential shift in the industry's posture toward safety and coordination. Notable AI researcher and engineer Andrej Karpathy publicly expressed strong support for Amodei's framework, emphasizing the need for the industry to coalesce around these pacing mechanisms rather than leaving them as voluntary measures `(karpathy: 1)`. This alignment between a frontier lab executive and an influential technical founder highlights an emerging consensus that the unchecked acceleration of frontier model capabilities requires structured, proactive governance. While Anthropic's unilateral commitment sets a concrete precedent, the broader impact hinges on whether competitors will follow suit. Karpathy’s expressed hope that the industry can \"come together\" suggests that the next phase of AI governance will depend less on individual lab policies and more on establishing universal coordination protocols `(karpathy: 1)`. If adopted industry-wide, such pacing mechanisms could fundamentally redefine the competitive dynamics of the AI arms race, prioritizing structural safety over raw computational speed.",
+      "subsections": [
+        {
+          "title": "Researchers",
+          "articles": [
+            {
+              "title": "I love this and really hope we can come together as an industry and make it happen.",
+              "link": "https://rss.xcancel.com/karpathy/status/2098811935114551617#m",
+              "source": "karpathy",
+              "description": "I love this and really hope we can come together as an industry and make it happen.\n\n\n\n\nDario Amodei (@DarioAmodei)\n\nWe Must Pace the Frontier: I’ve written a new essay on why the AI industry should slow down, with a three-part plan for doing so.\n\nAnthropic is unilaterally committing to the…",
+              "published": "2026-09-12T23:32:14+00:00"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
