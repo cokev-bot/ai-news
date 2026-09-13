@@ -26,6 +26,7 @@ import sys
 import urllib.request
 import urllib.error
 import socket
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -95,6 +96,27 @@ def save_health(site_root: Path, health: dict) -> None:
 # ---------------------------------------------------------------------------
 
 
+def extract_sections(sections_data) -> list[dict]:
+    """Normalize ``sections.json`` content into the sections array.
+
+    ``sections.json`` has two valid shapes:
+
+      * legacy: a flat list of sections
+      * current: ``{"sections": [...], "source_urls": {...}}``
+
+    Iterating the current shape without normalizing yields the *string keys*
+    (``"source_urls"``, ``"sections"``) instead of section dicts, which then
+    blows up on ``section.get(...)``. Accept both so the monitor keeps working
+    across the format change.
+    """
+    if isinstance(sections_data, list):
+        return sections_data
+    if isinstance(sections_data, dict):
+        sections = sections_data.get("sections", [])
+        return sections if isinstance(sections, list) else []
+    return []
+
+
 def get_all_feeds(sections: list[dict]) -> list[tuple[str, str, list[str]]]:
     """Extract every (name, primary_url, fallbacks) from sections.json.
 
@@ -102,34 +124,90 @@ def get_all_feeds(sections: list[dict]) -> list[tuple[str, str, list[str]]]:
     """
     feeds = []
     for section in sections:
-        for subsection in section.get("subsections", []):
+        if not isinstance(section, dict):
+            continue
+        for subsection in section.get("subsections", []) or []:
+            if not isinstance(subsection, dict):
+                continue
             alts_map = subsection.get("feeds_alts", {}) or {}
-            for feed_name, feed_url in subsection.get("feeds", {}).items():
+            for feed_name, feed_url in (subsection.get("feeds", {}) or {}).items():
                 fallbacks = alts_map.get(feed_name, []) or []
                 feeds.append((feed_name, feed_url, fallbacks))
     return feeds
 
 
+def _parses_as_feed(raw: bytes) -> tuple[bool, str]:
+    """Check that *raw* is real, parseable feed XML with at least one item.
+
+    HTTP 200 is not success. Failure modes that pass the size/shape check in
+    ``_looks_like_rss`` but deliver nothing usable:
+
+      * leading whitespace before the XML declaration (xcancel.com emits
+        ``b'  <?xml'``), which makes expat reject the document outright;
+      * a whitelist/placeholder feed whose only item is a "not yet
+        whitelisted" notice dated 1971;
+      * an error page that happens to contain ``<rss``;
+      * a feed that parses but has no items at all.
+
+    The parse is deliberately *not* lenient (no ``lstrip``): it must mirror
+    ``generate_news.fetch_feed``, which calls ``ET.fromstring(raw)`` directly.
+    If the pipeline would get zero items from this body, the monitor must not
+    call it healthy — otherwise it reports a dead source as OK. Assert on
+    *usable items*, not on fetch success.
+    """
+    try:
+        root = ET.fromstring(raw)
+    except ET.ParseError as exc:
+        return False, f"unparseable XML: {exc}"
+    # RSS uses <item>, Atom uses <entry>. Counting only <item> marks every
+    # valid Atom feed as broken, which is just as misleading as the reverse.
+    # Match on the local tag name because Atom (and some RSS) declare a default
+    # XML namespace, so ".//entry" would silently match nothing.
+    items = [
+        el for el in root.iter()
+        if isinstance(el.tag, str) and el.tag.split("}")[-1] in ("item", "entry")
+    ]
+    if not items:
+        return False, "parsed but contains 0 items"
+    # A placeholder feed is technically valid RSS; treat its marker title as a
+    # failure so it is not counted as a healthy source.
+    for item in items:
+        title_el = item.find("title")
+        title = (title_el.text or "").lower() if title_el is not None else ""
+        if "not yet whitelisted" in title or "rss reader not yet" in title:
+            return False, "placeholder feed (reader not whitelisted)"
+    return True, "OK"
+
+
 def check_feed(name: str, url: str, fallbacks: list[str] | None = None) -> tuple[bool, str]:
-    """Check whether a feed URL returns a valid RSS/Atom body.
+    """Check whether a feed URL returns a valid, usable RSS/Atom body.
 
     Uses the same ``_http_get_with_retry`` logic as the edition pipeline
-    so health checks are consistent with production fetches.
+    so health checks are consistent with production fetches, plus a real parse
+    of the body (see ``_parses_as_feed``) so that an HTTP 200 carrying an
+    unparseable or placeholder payload is not reported as healthy.
 
     Returns ``(ok, message)`` where *ok* is True on success and *message*
     is a human-readable status string.
     """
     fallbacks = list(fallbacks or [])
     candidates = [url] + fallbacks
+    last_error = "no URL attempted"
     for idx, candidate in enumerate(candidates):
         raw = _http_get_with_retry(candidate, timeout=15, attempts=1)
-        if raw is not None:
-            if idx > 0:
-                return True, f"OK (fallback #{idx}: {candidate})"
-            return True, "OK"
-        if idx == 0 and fallbacks:
-            log.info(f"{name}: primary failed, trying {len(fallbacks)} fallback(s)")
-    return False, f"all {len(candidates)} URL(s) failed"
+        if raw is None:
+            last_error = "fetch failed (network error, non-200, or non-RSS body)"
+            if idx == 0 and fallbacks:
+                log.info(f"{name}: primary failed, trying {len(fallbacks)} fallback(s)")
+            continue
+        usable, detail = _parses_as_feed(raw)
+        if not usable:
+            last_error = detail
+            continue
+        if idx > 0:
+            return True, f"OK (fallback #{idx}: {candidate})"
+        return True, "OK"
+    return False, f"all {len(candidates)} URL(s) failed ({last_error})"
 
 
 # ---------------------------------------------------------------------------
@@ -174,7 +252,7 @@ def check_all_feeds(
         return []
 
     sections = json.loads(sections_path.read_text(encoding="utf-8"))
-    all_feeds = get_all_feeds(sections)
+    all_feeds = get_all_feeds(extract_sections(sections))
     health = load_health(site_root)
 
     webhook_url = os.environ.get("DISCORD_WEBHOOK_URL", "")

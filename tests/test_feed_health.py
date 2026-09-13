@@ -27,6 +27,7 @@ from check_feeds import (
     HEALTH_FILE,
     check_feed,
     check_all_feeds,
+    extract_sections,
     get_all_feeds,
     load_health,
     save_health,
@@ -172,6 +173,53 @@ class TestGetAllFeeds(unittest.TestCase):
         feeds = get_all_feeds(sections)
         self.assertEqual(feeds[0][2], [])
 
+    def test_garbage_entries_are_skipped(self):
+        """A malformed section/subsection must not crash the monitor."""
+        sections = [
+            "not-a-dict",
+            {"title": "Good", "subsections": [
+                "also-not-a-dict",
+                {"title": "Sub", "feeds": {"F": "https://example.com/rss"}},
+            ]},
+            {"title": "NoSubs"},
+        ]
+        feeds = get_all_feeds(sections)
+        self.assertEqual([f[0] for f in feeds], ["F"])
+
+
+class TestExtractSections(unittest.TestCase):
+    """sections.json has two shapes; the monitor must handle both.
+
+    Regression: iterating the object shape directly yielded the string keys
+    ("source_urls", "sections"), and check_all_feeds crashed with
+    AttributeError: 'str' object has no attribute 'get'. The monitor then
+    never updated .feed_health.json, freezing every "last successful fetch"
+    timestamp at the day the format changed.
+    """
+
+    def test_object_format_returns_sections_array(self):
+        data = {
+            "source_urls": {"A": "https://a"},
+            "sections": [{"title": "One", "subsections": []}],
+        }
+        self.assertEqual(extract_sections(data), [{"title": "One", "subsections": []}])
+
+    def test_legacy_list_format_passes_through(self):
+        data = [{"title": "One", "subsections": []}]
+        self.assertEqual(extract_sections(data), data)
+
+    def test_missing_or_non_list_sections_key(self):
+        self.assertEqual(extract_sections({}), [])
+        self.assertEqual(extract_sections({"sections": "nope"}), [])
+        self.assertEqual(extract_sections(None), [])
+        self.assertEqual(extract_sections(42), [])
+
+    def test_real_sections_json_yields_34_feeds(self):
+        """End-to-end pin against the live config, not a fixture."""
+        sections_path = Path(__file__).resolve().parent.parent / "sections.json"
+        data = json.loads(sections_path.read_text(encoding="utf-8"))
+        self.assertEqual(len(get_all_feeds(extract_sections(data))), 34)
+
 
 # ---------------------------------------------------------------------------
 # check_feed tests (mocked HTTP)
@@ -210,6 +258,91 @@ class TestCheckFeed(unittest.TestCase):
         )
         self.assertFalse(ok)
         self.assertIn("3", msg)  # "all 3 URL(s) failed"
+
+    @patch("check_feeds._http_get_with_retry")
+    def test_http_200_with_unparseable_body_is_not_ok(self, mock_get):
+        """xcancel.com shape: valid-looking body with 2 leading whitespace bytes.
+
+        Expat rejects a declaration that is not at byte 0, so the pipeline gets
+        zero items. Reporting this as "OK" made the monitor say 34/34 healthy
+        while 26 X feeds were dead.
+        """
+        body = b'  <?xml version="1.0" encoding="UTF-8"?><rss><channel>' \
+               b'<item><title>hi</title></item></channel></rss>'
+        mock_get.return_value = body
+        ok, msg = check_feed("FeedA", "https://xcancel.com/a/rss")
+        self.assertFalse(ok)
+        self.assertIn("unparseable", msg)
+
+    @patch("check_feeds._http_get_with_retry")
+    def test_placeholder_whitelist_feed_is_not_ok(self, mock_get):
+        """xcancel's placeholder is *valid RSS* with one 1971-dated item."""
+        body = (b'<?xml version="1.0" encoding="UTF-8"?><rss><channel>'
+                b'<item><title>RSS reader not yet whitelisted!</title>'
+                b'<pubDate>Mon, 01 January 1971 00:00:00 GMT</pubDate>'
+                b'</item></channel></rss>')
+        mock_get.return_value = body
+        ok, msg = check_feed("FeedA", "https://xcancel.com/a/rss")
+        self.assertFalse(ok)
+        self.assertIn("placeholder", msg)
+
+    @patch("check_feeds._http_get_with_retry")
+    def test_valid_xml_with_zero_items_is_not_ok(self, mock_get):
+        mock_get.return_value = b'<?xml version="1.0"?><rss><channel></channel></rss>'
+        ok, msg = check_feed("FeedA", "https://example.com/rss")
+        self.assertFalse(ok)
+        self.assertIn("0 items", msg)
+
+    @patch("check_feeds._http_get_with_retry")
+    def test_atom_entry_feed_is_ok(self, mock_get):
+        """Atom feeds use <entry>, not <item>; they must not read as broken."""
+        atom = (b'<?xml version="1.0" encoding="utf-8"?>'
+                b'<feed xmlns="http://www.w3.org/2005/Atom">'
+                b'<title>Blog</title>'
+                b'<entry><title>Post</title><link href="https://x/1"/></entry>'
+                b'</feed>')
+        mock_get.return_value = atom
+        ok, msg = check_feed("Simon Willison", "https://simonwillison.net/atom/everything/")
+        self.assertTrue(ok, msg)
+
+    @patch("check_feeds._http_get_with_retry")
+    def test_fallback_used_when_primary_only_has_garbage_body(self, mock_get):
+        """A 200 with garbage must not stop the fallback chain."""
+        garbage = b'  <?xml version="1.0"?><rss><channel><item><title>x</title></item></channel></rss>'
+        mock_get.side_effect = [garbage, MINI_RSS]
+        ok, msg = check_feed(
+            "FeedA", "https://primary.example.com/rss",
+            fallbacks=["https://fallback.example.com/rss"],
+        )
+        self.assertTrue(ok)
+        self.assertIn("fallback", msg.lower())
+
+    @patch("check_feeds._http_get_with_retry", return_value=MINI_RSS)
+    def test_plain_body_without_declaration_is_ok(self, mock_get):
+        """A body with no XML declaration at all parses fine and is healthy."""
+        mock_get.return_value = b"<rss><channel><item><title>x</title></item></channel></rss>"
+        ok, _ = check_feed("FeedA", "https://example.com/rss")
+        self.assertTrue(ok)
+
+    @patch("check_feeds._http_get_with_retry")
+    def test_monitor_agrees_with_pipeline_on_whitespace_body(self, mock_get):
+        """The monitor must give the same verdict as generate_news.fetch_feed.
+
+        fetch_feed calls ET.fromstring(raw) with no lstrip, so a body with
+        leading whitespace yields 0 items. If the monitor stripped it, the two
+        would disagree and the status page would contradict the pipeline.
+        """
+        from generate_news import fetch_feed
+        body = (b'  <?xml version="1.0" encoding="UTF-8"?><rss><channel>'
+                b'<item><title>Real story</title>'
+                b'<link>https://example.com/1</link></item></channel></rss>')
+        mock_get.return_value = body
+
+        monitor_ok, _ = check_feed("FeedA", "https://example.com/rss")
+        with patch("generate_news._http_get_with_retry", return_value=body):
+            pipeline_items = fetch_feed("FeedA", "https://example.com/rss")
+
+        self.assertEqual(monitor_ok, bool(pipeline_items))
 
 
 # ---------------------------------------------------------------------------
@@ -461,22 +594,24 @@ class TestDiscordAlert(unittest.TestCase):
 class TestCLI(unittest.TestCase):
 
     def test_cli_dry_run_flag(self):
-        """CLI --dry-run flag works."""
+        """CLI --dry-run --json plumbing works (no network: empty feed list)."""
         import subprocess
-        result = subprocess.run(
-            [sys.executable, str(Path(PROJECT_ROOT) / "tools" / "check_feeds.py"), "--dry-run", "--json"],
-            capture_output=True,
-            text=True,
-            cwd=PROJECT_ROOT,
-            timeout=30,
-        )
-        # It should either succeed or exit with status 1 (some feeds failing)
-        # but not crash with an unhandled exception
-        self.assertIn(result.returncode, [0, 1])
-        # --json should produce valid JSON output
-        if result.stdout.strip():
-            output = json.loads(result.stdout.strip())
-            self.assertIsInstance(output, list)
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            (Path(td) / "sections.json").write_text(
+                json.dumps({"source_urls": {}, "sections": []}), encoding="utf-8")
+            result = subprocess.run(
+                [sys.executable, str(Path(PROJECT_ROOT) / "tools" / "check_feeds.py"),
+                 td, "--dry-run", "--json"],
+                capture_output=True,
+                text=True,
+                cwd=PROJECT_ROOT,
+                timeout=30,
+            )
+        self.assertEqual(result.returncode, 0, result.stderr[-400:])
+        output = json.loads(result.stdout.strip())
+        self.assertIsInstance(output, list)
+        self.assertEqual(output, [])
 
     def test_cli_missing_site_root(self):
         """CLI with nonexistent site root exits with error."""

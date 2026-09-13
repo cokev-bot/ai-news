@@ -458,6 +458,29 @@ class TestRenderPage(unittest.TestCase):
         self.assertIn("ss-badge-failing", html)
         self.assertIn(">Failing<", html)
 
+    def test_last_error_surfaced_in_tooltip(self):
+        """A failure count alone isn't actionable; the reason must be visible."""
+        rows = build_rows(
+            [{"name": "A", "url": "u/a", "homepage": "", "section": "N",
+              "subsection": "S", "fallbacks": []}],
+            {},
+            {"A": {"last_success": iso(timedelta(hours=1)), "consecutive_failures": 4,
+                   "last_error": "all 4 URL(s) failed (unparseable XML)"}},
+            now=NOW)
+        html = render_page(rows, now=NOW)
+        self.assertIn("unparseable XML", html)
+
+    def test_error_text_is_escaped_in_tooltip(self):
+        rows = build_rows(
+            [{"name": "A", "url": "u/a", "homepage": "", "section": "N",
+              "subsection": "S", "fallbacks": []}],
+            {},
+            {"A": {"last_success": iso(timedelta(hours=1)), "consecutive_failures": 4,
+                   "last_error": '"><script>alert(1)</script>'}},
+            now=NOW)
+        html = render_page(rows, now=NOW)
+        self.assertNotIn("<script>alert(1)</script>", html)
+
 
 # ---------------------------------------------------------------------------
 # build() end-to-end

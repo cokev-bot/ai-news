@@ -282,6 +282,7 @@ def build_rows(
             "item_count": counts.get(name, 0),
             "last_success": last_success,
             "last_failure": last_failure,
+            "last_error": entry.get("last_error"),
             "failures": failures,
             "status": compute_status(
                 last_item=last_item,
@@ -342,7 +343,9 @@ def render_rows_html(rows: list[dict], *, now: datetime) -> str:
         )
         status: str = str(row["status"] or STATUS_UNKNOWN)
         status_label = STATUS_LABELS.get(status, status)
-        status_note = STATUS_NOTES.get(status, "")
+        note = STATUS_NOTES.get(status, "")
+        if row.get("last_error"):
+            note = f"{note} Last error: {row['last_error']}" if note else str(row["last_error"])
         lines.append(
             '<tr class="ss-row ss-{status}">'
             '<td class="ss-source">{source}</td>'
@@ -359,7 +362,7 @@ def render_rows_html(rows: list[dict], *, now: datetime) -> str:
                 item=_cell(item_age, item_iso),
                 fetch=_cell(fetch_age, fetch_iso),
                 count=row["item_count"],
-                note=html.escape(status_note, quote=True),
+                note=html.escape(note, quote=True),
                 label=html.escape(status_label),
             )
         )
