@@ -31,7 +31,11 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 import generate_news  # noqa: E402
-from generate_news import DEFAULT_CONFIG, generate_post  # noqa: E402
+from generate_news import (  # noqa: E402
+    DEFAULT_CONFIG,
+    _subsection_key,
+    generate_post,
+)
 
 
 def _make_site_root(tmp_path: Path) -> Path:
@@ -75,7 +79,7 @@ class _Base(unittest.TestCase):
                 sink.append({"name": "FeedA", "url": "https://a/rss",
                              "ok": fecundity_ok,
                              "error": None if fecundity_ok else "all 1 URL(s) failed"})
-            return {"SubA": [("FeedA", articles)]}
+            return {_subsection_key(0, 0): [("FeedA", articles)]}
 
         with patch("generate_news.fetch_all_feeds", side_effect=fake_fetch_all_feeds), \
              patch("generate_news.is_duplicate", return_value=dedup_everything), \
@@ -137,7 +141,7 @@ class TestBiasTowardReportingOutages(_Base):
     def test_empty_health_sink_is_treated_as_failure(self):
         """No health data means we cannot prove any feed is healthy."""
         def fake_fetch_all_feeds(sections, **kwargs):
-            return {"SubA": [("FeedA", [_article()])]}
+            return {_subsection_key(0, 0): [("FeedA", [_article()])]}
 
         with patch("generate_news.fetch_all_feeds", side_effect=fake_fetch_all_feeds), \
              patch("generate_news.is_duplicate", return_value=True), \

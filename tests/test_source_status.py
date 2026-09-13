@@ -4,6 +4,8 @@ and the feed-health recording that feeds it.
 Covers:
   - collect_feeds() over both sections.json formats, preserving authored order
   - last_item_times() / build_rows() joining state + health into rows
+  - content freshness: last_post in health -> the "Newest item served" column
+    and the STATUS_FROZEN verdict (reachable, zero failures, nothing new)
   - compute_status() classification for every status in the vocabulary
   - humanize_age() / parse_iso() edge cases (bad input, naive, future)
   - render_page() output shape (front matter, table, counts, escaping)
@@ -31,6 +33,7 @@ from build_source_status import (  # noqa: E402
     OUTPUT_FILE,
     STATUS_DEGRADED,
     STATUS_FAILING,
+    STATUS_FROZEN,
     STATUS_OK,
     STATUS_QUIET,
     STATUS_STALE_CHECK,
@@ -44,11 +47,13 @@ from build_source_status import (  # noqa: E402
     load_json,
     parse_iso,
     render_page,
+    timestamp_cell,
     summarize,
 )
 
 from generate_news import (  # noqa: E402
     _load_feed_health,
+    _subsection_key,
     fetch_feed,
     record_feed_health,
 )
@@ -254,13 +259,15 @@ class TestLastItemTimes(unittest.TestCase):
 
 class TestComputeStatus(unittest.TestCase):
 
-    def _status(self, *, last_item=None, last_success=None, failures=0):
+    def _status(self, *, last_item=None, last_success=None, failures=0,
+                last_post=None):
         return compute_status(
             last_item=last_item,
             last_success=last_success,
             failures=failures,
             now=NOW,
             max_age_days=MAX_AGE_DAYS_DEFAULT,
+            last_post=last_post,
         )
 
     def test_never_fetched_is_unknown(self):
@@ -308,6 +315,62 @@ class TestComputeStatus(unittest.TestCase):
     def test_failing_takes_precedence_over_stale_check(self):
         self.assertEqual(
             self._status(last_success=NOW - timedelta(days=90), failures=5),
+            STATUS_FAILING,
+        )
+
+    # --- freshness: reachable but not publishing ---------------------------
+
+    def test_reachable_but_frozen_is_frozen(self):
+        """The bug this status exists for.
+
+        Fetching perfectly (last_success minutes ago, zero failures) while
+        everything served predates the window is a frozen mirror or a dead
+        upstream. A status-only check called this OK indefinitely.
+        """
+        self.assertEqual(
+            self._status(last_success=NOW - timedelta(hours=1),
+                         last_post=NOW - timedelta(days=40)),
+            STATUS_FROZEN,
+        )
+
+    def test_frozen_is_not_quiet(self):
+        """Quiet = reachable and not claiming to have news; frozen = not moving."""
+        self.assertNotEqual(
+            self._status(last_success=NOW - timedelta(hours=1),
+                         last_post=NOW - timedelta(days=40)),
+            STATUS_QUIET,
+        )
+
+    def test_fresh_post_within_window_is_not_frozen(self):
+        self.assertEqual(
+            self._status(last_item=NOW - timedelta(days=1),
+                         last_success=NOW - timedelta(hours=1),
+                         last_post=NOW - timedelta(hours=6)),
+            STATUS_OK,
+        )
+
+    def test_missing_last_post_falls_back_to_previous_behaviour(self):
+        """No freshness data must not invent a frozen verdict.
+
+        Older health files predate last_post; classification has to degrade to
+        the status-only answer rather than mislabelling healthy feeds.
+        """
+        self.assertEqual(
+            self._status(last_item=NOW - timedelta(days=1),
+                         last_success=NOW - timedelta(hours=1),
+                         last_post=None),
+            STATUS_OK,
+        )
+        self.assertEqual(
+            self._status(last_success=NOW - timedelta(hours=1), last_post=None),
+            STATUS_QUIET,
+        )
+
+    def test_fetch_failures_take_precedence_over_frozen(self):
+        self.assertEqual(
+            self._status(last_success=NOW - timedelta(hours=1),
+                         last_post=NOW - timedelta(days=40),
+                         failures=4),
             STATUS_FAILING,
         )
 
@@ -401,10 +464,11 @@ class TestRenderPage(unittest.TestCase):
         self.assertNotIn("<h1", body.lower())
         self.assertNotIn("Source Status</h1>", body)
 
-    def test_has_all_six_columns(self):
+    def test_has_all_seven_columns(self):
         html = render_page(self._rows(), now=NOW)
         for header in ("Source", "Section", "Last new story",
-                       "Last successful fetch", "Items", "Status"):
+                       "Last successful fetch", "Newest item served",
+                       "Items", "Status"):
             self.assertIn(header, html, f"missing column header {header!r}")
         self.assertIn("(UTC)", html, "columns must state the timezone")
         self.assertIn("<table", html)
@@ -454,6 +518,45 @@ class TestRenderPage(unittest.TestCase):
 
         self.assertEqual(cells(early), cells(late))
         self.assertTrue(cells(early), "expected at least one timestamp cell")
+
+    def test_frozen_row_renders_freshness_column(self):
+        """The freshness column must carry the health file's last_post.
+
+        Reachable + recently fetched + a last_post far outside the window must
+        render as a frozen row whose "Newest item served" cell shows that old
+        date — the visible form of the coverage gap that status alone hides.
+        """
+        stale = iso(timedelta(days=40))
+        rows = build_rows(
+            [{"name": "DeadMirror", "url": "u", "fallbacks": [],
+              "section": "AI Labs", "subsection": "OpenAI", "homepage": ""}],
+            {},
+            {"DeadMirror": {"url": "u", "consecutive_failures": 0,
+                            "last_success": iso(timedelta(hours=1)),
+                            "last_failure": None, "last_error": None,
+                            "last_post": stale}},
+            now=NOW,
+        )
+        page = render_page(rows, now=NOW)
+        self.assertEqual(rows[0]["status"], STATUS_FROZEN)
+        self.assertIn("ss-badge-frozen", page)
+        self.assertIn("Frozen", page)
+        # The actual date is rendered in the row, absolute not relative.
+        self.assertIn(timestamp_cell(stale, NOW).split(">")[1].split("<")[0], page)
+
+    def test_last_post_absent_leaves_cell_never(self):
+        """No freshness data must render as 'never', not a fabricated date."""
+        rows = build_rows(
+            [{"name": "NoData", "url": "u", "fallbacks": [],
+              "section": "S", "subsection": "Sub", "homepage": ""}],
+            {},
+            {"NoData": {"url": "u", "consecutive_failures": 0,
+                        "last_success": iso(timedelta(hours=1)),
+                        "last_failure": None, "last_error": None}},
+            now=NOW,
+        )
+        self.assertIsNone(rows[0]["last_post"])
+        self.assertIn("ss-never", render_page(rows, now=NOW))
 
     def test_summary_line_reports_live_counts(self):
         html = render_page(self._rows(), now=NOW)
@@ -812,7 +915,7 @@ class TestGeneratePostRecordsHealth(unittest.TestCase):
                              "ok": True, "error": None})
                 sink.append({"name": "FeedB", "url": "https://b/rss",
                              "ok": False, "error": "all 1 URL(s) failed"})
-            return {"SubA": [("FeedA", [{
+            return {_subsection_key(0, 0): [("FeedA", [{
                 "title": "A story",
                 "link": "https://a/story",
                 "source": "FeedA",

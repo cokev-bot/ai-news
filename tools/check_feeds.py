@@ -10,9 +10,18 @@ Usage:
     --json      Output JSON summary of feed statuses to stdout
 
 The script maintains a per-feed health state in ``.feed_health.json`` inside
-SITE_ROOT. Each entry tracks the number of consecutive failures and the
-timestamp of the last failure. When ``consecutive_failures >= 3``, a Discord
-alert is sent (if ``DISCORD_WEBHOOK_URL`` is set in the environment).
+SITE_ROOT. Each entry tracks two independent things:
+
+  * **Status** — ``consecutive_failures``, ``last_success``, ``last_failure``.
+    Proves the feed was *reachable*.
+  * **Freshness** — ``last_post``, the newest publication date among the items
+    the feed actually served. Proves the feed had something *new*.
+
+Status alone cannot tell a live source from a frozen mirror: an RSS mirror can
+answer every request 200 OK with real, well-formed items that are weeks old,
+and a status-only monitor reports that as healthy indefinitely. When
+``consecutive_failures >= 3``, a Discord alert is sent (if
+``DISCORD_WEBHOOK_URL`` is set in the environment).
 
 Designed to run as a standalone cron job, independent of the edition pipeline.
 """
@@ -72,7 +81,8 @@ log = logging.getLogger("check_feeds")
 def load_health(site_root: Path) -> dict:
     """Load ``.feed_health.json`` from SITE_ROOT.
 
-    Returns a dict of ``{feed_name: {url, consecutive_failures, last_success, last_failure, last_error}}``.
+    Returns a dict of ``{feed_name: {url, consecutive_failures, last_success,
+    last_failure, last_error, last_post}}``.
     Missing or corrupt file returns an empty dict (first-run / clean-slate).
     Delegates to ``generate_news._load_feed_health`` so the monitor and the
     pipeline share one read implementation.
@@ -180,7 +190,13 @@ def _parses_as_feed(raw: bytes) -> tuple[bool, str]:
     return True, "OK"
 
 
-def check_feed(name: str, url: str, fallbacks: list[str] | None = None) -> tuple[bool, str]:
+def check_feed(
+    name: str,
+    url: str,
+    fallbacks: list[str] | None = None,
+    *,
+    health_sink: list[dict] | None = None,
+) -> tuple[bool, str]:
     """Check whether a feed URL returns a valid, usable RSS/Atom body.
 
     Delegates to ``generate_news.fetch_feed`` — the exact code the edition
@@ -190,10 +206,19 @@ def check_feed(name: str, url: str, fallbacks: list[str] | None = None) -> tuple
 
     Returns ``(ok, message)`` where *ok* is True on success and *message* is a
     human-readable status string.
+
+    ``health_sink``, when given, receives the same ``{name, url, ok, error,
+    last_post}`` entry ``fetch_feed`` produces, so the monitor persists content
+    freshness (not just reachability) through the shared merge function. The
+    ``(ok, message)`` return shape is unchanged for existing callers.
     """
     fallbacks = list(fallbacks or [])
+    sink: list[dict] = health_sink if health_sink is not None else []
+    sink_start = len(sink)
     try:
-        articles = fetch_feed(name, url, fallbacks=fallbacks, max_age_days=1)
+        articles = fetch_feed(
+            name, url, fallbacks=fallbacks, max_age_days=1, health_sink=sink
+        )
         if articles:
             return True, "OK"
         # No items within the window is not a fetch failure, but we still want
@@ -205,9 +230,21 @@ def check_feed(name: str, url: str, fallbacks: list[str] | None = None) -> tuple
                 raw = _http_get_with_retry(fb, timeout=20, attempts=1)
                 if raw is not None:
                     return True, f"OK (fallback #{idx}: {fb})"
+            # fetch_feed already recorded ok=False and last_post=None; the
+            # existing last_post must survive a failed fetch.
             return False, f"all {len(fallbacks) + 1} URL(s) failed"
         usable, detail = _parses_as_feed(raw)
         if not usable:
+            # fetch_feed parsed no items, so it recorded ok=True with
+            # last_post=None. A whitelist placeholder IS a body that parses
+            # but withholds content — mark it a failure so it is not counted
+            # as a healthy source, and clear any stale freshness reading.
+            if len(sink) > sink_start:
+                sink[-1].update({
+                    "ok": False,
+                    "error": detail,
+                    "last_post": None,
+                })
             return False, detail
         return True, "OK (no items in window)"
     except Exception as e:  # pragma: no cover - fetch_feed never raises
@@ -249,6 +286,7 @@ def check_all_feeds(
     """Check every feed and return a list of status dicts.
 
     Each dict has keys: name, url, ok, message, consecutive_failures,
+    last_post (content freshness; None when no dated item was served), and
     alerted (True if an alert was sent or would have been sent).
 
     With *alerts_only* no feeds are fetched. Instead the persisted
@@ -289,6 +327,9 @@ def check_all_feeds(
                 "ok": ok,
                 "message": message,
                 "consecutive_failures": failures,
+                # Content freshness travels with status so a caller can see
+                # "reachable but nothing new in weeks" without re-fetching.
+                "last_post": entry.get("last_post"),
                 "alerted": False,
             })
         for res in results:
@@ -336,9 +377,13 @@ def check_all_feeds(
     # failure, and the consecutive_failures counter that gates alerting would
     # drift away from reality.
     run_results: list[dict] = []
+    # Feed the same shared merge function the pipeline uses, with the freshness
+    # signal attached, so the monitor and the pipeline cannot disagree about a
+    # feed's last_post any more than they can about its failure streak.
+    health_sink: list[dict] = []
 
     for name, url, fallbacks in all_feeds:
-        ok, message = check_feed(name, url, fallbacks)
+        ok, message = check_feed(name, url, fallbacks, health_sink=health_sink)
         run_results.append({
             "name": name,
             "url": url,
@@ -346,7 +391,28 @@ def check_all_feeds(
             "error": None if ok else message,
         })
 
-    record_feed_health(site_root, run_results)
+    # Status comes from run_results; freshness is layered on from the sink only
+    # when the fetch actually observed a dated item. Two rules matter here:
+    #
+    #   * run_results stays authoritative for ok/error, so the streak logic is
+    #     unchanged and still works when check_feed is stubbed or replaced.
+    #   * last_post is attached ONLY when it is not None. A failed fetch (or a
+    #     feed serving undated items) must not write None over a previously
+    #     recorded last_post — that would erase the one signal that reveals a
+    #     frozen feed, exactly when the feed starts failing too.
+    freshness: dict[str, str] = {}
+    for entry in health_sink:
+        if entry.get("name") and entry.get("last_post"):
+            freshness[entry["name"]] = entry["last_post"]
+
+    merged: list[dict] = []
+    for res in run_results:
+        entry = dict(res)
+        if res["name"] in freshness:
+            entry["last_post"] = freshness[res["name"]]
+        merged.append(entry)
+
+    record_feed_health(site_root, merged)
 
     # Re-read so the alert decisions and the report below reflect what was
     # actually persisted, including streaks carried in from earlier runs.
@@ -383,6 +449,7 @@ def check_all_feeds(
             "ok": ok,
             "message": message,
             "consecutive_failures": entry.get("consecutive_failures", 0),
+            "last_post": entry.get("last_post"),
             "alerted": alert,
         })
 

@@ -1053,6 +1053,22 @@ def _slugify(text: str) -> str:
     slug = re.sub(r'[-\s]+', '-', slug)
     return slug[:60]
 
+
+def _subsection_key(section_index: int, subsection_index: int) -> str:
+    """Stable grouping key for one subsection: its position in sections.json.
+
+    Subsection *titles* are not unique — "OpenAI", "Google", "Anthropic" and
+    "Mistral" each appear under more than one section — so keying the article
+    grouping by title made one section's articles render verbatim under every
+    other section that reused the title. Measured on the published archive:
+    158 of 194 posts carried the same items twice (AI Labs ≡ Developers), and
+    the section summaries described an identical article list under two
+    headings. Key by (section, subsection) position instead; both the fetch
+    path and every render path go through this one function so they cannot
+    drift apart.
+    """
+    return f"{section_index}:{subsection_index}"
+
 def generate_edition_audio(
     edition: str,
     site_root: Path,
@@ -1232,16 +1248,39 @@ def record_feed_health(site_root: Path, results: list[dict]) -> None:
                 "last_success": None,
                 "last_failure": None,
                 "last_error": None,
+                "last_post": None,
             }
         entry["url"] = res.get("url", entry.get("url", ""))
         if res.get("ok"):
             entry["consecutive_failures"] = 0
             entry["last_success"] = now_iso
             entry["last_error"] = None
+            # Content freshness, distinct from reachability. ``last_success``
+            # only proves the HTTP request worked; ``last_post`` is the newest
+            # publication date among every item the feed served. A reachable
+            # feed whose newest item is weeks old is a coverage problem that
+            # fetch status alone cannot express.
+            #
+            # Only write a freshness reading that was actually observed. A
+            # success with no dated item (an undated feed, or an empty-but-
+            # valid body) must NOT clear a previously good last_post: doing so
+            # would turn "known stale" into "unknown", which is strictly less
+            # actionable. last_post == None means "never observed a date",
+            # which is different from "the newest item is old".
+            if res.get("last_post"):
+                entry["last_post"] = res["last_post"]
         else:
+            # A failed fetch carries no freshness information — leave
+            # last_post untouched so the last known value survives, and the
+            # staleness it implies keeps growing while the feed is down.
             entry["consecutive_failures"] = int(entry.get("consecutive_failures") or 0) + 1
             entry["last_failure"] = now_iso
             entry["last_error"] = res.get("error") or "all URLs failed"
+        # Every entry carries the key, even the ones that have never observed a
+        # date (entries written before freshness tracking existed, or a feed
+        # serving only undated items). setdefault only fills a gap: it can
+        # never overwrite a recorded value.
+        entry.setdefault("last_post", None)
         health[name] = entry
     _save_feed_health(site_root, health)
 
@@ -1389,6 +1428,10 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_i
                 "url": url,
                 "ok": False,
                 "error": f"all {len(candidates)} URL(s) failed",
+                # No body was parsed, so this run knows nothing about freshness.
+                # None here must not overwrite a previously recorded last_post
+                # (record_feed_health only writes last_post on success).
+                "last_post": None,
             })
         return []
     if used_idx > 0:
@@ -1409,6 +1452,7 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_i
                 "url": url,
                 "ok": False,
                 "error": f"parse error: {e}",
+                "last_post": None,
             })
         return []
 
@@ -1418,11 +1462,24 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_i
             "url": url,
             "ok": True,
             "error": None,
+            # Filled in below, once every item has been parsed. Set here so the
+            # key is always present in the sink entry's shape.
+            "last_post": None,
         })
 
     articles = []
     now = datetime.now(timezone.utc)
     cutoff = now.timestamp() - (max_age_days * 86400)
+
+    # Newest publication date seen among EVERY parsed item, tracked before the
+    # age filter and before the retweet filter. Both of those filters discard
+    # items, so computing this afterwards would report None for exactly the
+    # feeds we need to catch: a source that is reachable but has not published
+    # in weeks (or an xcancel whitelist placeholder, which is a single
+    # 1971-dated item) would otherwise look like a healthy, merely quiet feed.
+    # This is the content-freshness half of feed health; ``last_success``
+    # alone only proves the HTTP request worked.
+    last_post: datetime | None = None
 
     for item in root.findall(".//item")[:max_items_per_source]:
         title_el = item.find("title")
@@ -1441,6 +1498,8 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_i
             desc = desc[:297].rsplit(" ", 1)[0] + "…"
 
         pub_dt = parse_date(pub_str)
+        if pub_dt is not None and (last_post is None or pub_dt > last_post):
+            last_post = pub_dt
         if pub_dt is not None and pub_dt.timestamp() < cutoff:
             continue
 
@@ -1457,6 +1516,15 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_i
                 "pub_dt": pub_dt,
                 "source": name,
             })
+
+    # Publish the freshness signal on the same entry the fetch already recorded,
+    # so the health file carries status AND content freshness without changing
+    # this function's return contract (callers still get a plain article list).
+    if health_sink is not None:
+        for entry in reversed(health_sink):
+            if entry.get("name") == name and entry.get("url") == url:
+                entry["last_post"] = last_post.isoformat() if last_post else None
+                break
 
     return articles
 
@@ -1478,9 +1546,9 @@ def fetch_all_feeds(sections: list[dict], *, max_items_per_source: int = MAX_ITE
     feed_jobs: list[tuple[str, str, list[str], str]] = []  # (name, url, fallbacks, sub_key)
     subsection_order: list[str] = []
     seen_subkeys: set[str] = set()
-    for section in sections:
-        for subsection in section["subsections"]:
-            sub_key = subsection["title"]
+    for section_index, section in enumerate(sections):
+        for subsection_index, subsection in enumerate(section["subsections"]):
+            sub_key = _subsection_key(section_index, subsection_index)
             alts_map = subsection.get("feeds_alts", {}) or {}
             for feed_name, feed_url in subsection["feeds"].items():
                 feed_fallbacks = alts_map.get(feed_name, []) or []
@@ -1711,15 +1779,15 @@ def build_edition_api_payload(
     endpoint is cheap enough to emit on every run (including republish).
 
     The section/subsection walk deliberately mirrors the post render exactly:
-    articles are looked up by subsection title (the key ``subsection_articles``
-    actually has) and the post emits one ``<h3>`` per populated subsection of a
-    section. Subsection titles are NOT unique in sections.json — "OpenAI",
-    "Google", "Anthropic" and "Mistral" each appear under more than one section
-    — which means one title carries one shared article list and is included in
-    every section that owns it, in both the post and this payload. That is
-    faithful, not lossy: the payload's item count and per-section membership
-    must agree with the HTML a reader sees, so changing the shape here to
-    "fix" the duplication would make the two disagree.
+    articles are looked up by the subsection's *positional* key (the key
+    ``subsection_articles`` actually has) and the post emits one ``<h3>`` per
+    populated subsection of a section. Subsection titles are NOT unique in
+    sections.json — "OpenAI", "Google", "Anthropic" and "Mistral" each appear
+    under more than one section — so keying by title would make one section's
+    articles appear under every section that reuses the title. Positional keys
+    keep each feed owned by exactly one section, in both the post and this
+    payload, so the payload's item count and per-section membership agree with
+    the HTML a reader sees.
     """
     base = site_url.rstrip("/")
     day_path = post_now.strftime("%Y/%m/%d")
@@ -1730,14 +1798,15 @@ def build_edition_api_payload(
     sections_out: list[dict] = []
     sources: list[str] = []
 
-    for section in sections_data:
+    for section_index, section in enumerate(sections_data):
         s_title = section.get("title", "")
         section_articles: list[dict] = []
         subsections_out: list[dict] = []
 
-        for subsection in section.get("subsections", []):
+        for subsection_index, subsection in enumerate(section.get("subsections", [])):
             ss_title = subsection.get("title", "")
-            arts = subsection_articles.get(ss_title) or []
+            sub_key = _subsection_key(section_index, subsection_index)
+            arts = subsection_articles.get(sub_key) or []
             if not arts:
                 continue
             section_articles.extend(arts)
@@ -1866,9 +1935,9 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
     if republish:
         # Reconstruct articles directly from state — no feed fetching needed
-        for section in SECTIONS:
-            for subsection in section["subsections"]:
-                subsection_articles[subsection["title"]] = []
+        for section_index, section in enumerate(SECTIONS):
+            for subsection_index, subsection in enumerate(section["subsections"]):
+                subsection_articles[_subsection_key(section_index, subsection_index)] = []
 
         # Build a reverse map: feed_name → feed_url for all feeds, used to
         # recover the feed name from a nitter username extracted from a link.
@@ -1904,12 +1973,14 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
                 "pub": "",
                 "pub_dt": None,
             }
-            # Find which subsection this feed belongs to
+            # Find which subsection this feed belongs to. Positional keys, and
+            # first-match-wins: a feed listed under more than one subsection is
+            # assigned to the first, never duplicated into both.
             sub_key = None
-            for section in SECTIONS:
-                for subsection in section["subsections"]:
+            for section_index, section in enumerate(SECTIONS):
+                for subsection_index, subsection in enumerate(section["subsections"]):
                     if feed_name in subsection["feeds"]:
-                        sub_key = subsection["title"]
+                        sub_key = _subsection_key(section_index, subsection_index)
                         break
                 if sub_key:
                     break
@@ -1926,9 +1997,9 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         seen_this_run: list[dict] = []
 
         # Initialise every subsection key so empty subsections still appear
-        for section in SECTIONS:
-            for subsection in section["subsections"]:
-                subsection_articles[subsection["title"]] = []
+        for section_index, section in enumerate(SECTIONS):
+            for subsection_index, subsection in enumerate(section["subsections"]):
+                subsection_articles[_subsection_key(section_index, subsection_index)] = []
 
         # Collect per-feed fetch outcomes so the public source-status page can
         # report "last successful fetch" from the same runs that produce
@@ -1943,9 +2014,9 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         except Exception as e:  # pragma: no cover - health must never break an edition
             logging.warning(f"Feed health recording failed: {e}")
 
-        for section in SECTIONS:
-            for subsection in section["subsections"]:
-                sub_key = subsection["title"]
+        for section_index, section in enumerate(SECTIONS):
+            for subsection_index, subsection in enumerate(section["subsections"]):
+                sub_key = _subsection_key(section_index, subsection_index)
                 for feed_name, articles in feed_results.get(sub_key, []):
                     for a in articles:
                         if not is_duplicate(a, seen_this_run, seen_links,
@@ -2089,9 +2160,10 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
     # Generate global executive summary across ALL sections
     all_articles = []
-    for section in SECTIONS:
-        for subsection in section["subsections"]:
-            all_articles.extend(subsection_articles.get(subsection["title"], []))
+    for section_index, section in enumerate(SECTIONS):
+        for subsection_index, subsection in enumerate(section["subsections"]):
+            sub_key = _subsection_key(section_index, subsection_index)
+            all_articles.extend(subsection_articles.get(sub_key, []))
 
     global_summary_text = ""
     global_summary_html = ""
@@ -2149,10 +2221,10 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
     # order is preserved even though the LLM calls run in parallel.
     section_jobs: list[tuple[str, list[dict]]] = []
     section_articles_by_title: dict[str, list[dict]] = {}
-    for section in SECTIONS:
+    for section_index, section in enumerate(SECTIONS):
         section_articles: list[dict] = []
-        for subsection in section["subsections"]:
-            sub_key = subsection["title"]
+        for subsection_index, subsection in enumerate(section["subsections"]):
+            sub_key = _subsection_key(section_index, subsection_index)
             section_articles.extend(subsection_articles.get(sub_key, []))
         if not section_articles:
             # Skip empty sections entirely — no summary, no HTML block.
@@ -2243,13 +2315,18 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
             global_summary_text if all_articles else None,
         )
 
-    # Inject og:image into front matter if we generated one
+    # Inject og:image into front matter if we generated one.
+    #
+    # The value must NOT carry the site baseurl. jekyll-seo-tag builds og:image
+    # as site.url + site.baseurl + page.image, so a "/ai-news/assets/og/x.png"
+    # value published as "https://.../ai-news/ai-news/assets/og/x.png" — a 404
+    # on every edition. Verified against the live site 2026-09-13.
     if og_image_rel_path:
         # Insert "image:" line before the closing "---" of the front matter
         for idx, line in enumerate(html_lines):
             if idx > 0 and line.strip() == "---":
                 # Insert before the closing ---
-                html_lines.insert(idx, f"image: /ai-news/{og_image_rel_path}")
+                html_lines.insert(idx, f"image: /{og_image_rel_path}")
                 break
 
     # Inject an edition-specific `description:` into the front matter so
@@ -2273,7 +2350,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
         html_lines.append('</div>')
         html_lines.append("")
 
-    for section in SECTIONS:
+    for section_index, section in enumerate(SECTIONS):
         section_articles = section_articles_by_title.get(section["title"])
         if not section_articles:
             continue
@@ -2296,8 +2373,8 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
         # 5. Build collapsible subsections
         subsections_html_lines = []
-        for subsection in section["subsections"]:
-            sub_key = subsection["title"]
+        for subsection_index, subsection in enumerate(section["subsections"]):
+            sub_key = _subsection_key(section_index, subsection_index)
             items = subsection_articles.get(sub_key, [])
             if not items:
                 continue

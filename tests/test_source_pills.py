@@ -15,7 +15,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch, MagicMock
 
-from generate_news import render_source_pill, render_item
+from generate_news import _subsection_key, render_source_pill, render_item
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SECTIONS_FILE = PROJECT_ROOT / "sections.json"
@@ -270,7 +270,7 @@ class TestSourcePillCSS(unittest.TestCase):
 
             # Mock feeds to return one article
             mock_fetch.return_value = {
-                "TestSub": [("TestFeed", [
+                _subsection_key(0, 0): [("TestFeed", [
                     {
                         "title": "Test article",
                         "link": "https://example.com/article",
@@ -307,7 +307,7 @@ class TestSourcePillCSS(unittest.TestCase):
             site_root = self._make_site_root(Path(tmp))
 
             mock_fetch.return_value = {
-                "TestSub": [("TestFeed", [
+                _subsection_key(0, 0): [("TestFeed", [
                     {
                         "title": "Test article",
                         "link": "https://example.com/article",
@@ -358,7 +358,7 @@ class TestSourcePillCSS(unittest.TestCase):
             site_root = self._make_site_root(Path(tmp), sections_data)
 
             mock_fetch.return_value = {
-                "TestSub": [("TestFeed", [
+                _subsection_key(0, 0): [("TestFeed", [
                     {
                         "title": "Test article",
                         "link": "https://example.com/article",
@@ -416,7 +416,7 @@ class TestSourcePillCSS(unittest.TestCase):
                  patch("generate_news.generate_edition_audio", return_value={}), \
                  patch("generate_news.generate_og_image_for_edition", return_value=None):
                 mock_fetch.return_value = {
-                    "TestSub": [("TestFeed", [
+                    _subsection_key(0, 0): [("TestFeed", [
                         {
                             "title": "Test article",
                             "link": "https://example.com/article",

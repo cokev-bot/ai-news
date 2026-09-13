@@ -30,6 +30,7 @@ from generate_news import (  # noqa: E402
     XCANCEL_UA,
     _http_get_with_curl,
     _http_get_with_retry,
+    _subsection_key,
     fetch_all_feeds,
     fetch_feed,
 )
@@ -244,7 +245,9 @@ class TestEndToEndRecovery(unittest.TestCase):
         with patch("generate_news._http_get_with_curl", side_effect=fake_curl):
             res = fetch_all_feeds(sections, max_items_per_source=20, max_age_days=7)
 
-        arts = res["Anthropic"][0][1]
+        # Grouped by subsection POSITION, not title (titles repeat across
+        # sections in sections.json, so a title can never be the key).
+        arts = res[_subsection_key(0, 0)][0][1]
         self.assertEqual(len(arts), 1, "X feed produced no articles")
 
 

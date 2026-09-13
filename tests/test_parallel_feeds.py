@@ -1,7 +1,7 @@
 """Tests for parallel RSS feed fetching in generate_news.py."""
 import unittest
 from unittest.mock import patch, MagicMock
-from generate_news import fetch_all_feeds, MAX_FEED_WORKERS
+from generate_news import _subsection_key, fetch_all_feeds, MAX_FEED_WORKERS
 
 
 class TestFetchAllFeeds(unittest.TestCase):
@@ -40,8 +40,12 @@ class TestFetchAllFeeds(unittest.TestCase):
         sections = self._make_sections(n_subsections=2, feeds_per_sub=2)
         result = fetch_all_feeds(sections)
 
-        # Should have 2 subsection keys
-        self.assertEqual(set(result.keys()), {"Subsection_0", "Subsection_1"})
+        # Two subsection keys, keyed by POSITION not title. Titles are not
+        # unique across sections in sections.json, so a title cannot be the
+        # grouping key; see _subsection_key().
+        self.assertEqual(set(result.keys()), {
+            _subsection_key(0, 0), _subsection_key(0, 1),
+        })
 
         # Each subsection should have 2 (feed_name, articles) tuples
         for sub_key in result:
@@ -60,7 +64,9 @@ class TestFetchAllFeeds(unittest.TestCase):
         sections = self._make_sections(n_subsections=3, feeds_per_sub=1)
         result = fetch_all_feeds(sections)
 
-        self.assertEqual(set(result.keys()), {"Subsection_0", "Subsection_1", "Subsection_2"})
+        self.assertEqual(set(result.keys()), {
+            _subsection_key(0, 0), _subsection_key(0, 1), _subsection_key(0, 2),
+        })
         for sub_key in result:
             self.assertEqual(len(result[sub_key]), 1)
             _feed_name, articles = result[sub_key][0]
@@ -88,7 +94,12 @@ class TestFetchAllFeeds(unittest.TestCase):
         self.assertEqual(total_feeds, 4)
 
         # Successful feeds have 1 article each
-        total_articles = sum(len(arts) for _, arts in result["Subsection_0"] + result["Subsection_1"])
+        total_articles = sum(
+            len(arts)
+            for _, arts in (
+                result[_subsection_key(0, 0)] + result[_subsection_key(0, 1)]
+            )
+        )
         # Only 2 of 4 feeds succeeded (odd call_count)
         self.assertEqual(total_articles, 2)
 
@@ -133,10 +144,10 @@ class TestFetchAllFeeds(unittest.TestCase):
         result = fetch_all_feeds(sections)
 
         # Check feed names appear in the order they were defined
-        sub0_names = [fn for fn, _ in result["Subsection_0"]]
+        sub0_names = [fn for fn, _ in result[_subsection_key(0, 0)]]
         self.assertEqual(sub0_names, ["feed_0_0", "feed_0_1", "feed_0_2"])
 
-        sub1_names = [fn for fn, _ in result["Subsection_1"]]
+        sub1_names = [fn for fn, _ in result[_subsection_key(0, 1)]]
         self.assertEqual(sub1_names, ["feed_1_0", "feed_1_1", "feed_1_2"])
 
 

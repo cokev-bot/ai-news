@@ -19,9 +19,12 @@ generate_news.log*
 # Per-feed health tracking for the RSS health monitor (tools/check_feeds.py).
 # Updated every cron run; not version-controlled.
 .feed_health.json
-# Per-edition OG social card images (tools/make_og_image.py). Generated
-# on each edition run; ~200KB each, regenerated daily so no need to track.
-assets/og/
+# Per-edition OG social card images (tools/make_og_image.py). ~30KB each, but
+# they are TRACKED, not ignored: every post's front matter carries an
+# `image:` path and jekyll-seo-tag publishes it as og:image, so an uncommitted
+# image means every social card / link preview points at a 404. Audio is
+# tracked for the same reason. (They were gitignored until 2026-09-13, which
+# 404'd the OG image for all 84 published editions.)
 
 # Retired: heartbeat-sourced story-lead files. The moltbook/1f916 heartbeats
 # capture to ~/idea-board/ instead and must not write into this repo.

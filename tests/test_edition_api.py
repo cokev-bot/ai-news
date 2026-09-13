@@ -2,11 +2,13 @@
 
 Covers:
 - build_edition_api_payload() shapes: core fields, stats, sources, sections.
-- Subsection articles are resolved through the same title-keyed lookup the
+- Subsection articles are resolved through the same *positional* lookup the
   post render uses, so the payload's membership and counts agree with the
-  HTML a reader sees even though subsection titles are NOT unique in
-  sections.json ("OpenAI", "Google", "Anthropic", "Mistral" each appear
-  under more than one section, and one title can span three sections).
+  HTML a reader sees. Subsection titles are NOT unique in sections.json
+  ("OpenAI", "Google", "Anthropic", "Mistral" each appear under more than one
+  section), so a title can never be the key — keying by title made one
+  section's articles render under every section that reused it. See
+  tests/test_section_isolation.py for the duplication regression tests.
 - Empty sections are omitted entirely, matching the post render.
 - Summary/description are HTML-stripped; big_picture is untruncated while
   summary mirrors the post front matter's budget.
@@ -37,6 +39,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 from generate_news import (  # noqa: E402
     API_DIR,
     MAX_DESCRIPTION_CHARS,
+    _subsection_key,
     build_edition_api_payload,
     format_section_heading,
     generate_post,
@@ -92,9 +95,9 @@ def build(**overrides):
         section_summaries={"AI Labs": "Labs <strong>summary</strong> here."},
         sections_data=sections_data(),
         subsection_articles={
-            "OpenAI Labs": [article("Labs story", "OpenAI News")],
-            "Anthropic Labs": [article("Claude story", "Anthropic")],
-            "Arena": [article("Bench story", "Arena")],
+            _subsection_key(0, 0): [article("Labs story", "OpenAI News")],
+            _subsection_key(0, 1): [article("Claude story", "Anthropic")],
+            _subsection_key(1, 0): [article("Bench story", "Arena")],
         },
         freshness={"fresh": 3, "stale": 0, "yesterday": 1},
         reading_minutes=4,
@@ -130,8 +133,8 @@ class TestPayloadShape(unittest.TestCase):
 
     def test_sources_sorted_and_unique(self):
         p = build(subsection_articles={
-            "OpenAI Labs": [article("A", "OpenAI News"), article("B", "OpenAI News")],
-            "Anthropic Labs": [article("C", "Anthropic")],
+            _subsection_key(0, 0): [article("A", "OpenAI News"), article("B", "OpenAI News")],
+            _subsection_key(0, 1): [article("C", "Anthropic")],
         })
         self.assertEqual(p["sources"], ["Anthropic", "OpenAI News"])
 
@@ -196,24 +199,30 @@ class TestSectionsAndSubsections(unittest.TestCase):
                 self.assertEqual(len(owners), n, f"{name} should span {n} sections")
 
     def test_repeated_subsection_title_does_not_collapse_sections(self):
-        """A title repeated across sections never empties a later section.
+        """A title repeated across sections yields two independent sections.
 
-        This is the shape the render dict actually has (title-keyed, so a
-        repeated title carries one shared article list), and it is exactly the
-        shape the post is rendered from — so the JSON mirrors the post rather
-        than losing items.
+        Keys are positional, so each section owns only its own articles: the
+        two sections are both present and neither inherits the other's items.
+        This is the regression guard for the duplication bug — with title
+        keying, both sections shared one article list and rendered it twice.
         """
         p = build(
             sections_data=[
                 {"title": "S1", "subsections": [{"title": "OpenAI", "feeds": {}}]},
                 {"title": "S2", "subsections": [{"title": "OpenAI", "feeds": {}}]},
             ],
-            subsection_articles={"OpenAI": [article("X", "Src")]},
+            subsection_articles={
+                _subsection_key(0, 0): [article("X", "Src1")],
+                _subsection_key(1, 0): [article("Y", "Src2")],
+            },
         )
         self.assertEqual([s["title"] for s in p["sections"]], ["S1", "S2"])
-        # Both sections carry the shared list; neither is dropped or emptied.
-        for s in p["sections"]:
-            self.assertEqual(s["item_count"], 1)
+        self.assertEqual(
+            p["sections"][0]["subsections"][0]["articles"][0]["title"], "X"
+        )
+        self.assertEqual(
+            p["sections"][1]["subsections"][0]["articles"][0]["title"], "Y"
+        )
 
     def test_unpopulated_subsection_is_skipped_within_a_section(self):
         p = build(
@@ -224,7 +233,7 @@ class TestSectionsAndSubsections(unittest.TestCase):
                     {"title": "Empty", "feeds": {}},
                 ],
             }],
-            subsection_articles={"Has": [article("X", "Src")]},
+            subsection_articles={_subsection_key(0, 0): [article("X", "Src")]},
         )
         subs = [ss["title"] for ss in p["sections"][0]["subsections"]]
         self.assertEqual(subs, ["Has"])
@@ -253,26 +262,26 @@ class TestSectionsAndSubsections(unittest.TestCase):
 
     def test_naive_datetime_treated_as_utc(self):
         naive = article("Naive", "Src", pub_dt=datetime(2026, 9, 13, 8, 0))
-        p = build(subsection_articles={"OpenAI Labs": [naive]})
+        p = build(subsection_articles={_subsection_key(0, 0): [naive]})
         art = p["sections"][0]["subsections"][0]["articles"][0]
         self.assertEqual(art["published"], "2026-09-13T08:00:00+00:00")
 
     def test_missing_pub_dt_is_null(self):
         no_date = {"title": "T", "link": "https://e.com/1", "source": "S"}
-        p = build(subsection_articles={"OpenAI Labs": [no_date]})
+        p = build(subsection_articles={_subsection_key(0, 0): [no_date]})
         art = p["sections"][0]["subsections"][0]["articles"][0]
         self.assertIsNone(art["published"])
 
     def test_nitter_link_converted_to_x(self):
         art = {"title": "T", "link": "https://nitter.net/u/status/1", "source": "S"}
-        p = build(subsection_articles={"OpenAI Labs": [art]})
+        p = build(subsection_articles={_subsection_key(0, 0): [art]})
         entry = p["sections"][0]["subsections"][0]["articles"][0]
         self.assertIn("x.com", entry["link"])
         self.assertNotIn("nitter", entry["link"])
 
     def test_title_falls_back_to_link(self):
         art = {"link": "https://e.com/1", "source": "S"}
-        p = build(subsection_articles={"OpenAI Labs": [art]})
+        p = build(subsection_articles={_subsection_key(0, 0): [art]})
         entry = p["sections"][0]["subsections"][0]["articles"][0]
         self.assertEqual(entry["title"], "https://e.com/1")
 
@@ -358,16 +367,19 @@ class TestRealSectionsJson(unittest.TestCase):
         cls.sections = cls.data["sections"]
 
     def test_every_feed_is_reachable_from_some_section(self):
-        """No subsection is lost: each one lands under at least one section.
+        """No subsection is lost, and no item is rendered under two sections.
 
-        A subsection title that repeats across sections shares one article
-        list in the render dict, exactly as it does in the post, so the same
-        list is legitimately reachable from each section that owns that title.
+        Each (section, subsection) position gets its own article list, so the
+        payload reaches every position exactly once and the total item count
+        equals the number of populated positions — not the number of positions
+        times the number of sections sharing a title.
         """
         articles = {}
-        for section in self.sections:
-            for ss in section["subsections"]:
-                articles[ss["title"]] = [article(f"{ss['title']} story", "Src")]
+        for s_index, section in enumerate(self.sections):
+            for ss_index, ss in enumerate(section["subsections"]):
+                articles[_subsection_key(s_index, ss_index)] = [
+                    article(f"{ss['title']} story {s_index}-{ss_index}", "Src")
+                ]
         p = build_edition_api_payload(
             edition_label="Morning",
             post_now=NOW,
@@ -378,21 +390,37 @@ class TestRealSectionsJson(unittest.TestCase):
             subsection_articles=articles,
             freshness={"fresh": 1, "stale": 0, "yesterday": 0},
         )
-        reachable = {
-            ss["title"]
+        rendered_titles = [
+            a["title"]
             for s in p["sections"]
             for ss in s["subsections"]
-        }
-        self.assertEqual(reachable, set(articles))
-        # Sections are never dropped or emptied by a repeated title.
+            for a in ss["articles"]
+        ]
+        # Every position reached, and nothing rendered twice.
+        self.assertEqual(len(rendered_titles), len(articles))
+        self.assertEqual(len(set(rendered_titles)), len(articles))
+        # Sections are never dropped or emptied.
         for s in p["sections"]:
             self.assertGreater(s["item_count"], 0)
-        # The item count mirrors the post's own render exactly: one entry per
-        # populated (section, subsection) position.
-        positions = sum(
-            1 for section in self.sections for ss in section["subsections"] if ss["title"] in articles
+        self.assertEqual(p["stats"]["items"], len(articles))
+
+    def test_real_sections_json_has_repeated_titles(self):
+        """Guard the premise this whole file works around.
+
+        If sections.json ever stops reusing subsection titles, the cross-section
+        duplication this design prevents becomes impossible — the test should
+        say so rather than silently passing.
+        """
+        seen = {}
+        for section in self.sections:
+            for ss in section["subsections"]:
+                seen.setdefault(ss["title"], []).append(section["title"])
+        repeated = {t: o for t, o in seen.items() if len(o) > 1}
+        self.assertTrue(
+            repeated,
+            "sections.json no longer reuses subsection titles — revisit the "
+            "positional keying rationale in generate_news._subsection_key()",
         )
-        self.assertEqual(p["stats"]["items"], positions)
 
     def test_section_titles_are_unique(self):
         """Section titles must stay unique — the payload keys on them."""
@@ -443,7 +471,7 @@ class TestGeneratePostIntegration(unittest.TestCase):
              patch("generate_news.generate_og_image_for_edition", return_value=None), \
              patch("generate_news._query_ollama", return_value="Summary text."):
             load.return_value = {"seen_links": {}, "last_run": None}
-            fetch.return_value = {"FT": [("FT AI", [art])]}
+            fetch.return_value = {_subsection_key(0, 0): [("FT AI", [art])]}
             return generate_post(edition, self.site_root)
 
     def test_payload_written_next_to_post(self):
@@ -511,7 +539,7 @@ class TestSectionHeadingAnchors(unittest.TestCase):
                  patch("generate_news.generate_og_image_for_edition", return_value=None), \
                  patch("generate_news._query_ollama", return_value="Summary text."):
                 load.return_value = {"seen_links": {}, "last_run": None}
-                fetch.return_value = {"FT": [("FT AI", [article("A", "FT AI")])]}
+                fetch.return_value = {_subsection_key(0, 0): [("FT AI", [article("A", "FT AI")])]}
                 generate_post("2026-09-13-morning", root)
             post = (root / "_posts" / "2026-09-13-morning.html").read_text()
             p = json.loads((root / API_DIR / "2026-09-13-morning.json").read_text())

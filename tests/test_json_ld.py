@@ -22,7 +22,7 @@ from pathlib import Path
 from unittest.mock import patch, MagicMock
 from zoneinfo import ZoneInfo
 
-from generate_news import generate_json_ld, generate_post
+from generate_news import _subsection_key, generate_json_ld, generate_post
 
 
 class TestGenerateJsonLd(unittest.TestCase):
@@ -299,7 +299,7 @@ class TestJsonLdIntegration(unittest.TestCase):
         """generate_post() includes JSON-LD script tag in the output HTML."""
         mock_load.return_value = {"seen_links": {}, "last_run": None}
         mock_fetch.return_value = {
-            "AI Labs": [
+            _subsection_key(0, 0): [
                 ("TestFeed", [
                     {
                         "title": "Test Article",
@@ -346,7 +346,7 @@ class TestJsonLdIntegration(unittest.TestCase):
         """JSON-LD is placed after the closing front-matter ---, not inside it."""
         mock_load.return_value = {"seen_links": {}, "last_run": None}
         mock_fetch.return_value = {
-            "AI Labs": [
+            _subsection_key(0, 0): [
                 ("TestFeed", [
                     {
                         "title": "Test Article",

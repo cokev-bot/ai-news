@@ -9,8 +9,11 @@ Answers two questions per news source, which are otherwise invisible:
      written by ``generate_news.py`` only for items that survive dedup and the
      age filter.
   2. **Last successful fetch** — the most recent time the feed was fetched and
-     returned a usable body. Derived from ``.feed_health.json``, written by
-     ``tools/check_feeds.py``.
+     returned a usable body. Derived from ``.feed_health.json`` (``last_success``).
+  3. **Newest item served** — the most recent publication date among the items
+     the feed returned (``.feed_health.json`` → ``last_post``). Fetch health
+     alone reports a frozen mirror as healthy forever; this column is what
+     makes "reachable but not publishing" visible.
 
 Reads:
   sections.json      - canonical feed list (name, url, fallbacks, section)
@@ -56,6 +59,7 @@ MAX_AGE_DAYS_DEFAULT = 7
 # Status vocabulary. Each value maps to a reader-actionable meaning:
 STATUS_OK = "ok"                     # fetched recently, new stories inside the window
 STATUS_QUIET = "quiet"               # fetched fine, but nothing new inside the window
+STATUS_FROZEN = "frozen"             # fetched fine, but the newest item is older than the window
 STATUS_DEGRADED = "degraded"         # 1-2 consecutive fetch failures
 STATUS_FAILING = "failing"           # >= 3 consecutive fetch failures
 STATUS_STALE_CHECK = "stale-check"   # no failures recorded, but check is >48h old
@@ -67,6 +71,7 @@ FRESH_CHECK_HOURS = 48
 STATUS_LABELS = {
     STATUS_OK: "OK",
     STATUS_QUIET: "Quiet",
+    STATUS_FROZEN: "Frozen",
     STATUS_DEGRADED: "Degraded",
     STATUS_FAILING: "Failing",
     STATUS_STALE_CHECK: "Stale check",
@@ -76,6 +81,11 @@ STATUS_LABELS = {
 STATUS_NOTES = {
     STATUS_OK: "Fetched recently and delivered stories within the window.",
     STATUS_QUIET: "Fetched successfully but no new stories inside the window.",
+    STATUS_FROZEN: (
+        "Fetched successfully, but the newest item this feed serves is older "
+        "than the window — reachable yet not publishing. A frozen mirror or "
+        "upstream outage looks like this."
+    ),
     STATUS_DEGRADED: "Recent fetch failures, still occasionally serving.",
     STATUS_FAILING: "Three or more consecutive fetch failures.",
     STATUS_STALE_CHECK: "No recent health check recorded for this feed.",
@@ -247,8 +257,16 @@ def compute_status(
     failures: int,
     now: datetime,
     max_age_days: int,
+    last_post: datetime | None = None,
 ) -> str:
-    """Classify a source into one of the STATUS_* vocabulary values."""
+    """Classify a source into one of the STATUS_* vocabulary values.
+
+    ``last_post`` is the newest publication date the feed *served* (freshness),
+    as opposed to ``last_item`` which is the newest item that survived dedup
+    into an edition (yield) and ``last_success`` which proves reachability.
+    The three answer different questions and a source can be healthy on one and
+    broken on another — that is the whole reason ``frozen`` exists.
+    """
     if last_success is None:
         return STATUS_UNKNOWN
     if failures >= 3:
@@ -257,6 +275,11 @@ def compute_status(
         return STATUS_DEGRADED
     if (now - last_success).total_seconds() > FRESH_CHECK_HOURS * 3600:
         return STATUS_STALE_CHECK
+    # Reachable, no failures — but everything it serves predates the window.
+    # This is the signature that a status-only monitor reports as "OK" forever:
+    # a mirror or upstream feed that stopped advancing.
+    if last_post is not None and (now - last_post).total_seconds() > max_age_days * 86400:
+        return STATUS_FROZEN
     if last_item is None:
         return STATUS_QUIET
     if (now - last_item).total_seconds() > max_age_days * 86400:
@@ -285,6 +308,7 @@ def build_rows(
         entry = entry if isinstance(entry, dict) else {}
         last_success = parse_iso(entry.get("last_success"))
         last_failure = parse_iso(entry.get("last_failure"))
+        last_post = parse_iso(entry.get("last_post"))
         failures = entry.get("consecutive_failures") or 0
         if not isinstance(failures, int):
             try:
@@ -304,6 +328,7 @@ def build_rows(
             "item_count": counts.get(name, 0),
             "last_success": last_success,
             "last_failure": last_failure,
+            "last_post": last_post,
             "last_error": entry.get("last_error"),
             "failures": failures,
             "status": compute_status(
@@ -312,6 +337,7 @@ def build_rows(
                 failures=failures,
                 now=now,
                 max_age_days=max_age_days,
+                last_post=last_post,
             ),
         })
     return rows
@@ -348,13 +374,18 @@ def render_rows_html(rows: list[dict], *, now: datetime) -> str:
             current_section = row["section"]
             label = html.escape(current_section or "Other")
             lines.append(
-                f'<tr class="ss-group"><th colspan="6" scope="colgroup">{label}</th></tr>'
+                f'<tr class="ss-group"><th colspan="7" scope="colgroup">{label}</th></tr>'
             )
         item_cell = timestamp_cell(
             row["last_item"].isoformat() if row["last_item"] else None, now
         )
         fetch_cell = timestamp_cell(
             row["last_success"].isoformat() if row["last_success"] else None, now
+        )
+        # Freshness is the whole point of the column: a source can be fetching
+        # flawlessly (fetch_cell) while the newest thing it serves is weeks old.
+        post_cell = timestamp_cell(
+            row["last_post"].isoformat() if row.get("last_post") else None, now
         )
         status: str = str(row["status"] or STATUS_UNKNOWN)
         status_label = STATUS_LABELS.get(status, status)
@@ -367,6 +398,7 @@ def render_rows_html(rows: list[dict], *, now: datetime) -> str:
             '<td class="ss-section">{section}</td>'
             '<td class="ss-time">{item}</td>'
             '<td class="ss-time">{fetch}</td>'
+            '<td class="ss-time">{post}</td>'
             '<td class="ss-count">{count}</td>'
             '<td class="ss-status"><span class="ss-badge ss-badge-{status}" '
             'title="{note}">{label}</span></td>'
@@ -376,6 +408,7 @@ def render_rows_html(rows: list[dict], *, now: datetime) -> str:
                 section=html.escape(row["subsection"] or row["section"] or ""),
                 item=item_cell,
                 fetch=fetch_cell,
+                post=post_cell,
                 count=row["item_count"],
                 note=html.escape(note, quote=True),
                 label=html.escape(status_label),
@@ -411,14 +444,19 @@ permalink: /source-status/
   <strong>Last successful fetch</strong> is the most recent time the pipeline
   pulled the feed and got a usable response back — a source can be fetched
   successfully and still have no new story.
+  <strong>Newest item served</strong> is the most recent publication date among
+  everything the feed returned, which is what distinguishes a genuinely active
+  source from a mirror that answers every request but has stopped advancing.
   Sources are marked <em>quiet</em> when they are reachable but have not
-  delivered a story in {max_age_days} days.
+  delivered a story in {max_age_days} days, and <em>frozen</em> when everything
+  they serve is older than that window.
 </p>
 
 <p class="ss-summary">
   <strong>{summary['total']}</strong> sources tracked ·
   <strong>{summary['delivering']}</strong> delivering stories ·
   <strong>{summary['quiet']}</strong> quiet ·
+  <strong>{summary['frozen']}</strong> frozen ·
   <strong>{summary['failing'] + summary['degraded']}</strong> with fetch failures ·
   updated {html.escape(updated)}
 </p>
@@ -437,6 +475,7 @@ permalink: /source-status/
 .ss-badge-degraded {{ background: #fdf1d8; color: #8a5a00; }}
 .ss-badge-failing {{ background: #fbe3e3; color: #a02020; }}
 .ss-badge-stale-check {{ background: #fdf1d8; color: #8a5a00; }}
+.ss-badge-frozen {{ background: #fde8d8; color: #9a4a00; }}
 .ss-badge-unknown {{ background: #eef0f2; color: #777; }}
 .ss-intro, .ss-summary {{ max-width: 46em; }}
 </style>
@@ -448,6 +487,7 @@ permalink: /source-status/
       <th scope="col">Section</th>
       <th scope="col">Last new story (UTC)</th>
       <th scope="col">Last successful fetch (UTC)</th>
+      <th scope="col">Newest item served (UTC)</th>
       <th scope="col">Items ({max_age_days}d)</th>
       <th scope="col">Status</th>
     </tr>
