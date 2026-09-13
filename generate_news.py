@@ -913,6 +913,32 @@ def _strip_html(text: str) -> str:
     clean = re.sub(r'\s+', ' ', clean).strip()  # normalize whitespace
     return clean
 
+
+def _make_description(global_summary_text: str | None, max_chars: int = 160) -> str:
+    """Build a YAML-safe, edition-specific meta description from the Big Picture.
+
+    ``jekyll-seo-tag`` emits ``og:description`` and the ``<meta name=description>``
+    from ``page.description``; generated posts set none, so every edition's social
+    card and SERP snippet shows the generic site tagline instead of the day's lead.
+    This returns the first *max_chars* characters of the HTML-stripped Big Picture,
+    truncated on a word boundary, with characters that would break YAML front
+    matter (double quotes, backslashes, newlines, colons at line start) removed.
+    Returns ``""`` when there is no summary, so callers can omit the field.
+    """
+    if not global_summary_text:
+        return ""
+    plain = html_module.unescape(_strip_html(global_summary_text))
+    plain = re.sub(r'[\[\]\{\}]', ' ', plain)      # no accidental flow structures
+    plain = plain.replace('"', "'").replace("\\", " ")
+    plain = re.sub(r'\s+', ' ', plain).strip()
+    if len(plain) <= max_chars:
+        return plain
+    cut = plain[:max_chars]
+    # Back off to the last complete word so we never split mid-word.
+    if ' ' in cut:
+        cut = cut.rsplit(' ', 1)[0]
+    return cut.rstrip() + '…'
+
 def generate_audio(text: str, output_path: Path, voice: str = "en-US-AriaNeural", rate: str = "+0%") -> bool:
     """Generate an MP3 audio file from text using edge-tts.
     
@@ -1082,11 +1108,13 @@ def audio_player_html(audio_path: str, label: str = "Listen") -> str:
     """
     # Prepend base path for Jekyll
     full_path = f"/ai-news/{audio_path.lstrip('/')}"
+    aria = html_module.escape(label, quote=True)
     return (
         f'<div class="audio-player" style="margin: 8px 0;">'
-        f'<audio controls preload="none" style="width:100%;max-width:400px;">'
+        f'<audio controls preload="none" style="width:100%;max-width:400px;" '
+        f'aria-label="Audio summary of {aria}">'
         f'<source src="{full_path}" type="audio/mpeg">'
-        f'<a href="{full_path}">Download {label}</a>'
+        f'<a href="{full_path}">Download {aria}</a>'
         f'</audio></div>'
     )
 
@@ -1999,6 +2027,17 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
             if idx > 0 and line.strip() == "---":
                 # Insert before the closing ---
                 html_lines.insert(idx, f"image: /ai-news/{og_image_rel_path}")
+                break
+
+    # Inject an edition-specific `description:` into the front matter so
+    # jekyll-seo-tag emits a meaningful og:description / meta description
+    # instead of the generic site tagline. Inserted before the same closing
+    # "---" as the image line; the field is omitted when there is no summary.
+    description = _make_description(global_summary_text if all_articles else None)
+    if description:
+        for idx, line in enumerate(html_lines):
+            if idx > 0 and line.strip() == "---":
+                html_lines.insert(idx, f'description: "{description}"')
                 break
 
     # Render Big Picture HTML (deferred from above so audio_paths is available)

@@ -80,6 +80,12 @@ fi
 python3 tools/build_source_status.py /home/ubuntu/ai-news \
     || echo "[!] Source status page generation failed (non-fatal; edition continues)."
 
+# Regenerate the public /week/ page (this week's Big Picture timeline) from the
+# posts on disk, including the one this run just wrote. Non-fatal, like the
+# source-status page; a failure only means the page lags by one run.
+python3 tools/build_week_page.py /home/ubuntu/ai-news \
+    || echo "[!] Week page generation failed (non-fatal; edition continues)."
+
 if [ "$EDITION_RC" != "0" ]; then
     echo "[!] generate_news.py exited $EDITION_RC — no edition to publish."
     exit "$EDITION_RC"
@@ -87,7 +93,24 @@ fi
 
 # Run Jekyll build. With pipefail set, a non-zero exit from jekyll (including
 # a failed build) will abort the script before we commit and push a broken post.
-bundle exec jekyll build --destination _site
+# Retry twice with a 30s backoff: a transient Bundler/gem/network hiccup should
+# not cost an entire edition. Only a persistent failure aborts.
+JEKYLL_RC=1
+for attempt in 1 2 3; do
+    if bundle exec jekyll build --destination _site; then
+        JEKYLL_RC=0
+        break
+    fi
+    echo "[!] jekyll build failed (attempt $attempt/3)."
+    if [ "$attempt" -lt 3 ]; then
+        echo "    Retrying in 30s..."
+        sleep 30
+    fi
+done
+if [ "$JEKYLL_RC" != "0" ]; then
+    echo "[!] jekyll build failed 3 times — aborting edition."
+    exit "$JEKYLL_RC"
+fi
 
 if [ "$DRY_RUN" = "1" ]; then
     echo "[dry-run] Skipping git commit and push. Generated post and build artifacts are in _posts/ and _site/."
@@ -98,7 +121,7 @@ fi
 # `git add` to exit 1 even with --ignore-errors, which kills the script
 # under `set -e`. The `|| true` guards against any other gitignored paths
 # that might slip in.
-git add --ignore-errors _posts/ _config.yml assets/ source-status.html || true
+git add --ignore-errors _posts/ _config.yml assets/ source-status.html week.html now.html || true
 if ! git diff --cached --quiet; then
     git commit -m "$EDITION AI News Digest $DATE"
     # Push explicitly to origin/main so the live site updates regardless of

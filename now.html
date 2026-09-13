@@ -1,0 +1,55 @@
+---
+layout: page
+title: Now
+permalink: /now/
+---
+
+<p>Today's editions — the current briefing at a glance. Updated Morning (8am PT), Afternoon (1pm PT), and Evening (5pm PT).</p>
+
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign today_posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% assign post_day = post.date | date: "%Y-%m-%d" %}
+  {% if post_day == today %}
+    {% assign today_posts = today_posts | push: post %}
+  {% endif %}
+{% endfor %}
+
+{% if today_posts.size == 0 %}
+<p><em>No editions published yet today. Check back after the Morning edition at 8am PT, or read <a href="{{ '/week/' | relative_url }}">this week's briefing</a>.</em></p>
+{% else %}
+
+{% assign ordered = "" | split: "" %}
+{% for p in today_posts %}
+  {% assign ordered = ordered | push: p %}
+{% endfor %}
+
+{% for post in today_posts %}
+  {% assign edition_type = "edition" %}
+  {% if post.title contains "Morning" %}{% assign edition_type = "morning" %}{% endif %}
+  {% if post.title contains "Afternoon" %}{% assign edition_type = "afternoon" %}{% endif %}
+  {% if post.title contains "Evening" %}{% assign edition_type = "evening" %}{% endif %}
+  <div class="now-edition">
+    <h2>
+      <span class="edition-badge edition-badge-{{ edition_type }}" aria-label="{{ edition_type | capitalize }} Edition">{{ edition_type | capitalize }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+    </h2>
+    {% if post.description %}
+      <p class="now-description">{{ post.description | escape }}</p>
+    {% endif %}
+  </div>
+{% endfor %}
+
+{% endif %}
+
+<style>
+  .now-edition { margin-bottom: 1.5em; }
+  .now-edition h2 { margin-bottom: 0.3em; }
+  .now-description { color: #555; }
+  .edition-badge { display: inline-block; font-size: 0.7em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.15em 0.5em; border-radius: 3px; margin-right: 0.4em; vertical-align: middle; }
+  .edition-badge-morning { background: #fff3cd; color: #664d03; }
+  .edition-badge-afternoon { background: #cff4fc; color: #055160; }
+  .edition-badge-evening { background: #e2e3e5; color: #383d41; }
+</style>
+
+<p><a href="{{ '/' | relative_url }}">&larr; Home</a> · <a href="{{ '/week/' | relative_url }}">This week</a></p>

@@ -1,0 +1,56 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.author -%}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- endif -%}</p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  {%- comment -%}
+    Previous/next edition navigation. Jekyll's page.previous / page.next order
+    posts by date, which is exactly the chronological order editions are
+    published in (Morning → Afternoon → Evening, day after day). `page.next`
+    is the chronologically *newer* post (towards the present), so it is shown
+    as "Newer"; `page.previous` is the *older* one.
+  {%- endcomment -%}
+  {%- if page.previous or page.next -%}
+  <nav class="post-nav" aria-label="Edition navigation">
+    <div class="post-nav-prev">
+      {%- if page.previous -%}
+        <a href="{{ page.previous.url | relative_url }}" rel="prev">&larr; {{ page.previous.title | escape }}</a>
+      {%- endif -%}
+    </div>
+    <div class="post-nav-next">
+      {%- if page.next -%}
+        <a href="{{ page.next.url | relative_url }}" rel="next">{{ page.next.title | escape }} &rarr;</a>
+      {%- endif -%}
+    </div>
+  </nav>
+  <style>
+    .post-nav { display: flex; justify-content: space-between; margin-top: 2em; padding-top: 1em; border-top: 1px solid #e8e8e8; font-size: 0.9em; }
+    .post-nav a { text-decoration: none; }
+    .post-nav a:hover { text-decoration: underline; }
+    .post-nav-prev { text-align: left; }
+    .post-nav-next { text-align: right; }
+  </style>
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

@@ -51,7 +51,7 @@ layout: home
   {% endif %}
 
   <li class="day-edition-item">
-    <span class="edition-badge edition-badge-{{ edition_type }}">{{ edition_type | capitalize }}</span>
+    <span class="edition-badge edition-badge-{{ edition_type }}" aria-label="{{ edition_type | capitalize }} Edition">{{ edition_type | capitalize }}</span>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
   </li>
 
