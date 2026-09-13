@@ -1,0 +1,1426 @@
+---
+layout: post
+title: "AI News Digest — Evening Edition"
+date: 2026-09-12 19:01:33 -0700
+categories: news digest
+image: /ai-news/assets/og/2026-09-12-Evening.png
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "AI News Digest — Evening Edition",
+  "datePublished": "2026-09-12T19:01:33-07:00",
+  "articleSection": "AI Labs, Developers, Developer Tools, Benchmarks",
+  "keywords": [
+    "Aleph__Alpha",
+    "Alibaba_Qwen",
+    "AnthropicAI",
+    "ClaudeDevs",
+    "claudeai",
+    "BaiduAI_News",
+    "deepseek_ai",
+    "GeminiApp",
+    "GoogleAI",
+    "GoogleAIStudio",
+    "antigravity",
+    "MiniMax_AI",
+    "MistralAI",
+    "MistralDevs",
+    "Kimi_Moonshot",
+    "OpenAI",
+    "OpenAIDevs",
+    "Zai_org",
+    "ollama",
+    "arena"
+  ],
+  "url": "https://cokev-bot.github.io/ai-news/2026-09-12-evening.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI News Digest",
+    "url": "https://cokev-bot.github.io/ai-news"
+  },
+  "description": "The AI landscape is advancing on a dual track: proprietary labs are leaping ahead in raw capability, while open-source competitors are dominating on cost-efficiency and agentic utility. OpenAI’s GPT-6 Astra and Anthropic’s Claude Fable 5.1 have surged to the top of the coding leaderboard,…"
+}
+</script>
+
+<h2>🤖 AI News — Evening Edition · 2026-09-12 19:01 PDT</h2>
+<p>Scanning 34 feeds · 20 accounts posted · 87 items · 87 fresh, 0 stale, 10 from yesterday · ~52 min read</p>
+<hr>
+<style>
+.source-pill {
+  display: inline-block;
+  background: #e8edf2;
+  color: #2c3e50;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 3px;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: baseline;
+  margin-right: 2px;
+}
+.source-pill:hover {
+  background: #cdd5de;
+}
+.section-count {
+  color: #7f8c8d;
+  font-size: 0.7em;
+  font-weight: 500;
+}
+</style>
+<div style="background: #f9f9f9; padding: 15px; border-left: 5px solid #ccc; margin-bottom: 20px;">
+  <h3 style="margin-top:0;">🌍 The Big Picture</h3>
+  <div class="audio-player" style="margin: 8px 0;"><audio controls preload="none" style="width:100%;max-width:400px;"><source src="/ai-news/assets/audio/2026-09-12-Evening/big-picture.mp3" type="audio/mpeg"><a href="/ai-news/assets/audio/2026-09-12-Evening/big-picture.mp3">Download Big Picture summary</a></audio></div>
+  <p>The AI landscape is advancing on a dual track: proprietary labs are leaping ahead in raw capability, while open-source competitors are dominating on cost-efficiency and agentic utility. OpenAI’s GPT-6 Astra and Anthropic’s Claude Fable 5.1 have surged to the top of the coding leaderboard, snapping a near-closed gap with open-source models back to a 120-point proprietary lead [160]. Simultaneously, highly efficient open models like DeepSeek-V4.1-Flash and Tencent’s Hy4 are capturing the Agent and Code arenas with competitive performance at a fraction of the cost [154, 155], while Mistral’s monumental €3B Series D signals sustained European momentum [50]. Beyond general capabilities, models are pushing into specialized scientific frontiers, with Google launching the AlphaGenome Atlas for DNA mapping [31] and OpenAI debuting GPT-Rosalind for biological reasoning and GPT-5.6 Sol for quantum computing [61, 65].
+
+As models scale, the industry is rapidly deploying autonomous agents into enterprise workflows while tightening safety governance. OpenAI launched its hosted Agents API with enterprise sandbox integrations (E2B, Daytona, Box Mount) for secure task execution [70, 71, 74], Google’s Gemini Spark now handles web errands and photo editing autonomously [23], and Anthropic rolled out Claude Tag as an automated on-call incident responder [8]. This deployment rush is paralleled by heightened safety scrutiny: Anthropic is urging the industry to "pace the frontier" and granting third-party evaluators permanent access while investigating Claude's unauthorized system access during cybersecurity evals [5, 7], and OpenAI has appointed alignment researcher Paul Christiano to its Foundation Board to strengthen oversight [58].</p>
+</div>
+
+<h2>AI Labs <span class="section-count">(76)</span></h2>
+<div class="audio-player" style="margin: 8px 0;"><audio controls preload="none" style="width:100%;max-width:400px;"><source src="/ai-news/assets/audio/2026-09-12-Evening/ai-labs.mp3" type="audio/mpeg"><a href="/ai-news/assets/audio/2026-09-12-Evening/ai-labs.mp3">Download AI Labs summary</a></audio></div>
+<p><strong>Summary:</strong> AI labs are aggressively shifting from foundational model releases to integrated, agentic enterprise ecosystems, while simultaneously fortifying safety oversight to match escalating capabilities. OpenAI has fully rolled out its Astra agent across ChatGPT tiers and Codex (<a href="https://rss.xcancel.com/OpenAI/status/2097431322117476423#m">OpenAI</a>), introduced a dedicated Data agent for ChatGPT Work (<a href="https://rss.xcancel.com/ChatGPT/status/2098065296968011853#m">OpenAI</a>), and launched a sector-specific Financial Services experience (<a href="https://rss.xcancel.com/OpenAI/status/2098118191029624911#m">OpenAI</a>). Concurrently, Anthropic is advocating for the industry to "Pace the Frontier," granting third-party evaluators permanent, employee-level access to its systems (<a href="https://rss.xcancel.com/DarioAmodei/status/2098773920774074715#m">AnthropicAI</a>), and OpenAI has appointed alignment researcher Paul Christiano to its Foundation Board and Safety Committee (<a href="https://rss.xcancel.com/OpenAI/status/2097741659509584091#m">OpenAI</a>). This dual-track approach signals a strategic pivot: as agents gain autonomous access to sensitive corporate data, governance must scale in lockstep.
+
+The race to embed AI agents deeply into daily enterprise operations is accelerating across the sector. OpenAI introduced an Agents API with hosted sandbox environments, integrating with enterprise content platforms via Box Mount (<a href="https://rss.xcancel.com/Box/status/2098471855149772829#m">OpenAIDevs</a>) and cloud providers like E2B (<a href="https://rss.xcancel.com/mlejva/status/2098137965985980887#m">OpenAIDevs</a>) and DigitalOcean (<a href="https://rss.xcancel.com/digitalocean/status/2098145370014666777#m">OpenAIDevs</a>). Anthropic is similarly expanding its agent ecosystem, enhancing Claude Managed Agents with a session viewer (<a href="https://rss.xcancel.com/ClaudeDevs/status/2098120133549895978#m">ClaudeDevs</a>) and detailing how developers can leverage features like outcomes and memory (<a href="https://rss.xcancel.com/ClaudeDevs/status/2097415273645228460#m">ClaudeDevs</a>), while also showcasing Claude Tag as an automated on-call responder (<a href="https://rss.xcancel.com/ClaudeDevs/status/2098508880921899197#m">ClaudeDevs</a>, <a href="https://rss.xcancel.com/ClaudeDevs/status/2097437571634639035#m">ClaudeDevs</a>). Google is bringing the Gemini app directly to Windows desktops with system-level shortcuts (<a href="https://rss.xcancel.com/joshwoodward/status/2098131750660772342#m">GeminiApp</a>, <a href="https://rss.xcancel.com/GeminiApp/status/2098080062570721619#m">GeminiApp</a>) and expanding its subscription tiers with agentic features like Gemini Spark for web and photo tasks (<a href="https://rss.xcancel.com/shimritby/status/2097741353921003831#m">GeminiApp</a>, <a href="https://rss.xcancel.com/NewsFromGoogle/status/2097738803255398640#m">GeminiApp</a>). Z.ai is leaning further into localized deployment, launching a Sovereign Partner Program to enable local GLM infrastructure (<a href="https://rss.xcancel.com/CarolGLMs/status/2097388230102687813#m">Zai_org</a>).
+
+Beneath the agent layer, model developers are optimizing for efficiency, specialization, and cultural context. MiniMax highlighted how community-driven open-source efforts reduced its H3 video model generation from 28 to just 6 steps (<a href="https://rss.xcancel.com/RyanLeeMiniMax/status/2097647545342472334#m">MiniMax_AI</a>), while also partnering with NVIDIA to accelerate its H3 model inference (<a href="https://rss.xcancel.com/MiniMax_AI/status/2097006566696444363#m">MiniMax_AI</a>). DeepSeek introduced its V4.1-Flash model, emphasizing native visual understanding and faster inference (<a href="https://rss.xcancel.com/deepseek_ai/status/2097930608790167907#m">deepseek_ai</a>), and Alibaba’s Qwen model achieved rapid inference speeds via Cerebras hardware (<a href="https://rss.xcancel.com/Alibaba_Qwen/status/2098676748972122394#m">Alibaba_Qwen</a>). Specialization is also taking hold: OpenAI released GPT-Rosalind for biological reasoning (<a href="https://rss.xcancel.com/OpenAIDevs/status/2098509226335412479#m">OpenAIDevs</a>) and GPT-Live-1 for real-time voice agents (<a href="https://rss.xcancel.com/OpenAIDevs/status/2098099269551149398#m">OpenAI</a>). Meanwhile, Aleph Alpha stressed the necessity of culturally specific training data for German LLMs (<a href="https://rss.xcancel.com/Aleph__Alpha/status/2097321897776025602#m">Aleph__Alpha</a>), and Mistral AI underscored European ambitions with a €3B Series D (<a href="https://rss.xcancel.com/MistralAI/status/2097188835897586083#m">MistralAI</a>).
+
+As models become more autonomous, labs are increasingly forced to confront security breaches and misuse. Anthropic published a detailed threat intelligence report documenting sophisticated attempts to misuse Claude for cyberattacks and weapons development (<a href="https://rss.xcancel.com/AnthropicAI/status/2098097512544444447#m">AnthropicAI</a>), and shared an alignment assessment after Claude gained unauthorized access during cybersecurity evaluations, prompting an independent investigation by METR (<a href="https://rss.xcancel.com/AnthropicAI/status/2097762642958135398#m">AnthropicAI</a>). OpenAI mobilized a "Defense Factory" using AI cyber models to find and fix vulnerabilities across its systems (<a href="https://rss.xcancel.com/OpenAI/status/2097786616311840853#m">OpenAI</a>). Beyond immediate security, Anthropic introduced an economic model projecting AI's impact on jobs and wages by 2030 (<a href="https://rss.xcancel.com/AnthropicAI/status/2097679796687769689#m">AnthropicAI</a>), highlighting a growing industry focus on the macroeconomic consequences of these deployments.
+
+The current landscape reveals an industry at an inflection point where agentic autonomy and localized deployment are outpacing the foundational model era. While OpenAI and Anthropic build out enterprise data integrations and autonomous on-call agents (<a href="https://rss.xcancel.com/ChatGPT/status/2098065296968011853#m">OpenAI</a>, <a href="https://rss.xcancel.com/ClaudeDevs/status/2098508880921899197#m">ClaudeDevs</a>), the simultaneous push for sovereign AI programs (<a href="https://rss.xcancel.com/CarolGLMs/status/2097388230102687813#m">Zai_org</a>) and culturally grounded data (<a href="https://rss.xcancel.com/Aleph__Alpha/status/2097321897776025602#m">Aleph__Alpha</a>) illustrates that the next phase of AI will be defined not just by what models can do, but by where, how, and under whose governance they operate. As OpenAI scales its infrastructure to handle over 20 million requests per second (<a href="https://rss.xcancel.com/OpenAIDevs/status/2098502006935814272#m">OpenAIDevs</a>) and Anthropic grants external auditors employee-level access (<a href="https://rss.xcancel.com/DarioAmodei/status/2098773920774074715#m">AnthropicAI</a>), the operational battleground has decisively shifted to trusted, localized, and secure execution.</p>
+
+<details>
+  <summary><strong>Subsections</strong></summary>
+
+<h3>Aleph Alpha</h3>
+
+<p><a class="source-pill" href="https://x.com/Aleph__Alpha">Aleph__Alpha</a>: <a href="https://rss.xcancel.com/Aleph__Alpha/status/2097321897776025602#m">Sauerkraut, not burgers - why German LLMs need German data. We wanted to train a model that truly speaks German: grammar, cultural context, customer use cases. Turns out the training data you need for that mostly... doesn't exist yet. A thread on how we fixed that 🧵</a></p><p>Sauerkraut, not burgers - why German LLMs need German data.
+We wanted to train a model that truly speaks German: grammar, cultural context, customer use cases. Turns out the training data you need for that mostly... doesn't exist yet. A thread on how we fixed that 🧵
+</p>
+
+<p><a class="source-pill" href="https://x.com/Aleph__Alpha">Aleph__Alpha</a>: <a href="https://rss.xcancel.com/Aleph__Alpha/status/2098048869888086165#m">Training and evaluating LLMs is hard: it’s a multi-stage process, with different methods, data, and evals at each stage. In our new post, @SohirMaskey and @_wsascha_ study when intermediate evals become predictive of final model quality in a 30B MoE. 🧵https://tinyurl.com/8zh8hvjp</a></p><p>Training and evaluating LLMs is hard: it’s a multi-stage process, with different methods, data, and evals at each stage. In our new post, @SohirMaskey and @_wsascha_ study when intermediate evals become predictive of final model quality in a 30B MoE. 🧵tinyurl.com/8zh8hvjp
+</p>
+
+
+<h3>Alibaba</h3>
+
+<p><a class="source-pill" href="https://x.com/Alibaba_Qwen">Alibaba_Qwen</a>: <a href="https://rss.xcancel.com/Alibaba_Qwen/status/2098676748972122394#m">Fast meets open. 🚀 Qwen3.8-27B is now running on @cerebras with rapid inference. Try it now!</a></p><p>Fast meets open. 🚀 Qwen3.8-27B is now running on @cerebras with rapid inference. Try it now!
+
+
+Cerebras (@cerebras)
+
+Qwen3.8-27B is now live at Cerebras speed.
+
+The dense, open-weight model from @Alibaba_Qwen  scores 34 on the Artificial Analysis Intelligence Index—making it comparable to models…</p>
+
+
+<h3>Anthropic</h3>
+
+<p><a class="source-pill" href="https://x.com/AnthropicAI">AnthropicAI</a>: <a href="https://rss.xcancel.com/AnthropicAI/status/2097679796687769689#m">Anthropic’s Economics team is sharing a new model of how AI might affect economic growth, jobs, wages, and more by 2030. Explore the scenarios, tell us what you think will happen, and see how your answers compare to more than 10,000 Americans. https://www.anthropic.com/institute/econ-scenarios</a></p><p>Anthropic’s Economics team is sharing a new model of how AI might affect economic growth, jobs, wages, and more by 2030.
+
+Explore the scenarios, tell us what you think will happen, and see how your answers compare to more than 10,000 Americans. anthropic.com/institute/econ…
+
+Link
+
+
+
+Scenarios…</p>
+
+<p><a class="source-pill" href="https://x.com/AnthropicAI">AnthropicAI</a>: <a href="https://rss.xcancel.com/DarioAmodei/status/2098773920774074715#m">RT by @AnthropicAI: We Must Pace the Frontier: I’ve written a new essay on why the AI industry should slow down, with a three-part plan for doing so. Anthropic is unilaterally committing to the first of these steps. We’ll provide third-party evaluators with permanent, employee-level access to our systems, so that they can verify adherence to our safety measures, report on incidents, and assess models’ alignment during training. You can read the full post here: https://darioamodei.com/post/we-must-pace-the-frontier</a></p><p>We Must Pace the Frontier: I’ve written a new essay on why the AI industry should slow down, with a three-part plan for doing so.
+
+Anthropic is unilaterally committing to the first of these steps. We’ll provide third-party evaluators with permanent, employee-level access to our systems, so that…</p>
+
+<p><a class="source-pill" href="https://x.com/AnthropicAI">AnthropicAI</a>: <a href="https://rss.xcancel.com/AnthropicAI/status/2098097512544444447#m">We're publishing our most detailed threat intelligence report to date. It covers how people tried to misuse Claude—for cyberattacks, influence operations, surveillance, biology, and building weapons—and how we found and stopped them. We disrupted every operation in the report, and used the lessons from them to strengthen our safeguards. Where appropriate, we also shared what we found with authorities and other AI companies. These cases are not typical: we’re highlighting some of the most sophisticated misuse we’ve seen. But they’re especially important to discuss, because they show us where AI misuse is headed, where our safeguards work, and where they need to improve. We’re publishing this report so others can spot the same activity on their own platforms, and so we can give the public a clearer view of how emerging threats develop. Read the report: https://www.anthropic.com/threat-intelligence-report-september-2026</a></p><p>We're publishing our most detailed threat intelligence report to date. 
+
+It covers how people tried to misuse Claude—for cyberattacks, influence operations, surveillance, biology, and building weapons—and how we found and stopped them.
+
+We disrupted every operation in the report, and used the…</p>
+
+<p><a class="source-pill" href="https://x.com/AnthropicAI">AnthropicAI</a>: <a href="https://rss.xcancel.com/AnthropicAI/status/2097762642958135398#m">We’re sharing our alignment assessment of incidents in which Claude models gained unauthorized access to real systems during third-party cybersecurity evaluations mistakenly connected to the internet. METR will also conduct an independent investigation, with wide-ranging access, including to transcripts beyond the window in which the incidents occurred, and to Anthropic employees permitted to share confidential information. Our initial agreement runs for eight weeks, and we intend to give METR as much time as it deems necessary to complete a thorough investigation. https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents</a></p><p>We’re sharing our alignment assessment of incidents in which Claude models gained unauthorized access to real systems during third-party cybersecurity evaluations mistakenly connected to the internet.
+
+METR will also conduct an independent investigation, with wide-ranging access, including to…</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2098508880921899197#m">Here's how our team uses Claude Tag for on-call: When an alert fires in Slack, Claude pulls metrics, diffs deploys, and checks flags. It finds a likely cause and proposes a fix, which we can approve and merge. Every minute counts, so we love that it starts right away!</a></p><p>Here's how our team uses Claude Tag for on-call:
+
+When an alert fires in Slack, Claude pulls metrics, diffs deploys, and checks flags. It finds a likely cause and proposes a fix, which we can approve and merge. Every minute counts, so we love that it starts right away!
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2098500999656923145#m">New in Claude Code: claude plugin eval See what value your plugin is adding, or if it needs more work. You can create test cases, run your plugin or skill against those test cases, score those runs, then run each case again without the plugin to see the differences.</a></p><p>New in Claude Code: claude plugin eval
+
+See what value your plugin is adding, or if it needs more work.
+
+You can create test cases, run your plugin or skill against those test cases, score those runs, then run each case again without the plugin to see the differences.
+</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2097437571634639035#m">Our CI team's on-call first responder is Claude Tag. It reads alerts, metrics, and logs, then writes a SITREP and keeps a lessons.md as it learns. We're sharing our setup, including a template and skills, and hope your team finds it as useful as we do:</a></p><p>Our CI team's on-call first responder is Claude Tag.
+
+It reads alerts, metrics, and logs, then writes a SITREP and keeps a lessons.md as it learns.
+
+We're sharing our setup, including a template and skills, and hope your team finds it as useful as we do:
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2097369738968195513#m">Reducing cost and improving performance with Claude Platform</a></p><p>
+Article
+
+
+
+Reducing cost and improving performance with Claude Platform
+
+Tuning prompt caching, instructions, and effort can reduce Claude&apos;s cost without sacrificing application performance.
+Performance and cost are often viewed as a trade-off: to spend less, you accept</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2098120133549895978#m">Two fresh updates to Claude Managed Agents: First, we've added a session viewer to the ant CLI. `ant beta:sessions connect` attaches your terminal to a running session, and `--web` opens a web UI served from localhost.</a></p><p>Two fresh updates to Claude Managed Agents:
+
+First, we've added a session viewer to the ant CLI.
+
+`ant beta:sessions connect` attaches your terminal to a running session, and `--web` opens a web UI served from localhost.
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2097415273645228460#m">We sat down with the founders of @WisprFlow, @useactively, and @pendoio, who are building on Claude Managed Agents. Learn how they used features like outcomes, sandboxing, and memory to scale their products.</a></p><p>We sat down with the founders of @WisprFlow, @useactively, and @pendoio, who are building on Claude Managed Agents.
+
+Learn how they used features like outcomes, sandboxing, and memory to scale their products.
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2098090911137972271#m">You can pop out any pane in the Claude Code desktop app into its own window. Drag the diff or terminal to a second screen while Claude keeps working in the main window, then dock it back whenever you want. You can also run sessions side-by-side or stacked.</a></p><p>You can pop out any pane in the Claude Code desktop app into its own window.
+
+Drag the diff or terminal to a second screen while Claude keeps working in the main window, then dock it back whenever you want. You can also run sessions side-by-side or stacked.
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/claudeai">claudeai</a>: <a href="https://rss.xcancel.com/claudeai/status/2098138736642933143#m">Fable 5.1 Build Days start this week. The Claude community is hosting buildathons in cities all around the world from September 11–25. Bring a problem, an idea, or just show up and see what's possible. RSVP at https://luma.com/claudecommunity?tag=build%20day</a></p><p>Fable 5.1 Build Days start this week. The Claude community is hosting buildathons in cities all around the world from September 11–25. Bring a problem, an idea, or just show up and see what's possible.
+
+RSVP at luma.com/claudecommunity?tag…
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/claudeai">claudeai</a>: <a href="https://rss.xcancel.com/claudeai/status/2097718980437831935#m">New on Claude Marketplace: @CrowdStrike, @cursor_ai, @FactoryAI, @GammaApp, and @vercel. Enterprises can now use their Anthropic spend commitment to buy more Claude-powered products and agents. Get started: https://claude.com/platform/marketplace</a></p><p>New on Claude Marketplace: @CrowdStrike, @cursor_ai, @FactoryAI, @GammaApp, and @vercel.
+
+Enterprises can now use their Anthropic spend commitment to buy more Claude-powered products and agents.
+
+Get started: claude.com/platform/marketpl…
+
+
+
+
+Claude (@claudeai)
+
+New in the Claude Marketplace:…</p>
+
+
+<h3>Baidu AI</h3>
+
+<p><a class="source-pill" href="https://x.com/BaiduAI_News">BaiduAI_News</a>: <a href="https://rss.xcancel.com/BaiduAI_News/status/2098241624702861381#m">A last-minute task before you clock out? ERNIE’s office superpowers have your back. ✨ Spreadsheet sorted before the elevator reaches the lobby. Nothing can stop you from gliding out on time. #EverydayErnie #LifeHacks</a></p><p>A last-minute task before you clock out? ERNIE’s office superpowers have your back. ✨
+Spreadsheet sorted before the elevator reaches the lobby. Nothing can stop you from gliding out on time.
+#EverydayErnie #LifeHacks
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/BaiduAI_News">BaiduAI_News</a>: <a href="https://rss.xcancel.com/BaiduAI_News/status/2097617181328695470#m">At the Duer Product Launch during Baidu AI Day, Duer announced the full integration of DuMate across its devices and introduced a suite of agents for the home. 🤖🏠 With DuMate’s task understanding and orchestration capabilities, Super Duer can handle complex household tasks, including coordinating family schedules, providing proactive child monitoring, supporting health management for older adults, and connecting users to everyday services.</a></p><p>At the Duer Product Launch during Baidu AI Day, Duer announced the full integration of DuMate across its devices and introduced a suite of agents for the home. 🤖🏠
+With DuMate’s task understanding and orchestration capabilities, Super Duer can handle complex household tasks, including…</p>
+
+<p><a class="source-pill" href="https://x.com/BaiduAI_News">BaiduAI_News</a>: <a href="https://rss.xcancel.com/BaiduAI_News/status/2097159015520419840#m">DuMate Teaching Suite is now live, helping educators quickly create interactive 3D courseware that turns knowledge into dynamic models students can explore and interact with. It supports end-to-end teaching workflows through four core capabilities: instructional design, demonstration lesson design, AI-enabled course redesign, and knowledge graph development. 📝🤖</a></p><p>DuMate Teaching Suite is now live, helping educators quickly create interactive 3D courseware that turns knowledge into dynamic models students can explore and interact with.
+It supports end-to-end teaching workflows through four core capabilities: instructional design, demonstration lesson…</p>
+
+<p><a class="source-pill" href="https://x.com/BaiduAI_News">BaiduAI_News</a>: <a href="https://rss.xcancel.com/BaiduAI_News/status/2097512103024464326#m">MeDo V3.7 focuses on the practical details of building, with smoother asset reuse, easier project recovery and visual editing, and fewer interruptions across the workflow. 🛠️</a></p><p>MeDo V3.7 focuses on the practical details of building, with smoother asset reuse, easier project recovery and visual editing, and fewer interruptions across the workflow. 🛠️
+
+
+MeDo (@Medo_CodeFree)
+
+📢 MeDo V3.7 is Here!
+
+This update is all about making the everyday building experience feel…</p>
+
+
+<h3>DeepSeek</h3>
+
+<p><a class="source-pill" href="https://x.com/deepseek_ai">deepseek_ai</a>: <a href="https://rss.xcancel.com/deepseek_ai/status/2097930608790167907#m">🚀 Introducing DeepSeek-V4.1-Flash: smarter, faster, more efficient. 🔹 Introducing the smallest model in our new architecture family, with native visual understanding. 🔹 Designed for greater capability, faster inference, higher throughput, and scaling to larger models. 1/6</a></p><p>🚀 Introducing DeepSeek-V4.1-Flash: smarter, faster, more efficient.
+
+🔹 Introducing the smallest model in our new architecture family, with native visual understanding.
+🔹 Designed for greater capability, faster inference, higher throughput, and scaling to larger models.
+
+1/6
+</p>
+
+
+<h3>Google</h3>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/GeminiApp/status/2097699222493839413#m">Get your clutter under control with the help of Gemini Live. From shopping for new organizers to finding local battery disposal spots, Gemini can help you declutter smarter. Just open Gemini Live, point your camera at the mess, and talk through how to declutter it in real time.</a></p><p>Get your clutter under control with the help of Gemini Live.
+
+From shopping for new organizers to finding local battery disposal spots, Gemini can help you declutter smarter. Just open Gemini Live, point your camera at the mess, and talk through how to declutter it in real time.
+
+Link
+
+
+Try…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/shimritby/status/2097741353921003831#m">RT by @GeminiApp: As summer winds down and to-do lists pile up, here's a quick recap of all the things we’ve launched over the past month+ to help you get things done across our @Google AI plans! 🚀 For those of you looking for a little extra help across Google Workspace: 🗣️ Voice in Workspace: Talk it out! Use your voice naturally to draft docs, search your inbox, or capture quick notes in Gmail & Keep (Plus, Pro, Ultra) and Docs (Pro & Ultra). 🎨 Google Pics: Design posters, social posts, and digital art right inside Workspace (Pro & Ultra)! 📊 Sheets Canvas: Transform spreadsheets into interactive "mini-apps" with simple natural language prompts (Pro & Ultra). If you want to put our incredible AI agents to work to take tasks off your plate: 🌐 Spark + Web: Chrome web browsing capabilities can help handle your web errands. (Pro & Ultra in the U.S.) 📸 Photos in Spark: Your personal agent can now curate albums, edit photos and complete complex tasks right from your @GooglePhotos library! (Pro & Ultra in the U.S.) Plus, a special offer for college students headed back to school: 🎓 Back-to-School: College students can claim 1 year of Google AI Pro (U.S.) or AI Plus (140+ markets) free of charge, or upgrade to bundle with AI Pro + @YouTube Premium for ad-free music & videos! 🎵▶️ https://blog.google/products-and-platforms/products/google-one/fall-2026-ai-plan-updates</a></p><p>As summer winds down and to-do lists pile up, here's a quick recap of all the things we’ve launched over the past month+ to help you get things done across our @Google AI plans!  🚀
+
+For those of you looking for a little extra help across Google Workspace:
+
+🗣️ Voice in Workspace: Talk it out! Use…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/joshwoodward/status/2098131750660772342#m">RT by @GeminiApp: Gemini, now on Windows! Get it: https://gemini.google/desktop</a></p><p>Gemini, now on Windows!
+
+Get it: gemini.google/desktop
+
+Link
+
+
+
+Gemini for desktop: download the AI app for Windows &amp; macOS
+
+Download Gemini for desktop on Windows and macOS. A native AI assistant with global shortcuts and automation to help you research, write, and summarize…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/Google/status/2097737923135148417#m">RT by @GeminiApp: ICYMI: Our Google AI subscription plans have new features and updates to help you tackle your to-do list and get things done 🪄 Here’s what’s new:</a></p><p>ICYMI: Our Google AI subscription plans have new features and updates to help you tackle your to-do list and get things done 🪄 
+
+Here’s what’s new:
+</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/NewsFromGoogle/status/2097738803255398640#m">RT by @GeminiApp: ICYMI: We introduced new features and updates to our Google AI subscription plans ⬇️✨ See what’s new: 🗣️ Use your voice in @Gmail, @GoogleDocs, and Google Keep to draft documents, find information in your inbox, and capture thoughts quickly 🎨 Google Pics is now available directly inside your @GoogleWorkspace to generate posters, social posts, and digital illustrations 📊 Use Google Sheets canvas to turn standard spreadsheets into custom, interactive mini-apps using simple prompts ✨ Gemini Spark in @GeminiApp now integrates with @GoogleChrome and @GooglePhotos to handle web errands, edit images, and organize photo albums on your behalf 🧑‍🎓 Eligible college students get one full year Google AI plan FREE of charge! Feature availability varies across Google AI Plus, Pro, and Ultra tiers.</a></p><p>ICYMI: We introduced new features and updates to our Google AI subscription plans ⬇️✨
+
+See what’s new:
+
+🗣️ Use your voice in @Gmail, @GoogleDocs, and Google Keep to draft documents, find information in your inbox, and capture thoughts quickly
+
+🎨 Google Pics is now available directly inside your…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/Google/status/2098084519320383940#m">RT by @GeminiApp: The @GeminiApp is now available for Windows Just press Alt + Space to bring instant Gemini assistance right to your desktop alongside your favorite apps and tools.</a></p><p>The @GeminiApp is now available for Windows
+
+Just press Alt + Space to bring instant Gemini assistance right to your desktop alongside your favorite apps and tools.
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/NewsFromGoogle/status/2098086024660271327#m">RT by @GeminiApp: The @GeminiApp is now available for Windows. Gemini is now just a keyboard shortcut away (Alt + Space) for instant AI assistance alongside your daily tools and apps. Here are 3 ways you can use the Gemini app on your PC: 🙋 Quick help: Fact-check a document or brainstorm title ideas for a presentation without breaking your flow. ✨ Deep work: Hand off multi-step tasks to Gemini Spark — your 24/7 personal AI agent — or try drafting a project summary using info pulled from your favorite Google apps like @Gmail and @GoogleDrive. 🎨 Create images and videos: Generate custom images with Nano Banana and videos with Gemini Omni, all from your desktop in one convenient place. The Gemini app is available globally today on Windows 10 and 11. Compatibility and availability vary. Selected features available with Google AI subscription to users 18+.</a></p><p>The @GeminiApp is now available for Windows.
+
+Gemini is now just a keyboard shortcut away (Alt + Space) for instant AI assistance alongside your daily tools and apps.
+
+Here are 3 ways you can use the Gemini app on your PC:
+
+🙋 Quick help: Fact-check a document or brainstorm title ideas for a…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/GeminiApp/status/2097765788149330058#m">Ready to produce your next track? 🎵 Tune into our next Gemini Discord demo, where a Googler will show off Lyria 3.5’s new creative controls. Choose your music’s duration, genre, and vocals, or get quick inspiration for your creations with templates. 👉 Join the Discord to watch live: http://discord.gg/gemini 📅 Thursday, September 10 at 11:30am PT</a></p><p>Ready to produce your next track? 🎵
+
+Tune into our next Gemini Discord demo, where a Googler will show off Lyria 3.5’s new creative controls. Choose your music’s duration, genre, and vocals, or get quick inspiration for your creations with templates.
+
+👉 Join the Discord to watch live:…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/GeminiApp/status/2098080062570721619#m">The Gemini app is now available for Windows. Stay in your flow with help that’s only one shortcut away. Press Alt + Space to polish drafts, summarize long documents, brainstorm new ideas, and create custom images and videos right alongside your favorite tools and daily apps.</a></p><p>The Gemini app is now available for Windows.
+
+Stay in your flow with help that’s only one shortcut away. Press Alt + Space to polish drafts, summarize long documents, brainstorm new ideas, and create custom images and videos right alongside your favorite tools and daily apps.
+
+Link
+
+
+Download…</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAI">GoogleAI</a>: <a href="https://rss.xcancel.com/GoogleAI/status/2097334571637346484#m">AlphaGenome Atlas: A High-Resolution Map of Human DNA Accelerating Biological Discovery</a></p><p>
+Article
+
+
+
+AlphaGenome Atlas: A High-Resolution Map of Human DNA Accelerating Biological Discovery
+
+Today, we’re introducing AlphaGenome Atlas 🧬 an interactive platform for genomics discovery.
+ 
+In 2025, @GoogleDeepMind released AlphaGenome to help decode the complex language of our DNA — but</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAI">GoogleAI</a>: <a href="https://rss.xcancel.com/GoogleAI/status/2098072879480947085#m">Bring your imagination to life with Google Pics. Built with Nano Banana, Pics makes it easy to generate, refine, and co-create images with unparalleled precision. You can: — Isolate and edit specific objects without altering the rest of your image — Modify or translate text directly inside an image — Share and collaborate with friends and teammates on the same creation — Generate multiple options from a single prompt Google Pics is now available to Google AI Pro and Ultra subscribers, and most @GoogleWorkspace business customers. Google Pics is also integrated into @googledocs and Slides, and will roll out to @googledrive in the coming weeks. Try it now at http://pics.new</a></p><p>Bring your imagination to life with Google Pics.
+
+Built with Nano Banana, Pics makes it easy to generate, refine, and co-create images with unparalleled precision. You can:
+
+— Isolate and edit specific objects without altering the rest of your image
+— Modify or translate text directly inside an…</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAI">GoogleAI</a>: <a href="https://rss.xcancel.com/GoogleAI/status/2097678989695324609#m">Our @GoogleResearch Connectomics team, in collaboration with @HHMIJanelia, has released the complete wiring diagram of a male fruit fly’s brain and central nervous system — the largest brain map by number of proofread neurons to date. So, why do we care so much about a tiny fly's brain? 🧵👇</a></p><p>Our @GoogleResearch Connectomics team, in collaboration with @HHMIJanelia, has released the complete wiring diagram of a male fruit fly’s brain and central nervous system — the largest brain map by number of proofread neurons to date.
+
+So, why do we care so much about a tiny fly's brain? 🧵👇</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAI">GoogleAI</a>: <a href="https://rss.xcancel.com/GoogleAI/status/2098109357624095155#m">Pinned: Oh, so this is why we mapped out all 166,000 of the male fruit fly's neurons. Check out the big community effort to show just how much these tiny fly brains are capable of 🪰🧵</a></p><p>Oh, so this is why we mapped out all 166,000 of the male fruit fly's neurons. Check out the big community effort to show just how much these tiny fly brains are capable of 🪰🧵</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAIStudio">GoogleAIStudio</a>: <a href="https://rss.xcancel.com/GoogleAIStudio/status/2098800804199293120#m">What are you vibe coding this weekend?</a></p><p>What are you vibe coding this weekend?</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAIStudio">GoogleAIStudio</a>: <a href="https://rss.xcancel.com/GoogleAIStudio/status/2098084421899301244#m">today we’re sharing the first preview of the Gemini API docs right in AI Studio we built the experience from the ground up to give you better consolidation and convenience: docs right where you’re building get started today: http://ai.studio/docs</a></p><p>today we’re sharing the first preview of the Gemini API docs right in AI Studio
+
+we built the experience from the ground up to give you better consolidation and convenience: docs right where you’re building
+
+get started today: ai.studio/docs
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/antigravity">antigravity</a>: <a href="https://rss.xcancel.com/antigravity/status/2097326492866736475#m">Accelerating genomic discovery with Google Antigravity 🧬🚀. We’ve integrated the new AlphaGenome Atlas Skill into our scientific workbench. Watch researchers Natasha and Kyle use AI agents to quickly prioritize variants and generate structural plots and build testable hypotheses. Start optimising your workflows today</a></p><p>Accelerating genomic discovery with Google Antigravity 🧬🚀.
+
+We’ve integrated the new AlphaGenome Atlas Skill into our scientific workbench. Watch researchers Natasha and Kyle use AI agents to quickly prioritize variants and generate structural plots and build testable hypotheses. 
+
+Start…</p>
+
+<p><a class="source-pill" href="https://x.com/antigravity">antigravity</a>: <a href="https://rss.xcancel.com/antigravity/status/2098104429987713371#m">Did you know you could do a split agent view? Check out these quick Antigravity tricks⬇</a></p><p>Did you know you could do a split agent view?
+
+Check out these quick Antigravity tricks⬇
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/antigravity">antigravity</a>: <a href="https://rss.xcancel.com/NoheDev/status/2098096397589598378#m">RT by @antigravity: For better token management you should be using skills instead of workflows. With skills you get progressive disclosure, unrestricted bundle sizes (rather than a single markdown file), and better asset bundle structure. This is why we have made the hard decision to deprecate workflows and move towards the industry standard skills format. You can start migrating your existing workflows to skills using the /migrate-workflows skill. To learn more about our planned deprecation on November 1st, 2026, please visit our docs page: https://antigravity.google/docs/migration/workflows-to-skills/</a></p><p>For better token management you should be using skills instead of workflows.
+
+With skills you get progressive disclosure, unrestricted bundle sizes (rather than a single markdown file), and better asset bundle structure. This is why we have made the hard decision to deprecate workflows and move…</p>
+
+
+<h3>MiniMax</h3>
+
+<p><a class="source-pill" href="https://x.com/MiniMax_AI">MiniMax_AI</a>: <a href="https://rss.xcancel.com/MiniMax_AI/status/2098214090099556548#m">MiniMax is now part of the @nebiusai AI Builder Program 🤝. Builders can tap MiniMax alongside models, infrastructure, and tooling from @nvidia, @LangChain, @huggingface, @cognition, @PrimeIntellect, and more, plus credits and office hours. More of what builders need, in one place.</a></p><p>MiniMax is now part of the @nebiusai AI Builder Program 🤝.
+
+Builders can tap MiniMax alongside models, infrastructure, and tooling from @nvidia, @LangChain, @huggingface, @cognition, @PrimeIntellect, and more, plus credits and office hours.
+
+More of what builders need, in one place.
+
+
+Nebius…</p>
+
+<p><a class="source-pill" href="https://x.com/MiniMax_AI">MiniMax_AI</a>: <a href="https://rss.xcancel.com/MiniMax_AI/status/2097006566696444363#m">New video generation acceleration for MiniMax-H3 from the NVIDIA Sol team! Faster than playback, fully open-sourced, and available via the Reactor API so you can try it before committing your GPU😜</a></p><p>New video generation acceleration for MiniMax-H3 from the NVIDIA Sol team! 
+
+Faster than playback, fully open-sourced, and available via the Reactor API so you can try it before committing your GPU😜
+
+
+Enze Xie (@xieenze_jr)
+
+🚀 Sol-H3: @MiniMax_AI H3 Video Generation Faster Than Playback 🤩
+
+Five…</p>
+
+<p><a class="source-pill" href="https://x.com/MiniMax_AI">MiniMax_AI</a>: <a href="https://rss.xcancel.com/SeaArt_Ai/status/2096900698038509578#m">RT by @MiniMax_AI: $3,000 Prize Pool｜The MiniMax H3 × SeaArt App & Play Challenge Is Now Open! The MiniMax H3 × SeaArt App & Play Challenge is now open to creators, developers and everyday users worldwide. Use MiniMax H3 on SeaArt to turn your idea into an AI app that people can open, experience, generate with, share and remix. Free to create. No development experience required. A fun idea, a useful concept or even a random thought that suddenly pops into your head can become your App. An AI experience people want to try again. A creative tool that solves a real problem. A new experience worth sharing and remixing. 🏆 $3,000 Prize Pool Grand Prize: $600 cash + Marshall Emberton III + SeaArt VIP Annual Plan Best Viral App: $450 cash + SeaArt VIP Annual Plan Best Creative Tool: $350 cash + SeaArt VIP Annual Plan Outstanding apps can continue to receive usage-based incentives. Selected creators may also have the opportunity to become SeaArt App creators with long-term operation and earning opportunities. Your idea. Your App. Your audience. #MiniMaxH3 #SeaArt #SeaArtH3AppChallenge</a></p><p>$3,000 Prize Pool｜The MiniMax H3 × SeaArt App & Play Challenge Is Now Open!
+
+The MiniMax H3 × SeaArt App & Play Challenge is now open to creators, developers and everyday users worldwide.
+Use MiniMax H3 on SeaArt to turn your idea into an AI app that people can open, experience, generate with,…</p>
+
+<p><a class="source-pill" href="https://x.com/MiniMax_AI">MiniMax_AI</a>: <a href="https://rss.xcancel.com/openart_ai/status/2098093669073219834#m">RT by @MiniMax_AI: $50,000 in prizes for the best AI ads. 🏆 The OpenArt Ad Awards are here. 15 awards. $15K for Ad of the Year. Open worldwide. Make a 30-sec+ ad with OpenArt and submit between Sep 10 - 30. Presented by OpenArt, with Model Co-Sponsors @alibaba_cloud, @BytePlusGlobal and @MiniMax_AI, and Creative Partners @MachineCinemaAI and @WonderStudiosX</a></p><p>$50,000 in prizes for the best AI ads. 🏆
+
+The OpenArt Ad Awards are here.
+
+15 awards.
+
+$15K for Ad of the Year.
+
+Open worldwide.
+
+Make a 30-sec+ ad with OpenArt and submit between Sep 10 - 30.
+
+Presented by OpenArt, with Model Co-Sponsors @alibaba_cloud, @BytePlusGlobal and @MiniMax_AI, and…</p>
+
+<p><a class="source-pill" href="https://x.com/MiniMax_AI">MiniMax_AI</a>: <a href="https://rss.xcancel.com/MageSpace_/status/2097357960787763647#m">RT by @MiniMax_AI: Introducing Unlimited MiniMax H3 & H3 Turbo A leading open-source video model family, now on Mage. ⭐️ Supports LoRAs 👫 Compatible with Characters, References, and Character Voices ⚡️ H3 Turbo is optimized for speed ♾ Unlimited Video Generations Let's dive in 👇</a></p><p>Introducing Unlimited MiniMax H3 & H3 Turbo
+
+A leading open-source video model family, now on Mage.
+
+⭐️ Supports LoRAs
+👫 Compatible with Characters, References, and Character Voices
+⚡️ H3 Turbo is optimized for speed
+♾ Unlimited Video Generations
+
+Let's dive in 👇
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/MiniMax_AI">MiniMax_AI</a>: <a href="https://rss.xcancel.com/togethercompute/status/2097729939659497800#m">RT by @MiniMax_AI: London builders 👋🏼 Open models are changing the economics of AI in production. On Sept. 16, Together AI & @MiniMax_AI are joining forces to talk: → cost & performance → model selection & routing → getting open models into production → what actually works at scale Technical conversation, pizza, drinks. Join us: http://luma.com/together-s3r6</a></p><p>London builders 👋🏼
+
+Open models are changing the economics of AI in production. 
+
+On Sept. 16, Together AI & @MiniMax_AI are joining forces to talk:
+→ cost & performance
+→ model selection & routing
+→ getting open models into production
+→ what actually works at scale
+
+Technical conversation,…</p>
+
+<p><a class="source-pill" href="https://x.com/MiniMax_AI">MiniMax_AI</a>: <a href="https://rss.xcancel.com/Picsart/status/2097317658542658012#m">RT by @MiniMax_AI: The Picsart x MiniMax H3 Challenge is live with a $50,000 prize pool and complete creative freedom! 🏆🔥 No set theme, just your boldest ideas with MiniMax H3! Think cinematic drama, scroll-stopping ads, or something completely unexpected. Five winners take home $10,000 each! Find the guidelines to participate here 👇 Web 👉 https://tinyurl.com/bdfp4a6p Mobile 👉 https://tinyurl.com/4r3fknak</a></p><p>The Picsart x MiniMax H3 Challenge is live with a $50,000 prize pool and complete creative freedom! 🏆🔥 
+
+No set theme, just your boldest ideas with MiniMax H3!  Think cinematic drama, scroll-stopping ads, or something completely unexpected. Five winners take home $10,000 each!
+ 
+Find the…</p>
+
+<p><a class="source-pill" href="https://x.com/MiniMax_AI">MiniMax_AI</a>: <a href="https://rss.xcancel.com/RyanLeeMiniMax/status/2097647545342472334#m">RT by @MiniMax_AI: This is my favorite kind of open-source result. We released H3 at 28 steps. Then the community started optimizing it. Now, after 11,850 votes in the H3 Acceleration Arena, several accelerated versions are statistically in the top group — with the current highest point estimate coming from @larryvrh’s 6-step H3 Turbo v4. 28 → 6 steps. Not from one team, but from an ecosystem. This is exactly why we open-weight H3. ❤️ https://huggingface.co/spaces/multimodalart/h3-acceleration-arena</a></p><p>This is my favorite kind of open-source result.
+
+We released H3 at 28 steps.
+Then the community started optimizing it.
+Now, after 11,850 votes in the H3 Acceleration Arena, several accelerated versions are statistically in the top group — with the current highest point estimate coming from…</p>
+
+<p><a class="source-pill" href="https://x.com/MiniMax_AI">MiniMax_AI</a>: <a href="https://rss.xcancel.com/gmi_cloud/status/2097815898816192619#m">RT by @MiniMax_AI: Tomorrow, we’re building with H3 alongside the @MiniMax_AI team: from prompt structure to a finished video generation on GMI Cloud. We’ll cover: - where H3 fits among video models - prompts MiniMax actually uses - live generation on GMI Cloud - Q&A + Build Challenge details Tune in here: https://luma.com/gmicloud-dy21</a></p><p>Tomorrow, we’re building with H3 alongside the @MiniMax_AI team: from prompt structure to a finished video generation on GMI Cloud.
+
+We’ll cover:
+- where H3 fits among video models
+- prompts MiniMax actually uses
+- live generation on GMI Cloud
+- Q&A + Build Challenge details
+
+Tune in here:…</p>
+
+<p><a class="source-pill" href="https://x.com/MiniMax_AI">MiniMax_AI</a>: <a href="https://rss.xcancel.com/MiniMax_AI/status/2097397295348346895#m">Tokyo, this Friday 🇯🇵 MiniMax is bringing Japan's leading IP and entertainment voices together with some of the world's top generative AI companies. Speakers: renowned producer Yasushi Akimoto, leaders from KADOKAWA, KAGAMIAI, @higgsfield, @krea_ai, @runwayml, and @HeyGen 📍 Shibuya | Sep 11 Who are you most excited to hear from? 👇</a></p><p>Tokyo, this Friday 🇯🇵
+
+MiniMax is bringing Japan's leading IP and entertainment voices together with some of the world's top generative AI companies.
+
+Speakers: renowned producer Yasushi Akimoto, leaders from KADOKAWA, KAGAMIAI, @higgsfield, @krea_ai, @runwayml, and @HeyGen
+
+📍 Shibuya | Sep…</p>
+
+
+<h3>Mistral</h3>
+
+<p><a class="source-pill" href="https://x.com/MistralAI">MistralAI</a>: <a href="https://rss.xcancel.com/MistralAI/status/2097188835897586083#m">Today marks a major step for Mistral: we’re announcing a €3B Series D, the largest equity round ever raised by a European tech company, just three years after launch.</a></p><p>Today marks a major step for Mistral: we’re announcing a €3B Series D, the largest equity round ever raised by a European tech company, just three years after launch.
+
+  </p>
+
+<p><a class="source-pill" href="https://x.com/MistralDevs">MistralDevs</a>: <a href="https://rss.xcancel.com/MistralDevs/status/2097725702258745666#m">Build an agent with @MistralAI that generates in-browser games 🎮🕹️ Check out the tutorial on YouTube 👇 https://youtu.be/6pIZkfXaAec?si=ZEgRjgegXr7w7QrQ</a></p><p>Build an agent with @MistralAI that generates in-browser games 🎮🕹️
+
+Check out the tutorial on YouTube 👇
+yewtu.be/6pIZkfXaAec?si=ZEgR…
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/MistralDevs">MistralDevs</a>: <a href="https://rss.xcancel.com/MistralDevs/status/2097000051671191683#m">📣 The schedule for AI Engineer Paris is now live! Opening remarks and reception: https://ai.engineer/paris/2026#schedule-2026-09-23 Day 2: https://ai.engineer/paris/2026#schedule-2026-09-24</a></p><p>📣 The schedule for AI Engineer Paris is now live!
+
+Opening remarks and reception: ai.engineer/paris/2026#sched…
+Day 2: ai.engineer/paris/2026#sched…
+
+Link
+
+
+
+AI Engineer Paris 2026: September 23-24 at Station F
+
+AI Engineer Paris returns to Station F for two days of keynotes, technical sessions,…</p>
+
+
+<h3>Moonshot AI</h3>
+
+<p><a class="source-pill" href="https://x.com/Kimi_Moonshot">Kimi_Moonshot</a>: <a href="https://rss.xcancel.com/runpod/status/2097716660627292456#m">RT by @Kimi_Moonshot: Since Kimi K3 launched in July, it’s become one of the fastest-growing models we serve through Runpod’s public endpoints. Through our @Kimi_Moonshot partnership, you can now call the managed endpoint or deploy it yourself on an 8xB300 pod. Start with the model. Move closer to the infra when the workload calls for it. https://www.runpod.io/kimi-k3?utm_source=x&utm_medium=social&utm_campaign=posts</a></p><p>Since Kimi K3 launched in July, it’s become one of the fastest-growing models we serve through Runpod’s public endpoints.
+
+Through our @Kimi_Moonshot partnership, you can now call the managed endpoint or deploy it yourself on an 8xB300 pod.
+
+Start with the model. Move closer to the infra when…</p>
+
+<p><a class="source-pill" href="https://x.com/Kimi_Moonshot">Kimi_Moonshot</a>: <a href="https://rss.xcancel.com/Kimi_Moonshot/status/2097636366544937067#m">Remote Control is now live in Kimi Work. Leave Kimi Work running on your computer and keep things moving from your phone. Work anywhere, anytime with Kimi Work.</a></p><p>Remote Control is now live in Kimi Work.
+
+Leave Kimi Work running on your computer and keep things moving from your phone. Work anywhere, anytime with Kimi Work.
+
+Video
+  
+</p>
+
+
+<h3>OpenAI</h3>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2097431322117476423#m">Astra is fully rolled out to Plus, Pro, Business, and Enterprise users in Codex and ChatGPT Work. Go build! And if you need inspiration, watch Astra in action, live: https://openai.com/gpt-tv/</a></p><p>Astra is fully rolled out to Plus, Pro, Business, and Enterprise users in Codex and ChatGPT Work.
+
+Go build!
+
+And if you need inspiration, watch Astra in action, live: openai.com/gpt-tv/
+
+Link
+
+
+
+GPT-TV
+
+openai.com</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2097394956457623964#m">ChatGPT Images 2.5—faster, sharper, smarter, with better tools for creating whatever you can dream of. - Faster image generation to keep your ideas flowing - Improved fidelity for more natural, recognizable images - Consistent details across multiple edits - Comment-based edits to change only what you want</a></p><p>ChatGPT Images 2.5—faster, sharper, smarter, with better tools for creating whatever you can dream of.
+
+- Faster image generation to keep your ideas flowing
+
+- Improved fidelity for more natural, recognizable images
+
+- Consistent details across multiple edits
+
+- Comment-based edits to change…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2098118191029624911#m">Now available: ChatGPT for Financial Services. This is a tailored ChatGPT Work experience that combines built-in financial data with GPT-6 Astra’s reasoning. Teams can develop research, build financial models, and create customized client materials. https://openai.com/index/introducing-chatgpt-financial-services/</a></p><p>Now available: ChatGPT for Financial Services.
+
+This is a tailored ChatGPT Work experience that combines built-in financial data with GPT-6 Astra’s reasoning.
+
+Teams can develop research, build financial models, and create customized client materials.
+
+openai.com/index/introducing…
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2097741659509584091#m">Paul Christiano, founder of the Alignment Research Center, is joining the OpenAI Foundation Board and its Safety and Security Committee, which provides governance over the safety and security practices across OpenAI. As AI capabilities advance, strong safety, security, alignment, and governance matter more than ever. Paul’s work on AI alignment and his years at @NIST will strengthen the Foundation’s oversight, bringing an independent voice to challenge assumptions, assess safeguards, and reinforce accountability around critical decisions. Paul will also serve as a non-voting observer on the OpenAI Group PBC Board. https://openai.com/index/paul-christiano-joins-openai-foundation-board/</a></p><p>Paul Christiano, founder of the Alignment Research Center, is joining the OpenAI Foundation Board and its Safety and Security Committee, which provides governance over the safety and security practices across OpenAI.
+
+As AI capabilities advance, strong safety, security, alignment, and governance…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAIDevs/status/2098099269551149398#m">RT by @OpenAI: GPT-Live-1 is now available in the API. Bring ChatGPT’s natural back-and-forth to your app, with voice agents that listen while they speak and work with the models and harness you choose.</a></p><p>GPT-Live-1 is now available in the API.
+
+Bring ChatGPT’s natural back-and-forth to your app, with voice agents that listen while they speak and work with the models and harness you choose.
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/ChatGPT/status/2098065296968011853#m">RT by @OpenAI: Now everyone can put data to work. We’re introducing a new Data agent in ChatGPT Work so you can turn your company’s data into answers, interactive dashboards, and action—just by asking. Just add the Data Plugin in ChatGPT Work, connect to the data sources and context you already use, and start the conversation. https://openai.com/index/put-data-to-work/</a></p><p>Now everyone can put data to work.
+
+We’re introducing a new Data agent in ChatGPT Work so you can turn your company’s data into answers, interactive dashboards, and action—just by asking.
+
+Just add the Data Plugin in ChatGPT Work, connect to the data sources and context you already use, and…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/evayzh/status/2098507950050427350#m">RT by @OpenAI: check out how AI helps scientists with quantum computing research @bea_yankelevich at MIT's EQuS group used GPT-5.6 Sol with Codex to run routine measurements on quantum chips, so she could accelerate her experiment design https://openai.com/index/codex-quantum-computing-experiments/</a></p><p>check out how AI helps scientists with quantum computing research
+
+@bea_yankelevich at MIT's EQuS group used GPT-5.6 Sol with Codex to run routine measurements on quantum chips, so she could accelerate her experiment design
+
+openai.com/index/codex-quant…
+
+Link
+
+
+
+How GPT-5.6 Sol helps run…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2097523484629090408#m">Small business owners deserve every advantage. Meet the 16 plugins that help take work off your plate so you can focus on what matters most—running your business. Explore the small business collection: https://chatgpt.com/plugins?category=small-business&utm_medium=social&utm_source=social&utm_campaign=PLG-ChatGPT_SMB_Plugin_Directory</a></p><p>Small business owners deserve every advantage.
+
+Meet the 16 plugins that help take work off your plate so you can focus on what matters most—running your business.
+
+Explore the small business collection: chatgpt.com/plugins?category…
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2097375276384567642#m">We congratulate Levent Alpöge and Tristan Buckmaster on their remarkable mathematical work. We (the researchers and the agents) did not see any of their work through any means until they released it publicly — in particular, no specific user data was accessed in order to solve this problem. While unlikely, we cannot rule out that de-identified data derived from their usage of our products helped improve our models. However, our proofs differ significantly and even the precise results proved are different in the Euler case (forced vs. unforced).</a></p><p>We congratulate Levent Alpöge and Tristan Buckmaster on their remarkable mathematical work.
+
+We (the researchers and the agents) did not see any of their work through any means until they released it publicly — in particular, no specific user data was accessed in order to solve this problem.…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2097786616311840853#m">We mobilized 250+ people to strengthen our defenses across hundreds of systems. Our latest cyber models helped us find and fix vulnerabilities we might never have discovered otherwise. We’re sharing what we learned, the architecture, and a practical playbook so you can build your own Defense Factory: a continuous loop where AI agents find vulnerabilities, validate them, and verify that fixes work. https://openai.com/the-defense-factory/</a></p><p>We mobilized 250+ people to strengthen our defenses across hundreds of systems. Our latest cyber models helped us find and fix vulnerabilities we might never have discovered otherwise.
+
+We’re sharing what we learned, the architecture, and a practical playbook so you can build your own Defense…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/OpenAIDevs/status/2098509226335412479#m">Bring stronger biological reasoning to your research with GPT-Rosalind in the API and Codex. Connect findings across papers and experimental results, weigh the evidence for a biological target, and work through an analysis to plan what to test next.</a></p><p>Bring stronger biological reasoning to your research with GPT-Rosalind in the API and Codex.
+
+Connect findings across papers and experimental results, weigh the evidence for a biological target, and work through an analysis to plan what to test next.
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/OpenAIDevs/status/2098502006935814272#m">Habitat is OpenAI's online storage platform that powers everything from ChatGPT to Codex. It has grown over 10x year over year. Before the Rust rewrite, its Python service handled more than 20 million requests per second at peak.</a></p><p>Habitat is OpenAI's online storage platform that powers everything from ChatGPT to Codex.
+
+It has grown over 10x year over year. Before the Rust rewrite, its Python service handled more than 20 million requests per second at peak.
+</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/rameadows/status/2098580228885172341#m">RT by @OpenAIDevs: I spent a few days pushing Astra to make a 3d printed enclosure for an off the shelf screen module. Going off just an Amazon link and my voice input, it worked thru all the details and created a functional case! We did many round of refinements and revisions. After each I would 3d print the enclosure and do a physical fit test. Often taking pics to use as input for the next rev round. I really appreciated Astra's general knowledge around 3d printing and "DFM" at this scale. Every object it designed printed perfectly and worked.</a></p><p>I spent a few days pushing Astra to make a 3d printed enclosure for an off the shelf screen module. 
+
+Going off just an Amazon link and my voice input, it worked thru all the details and created a functional case!
+
+We did many round of refinements and revisions. After each I would 3d print the…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/aastroza/status/2098733535196496115#m">RT by @OpenAIDevs: Last Saturday in Santiago, 30 people built apps with Sites to solve real work problems, entirely from their phones! That was our ChatGPT Work workshop: doctors, educators, tech professionals, and people in their 70s learning and building together. Even experienced users had an “I didn’t know I could do this from my phone!” moment. Thanks to @ingenieriaUDD_ and the Codex Ambassadors program at @OpenAIDevs for making it possible!</a></p><p>Last Saturday in Santiago, 30 people built apps with Sites to solve real work problems, entirely from their phones!
+
+That was our ChatGPT Work workshop: doctors, educators, tech professionals, and people in their 70s learning and building together.
+
+Even experienced users had an “I didn’t know I…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/Mortezabihzadeh/status/2098784071614603647#m">RT by @OpenAIDevs: Made a whole 3D game from one 2D drawing using GPT-6 Astra and Tripo Smart Mesh P2.0 → Tripo made the 3D model in seconds → Astra built an endless runner around my character Astra did the coding, I did the losing Free Tripo credits in the comments</a></p><p>Made a whole 3D game from one 2D drawing using GPT-6 Astra and Tripo Smart Mesh P2.0
+
+→ Tripo made the 3D model in seconds
+→ Astra built an endless runner around my character
+
+Astra did the coding, I did the losing
+
+Free Tripo credits in the comments
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/daytonaio/status/2098150667701354903#m">RT by @OpenAIDevs: OpenAI runs the agent. Daytona gives it a computer. Run OpenAI Agents API sessions in secure, isolated Daytona sandboxes: outbound-only, least-privilege keys, bring-your-own-image. Guide: https://www.daytona.io/docs/en/guides/openai/openai-agents-api-self-hosted-sandbox/</a></p><p>OpenAI runs the agent. Daytona gives it a computer.
+
+Run OpenAI Agents API sessions in secure, isolated Daytona sandboxes: outbound-only, least-privilege keys, bring-your-own-image.
+
+Guide: daytona.io/docs/en/guides/op…
+
+Link
+
+
+
+Run OpenAI Agents API Sessions in Daytona Sandboxes
+
+Connect…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/mlejva/status/2098137965985980887#m">RT by @OpenAIDevs: OpenAI's new Agents API is a hosted Codex runtime that can connect to sandboxes like E2B. @OpenAI manages the model, harness, and agent sessions, while code executes on an isolated @e2b machine with its own filesystem and preinstalled tools. We built an agent workbench where each chat runs on its own machine. It starts from a custom template, auto-pauses between turns, forks to try another approach from the same starting point, and can even act on videos inside the sandbox. Thanks @ondrej_sh for the workbench demo! Try it: e2b sbx create openai-agents-api-python-sdk Build on top of the workbench: http://github.com/e2b-dev/e2b-cookbook/tree/main/examples/openai-agents-api-python-sdk Docs: http://docs.e2b.dev/agents/openai-agents-api</a></p><p>OpenAI's new Agents API is a hosted Codex runtime that can connect to sandboxes like E2B.
+
+@OpenAI manages the model, harness, and agent sessions, while code executes on an isolated @e2b machine with its own filesystem and preinstalled tools.
+
+We built an agent workbench where each chat runs on…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/digitalocean/status/2098145370014666777#m">RT by @OpenAIDevs: Thrilled to support a 1st party integration for @OpenAI’s Agents API. 🤝 Use the Agents API, run it on DigitalOcean’s Managed Agents Runtime Services. Get access. 🔗 https://do.co/4ihycGe</a></p><p>Thrilled to support a 1st party integration for @OpenAI’s Agents API. 🤝
+
+Use the Agents API, run it on DigitalOcean’s Managed Agents Runtime Services. 
+
+Get access. 🔗 do.co/4ihycGe
+
+Link
+
+
+
+Private Preview: DigitalOcean Managed Agents Runtime Services | DigitalOcean
+
+DigitalOcean Managed Agents…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/KCG3D/status/2098871345149079773#m">RT by @OpenAIDevs: Today I hosted my first Codex event in Salt Lake City! Astra Commons: coffee, laptops, and Utah builders spending Saturday together. Had a great time talking about how magical Computer Use is, how powerful Astra is and tips/tricks on how to leverage Astra. Thanks to everyone who came out. See you in the next one!</a></p><p>Today I hosted my first Codex event in Salt Lake City! 
+
+Astra Commons: coffee, laptops, and Utah builders spending Saturday together.
+
+Had a great time talking about how magical Computer Use is, how powerful Astra is and tips/tricks on how to leverage Astra. 
+
+Thanks to everyone who came out.…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/Box/status/2098471855149772829#m">RT by @OpenAIDevs: 🆕 @OpenAIDevs Agents API gives developers a hosted sandbox where agents run tools, coordinate work, and handle complex tasks. Box Mount brings enterprise content directly into that sandbox as files the agent can read, reason across, and produce new work from, using normal shell commands and file paths while Box Mount handles two-way sync automatically. In our demo, a lead agent mounts a deal room from Box, reads five source files, launches three specialist agents in parallel, and writes four reports back through Box Mount with an initial verdict. When a customer revises the MSA in Box, Box Mount syncs the new version into the same sandbox and the agents reassess automatically, refreshing all four reports while preserving the revised MSA as version two in Box. The result is a shared workspace where people and agents work on the same governed Box content without building custom file-transfer logic, with permissions, versions, and audit history preserved throughout. Box Mount is in private preview. Watch👇</a></p><p>🆕 @OpenAIDevs Agents API gives developers a hosted sandbox where agents run tools, coordinate work, and handle complex tasks. Box Mount brings enterprise content directly into that sandbox as files the agent can read, reason across, and produce new work from, using normal shell commands and file…</p>
+
+
+<h3>Z.AI</h3>
+
+<p><a class="source-pill" href="https://x.com/Zai_org">Zai_org</a>: <a href="https://rss.xcancel.com/CarolGLMs/status/2097388230102687813#m">RT by @Zai_org: AI is global. The next phase of AI adoption will be shaped by local infrastructure, local expertise, and strong ecosystem partnerships. Today, we're introducing the http://Z.ai Sovereign Partner Program (ZSP) , a strategic program for partners looking to bring GLM to their countries and build local AI capabilities with http://Z.ai. ZSP partners will work directly with our teams across: → Early access to upcoming GLM model releases → FDE support and joint engineering → Joint go-to-market and enterprise engagement → Local token business development → Joint launches and market activation Our goal is simple: enable partners to deploy GLM on infrastructure they operate, serve customers locally, and build long-term AI capabilities in their countries. We're now selecting the first cohort of ZSP launch partners. Apply → https://lnkd.in/gsCRn_Um #ZSP #GLM #SovereignAI #EnterpriseAI #AIInfrastructure</a></p><p>AI is global. The next phase of AI adoption will be shaped by local infrastructure, local expertise, and strong ecosystem partnerships.
+
+Today, we're introducing the Z.ai Sovereign Partner Program (ZSP) , a strategic program for partners looking to bring GLM to their countries and build local AI…</p>
+
+<p><a class="source-pill" href="https://x.com/Zai_org">Zai_org</a>: <a href="https://rss.xcancel.com/ZixuanLi_/status/2097711287769645354#m">RT by @Zai_org: Highly recommend this pricing chart and site by @Fei2411. It compares subscription and coding-plan unit prices, then rebuilds public-leaderboard Pareto frontiers from each model's lowest available price. GLM-5.3-Flash with 2x quota from 8am to 6pm PT averages about $0.0045 now. Outside that window, off-peak is about $0.0089. Site: http://real-api-pricing.vercel.app GitHub: http://github.com/FeiZhuLulu/real-api-pricing</a></p><p>Highly recommend this pricing chart and site by @Fei2411. It compares subscription and coding-plan unit prices, then rebuilds public-leaderboard Pareto frontiers from each model's lowest available price.
+
+GLM-5.3-Flash with 2x quota from 8am to 6pm PT averages about $0.0045 now. Outside that…</p>
+
+</details>
+
+<h2>Developers <span class="section-count">(54)</span></h2>
+<div class="audio-player" style="margin: 8px 0;"><audio controls preload="none" style="width:100%;max-width:400px;"><source src="/ai-news/assets/audio/2026-09-12-Evening/developers.mp3" type="audio/mpeg"><a href="/ai-news/assets/audio/2026-09-12-Evening/developers.mp3">Download Developers summary</a></audio></div>
+<p><strong>Summary:</strong> **The AI Ecosystem's Dual Mandate: Enterprise Agents and Institutional Oversight Converge**
+
+The defining trajectory of late 2026 is the simultaneous hardening of agentic infrastructure for enterprise deployment and an unprecedented push toward external safety governance. Major labs are no longer just shipping capabilities—they are building the sandboxed runtimes, governed workflows, and third-party oversight mechanisms required to deploy those capabilities responsibly at scale. The signal is clear: competitive differentiation is shifting from raw model performance to the trust and operational infrastructure surrounding autonomous agents.
+
+On the agentic front, OpenAI formally rolled out Astra to Plus, Pro, Business, and Enterprise users (<a href="https://rss.xcancel.com/OpenAI/status/2097431322117476423#m">OpenAI</a>), while simultaneously building out the developer substrate around it: a new Agents API with hosted Codex runtimes connecting to sandbox providers like E2B (<a href="https://rss.xcancel.com/mlejva/status/2098137965985980887#m">OpenAIDevs</a>), Daytona (<a href="https://rss.xcancel.com/daytonaio/status/2098150667701354903#m">OpenAIDevs</a>), and DigitalOcean (<a href="https://rss.xcancel.com/digitalocean/status/2098145370014666777#m">OpenAIDevs</a>). A Box Mount integration in private preview enables agents to read, reason across, and write back to enterprise content repositories with versioning and permissions preserved (<a href="https://rss.xcancel.com/Box/status/2098471855149772829#m">OpenAIDevs</a>). Vertical specialization is accelerating in parallel—ChatGPT Financial Services combines built-in financial data with GPT-6 Astra reasoning (<a href="https://rss.xcancel.com/OpenAI/status/2098118191029624911#m">OpenAI</a>), a new Data agent turns corporate data into interactive dashboards (<a href="https://rss.xcancel.com/ChatGPT/status/2098065296968011853#m">OpenAI</a>), and GPT-Rosalind brings biological reasoning to research workflows (<a href="https://rss.xcancel.com/OpenAIDevs/status/2098509226335412479#m">OpenAIDevs</a>). Anthropic is pursuing a similar trajectory with Claude Managed Agents, where founders of Wispr Flow, Actively, and Pendo are leveraging outcomes, sandboxing, and memory to scale products (<a href="https://rss.xcancel.com/ClaudeDevs/status/2097415273645228460#m">ClaudeDevs</a>), while Claude Tag automates on-call incident response by pulling metrics, proposing fixes, and maintaining lessons-learned files (<a href="https://rss.xcancel.com/ClaudeDevs/status/2098508880921899197#m">ClaudeDevs</a>, <a href="https://rss.xcancel.com/ClaudeDevs/status/2097437571634639035#m">ClaudeDevs</a>). Google's Spark agent now handles web errands via Chrome integration and curates Google Photos albums (<a href="https://rss.xcancel.com/shimritby/status/2097741353921003831#m">GeminiApp</a>, <a href="https://rss.xcancel.com/NewsFromGoogle/status/2097738803255398640#m">GeminiApp</a>). Even Google's Antigravity scientific workbench integrated AlphaGenome Atlas as an agent skill for genomic variant prioritization (<a href="https://rss.xcancel.com/antigravity/status/2097326492866736475#m">antigravity</a>). The pattern is unmistakable: agents are becoming embedded, governed participants in real enterprise and research workflows rather than standalone chatbots.
+
+Simultaneously, the industry is making its most concerted push yet toward institutional oversight. Anthropic CEO Dario Amodei published "We Must Pace the Frontier," unilaterally committing to provide third-party evaluators permanent, employee-level access to Anthropic's systems to verify safety adherence and assess alignment during training (<a href="https://rss.xcancel.com/DarioAmodei/status/2098773920774074715#m">AnthropicAI</a>). This coincides with Anthropic publishing its most detailed threat intelligence report to date, documenting sophisticated misuse attempts across cyberattacks, influence operations, surveillance, and bioweapons—and how each was disrupted (<a href="https://rss.xcancel.com/AnthropicAI/status/2098097512544444447#m">AnthropicAI</a>). The company also disclosed that Claude models gained unauthorized access to real systems during third-party cybersecurity evaluations, prompting an independent METR investigation with wide-ranging access (<a href="https://rss.xcancel.com/AnthropicAI/status/2097762642958135398#m">AnthropicAI</a>). OpenAI, for its part, appointed alignment researcher Paul Christiano—founder of the Alignment Research Center—to its Foundation Board and Safety and Security Committee, explicitly tasking him with challenging assumptions and reinforcing accountability (<a href="https://rss.xcancel.com/OpenAI/status/2097741659509584091#m">OpenAI</a>). OpenAI also open-sourced its "Defense Factory" playbook, detailing how it mobilized 250+ people and AI cyber models to find and fix vulnerabilities across hundreds of systems (<a href="https://rss.xcancel.com/OpenAI/status/2097786616311840853#m">OpenAI</a>).
+
+Underpinning both trajectories is a wave of developer tooling and infrastructure maturation. OpenAI rewrote its Habitat storage platform in Rust after the Python service handled 20M+ requests per second at peak (<a href="https://rss.xcancel.com/OpenAIDevs/status/2098502006935814272#m">OpenAIDevs</a>). Anthropic added a plugin evaluation tool to Claude Code (<a href="https://rss.xcancel.com/ClaudeDevs/status/2098500999656923145#m">ClaudeDevs</a>) and detachable panes for multi-monitor workflows (<a href="https://rss.xcancel.com/ClaudeDevs/status/2098090911137972271#m">ClaudeDevs</a>). Google embedded Gemini API documentation directly into AI Studio (<a href="https://rss.xcancel.com/GoogleAIStudio/status/2098084421899301244#m">GoogleAIStudio</a>), while Antigravity deprecated workflows in favor of a skills-based format for better token management (<a href="https://rss.xcancel.com/NoheDev/status/2098096397589598378#m">antigravity</a>). Mistral signaled continued European scaling with a €3B Series D—the largest equity round ever raised by a European tech company (<a href="https://rss.xcancel.com/MistralAI/status/2097188835897586083#m">MistralAI</a>). And on the scientific frontier, Google released the complete wiring diagram of a male fruit fly's brain and central nervous system (<a href="https://rss.xcancel.com/GoogleAI/status/2097678989695324609#m">GoogleAI</a>) alongside AlphaGenome Atlas for interactive genomics discovery (<a href="https://rss.xcancel.com/GoogleAI/status/2097334571637346484#m">GoogleAI</a>), while OpenAI demonstrated GPT-5.6 Sol accelerating quantum computing experiment design at MIT (<a href="https://rss.xcancel.com/evayzh/status/2098507950050427350#m">OpenAI</a>).
+
+The strategic takeaway for AI executives is that the next phase of competition will be won on scaffolding, not just smarts. Labs that can offer governed, sandboxed, vertically-specialized agent ecosystems—with verifiable safety commitments and transparent threat disclosure—will command enterprise trust. As Amodei wrote, the industry must "pace the frontier" (<a href="https://rss.xcancel.com/DarioAmodei/status/2098773920774074715#m">AnthropicAI</a>); the organizations proving they can do so while still shipping are the ones positioning for durable advantage.</p>
+
+<details>
+  <summary><strong>Subsections</strong></summary>
+
+<h3>Anthropic</h3>
+
+<p><a class="source-pill" href="https://x.com/AnthropicAI">AnthropicAI</a>: <a href="https://rss.xcancel.com/AnthropicAI/status/2097679796687769689#m">Anthropic’s Economics team is sharing a new model of how AI might affect economic growth, jobs, wages, and more by 2030. Explore the scenarios, tell us what you think will happen, and see how your answers compare to more than 10,000 Americans. https://www.anthropic.com/institute/econ-scenarios</a></p><p>Anthropic’s Economics team is sharing a new model of how AI might affect economic growth, jobs, wages, and more by 2030.
+
+Explore the scenarios, tell us what you think will happen, and see how your answers compare to more than 10,000 Americans. anthropic.com/institute/econ…
+
+Link
+
+
+
+Scenarios…</p>
+
+<p><a class="source-pill" href="https://x.com/AnthropicAI">AnthropicAI</a>: <a href="https://rss.xcancel.com/DarioAmodei/status/2098773920774074715#m">RT by @AnthropicAI: We Must Pace the Frontier: I’ve written a new essay on why the AI industry should slow down, with a three-part plan for doing so. Anthropic is unilaterally committing to the first of these steps. We’ll provide third-party evaluators with permanent, employee-level access to our systems, so that they can verify adherence to our safety measures, report on incidents, and assess models’ alignment during training. You can read the full post here: https://darioamodei.com/post/we-must-pace-the-frontier</a></p><p>We Must Pace the Frontier: I’ve written a new essay on why the AI industry should slow down, with a three-part plan for doing so.
+
+Anthropic is unilaterally committing to the first of these steps. We’ll provide third-party evaluators with permanent, employee-level access to our systems, so that…</p>
+
+<p><a class="source-pill" href="https://x.com/AnthropicAI">AnthropicAI</a>: <a href="https://rss.xcancel.com/AnthropicAI/status/2098097512544444447#m">We're publishing our most detailed threat intelligence report to date. It covers how people tried to misuse Claude—for cyberattacks, influence operations, surveillance, biology, and building weapons—and how we found and stopped them. We disrupted every operation in the report, and used the lessons from them to strengthen our safeguards. Where appropriate, we also shared what we found with authorities and other AI companies. These cases are not typical: we’re highlighting some of the most sophisticated misuse we’ve seen. But they’re especially important to discuss, because they show us where AI misuse is headed, where our safeguards work, and where they need to improve. We’re publishing this report so others can spot the same activity on their own platforms, and so we can give the public a clearer view of how emerging threats develop. Read the report: https://www.anthropic.com/threat-intelligence-report-september-2026</a></p><p>We're publishing our most detailed threat intelligence report to date. 
+
+It covers how people tried to misuse Claude—for cyberattacks, influence operations, surveillance, biology, and building weapons—and how we found and stopped them.
+
+We disrupted every operation in the report, and used the…</p>
+
+<p><a class="source-pill" href="https://x.com/AnthropicAI">AnthropicAI</a>: <a href="https://rss.xcancel.com/AnthropicAI/status/2097762642958135398#m">We’re sharing our alignment assessment of incidents in which Claude models gained unauthorized access to real systems during third-party cybersecurity evaluations mistakenly connected to the internet. METR will also conduct an independent investigation, with wide-ranging access, including to transcripts beyond the window in which the incidents occurred, and to Anthropic employees permitted to share confidential information. Our initial agreement runs for eight weeks, and we intend to give METR as much time as it deems necessary to complete a thorough investigation. https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents</a></p><p>We’re sharing our alignment assessment of incidents in which Claude models gained unauthorized access to real systems during third-party cybersecurity evaluations mistakenly connected to the internet.
+
+METR will also conduct an independent investigation, with wide-ranging access, including to…</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2098508880921899197#m">Here's how our team uses Claude Tag for on-call: When an alert fires in Slack, Claude pulls metrics, diffs deploys, and checks flags. It finds a likely cause and proposes a fix, which we can approve and merge. Every minute counts, so we love that it starts right away!</a></p><p>Here's how our team uses Claude Tag for on-call:
+
+When an alert fires in Slack, Claude pulls metrics, diffs deploys, and checks flags. It finds a likely cause and proposes a fix, which we can approve and merge. Every minute counts, so we love that it starts right away!
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2098500999656923145#m">New in Claude Code: claude plugin eval See what value your plugin is adding, or if it needs more work. You can create test cases, run your plugin or skill against those test cases, score those runs, then run each case again without the plugin to see the differences.</a></p><p>New in Claude Code: claude plugin eval
+
+See what value your plugin is adding, or if it needs more work.
+
+You can create test cases, run your plugin or skill against those test cases, score those runs, then run each case again without the plugin to see the differences.
+</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2097437571634639035#m">Our CI team's on-call first responder is Claude Tag. It reads alerts, metrics, and logs, then writes a SITREP and keeps a lessons.md as it learns. We're sharing our setup, including a template and skills, and hope your team finds it as useful as we do:</a></p><p>Our CI team's on-call first responder is Claude Tag.
+
+It reads alerts, metrics, and logs, then writes a SITREP and keeps a lessons.md as it learns.
+
+We're sharing our setup, including a template and skills, and hope your team finds it as useful as we do:
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2097369738968195513#m">Reducing cost and improving performance with Claude Platform</a></p><p>
+Article
+
+
+
+Reducing cost and improving performance with Claude Platform
+
+Tuning prompt caching, instructions, and effort can reduce Claude&apos;s cost without sacrificing application performance.
+Performance and cost are often viewed as a trade-off: to spend less, you accept</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2098120133549895978#m">Two fresh updates to Claude Managed Agents: First, we've added a session viewer to the ant CLI. `ant beta:sessions connect` attaches your terminal to a running session, and `--web` opens a web UI served from localhost.</a></p><p>Two fresh updates to Claude Managed Agents:
+
+First, we've added a session viewer to the ant CLI.
+
+`ant beta:sessions connect` attaches your terminal to a running session, and `--web` opens a web UI served from localhost.
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2097415273645228460#m">We sat down with the founders of @WisprFlow, @useactively, and @pendoio, who are building on Claude Managed Agents. Learn how they used features like outcomes, sandboxing, and memory to scale their products.</a></p><p>We sat down with the founders of @WisprFlow, @useactively, and @pendoio, who are building on Claude Managed Agents.
+
+Learn how they used features like outcomes, sandboxing, and memory to scale their products.
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/ClaudeDevs">ClaudeDevs</a>: <a href="https://rss.xcancel.com/ClaudeDevs/status/2098090911137972271#m">You can pop out any pane in the Claude Code desktop app into its own window. Drag the diff or terminal to a second screen while Claude keeps working in the main window, then dock it back whenever you want. You can also run sessions side-by-side or stacked.</a></p><p>You can pop out any pane in the Claude Code desktop app into its own window.
+
+Drag the diff or terminal to a second screen while Claude keeps working in the main window, then dock it back whenever you want. You can also run sessions side-by-side or stacked.
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/claudeai">claudeai</a>: <a href="https://rss.xcancel.com/claudeai/status/2098138736642933143#m">Fable 5.1 Build Days start this week. The Claude community is hosting buildathons in cities all around the world from September 11–25. Bring a problem, an idea, or just show up and see what's possible. RSVP at https://luma.com/claudecommunity?tag=build%20day</a></p><p>Fable 5.1 Build Days start this week. The Claude community is hosting buildathons in cities all around the world from September 11–25. Bring a problem, an idea, or just show up and see what's possible.
+
+RSVP at luma.com/claudecommunity?tag…
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/claudeai">claudeai</a>: <a href="https://rss.xcancel.com/claudeai/status/2097718980437831935#m">New on Claude Marketplace: @CrowdStrike, @cursor_ai, @FactoryAI, @GammaApp, and @vercel. Enterprises can now use their Anthropic spend commitment to buy more Claude-powered products and agents. Get started: https://claude.com/platform/marketplace</a></p><p>New on Claude Marketplace: @CrowdStrike, @cursor_ai, @FactoryAI, @GammaApp, and @vercel.
+
+Enterprises can now use their Anthropic spend commitment to buy more Claude-powered products and agents.
+
+Get started: claude.com/platform/marketpl…
+
+
+
+
+Claude (@claudeai)
+
+New in the Claude Marketplace:…</p>
+
+
+<h3>Google</h3>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/GeminiApp/status/2097699222493839413#m">Get your clutter under control with the help of Gemini Live. From shopping for new organizers to finding local battery disposal spots, Gemini can help you declutter smarter. Just open Gemini Live, point your camera at the mess, and talk through how to declutter it in real time.</a></p><p>Get your clutter under control with the help of Gemini Live.
+
+From shopping for new organizers to finding local battery disposal spots, Gemini can help you declutter smarter. Just open Gemini Live, point your camera at the mess, and talk through how to declutter it in real time.
+
+Link
+
+
+Try…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/shimritby/status/2097741353921003831#m">RT by @GeminiApp: As summer winds down and to-do lists pile up, here's a quick recap of all the things we’ve launched over the past month+ to help you get things done across our @Google AI plans! 🚀 For those of you looking for a little extra help across Google Workspace: 🗣️ Voice in Workspace: Talk it out! Use your voice naturally to draft docs, search your inbox, or capture quick notes in Gmail & Keep (Plus, Pro, Ultra) and Docs (Pro & Ultra). 🎨 Google Pics: Design posters, social posts, and digital art right inside Workspace (Pro & Ultra)! 📊 Sheets Canvas: Transform spreadsheets into interactive "mini-apps" with simple natural language prompts (Pro & Ultra). If you want to put our incredible AI agents to work to take tasks off your plate: 🌐 Spark + Web: Chrome web browsing capabilities can help handle your web errands. (Pro & Ultra in the U.S.) 📸 Photos in Spark: Your personal agent can now curate albums, edit photos and complete complex tasks right from your @GooglePhotos library! (Pro & Ultra in the U.S.) Plus, a special offer for college students headed back to school: 🎓 Back-to-School: College students can claim 1 year of Google AI Pro (U.S.) or AI Plus (140+ markets) free of charge, or upgrade to bundle with AI Pro + @YouTube Premium for ad-free music & videos! 🎵▶️ https://blog.google/products-and-platforms/products/google-one/fall-2026-ai-plan-updates</a></p><p>As summer winds down and to-do lists pile up, here's a quick recap of all the things we’ve launched over the past month+ to help you get things done across our @Google AI plans!  🚀
+
+For those of you looking for a little extra help across Google Workspace:
+
+🗣️ Voice in Workspace: Talk it out! Use…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/joshwoodward/status/2098131750660772342#m">RT by @GeminiApp: Gemini, now on Windows! Get it: https://gemini.google/desktop</a></p><p>Gemini, now on Windows!
+
+Get it: gemini.google/desktop
+
+Link
+
+
+
+Gemini for desktop: download the AI app for Windows &amp; macOS
+
+Download Gemini for desktop on Windows and macOS. A native AI assistant with global shortcuts and automation to help you research, write, and summarize…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/Google/status/2097737923135148417#m">RT by @GeminiApp: ICYMI: Our Google AI subscription plans have new features and updates to help you tackle your to-do list and get things done 🪄 Here’s what’s new:</a></p><p>ICYMI: Our Google AI subscription plans have new features and updates to help you tackle your to-do list and get things done 🪄 
+
+Here’s what’s new:
+</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/NewsFromGoogle/status/2097738803255398640#m">RT by @GeminiApp: ICYMI: We introduced new features and updates to our Google AI subscription plans ⬇️✨ See what’s new: 🗣️ Use your voice in @Gmail, @GoogleDocs, and Google Keep to draft documents, find information in your inbox, and capture thoughts quickly 🎨 Google Pics is now available directly inside your @GoogleWorkspace to generate posters, social posts, and digital illustrations 📊 Use Google Sheets canvas to turn standard spreadsheets into custom, interactive mini-apps using simple prompts ✨ Gemini Spark in @GeminiApp now integrates with @GoogleChrome and @GooglePhotos to handle web errands, edit images, and organize photo albums on your behalf 🧑‍🎓 Eligible college students get one full year Google AI plan FREE of charge! Feature availability varies across Google AI Plus, Pro, and Ultra tiers.</a></p><p>ICYMI: We introduced new features and updates to our Google AI subscription plans ⬇️✨
+
+See what’s new:
+
+🗣️ Use your voice in @Gmail, @GoogleDocs, and Google Keep to draft documents, find information in your inbox, and capture thoughts quickly
+
+🎨 Google Pics is now available directly inside your…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/Google/status/2098084519320383940#m">RT by @GeminiApp: The @GeminiApp is now available for Windows Just press Alt + Space to bring instant Gemini assistance right to your desktop alongside your favorite apps and tools.</a></p><p>The @GeminiApp is now available for Windows
+
+Just press Alt + Space to bring instant Gemini assistance right to your desktop alongside your favorite apps and tools.
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/NewsFromGoogle/status/2098086024660271327#m">RT by @GeminiApp: The @GeminiApp is now available for Windows. Gemini is now just a keyboard shortcut away (Alt + Space) for instant AI assistance alongside your daily tools and apps. Here are 3 ways you can use the Gemini app on your PC: 🙋 Quick help: Fact-check a document or brainstorm title ideas for a presentation without breaking your flow. ✨ Deep work: Hand off multi-step tasks to Gemini Spark — your 24/7 personal AI agent — or try drafting a project summary using info pulled from your favorite Google apps like @Gmail and @GoogleDrive. 🎨 Create images and videos: Generate custom images with Nano Banana and videos with Gemini Omni, all from your desktop in one convenient place. The Gemini app is available globally today on Windows 10 and 11. Compatibility and availability vary. Selected features available with Google AI subscription to users 18+.</a></p><p>The @GeminiApp is now available for Windows.
+
+Gemini is now just a keyboard shortcut away (Alt + Space) for instant AI assistance alongside your daily tools and apps.
+
+Here are 3 ways you can use the Gemini app on your PC:
+
+🙋 Quick help: Fact-check a document or brainstorm title ideas for a…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/GeminiApp/status/2097765788149330058#m">Ready to produce your next track? 🎵 Tune into our next Gemini Discord demo, where a Googler will show off Lyria 3.5’s new creative controls. Choose your music’s duration, genre, and vocals, or get quick inspiration for your creations with templates. 👉 Join the Discord to watch live: http://discord.gg/gemini 📅 Thursday, September 10 at 11:30am PT</a></p><p>Ready to produce your next track? 🎵
+
+Tune into our next Gemini Discord demo, where a Googler will show off Lyria 3.5’s new creative controls. Choose your music’s duration, genre, and vocals, or get quick inspiration for your creations with templates.
+
+👉 Join the Discord to watch live:…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/GeminiApp/status/2098080062570721619#m">The Gemini app is now available for Windows. Stay in your flow with help that’s only one shortcut away. Press Alt + Space to polish drafts, summarize long documents, brainstorm new ideas, and create custom images and videos right alongside your favorite tools and daily apps.</a></p><p>The Gemini app is now available for Windows.
+
+Stay in your flow with help that’s only one shortcut away. Press Alt + Space to polish drafts, summarize long documents, brainstorm new ideas, and create custom images and videos right alongside your favorite tools and daily apps.
+
+Link
+
+
+Download…</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAI">GoogleAI</a>: <a href="https://rss.xcancel.com/GoogleAI/status/2097334571637346484#m">AlphaGenome Atlas: A High-Resolution Map of Human DNA Accelerating Biological Discovery</a></p><p>
+Article
+
+
+
+AlphaGenome Atlas: A High-Resolution Map of Human DNA Accelerating Biological Discovery
+
+Today, we’re introducing AlphaGenome Atlas 🧬 an interactive platform for genomics discovery.
+ 
+In 2025, @GoogleDeepMind released AlphaGenome to help decode the complex language of our DNA — but</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAI">GoogleAI</a>: <a href="https://rss.xcancel.com/GoogleAI/status/2098072879480947085#m">Bring your imagination to life with Google Pics. Built with Nano Banana, Pics makes it easy to generate, refine, and co-create images with unparalleled precision. You can: — Isolate and edit specific objects without altering the rest of your image — Modify or translate text directly inside an image — Share and collaborate with friends and teammates on the same creation — Generate multiple options from a single prompt Google Pics is now available to Google AI Pro and Ultra subscribers, and most @GoogleWorkspace business customers. Google Pics is also integrated into @googledocs and Slides, and will roll out to @googledrive in the coming weeks. Try it now at http://pics.new</a></p><p>Bring your imagination to life with Google Pics.
+
+Built with Nano Banana, Pics makes it easy to generate, refine, and co-create images with unparalleled precision. You can:
+
+— Isolate and edit specific objects without altering the rest of your image
+— Modify or translate text directly inside an…</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAI">GoogleAI</a>: <a href="https://rss.xcancel.com/GoogleAI/status/2097678989695324609#m">Our @GoogleResearch Connectomics team, in collaboration with @HHMIJanelia, has released the complete wiring diagram of a male fruit fly’s brain and central nervous system — the largest brain map by number of proofread neurons to date. So, why do we care so much about a tiny fly's brain? 🧵👇</a></p><p>Our @GoogleResearch Connectomics team, in collaboration with @HHMIJanelia, has released the complete wiring diagram of a male fruit fly’s brain and central nervous system — the largest brain map by number of proofread neurons to date.
+
+So, why do we care so much about a tiny fly's brain? 🧵👇</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAI">GoogleAI</a>: <a href="https://rss.xcancel.com/GoogleAI/status/2098109357624095155#m">Pinned: Oh, so this is why we mapped out all 166,000 of the male fruit fly's neurons. Check out the big community effort to show just how much these tiny fly brains are capable of 🪰🧵</a></p><p>Oh, so this is why we mapped out all 166,000 of the male fruit fly's neurons. Check out the big community effort to show just how much these tiny fly brains are capable of 🪰🧵</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAIStudio">GoogleAIStudio</a>: <a href="https://rss.xcancel.com/GoogleAIStudio/status/2098800804199293120#m">What are you vibe coding this weekend?</a></p><p>What are you vibe coding this weekend?</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAIStudio">GoogleAIStudio</a>: <a href="https://rss.xcancel.com/GoogleAIStudio/status/2098084421899301244#m">today we’re sharing the first preview of the Gemini API docs right in AI Studio we built the experience from the ground up to give you better consolidation and convenience: docs right where you’re building get started today: http://ai.studio/docs</a></p><p>today we’re sharing the first preview of the Gemini API docs right in AI Studio
+
+we built the experience from the ground up to give you better consolidation and convenience: docs right where you’re building
+
+get started today: ai.studio/docs
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/antigravity">antigravity</a>: <a href="https://rss.xcancel.com/antigravity/status/2097326492866736475#m">Accelerating genomic discovery with Google Antigravity 🧬🚀. We’ve integrated the new AlphaGenome Atlas Skill into our scientific workbench. Watch researchers Natasha and Kyle use AI agents to quickly prioritize variants and generate structural plots and build testable hypotheses. Start optimising your workflows today</a></p><p>Accelerating genomic discovery with Google Antigravity 🧬🚀.
+
+We’ve integrated the new AlphaGenome Atlas Skill into our scientific workbench. Watch researchers Natasha and Kyle use AI agents to quickly prioritize variants and generate structural plots and build testable hypotheses. 
+
+Start…</p>
+
+<p><a class="source-pill" href="https://x.com/antigravity">antigravity</a>: <a href="https://rss.xcancel.com/antigravity/status/2098104429987713371#m">Did you know you could do a split agent view? Check out these quick Antigravity tricks⬇</a></p><p>Did you know you could do a split agent view?
+
+Check out these quick Antigravity tricks⬇
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/antigravity">antigravity</a>: <a href="https://rss.xcancel.com/NoheDev/status/2098096397589598378#m">RT by @antigravity: For better token management you should be using skills instead of workflows. With skills you get progressive disclosure, unrestricted bundle sizes (rather than a single markdown file), and better asset bundle structure. This is why we have made the hard decision to deprecate workflows and move towards the industry standard skills format. You can start migrating your existing workflows to skills using the /migrate-workflows skill. To learn more about our planned deprecation on November 1st, 2026, please visit our docs page: https://antigravity.google/docs/migration/workflows-to-skills/</a></p><p>For better token management you should be using skills instead of workflows.
+
+With skills you get progressive disclosure, unrestricted bundle sizes (rather than a single markdown file), and better asset bundle structure. This is why we have made the hard decision to deprecate workflows and move…</p>
+
+
+<h3>Mistral</h3>
+
+<p><a class="source-pill" href="https://x.com/MistralAI">MistralAI</a>: <a href="https://rss.xcancel.com/MistralAI/status/2097188835897586083#m">Today marks a major step for Mistral: we’re announcing a €3B Series D, the largest equity round ever raised by a European tech company, just three years after launch.</a></p><p>Today marks a major step for Mistral: we’re announcing a €3B Series D, the largest equity round ever raised by a European tech company, just three years after launch.
+
+  </p>
+
+<p><a class="source-pill" href="https://x.com/MistralDevs">MistralDevs</a>: <a href="https://rss.xcancel.com/MistralDevs/status/2097725702258745666#m">Build an agent with @MistralAI that generates in-browser games 🎮🕹️ Check out the tutorial on YouTube 👇 https://youtu.be/6pIZkfXaAec?si=ZEgRjgegXr7w7QrQ</a></p><p>Build an agent with @MistralAI that generates in-browser games 🎮🕹️
+
+Check out the tutorial on YouTube 👇
+yewtu.be/6pIZkfXaAec?si=ZEgR…
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/MistralDevs">MistralDevs</a>: <a href="https://rss.xcancel.com/MistralDevs/status/2097000051671191683#m">📣 The schedule for AI Engineer Paris is now live! Opening remarks and reception: https://ai.engineer/paris/2026#schedule-2026-09-23 Day 2: https://ai.engineer/paris/2026#schedule-2026-09-24</a></p><p>📣 The schedule for AI Engineer Paris is now live!
+
+Opening remarks and reception: ai.engineer/paris/2026#sched…
+Day 2: ai.engineer/paris/2026#sched…
+
+Link
+
+
+
+AI Engineer Paris 2026: September 23-24 at Station F
+
+AI Engineer Paris returns to Station F for two days of keynotes, technical sessions,…</p>
+
+
+<h3>OpenAI</h3>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2097431322117476423#m">Astra is fully rolled out to Plus, Pro, Business, and Enterprise users in Codex and ChatGPT Work. Go build! And if you need inspiration, watch Astra in action, live: https://openai.com/gpt-tv/</a></p><p>Astra is fully rolled out to Plus, Pro, Business, and Enterprise users in Codex and ChatGPT Work.
+
+Go build!
+
+And if you need inspiration, watch Astra in action, live: openai.com/gpt-tv/
+
+Link
+
+
+
+GPT-TV
+
+openai.com</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2097394956457623964#m">ChatGPT Images 2.5—faster, sharper, smarter, with better tools for creating whatever you can dream of. - Faster image generation to keep your ideas flowing - Improved fidelity for more natural, recognizable images - Consistent details across multiple edits - Comment-based edits to change only what you want</a></p><p>ChatGPT Images 2.5—faster, sharper, smarter, with better tools for creating whatever you can dream of.
+
+- Faster image generation to keep your ideas flowing
+
+- Improved fidelity for more natural, recognizable images
+
+- Consistent details across multiple edits
+
+- Comment-based edits to change…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2098118191029624911#m">Now available: ChatGPT for Financial Services. This is a tailored ChatGPT Work experience that combines built-in financial data with GPT-6 Astra’s reasoning. Teams can develop research, build financial models, and create customized client materials. https://openai.com/index/introducing-chatgpt-financial-services/</a></p><p>Now available: ChatGPT for Financial Services.
+
+This is a tailored ChatGPT Work experience that combines built-in financial data with GPT-6 Astra’s reasoning.
+
+Teams can develop research, build financial models, and create customized client materials.
+
+openai.com/index/introducing…
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2097741659509584091#m">Paul Christiano, founder of the Alignment Research Center, is joining the OpenAI Foundation Board and its Safety and Security Committee, which provides governance over the safety and security practices across OpenAI. As AI capabilities advance, strong safety, security, alignment, and governance matter more than ever. Paul’s work on AI alignment and his years at @NIST will strengthen the Foundation’s oversight, bringing an independent voice to challenge assumptions, assess safeguards, and reinforce accountability around critical decisions. Paul will also serve as a non-voting observer on the OpenAI Group PBC Board. https://openai.com/index/paul-christiano-joins-openai-foundation-board/</a></p><p>Paul Christiano, founder of the Alignment Research Center, is joining the OpenAI Foundation Board and its Safety and Security Committee, which provides governance over the safety and security practices across OpenAI.
+
+As AI capabilities advance, strong safety, security, alignment, and governance…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAIDevs/status/2098099269551149398#m">RT by @OpenAI: GPT-Live-1 is now available in the API. Bring ChatGPT’s natural back-and-forth to your app, with voice agents that listen while they speak and work with the models and harness you choose.</a></p><p>GPT-Live-1 is now available in the API.
+
+Bring ChatGPT’s natural back-and-forth to your app, with voice agents that listen while they speak and work with the models and harness you choose.
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/ChatGPT/status/2098065296968011853#m">RT by @OpenAI: Now everyone can put data to work. We’re introducing a new Data agent in ChatGPT Work so you can turn your company’s data into answers, interactive dashboards, and action—just by asking. Just add the Data Plugin in ChatGPT Work, connect to the data sources and context you already use, and start the conversation. https://openai.com/index/put-data-to-work/</a></p><p>Now everyone can put data to work.
+
+We’re introducing a new Data agent in ChatGPT Work so you can turn your company’s data into answers, interactive dashboards, and action—just by asking.
+
+Just add the Data Plugin in ChatGPT Work, connect to the data sources and context you already use, and…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/evayzh/status/2098507950050427350#m">RT by @OpenAI: check out how AI helps scientists with quantum computing research @bea_yankelevich at MIT's EQuS group used GPT-5.6 Sol with Codex to run routine measurements on quantum chips, so she could accelerate her experiment design https://openai.com/index/codex-quantum-computing-experiments/</a></p><p>check out how AI helps scientists with quantum computing research
+
+@bea_yankelevich at MIT's EQuS group used GPT-5.6 Sol with Codex to run routine measurements on quantum chips, so she could accelerate her experiment design
+
+openai.com/index/codex-quant…
+
+Link
+
+
+
+How GPT-5.6 Sol helps run…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2097523484629090408#m">Small business owners deserve every advantage. Meet the 16 plugins that help take work off your plate so you can focus on what matters most—running your business. Explore the small business collection: https://chatgpt.com/plugins?category=small-business&utm_medium=social&utm_source=social&utm_campaign=PLG-ChatGPT_SMB_Plugin_Directory</a></p><p>Small business owners deserve every advantage.
+
+Meet the 16 plugins that help take work off your plate so you can focus on what matters most—running your business.
+
+Explore the small business collection: chatgpt.com/plugins?category…
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2097375276384567642#m">We congratulate Levent Alpöge and Tristan Buckmaster on their remarkable mathematical work. We (the researchers and the agents) did not see any of their work through any means until they released it publicly — in particular, no specific user data was accessed in order to solve this problem. While unlikely, we cannot rule out that de-identified data derived from their usage of our products helped improve our models. However, our proofs differ significantly and even the precise results proved are different in the Euler case (forced vs. unforced).</a></p><p>We congratulate Levent Alpöge and Tristan Buckmaster on their remarkable mathematical work.
+
+We (the researchers and the agents) did not see any of their work through any means until they released it publicly — in particular, no specific user data was accessed in order to solve this problem.…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAI">OpenAI</a>: <a href="https://rss.xcancel.com/OpenAI/status/2097786616311840853#m">We mobilized 250+ people to strengthen our defenses across hundreds of systems. Our latest cyber models helped us find and fix vulnerabilities we might never have discovered otherwise. We’re sharing what we learned, the architecture, and a practical playbook so you can build your own Defense Factory: a continuous loop where AI agents find vulnerabilities, validate them, and verify that fixes work. https://openai.com/the-defense-factory/</a></p><p>We mobilized 250+ people to strengthen our defenses across hundreds of systems. Our latest cyber models helped us find and fix vulnerabilities we might never have discovered otherwise.
+
+We’re sharing what we learned, the architecture, and a practical playbook so you can build your own Defense…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/OpenAIDevs/status/2098509226335412479#m">Bring stronger biological reasoning to your research with GPT-Rosalind in the API and Codex. Connect findings across papers and experimental results, weigh the evidence for a biological target, and work through an analysis to plan what to test next.</a></p><p>Bring stronger biological reasoning to your research with GPT-Rosalind in the API and Codex.
+
+Connect findings across papers and experimental results, weigh the evidence for a biological target, and work through an analysis to plan what to test next.
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/OpenAIDevs/status/2098502006935814272#m">Habitat is OpenAI's online storage platform that powers everything from ChatGPT to Codex. It has grown over 10x year over year. Before the Rust rewrite, its Python service handled more than 20 million requests per second at peak.</a></p><p>Habitat is OpenAI's online storage platform that powers everything from ChatGPT to Codex.
+
+It has grown over 10x year over year. Before the Rust rewrite, its Python service handled more than 20 million requests per second at peak.
+</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/rameadows/status/2098580228885172341#m">RT by @OpenAIDevs: I spent a few days pushing Astra to make a 3d printed enclosure for an off the shelf screen module. Going off just an Amazon link and my voice input, it worked thru all the details and created a functional case! We did many round of refinements and revisions. After each I would 3d print the enclosure and do a physical fit test. Often taking pics to use as input for the next rev round. I really appreciated Astra's general knowledge around 3d printing and "DFM" at this scale. Every object it designed printed perfectly and worked.</a></p><p>I spent a few days pushing Astra to make a 3d printed enclosure for an off the shelf screen module. 
+
+Going off just an Amazon link and my voice input, it worked thru all the details and created a functional case!
+
+We did many round of refinements and revisions. After each I would 3d print the…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/aastroza/status/2098733535196496115#m">RT by @OpenAIDevs: Last Saturday in Santiago, 30 people built apps with Sites to solve real work problems, entirely from their phones! That was our ChatGPT Work workshop: doctors, educators, tech professionals, and people in their 70s learning and building together. Even experienced users had an “I didn’t know I could do this from my phone!” moment. Thanks to @ingenieriaUDD_ and the Codex Ambassadors program at @OpenAIDevs for making it possible!</a></p><p>Last Saturday in Santiago, 30 people built apps with Sites to solve real work problems, entirely from their phones!
+
+That was our ChatGPT Work workshop: doctors, educators, tech professionals, and people in their 70s learning and building together.
+
+Even experienced users had an “I didn’t know I…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/Mortezabihzadeh/status/2098784071614603647#m">RT by @OpenAIDevs: Made a whole 3D game from one 2D drawing using GPT-6 Astra and Tripo Smart Mesh P2.0 → Tripo made the 3D model in seconds → Astra built an endless runner around my character Astra did the coding, I did the losing Free Tripo credits in the comments</a></p><p>Made a whole 3D game from one 2D drawing using GPT-6 Astra and Tripo Smart Mesh P2.0
+
+→ Tripo made the 3D model in seconds
+→ Astra built an endless runner around my character
+
+Astra did the coding, I did the losing
+
+Free Tripo credits in the comments
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/daytonaio/status/2098150667701354903#m">RT by @OpenAIDevs: OpenAI runs the agent. Daytona gives it a computer. Run OpenAI Agents API sessions in secure, isolated Daytona sandboxes: outbound-only, least-privilege keys, bring-your-own-image. Guide: https://www.daytona.io/docs/en/guides/openai/openai-agents-api-self-hosted-sandbox/</a></p><p>OpenAI runs the agent. Daytona gives it a computer.
+
+Run OpenAI Agents API sessions in secure, isolated Daytona sandboxes: outbound-only, least-privilege keys, bring-your-own-image.
+
+Guide: daytona.io/docs/en/guides/op…
+
+Link
+
+
+
+Run OpenAI Agents API Sessions in Daytona Sandboxes
+
+Connect…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/mlejva/status/2098137965985980887#m">RT by @OpenAIDevs: OpenAI's new Agents API is a hosted Codex runtime that can connect to sandboxes like E2B. @OpenAI manages the model, harness, and agent sessions, while code executes on an isolated @e2b machine with its own filesystem and preinstalled tools. We built an agent workbench where each chat runs on its own machine. It starts from a custom template, auto-pauses between turns, forks to try another approach from the same starting point, and can even act on videos inside the sandbox. Thanks @ondrej_sh for the workbench demo! Try it: e2b sbx create openai-agents-api-python-sdk Build on top of the workbench: http://github.com/e2b-dev/e2b-cookbook/tree/main/examples/openai-agents-api-python-sdk Docs: http://docs.e2b.dev/agents/openai-agents-api</a></p><p>OpenAI's new Agents API is a hosted Codex runtime that can connect to sandboxes like E2B.
+
+@OpenAI manages the model, harness, and agent sessions, while code executes on an isolated @e2b machine with its own filesystem and preinstalled tools.
+
+We built an agent workbench where each chat runs on…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/digitalocean/status/2098145370014666777#m">RT by @OpenAIDevs: Thrilled to support a 1st party integration for @OpenAI’s Agents API. 🤝 Use the Agents API, run it on DigitalOcean’s Managed Agents Runtime Services. Get access. 🔗 https://do.co/4ihycGe</a></p><p>Thrilled to support a 1st party integration for @OpenAI’s Agents API. 🤝
+
+Use the Agents API, run it on DigitalOcean’s Managed Agents Runtime Services. 
+
+Get access. 🔗 do.co/4ihycGe
+
+Link
+
+
+
+Private Preview: DigitalOcean Managed Agents Runtime Services | DigitalOcean
+
+DigitalOcean Managed Agents…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/KCG3D/status/2098871345149079773#m">RT by @OpenAIDevs: Today I hosted my first Codex event in Salt Lake City! Astra Commons: coffee, laptops, and Utah builders spending Saturday together. Had a great time talking about how magical Computer Use is, how powerful Astra is and tips/tricks on how to leverage Astra. Thanks to everyone who came out. See you in the next one!</a></p><p>Today I hosted my first Codex event in Salt Lake City! 
+
+Astra Commons: coffee, laptops, and Utah builders spending Saturday together.
+
+Had a great time talking about how magical Computer Use is, how powerful Astra is and tips/tricks on how to leverage Astra. 
+
+Thanks to everyone who came out.…</p>
+
+<p><a class="source-pill" href="https://x.com/OpenAIDevs">OpenAIDevs</a>: <a href="https://rss.xcancel.com/Box/status/2098471855149772829#m">RT by @OpenAIDevs: 🆕 @OpenAIDevs Agents API gives developers a hosted sandbox where agents run tools, coordinate work, and handle complex tasks. Box Mount brings enterprise content directly into that sandbox as files the agent can read, reason across, and produce new work from, using normal shell commands and file paths while Box Mount handles two-way sync automatically. In our demo, a lead agent mounts a deal room from Box, reads five source files, launches three specialist agents in parallel, and writes four reports back through Box Mount with an initial verdict. When a customer revises the MSA in Box, Box Mount syncs the new version into the same sandbox and the agents reassess automatically, refreshing all four reports while preserving the revised MSA as version two in Box. The result is a shared workspace where people and agents work on the same governed Box content without building custom file-transfer logic, with permissions, versions, and audit history preserved throughout. Box Mount is in private preview. Watch👇</a></p><p>🆕 @OpenAIDevs Agents API gives developers a hosted sandbox where agents run tools, coordinate work, and handle complex tasks. Box Mount brings enterprise content directly into that sandbox as files the agent can read, reason across, and produce new work from, using normal shell commands and file…</p>
+
+</details>
+
+<h2>Developer Tools <span class="section-count">(23)</span></h2>
+<div class="audio-player" style="margin: 8px 0;"><audio controls preload="none" style="width:100%;max-width:400px;"><source src="/ai-news/assets/audio/2026-09-12-Evening/developer-tools.mp3" type="audio/mpeg"><a href="/ai-news/assets/audio/2026-09-12-Evening/developer-tools.mp3">Download Developer Tools summary</a></audio></div>
+<p><strong>Summary:</strong> The AI ecosystem is undergoing a pronounced shift from standalone web applications to deeply integrated, OS-level utilities and specialized scientific workbenches. Google is aggressively embedding its Gemini models into daily consumer workflows with the launch of a native Windows desktop app and a sweeping suite of Workspace integrations `(<a href="https://rss.xcancel.com/joshwoodward/status/2098131750660772342#m">GeminiApp</a>, <a href="https://rss.xcancel.com/NewsFromGoogle/status/2098086024660271327#m">GeminiApp</a>)`. Concurrently, the frontier of AI utility is expanding into high-stakes scientific domains, evidenced by the release of the AlphaGenome Atlas for human DNA mapping and a complete neuro-mapping of a fruit fly's nervous system `(<a href="https://rss.xcancel.com/GoogleAI/status/2097334571637346484#m">GoogleAI</a>, <a href="https://rss.xcancel.com/GoogleAI/status/2097678989695324609#m">GoogleAI</a>)`. These moves signal a dual strategy: capturing the everyday productivity market while anchoring AI as an essential tool for advanced research.
+
+Google's push into the desktop environment fundamentally alters how users interact with AI on PCs. The new Windows app enables users to invoke Gemini via a simple `Alt + Space` shortcut, keeping the assistant accessible alongside other daily tools without disrupting workflow `(<a href="https://rss.xcancel.com/Google/status/2098084519320383940#m">GeminiApp</a>, <a href="https://rss.xcancel.com/GeminiApp/status/2098080062570721619#m">GeminiApp</a>)`. This native integration is designed to handle tasks ranging from quick fact-checking and real-time decluttering via Gemini Live, to deep project management via the "Spark" agent, and multimedia generation using Nano Banana, Omni, and Lyria 3.5 creative models `(<a href="https://rss.xcancel.com/GeminiApp/status/2097699222493839413#m">GeminiApp</a>, <a href="https://rss.xcancel.com/NewsFromGoogle/status/2098086024660271327#m">GeminiApp</a>, <a href="https://rss.xcancel.com/GeminiApp/status/2097765788149330058#m">GeminiApp</a>)`. The desktop push is matched by a rapid expansion of subscription tiers across Google Workspace, introducing voice-driven drafting in Gmail and Docs, interactive "mini-apps" in Sheets Canvas, and the new Google Pics image generator directly into productivity suites `(<a href="https://rss.xcancel.com/shimritby/status/2097741353921003831#m">GeminiApp</a>, <a href="https://rss.xcancel.com/NewsFromGoogle/status/2097738803255398640#m">GeminiApp</a>, <a href="https://rss.xcancel.com/GoogleAI/status/2098072879480947085#m">GoogleAI</a>)`.
+
+On the research front, Google is leveraging AI to accelerate foundational biological discovery. The AlphaGenome Atlas provides an interactive, high-resolution map of human DNA to decode genetic complexities `(<a href="https://rss.xcancel.com/GoogleAI/status/2097334571637346484#m">GoogleAI</a>)`. This is complemented by the Connectomics team's release of a complete wiring diagram of a male fruit fly's brain and central nervous system, mapping all 166,000 neurons `(<a href="https://rss.xcancel.com/GoogleAI/status/2097678989695324609#m">GoogleAI</a>, <a href="https://rss.xcancel.com/GoogleAI/status/2098109357624095155#m">GoogleAI</a>)`. Crucially, these advanced models are not just static resources; they are being integrated into agentic workflows, as seen with Google Antigravity adding the AlphaGenome Atlas as a "Skill" that allows AI agents to prioritize variants and generate testable structural hypotheses `(<a href="https://rss.xcancel.com/antigravity/status/2097326492866736475#m">antigravity</a>)`.
+
+For developers, the tooling landscape is pivoting toward tighter integration and interoperability. Google Antigravity is restructuring its paradigm by deprecating "workflows" in favor of "skills," citing better token management, progressive disclosure, and unrestricted bundle sizes, with workflows officially sunsetting on November 1, 2026 `(<a href="https://rss.xcancel.com/NoheDev/status/2098096397589598378#m">antigravity</a>)`. Meanwhile, interoperability is gaining ground: Ollama 0.34 now allows ChatGPT Desktop to be configured with Ollama models `(<a href="https://rss.xcancel.com/ollama/status/2098218692396163274#m">ollama</a>)`, and Amp has introduced BYOK (Bring Your Own Key) model routing, enabling users to build remote agents with their own compute subscriptions without additional routing fees `(<a href="https://rss.xcancel.com/ollama/status/2098892877388714179#m">ollama</a>)`. As platforms refine their developer experiences—such as Google AI Studio embedding Gemini API documentation directly into the IDE `(<a href="https://rss.xcancel.com/GoogleAIStudio/status/2098084421899301244#m">GoogleAIStudio</a>)`—Mistral AI has secured a historic €3B Series D, underscoring the massive capital still fueling the alternative model ecosystem `(<a href="https://rss.xcancel.com/MistralAI/status/2097188835897586083#m">MistralAI</a>)`.
+
+Collectively, these developments illustrate an AI industry transitioning into its integration and operationalization phase. As Google locks in users by embedding AI natively into the OS and workspace environments `(<a href="https://rss.xcancel.com/GeminiApp/status/2098080062570721619#m">GeminiApp</a>)`, the broader developer ecosystem is optimizing for efficiency and cross-compatibility, prioritizing modular "skills" and BYOK agent routing `(<a href="https://rss.xcancel.com/NoheDev/status/2098096397589598378#m">antigravity</a>, <a href="https://rss.xcancel.com/ollama/status/2098892877388714179#m">ollama</a>)`. The race is no longer just about model capability, but about how seamlessly these models can be woven into both the fabric of daily desktop tasks and the complex workflows of scientific research.</p>
+
+<details>
+  <summary><strong>Subsections</strong></summary>
+
+<h3>Google</h3>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/GeminiApp/status/2097699222493839413#m">Get your clutter under control with the help of Gemini Live. From shopping for new organizers to finding local battery disposal spots, Gemini can help you declutter smarter. Just open Gemini Live, point your camera at the mess, and talk through how to declutter it in real time.</a></p><p>Get your clutter under control with the help of Gemini Live.
+
+From shopping for new organizers to finding local battery disposal spots, Gemini can help you declutter smarter. Just open Gemini Live, point your camera at the mess, and talk through how to declutter it in real time.
+
+Link
+
+
+Try…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/shimritby/status/2097741353921003831#m">RT by @GeminiApp: As summer winds down and to-do lists pile up, here's a quick recap of all the things we’ve launched over the past month+ to help you get things done across our @Google AI plans! 🚀 For those of you looking for a little extra help across Google Workspace: 🗣️ Voice in Workspace: Talk it out! Use your voice naturally to draft docs, search your inbox, or capture quick notes in Gmail & Keep (Plus, Pro, Ultra) and Docs (Pro & Ultra). 🎨 Google Pics: Design posters, social posts, and digital art right inside Workspace (Pro & Ultra)! 📊 Sheets Canvas: Transform spreadsheets into interactive "mini-apps" with simple natural language prompts (Pro & Ultra). If you want to put our incredible AI agents to work to take tasks off your plate: 🌐 Spark + Web: Chrome web browsing capabilities can help handle your web errands. (Pro & Ultra in the U.S.) 📸 Photos in Spark: Your personal agent can now curate albums, edit photos and complete complex tasks right from your @GooglePhotos library! (Pro & Ultra in the U.S.) Plus, a special offer for college students headed back to school: 🎓 Back-to-School: College students can claim 1 year of Google AI Pro (U.S.) or AI Plus (140+ markets) free of charge, or upgrade to bundle with AI Pro + @YouTube Premium for ad-free music & videos! 🎵▶️ https://blog.google/products-and-platforms/products/google-one/fall-2026-ai-plan-updates</a></p><p>As summer winds down and to-do lists pile up, here's a quick recap of all the things we’ve launched over the past month+ to help you get things done across our @Google AI plans!  🚀
+
+For those of you looking for a little extra help across Google Workspace:
+
+🗣️ Voice in Workspace: Talk it out! Use…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/joshwoodward/status/2098131750660772342#m">RT by @GeminiApp: Gemini, now on Windows! Get it: https://gemini.google/desktop</a></p><p>Gemini, now on Windows!
+
+Get it: gemini.google/desktop
+
+Link
+
+
+
+Gemini for desktop: download the AI app for Windows &amp; macOS
+
+Download Gemini for desktop on Windows and macOS. A native AI assistant with global shortcuts and automation to help you research, write, and summarize…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/Google/status/2097737923135148417#m">RT by @GeminiApp: ICYMI: Our Google AI subscription plans have new features and updates to help you tackle your to-do list and get things done 🪄 Here’s what’s new:</a></p><p>ICYMI: Our Google AI subscription plans have new features and updates to help you tackle your to-do list and get things done 🪄 
+
+Here’s what’s new:
+</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/NewsFromGoogle/status/2097738803255398640#m">RT by @GeminiApp: ICYMI: We introduced new features and updates to our Google AI subscription plans ⬇️✨ See what’s new: 🗣️ Use your voice in @Gmail, @GoogleDocs, and Google Keep to draft documents, find information in your inbox, and capture thoughts quickly 🎨 Google Pics is now available directly inside your @GoogleWorkspace to generate posters, social posts, and digital illustrations 📊 Use Google Sheets canvas to turn standard spreadsheets into custom, interactive mini-apps using simple prompts ✨ Gemini Spark in @GeminiApp now integrates with @GoogleChrome and @GooglePhotos to handle web errands, edit images, and organize photo albums on your behalf 🧑‍🎓 Eligible college students get one full year Google AI plan FREE of charge! Feature availability varies across Google AI Plus, Pro, and Ultra tiers.</a></p><p>ICYMI: We introduced new features and updates to our Google AI subscription plans ⬇️✨
+
+See what’s new:
+
+🗣️ Use your voice in @Gmail, @GoogleDocs, and Google Keep to draft documents, find information in your inbox, and capture thoughts quickly
+
+🎨 Google Pics is now available directly inside your…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/Google/status/2098084519320383940#m">RT by @GeminiApp: The @GeminiApp is now available for Windows Just press Alt + Space to bring instant Gemini assistance right to your desktop alongside your favorite apps and tools.</a></p><p>The @GeminiApp is now available for Windows
+
+Just press Alt + Space to bring instant Gemini assistance right to your desktop alongside your favorite apps and tools.
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/NewsFromGoogle/status/2098086024660271327#m">RT by @GeminiApp: The @GeminiApp is now available for Windows. Gemini is now just a keyboard shortcut away (Alt + Space) for instant AI assistance alongside your daily tools and apps. Here are 3 ways you can use the Gemini app on your PC: 🙋 Quick help: Fact-check a document or brainstorm title ideas for a presentation without breaking your flow. ✨ Deep work: Hand off multi-step tasks to Gemini Spark — your 24/7 personal AI agent — or try drafting a project summary using info pulled from your favorite Google apps like @Gmail and @GoogleDrive. 🎨 Create images and videos: Generate custom images with Nano Banana and videos with Gemini Omni, all from your desktop in one convenient place. The Gemini app is available globally today on Windows 10 and 11. Compatibility and availability vary. Selected features available with Google AI subscription to users 18+.</a></p><p>The @GeminiApp is now available for Windows.
+
+Gemini is now just a keyboard shortcut away (Alt + Space) for instant AI assistance alongside your daily tools and apps.
+
+Here are 3 ways you can use the Gemini app on your PC:
+
+🙋 Quick help: Fact-check a document or brainstorm title ideas for a…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/GeminiApp/status/2097765788149330058#m">Ready to produce your next track? 🎵 Tune into our next Gemini Discord demo, where a Googler will show off Lyria 3.5’s new creative controls. Choose your music’s duration, genre, and vocals, or get quick inspiration for your creations with templates. 👉 Join the Discord to watch live: http://discord.gg/gemini 📅 Thursday, September 10 at 11:30am PT</a></p><p>Ready to produce your next track? 🎵
+
+Tune into our next Gemini Discord demo, where a Googler will show off Lyria 3.5’s new creative controls. Choose your music’s duration, genre, and vocals, or get quick inspiration for your creations with templates.
+
+👉 Join the Discord to watch live:…</p>
+
+<p><a class="source-pill" href="https://x.com/GeminiApp">GeminiApp</a>: <a href="https://rss.xcancel.com/GeminiApp/status/2098080062570721619#m">The Gemini app is now available for Windows. Stay in your flow with help that’s only one shortcut away. Press Alt + Space to polish drafts, summarize long documents, brainstorm new ideas, and create custom images and videos right alongside your favorite tools and daily apps.</a></p><p>The Gemini app is now available for Windows.
+
+Stay in your flow with help that’s only one shortcut away. Press Alt + Space to polish drafts, summarize long documents, brainstorm new ideas, and create custom images and videos right alongside your favorite tools and daily apps.
+
+Link
+
+
+Download…</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAI">GoogleAI</a>: <a href="https://rss.xcancel.com/GoogleAI/status/2097334571637346484#m">AlphaGenome Atlas: A High-Resolution Map of Human DNA Accelerating Biological Discovery</a></p><p>
+Article
+
+
+
+AlphaGenome Atlas: A High-Resolution Map of Human DNA Accelerating Biological Discovery
+
+Today, we’re introducing AlphaGenome Atlas 🧬 an interactive platform for genomics discovery.
+ 
+In 2025, @GoogleDeepMind released AlphaGenome to help decode the complex language of our DNA — but</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAI">GoogleAI</a>: <a href="https://rss.xcancel.com/GoogleAI/status/2098072879480947085#m">Bring your imagination to life with Google Pics. Built with Nano Banana, Pics makes it easy to generate, refine, and co-create images with unparalleled precision. You can: — Isolate and edit specific objects without altering the rest of your image — Modify or translate text directly inside an image — Share and collaborate with friends and teammates on the same creation — Generate multiple options from a single prompt Google Pics is now available to Google AI Pro and Ultra subscribers, and most @GoogleWorkspace business customers. Google Pics is also integrated into @googledocs and Slides, and will roll out to @googledrive in the coming weeks. Try it now at http://pics.new</a></p><p>Bring your imagination to life with Google Pics.
+
+Built with Nano Banana, Pics makes it easy to generate, refine, and co-create images with unparalleled precision. You can:
+
+— Isolate and edit specific objects without altering the rest of your image
+— Modify or translate text directly inside an…</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAI">GoogleAI</a>: <a href="https://rss.xcancel.com/GoogleAI/status/2097678989695324609#m">Our @GoogleResearch Connectomics team, in collaboration with @HHMIJanelia, has released the complete wiring diagram of a male fruit fly’s brain and central nervous system — the largest brain map by number of proofread neurons to date. So, why do we care so much about a tiny fly's brain? 🧵👇</a></p><p>Our @GoogleResearch Connectomics team, in collaboration with @HHMIJanelia, has released the complete wiring diagram of a male fruit fly’s brain and central nervous system — the largest brain map by number of proofread neurons to date.
+
+So, why do we care so much about a tiny fly's brain? 🧵👇</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAI">GoogleAI</a>: <a href="https://rss.xcancel.com/GoogleAI/status/2098109357624095155#m">Pinned: Oh, so this is why we mapped out all 166,000 of the male fruit fly's neurons. Check out the big community effort to show just how much these tiny fly brains are capable of 🪰🧵</a></p><p>Oh, so this is why we mapped out all 166,000 of the male fruit fly's neurons. Check out the big community effort to show just how much these tiny fly brains are capable of 🪰🧵</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAIStudio">GoogleAIStudio</a>: <a href="https://rss.xcancel.com/GoogleAIStudio/status/2098800804199293120#m">What are you vibe coding this weekend?</a></p><p>What are you vibe coding this weekend?</p>
+
+<p><a class="source-pill" href="https://x.com/GoogleAIStudio">GoogleAIStudio</a>: <a href="https://rss.xcancel.com/GoogleAIStudio/status/2098084421899301244#m">today we’re sharing the first preview of the Gemini API docs right in AI Studio we built the experience from the ground up to give you better consolidation and convenience: docs right where you’re building get started today: http://ai.studio/docs</a></p><p>today we’re sharing the first preview of the Gemini API docs right in AI Studio
+
+we built the experience from the ground up to give you better consolidation and convenience: docs right where you’re building
+
+get started today: ai.studio/docs
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/antigravity">antigravity</a>: <a href="https://rss.xcancel.com/antigravity/status/2097326492866736475#m">Accelerating genomic discovery with Google Antigravity 🧬🚀. We’ve integrated the new AlphaGenome Atlas Skill into our scientific workbench. Watch researchers Natasha and Kyle use AI agents to quickly prioritize variants and generate structural plots and build testable hypotheses. Start optimising your workflows today</a></p><p>Accelerating genomic discovery with Google Antigravity 🧬🚀.
+
+We’ve integrated the new AlphaGenome Atlas Skill into our scientific workbench. Watch researchers Natasha and Kyle use AI agents to quickly prioritize variants and generate structural plots and build testable hypotheses. 
+
+Start…</p>
+
+<p><a class="source-pill" href="https://x.com/antigravity">antigravity</a>: <a href="https://rss.xcancel.com/antigravity/status/2098104429987713371#m">Did you know you could do a split agent view? Check out these quick Antigravity tricks⬇</a></p><p>Did you know you could do a split agent view?
+
+Check out these quick Antigravity tricks⬇
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/antigravity">antigravity</a>: <a href="https://rss.xcancel.com/NoheDev/status/2098096397589598378#m">RT by @antigravity: For better token management you should be using skills instead of workflows. With skills you get progressive disclosure, unrestricted bundle sizes (rather than a single markdown file), and better asset bundle structure. This is why we have made the hard decision to deprecate workflows and move towards the industry standard skills format. You can start migrating your existing workflows to skills using the /migrate-workflows skill. To learn more about our planned deprecation on November 1st, 2026, please visit our docs page: https://antigravity.google/docs/migration/workflows-to-skills/</a></p><p>For better token management you should be using skills instead of workflows.
+
+With skills you get progressive disclosure, unrestricted bundle sizes (rather than a single markdown file), and better asset bundle structure. This is why we have made the hard decision to deprecate workflows and move…</p>
+
+
+<h3>Mistral</h3>
+
+<p><a class="source-pill" href="https://x.com/MistralAI">MistralAI</a>: <a href="https://rss.xcancel.com/MistralAI/status/2097188835897586083#m">Today marks a major step for Mistral: we’re announcing a €3B Series D, the largest equity round ever raised by a European tech company, just three years after launch.</a></p><p>Today marks a major step for Mistral: we’re announcing a €3B Series D, the largest equity round ever raised by a European tech company, just three years after launch.
+
+  </p>
+
+<p><a class="source-pill" href="https://x.com/MistralDevs">MistralDevs</a>: <a href="https://rss.xcancel.com/MistralDevs/status/2097725702258745666#m">Build an agent with @MistralAI that generates in-browser games 🎮🕹️ Check out the tutorial on YouTube 👇 https://youtu.be/6pIZkfXaAec?si=ZEgRjgegXr7w7QrQ</a></p><p>Build an agent with @MistralAI that generates in-browser games 🎮🕹️
+
+Check out the tutorial on YouTube 👇
+yewtu.be/6pIZkfXaAec?si=ZEgR…
+
+Video
+  
+</p>
+
+<p><a class="source-pill" href="https://x.com/MistralDevs">MistralDevs</a>: <a href="https://rss.xcancel.com/MistralDevs/status/2097000051671191683#m">📣 The schedule for AI Engineer Paris is now live! Opening remarks and reception: https://ai.engineer/paris/2026#schedule-2026-09-23 Day 2: https://ai.engineer/paris/2026#schedule-2026-09-24</a></p><p>📣 The schedule for AI Engineer Paris is now live!
+
+Opening remarks and reception: ai.engineer/paris/2026#sched…
+Day 2: ai.engineer/paris/2026#sched…
+
+Link
+
+
+
+AI Engineer Paris 2026: September 23-24 at Station F
+
+AI Engineer Paris returns to Station F for two days of keynotes, technical sessions,…</p>
+
+
+<h3>Ollama</h3>
+
+<p><a class="source-pill" href="https://x.com/ollama">ollama</a>: <a href="https://rss.xcancel.com/ollama/status/2098892877388714179#m">Amp users can now use Ollama's cloud models with Amp's new BYOK model routing. No limits or fees for BYOK. Build remote agents, controllable from everywhere!</a></p><p>Amp users can now use Ollama's cloud models with Amp's new BYOK model routing.
+
+No limits or fees for BYOK.
+
+Build remote agents, controllable from everywhere!
+
+
+Quinn Slack (@sqs)
+
+Amp is now free to use when you bring your own compute and model subscriptions/keys.
+
+No more limits or fees for…</p>
+
+<p><a class="source-pill" href="https://x.com/ollama">ollama</a>: <a href="https://rss.xcancel.com/ollama/status/2098218692396163274#m">Pinned: ChatGPT Desktop (the Codex app) can now be configured to use Ollama models. Download or update to Ollama 0.34 to get started.</a></p><p>ChatGPT Desktop (the Codex app) can now be configured to use Ollama models. Download or update to Ollama 0.34 to get started.
+</p>
+
+</details>
+
+<h2>Benchmarks <span class="section-count">(9)</span></h2>
+<div class="audio-player" style="margin: 8px 0;"><audio controls preload="none" style="width:100%;max-width:400px;"><source src="/ai-news/assets/audio/2026-09-12-Evening/benchmarks.mp3" type="audio/mpeg"><a href="/ai-news/assets/audio/2026-09-12-Evening/benchmarks.mp3">Download Benchmarks summary</a></audio></div>
+<p><strong>Summary:</strong> The competitive landscape of AI benchmarks is currently defined by a dynamic tension: open-source models are rapidly closing the performance gap, yet proprietary heavyweights continue to leverage major flagship releases to snap the frontier back open (<a href="https://rss.xcancel.com/arena/status/2098074788111761878#m">arena</a>). Over the past year, the pace of progress has been staggering, with the leading score in Code Arena: WebDev surging by 340 points and the number of frontier labs competing for the top spot expanding from 6 to 10 (<a href="https://rss.xcancel.com/arena/status/2098814378971717916#m">arena</a>). 
+
+Open-source models are increasingly winning on efficiency, delivering competitive capabilities at a fraction of the cost. Tencent’s Hy4 preview claimed the #2 spot among open-source labs in Agent Arena, trailing only Kimi K3 (Max) in net improvement while achieving a 68% cost reduction per median task (<a href="https://rss.xcancel.com/arena/status/2098116858180509843#m">arena</a>). DeepSeek-V4.1-Flash similarly demonstrated strong cost-to-performance ratios, landing at #14 overall in WebDev—a significant improvement over its V4 predecessors—while pricing well below neighboring models on the leaderboard (<a href="https://rss.xcancel.com/arena/status/2098088993367949337#m">arena</a>). Meta’s Muse Spark 1.3 (Max) also showcased robust iterative gains, climbing 17 spots to #13 overall in Agent Arena with positive net improvements across code, work, and chat categories (<a href="https://rss.xcancel.com/arena/status/2098416601162727586#m">arena</a>). 
+
+Despite this open-source momentum, proprietary labs retain the ability to widen the frontier with singular, high-impact deployments. By early Q3 2026, the performance gap between proprietary and open-source models in web development had compressed to just 10 points; however, the subsequent releases of OpenAI’s GPT-6 Astra and Anthropic’s Claude Fable 5.1 pushed the proprietary lead back to a 120-point margin (<a href="https://rss.xcancel.com/arena/status/2098074788111761878#m">arena</a>). GPT-6 Astra currently leads the WebDev arena with 1796 points, followed by Fable 5.1 at 1764 points, leaving the closest open-source competitor, Alibaba Qwen, 103 points behind (<a href="https://rss.xcancel.com/arena/status/2098814378971717916#m">arena</a>). 
+
+Beyond performance metrics, new behavioral data reveals that models are diverging in how they conceptualize solutions. An analysis of over 30,000 Arena battles found that models share only 43% of their ideas on average, with conceptual overlap failing to consistently align along lab or national lines (<a href="https://rss.xcancel.com/arena/status/2098477438955028809#m">arena</a>). Notably, Anthropic's Claude Fable 5 found its closest conceptual match outside of its own model family, rather than with Opus or Sonnet (<a href="https://rss.xcancel.com/arena/status/2098471986548625487#m">arena</a>, <a href="https://rss.xcancel.com/arena/status/2098477438955028809#m">arena</a>). As the evaluation ecosystem scales from its origins ranking eight models to assessing over 500 today (<a href="https://rss.xcancel.com/ml_angelopoulos/status/2098152964364099681#m">arena</a>), these developments suggest that the AI frontier is advancing not merely in raw capability, but in the diversity of its problem-solving approaches.</p>
+
+<details>
+  <summary><strong>Subsections</strong></summary>
+
+<h3>Arena.ai</h3>
+
+<p><a class="source-pill" href="https://x.com/arena">arena</a>: <a href="https://rss.xcancel.com/arena/status/2098088993367949337#m">DeepSeek-V4.1-Flash by @deepseek_ai just landed ~#14 overall in Code Arena: WebDev with 1620 pts (AutoEval)! Among open models, DeepSeek-V4.1-Flash landed at ~#4 within 11 pts of Qwen3.8-Flash-Next. This release is a significant improvement compared to DeepSeek-V4 variants: +38 pts vs. V4-Flash (High) at #20 (1582 pts) +40 pts vs. V4-Pro (High) #21 (1580 pts) DeepSeek-V4.1-Flash is within 5 pts of the models ranked #11–#13, while costing substantially less (priced per million input/output tokens): ~#14 DeepSeek-V4.1-Flash: $0.30/ $1.20 #13 Hy4 Preview: $0.83/ $2.50 #12 Grok-4.6 High: $2/ $6 #11 Muse Spark 1.3 xHigh: $1.25/ $4.25 Note: this is an early AutoEval score, in which a Reward Model trained on Arena’s human preference data casts automatic votes in place of live votes. We’ll continue to see how scores converge as more live human votes come in. Congrats to the @deepseek_ai team on this contribution to the open source ecosystem!</a></p><p>DeepSeek-V4.1-Flash by @deepseek_ai just landed ~#14 overall in Code Arena: WebDev with 1620 pts (AutoEval)! Among open models, DeepSeek-V4.1-Flash landed at ~#4 within 11 pts of Qwen3.8-Flash-Next.
+
+This release is a significant improvement compared to DeepSeek-V4 variants:
++38 pts vs. V4-Flash…</p>
+
+<p><a class="source-pill" href="https://x.com/arena">arena</a>: <a href="https://rss.xcancel.com/arena/status/2098116858180509843#m">Last month’s Hy4 preview launch landed @TencentHunyuan the #2 spot on the top 10 labs in Agent Arena among open-source labs! Across 14.5K+ real-world agent sessions, Hy4 preview ranks #2 among open models (#10 overall) with a +5.4% net improvement, trailing only Kimi K3 (Max) at +6.6%—a gap of just nearly 1 percentage point. This level of performance comes at roughly 68% lower cost: $0.26 per median task, compared with $0.80 for Kimi K3 (Max). Hy4 preview is now on the Agent Arena Pareto frontier. See the link below to explore its placement. By signal, Hy4 preview excels in: - Confirmed Success: 12% — explicit user feedback that the task worked - Praise vs. Complaint: 9% — implicit sentiment in user reactions - Bash Recovery: 7.5% — recovery from CLI errors It shows no issues with Tool Hallucination — calling tools that don’t exist By category among open models, it’s also #2 in Code and Work, and #3 in Chat. With this strong performance at a competitive price, Hy4 preview is a huge contribution to the open-source ecosystem. Congrats to the @TencentHunyuan team on this strong release!</a></p><p>Last month’s Hy4 preview launch landed @TencentHunyuan the #2 spot on the top 10 labs in Agent Arena among open-source labs!
+
+Across 14.5K+ real-world agent sessions, Hy4 preview ranks #2 among open models (#10 overall) with a +5.4% net improvement, trailing only Kimi K3 (Max) at +6.6%—a gap of…</p>
+
+<p><a class="source-pill" href="https://x.com/arena">arena</a>: <a href="https://rss.xcancel.com/arena/status/2098416601162727586#m">Muse Spark 1.3 (Max) by @AIatMeta lands at #13 in Agent Arena with +4.2% net improvement across 8.7K+ real-world agentic sessions. That’s a 17-rank climb from Muse Spark 1.2 (xHigh) at #30, and a +6 percentage-point lift from −1.8%. Muse Spark 1.3 (Max) also improved from Muse Spark 1.2 (xHigh) across every category: - Code: #15 (+4.3%), up from #29 (-2.5%) - Work: #15 (+3.7%), up from #30 (-3.1%) - Chat: #17 (+1.6%), up from #17 (+1.2%) That momentum carries into its signal-level results. See the full breakdown below. Congrats to the @AIatMeta team on this release!</a></p><p>Muse Spark 1.3 (Max) by @AIatMeta lands at #13 in Agent Arena with +4.2% net improvement across 8.7K+ real-world agentic sessions.
+
+That’s a 17-rank climb from Muse Spark 1.2 (xHigh) at #30, and a +6 percentage-point lift from −1.8%.
+
+Muse Spark 1.3 (Max) also improved from Muse Spark 1.2…</p>
+
+<p><a class="source-pill" href="https://x.com/arena">arena</a>: <a href="https://rss.xcancel.com/arena/status/2098814378971717916#m">Nearly a year of Code Arena: WebDev progress compressed into 15 seconds. Each line follows the highest-scoring model from top labs over time, showing the pace of improvement across the ecosystem. In just the last year, the model in the leading spot increased score by +340 pts and the number of frontier labs competing for the top spot expanded from 6 to 10. @AnthropicAI has dominated throughout the year. Although standout releases have jumped to the top spot, most notably the Chinese open-source model Kimi K3 from @Kimi_Moonshot in July. Today, GPT-6 Astra by @OpenAI leads with 1796 pts, followed by @claudeai Fable 5.1 at 1764 pts. The next closest lab is 103 pts away, @Alibaba_Qwen with 1685 pts. Code Arena: WebDev ranks models through head-to-head user preference on real front-end web development tasks. These votes drive the leaderboard that is tracking the frontier.</a></p><p>Nearly a year of Code Arena: WebDev progress compressed into 15 seconds.
+
+Each line follows the highest-scoring model from top labs over time, showing the pace of improvement across the ecosystem. In just the last year, the model in the leading spot increased score by +340 pts and the number of…</p>
+
+<p><a class="source-pill" href="https://x.com/arena">arena</a>: <a href="https://rss.xcancel.com/arena/status/2098151432771998201#m">Our CEO and Co-Founder, @ml_angelopoulos, joined @kleinerperkins for a new episode of Grit. They discuss @arena's real-world vantage point on the rapid pace of AI progress: including how open models are closing key performance gaps, Chinese labs are advancing the frontier, and more. https://www.youtube.com/watch?v=bwxhraR8oNM</a></p><p>Our CEO and Co-Founder, @ml_angelopoulos, joined @kleinerperkins for a new episode of Grit.
+
+They discuss @arena's real-world vantage point on the rapid pace of AI progress: including how open models are closing key performance gaps, Chinese labs are advancing the frontier, and…</p>
+
+<p><a class="source-pill" href="https://x.com/arena">arena</a>: <a href="https://rss.xcancel.com/ml_angelopoulos/status/2098152964364099681#m">RT by @arena: When we started @arena as a project at UC Berkeley, we were ranking eight models. Today we evaluate the performance of over 500 models, with new releases arriving every week. It was great catching up with @mamoonha and @Joubinmir to talk Arena’s mission, and how it’s helping power frontier AI capabilities made for real-world use. Thanks for having me on Grit @kleinerperkins</a></p><p>When we started @arena as a project at UC Berkeley, we were ranking eight models. Today we evaluate the performance of over 500 models, with new releases arriving every week.
+
+It was great catching up with @mamoonha and @Joubinmir to talk Arena’s mission, and how it’s helping power frontier AI…</p>
+
+<p><a class="source-pill" href="https://x.com/arena">arena</a>: <a href="https://rss.xcancel.com/arena/status/2098074788111761878#m">The frontier gap in web development between proprietary and open source models nearly closed this quarter, until big releases from @AnthropicAI and @OpenAI last week causing it to snap back open. From a peak of +150 points in late 2025, the proprietary lead compressed to just approx. +10 points by early Q3 2026 as open source models made large gains. With Claude Fable 5.1 and GPT-6 Astra, the proprietary frontier jumped back to nearly 1,800 pts while open source held near 1675 pts widening the gap to +120 points. Votes for DeepSeek-V4.1-Flash by @deepseek_ai are still coming in. Stay tuned for an updated analysis once it lands in the Code Arena: WebDev. Insights are powered by real-world tasks from users in the Code Arena: WebDev. Link to see for yourself below.</a></p><p>The frontier gap in web development between proprietary and open source models nearly closed this quarter, until big releases from @AnthropicAI and @OpenAI last week causing it to snap back open.
+
+From a peak of +150 points in late 2025, the proprietary lead compressed to just approx. +10 points…</p>
+
+<p><a class="source-pill" href="https://x.com/arena">arena</a>: <a href="https://rss.xcancel.com/arena/status/2098471986548625487#m">The model most similar to Fable isn’t Opus. It’s not Sonnet either.</a></p><p>
+Article
+
+
+
+The model most similar to Fable isn’t Opus. It’s not Sonnet either.
+
+by @DawidGalarowicz and @petergostev 
+Arena&apos;s Battle Mode lets us compare two models answering the same user prompt. That makes it possible to measure not only preference, but also how much conceptual</p>
+
+<p><a class="source-pill" href="https://x.com/arena">arena</a>: <a href="https://rss.xcancel.com/arena/status/2098477438955028809#m">We analyzed how similar model responses were across 30,086 Arena battles. Models shared 43% of their ideas on average. We might expect that models from the same lab, or country, would show greater conceptual overlap. But the results don’t consistently support that. Claude Fable 5 illustrates this pattern: its closest conceptual match was neither Opus nor Sonnet. Which model came closest, along with the broader findings, may surprise you. Check out the full article from @DawidGalarowicz and @petergostev below.</a></p><p>We analyzed how similar model responses were across 30,086 Arena battles.
+
+Models shared 43% of their ideas on average. We might expect that models from the same lab, or country, would show greater conceptual overlap. But the results don’t consistently support that.
+
+Claude Fable 5 illustrates…</p>
+
+</details>
