@@ -508,14 +508,18 @@ def compute_reading_time_minutes(
     return max(1, math.ceil(total_words / wpm))
 
 
-def format_section_heading(section_title: str, item_count: int) -> str:
+def format_section_heading(section_title: str, item_count: int = 0, *, with_id: bool = True) -> str:
     """Render a section heading with an item-count badge, e.g. ``News (3)``.
 
     The count is wrapped in a ``section-count`` span so the visual weight
-    can be tuned by styling without regenerating existing posts.
+    can be tuned by styling without regenerating existing posts. The heading
+    carries a slug ``id`` so in-page anchors (and the static JSON API's
+    per-section ``url``) have something to land on; pass ``with_id=False``
+    for a heading with no badge, which has no anchor to resolve.
     """
-    return '<h2>{} <span class="section-count">({})</span></h2>'.format(
-        section_title, int(item_count)
+    ident = f' id="{_slugify(section_title)}"' if with_id else ""
+    return '<h2{}>{} <span class="section-count">({})</span></h2>'.format(
+        ident, section_title, int(item_count)
     )
 
 
@@ -1619,6 +1623,202 @@ def save_big_picture_cache(
 
 
 # ---------------------------------------------------------------------------
+# Static JSON API (machine-readable edition payloads)
+# ---------------------------------------------------------------------------
+
+# Payloads are written to a real on-disk directory which the Jekyll build
+# copies verbatim, so each edition is served at /api/<YYYY-MM-DD>-<Edition>.json
+# (e.g. /ai-news/api/2026-09-13-Evening.json). They live inside the site root
+# because that is what the build mirrors into _site/.
+#
+# They are NOT written next to the post in _posts/: Jekyll treats every file in
+# a collection directory as a document and silently drops it when it is neither
+# a post (.html/.md, carrying front matter) nor a static-file type it copies —
+# verified by probe, a JSON file in _posts/ never reaches _site/.
+API_DIR = "api"
+DEFAULT_SITE_URL = "https://cokev-bot.github.io/ai-news/"
+# Mirror _make_description()'s budget so the JSON and the post's front-matter
+# `description:` cannot drift apart.
+MAX_DESCRIPTION_CHARS = 160
+
+
+def _iso_utc(dt: datetime | None) -> str | None:
+    """ISO-8601 UTC string for a datetime, or None when there is no timestamp.
+
+    A naive datetime is treated as UTC (feed pub_dt values are built from
+    parsed RFC-822 dates and are normally aware, but a naive one must not
+    silently render as a local-time string).
+    """
+    if dt is None:
+        return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc).isoformat()
+
+
+def _article_api_entry(art: dict) -> dict:
+    """One article as a JSON-serialisable dict (sorted keys, no HTML)."""
+    return {
+        "title": art.get("title") or art.get("link", ""),
+        "link": _article_link(art),
+        "source": art.get("source", ""),
+        "description": art.get("description", ""),
+        "published": _iso_utc(art.get("pub_dt")),
+    }
+
+
+def _edition_title(edition_label: str | None) -> str:
+    """The edition's human title, matching the post's own front-matter title."""
+    if not edition_label:
+        return "AI News Digest"
+    return f"AI News Digest — {edition_label} Edition"
+
+
+def _feeds_scanned(header_fragments: list[str] | None) -> int:
+    """Pull the feed count back out of the rendered ``Scanning N feeds`` line.
+
+    The fetch pass owns that number (it counts every feed in sections.json,
+    including ones that failed), so reusing it keeps the JSON and the post in
+    agreement by construction rather than by two parallel computations that
+    could drift.
+    """
+    for fragment in header_fragments or []:
+        m = re.match(r"Scanning (\d+) feeds", fragment.strip())
+        if m:
+            return int(m.group(1))
+    return 0
+
+
+def build_edition_api_payload(
+    *,
+    edition_label: str | None,
+    post_now: datetime,
+    generated_at: datetime,
+    global_summary_text: str | None,
+    section_summaries: dict[str, str] | None,
+    sections_data: list[dict],
+    subsection_articles: dict[str, list[dict]],
+    freshness: dict[str, int] | None = None,
+    reading_minutes: int = 0,
+    header_fragments: list[str] | None = None,
+    site_url: str = DEFAULT_SITE_URL,
+    description_chars: int = MAX_DESCRIPTION_CHARS,
+) -> dict:
+    """Build the machine-readable payload for one edition.
+
+    Pure: takes the already-computed render inputs and returns a
+    JSON-serialisable dict. No LLM call, no network, no writes — so the
+    endpoint is cheap enough to emit on every run (including republish).
+
+    The section/subsection walk deliberately mirrors the post render exactly:
+    articles are looked up by subsection title (the key ``subsection_articles``
+    actually has) and the post emits one ``<h3>`` per populated subsection of a
+    section. Subsection titles are NOT unique in sections.json — "OpenAI",
+    "Google", "Anthropic" and "Mistral" each appear under more than one section
+    — which means one title carries one shared article list and is included in
+    every section that owns it, in both the post and this payload. That is
+    faithful, not lossy: the payload's item count and per-section membership
+    must agree with the HTML a reader sees, so changing the shape here to
+    "fix" the duplication would make the two disagree.
+    """
+    base = site_url.rstrip("/")
+    day_path = post_now.strftime("%Y/%m/%d")
+    post_url = (
+        f"{base}/news/{day_path}/{edition_label}/" if edition_label else base + "/"
+    )
+
+    sections_out: list[dict] = []
+    sources: list[str] = []
+
+    for section in sections_data:
+        s_title = section.get("title", "")
+        section_articles: list[dict] = []
+        subsections_out: list[dict] = []
+
+        for subsection in section.get("subsections", []):
+            ss_title = subsection.get("title", "")
+            arts = subsection_articles.get(ss_title) or []
+            if not arts:
+                continue
+            section_articles.extend(arts)
+            subsections_out.append({
+                "title": ss_title,
+                "articles": [_article_api_entry(a) for a in arts],
+            })
+
+        if not section_articles:
+            # Empty sections are omitted entirely, matching the post render.
+            continue
+
+        summary_html = (section_summaries or {}).get(s_title, "") or ""
+        sections_out.append({
+            "title": s_title,
+            # Anchor matches format_section_heading()'s <h2> id.
+            "url": f"{post_url}#{_slugify(s_title)}",
+            "item_count": len(section_articles),
+            "summary": _strip_html(summary_html),
+            "subsections": subsections_out,
+        })
+
+        for art in section_articles:
+            src = art.get("source")
+            if src and src not in sources:
+                sources.append(src)
+
+    freshness = freshness or {}
+    total_words = sum(count_words(s["summary"]) for s in sections_out)
+    plain_bp = _strip_html(global_summary_text) if global_summary_text else ""
+
+    return {
+        "edition": edition_label,
+        "date": post_now.strftime("%Y-%m-%d"),
+        "published": post_now.isoformat(),
+        "generated_at": generated_at.isoformat(),
+        "title": _edition_title(edition_label),
+        "url": post_url,
+        "summary": plain_bp[:description_chars],
+        "big_picture": plain_bp,
+        "reading_time_minutes": int(reading_minutes or 0),
+        "stats": {
+            "feeds_scanned": _feeds_scanned(header_fragments),
+            "sources": len(sources),
+            "items": sum(s["item_count"] for s in sections_out),
+            "fresh": int(freshness.get("fresh", 0)),
+            "stale": int(freshness.get("stale", 0)),
+            "from_yesterday": int(freshness.get("yesterday", 0)),
+            "words": total_words,
+        },
+        "sources": sorted(sources, key=str.lower),
+        "sections": sections_out,
+    }
+
+
+def write_edition_api(site_root: Path, edition: str, payload: dict) -> Path | None:
+    """Write ``api/<edition>.json`` atomically. Never raises.
+
+    Best-effort by design: the edition post is already on disk when this runs,
+    so a read-only or full filesystem must not cost the edition. Returns the
+    written path, or None when the write failed.
+    """
+    if not edition:
+        return None
+    api_dir = site_root / API_DIR
+    path = api_dir / f"{edition}.json"
+    try:
+        api_dir.mkdir(parents=True, exist_ok=True)
+        tmp = path.with_suffix(".json.tmp")
+        tmp.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        tmp.replace(path)
+    except OSError as e:
+        logging.warning(f"Edition API payload write failed for {path}: {e}")
+        return None
+    return path
+
+
+# ---------------------------------------------------------------------------
 # Post generation
 # ---------------------------------------------------------------------------
 
@@ -1849,6 +2049,11 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
     header_dt = post_now.strftime("%Y-%m-%d %H:%M %Z")
 
+    # Timestamp stamped into the static JSON API payload. On a republish this
+    # is the ORIGINAL edition time preserved above (not "now"), so re-emitting a
+    # payload can never make an already-published edition look freshly rewritten.
+    generated_at = post_now
+
     total_feeds = sum(
         len(ss["feeds"])
         for section in SECTIONS
@@ -1975,6 +2180,24 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
     ]
     if reading_minutes > 0:
         header_fragments.append(format_reading_time(reading_minutes))
+
+    # Emit the machine-readable edition payload (served at
+    # /api/<YYYY-MM-DD>-<Edition>.json). Best-effort: the post is what readers
+    # see, so a failed payload write must never cost an edition.
+    api_payload = build_edition_api_payload(
+        edition_label=edition_label,
+        post_now=post_now,
+        generated_at=generated_at,
+        global_summary_text=global_summary_text if all_articles else None,
+        section_summaries=section_summaries,
+        sections_data=SECTIONS,
+        subsection_articles=subsection_articles,
+        freshness=freshness,
+        reading_minutes=reading_minutes,
+        header_fragments=header_fragments,
+    )
+    if write_edition_api(site_root, edition, api_payload):
+        logging.info(f"Edition API payload written → {API_DIR}/{edition}.json")
 
     html_lines.append("<p>{}</p>".format(" · ".join(header_fragments)))
     html_lines.append("<hr>")

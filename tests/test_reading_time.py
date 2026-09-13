@@ -209,37 +209,41 @@ class TestComputeReadingTimeMinutes(unittest.TestCase):
 
 
 class TestFormatSectionHeading(unittest.TestCase):
-    """Unit tests for format_section_heading."""
+    """Unit tests for format_section_heading.
+
+    Headings carry a slug ``id`` (``<h2 id="news">``) so section anchors exist
+    for in-page navigation and for the static JSON API's per-section ``url``.
+    """
 
     def test_typical(self):
         self.assertEqual(
             format_section_heading("News", 3),
-            '<h2>News <span class="section-count">(3)</span></h2>',
+            '<h2 id="news">News <span class="section-count">(3)</span></h2>',
         )
 
     def test_zero_count(self):
         self.assertEqual(
             format_section_heading("Benchmarks", 0),
-            '<h2>Benchmarks <span class="section-count">(0)</span></h2>',
+            '<h2 id="benchmarks">Benchmarks <span class="section-count">(0)</span></h2>',
         )
 
     def test_multiword_section_title(self):
         self.assertEqual(
             format_section_heading("AI Labs", 38),
-            '<h2>AI Labs <span class="section-count">(38)</span></h2>',
+            '<h2 id="ai-labs">AI Labs <span class="section-count">(38)</span></h2>',
         )
 
     def test_float_count_is_truncated(self):
         self.assertEqual(
             format_section_heading("News", 3.7),
-            '<h2>News <span class="section-count">(3)</span></h2>',
+            '<h2 id="news">News <span class="section-count">(3)</span></h2>',
         )
 
     def test_heading_still_contains_plain_title(self):
-        """Existing tooling that greps for <h2>Title</h2> gets the title back."""
+        """Existing tooling that greps for the title still finds it."""
         heading = format_section_heading("Developers", 7)
         self.assertIn("Developers", heading)
-        self.assertTrue(heading.startswith("<h2>"))
+        self.assertTrue(heading.startswith("<h2"))
         self.assertTrue(heading.endswith("</h2>"))
 
 
