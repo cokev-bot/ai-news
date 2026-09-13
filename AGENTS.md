@@ -21,7 +21,7 @@ The Python engine handles the "intelligence" of the site:
 - **Summarization:** Sends a curated list of articles to a local Ollama instance (`gemma4:31b-cloud`) using the prompt defined in `summary_prompt.txt`.
 - **Rendering:** Converts raw data and LLM summaries into Jekyll-compatible HTML posts.
 - **Text-to-Speech:** Generates MP3 audio for each section and Big Picture summary using `edge-tts`, with inline audio players embedded in posts. Audio files are stored in `assets/audio/<edition>/` and committed to the repo.
-- **Feed health:** Each fetch pass records per-feed success/failure into `.feed_health.json` via `record_feed_health()`, so `tools/build_source_status.py` can publish a live `/source-status/` page.
+- **Feed health:** Each fetch pass records per-feed success/failure into `.feed_health.json` via `record_feed_health()`, so `tools/build_source_status.py` can publish a live `/source-status/` page. `tools/check_feeds.py --alerts-only` reads that state (no re-fetch) and alerts on persistently failing feeds; `run_edition.sh` runs it after the generation step. Both the pipeline and the monitor merge through `record_feed_health()`, so their failure streaks cannot disagree.
 
 ### 3. Source Status Page (`tools/build_source_status.py`)
 Generates `source-status.html` (published at `/source-status/`), listing every feed in `sections.json` with the last time it produced a story accepted into an edition (from `.news_state.json`) and the last time it was successfully fetched (from `.feed_health.json`). `run_edition.sh` runs it after `generate_news.py` and before `bundle exec jekyll build`; it is non-fatal, so a failure there never costs an edition.
