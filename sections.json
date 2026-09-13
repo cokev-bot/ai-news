@@ -29,8 +29,6 @@
         "mistralvibe": "https://x.com/mistralvibe",
         "ollama": "https://x.com/ollama",
         "arena": "https://x.com/arena",
-        "Simon Willison": "https://simonwillison.net",
-        "karpathy": "https://x.com/karpathy",
         "Gemini_Notebook": "https://x.com/Gemini_Notebook",
         "ChatGPT": "https://x.com/ChatGPT"
     },
@@ -374,30 +372,6 @@
                             "https://nitter.privacydev.net/arena/rss",
                             "https://nitter.privacyredirect.com/arena/rss",
                             "https://xcancel.com/arena/rss"
-                        ]
-                    }
-                }
-            ]
-        },
-        {
-            "title": "Under Review",
-            "subsections": [
-                {
-                    "title": "Independent Blogs",
-                    "feeds": {
-                        "Simon Willison": "https://simonwillison.net/atom/everything/"
-                    }
-                },
-                {
-                    "title": "Researchers",
-                    "feeds": {
-                        "karpathy": "https://rss.xcancel.com/karpathy/rss"
-                    },
-                    "feeds_alts": {
-                        "karpathy": [
-                            "https://nitter.privacydev.net/karpathy/rss",
-                            "https://nitter.privacyredirect.com/karpathy/rss",
-                            "https://xcancel.com/karpathy/rss"
                         ]
                     }
                 }

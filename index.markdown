@@ -73,7 +73,6 @@ layout: home
   <li><strong>Developers</strong> — Official developer accounts from major AI labs</li>
   <li><strong>Developer Tools</strong> — Ollama, Google AI Studio, and tools updates</li>
   <li><strong>Benchmarks</strong> — Arena.ai and other evaluation sources</li>
-  <li><strong>Under Review</strong> — Independent blogs, researcher feeds</li>
 </ul>
 
 <h3>Subscribe</h3>
