@@ -464,12 +464,13 @@ class TestRenderPage(unittest.TestCase):
         self.assertNotIn("<h1", body.lower())
         self.assertNotIn("Source Status</h1>", body)
 
-    def test_has_all_seven_columns(self):
+    def test_has_all_six_columns(self):
         html = render_page(self._rows(), now=NOW)
-        for header in ("Source", "Section", "Last new story",
-                       "Last successful fetch", "Newest item served",
-                       "Items", "Status"):
+        for header in ("Source", "Section", "Newest item served",
+                       "Last successful fetch", "Items", "Status"):
             self.assertIn(header, html, f"missing column header {header!r}")
+        self.assertNotIn("Last new story", html,
+                         "the 'Last new story' column was removed")
         self.assertIn("(UTC)", html, "columns must state the timezone")
         self.assertIn("<table", html)
         self.assertIn("</table>", html)

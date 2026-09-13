@@ -374,11 +374,8 @@ def render_rows_html(rows: list[dict], *, now: datetime) -> str:
             current_section = row["section"]
             label = html.escape(current_section or "Other")
             lines.append(
-                f'<tr class="ss-group"><th colspan="7" scope="colgroup">{label}</th></tr>'
+                f'<tr class="ss-group"><th colspan="6" scope="colgroup">{label}</th></tr>'
             )
-        item_cell = timestamp_cell(
-            row["last_item"].isoformat() if row["last_item"] else None, now
-        )
         fetch_cell = timestamp_cell(
             row["last_success"].isoformat() if row["last_success"] else None, now
         )
@@ -396,9 +393,8 @@ def render_rows_html(rows: list[dict], *, now: datetime) -> str:
             '<tr class="ss-row ss-{status}">'
             '<td class="ss-source">{source}</td>'
             '<td class="ss-section">{section}</td>'
-            '<td class="ss-time">{item}</td>'
-            '<td class="ss-time">{fetch}</td>'
             '<td class="ss-time">{post}</td>'
+            '<td class="ss-time">{fetch}</td>'
             '<td class="ss-count">{count}</td>'
             '<td class="ss-status"><span class="ss-badge ss-badge-{status}" '
             'title="{note}">{label}</span></td>'
@@ -406,9 +402,8 @@ def render_rows_html(rows: list[dict], *, now: datetime) -> str:
                 status=html.escape(status, quote=True),
                 source=_source_cell(row),
                 section=html.escape(row["subsection"] or row["section"] or ""),
-                item=item_cell,
-                fetch=fetch_cell,
                 post=post_cell,
+                fetch=fetch_cell,
                 count=row["item_count"],
                 note=html.escape(note, quote=True),
                 label=html.escape(status_label),
@@ -439,14 +434,12 @@ permalink: /source-status/
 <p class="ss-intro">
   Every feed this digest watches, and when it last did something. All times are
   UTC.
-  <strong>Last new story</strong> is the most recent item from that source that
-  survived de-duplication and made it into a published edition.
-  <strong>Last successful fetch</strong> is the most recent time the pipeline
-  pulled the feed and got a usable response back — a source can be fetched
-  successfully and still have no new story.
   <strong>Newest item served</strong> is the most recent publication date among
   everything the feed returned, which is what distinguishes a genuinely active
   source from a mirror that answers every request but has stopped advancing.
+  <strong>Last successful fetch</strong> is the most recent time the pipeline
+  pulled the feed and got a usable response back — a source can be fetched
+  successfully and still have no new story.
   Sources are marked <em>quiet</em> when they are reachable but have not
   delivered a story in {max_age_days} days, and <em>frozen</em> when everything
   they serve is older than that window.
@@ -485,9 +478,8 @@ permalink: /source-status/
     <tr>
       <th scope="col">Source</th>
       <th scope="col">Section</th>
-      <th scope="col">Last new story (UTC)</th>
-      <th scope="col">Last successful fetch (UTC)</th>
       <th scope="col">Newest item served (UTC)</th>
+      <th scope="col">Last successful fetch (UTC)</th>
       <th scope="col">Items ({max_age_days}d)</th>
       <th scope="col">Status</th>
     </tr>
