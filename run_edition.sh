@@ -26,6 +26,15 @@ TIMEZONE=$(python3 -c "import json; print(json.load(open('/home/ubuntu/ai-news/c
 DATE=$(TZ="$TIMEZONE" date '+%Y-%m-%d')
 cd /home/ubuntu/ai-news
 
+# Pin the build host's timezone to the site's timezone. Jekyll uses the local
+# timezone to turn each post's frontmatter date into its permalink day and into
+# every `| date:` filter output, so on a UTC host an Evening edition (17:00 PT =
+# 00:00 UTC next day) published under the future day. _config.yml also sets
+# `timezone:`, so Jekyll's own ENV["TZ"] assignment would do this too — setting
+# it here as well means the build does not depend on either mechanism alone
+# (and covers anything else in this script that shells out to a date command).
+export TZ="$TIMEZONE"
+
 # Always publish to main so the live site (https://cokev-bot.github.io/ai-news/)
 # picks up every edition. If a previous run left the working tree on a feature
 # branch, switch back to main; stash any uncommitted work so we never lose it.

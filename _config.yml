@@ -2,6 +2,13 @@ title: AI News Digest
 description: Daily AI news updated Morning (15:00 UTC), Afternoon (20:00 UTC) and Evening (00:00 UTC)
 url: "https://cokev-bot.github.io"
 baseurl: "/ai-news"
+# The edition pipeline dates every post by its Pacific calendar day (the
+# Evening run at 00:00 UTC is 17:00 PT the *previous* day). Jekyll interprets
+# each post's frontmatter `date:` in the BUILD HOST's timezone unless this key
+# is set, so on a UTC builder (GitHub Pages) the Evening edition was published
+# under the following day's URL and day heading. Set it explicitly and keep it
+# in sync with config.json's `timezone` — tests/test_pacific_days.py asserts both.
+timezone: "America/Los_Angeles"
 github_username: ""
 twitter_username: ""
 theme: minima
