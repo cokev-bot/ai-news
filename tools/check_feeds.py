@@ -41,7 +41,9 @@ if SITE_ROOT_DEFAULT not in sys.path:
 
 from generate_news import (
     _http_get_with_retry,
+    _load_feed_health,
     _looks_like_rss,
+    _save_feed_health,
     fetch_feed,
     load_config,
     record_feed_health,
@@ -73,16 +75,10 @@ def load_health(site_root: Path) -> dict:
 
     Returns a dict of ``{feed_name: {url, consecutive_failures, last_success, last_failure, last_error}}``.
     Missing or corrupt file returns an empty dict (first-run / clean-slate).
+    Delegates to ``generate_news._load_feed_health`` so the monitor and the
+    pipeline share one read implementation.
     """
-    path = site_root / HEALTH_FILE
-    if path.exists():
-        try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-            if isinstance(data, dict):
-                return data
-        except (json.JSONDecodeError, OSError) as e:
-            log.warning(f"Failed to load feed health file: {e}")
-    return {}
+    return _load_feed_health(site_root)
 
 
 def save_health(site_root: Path, health: dict) -> None:
@@ -91,12 +87,10 @@ def save_health(site_root: Path, health: dict) -> None:
     Retained for callers that need to persist a raw dict (e.g. tests). The
     monitor itself no longer uses this: it merges through
     ``generate_news.record_feed_health()`` so the pipeline and the monitor can
-    never disagree about a feed's failure streak.
+    never disagree about a feed's failure streak. Delegates to
+    ``generate_news._save_feed_health``.
     """
-    path = site_root / HEALTH_FILE
-    tmp = path.with_suffix(".tmp")
-    tmp.write_text(json.dumps(health, indent=2, ensure_ascii=False), encoding="utf-8")
-    tmp.replace(path)
+    _save_feed_health(site_root, health)
 
 
 # ---------------------------------------------------------------------------

@@ -62,6 +62,13 @@ OLLAMA_ENDPOINT = "http://localhost:11434/api/generate"
 # non-fiction prose; the estimate is deliberately coarse — it only needs to
 # separate a 2-minute skim from a 10-minute deep read.
 READING_WORDS_PER_MINUTE = 230
+# Model-identifier pattern for duplicate detection: "GPT-5", "Claude 4.5",
+# "3.2a", etc. Two titles mentioning the *same* model identifier are treated
+# as the same story even when the surrounding prose differs ("gpt-5 safety
+# committee" vs "Sam Altman on gpt-5 safety").
+MODEL_NAME_PATTERN = re.compile(
+    r"(claude[-\s]\d[.\d]*|gpt[-\s]\d[.\d]*|\d+\.\d+[a-z]?)", re.I
+)
 
 DEFAULT_CONFIG = {
     "model": "gemma4:31b-cloud",
@@ -161,6 +168,20 @@ def text_similarity(a: str, b: str) -> float:
     intersection = len(words_a & words_b)
     union = len(words_a | words_b)
     return intersection / union if union > 0 else 0.0
+
+
+def _share_model_name(a_title: str, b_title: str) -> bool:
+    """True if both titles mention the same model identifier (e.g. "GPT-5").
+
+    Extracts every model-name token (``GPT-5``, ``Claude 4.5``, ``3.2a``)
+    from each title and returns True only when both mention a non-empty set
+    of identifiers *and* those sets are identical. A title with no model
+    mention never matches (``new_models``/``old_models`` must both be truthy),
+    which keeps ordinary prose from being conflated.
+    """
+    a_models = set(MODEL_NAME_PATTERN.findall(a_title.lower()))
+    b_models = set(MODEL_NAME_PATTERN.findall(b_title.lower()))
+    return bool(a_models and b_models and a_models == b_models)
 
 
 def load_state(state_path: Path) -> dict:
@@ -290,7 +311,6 @@ def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, dict], *
 
     new_title = new_art["title"]
     new_desc  = new_art.get("description", "")
-    new_lower = new_title.lower()
 
     for existing in seen:
         title_sim = text_similarity(new_title, existing["title"])
@@ -298,12 +318,7 @@ def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, dict], *
         if title_sim >= title_sim_threshold or desc_sim >= title_sim_threshold:
             return True
 
-        model_pattern = re.compile(
-            r"(claude[-\s]\d[.\d]*|gpt[-\s]\d[.\d]*|\d+\.\d+[a-z]?)", re.I
-        )
-        new_models = set(model_pattern.findall(new_lower))
-        old_models = set(model_pattern.findall(existing["title"].lower()))
-        if new_models and old_models and new_models == old_models:
+        if _share_model_name(new_title, existing["title"]):
             return True
 
     # Cross-edition dedup: stories re-reported by another source with a
@@ -328,12 +343,7 @@ def is_duplicate(new_art: dict, seen: list[dict], seen_links: dict[str, dict], *
         if text_similarity(new_title, old_title) >= title_sim_threshold:
             return True
         # Also catch the model-name pattern across editions.
-        model_pattern = re.compile(
-            r"(claude[-\s]\d[.\d]*|gpt[-\s]\d[.\d]*|\d+\.\d+[a-z]?)", re.I
-        )
-        new_models = set(model_pattern.findall(new_lower))
-        old_models = set(model_pattern.findall(old_title.lower()))
-        if new_models and old_models and new_models == old_models:
+        if _share_model_name(new_title, old_title):
             return True
 
     return False
@@ -761,6 +771,17 @@ def _query_ollama(prompt: str, model: str, *, timeout: int = 600) -> str:
         return ""
 
 
+def _format_articles_for_prompt(articles: list[dict]) -> str:
+    """Render an article list as numbered prompt lines: ``1. [Source] Title: desc``."""
+    content_lines = []
+    for i, a in enumerate(articles, 1):
+        line = f"{i}. [{a['source']}] {a['title']}"
+        if a.get("description"):
+            line += f": {a['description']}"
+        content_lines.append(line)
+    return "\n".join(content_lines)
+
+
 def get_section_summary(section_title: str, articles: list[dict], site_root: Path, config: dict | None = None) -> str:
     """Use a local Ollama instance to summarize the articles in a section."""
     if not articles:
@@ -776,17 +797,25 @@ def get_section_summary(section_title: str, articles: list[dict], site_root: Pat
 
     prompt_base = prompt_path.read_text(encoding="utf-8")
 
-    content_lines = []
-    for i, a in enumerate(articles, 1):
-        line = f"{i}. [{a['source']}] {a['title']}"
-        if a.get("description"):
-            line += f": {a['description']}"
-        content_lines.append(line)
-
-    full_prompt = f"{prompt_base}\n\nSection: {section_title}\nArticles:\n" + "\n".join(content_lines)
+    full_prompt = f"{prompt_base}\n\nSection: {section_title}\nArticles:\n" + _format_articles_for_prompt(articles)
 
     response = _query_ollama(full_prompt, model)
     return response or "Summary could not be generated."
+
+
+def get_global_summary(prompt_base: str, articles: list[dict], config: dict | None = None) -> str:
+    """Generate 'The Big Picture' executive summary from an article list.
+
+    Unlike ``get_section_summary``, the prompt text is passed directly (there
+    is no per-section prompt file); only the model is read from *config*.
+    Returns a fallback string on failure rather than raising.
+    """
+    cfg = config if config is not None else DEFAULT_CONFIG
+    model = cfg.get("model", DEFAULT_CONFIG["model"])
+
+    full_prompt = f"{prompt_base}\n\nArticles:\n" + _format_articles_for_prompt(articles)
+    response = _query_ollama(full_prompt, model)
+    return response or "Global summary could not be generated."
 
 
 def summarize_sections_concurrent(section_jobs: list[tuple[str, list[dict]]],
@@ -1085,7 +1114,8 @@ def generate_og_image_for_edition(
 ) -> str | None:
     """Generate an OG social card image for an edition.
 
-    Delegates to tools/make_og_image.py for the actual Pillow rendering.
+    Delegates to ``tools/make_og_image.py``, which owns the canonical
+    implementation (edition parsing, Pillow rendering, path derivation).
     Returns the relative path to the PNG (e.g. "assets/og/2026-06-18-Morning.png")
     on success, or None on failure (graceful degradation — the post is still
     published without an og:image, just without a preview card on social).
@@ -1097,43 +1127,16 @@ def generate_og_image_for_edition(
         sys.path.insert(0, tools_dir)
 
     try:
-        from make_og_image import render_og_image, first_sentence
+        from make_og_image import generate_og_image_for_edition as _make_og
     except ImportError:
         logging.warning("OG image: make_og_image module not found; OG image generation skipped")
         return None
 
-    # Parse edition components: "2026-06-18-Morning"
-    parts = edition.rsplit("-", 1)
-    if len(parts) == 2:
-        date_str, edition_label = parts
-        edition_label = edition_label.capitalize()
-    else:
-        date_str = edition
-        edition_label = ""
-
-    title = f"AI News Digest — {edition_label} Edition" if edition_label else "AI News Digest"
-    excerpt = first_sentence(global_summary_text or "", max_chars=200)
-
-    output_dir = site_root / "assets" / "og"
-    filename = f"{date_str}-{edition_label}.png"
-    output_path = output_dir / filename
-    rel_path = f"assets/og/{filename}"
-
     try:
-        result = render_og_image(
-            title=title,
-            excerpt=excerpt,
-            date_str=date_str,
-            edition_label=edition_label,
-            output_path=output_path,
-        )
-        if result is not None:
-            logging.info(f"OG image: generated {rel_path}")
-            return rel_path
+        return _make_og(edition, site_root, global_summary_text)
     except Exception as e:
         logging.error(f"OG image generation failed for {edition}: {e}")
-
-    return None
+        return None
 
 
 # ---------------------------------------------------------------------------
@@ -1639,13 +1642,12 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
             for subsection in section["subsections"]:
                 subsection_articles[subsection["title"]] = []
 
-        # Build a reverse map: feed_url → feed_name for all feeds
-        feed_name_by_url: dict[str, str] = {}
+        # Build a reverse map: feed_name → feed_url for all feeds, used to
+        # recover the feed name from a nitter username extracted from a link.
         feed_url_by_name: dict[str, str] = {}
         for section in SECTIONS:
             for subsection in section["subsections"]:
                 for feed_name, feed_url in subsection["feeds"].items():
-                    feed_name_by_url[feed_url] = feed_name
                     feed_url_by_name[feed_name] = feed_url
 
         for link, info in seen_links.items():
@@ -1892,22 +1894,7 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
 
             global_prompt_base = "Write a high-level 'The Big Picture' executive summary for this edition. Synthesize the most critical trends and developments across all categories into 1-2 punchy paragraphs. Use the same strict citation format (Source: ID)."
 
-            def get_global_summary(articles, site_root, config):
-                cfg = config if config is not None else load_config(site_root)
-                model = cfg.get("model", DEFAULT_CONFIG["model"])
-
-                content_lines = []
-                for i, a in enumerate(articles, 1):
-                    line = f"{i}. [{a['source']}] {a['title']}"
-                    if a.get("description"):
-                        line += f": {a['description']}"
-                    content_lines.append(line)
-
-                full_prompt = f"{global_prompt_base}\n\nArticles:\n" + "\n".join(content_lines)
-                response = _query_ollama(full_prompt, model)
-                return response or "Global summary could not be generated."
-
-            global_summary_text = get_global_summary(all_articles, site_root, config)
+            global_summary_text = get_global_summary(global_prompt_base, all_articles, config)
             global_summary_html = linkify_summary(global_summary_text, all_articles)
 
             # Persist for the remaining same-day editions. Best-effort: a
