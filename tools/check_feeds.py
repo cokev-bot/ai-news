@@ -313,10 +313,23 @@ def check_all_feeds(
 
     save_health(site_root, health)
 
-    if alerted_feeds:
-        log.warning(f"Alerted feeds: {', '.join(alerted_feeds)}")
+    # Report on *failing feeds*, not on *alerted feeds*. These differ whenever a
+    # feed is failing below ALERT_THRESHOLD, or when no Discord webhook is
+    # configured: the old wording logged "All feeds healthy — no alerts." on a
+    # run where 27/34 feeds had just failed to fetch, because nothing crossed
+    # the alert threshold. A health monitor that cheerfully reports success
+    # during an outage is worse than no monitor.
+    failing = [r for r in results if not r["ok"]]
+    if failing:
+        log.warning(
+            f"{len(failing)}/{len(results)} feeds failing: "
+            f"{', '.join(r['name'] for r in failing)}"
+        )
     else:
-        log.info("All feeds healthy — no alerts.")
+        log.info(f"All {len(results)} feeds healthy.")
+
+    if alerted_feeds:
+        log.warning(f"Alerted (>= {ALERT_THRESHOLD} consecutive): {', '.join(alerted_feeds)}")
 
     return results
 

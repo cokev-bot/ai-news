@@ -366,6 +366,42 @@ class TestCheckAllFeeds(unittest.TestCase):
             self.assertTrue(all(not r["alerted"] for r in results))
 
     @patch("check_feeds.check_feed")
+    def test_run_summary_reports_failing_below_threshold(self, mock_check):
+        """A run with failures below the alert threshold must not log "healthy".
+
+        Regression: the summary keyed off *alerted* feeds, so a run where every
+        feed failed on its first attempt logged "All feeds healthy — no alerts."
+        """
+        import tempfile
+        from unittest.mock import patch as _patch
+        with tempfile.TemporaryDirectory() as td:
+            site_root = _make_site_root(Path(td))
+            mock_check.side_effect = [
+                (False, "all 1 URL(s) failed"),
+                (False, "all 1 URL(s) failed"),
+            ]
+            with _patch("check_feeds.log") as mock_log:
+                results = check_all_feeds(site_root)
+
+            self.assertTrue(all(not r["ok"] for r in results))
+            message = " ".join(str(c) for c in mock_log.warning.call_args_list)
+            self.assertIn("2/2 feeds failing", message)
+            info_messages = " ".join(str(c) for c in mock_log.info.call_args_list)
+            self.assertNotIn("healthy", info_messages)
+
+    @patch("check_feeds.check_feed")
+    def test_run_summary_reports_all_healthy(self, mock_check):
+        import tempfile
+        from unittest.mock import patch as _patch
+        with tempfile.TemporaryDirectory() as td:
+            site_root = _make_site_root(Path(td))
+            mock_check.return_value = (True, "OK")
+            with _patch("check_feeds.log") as mock_log:
+                check_all_feeds(site_root)
+            info_messages = " ".join(str(c) for c in mock_log.info.call_args_list)
+            self.assertIn("healthy", info_messages)
+
+    @patch("check_feeds.check_feed")
     def test_failing_below_threshold(self, mock_check):
         """Feed failing 1-2 times (below threshold) → no alert."""
         import tempfile
