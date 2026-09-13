@@ -1,0 +1,54 @@
+---
+layout: page
+title: Archive
+permalink: /news/
+---
+
+<p>Every edition, newest first, grouped by day. Click a day heading for that day's full briefing, or browse <a href="{{ '/archive/' | relative_url }}">by month</a>.</p>
+
+{% assign current_date = "" %}
+{% for post in site.posts %}
+  {% assign post_date = post.date | date: "%Y-%m-%d" %}
+  {% assign post_date_display = post.date | date: "%B %-d, %Y" %}
+
+  {% if post_date != current_date %}
+    {% if current_date != "" %}
+      </ul>
+    </div>
+    {% endif %}
+    {% assign current_date = post_date %}
+    <div class="news-day-group">
+      <h3 class="news-day-heading">
+        <a href="{{ site.baseurl }}/news/{{ post_date | date: "%Y/%m/%d" }}/">{{ post_date_display }}</a>
+      </h3>
+      <ul class="news-edition-list">
+  {% endif %}
+
+  {% assign edition_type = "edition" %}
+  {% if post.title contains "Morning" %}{% assign edition_type = "morning" %}{% endif %}
+  {% if post.title contains "Afternoon" %}{% assign edition_type = "afternoon" %}{% endif %}
+  {% if post.title contains "Evening" %}{% assign edition_type = "evening" %}{% endif %}
+
+  <li class="news-edition-item">
+    <span class="edition-badge edition-badge-{{ edition_type }}" aria-label="{{ edition_type | capitalize }} Edition">{{ edition_type | capitalize }}</span>
+    <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+  </li>
+{% endfor %}
+{% if current_date != "" %}
+      </ul>
+    </div>
+{% endif %}
+
+<style>
+  .news-day-group { margin-bottom: 1.2em; }
+  .news-day-heading { margin-bottom: 0.3em; }
+  .news-day-heading a { text-decoration: none; color: inherit; }
+  .news-edition-list { list-style: none; padding-left: 0; margin: 0; }
+  .news-edition-item { padding: 0.2em 0; line-height: 1.6; }
+  .edition-badge { display: inline-block; font-size: 0.7em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.15em 0.5em; border-radius: 3px; margin-right: 0.4em; vertical-align: middle; }
+  .edition-badge-morning { background: #fff3cd; color: #664d03; }
+  .edition-badge-afternoon { background: #cff4fc; color: #055160; }
+  .edition-badge-evening { background: #e2e3e5; color: #383d41; }
+</style>
+
+<p><a href="{{ '/' | relative_url }}">&larr; Home</a></p>
