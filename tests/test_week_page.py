@@ -22,14 +22,18 @@ sys.path.insert(0, str(PROJECT_ROOT / "tools"))
 from build_week_page import (  # noqa: E402
     DEFAULT_DAYS,
     OUTPUT_FILE,
+    audio_player_html,
     build,
     collect_entries,
     extract_big_picture,
+    extract_big_picture_audio,
+    read_baseurl,
     read_post_date,
     render_page,
 )
 
 NOW = datetime(2026, 9, 13, 12, 0, 0, tzinfo=timezone.utc)
+BASEURL = "/ai-news"
 
 SAMPLE_POST = """---
 layout: post
@@ -39,7 +43,7 @@ categories: news digest
 ---
 
 <h3 style="margin-top:0;">🌍 The Big Picture</h3>
-<div class="audio-player"><audio></audio></div>
+<div class="audio-player"><audio controls><source src="/ai-news/assets/audio/2026-09-12-Morning/big-picture.mp3" type="audio/mpeg"></audio></div>
 <p>AI is <a href="https://x.com">transforming</a> everything.</p>
 """
 
@@ -53,6 +57,17 @@ class TestExtractBigPicture(unittest.TestCase):
     def test_no_big_picture_returns_empty(self):
         self.assertEqual(extract_big_picture("<h2>News</h2><p>hi</p>"), "")
 
+    def test_extracts_big_picture_audio(self):
+        src = extract_big_picture_audio(SAMPLE_POST)
+        self.assertEqual(src, "/ai-news/assets/audio/2026-09-12-Morning/big-picture.mp3")
+
+    def test_no_audio_returns_empty(self):
+        post = SAMPLE_POST.replace(
+            '<source src="/ai-news/assets/audio/2026-09-12-Morning/big-picture.mp3" type="audio/mpeg">',
+            "",
+        )
+        self.assertEqual(extract_big_picture_audio(post), "")
+
     def test_read_post_date(self):
         dt = read_post_date(SAMPLE_POST)
         self.assertIsNotNone(dt)
@@ -60,6 +75,41 @@ class TestExtractBigPicture(unittest.TestCase):
 
     def test_read_post_date_missing(self):
         self.assertIsNone(read_post_date("---\nlayout: post\n---\n"))
+
+
+class TestReadBaseurl(unittest.TestCase):
+
+    def _site_root(self, tmp: Path, baseurl: str | None) -> Path:
+        root = tmp / "site"
+        root.mkdir()
+        if baseurl is not None:
+            (root / "_config.yml").write_text(f'baseurl: "{baseurl}"\n', encoding="utf-8")
+        return root
+
+    def test_reads_baseurl(self):
+        with tempfile.TemporaryDirectory() as td:
+            self.assertEqual(read_baseurl(self._site_root(Path(td), "/ai-news")), "/ai-news")
+
+    def test_strips_trailing_slash_and_quotes(self):
+        with tempfile.TemporaryDirectory() as td:
+            self.assertEqual(read_baseurl(self._site_root(Path(td), "/ai-news/")), "/ai-news")
+
+    def test_empty_baseurl(self):
+        with tempfile.TemporaryDirectory() as td:
+            self.assertEqual(read_baseurl(self._site_root(Path(td), "")), "")
+
+    def test_missing_config_defaults(self):
+        with tempfile.TemporaryDirectory() as td:
+            self.assertEqual(read_baseurl(self._site_root(Path(td), None)), "/ai-news")
+
+
+class TestAudioPlayerHtml(unittest.TestCase):
+
+    def test_renders_audio_with_aria_label(self):
+        html = audio_player_html("/ai-news/assets/audio/x/big-picture.mp3")
+        self.assertIn("<audio", html)
+        self.assertIn('aria-label="Audio summary of Big Picture summary"', html)
+        self.assertIn('src="/ai-news/assets/audio/x/big-picture.mp3"', html)
 
 
 class TestCollectEntries(unittest.TestCase):
@@ -76,10 +126,26 @@ class TestCollectEntries(unittest.TestCase):
                                         "2026-09-05 09:00:00 -0700")
             (d / "2026-09-05-Morning.html").write_text(older, encoding="utf-8")
             (d / "2026-09-12-Morning.html").write_text(SAMPLE_POST, encoding="utf-8")
-            entries = collect_entries(d, days=7, now=NOW)
+            entries = collect_entries(d, days=7, now=NOW, baseurl=BASEURL)
             # The 09-05 entry is outside the 7-day window.
             self.assertEqual(len(entries), 1)
             self.assertEqual(entries[0]["title"], "AI News Digest — Morning Edition")
+
+    def test_url_includes_baseurl(self):
+        """Edition links must carry the /ai-news baseurl (the live 404 bug)."""
+        with tempfile.TemporaryDirectory() as td:
+            d = self._posts_dir(Path(td))
+            (d / "2026-09-12-Morning.html").write_text(SAMPLE_POST, encoding="utf-8")
+            entries = collect_entries(d, days=7, now=NOW, baseurl=BASEURL)
+            self.assertEqual(entries[0]["url"], "/ai-news/news/2026/09/12/Morning/")
+
+    def test_entry_carries_audio(self):
+        with tempfile.TemporaryDirectory() as td:
+            d = self._posts_dir(Path(td))
+            (d / "2026-09-12-Morning.html").write_text(SAMPLE_POST, encoding="utf-8")
+            entries = collect_entries(d, days=7, now=NOW, baseurl=BASEURL)
+            self.assertEqual(entries[0]["audio"],
+                             "/ai-news/assets/audio/2026-09-12-Morning/big-picture.mp3")
 
     def test_orders_reverse_chronological(self):
         with tempfile.TemporaryDirectory() as td:
@@ -90,13 +156,13 @@ class TestCollectEntries(unittest.TestCase):
                        .replace("Morning Edition", "Evening Edition"))
             (d / "2026-09-12-Morning.html").write_text(morning, encoding="utf-8")
             (d / "2026-09-12-Evening.html").write_text(evening, encoding="utf-8")
-            entries = collect_entries(d, days=7, now=NOW)
+            entries = collect_entries(d, days=7, now=NOW, baseurl=BASEURL)
             self.assertEqual(len(entries), 2)
             self.assertIn("Evening", entries[0]["title"], "newest edition first")
 
     def test_missing_posts_dir_is_empty(self):
         with tempfile.TemporaryDirectory() as td:
-            entries = collect_entries(Path(td) / "_posts", days=7, now=NOW)
+            entries = collect_entries(Path(td) / "_posts", days=7, now=NOW, baseurl=BASEURL)
             self.assertEqual(entries, [])
 
 

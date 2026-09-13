@@ -35,6 +35,7 @@ from pathlib import Path
 SITE_ROOT_DEFAULT = str(Path(__file__).resolve().parent.parent)
 OUTPUT_FILE = "week.html"
 DEFAULT_DAYS = 7
+DEFAULT_BASEURL = "/ai-news"
 
 # The Big Picture block is rendered as:
 #   <h3 ...>🌍 The Big Picture</h3>
@@ -45,8 +46,29 @@ BIG_PICTURE_RE = re.compile(
     re.DOTALL | re.IGNORECASE,
 )
 
+# The Big Picture audio player carries a <source src="/ai-news/assets/audio/...">
+# for the big-picture.mp3 summary. Extract that src so the week page can reuse
+# the exact same (baseurl-prefixed) audio file the individual page plays.
+BIG_PICTURE_AUDIO_RE = re.compile(
+    r'<h3[^>]*>\s*🌍\s*The Big Picture\s*</h3>.*?'
+    r'<source\s+src="([^"]*big-picture\.mp3)"',
+    re.DOTALL | re.IGNORECASE,
+)
+
 # Front-matter date line: `date: 2026-09-12 09:49:19 -0700`
 DATE_RE = re.compile(r'^date:\s*["\']?(.*?)["\']?\s*$')
+
+
+def read_baseurl(site_root: Path) -> str:
+    """Read the Jekyll `baseurl:` from _config.yml, defaulting to /ai-news."""
+    cfg = site_root / "_config.yml"
+    if cfg.exists():
+        for line in cfg.read_text(encoding="utf-8").splitlines():
+            m = re.match(r'^baseurl:\s*["\']?(.*?)["\']?\s*$', line.strip())
+            if m:
+                base = m.group(1).strip().strip('"').strip("'").strip("/")
+                return f"/{base}" if base else ""
+    return DEFAULT_BASEURL
 
 
 def _strip_html(text: str) -> str:
@@ -62,6 +84,26 @@ def extract_big_picture(post_text: str) -> str:
     if not m:
         return ""
     return _strip_html(m.group(1))
+
+
+def extract_big_picture_audio(post_text: str) -> str:
+    """Return the Big Picture summary audio src (baseurl-prefixed), or ""."""
+    m = BIG_PICTURE_AUDIO_RE.search(post_text)
+    return m.group(1) if m else ""
+
+
+def audio_player_html(audio_src: str, label: str = "Big Picture summary") -> str:
+    """Render an <audio> player for a baseurl-prefixed MP3 src."""
+    src = html.escape(audio_src, quote=True)
+    label_esc = html.escape(label, quote=True)
+    return (
+        '<div class="audio-player" style="margin: 8px 0;">'
+        f'<audio controls preload="none" style="width:100%;max-width:400px;" '
+        f'aria-label="Audio summary of {label_esc}">'
+        f'<source src="{src}" type="audio/mpeg">'
+        f'<a href="{src}">Download {label_esc}</a>'
+        '</audio></div>'
+    )
 
 
 def read_post_date(post_text: str) -> datetime | None:
@@ -80,7 +122,7 @@ def read_post_date(post_text: str) -> datetime | None:
     return None
 
 
-def collect_entries(posts_dir: Path, *, days: int, now: datetime) -> list[dict]:
+def collect_entries(posts_dir: Path, *, days: int, now: datetime, baseurl: str) -> list[dict]:
     """Walk edition posts and return Big Picture entries within the window."""
     cutoff = now - timedelta(days=days)
     entries: list[dict] = []
@@ -102,9 +144,10 @@ def collect_entries(posts_dir: Path, *, days: int, now: datetime) -> list[dict]:
             continue
         entries.append({
             "title": _read_title(text, post_path.stem),
-            "url": _permalink(dt, post_path.stem),
+            "url": _permalink(dt, post_path.stem, baseurl),
             "date": dt,
             "bp": bp,
+            "audio": extract_big_picture_audio(text),
         })
     # Reverse chronological (newest first).
     entries.sort(key=lambda e: e["date"], reverse=True)
@@ -116,11 +159,17 @@ def _read_title(text: str, fallback: str) -> str:
     return m.group(1) if m else fallback
 
 
-def _permalink(dt: datetime, stem: str) -> str:
-    """Reconstruct the Jekyll permalink path for an edition post."""
+def _permalink(dt: datetime, stem: str, baseurl: str) -> str:
+    """Reconstruct the Jekyll permalink path for an edition post.
+
+    The path must carry the site's baseurl (``/ai-news``) — without it, a link
+    like ``/news/2026/09/12/Evening/`` resolves against the domain root and
+    404s, which is exactly the bug this fixed.
+    """
     edition = stem.rsplit("-", 1)[-1].capitalize()
     day = dt.strftime("%Y/%m/%d")
-    return f"/news/{day}/{edition}/"
+    base = baseurl.rstrip("/")
+    return f"{base}/news/{day}/{edition}/"
 
 
 def render_page(entries: list[dict], *, days: int, now: datetime) -> str:
@@ -128,10 +177,12 @@ def render_page(entries: list[dict], *, days: int, now: datetime) -> str:
     items = []
     for e in entries:
         date_label = e["date"].strftime("%B %-d, %Y")
+        audio = audio_player_html(e["audio"]) if e.get("audio") else ""
         items.append(
             '<div class="week-entry">\n'
             f'  <time datetime="{e["date"].isoformat()}">{date_label}</time> · '
-            f'<a href="{html.escape(e["url"])}">{html.escape(e["title"])}</a>\n'
+            f'<a href="{html.escape(e["url"], quote=True)}">{html.escape(e["title"])}</a>\n'
+            f'{audio}'
             f'  <p class="week-bp">{html.escape(e["bp"])}</p>\n'
             "</div>"
         )
@@ -173,7 +224,8 @@ def build(site_root: Path, *, days: int = DEFAULT_DAYS, now: datetime | None = N
     if now is None:
         now = datetime.now(timezone.utc)
     posts_dir = site_root / "_posts"
-    entries = collect_entries(posts_dir, days=days, now=now)
+    baseurl = read_baseurl(site_root)
+    entries = collect_entries(posts_dir, days=days, now=now, baseurl=baseurl)
     return write_page(site_root, render_page(entries, days=days, now=now))
 
 
