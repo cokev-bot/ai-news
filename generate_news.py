@@ -1652,8 +1652,37 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
                             print(f"      - dup:  {a['title'][:60]}")
 
         if not seen_this_run:
-            print("  ✗ No articles to publish, skipping edition.")
-            return False
+            # Distinguish a genuinely quiet edition from a degraded one. Both
+            # produce zero publishable items, but only one is a fault, and
+            # conflating them is dangerous in both directions:
+            #
+            #   * Returning False for a quiet edition aborts run_edition.sh
+            #     (set -e) before the Jekyll build and commit, so a routine
+            #     all-deduplicated slot looks like a failure and produces no
+            #     post — a silent gap on the site.
+            #   * Returning True for an outage would hide the far more serious
+            #     failure, which is exactly the "26 feeds dead, looks healthy"
+            #     class of bug.
+            #
+            # The discriminator is fetch health, not item count: if at least
+            # one feed fetched successfully then the sources are reachable and
+            # the window is simply exhausted. If zero fetched OK, the sources
+            # are broken and this is a real failure. Treating "cannot prove any
+            # feed is healthy" as a failure keeps the alerting biased toward
+            # over-reporting outages rather than hiding them.
+            healthy = sum(1 for r in health_sink if r.get("ok"))
+            total = len(health_sink)
+            if healthy == 0:
+                print(
+                    f"  ✗ No articles to publish and 0/{total} feeds fetched "
+                    f"successfully — degraded run, not a quiet day."
+                )
+                return False
+            print(
+                f"  ✓ No new articles to publish ({healthy}/{total} feeds fetched "
+                f"OK; every item is already in a previous edition). Skipping edition."
+            )
+            return True
 
         # Persist new links with metadata
         new_entries = {}
