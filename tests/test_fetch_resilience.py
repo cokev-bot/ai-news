@@ -183,7 +183,7 @@ class TestFetchFeedFallbackChain(unittest.TestCase):
         port, state = self._serve([(200, VALID_RSS, "application/rss+xml")])
         url = f"http://127.0.0.1:{port}/primary"
         alts = [f"http://127.0.0.1:{port}/fallback1"]
-        articles = fetch_feed("TestFeed", url, fallbacks=alts)
+        articles = fetch_feed("TestFeed", url, fallbacks=alts, backoff_base=0.0)
         self.assertEqual(len(articles), 1)
         self.assertEqual(articles[0]["title"], "Test Item One")
         self.assertEqual(state["call_count"], 1)
@@ -197,7 +197,7 @@ class TestFetchFeedFallbackChain(unittest.TestCase):
         ])
         url = f"http://127.0.0.1:{port}/primary"
         alts = [f"http://127.0.0.1:{port}/fallback1"]
-        articles = fetch_feed("TestFeed", url, fallbacks=alts)
+        articles = fetch_feed("TestFeed", url, fallbacks=alts, backoff_base=0.0)
         self.assertEqual(len(articles), 1)
         self.assertEqual(state["call_count"], 4)
 
@@ -213,14 +213,14 @@ class TestFetchFeedFallbackChain(unittest.TestCase):
         ])
         url = f"http://127.0.0.1:{port}/primary"
         alts = [f"http://127.0.0.1:{port}/alt1", f"http://127.0.0.1:{port}/alt2"]
-        articles = fetch_feed("TestFeed", url, fallbacks=alts)
+        articles = fetch_feed("TestFeed", url, fallbacks=alts, backoff_base=0.0)
         self.assertEqual(len(articles), 1)
 
     def test_all_fails_returns_empty(self):
         port, state = self._serve([(200, EMPTY_BODY, "application/rss+xml")] * 20)
         url = f"http://127.0.0.1:{port}/primary"
         alts = [f"http://127.0.0.1:{port}/alt1"]
-        articles = fetch_feed("TestFeed", url, fallbacks=alts)
+        articles = fetch_feed("TestFeed", url, fallbacks=alts, backoff_base=0.0)
         self.assertEqual(articles, [])
 
 

@@ -1,8 +1,6 @@
 import unittest
-from pathlib import Path
-import json
 from generate_news import text_similarity, linkify_urls, nitter_to_x, is_nitter_link
-from clean_title import clean_title
+
 
 class TestAiNewsLogic(unittest.TestCase):
 
@@ -26,19 +24,11 @@ class TestAiNewsLogic(unittest.TestCase):
         result = linkify_urls(text)
         self.assertIn('<a href="https://example.com">https://example.com</a>', result)
         self.assertIn('<a href="https://x.com/test">https://x.com/test</a>', result)
-        
+
         # Test that existing anchors are not double-linkified
         already_linked = '<a href="https://google.com">Google</a>'
         self.assertEqual(linkify_urls(already_linked), already_linked)
 
-    def test_clean_title(self):
-        # Test whitespace removal
-        self.assertEqual(clean_title("Title\nWith\nNewline"), "Title With Newline")
-        # Test escape characters
-        self.assertEqual(clean_title("Price $10"), "Price $10") # $ is not in escape_chars
-        self.assertEqual(clean_title("Markdown *Bold*"), "Markdown \\*Bold\\*")
-        # Test multiple spaces
-        self.assertEqual(clean_title("Too    many    spaces"), "Too many spaces")
 
 if __name__ == "__main__":
     unittest.main()

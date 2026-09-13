@@ -10,9 +10,13 @@ Validates that:
 
 import os
 import re
-import subprocess
+import sys
 import unittest
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from jekyll_build import build_site
 
 SITE_ROOT = Path(__file__).resolve().parent.parent
 PLUGINS_DIR = SITE_ROOT / "_plugins"
@@ -77,14 +81,7 @@ class TestArchiveBuild(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """Build the site once for all tests in this class."""
-        result = subprocess.run(
-            ["bundle", "exec", "jekyll", "build"],
-            cwd=str(SITE_ROOT),
-            capture_output=True,
-            text=True,
-            timeout=120,
-        )
-        cls.build_result = result
+        cls.build_result = build_site()
 
     def test_jekyll_build_succeeds(self):
         self.assertEqual(

@@ -1324,7 +1324,7 @@ def _http_get_with_retry(url: str, *, timeout: int = 15, attempts: int = 3,
     return None
 
 
-def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_items_per_source: int = MAX_ITEMS_PER_SOURCE, max_age_days: int = MAX_AGE_DAYS, health_sink: list[dict] | None = None) -> list[dict]:
+def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_items_per_source: int = MAX_ITEMS_PER_SOURCE, max_age_days: int = MAX_AGE_DAYS, backoff_base: float = 0.6, health_sink: list[dict] | None = None) -> list[dict]:
     """Fetch and parse an RSS feed, returning a list of article dicts.
 
     `fallbacks` is an ordered list of alternative URLs to try if the primary
@@ -1343,7 +1343,7 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_i
     raw: bytes | None = None
     used_idx: int = -1
     for idx, candidate in enumerate(candidates):
-        raw = _http_get_with_retry(candidate, timeout=15, attempts=3)
+        raw = _http_get_with_retry(candidate, timeout=15, attempts=3, backoff_base=backoff_base)
         if raw is not None:
             used_idx = idx
             break

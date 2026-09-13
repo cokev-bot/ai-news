@@ -15,10 +15,16 @@ These tests verify that:
 import json
 import os
 import re
-import subprocess
+import sys
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
+
+# Make tests/ importable in single-module runs (e.g. `python3 -m unittest
+# tests.test_feed`), which — unlike `discover` — does not add tests/ to sys.path.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from jekyll_build import build_site
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 CONFIG_FILE = PROJECT_ROOT / "_config.yml"
@@ -51,15 +57,9 @@ def _parse_feed() -> ET.ElementTree:
     return ET.parse(str(FEED_FILE))
 
 
-def _rebuild_site():
-    """Run jekyll build and return the exit code."""
-    result = subprocess.run(
-        ["bundle", "exec", "jekyll", "build", "--destination", str(SITE_DIR)],
-        capture_output=True,
-        text=True,
-        cwd=str(PROJECT_ROOT),
-    )
-    return result.returncode
+def _rebuild_site() -> int:
+    """Build the site (shared across the suite) and return the exit code."""
+    return build_site().returncode
 
 
 # -----------------------------------------------------------------------

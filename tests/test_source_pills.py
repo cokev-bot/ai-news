@@ -256,9 +256,11 @@ class TestSourcePillCSS(unittest.TestCase):
 
         return site_root
 
+    @patch("generate_news.generate_og_image_for_edition", return_value=None)
+    @patch("generate_news.generate_edition_audio", return_value={})
     @patch("generate_news._query_ollama")
     @patch("generate_news.fetch_all_feeds")
-    def test_css_injected_in_post(self, mock_fetch, mock_ollama):
+    def test_css_injected_in_post(self, mock_fetch, mock_ollama, mock_audio, mock_og):
         """generate_post() injects .source-pill <style> block into the HTML."""
         from generate_news import generate_post
 
@@ -292,9 +294,11 @@ class TestSourcePillCSS(unittest.TestCase):
             self.assertIn(".source-pill", content)
             self.assertIn("border-radius", content)
 
+    @patch("generate_news.generate_og_image_for_edition", return_value=None)
+    @patch("generate_news.generate_edition_audio", return_value={})
     @patch("generate_news._query_ollama")
     @patch("generate_news.fetch_all_feeds")
-    def test_source_pill_rendered_in_article(self, mock_fetch, mock_ollama):
+    def test_source_pill_rendered_in_article(self, mock_fetch, mock_ollama, mock_audio, mock_og):
         """generate_post() renders source names as <a class='source-pill'> links."""
         from generate_news import generate_post
 
@@ -327,9 +331,11 @@ class TestSourcePillCSS(unittest.TestCase):
             # The old-style <strong>TestFeed</strong> should NOT appear
             self.assertNotIn("<strong>TestFeed</strong>", content)
 
+    @patch("generate_news.generate_og_image_for_edition", return_value=None)
+    @patch("generate_news.generate_edition_audio", return_value={})
     @patch("generate_news._query_ollama")
     @patch("generate_news.fetch_all_feeds")
-    def test_unknown_source_falls_back_to_strong(self, mock_fetch, mock_ollama):
+    def test_unknown_source_falls_back_to_strong(self, mock_fetch, mock_ollama, mock_audio, mock_og):
         """When a source is not in source_urls, <strong> fallback is used."""
         from generate_news import generate_post
 
@@ -406,7 +412,9 @@ class TestSourcePillCSS(unittest.TestCase):
             from generate_news import generate_post
 
             with patch("generate_news.fetch_all_feeds") as mock_fetch, \
-                 patch("generate_news._query_ollama") as mock_ollama:
+                 patch("generate_news._query_ollama") as mock_ollama, \
+                 patch("generate_news.generate_edition_audio", return_value={}), \
+                 patch("generate_news.generate_og_image_for_edition", return_value=None):
                 mock_fetch.return_value = {
                     "TestSub": [("TestFeed", [
                         {
