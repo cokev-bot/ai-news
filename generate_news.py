@@ -1807,11 +1807,15 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
     if republish:
         original_dt = _read_post_frontmatter_date(filepath)
         if original_dt is not None:
+            # Convert into the site timezone so the rendered header shows the
+            # real abbreviation ("PDT"), not a fixed-offset name like
+            # "UTC-07:00". Same instant and same wall-clock time, so the
+            # frontmatter date (and therefore the permalink) is unchanged.
+            post_now = original_dt.astimezone(ZoneInfo(get_timezone(site_root)))
             logging.info(
-                f"Republish: preserving original post date {original_dt.isoformat()} "
-                f"(permalink /news/{original_dt.strftime('%Y/%m/%d')}/{edition_label}/)"
+                f"Republish: preserving original post date {post_now.isoformat()} "
+                f"(permalink /news/{post_now.strftime('%Y/%m/%d')}/{edition_label}/)"
             )
-            post_now = original_dt
 
     header_dt = post_now.strftime("%Y-%m-%d %H:%M %Z")
 

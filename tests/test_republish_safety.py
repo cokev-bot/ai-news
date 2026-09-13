@@ -237,6 +237,27 @@ class TestRepublishPreservesPermalink(unittest.TestCase):
         # Permalink follows the Jekyll/Pacific date, which is stable.
         self.assertEqual(local.strftime("%Y/%m/%d"), "2026/09/12")
 
+    def test_recovered_date_renders_pdt_not_a_fixed_offset_name(self):
+        """The header must say "PDT", not "UTC-07:00".
+
+        A datetime parsed with ``%z`` carries a fixed-offset tzinfo whose ``%Z``
+        is "UTC-07:00". Converting to the site timezone keeps the instant and the
+        wall-clock time identical while restoring the real abbreviation, so the
+        frontmatter round-trips byte-for-byte and the header reads correctly.
+        """
+        post = self.site / "_posts" / "2026-09-12-Morning.html"
+        original = "2026-09-12 09:49:19 -0700"
+        post.write_text(f"---\ndate: {original}\n---\n", encoding="utf-8")
+
+        dt = _read_post_frontmatter_date(post)
+        self.assertEqual(dt.strftime("%Z"), "UTC-07:00", "raw %z parse is a fixed offset")
+
+        converted = dt.astimezone(PACIFIC)
+        self.assertEqual(converted.strftime("%Z"), "PDT")
+        self.assertEqual(converted.strftime("%Y-%m-%d %H:%M:%S %z"), original,
+                         "frontmatter must round-trip exactly")
+        self.assertEqual(converted.strftime("%Y/%m/%d"), "2026/09/12")
+
 
 class TestRepublishIsWired(unittest.TestCase):
     """Guard the wiring itself, since this path had no tests at all."""
@@ -255,12 +276,14 @@ class TestRepublishIsWired(unittest.TestCase):
         # Anchor on the actual date-preservation call, not the first
         # "if republish:" in the file (the fetch-skip branch matches earlier).
         idx = src.index("_read_post_frontmatter_date(filepath)")
-        window = src[idx:idx + 400]
-        self.assertIn("post_now = original_dt", window)
+        window = src[idx:idx + 700]
+        self.assertIn("post_now = original_dt.astimezone", window)
         # post_now is still initialised from now() above the guard, so fresh
-        # runs are unaffected.
-        before = src[max(0, idx - 900):idx]
+        # runs are unaffected: the guard is inside `if republish:` and the
+        # now()-based assignment sits before it.
+        before = src[max(0, idx - 1200):idx]
         self.assertIn("datetime.now", before)
+        self.assertIn("if republish:", before)
 
 
 class TestCachedBigPictureIsReRendered(unittest.TestCase):
