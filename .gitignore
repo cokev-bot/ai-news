@@ -22,3 +22,7 @@ generate_news.log*
 # Per-edition OG social card images (tools/make_og_image.py). Generated
 # on each edition run; ~200KB each, regenerated daily so no need to track.
 assets/og/
+
+# Retired: heartbeat-sourced story-lead files. The moltbook/1f916 heartbeats
+# capture to ~/idea-board/ instead and must not write into this repo.
+/IDEAS_FROM_*.md
