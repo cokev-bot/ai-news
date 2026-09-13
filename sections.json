@@ -13,13 +13,11 @@
         "deepseek_ai": "https://x.com/deepseek_ai",
         "GoogleAI": "https://x.com/GoogleAI",
         "GeminiApp": "https://x.com/GeminiApp",
-        "NotebookLM": "https://x.com/NotebookLM",
         "MiniMax_AI": "https://x.com/MiniMax_AI",
         "MistralAI": "https://x.com/MistralAI",
         "Kimi_Moonshot": "https://x.com/Kimi_Moonshot",
         "OpenAI": "https://x.com/OpenAI",
         "OpenAINewsroom": "https://x.com/OpenAINewsroom",
-        "ChatGPTapp": "https://x.com/ChatGPTapp",
         "Zai_org": "https://x.com/Zai_org",
         "ClaudeDevs": "https://x.com/ClaudeDevs",
         "googleaidevs": "https://x.com/googleaidevs",
@@ -27,13 +25,14 @@
         "OpenAIDevs": "https://x.com/OpenAIDevs",
         "GoogleAIStudio": "https://x.com/GoogleAIStudio",
         "antigravity": "https://x.com/antigravity",
-        "HuggingFace Trending Models": "https://huggingface.co/models",
         "HuggingFace Blog": "https://huggingface.co/blog",
         "mistralvibe": "https://x.com/mistralvibe",
         "ollama": "https://x.com/ollama",
         "arena": "https://x.com/arena",
         "Simon Willison": "https://simonwillison.net",
-        "karpathy": "https://x.com/karpathy"
+        "karpathy": "https://x.com/karpathy",
+        "Gemini_Notebook": "https://x.com/Gemini_Notebook",
+        "ChatGPT": "https://x.com/ChatGPT"
     },
     "sections": [
         {
@@ -150,7 +149,7 @@
                     "feeds": {
                         "GoogleAI": "https://rss.xcancel.com/GoogleAI/rss",
                         "GeminiApp": "https://rss.xcancel.com/GeminiApp/rss",
-                        "NotebookLM": "https://rss.xcancel.com/NotebookLM/rss"
+                        "Gemini_Notebook": "https://rss.xcancel.com/Gemini_Notebook/rss"
                     },
                     "feeds_alts": {
                         "GoogleAI": [
@@ -163,10 +162,10 @@
                             "https://nitter.privacyredirect.com/GeminiApp/rss",
                             "https://xcancel.com/GeminiApp/rss"
                         ],
-                        "NotebookLM": [
-                            "https://nitter.privacydev.net/NotebookLM/rss",
-                            "https://nitter.privacyredirect.com/NotebookLM/rss",
-                            "https://xcancel.com/NotebookLM/rss"
+                        "Gemini_Notebook": [
+                            "https://nitter.privacydev.net/Gemini_Notebook/rss",
+                            "https://nitter.privacyredirect.com/Gemini_Notebook/rss",
+                            "https://xcancel.com/Gemini_Notebook/rss"
                         ]
                     }
                 },
@@ -210,11 +209,17 @@
                     }
                 },
                 {
+                    "title": "HuggingFace",
+                    "feeds": {
+                        "HuggingFace Blog": "https://huggingface.co/blog/feed.xml"
+                    }
+                },
+                {
                     "title": "OpenAI",
                     "feeds": {
                         "OpenAI": "https://rss.xcancel.com/OpenAI/rss",
                         "OpenAINewsroom": "https://rss.xcancel.com/OpenAINewsroom/rss",
-                        "ChatGPTapp": "https://rss.xcancel.com/ChatGPTapp/rss"
+                        "ChatGPT": "https://rss.xcancel.com/ChatGPT/rss"
                     },
                     "feeds_alts": {
                         "OpenAI": [
@@ -227,10 +232,10 @@
                             "https://nitter.privacyredirect.com/OpenAINewsroom/rss",
                             "https://xcancel.com/OpenAINewsroom/rss"
                         ],
-                        "ChatGPTapp": [
-                            "https://nitter.privacydev.net/ChatGPTapp/rss",
-                            "https://nitter.privacyredirect.com/ChatGPTapp/rss",
-                            "https://xcancel.com/ChatGPTapp/rss"
+                        "ChatGPT": [
+                            "https://nitter.privacydev.net/ChatGPT/rss",
+                            "https://nitter.privacyredirect.com/ChatGPT/rss",
+                            "https://xcancel.com/ChatGPT/rss"
                         ]
                     }
                 },
@@ -329,12 +334,6 @@
                     }
                 },
                 {
-                    "title": "HuggingFace",
-                    "feeds": {
-                        "HuggingFace Trending Models": "https://huggingface.co/blog/feed.xml"
-                    }
-                },
-                {
                     "title": "Mistral",
                     "feeds": {
                         "mistralvibe": "https://rss.xcancel.com/mistralvibe/rss"
@@ -386,8 +385,7 @@
                 {
                     "title": "Independent Blogs",
                     "feeds": {
-                        "Simon Willison": "https://simonwillison.net/atom/everything/",
-                        "HuggingFace Blog": "https://huggingface.co/blog/feed.xml"
+                        "Simon Willison": "https://simonwillison.net/atom/everything/"
                     }
                 },
                 {
