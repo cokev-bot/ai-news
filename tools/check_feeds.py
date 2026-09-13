@@ -45,7 +45,6 @@ from generate_news import (
     _looks_like_rss,
     _save_feed_health,
     fetch_feed,
-    load_config,
     record_feed_health,
 )
 
