@@ -9,8 +9,11 @@ baseurl: "/ai-news"
 # under the following day's URL and day heading. Set it explicitly and keep it
 # in sync with config.json's `timezone` — tests/test_pacific_days.py asserts both.
 timezone: "America/Los_Angeles"
-github_username: ""
-twitter_username: ""
+# Source repository. The local _includes/social.html override renders this as the
+# footer's GitHub link (the theme's default social.html built a broken
+# "https://github.com/" from an empty github_username). Twitter is intentionally
+# omitted.
+github_url: "https://github.com/cokev-bot/ai-news"
 theme: minima
 # Minima's header renders one nav link per page in site.pages by default. The
 # day-index generator adds a page for every day ("AI News Digest — <date>"),
