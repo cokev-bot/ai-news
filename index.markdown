@@ -63,7 +63,7 @@ layout: home
 {% endfor %}
 </div>
 
-<p class="archive-link">Browse all past editions in the <a href="{{ '/news/' | relative_url }}">archive</a> or <a href="{{ '/archive/' | relative_url }}">by month</a>.</p>
+<p class="archive-link">Browse all past editions in the <a href="{{ '/news/' | relative_url }}">archive</a> or <a href="{{ '/archive/' | relative_url }}">by month</a>. See every feed we watch and when it last delivered on the <a href="{{ '/source-status/' | relative_url }}">source status</a> page.</p>
 
 <h3>Sections</h3>
 

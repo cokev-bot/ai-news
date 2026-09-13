@@ -1054,6 +1054,81 @@ def generate_og_image_for_edition(
 
 
 # ---------------------------------------------------------------------------
+# Feed health tracking
+# ---------------------------------------------------------------------------
+
+HEALTH_FILE = ".feed_health.json"
+
+
+def _load_feed_health(site_root: Path) -> dict:
+    """Load ``.feed_health.json``; empty dict when missing or corrupt."""
+    path = site_root / HEALTH_FILE
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _save_feed_health(site_root: Path, health: dict) -> None:
+    """Write ``.feed_health.json`` atomically. Never raises."""
+    try:
+        path = site_root / HEALTH_FILE
+        tmp = path.with_name(path.name + ".tmp")
+        tmp.write_text(json.dumps(health, indent=2, ensure_ascii=False), encoding="utf-8")
+        tmp.replace(path)
+    except OSError as e:  # pragma: no cover - disk-level failure only
+        logging.warning(f"Could not write feed health state: {e}")
+
+
+def record_feed_health(site_root: Path, results: list[dict]) -> None:
+    """Merge this run's fetch outcomes into ``.feed_health.json``.
+
+    *results* is a list of ``{name, url, ok, error}`` dicts — one per feed
+    attempt. Successes stamp ``last_success`` and reset the failure streak;
+    failures stamp ``last_failure`` and increment ``consecutive_failures``.
+
+    The edition pipeline is the only thing that actually fetches every feed on
+    a schedule, so recording health here (rather than relying solely on the
+    standalone ``tools/check_feeds.py`` monitor) is what keeps the public
+    source-status page's "last successful fetch" column honest.
+
+    This is deliberately a separate, best-effort step: a failure to persist
+    health must never fail an edition.
+    """
+    if not results:
+        return
+    health = _load_feed_health(site_root)
+    now_iso = datetime.now(timezone.utc).isoformat()
+    for res in results:
+        name = res.get("name")
+        if not name:
+            continue
+        entry = health.get(name)
+        if not isinstance(entry, dict):
+            entry = {
+                "url": res.get("url", ""),
+                "consecutive_failures": 0,
+                "last_success": None,
+                "last_failure": None,
+                "last_error": None,
+            }
+        entry["url"] = res.get("url", entry.get("url", ""))
+        if res.get("ok"):
+            entry["consecutive_failures"] = 0
+            entry["last_success"] = now_iso
+            entry["last_error"] = None
+        else:
+            entry["consecutive_failures"] = int(entry.get("consecutive_failures") or 0) + 1
+            entry["last_failure"] = now_iso
+            entry["last_error"] = res.get("error") or "all URLs failed"
+        health[name] = entry
+    _save_feed_health(site_root, health)
+
+
+# ---------------------------------------------------------------------------
 # Feed fetching
 # ---------------------------------------------------------------------------
 
@@ -1095,7 +1170,7 @@ def _http_get_with_retry(url: str, *, timeout: int = 15, attempts: int = 3,
     return None
 
 
-def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_items_per_source: int = MAX_ITEMS_PER_SOURCE, max_age_days: int = MAX_AGE_DAYS) -> list[dict]:
+def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_items_per_source: int = MAX_ITEMS_PER_SOURCE, max_age_days: int = MAX_AGE_DAYS, health_sink: list[dict] | None = None) -> list[dict]:
     """Fetch and parse an RSS feed, returning a list of article dicts.
 
     `fallbacks` is an ordered list of alternative URLs to try if the primary
@@ -1103,6 +1178,11 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_i
     goes through the same retry/backoff logic. We log one line per attempt so
     the run log makes feed health observable. We never raise — a single bad
     feed cannot abort the whole edition.
+
+    `health_sink`, when given, receives one ``{name, url, ok, error}`` dict
+    describing this attempt so the caller can persist feed health. The body
+    being fetched successfully is what counts as success here — a feed that
+    returns a valid but empty/aged-out body is still "reachable".
     """
     fallbacks = list(fallbacks or [])
     candidates = [url] + fallbacks
@@ -1117,6 +1197,13 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_i
             logging.warning(f"{name}: primary failed, trying {len(fallbacks)} fallback(s)")
     if raw is None:
         logging.error(f"{name}: all {len(candidates)} URL(s) failed — feed skipped")
+        if health_sink is not None:
+            health_sink.append({
+                "name": name,
+                "url": url,
+                "ok": False,
+                "error": f"all {len(candidates)} URL(s) failed",
+            })
         return []
     if used_idx > 0:
         logging.info(f"{name}: served by fallback #{used_idx} ({candidates[used_idx]})")
@@ -1125,7 +1212,22 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_i
         root = ET.fromstring(raw)
     except Exception as e:
         logging.error(f"Failed to parse {name}: {e}")
+        if health_sink is not None:
+            health_sink.append({
+                "name": name,
+                "url": url,
+                "ok": False,
+                "error": f"parse error: {e}",
+            })
         return []
+
+    if health_sink is not None:
+        health_sink.append({
+            "name": name,
+            "url": url,
+            "ok": True,
+            "error": None,
+        })
 
     articles = []
     now = datetime.now(timezone.utc)
@@ -1168,13 +1270,18 @@ def fetch_feed(name: str, url: str, fallbacks: list[str] | None = None, *, max_i
     return articles
 
 
-def fetch_all_feeds(sections: list[dict], *, max_items_per_source: int = MAX_ITEMS_PER_SOURCE, max_age_days: int = MAX_AGE_DAYS) -> dict[str, list[tuple[str, list[dict]]]]:
+def fetch_all_feeds(sections: list[dict], *, max_items_per_source: int = MAX_ITEMS_PER_SOURCE, max_age_days: int = MAX_AGE_DAYS, health_sink: list[dict] | None = None) -> dict[str, list[tuple[str, list[dict]]]]:
     """Fetch all RSS feeds in parallel, grouped by subsection.
 
     Returns a mapping of subsection_title → ordered list of
     (feed_name, articles) tuples — one per feed — in the same order
     the feeds appear in sections.json.  Errors in individual feeds are
     logged but never propagated (fetch_feed never raises).
+
+    `health_sink`, when given, collects one ``{name, url, ok, error}`` dict
+    per feed attempt (see ``fetch_feed``) so the caller can persist feed
+    health. It is appended to from worker threads, which is safe for
+    ``list.append`` under the GIL.
     """
     # Collect every feed with its subsection context.
     feed_jobs: list[tuple[str, str, list[str], str]] = []  # (name, url, fallbacks, sub_key)
@@ -1196,7 +1303,7 @@ def fetch_all_feeds(sections: list[dict], *, max_items_per_source: int = MAX_ITE
     num_workers = min(MAX_FEED_WORKERS, len(feed_jobs)) if feed_jobs else 1
     with ThreadPoolExecutor(max_workers=num_workers) as pool:
         future_to_job = {
-            pool.submit(fetch_feed, name, url, fallbacks=fallbacks, max_items_per_source=max_items_per_source, max_age_days=max_age_days): (name, url, fallbacks, sub_key)
+            pool.submit(fetch_feed, name, url, fallbacks=fallbacks, max_items_per_source=max_items_per_source, max_age_days=max_age_days, health_sink=health_sink): (name, url, fallbacks, sub_key)
             for name, url, fallbacks, sub_key in feed_jobs
         }
         for future in as_completed(future_to_job):
@@ -1437,7 +1544,18 @@ def generate_post(edition: str, site_root: Path, republish: bool = False) -> boo
             for subsection in section["subsections"]:
                 subsection_articles[subsection["title"]] = []
 
-        feed_results = fetch_all_feeds(SECTIONS, max_items_per_source=tuning["max_items_per_source"], max_age_days=tuning["max_age_days"])
+        # Collect per-feed fetch outcomes so the public source-status page can
+        # report "last successful fetch" from the same runs that produce
+        # editions. Recorded before dedup so a fully-deduplicated edition
+        # (which returns False below) still updates feed health.
+        health_sink: list[dict] = []
+        feed_results = fetch_all_feeds(SECTIONS, max_items_per_source=tuning["max_items_per_source"], max_age_days=tuning["max_age_days"], health_sink=health_sink)
+        try:
+            record_feed_health(site_root, health_sink)
+            ok_count = sum(1 for r in health_sink if r.get("ok"))
+            logging.info(f"Feed health recorded: {ok_count}/{len(health_sink)} fetched OK")
+        except Exception as e:  # pragma: no cover - health must never break an edition
+            logging.warning(f"Feed health recording failed: {e}")
 
         for section in SECTIONS:
             for subsection in section["subsections"]:

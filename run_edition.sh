@@ -45,6 +45,13 @@ git pull --ff-only origin main
 echo "Running $EDITION edition for $DATE (PT)..."
 python3 generate_news.py "${DATE}-${EDITION}" /home/ubuntu/ai-news
 
+# Regenerate the public /source-status/ page from the state files the run above
+# just updated. Must run BEFORE the Jekyll build so the page is compiled into
+# _site/. Non-fatal: a failure here must never cost us an edition, it just
+# means the status page lags by one run.
+python3 tools/build_source_status.py /home/ubuntu/ai-news \
+    || echo "[!] Source status page generation failed (non-fatal; edition continues)."
+
 # Run Jekyll build. With pipefail set, a non-zero exit from jekyll (including
 # a failed build) will abort the script before we commit and push a broken post.
 bundle exec jekyll build --destination _site
@@ -58,7 +65,7 @@ fi
 # `git add` to exit 1 even with --ignore-errors, which kills the script
 # under `set -e`. The `|| true` guards against any other gitignored paths
 # that might slip in.
-git add --ignore-errors _posts/ _config.yml assets/ || true
+git add --ignore-errors _posts/ _config.yml assets/ source-status.html || true
 if ! git diff --cached --quiet; then
     git commit -m "$EDITION AI News Digest $DATE"
     # Push explicitly to origin/main so the live site updates regardless of

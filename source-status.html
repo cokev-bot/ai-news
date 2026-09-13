@@ -1,0 +1,104 @@
+---
+layout: page
+title: Source Status
+permalink: /source-status/
+---
+
+<p class="ss-intro">
+  Every feed this digest watches, and when it last did something.
+  <strong>Last new story</strong> is the most recent item from that source that
+  survived de-duplication and made it into a published edition.
+  <strong>Last successful fetch</strong> is the most recent time the pipeline
+  pulled the feed and got a usable response back — a source can be fetched
+  successfully and still have no new story.
+  Sources are marked <em>quiet</em> when they are reachable but have not
+  delivered a story in 7 days.
+</p>
+
+<p class="ss-summary">
+  <strong>34</strong> sources tracked ·
+  <strong>0</strong> delivering stories ·
+  <strong>0</strong> quiet ·
+  <strong>0</strong> with fetch failures ·
+  updated 2026-09-13 00:27 UTC
+</p>
+
+<style>
+.source-status-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9em; }
+.source-status-table th, .source-status-table td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #e1e1e1; vertical-align: top; }
+.source-status-table thead th { border-bottom: 2px solid #ccc; white-space: nowrap; }
+.source-status-table .ss-group th { background: #f4f4f4; font-size: 0.85em; letter-spacing: 0.04em; text-transform: uppercase; }
+.source-status-table .ss-count { text-align: right; white-space: nowrap; }
+.source-status-table .ss-time { white-space: nowrap; }
+.source-status-table .ss-never { color: #999; }
+.source-status-table .ss-badge { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 0.82em; white-space: nowrap; }
+.ss-badge-ok { background: #e3f5e6; color: #1c6b2b; }
+.ss-badge-quiet { background: #eef0f2; color: #555; }
+.ss-badge-degraded { background: #fdf1d8; color: #8a5a00; }
+.ss-badge-failing { background: #fbe3e3; color: #a02020; }
+.ss-badge-stale-check { background: #fdf1d8; color: #8a5a00; }
+.ss-badge-unknown { background: #eef0f2; color: #777; }
+.ss-intro, .ss-summary { max-width: 46em; }
+</style>
+
+<table class="source-status-table">
+  <thead>
+    <tr>
+      <th scope="col">Source</th>
+      <th scope="col">Section</th>
+      <th scope="col">Last new story</th>
+      <th scope="col">Last successful fetch</th>
+      <th scope="col">Items (7d)</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr class="ss-group"><th colspan="6" scope="colgroup">News</th></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://www.ft.com/artificial-intelligence">FT AI</a></td><td class="ss-section">Financial Times</td><td class="ss-time"><span title="2026-09-12T20:04:23.505662+00:00">4h ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">21</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://www.ft.com/the-ai-shift">FT The AI Shift</a></td><td class="ss-section">Financial Times</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://www.nytimes.com/spotlight/artificial-intelligence">NYT AI</a></td><td class="ss-section">New York Times</td><td class="ss-time"><span title="2026-09-12T16:49:19.667913+00:00">7h ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">10</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://www.therundown.ai">The Rundown AI</a></td><td class="ss-section">Newsletters</td><td class="ss-time"><span title="2026-09-12T16:49:19.667913+00:00">7h ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">9</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-group"><th colspan="6" scope="colgroup">Research</th></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://arxiv.org/list/cs.AI">arXiv cs.AI</a></td><td class="ss-section">arXiv</td><td class="ss-time"><span title="2026-09-12T16:49:19.667913+00:00">7h ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">20</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-group"><th colspan="6" scope="colgroup">AI Labs</th></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/Aleph__Alpha">Aleph__Alpha</a></td><td class="ss-section">Aleph Alpha</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/Alibaba_Qwen">Alibaba_Qwen</a></td><td class="ss-section">Alibaba</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/AnthropicAI">AnthropicAI</a></td><td class="ss-section">Anthropic</td><td class="ss-time"><span title="2026-07-15T20:01:34.656215+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/claudeai">claudeai</a></td><td class="ss-section">Anthropic</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/BaiduAI_News">BaiduAI_News</a></td><td class="ss-section">Baidu AI</td><td class="ss-time"><span title="2026-07-16T15:08:55.709489+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/deepseek_ai">deepseek_ai</a></td><td class="ss-section">DeepSeek</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/GoogleAI">GoogleAI</a></td><td class="ss-section">Google</td><td class="ss-time"><span title="2026-07-16T20:03:28.521584+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/GeminiApp">GeminiApp</a></td><td class="ss-section">Google</td><td class="ss-time"><span title="2026-07-16T20:03:28.521584+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/NotebookLM">NotebookLM</a></td><td class="ss-section">Google</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/MiniMax_AI">MiniMax_AI</a></td><td class="ss-section">MiniMax</td><td class="ss-time"><span title="2026-07-16T20:03:28.521584+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/MistralAI">MistralAI</a></td><td class="ss-section">Mistral</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/Kimi_Moonshot">Kimi_Moonshot</a></td><td class="ss-section">Moonshot AI</td><td class="ss-time"><span title="2026-07-16T20:03:28.521584+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/OpenAI">OpenAI</a></td><td class="ss-section">OpenAI</td><td class="ss-time"><span title="2026-07-16T20:03:28.521584+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/OpenAINewsroom">OpenAINewsroom</a></td><td class="ss-section">OpenAI</td><td class="ss-time"><span title="2026-07-15T15:02:43.202445+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/ChatGPTapp">ChatGPTapp</a></td><td class="ss-section">OpenAI</td><td class="ss-time"><span title="2026-07-16T20:03:28.521584+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/Zai_org">Zai_org</a></td><td class="ss-section">Z.AI</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-group"><th colspan="6" scope="colgroup">Developers</th></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/ClaudeDevs">ClaudeDevs</a></td><td class="ss-section">Anthropic</td><td class="ss-time"><span title="2026-07-16T20:03:28.521584+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/googleaidevs">googleaidevs</a></td><td class="ss-section">Google</td><td class="ss-time"><span title="2026-07-16T20:03:28.521584+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/MistralDevs">MistralDevs</a></td><td class="ss-section">Mistral</td><td class="ss-time"><span title="2026-07-16T20:03:28.521584+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/OpenAIDevs">OpenAIDevs</a></td><td class="ss-section">OpenAI</td><td class="ss-time"><span title="2026-07-16T20:03:28.521584+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-group"><th colspan="6" scope="colgroup">Developer Tools</th></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/GoogleAIStudio">GoogleAIStudio</a></td><td class="ss-section">Google</td><td class="ss-time"><span title="2026-07-16T20:03:28.521584+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/antigravity">antigravity</a></td><td class="ss-section">Google</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://huggingface.co/models">HuggingFace Trending Models</a></td><td class="ss-section">HuggingFace</td><td class="ss-time"><span title="2026-09-12T16:49:19.667913+00:00">7h ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">3</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/mistralvibe">mistralvibe</a></td><td class="ss-section">Mistral</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/ollama">ollama</a></td><td class="ss-section">Ollama</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-group"><th colspan="6" scope="colgroup">Benchmarks</th></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/arena">arena</a></td><td class="ss-section">Arena.ai</td><td class="ss-time"><span title="2026-07-16T20:03:28.521584+00:00">1mo ago</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-group"><th colspan="6" scope="colgroup">Under Review</th></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://simonwillison.net">Simon Willison</a></td><td class="ss-section">Independent Blogs</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://huggingface.co/blog">HuggingFace Blog</a></td><td class="ss-section">Independent Blogs</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+<tr class="ss-row ss-stale-check"><td class="ss-source"><a href="https://x.com/karpathy">karpathy</a></td><td class="ss-section">Researchers</td><td class="ss-time"><span class="ss-never">never</span></td><td class="ss-time"><span title="2026-06-14T15:00:23.364011+00:00">3mo ago</span></td><td class="ss-count">0</td><td class="ss-status"><span class="ss-badge ss-badge-stale-check" title="No recent health check recorded for this feed.">Stale check</span></td></tr>
+  </tbody>
+</table>
+
+<p class="ss-footer">
+  Feed health is checked independently of the edition pipeline; a feed that is
+  <em>quiet</em> may simply have nothing to say. See
+  <a href="{{ '/about/' | relative_url }}">About</a> for the full source list.
+</p>
