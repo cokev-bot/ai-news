@@ -176,7 +176,7 @@ class TestXcancelFallbackChain(unittest.TestCase):
 
 
 class TestSectionsJsonRepointed(unittest.TestCase):
-    """All 26 X feeds must point at the live mirror, keeping dead hosts as fallbacks."""
+    """Every X feed must point at the live mirror, keeping dead hosts as fallbacks."""
 
     @classmethod
     def setUpClass(cls):
@@ -192,7 +192,11 @@ class TestSectionsJsonRepointed(unittest.TestCase):
         x = [(n, u) for _, n, u in self._feeds()
              if "/rss" in u and "http" in u and
              ("nitter" in u or "xcancel" in u)]
-        self.assertEqual(len(x), 26, "expected 26 X-mirror feeds")
+        # Not pinned to a count (26) — the user edits sections.json by hand,
+        # and a count pin breaks on every X-feed add/remove. Assert the
+        # property for every X feed instead, plus that at least one exists so
+        # the check cannot pass vacuously.
+        self.assertGreater(len(x), 0, "expected at least one X-mirror feed")
         for name, url in x:
             self.assertIn("rss.xcancel.com", url,
                           f"{name} still points at a dead host: {url}")
@@ -210,7 +214,9 @@ class TestSectionsJsonRepointed(unittest.TestCase):
                     if name in sub["feeds"] and "rss.xcancel.com" in sub["feeds"][name]:
                         self.assertTrue(alts, f"{name} lost its fallback chain")
                         n += 1
-        self.assertEqual(n, 26)
+        # The property is "every xcancel feed keeps a fallback chain"; assert
+        # at least one such feed exists rather than pinning the count to 26.
+        self.assertGreater(n, 0, "expected at least one xcancel feed with a fallback chain")
 
     def test_source_urls_unchanged_still_point_at_x(self):
         """Reader-facing links should stay x.com, not the mirror."""

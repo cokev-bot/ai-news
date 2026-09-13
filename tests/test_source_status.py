@@ -149,11 +149,16 @@ class TestCollectFeeds(unittest.TestCase):
         self.assertEqual(collect_feeds({"sections": "not a list"}), [])
         self.assertEqual(collect_feeds([{"no_subsections": True}]), [])
 
-    def test_real_sections_json_has_34_feeds(self):
-        """Regression pin: the live config defines 34 feeds, each renderable."""
+    def test_real_sections_json_yields_a_nonempty_feed_list(self):
+        """The live config must parse into a non-empty list of renderable feeds.
+
+        Deliberately NOT pinned to a count: the user edits sections.json by
+        hand to add/remove sources, and a count pin forces a test edit every
+        time. Assert the shape instead — non-empty, every feed named and URLed.
+        """
         real = json.loads((PROJECT_ROOT / "sections.json").read_text(encoding="utf-8"))
         feeds = collect_feeds(real)
-        self.assertEqual(len(feeds), 34)
+        self.assertGreater(len(feeds), 0, "sections.json must define at least one feed")
         for feed in feeds:
             self.assertTrue(feed["name"], "every feed must have a name")
             self.assertTrue(feed["url"], f"{feed['name']} must have a url")

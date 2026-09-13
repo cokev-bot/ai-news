@@ -214,11 +214,17 @@ class TestExtractSections(unittest.TestCase):
         self.assertEqual(extract_sections(None), [])
         self.assertEqual(extract_sections(42), [])
 
-    def test_real_sections_json_yields_34_feeds(self):
-        """End-to-end pin against the live config, not a fixture."""
+    def test_real_sections_json_yields_a_nonempty_feed_list(self):
+        """End-to-end check against the live config, not a fixture.
+
+        Not pinned to a count: the user edits sections.json by hand, and a
+        count pin forces a test edit on every add/remove. Assert the shape
+        instead — non-empty, and get_all_feeds handles the real file.
+        """
         sections_path = Path(__file__).resolve().parent.parent / "sections.json"
         data = json.loads(sections_path.read_text(encoding="utf-8"))
-        self.assertEqual(len(get_all_feeds(extract_sections(data))), 34)
+        feeds = get_all_feeds(extract_sections(data))
+        self.assertGreater(len(feeds), 0, "sections.json must define at least one feed")
 
 
 # ---------------------------------------------------------------------------
