@@ -43,7 +43,26 @@ fi
 git pull --ff-only origin main
 
 echo "Running $EDITION edition for $DATE (PT)..."
+# generate_news.py fetches all feeds and records .feed_health.json before dedup,
+# so it refreshes health even on a run that publishes nothing. Its non-zero exit
+# (a degraded run, or a genuine error) must NOT stop the steps below: the health
+# alert and the status page are most valuable precisely when the edition failed.
+# Capture the code, then decide at the end.
+set +e
 python3 generate_news.py "${DATE}-${EDITION}" /home/ubuntu/ai-news
+EDITION_RC=$?
+set -e
+
+# Alert on persistently failing feeds, using the health the run above just
+# wrote. --alerts-only does not fetch (the pipeline already did), so it neither
+# double-counts failures nor re-requests 34 feeds three times a day. Non-fatal
+# on purpose: alerting must never cost us an edition or mask its exit code.
+if [ -n "${DISCORD_WEBHOOK_URL:-}" ]; then
+    python3 tools/check_feeds.py /home/ubuntu/ai-news --alerts-only \
+        || echo "[!] Feed health alerting failed (non-fatal)."
+else
+    echo "[i] DISCORD_WEBHOOK_URL not set; skipping feed failure alerts."
+fi
 
 # Regenerate the public /source-status/ page from the state files the run above
 # just updated. Must run BEFORE the Jekyll build so the page is compiled into
@@ -51,6 +70,11 @@ python3 generate_news.py "${DATE}-${EDITION}" /home/ubuntu/ai-news
 # means the status page lags by one run.
 python3 tools/build_source_status.py /home/ubuntu/ai-news \
     || echo "[!] Source status page generation failed (non-fatal; edition continues)."
+
+if [ "$EDITION_RC" != "0" ]; then
+    echo "[!] generate_news.py exited $EDITION_RC — no edition to publish."
+    exit "$EDITION_RC"
+fi
 
 # Run Jekyll build. With pipefail set, a non-zero exit from jekyll (including
 # a failed build) will abort the script before we commit and push a broken post.

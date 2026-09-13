@@ -140,6 +140,28 @@ def format_utc(dt: datetime) -> str:
     return dt.astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
 
+def timestamp_cell(iso_ts: object, now: datetime) -> str:
+    """Render an absolute ``YYYY-MM-DD HH:MM UTC`` timestamp cell.
+
+    Absolute rather than relative ("2m ago") on purpose: the page is generated
+    once per run and then sits static, so a relative label freezes and lies.
+    "2m ago" read an hour later is still "2m ago". A real timestamp is correct
+    whenever it is read, and comparable at a glance down the column.
+
+    The row/table age is still expressed by the tooltip, which carries the
+    precise ISO value and the elapsed time as of build.
+    """
+    dt = parse_iso(iso_ts)
+    if dt is None:
+        return '<span class="ss-never">never</span>'
+    absolute = format_utc(dt)
+    age, _ = humanize_age(iso_ts, now)
+    return (
+        f'<span title="{html.escape(dt.isoformat())} '
+        f'({html.escape(age)} at build time)">{html.escape(absolute)}</span>'
+    )
+
+
 # ---------------------------------------------------------------------------
 # Input loading
 # ---------------------------------------------------------------------------
@@ -309,13 +331,6 @@ def summarize(rows: list[dict]) -> dict:
 # ---------------------------------------------------------------------------
 
 
-def _cell(age: str, iso: str) -> str:
-    """Render a timestamp cell with a tooltip carrying the absolute time."""
-    if iso:
-        return f'<span title="{html.escape(iso)}">{html.escape(age)}</span>'
-    return f'<span class="ss-never">{html.escape(age)}</span>'
-
-
 def _source_cell(row: dict) -> str:
     """Source name, linked to its homepage when one is known."""
     name = html.escape(row["name"])
@@ -335,10 +350,10 @@ def render_rows_html(rows: list[dict], *, now: datetime) -> str:
             lines.append(
                 f'<tr class="ss-group"><th colspan="6" scope="colgroup">{label}</th></tr>'
             )
-        item_age, item_iso = humanize_age(
+        item_cell = timestamp_cell(
             row["last_item"].isoformat() if row["last_item"] else None, now
         )
-        fetch_age, fetch_iso = humanize_age(
+        fetch_cell = timestamp_cell(
             row["last_success"].isoformat() if row["last_success"] else None, now
         )
         status: str = str(row["status"] or STATUS_UNKNOWN)
@@ -359,8 +374,8 @@ def render_rows_html(rows: list[dict], *, now: datetime) -> str:
                 status=html.escape(status, quote=True),
                 source=_source_cell(row),
                 section=html.escape(row["subsection"] or row["section"] or ""),
-                item=_cell(item_age, item_iso),
-                fetch=_cell(fetch_age, fetch_iso),
+                item=item_cell,
+                fetch=fetch_cell,
                 count=row["item_count"],
                 note=html.escape(note, quote=True),
                 label=html.escape(status_label),
@@ -389,7 +404,8 @@ permalink: /source-status/
 ---
 
 <p class="ss-intro">
-  Every feed this digest watches, and when it last did something.
+  Every feed this digest watches, and when it last did something. All times are
+  UTC.
   <strong>Last new story</strong> is the most recent item from that source that
   survived de-duplication and made it into a published edition.
   <strong>Last successful fetch</strong> is the most recent time the pipeline
@@ -430,8 +446,8 @@ permalink: /source-status/
     <tr>
       <th scope="col">Source</th>
       <th scope="col">Section</th>
-      <th scope="col">Last new story</th>
-      <th scope="col">Last successful fetch</th>
+      <th scope="col">Last new story (UTC)</th>
+      <th scope="col">Last successful fetch (UTC)</th>
       <th scope="col">Items ({max_age_days}d)</th>
       <th scope="col">Status</th>
     </tr>

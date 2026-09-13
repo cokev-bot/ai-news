@@ -14,6 +14,7 @@ Covers:
 """
 
 import json
+import re
 import sys
 import tempfile
 import unittest
@@ -400,15 +401,27 @@ class TestRenderPage(unittest.TestCase):
         for header in ("Source", "Section", "Last new story",
                        "Last successful fetch", "Items", "Status"):
             self.assertIn(header, html, f"missing column header {header!r}")
+        self.assertIn("(UTC)", html, "columns must state the timezone")
         self.assertIn("<table", html)
         self.assertIn("</table>", html)
 
-    def test_row_renders_relative_and_absolute_times(self):
+    def test_timestamps_render_as_absolute_utc(self):
+        """Times must be absolute, not relative.
+
+        The page is generated once and then sits static, so a relative label
+        like "2m ago" freezes: read an hour later it still says "2m ago" and is
+        simply wrong. Pin the absolute form so this cannot regress.
+        """
         html = render_page(self._rows(), now=NOW)
-        self.assertIn(">1d ago<", html)
-        self.assertIn(">2h ago<", html)
-        # absolute timestamps in tooltips
+        self.assertRegex(html, r"\d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC")
+        self.assertNotIn("ago<", html,
+                         "relative ages must not be the visible cell text")
+
+    def test_relative_age_survives_in_the_tooltip(self):
+        """The convenience of a relative age is kept, not discarded."""
+        html = render_page(self._rows(), now=NOW)
         self.assertIn("title=", html)
+        self.assertIn("at build time", html)
 
     def test_never_rendered_for_unknown_sources(self):
         rows = build_rows(
@@ -416,7 +429,26 @@ class TestRenderPage(unittest.TestCase):
               "subsection": "SubA", "fallbacks": []}], {}, {}, now=NOW)
         html = render_page(rows, now=NOW)
         self.assertIn("ss-never", html)
-        self.assertIn(">never<", html)
+
+    def test_absolute_time_is_stable_regardless_of_when_read(self):
+        """The rendered data cells must not depend on the reader's clock.
+
+        Rendering the same input data with "now" an hour later must produce the
+        identical visible timestamps — which is exactly what a relative label
+        fails to do. The page's own "updated ..." line is excluded: it is a
+        build timestamp and correctly reflects when the page was generated.
+        """
+        from datetime import timedelta
+        rows = self._rows()
+        early = render_page(rows, now=NOW)
+        late = render_page(rows, now=NOW + timedelta(hours=1))
+
+        def cells(page: str) -> list[str]:
+            body = page.split("<tbody>", 1)[1].split("</tbody>", 1)[0]
+            return re.findall(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC", body)
+
+        self.assertEqual(cells(early), cells(late))
+        self.assertTrue(cells(early), "expected at least one timestamp cell")
 
     def test_summary_line_reports_live_counts(self):
         html = render_page(self._rows(), now=NOW)
