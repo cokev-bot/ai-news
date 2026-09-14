@@ -1,0 +1,219 @@
+{
+  "edition": "Morning",
+  "date": "2026-09-14",
+  "published": "2026-09-14T08:02:04.831988-07:00",
+  "generated_at": "2026-09-14T08:02:04.831988-07:00",
+  "title": "AI News Digest — Morning Edition",
+  "url": "https://cokev-bot.github.io/ai-news/news/2026/09/14/Morning/",
+  "summary": "The global AI landscape is defined by a paradoxical clash between an accelerating corporate race and an unprecedented, cross-ideological clamor for a developmen",
+  "big_picture": "The global AI landscape is defined by a paradoxical clash between an accelerating corporate race and an unprecedented, cross-ideological clamor for a development slowdown. Founders of leading AI labs have joined forces with unlikely allies like Bernie Sanders and Steve Bannon to warn of existential dangers, from biological threats to \"cognitive warfare\"—a concern conspicuously echoed by China's spy chief, who frames the technology as a direct threat to Communist Party rule (Source: 1, 8, 10, 14, 15, 20). These warnings have rattled markets, triggering a slide in global tech stocks and drawing fierce pushback from Silicon Valley insiders who dismiss the slowdown calls as self-serving attempts to pull up the ladder (Source: 12, 17, 18). Yet, the deep schism and fierce rivalry between Anthropic and OpenAI continues to drive a dangerous race toward ever more powerful models, even as Anthropic reassures investors of consecutive profitability ahead of a blockbuster IPO (Source: 2, 3). Beyond the geopolitical and market turbulence, AI's immediate societal impacts are proving deeply disruptive. Cybercriminals are leveraging sophisticated models to supercharge scams with minimal personnel, while automation is rapidly dismantling the gig economy's already-fraying safety net (Source: 4, 5). In the public sector, the Trump administration is barreling forward to integrate AI agents into medical care and prescribing despite serious safety concerns, even as internal industry rebellions—highlighted by former Anthropic researcher Jacob Coxon's public resignation—expose the growing gap between commercial acceleration and unmitigated risks (Source: 19, 22). As these dual realities unfold against a volatile macroeconomic backdrop of 10-Year Treasury yields hitting 5% and hyperscalers facing steep equity pricing, the pressure to reconcile commercial profitability with human-scale safety is rapidly reaching a breaking point (Source: 9, 13).",
+  "reading_time_minutes": 9,
+  "stats": {
+    "feeds_scanned": 31,
+    "sources": 3,
+    "items": 23,
+    "fresh": 23,
+    "stale": 0,
+    "from_yesterday": 3,
+    "words": 943
+  },
+  "sources": [
+    "FT AI",
+    "HuggingFace Blog",
+    "NYT AI"
+  ],
+  "sections": [
+    {
+      "title": "News",
+      "url": "https://cokev-bot.github.io/ai-news/news/2026/09/14/Morning/#news",
+      "item_count": 22,
+      "summary": "The global artificial intelligence ecosystem is caught in a destabilizing paradox: the very entities racing to build advanced systems are simultaneously sounding the alarm on the dangers of their own creations, triggering market volatility and unprecedented political realignments. Founders of leading AI labs, including OpenAI, Anthropic, Grok, and DeepMind, have publicly warned about the inherent risks of the technology and called for human-scale constraints (FT AI: 1). However, these high-profile calls for a slowdown have rattled investors, contributing to a slide in US tech stocks—including major players like Nvidia and memory-chip makers—as market participants digested the implications of reduced frontier development (FT AI: 12, NYT AI: 18). Meanwhile, some in Silicon Valley are pushing back, arguing that these urgent safety warnings are merely self-serving attempts by incumbents to stifle competition and consolidate regulatory capture (NYT AI: 17, NYT AI: 20). At the center of this acceleration dilemma is the intense rivalry between OpenAI and Anthropic, a deep schism that has inadvertently fueled a race-like dynamic toward ever more powerful models (FT AI: 2). Internal fractures are becoming external liabilities; former Anthropic researcher Jacob Coxon notably left the company to publicly raise the alarm about AI risks, highlighting the growing tension between commercial velocity and internal safety protocols (NYT AI: 19). Yet, even as safety concerns mount, Anthropic is simultaneously reassuring investors of its commercial viability, projecting a second consecutive profitable quarter as it seeks to ease cash-burn concerns ahead of a potential blockbuster IPO (FT AI: 3). The debate over where to draw the line on safety is far from abstract, as experts warn that while current chatbots are unlikely to assist lone actors in inventing deadly pathogens, future models trained specifically in biology will require far more robust safeguards (NYT AI: 15). Beyond corporate walls, the security and geopolitical implications of advanced AI are escalating rapidly. Cybercriminals are already leveraging sophisticated models to supercharge scams, fundamentally shifting the threat landscape from massive fraud compounds employing hundreds of workers to highly efficient operations run by just one or two individuals (FT AI: 5). Nation-states are also feeling the pressure: China’s top spy chief has framed AI as a direct threat to Communist Party rule (NYT AI: 14), while Chinese agencies warn that hostile forces are utilizing the technology for \"cognitive warfare\" against the country (FT AI: 8). This convergence of cyber and cognitive threats is driving new defensive investments, such as Dutch start-up Fortaegis completing a funding round for encrypted silicon technology designed to create ultra-secure networks by leveraging the unique digital fingerprints of microchips (FT AI: 6). The cascading effects of unchecked AI deployment are also disrupting labor markets and healthcare, forcing unprecedented political alliances. Automation is actively dismantling the gig economy, stripping away a vital safety net for workers who have already fallen out of the formal labor market (FT AI: 4). Simultaneously, the Trump administration is moving to integrate AI agents into medical care to offer therapy and prescribe medicine, a rollout that raises significant concerns regarding both patient safety and the influence of venture capital (NYT AI: 22). As political focus shifts from the physical infrastructure of data centers to the models themselves (FT AI: 11), strange bedfellows are emerging—rightwing activist Steve Bannon and leftwing Senator Bernie Sanders have united in a cross-partisan call for stronger AI regulation (FT AI: 10). Ultimately, the current landscape reveals an industry at odds with its own trajectory, where the competitive drive to scale outpaces the global capacity to govern. Whether it is the gig economy being eroded by automation (FT AI: 4) or global markets tumbling on the words of tech leaders (NYT AI: 18), the friction between rapid deployment and existential caution is reshaping the AI economy. As calls for a global slowdown rattle markets and draw pushback from Washington to Beijing (NYT AI: 20), the ultimate test for AI executives will be whether they can reconcile the race for frontier dominance with their own warnings that the technology must be pulled back to a human scale (FT AI: 1).",
+      "subsections": [
+        {
+          "title": "Financial Times",
+          "articles": [
+            {
+              "title": "AI companies must relinquish some of the power at their disposal",
+              "link": "https://www.ft.com/content/7bc5ed85-47db-400c-b5c2-7b403d7e4608",
+              "source": "FT AI",
+              "description": "The founders of OpenAI, Anthropic, Grok and DeepMind have warned about the dangers, now technology needs to be human scale",
+              "published": "2026-09-14T21:12:34+00:00"
+            },
+            {
+              "title": "Anthropic and OpenAI need to put their rivalry aside",
+              "link": "https://www.ft.com/content/b3d01493-f0f5-491b-bcf8-2d414539fbe7?syn-25a6b1a6=1",
+              "source": "FT AI",
+              "description": "The deep schism between OpenAI and Anthropic has led to a race-like dynamic towards ever more powerful models",
+              "published": "2026-09-14T13:12:58+00:00"
+            },
+            {
+              "title": "Anthropic tells investors it will be profitable for second straight quarter",
+              "link": "https://www.ft.com/content/4564e6a5-69e9-40a6-bf0f-a888f2f4f002?syn-25a6b1a6=1",
+              "source": "FT AI",
+              "description": "Claude maker seeks to ease cash burn concerns before blockbuster IPO amid fears over pace of AI development",
+              "published": "2026-09-14T05:29:46+00:00"
+            },
+            {
+              "title": "Automation is coming for the gig economy",
+              "link": "https://www.ft.com/content/a2c33eed-7aef-4e68-9252-3a1dddf61b5a?syn-25a6b1a6=1",
+              "source": "FT AI",
+              "description": "A safety net for people who have fallen out of the formal labour market is being dismantled",
+              "published": "2026-09-14T11:00:22+00:00"
+            },
+            {
+              "title": "Cyber criminals use AI to supercharge scams, watchdog warns",
+              "link": "https://www.ft.com/content/d545bae1-d770-46f3-9913-07e85d4ae34c?syn-25a6b1a6=1",
+              "source": "FT AI",
+              "description": "Criminals are switching from using vast fraud compounds with hundreds of workers to one or two people working on sophisticated models",
+              "published": "2026-09-14T11:00:12+00:00"
+            },
+            {
+              "title": "Dutch start-up completes funding round for encrypted silicon technology",
+              "link": "https://www.ft.com/content/a6574d9d-5e75-4b9c-b4d7-b05f7008e48e?syn-25a6b1a6=1",
+              "source": "FT AI",
+              "description": "Fortaegis claims it can create ultra-secure computer networks by harnessing the unique digital fingerprint of chips",
+              "published": "2026-09-14T02:51:43+00:00"
+            },
+            {
+              "title": "FTAV’s further reading",
+              "link": "https://www.ft.com/content/988e8cb5-da27-49a6-a9f5-377b515c02ba",
+              "source": "FT AI",
+              "description": "AI and economic growth; tech lord trojan horses; IPOs of doom; Kallax Storageborn",
+              "published": "2026-09-14T12:00:03+00:00"
+            },
+            {
+              "title": "Hostile forces using AI for ‘cognitive warfare’ against China, spy agency warns",
+              "link": "https://www.ft.com/content/8715d1c6-054d-4eab-bcad-147acebfd2a9?syn-25a6b1a6=1",
+              "source": "FT AI",
+              "description": "Beijing signals growing concern over how rapid advances in technology could be used against the country",
+              "published": "2026-09-14T12:15:49+00:00"
+            },
+            {
+              "title": "How much should lenders charge hyperscalers?",
+              "link": "https://www.ft.com/content/ba38df40-9898-48a0-bc9e-39d8a3da4305",
+              "source": "FT AI",
+              "description": "Pricing equity punters’ collective histrionics in a credit context",
+              "published": "2026-09-14T21:23:48+00:00"
+            },
+            {
+              "title": "Steve Bannon and Bernie Sanders unite in AI safety call",
+              "link": "https://www.ft.com/content/bab5c4c5-5377-4dd0-8b46-d8c4ce9a36d5?syn-25a6b1a6=1",
+              "source": "FT AI",
+              "description": "Rightwing activist and leftwing senator join forces to demand stronger regulation of the technology",
+              "published": "2026-09-14T19:40:33+00:00"
+            },
+            {
+              "title": "The politics of AI, part two",
+              "link": "https://www.ft.com/content/296b56d1-a30e-43cf-ac15-8a42de5cd59a?syn-25a6b1a6=1",
+              "source": "FT AI",
+              "description": "First it was data centres that concerned voters and lawmakers — now they’re worrying about the models themselves",
+              "published": "2026-09-14T20:00:04+00:00"
+            },
+            {
+              "title": "US tech stocks fall after big AI groups call for slowdown",
+              "link": "https://www.ft.com/content/aa8a1be7-abe0-44b7-bcd3-31fd0a44de08?syn-25a6b1a6=1",
+              "source": "FT AI",
+              "description": "Memory-chip makers and Nvidia slide during morning trading in New York",
+              "published": "2026-09-14T21:53:55+00:00"
+            }
+          ]
+        },
+        {
+          "title": "New York Times",
+          "articles": [
+            {
+              "title": "10-Year Treasury Yield Reaches 5%, Highest Level in Years",
+              "link": "https://www.nytimes.com/2026/09/14/business/10-year-treasury-yield-5-percent.html",
+              "source": "NYT AI",
+              "description": "One of the world’s most important interest rates breached 5 percent, as investors continued to rebuff the Trump administration’s efforts to sway the bond market.",
+              "published": "2026-09-14T14:36:40+00:00"
+            },
+            {
+              "title": "China’s Top Spy Chief Warns A.I. Is a Threat to Party Rule",
+              "link": "https://www.nytimes.com/2026/09/14/world/asia/china-ai-security-risks-anthropic.html",
+              "source": "NYT AI",
+              "description": "Even as Beijing urges the United States not to hype the dangers of A.I., its own spy chief is framing the technology as a threat to the Communist Party’s security.",
+              "published": "2026-09-14T11:14:20+00:00"
+            },
+            {
+              "title": "Is A.I. Raising the Chances of Biological Warfare?",
+              "link": "https://www.nytimes.com/2026/09/14/science/ai-bioweapons.html",
+              "source": "NYT AI",
+              "description": "Current chatbots aren’t likely to help lone actors invent a deadly pathogen, experts say. But newer models, trained in biology, may need stronger safeguards.",
+              "published": "2026-09-14T12:54:52+00:00"
+            },
+            {
+              "title": "Rogue Machines",
+              "link": "https://www.nytimes.com/2026/09/14/briefing/rogue-ai.html",
+              "source": "NYT AI",
+              "description": "We look into the concerns over artificial intelligence.",
+              "published": "2026-09-14T14:21:34+00:00"
+            },
+            {
+              "title": "Some in Silicon Valley Are Questioning the Calls for an A.I. Slowdown",
+              "link": "https://www.nytimes.com/2026/09/13/technology/silicon-valley-ai-slowdown.html",
+              "source": "NYT AI",
+              "description": "The debate over the safety of artificial intelligence grew personal as key tech leaders said calls for government regulation were self-serving and misplaced.",
+              "published": "2026-09-14T03:12:45+00:00"
+            },
+            {
+              "title": "Tech Stocks Tumble After AI Leaders Call for Industry to Slow Down",
+              "link": "https://www.nytimes.com/2026/09/14/business/tech-stocks-ai.html",
+              "source": "NYT AI",
+              "description": "Companies at the forefront of artificial intelligence in Asia, Europe and the United States posted declines after tech leaders expressed worries about the safety of “frontier” A.I. technology.",
+              "published": "2026-09-14T14:50:21+00:00"
+            },
+            {
+              "title": "The A.I. Researcher Whose Rebellion Is Changing Everything",
+              "link": "https://www.nytimes.com/2026/09/14/podcasts/the-daily/the-ai-researcher-whose-rebellion-is-changing-everything.html",
+              "source": "NYT AI",
+              "description": "Jacob Coxon, who quit his job at Anthropic, discusses his concerns about the risks of artificial intelligence.",
+              "published": "2026-09-14T10:00:15+00:00"
+            },
+            {
+              "title": "The A.I. Slowdown Debate Goes Global",
+              "link": "https://www.nytimes.com/2026/09/14/business/dealbook/ai-slowdown-dc-beijing.html",
+              "source": "NYT AI",
+              "description": "A call to slow the development of artificial intelligence has rattled markets and drawn pushback in Washington and Beijing. Others worry it may not be enough.",
+              "published": "2026-09-14T12:01:01+00:00"
+            },
+            {
+              "title": "The Escalating Warnings About A.I., and the Rise of a Deadly New Street Drug",
+              "link": "https://www.nytimes.com/2026/09/14/podcasts/the-headlines/warnings-ai-deadly-street-drug.html",
+              "source": "NYT AI",
+              "description": "Plus, the man who went to space — and never wanted to go back.",
+              "published": "2026-09-14T10:00:03+00:00"
+            },
+            {
+              "title": "Trump Administration Moves to Integrate A.I. Into Medical Care Despite Concerns",
+              "link": "https://www.nytimes.com/2026/09/14/health/ai-doctors-medicare-fda.html",
+              "source": "NYT AI",
+              "description": "Federal projects are rolling out A.I. agents that offer therapy and prescribe medicine, raising concerns about safety and the influence of venture capital investors.",
+              "published": "2026-09-14T14:49:12+00:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "AI Labs",
+      "url": "https://cokev-bot.github.io/ai-news/news/2026/09/14/Morning/#ai-labs",
+      "item_count": 1,
+      "summary": "As the AI ecosystem pushes toward more efficient and accessible training paradigms, HuggingFace has introduced a novel method for executing advanced reinforcement learning across distributed compute environments. The open-source platform detailed an architecture for asynchronous Group Relative Policy Optimization (GRPO) combined with Low-Rank Adaptation (LoRA) across HuggingFace Jobs (HuggingFace Blog: 1). This development signals a broader shift toward decoupling complex AI training from rigid, specialized infrastructure, making state-of-the-art techniques more accessible to practitioners operating outside of massive, centralized data centers. Traditionally, distributed training relies on NVIDIA's Collective Communications Library (NCCL) to synchronize operations across GPUs, requiring tightly coupled networking that can be expensive and brittle. HuggingFace's approach circumvents this dependency entirely (HuggingFace Blog: 1). By utilizing a storage bucket and a proxy to coordinate asynchronous GRPO with LoRA, the architecture allows developers to leverage distributed compute resources more flexibly (HuggingFace Blog: 1). This reduces the overhead and complexity typically associated with multi-node reinforcement learning workflows, enabling training runs that are highly resilient to network constraints. For AI leaders, this architectural shift underscores a growing trend in the community: the adaptation of frontier training methodologies for mainstream accessibility. As techniques like GRPO gain prominence for refining large language models, the ability to execute them asynchronously without specialized interconnects lowers both the financial and technical barriers to entry (HuggingFace Blog: 1). Ultimately, this type of infrastructure innovation paves the way for more agile, cost-effective fine-tuning, enabling organizations to iterate rapidly on model performance without being locked into rigid, high-cost compute environments.",
+      "subsections": [
+        {
+          "title": "HuggingFace",
+          "articles": [
+            {
+              "title": "Async GRPO with LoRA across HF Jobs: a bucket, a proxy, and no NCCL",
+              "link": "https://huggingface.co/blog/asyncgrpo-lora-hfjobs",
+              "source": "HuggingFace Blog",
+              "description": "",
+              "published": "2026-09-10T07:00:00+00:00"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
